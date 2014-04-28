@@ -35,5 +35,6 @@
 	<classpathentry kind="lib" path="lib/cassandra-current/lib/snaptree-0.1.jar"/>
 	<classpathentry kind="lib" path="lib/cassandra-current/lib/super-csv-2.1.0.jar"/>
 	<classpathentry kind="lib" path="lib/cassandra-current/lib/thrift-server-0.3.3.jar"/>
+	<classpathentry kind="lib" path="lib/hector-current.jar"/>
 	<classpathentry kind="output" path="build/classes/main"/>
 </classpath>
