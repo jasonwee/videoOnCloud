@@ -37,5 +37,6 @@
 	<classpathentry kind="lib" path="lib/cassandra-current/lib/thrift-server-0.3.3.jar"/>
 	<classpathentry kind="lib" path="lib/hector-current.jar"/>
 	<classpathentry kind="lib" path="lib/commons-lang-2.4.jar"/>
+	<classpathentry kind="lib" path="lib/json-20131018.jar"/>
 	<classpathentry kind="output" path="build/classes/main"/>
 </classpath>
