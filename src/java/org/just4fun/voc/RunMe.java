@@ -23,13 +23,13 @@ public class RunMe {
 		//String hex = BinaryFile.toHex(new File("test.mp4"));
 		
 		// make binary file into cassandra file
-		BinaryFile video = BinaryFile.getBinaryFile("", "fish.mp4", new File("src/java/test.mp4"));
+		BinaryFile video = BinaryFile.getBinaryFile("", "fish.mp4", new File("test/resources/test.mp4"));
 		
 		
 		// save binary file into cloud.
 		CassandraClientConfiguration config = new CassandraClientConfiguration();
 		Connection conn = new ConnectionHector(config);
-		//conn.storeBinary("pirahna", video);
+		conn.storeBinary("fish.mp4", video);
 		BinaryFile bf = conn.readBinary("fish.mp4");
 		BinaryFile.toFile(bf.getHexContent(), "/home/jason/Desktop/fish.mp4");
 		conn.deleteBinary("fish.mp4");
