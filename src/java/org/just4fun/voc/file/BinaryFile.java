@@ -12,9 +12,9 @@ public class BinaryFile {
 	
 	private String name = null;
 	private String directory = null;
-	private String hexContent;
+	private String hexContent = null;
 	
-	private long length;
+	private long length = -1;
 	private long lastModified;
 	private long lastAccessed;
 	
@@ -29,10 +29,9 @@ public class BinaryFile {
 		this.name = name;
 		this.length = length;
 		this.lastModified = lastModified;
-		this.lastModified = lastAccessed;
+		this.lastAccessed = lastAccessed;
 	}
 	
-	// TODO TEST LARGE FILE
 	public static String toHex(File file) throws IOException {
 		InputStream is = new FileInputStream(file);
 
@@ -69,7 +68,6 @@ public class BinaryFile {
 		return data;
 	}
 	
-	// TODO TEST LARGE FILE
 	public static void toFile(String hex, String file) throws IOException {
 		int len = hex.length();
 		byte[] data = new byte[len / 2];
@@ -93,18 +91,10 @@ public class BinaryFile {
 		binaryFile.setDirectory(directory);
 		binaryFile.setName(name);
 		binaryFile.setLastAccessed(System.currentTimeMillis());
-		binaryFile.setLastAccessed(System.currentTimeMillis());
+		binaryFile.setLastModified(System.currentTimeMillis());
 		binaryFile.setHexContent(hex);
 		
 		return binaryFile;
-	}
-
-	public static void main(String[] args) throws IOException {
-		System.out.println("toHex");
-		String hexs = toHex(new File("src/java/test.mp4"));
-		System.out.println("toFile");
-		toFile(hexs, "pirahna.mp4");
-		
 	}
 
 	public String getName() {
