@@ -20,6 +20,7 @@ import org.slf4j.LoggerFactory;
 
 
 
+import me.prettyprint.cassandra.io.ChunkInputStream;
 import me.prettyprint.cassandra.serializers.ByteBufferSerializer;
 import me.prettyprint.cassandra.serializers.StringSerializer;
 import me.prettyprint.cassandra.service.CassandraHostConfigurator;
@@ -317,8 +318,44 @@ public class ConnectionHector implements Connection {
 		file.setHexContent(BinaryFile.toHex(bOut.toByteArray()));
 		return file;
 	}
+	
+	// TODO
+	public int read(byte b[], int off, int len) throws IOException {
+			
+		if (len == 0) {
+			return 0;
+		}
 
-	public static void main(String[] args) throws CharacterCodingException {
+		if (b == null) {
+			throw new NullPointerException("byte array cannot be null");
+		}
+
+		if (off < 0 || len < 0 || len > b.length - off)  {
+			throw new IndexOutOfBoundsException("off or len cannot be negative and len cannot be more than b.length minus off");
+		}
+
+		int total_bytes = 0;
+
+		/*
+		while ((readBytes = readBytes()) != null) {  
+			System.arraycopy(src, srcPos, dest, destPos, length);
+			total_bytes += bytes.length;
+		}
+		*/
+
+		if (total_bytes == 0) {
+			return -1;
+		}
+		
+		return total_bytes;
+	}
+
+	// TODO
+	public void write(byte b[], int off, int len) throws IOException {
+		
+	}
+
+	public static void main(String[] args) throws CharacterCodingException, IOException {
 		CassandraClientConfiguration config = new CassandraClientConfiguration();
 		ConnectionHector lh = new ConnectionHector(config);
 		lh.update("123", "456", "789");
@@ -329,7 +366,9 @@ public class ConnectionHector implements Connection {
 			String value = ByteBufferUtil.string(column.getValue(), StandardCharsets.UTF_8);
 			System.out.println(key + " " + value );
 		}
-		lh.delete("123", "456");
+		byte[] b = {};
+		lh.read(b, 0, 0);
+		//lh.delete("123", "456");
 	}
 
 
