@@ -20,7 +20,6 @@ import org.slf4j.LoggerFactory;
 
 
 
-import me.prettyprint.cassandra.io.ChunkInputStream;
 import me.prettyprint.cassandra.serializers.ByteBufferSerializer;
 import me.prettyprint.cassandra.serializers.StringSerializer;
 import me.prettyprint.cassandra.service.CassandraHostConfigurator;
@@ -52,7 +51,9 @@ public class ConnectionHector implements Connection {
 	private String columnFamily = null;
 	private String keyspace = null;
 	private String clusterName = null;
+	private String filename = null;
 	private int blockSize;
+	
 	
 	public ConnectionHector(CassandraClientConfiguration config) {
 		if (config == null) throw new IllegalArgumentException("config must not null");
@@ -319,7 +320,10 @@ public class ConnectionHector implements Connection {
 		return file;
 	}
 	
-	// TODO
+	public void setFilename(String filename) {
+		this.filename = filename;
+	}
+	
 	public int read(byte b[], int off, int len) throws IOException {
 			
 		if (len == 0) {
@@ -333,16 +337,38 @@ public class ConnectionHector implements Connection {
 		if (off < 0 || len < 0 || len > b.length - off)  {
 			throw new IndexOutOfBoundsException("off or len cannot be negative and len cannot be more than b.length minus off");
 		}
+		
+		if (filename == null) {
+			throw new NullPointerException("filename must be specified.");
+		}
 
 		int total_bytes = 0;
 
-		/*
-		while ((readBytes = readBytes()) != null) {  
-			System.arraycopy(src, srcPos, dest, destPos, length);
-			total_bytes += bytes.length;
-		}
-		*/
-
+		long bytesRead = len;
+		int blockNumber = 0;
+		int offset = off;
+		
+		do {
+			logger.info(String.format("before blockNumber = '%s' bytesRead = '%s' offset = '%s'", blockNumber, bytesRead, offset));
+			
+			String blockName = FileBlock.BLOCK_COLUMN_NAME_PREFIX + String.valueOf(blockNumber);
+			ByteBuffer bb = ByteBufferUtil.bytes(blockName);
+			List<ByteBuffer> column = new ArrayList<ByteBuffer>();
+			byte[] bytes = getColumns(filename, column).get(bb);
+			
+			if (bytes == null) {
+				break;
+			}
+			System.arraycopy(bytes, 0, b, offset, bytes.length);
+			
+			bytesRead -= bytes.length;
+			blockNumber++;
+			offset += bytes.length;
+			
+			logger.info(String.format("after blockNumber = '%s' bytesRead = '%s' offset = '%s'", blockNumber, bytesRead, offset));
+			
+		} while (bytesRead >= 0);
+			
 		if (total_bytes == 0) {
 			return -1;
 		}
@@ -350,15 +376,33 @@ public class ConnectionHector implements Connection {
 		return total_bytes;
 	}
 
-	// TODO
+	// we are currently doing overwrite.
 	public void write(byte b[], int off, int len) throws IOException {
+		if (len == 0) {
+			return;
+		}
+
+		if (b == null) {
+			throw new NullPointerException("byte array cannot be null");
+		}
+
+		if (off < 0 || len < 0 || off + len > b.length)  {
+			throw new IndexOutOfBoundsException("off or len cannot be negative or off plus len cannot be more than b.length.");
+		}
 		
+		if (filename == null) {
+			throw new NullPointerException("filename must be specified.");
+		}
+		
+		write(filename, b, off, len);
 	}
 
 	public static void main(String[] args) throws CharacterCodingException, IOException {
 		CassandraClientConfiguration config = new CassandraClientConfiguration();
 		ConnectionHector lh = new ConnectionHector(config);
 		lh.update("123", "456", "789");
+		lh.update("filename.txt", "BLOCK-0", "Hello ");
+		lh.update("filename.txt", "BLOCK-1", "world.");
 		System.out.println("read => " + lh.read("123", "456"));
 		Map<ByteBuffer, ByteBuffer> result = lh.getColumns("123");
 		for (Entry<ByteBuffer, ByteBuffer> column : result.entrySet()) {
@@ -366,8 +410,14 @@ public class ConnectionHector implements Connection {
 			String value = ByteBufferUtil.string(column.getValue(), StandardCharsets.UTF_8);
 			System.out.println(key + " " + value );
 		}
-		byte[] b = {};
-		lh.read(b, 0, 0);
+		byte[] b = new byte[20];
+		lh.setFilename("filename.txt");
+		lh.read(b, 0, 20);
+		System.out.println(BinaryFile.toHex(b));
+		
+		lh.setFilename("newContent.txt");
+		byte[] newContent = "hello world".getBytes();
+		lh.write(newContent, 0, newContent.length);
 		//lh.delete("123", "456");
 	}
 
