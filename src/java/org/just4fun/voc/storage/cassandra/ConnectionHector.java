@@ -193,7 +193,11 @@ public class ConnectionHector implements Connection {
         if (len > b.length - off) {
             throw new IndexOutOfBoundsException("write length must not greater than buffer length minus buffer offset");
         }
-        
+
+        if (name == null || name.isEmpty()) {
+            throw new NullPointerException("destination name must not be null or empty");
+        }
+
         if (len == 0) {
             logger.trace("len is 0 , nothing to flush");
             return;
