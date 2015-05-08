@@ -1,10 +1,14 @@
 package play.learn.java;
 
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Paths;
 import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
 
 // http://www.oracle.com/technetwork/articles/java/ma14-java-se-8-streams-2177646.html
+// http://www.oracle.com/technetwork/articles/java/architect-streams-pt2-2227132.html
 public class Stream {
 
 
@@ -65,6 +69,17 @@ public class Stream {
 		System.out.println(product);
 		product = numbers.stream().reduce(1, Integer::max);
 		System.out.println(product);
+		
+		try {
+			Files.lines(Paths.get("src/resources/log4j.properties"))
+			                .map(line -> line.split("\\s+")) // Stream<String[]>
+			                .flatMap(Arrays::stream) // Stream<String>
+			                .distinct()
+			                .forEach(System.out::println);
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		
 		
 	}
