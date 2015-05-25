@@ -5,8 +5,8 @@ import java.net.URL;
 import java.nio.charset.StandardCharsets;
 import java.util.Arrays;
 import java.util.List;
-import java.util.OptionalDouble;
 import java.util.concurrent.CompletableFuture;
+import java.util.concurrent.CompletionException;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.stream.Collectors;
@@ -130,10 +130,22 @@ public class LearnCompletableFuture {
 		executor.shutdown();
 	}
 	
+	public void learnCompletionException() {
+		try {
+			List<String> list = Arrays.asList("A", "B", "C", "D");
+			list.stream().map(s->CompletableFuture.supplyAsync(() -> s+s))
+			.map(f->f.getNow("Not Done")).forEach(s->System.out.println(s));
+
+		} catch (CompletionException e) {
+			e.printStackTrace();
+		}
+
+	}
 
 	public static void main(String[] args) {
 		LearnCompletableFuture c = new LearnCompletableFuture();
-		c.crawlTheWeb();
+		//c.crawlTheWeb();
+		c.learnCompletionException();
 	}
 
 }
