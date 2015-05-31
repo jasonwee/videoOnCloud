@@ -3,6 +3,7 @@ package play.learn.java;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -80,6 +81,29 @@ public class Stream {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+		
+		// -- stream and reducer
+		Integer[] intArray = {1,2,3,4,5,6,7,8,9};
+		List<Integer> listOfIntegers = new ArrayList<Integer>(Arrays.asList(intArray));
+		
+		System.out.println("Sum of integers: " + listOfIntegers.stream().reduce(Integer::sum).get());
+		// -- stream and reducer
+		
+		// java 8
+		System.out.println(String.join(",", "1", "2"));
+		
+		List<String> joinUS = new ArrayList<String>();
+		joinUS.add("we");
+		joinUS.add("join");
+		joinUS.add("together");
+		joinUS.add("now");
+		System.out.println(String.join("-", joinUS));
+		
+		// java 8 unchecked io exception.
+		// see unchecked io exception use here https://docs.oracle.com/javase/8/docs/api/java/nio/file/Files.html
+		throw new java.io.UncheckedIOException("test uncheck io exception", new IOException("from io exeption"));
+		
+
 		
 		
 	}
