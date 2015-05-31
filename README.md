@@ -29,3 +29,19 @@ guide you. :-)
 
 These instructions are probably too little as my time are pretty limited, please
 let me know if anything is wrong or incomplete.
+
+### Legal
+
+Use and transfer of videoOnCloud may be subject to certain restrictions by the
+Malaysia and other governments.
+
+It is your responsibility to ensure that your use and/or transfer does not
+violate applicable laws.
+
+For more information, please see http://www.mcmc.gov.my/
+
+Licensing
+=========
+videoOnCloud is licensed under the Apache License, Version 2.0.
+
+
