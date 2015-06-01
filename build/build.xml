@@ -1,0 +1,435 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+
+<project basedir=".." default="jar" name="videoOnCloud" xmlns:artifact="antlib:org.apache.maven.artifact.ant">
+   <property environment="env"/>
+   <property file="build.properties" />
+
+
+   <!-- default version and SCM information -->
+   <property name="base.version" value="0.0.1-0"/>
+   <property name="scm.connection" value="scm:git://git.apache.org/videoOnCloud.git"/>
+   <property name="scm.developerConnection" value="scm:git://git.apache.org/videoOnCloud.git"/>
+   <property name="scm.url" value="http://git-wip-us.apache.org/repos/asf?p=videoOnCloud.git;a=tree"/>
+
+   <!-- directory details -->
+   <property name="basedir" value=".."/>
+   <property name="build.src" value="${basedir}/src"/>
+   <property name="build.src.java" value="${basedir}/src/java"/>
+   <property name="build.src.resources" value="${basedir}/src/resources"/>
+   <property name="build.lib" value="${basedir}/lib"/>
+   <property name="build.dir" value="${basedir}/build"/>
+   <property name="build.dir.lib" value="${basedir}/build/lib"/>
+   <property name="build.test.dir" value="${build.dir}/test"/>
+   <property name="build.classes" value="${build.dir}/classes"/>
+   <property name="javadoc.dir" value="${build.dir}/javadoc"/>
+   <property name="javadoc.jars.dir" value="${build.dir}/javadocs"/>
+   <property name="test.dir" value="${basedir}/test"/>
+   <property name="test.resources" value="${test.dir}/resources"/>
+   <property name="test.lib" value="${build.dir}/test/lib"/>
+   <property name="test.classes" value="${build.dir}/test/classes"/>
+   <property name="test.conf" value="${test.dir}/conf"/>
+   <property name="test.data" value="${test.dir}/data"/>
+   <property name="test.name" value="*Test"/>
+   <property name="test.methods" value=""/>
+   <property name="test.unit.src" value="${test.dir}/unit"/>
+   <property name="test.long.src" value="${test.dir}/long"/>
+   <property name="dist.dir" value="${build.dir}/dist"/>
+
+   <property name="source.version" value="1.7"/>
+   <property name="target.version" value="1.7"/>
+
+   <condition property="version" value="${base.version}">
+      <isset property="release"/>
+   </condition>
+   <property name="version" value="${base.version}-SNAPSHOT"/>
+   <property name="version.properties.dir" value="${build.src.resources}/org/apache/cassandra/config/" />
+   <property name="final.name" value="${ant.project.name}-${version}"/>
+
+    <!-- details of what version of Maven ANT Tasks to fetch -->
+    <property name="maven-ant-tasks.version" value="2.1.3" />
+    <property name="maven-ant-tasks.local" value="${user.home}/.m2/repository/org/apache/maven/maven-ant-tasks"/>
+    <property name="maven-ant-tasks.url" value="http://repo2.maven.org/maven2/org/apache/maven/maven-ant-tasks"/>
+    <!-- details of how and which Maven repository we publish to -->
+    <property name="maven.version" value="3.0.3" />
+    <condition property="maven-repository-url" value="https://repository.apache.org/service/local/staging/deploy/maven2">
+     <isset property="release"/>
+    </condition>
+    <condition property="maven-repository-id" value="apache.releases.https">
+     <isset property="release"/>
+     </condition>
+    <property name="maven-repository-url" value="https://repository.apache.org/content/repositories/snapshots"/>
+    <property name="maven-repository-id" value="apache.snapshots.https"/>
+
+    <property name="test.timeout" value="60000" />
+    <property name="test.long.timeout" value="600000" />
+
+    <!-- http://cobertura.sourceforge.net/ -->
+    <property name="cobertura.version" value="2.0.3"/>
+    <property name="cobertura.build.dir" value="${build.dir}/cobertura"/>
+    <property name="cobertura.report.dir" value="${cobertura.build.dir}/report"/>
+    <property name="cobertura.classes.dir" value="${cobertura.build.dir}/classes"/>
+    <property name="cobertura.datafile" value="${cobertura.build.dir}/cobertura.ser"/>
+
+    <condition property="maven-ant-tasks.jar.exists">
+        <available file="${build.dir}/maven-ant-tasks-${maven-ant-tasks.version}.jar" />
+    </condition>
+
+    <condition property="maven-ant-tasks.jar.local">
+        <available file="${maven-ant-tasks.local}/${maven-ant-tasks.version}/maven-ant-tasks-${maven-ant-tasks.version}.jar"/>
+    </condition>
+
+    <condition property="is.source.artifact">
+        <available file="${build.src.java}" type="dir" />
+    </condition>
+
+    <tstamp>
+        <format property="YEAR" pattern="yyyy"/>
+    </tstamp>
+
+    <!--
+         Add all the dependencies.
+    -->
+    <path id="maven-ant-tasks.classpath" path="${build.dir}/maven-ant-tasks-${maven-ant-tasks.version}.jar" />
+    <path id="luceneOnCloud.classpath">
+       <pathelement location="${cobertura.classes.dir}"/>
+       <pathelement location="${build.classes.main}" />
+       <pathelement location="${build.classes.thrift}" />
+       <fileset dir="${build.lib}">
+          <include name="**/*.jar" />
+          <exclude name="**/*-sources.jar"/>
+       </fileset>
+       <fileset dir="${build.dir.lib}">
+          <include name="**/*.jar" />
+          <exclude name="**/*-sources.jar"/>
+       </fileset>
+   </path>
+
+   <path id="cobertura.classpath">
+      <pathelement location="${cobertura.classes.dir}"/>
+   </path>
+
+   <macrodef name="create-javadoc">
+      <attribute name="destdir"/>
+      <element name="filesets"/>
+      <sequential>
+         <javadoc destdir="@{destdir}" author="true" version="true" use="true" 
+         	 windowtitle="${ant.project.name} API" classpathref="luceneOnCloud.classpath"
+             bottom="Copyright &amp;copy; ${YEAR} Jason Wee"
+             useexternalfile="yes"
+             maxmemory="256m">
+         <filesets/>
+      </javadoc>
+   </sequential>
+   </macrodef>
+
+   <!--
+        Setup the output directories.
+    -->
+   <target name="init">
+      <fail unless="is.source.artifact" message="Not a source artifact, stopping here." />
+      <mkdir dir="${build.classes.main}"/>
+      <mkdir dir="${build.classes.thrift}"/>
+      <mkdir dir="${test.lib}"/>
+      <mkdir dir="${test.classes}"/>
+      <mkdir dir="${build.src.gen-java}"/>
+      <mkdir dir="${build.dir.lib}"/>
+   </target>
+
+   <target name="clean" description="Remove all locally created artifacts">
+      <delete dir="${build.test.dir}" />
+      <delete dir="${build.classes}" />
+      <delete dir="${cobertura.classes.dir}" />
+      <delete dir="${build.src.gen-java}" />
+      <delete dir="${version.properties.dir}" />
+   </target>
+
+   <target depends="clean" name="cleanall"/>
+
+   <target name="realclean" depends="clean" description="Remove the entire build directory and all downloaded artifacts">
+      <delete dir="${build.dir}" />
+   </target>
+
+   <target name="test-run" depends="build" 
+      description="Run in test mode.  Not for production use!">
+      <java classname="org.apache.cassandra.service.CassandraDaemon" fork="true">
+         <classpath>
+            <path refid="cassandra.classpath"/>
+            <pathelement location="${test.conf}"/>
+         </classpath>
+         <jvmarg value="-Dstorage-config=${test.conf}"/>
+         <jvmarg value="-javaagent:${basedir}/lib/jamm-0.2.6.jar" />
+         <jvmarg value="-ea"/>
+      </java>
+    </target>
+
+    <target name="maven-ant-tasks-retrieve-build" depends="" unless="without.maven">
+      <artifact:dependencies pomRefId="build-deps-pom"
+                             filesetId="build-dependency-jars"
+                             sourcesFilesetId="build-dependency-sources"
+                             cacheDependencyRefs="true"
+                             dependencyRefsBuildFile="${build.dir}/build-dependencies.xml">
+          <remoteRepository refid="central"/>
+          <remoteRepository refid="apache"/>
+          <remoteRepository refid="java.net2"/>
+      </artifact:dependencies>
+      <artifact:dependencies pomRefId="coverage-deps-pom"
+                             pathId="cobertura.classpath">
+          <remoteRepository refid="central"/>
+      </artifact:dependencies>
+
+      <copy todir="${build.dir.lib}/jars">
+          <fileset refid="build-dependency-jars"/>
+          <mapper type="flatten"/>
+      </copy>
+      <copy todir="${build.dir.lib}/sources">
+          <fileset refid="build-dependency-sources"/>
+          <mapper type="flatten"/>
+      </copy>
+   </target>
+
+   <!--
+        The build target builds all the .class files
+   -->
+   <target name="build" depends="maven-ant-tasks-retrieve-build,build-project" description="Compile Cassandra classes"/>
+
+    <target depends="init"
+            name="build-project">
+        <echo message="${ant.project.name}: ${ant.file}"/>
+        <!-- Order matters! -->
+        <javac debug="true" debuglevel="${debuglevel}"
+               destdir="${build.classes.thrift}" includeantruntime="false" source="${source.version}" target="${target.version}">
+            <src path="${interface.thrift.dir}/gen-java"/>
+            <classpath refid="cassandra.classpath"/>
+        </javac>
+        <javac debug="true" debuglevel="${debuglevel}"
+               destdir="${build.classes.main}" includeantruntime="false" source="${source.version}" target="${target.version}">
+            <src path="${build.src.java}"/>
+            <src path="${build.src.gen-java}"/>
+          <compilerarg value="-XDignore.symbol.file"/>
+            <classpath refid="cassandra.classpath"/>
+        </javac>
+        <antcall target="createVersionPropFile"/>
+        <copy todir="${build.classes.main}">
+            <fileset dir="${build.src.resources}" />
+        </copy>
+    </target>
+
+  <!-- instruments the classes to later create code coverage reports -->
+   <target name="cobertura-instrument" depends="build,build-test">
+      <taskdef resource="tasks.properties">
+         <classpath refid="cobertura.classpath"/>
+         <classpath refid="cassandra.classpath"/>
+       </taskdef>
+
+      <delete file="${cobertura.datafile}"/>
+
+      <cobertura-instrument todir="${cobertura.classes.dir}" datafile="${cobertura.datafile}">
+      <ignore regex="ch.qos.logback.*"/>
+
+      <fileset dir="${build.classes.main}">
+         <include name="**/*.class"/>
+         <exclude name="**/*Test.class"/>
+         <exclude name="**/*TestCase.class"/>
+         <exclude name="**/test/*.class"/>
+         <!-- cobertura modifies the serialVersionUID of classes. Some of our unit tests rely on backward
+         wire compatability of these classes.  It was easier to exlude them from instrumentation than to
+         force their serialVersionUIDs. -->
+         <exclude name="**/*Token.class"/>
+         <exclude name="${cobertura.excludes}"/>
+      </fileset>
+
+      </cobertura-instrument>
+   </target>
+
+   <!-- create both html and xml code coverage reports -->
+  <target name="cobertura-report">
+     <cobertura-report format="html" destdir="${cobertura.report.dir}" srcdir="${build.src.java}"
+       datafile="${cobertura.datafile}"/>
+     <cobertura-report format="xml" destdir="${cobertura.report.dir}" srcdir="${build.src.java}"
+       datafile="${cobertura.datafile}"/>
+   </target>
+
+   <target name="codecoverage" depends="cobertura-instrument,test,cobertura-report" description="Create code coverage report"/>
+
+   <target name="stress-build" depends="build" description="build stress tool">
+      <mkdir dir="${stress.build.classes}" />
+        <javac debug="true" debuglevel="${debuglevel}" destdir="${stress.build.classes}" includeantruntime="true" source="${source.version}" target="${target.version}">
+            <src path="${stress.build.src}" />
+            <classpath>
+                <path refid="cassandra.classes" />
+                <path>
+                    <fileset dir="${build.lib}">
+                        <include name="**/*.jar" />
+                    </fileset>
+                    <fileset dir="${build.tools.lib}">
+                        <include name="**/*.jar" />
+                    </fileset>
+                </path>
+            </classpath>
+        </javac>
+   </target>
+
+    <target name="write-poms" unless="without.maven">
+      <antcall target="_write-poms" />
+   </target>
+
+   <!--
+        The jar target makes cassandra.jar output.
+   -->
+   <target name="jar"
+            depends="build, build-test, stress-build, write-poms"
+            description="Assemble Cassandra JAR files">
+      <mkdir dir="${build.classes.main}/META-INF" />
+      <mkdir dir="${build.classes.thrift}/META-INF" />
+      <copy file="LICENSE.txt"
+            tofile="${build.classes.main}/META-INF/LICENSE.txt"/>
+      <copy file="LICENSE.txt"
+            tofile="${build.classes.thrift}/META-INF/LICENSE.txt"/>
+      <copy file="NOTICE.txt"
+            tofile="${build.classes.main}/META-INF/NOTICE.txt"/>
+      <copy file="NOTICE.txt"
+            tofile="${build.classes.thrift}/META-INF/NOTICE.txt"/>
+
+      <!-- Main Jar -->
+      <jar jarfile="${build.dir}/${final.name}.jar">
+         <fileset dir="${build.classes.main}">
+            <exclude name="org/apache/cassandra/thrift/ITransportFactory*.class"/>
+            <exclude name="org/apache/cassandra/thrift/TFramedTransportFactory*.class" />
+         </fileset>
+         <manifest>
+            <!-- <section name="org/apache/cassandra/infrastructure"> -->
+            <attribute name="Implementation-Title" value="Cassandra"/>
+            <attribute name="Implementation-Version" value="${version}"/>
+            <attribute name="Implementation-Vendor" value="Apache"/>
+            <attribute name="Premain-Class" value="org.apache.cassandra.infrastructure.continuations.CAgent"/>
+            <attribute name="Class-Path" value="${ant.project.name}-clientutil-${version}.jar ${ant.project.name}-thrift-${version}.jar" />
+            <!-- </section> -->
+         </manifest>
+      </jar>
+   </target>
+
+   <!--
+        The javadoc-jar target makes cassandra-javadoc.jar output required for
+        publishing to Maven central repository.
+   -->
+   <target name="javadoc-jar" description="Assemble Cassandra JavaDoc JAR file">
+      <mkdir dir="${javadoc.jars.dir}"/>
+      <create-javadoc destdir="${javadoc.jars.dir}/thrift">
+         <filesets>
+            <fileset dir="${interface.thrift.dir}/gen-java" defaultexcludes="yes">
+            <include name="org/apache/**/*.java"/>
+            </fileset>
+         </filesets>
+      </create-javadoc>
+      <jar jarfile="${build.dir}/${ant.project.name}-thrift-${version}-javadoc.jar"
+      	basedir="${javadoc.jars.dir}/thrift"/>
+
+      <create-javadoc destdir="${javadoc.jars.dir}/main">
+         <filesets>
+         <fileset dir="${build.src.java}" defaultexcludes="yes">
+            <include name="org/apache/**/*.java"/>
+         </fileset>
+         <fileset dir="${build.src.gen-java}" defaultexcludes="yes">
+            <include name="org/apache/**/*.java"/>
+         </fileset>
+         </filesets>
+      </create-javadoc>
+      <jar jarfile="${build.dir}/${final.name}-javadoc.jar"
+           basedir="${javadoc.jars.dir}/main"/>
+      <create-javadoc destdir="${javadoc.jars.dir}/clientutil">
+         <filesets>
+            <fileset dir="${build.src.java}" defaultexcludes="yes">
+            <include name="org/apache/cassandra/serializers/*" />
+            <include name="org/apache/cassandra/utils/ByteBufferUtil*.java" />
+            <include name="org/apache/cassandra/utils/Hex.java" />
+            <include name="org/apache/cassandra/utils/UUIDGen*.java" />
+            </fileset>
+         </filesets>
+      </create-javadoc>
+      <jar jarfile="${build.dir}/${ant.project.name}-clientutil-${version}-javadoc.jar"
+           basedir="${javadoc.jars.dir}/clientutil"/>
+      <!-- javadoc task always rebuilds so might as well remove the generated
+             docs to prevent being pulled into the distribution by accident -->
+      <delete quiet="true" dir="${javadoc.jars.dir}"/>
+   </target>
+
+   <!--
+        The sources-jar target makes cassandra-sources.jar output required for
+        publishing to Maven central repository.
+    -->
+   <target name="sources-jar" depends="init" description="Assemble Cassandra
+      Sources JAR file">
+      <jar jarfile="${build.dir}/${ant.project.name}-thrift-${version}-sources.jar">
+         <fileset dir="${interface.thrift.dir}/gen-java" defaultexcludes="yes">
+         <include name="org/apache/**/*.java"/>
+         </fileset>
+      </jar>
+      <jar jarfile="${build.dir}/${final.name}-sources.jar">
+         <fileset dir="${build.src.java}" defaultexcludes="yes">
+         <include name="org/apache/**/*.java"/>
+         </fileset>
+         <fileset dir="${build.src.gen-java}" defaultexcludes="yes">
+            <include name="org/apache/**/*.java"/>
+         </fileset>
+      </jar>
+      <jar 
+      	jarfile="${build.dir}/${ant.project.name}-clientutil-${version}-sources.jar">
+         <fileset dir="${build.src.java}" defaultexcludes="yes">
+         <include name="org/apache/cassandra/serializers/*" />
+         <include name="org/apache/cassandra/utils/ByteBufferUtil*.java" />
+         <include name="org/apache/cassandra/utils/Hex.java" />
+         <include name="org/apache/cassandra/utils/UUIDGen*.java" />
+         </fileset>
+      </jar>
+   </target>
+
+   <target name="build-test" depends="build" description="Compile test classes">
+      <javac debug="true" debuglevel="${debuglevel}"
+                  destdir="${test.classes}"
+                  includeantruntime="false"
+                  source="${source.version}"
+                  target="${target.version}">
+         <classpath>
+            <path refid="cassandra.classpath"/>
+         </classpath>
+         <src path="${test.unit.src}"/>
+         <src path="${test.long.src}"/>
+         <src path="${test.pig.src}"/>
+      </javac>
+
+      <!-- Non-java resources needed by the test suite -->
+      <copy todir="${test.classes}">
+         <fileset dir="${test.resources}"/>
+      </copy>
+   </target>
+
+   <!-- <target name="test" depends="build-test" description="Execute unit tests"> -->
+   <target name="test" description="Execute unit tests">
+      <!--
+      <testmacro suitename="unit" inputdir="${test.unit.src}" exclude="**/pig/*.java" timeout="${test.timeout}">
+         <jvmarg value="-Dlegacy-sstable-root=${test.data}/legacy-sstables"/>
+         <jvmarg value="-Dcorrupt-sstable-root=${test.data}/corrupt-sstables"/>
+         <jvmarg value="-Dmigration-sstable-root=${test.data}/migration-sstables"/>
+         <jvmarg value="-Dcassandra.ring_delay_ms=1000"/>
+         <jvmarg value="-Dcassandra.tolerate_sstable_size=true"/>
+      </testmacro>
+      <fileset dir="${test.unit.src}">
+      <exclude name="**/pig/*.java" />
+      </fileset>
+      -->
+   </target>
+
+   <target name="javadoc" depends="init" description="Create javadoc">
+      <create-javadoc destdir="${javadoc.dir}">
+         <filesets>
+            <fileset dir="${build.src.java}" defaultexcludes="yes">
+               <include name="org/apache/**/*.java"/>
+            </fileset>
+            <fileset dir="${interface.thrift.gen-java}" defaultexcludes="yes">
+               <include name="org/apache/**/*.java"/>
+            </fileset>
+         </filesets>
+      </create-javadoc>
+   </target>
+	
+</project>
