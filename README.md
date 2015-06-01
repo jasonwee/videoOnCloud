@@ -23,6 +23,7 @@ Contributing to voc
 ======================
 
 [![Jenkins Build Status](https://jenkins.weetech.co/job/videoOnCloud%20Master/badge/icon)](https://jenkins.weetech.co/job/videoOnCloud%20Master/)
+[![Travis Build Status](https://travis-ci.org/jasonwee/videoOnCloud.svg?branch=master)](https://travis-ci.org/jasonwee/videoOnCloud)
 
 Want to learn and contribute back to this project? Send me a message and I will
 guide you. :-)
