@@ -1,10 +1,11 @@
 package play.learn.lucene.termrangequery;
 
+import java.io.File;
+import java.io.FileFilter;
 import java.io.IOException;
 
 import org.apache.lucene.document.Document;
 import org.apache.lucene.queryparser.classic.ParseException;
-import org.apache.lucene.search.NumericRangeQuery;
 import org.apache.lucene.search.Query;
 import org.apache.lucene.search.ScoreDoc;
 import org.apache.lucene.search.TermRangeQuery;
@@ -22,7 +23,7 @@ public class LearnTermRangeQuery {
 		
 		try {
 			tester = new LearnTermRangeQuery();
-			//tester.createIndex();
+			tester.createIndex();
 			tester.searchUsingTermRangeQuery("record2.txt", "record6.txt");
 		} catch (Exception e) {
 			
@@ -34,7 +35,7 @@ public class LearnTermRangeQuery {
 		int numIndexed;
 		long startTime = System.currentTimeMillis();
 		
-		numIndexed = indexer.createIndex(dataDir, new TextFileFilter());
+		numIndexed = indexer.createIndex(dataDir, x -> {System.out.println(x);return x.getName().toLowerCase().endsWith("txt");});
 		long endTime = System.currentTimeMillis();
 		indexer.close();
 		System.out.println(numIndexed+" File indexed, time taken: " +(endTime-startTime)+" ms");
@@ -46,7 +47,6 @@ public class LearnTermRangeQuery {
 		long startTime = System.currentTimeMillis();
 		// create the term query object
 		Query query = TermRangeQuery.newStringRange(LuceneConstants.FILE_NAME, searchQueryMin, searchQueryMax, true, false);
-		// NumericRangeQuery query = NumericRangeQuery.newIntRange(LuceneConstants.FILE_NAME, 2, 6, true, false);
 		
 		// do the search
 		TopDocs hits = searcher.search(query);
