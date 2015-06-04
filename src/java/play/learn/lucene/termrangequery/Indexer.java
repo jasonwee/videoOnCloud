@@ -3,17 +3,19 @@ package play.learn.lucene.termrangequery;
 import java.io.File;
 import java.io.FileFilter;
 import java.io.IOException;
+import java.nio.file.Files;
 
 import org.apache.lucene.analysis.standard.StandardAnalyzer;
 import org.apache.lucene.document.Document;
 import org.apache.lucene.document.Field;
+import org.apache.lucene.document.FieldType;
 import org.apache.lucene.document.StringField;
+import org.apache.lucene.index.FieldInfo.IndexOptions;
 import org.apache.lucene.index.IndexWriter;
 import org.apache.lucene.index.IndexWriterConfig;
 import org.apache.lucene.store.Directory;
 import org.apache.lucene.store.FSDirectory;
 import org.apache.lucene.util.Version;
-import org.testng.reporters.Files;
 
 public class Indexer {
 	
@@ -35,16 +37,26 @@ public class Indexer {
 		Document document = new Document();
 		
 		// index file contents
-		// Files.readFile  <- java8 !!
-		Field contentField = new StringField(LuceneConstants.CONTENTS, Files.readFile(file), Field.Store.YES);
+
 		// index file name
 		Field fileNameField = new StringField(LuceneConstants.FILE_NAME, file.getName(), Field.Store.YES);
 		// index file path
 		Field filePathField = new StringField(LuceneConstants.FILE_PATH, file.getCanonicalPath(), Field.Store.YES);
+		//Field contentField = new TextField(LuceneConstants.CONTENTS, Files.newBufferedReader(file.toPath()), Store.YES);
 		
-		document.add(contentField);
-		document.add(fileNameField);
+		FieldType myFieldType = new FieldType();
+		myFieldType.setIndexed(true);
+		myFieldType.setOmitNorms(false);
+		myFieldType.setIndexOptions(IndexOptions.DOCS_AND_FREQS_AND_POSITIONS_AND_OFFSETS);
+		myFieldType.setStored(true);
+		myFieldType.setTokenized(true);
+		Field myField = new Field(LuceneConstants.CONTENTS, String.join("", Files.readAllLines(file.toPath())), myFieldType);
+		
+		
 		document.add(filePathField);
+		document.add(fileNameField);
+		//document.add(contentField);
+		document.add(myField);
 		
 		return document;
 	}
