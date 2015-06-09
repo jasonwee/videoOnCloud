@@ -14,6 +14,12 @@ import javafx.scene.shape.Rectangle;
 import javafx.stage.Stage;
 import javafx.util.Duration;
 
+/**
+ * https://docs.oracle.com/javase/8/javafx/scene-graph-tutorial/scenegraph.htm
+ * 
+ * @author jason
+ *
+ */
 public class LearnCreateFrame extends Application {
 	
 	@Override
