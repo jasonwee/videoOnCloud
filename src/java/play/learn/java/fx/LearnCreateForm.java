@@ -20,6 +20,7 @@ import javafx.stage.Stage;
 
 /**
  * https://docs.oracle.com/javase/8/javafx/get-started-tutorial/form.htm
+ * https://docs.oracle.com/javase/8/javafx/get-started-tutorial/css.htm
  * 
  * @author jason
  *
@@ -37,7 +38,8 @@ public class LearnCreateForm extends Application {
 		grid.setPadding(new Insets(25, 25, 25, 25));
 		
 		Text sceneTitle = new Text("Welcome");
-		sceneTitle.setFont(Font.font("Tahoma", FontWeight.NORMAL, 20));
+		//sceneTitle.setFont(Font.font("Tahoma", FontWeight.NORMAL, 20));
+		sceneTitle.setId("welcome-text");
 		grid.add(sceneTitle, 0, 0, 2, 1);
 		
 		Label userName = new Label("User Name:");
@@ -68,13 +70,15 @@ public class LearnCreateForm extends Application {
 
 			@Override
 			public void handle(ActionEvent e) {
-				actionTarget.setFill(Color.FIREBRICK);
+				//actionTarget.setFill(Color.FIREBRICK);
+				actionTarget.setId("actionTarget");
 				actionTarget.setText("Sign in button pressed");
 			}
 		});
 		
 		Scene scene = new Scene(grid, 300, 275);
 		stage.setScene(scene);
+		scene.getStylesheets().add(LearnCreateForm.class.getResource("Login.css").toExternalForm());
 		stage.show();
 	}
 
