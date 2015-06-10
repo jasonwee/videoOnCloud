@@ -419,6 +419,7 @@
       -->
    </target>
 
+   <!-- http://www.oracle.com/technetwork/articles/java/index-137868.html -->
    <target name="javadoc" depends="init" description="Create javadoc">
       <create-javadoc destdir="${javadoc.dir}">
          <filesets>
