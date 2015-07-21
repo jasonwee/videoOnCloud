@@ -69,7 +69,7 @@ public class Blade extends Path {
 			
 			@Override
 			protected double computeValue() {
-				return (h / 4) + ((cos(phase.get()) + (x + 400.) * PI / 1600 + rand) + 1) / 2.) * (-3 / 4) * h;
+				return (h / 4) + ((cos(phase.get() + (x + 400.) * PI / 1600 + rand) + 1) / 2.) * (-3 / 4) * h;
 			}
 		});
 	}
