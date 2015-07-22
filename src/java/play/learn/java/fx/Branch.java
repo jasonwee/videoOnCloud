@@ -36,26 +36,26 @@ public class Branch extends Group {
 		SimpleDoubleProperty locAngle = new SimpleDoubleProperty(0);
 		SimpleDoubleProperty globalAngle = new SimpleDoubleProperty(90);
 		globalAngle.bind(locAngle.add(globalAngle.get()));
-		double transY = 0;
+		double transY = 0;  // place of beginning child branch
 		switch (type) {
-		case TOP:
+		case TOP:  // creates top branch
 			transY = parentBranch.length;
 			length = parentBranch.length * 0.8;
 			locAngle.set(getRandom(10));
 			break;
-		case LEFT:
-		case RIGHT:
+		case LEFT: // create left branch
+		case RIGHT:  // create right branch
 			transY = parentBranch.length - getGaussianRandom(0, parentBranch.length, parentBranch.length / 10, parentBranch.length / 10);
 			locAngle.set(getGaussianRandom(35, 10) * (Type.LEFT == type ? 1 : -1));
 			if ((0 > globalAngle.get() || globalAngle.get() > 180) && depth < 4 ) {
-				length = parentBranch.length * getGaussianRandom(0.3, 0.1);
+				length = parentBranch.length * getGaussianRandom(0.3, 0.1); // branches pointed down are shorter
 			} else {
 				length = parentBranch.length * 0.6;
 			}
 			break;
 		}
 		setTranslateY(transY);
-		getTransforms().add(new Rotate(locAngle.get(), 0 , 0));
+		getTransforms().add(new Rotate(locAngle.get(), 0 , 0)); // rotate branch to local angle relative to parent branch
 		globalH = getTranslateY() * cos(PI / 2 - globalAngle.get() * PI / 180) + parentBranch.globalH;
 		setBranchStyle(depth);
 		addChildToParent(parentBranch, this);
@@ -68,7 +68,7 @@ public class Branch extends Group {
 			base.setStrokeLineJoin(StrokeLineJoin.ROUND);
 			base.setStrokeLineCap(StrokeLineCap.ROUND);
 		}
-		base.setStrokeWidth(0);
+		base.setStrokeWidth(0); // trick to hide lines
 	}
 
 }
