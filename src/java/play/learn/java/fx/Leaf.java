@@ -1,8 +1,5 @@
 package play.learn.java.fx;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Ellipse;
 
@@ -11,9 +8,6 @@ import static java.lang.Math.random;
 public class Leaf extends Ellipse {
 	
 	public final Color AUTUMN_COLOR;
-	
-	private final int N = 5;
-	private List<Ellipse> petals = new ArrayList<>( 2 * N + 1);
 	
 	public Leaf(Branch parentBranch) {
 		super(0, parentBranch.length / 2., 2, parentBranch.length / 2.);
