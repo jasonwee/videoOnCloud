@@ -1,7 +1,5 @@
 package play.learn.java.fx;
 
-import java.util.Random;
-
 import javafx.beans.binding.DoubleBinding;
 import javafx.beans.property.SimpleDoubleProperty;
 import javafx.scene.paint.Color;
@@ -24,11 +22,11 @@ public class Blade extends Path {
 	
 	public final Color SPRING_COLOR = Color.color(random() * 0.5, random() * 0.5 + 0.5, 0.).darker();
 	public final Color AUTUMN_COLOR = Color.color(random() * 0.4 + 0.3, random() * 0.1 + 0.4, random() * 0.2);
-	private final static double width = 3;
-	private double x = RandomUtil.getRandom(170);
-	private double y = RandomUtil.getRandom(20) + 20;
-	private double h = (50 * 1.5 - y /2 ) * RandomUtil.getRandom(0.3);
-	public SimpleDoubleProperty phase = new SimpleDoubleProperty();
+	private final static double width = 3; // width of blade
+	private double x = RandomUtil.getRandom(170); // width of grass ground
+	private double y = RandomUtil.getRandom(20) + 20;  // height of grass ground
+	private double h = (50 * 1.5 - y /2 ) * RandomUtil.getRandom(0.3); // height of blade
+	public SimpleDoubleProperty phase = new SimpleDoubleProperty();  // phase of balde movement
 	
 	public Blade() {
 		getElements().add(new MoveTo(0, 0));
@@ -61,7 +59,7 @@ public class Blade extends Path {
 		
 		curve1.xProperty().bind(new DoubleBinding() {
 			
-			final double rand = RandomUtil.getRandom(PI / 4);
+			final double rand = RandomUtil.getRandom(PI / 4);  // to seprate blade movement
 			
 			{
 				super.bind(phase);
@@ -69,6 +67,7 @@ public class Blade extends Path {
 			
 			@Override
 			protected double computeValue() {
+				// calculating shift x for top of blade
 				return (h / 4) + ((cos(phase.get() + (x + 400.) * PI / 1600 + rand) + 1) / 2.) * (-3 / 4) * h;
 			}
 		});
