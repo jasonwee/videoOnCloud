@@ -26,7 +26,8 @@ public class TreeGenerator {
 		addChildToParent(content, tree);
 		
 		Branch root = new Branch();
-		addChildToParent(tree, root); // root branch
+		addChildToParent(tree, root);
+		tree.generations.get(0).add(root); //root branch
 		
 		for (int i = 1; i < treeDepth; i++) {
 			for (Branch parentBranch : tree.generations.get(i - 1)) {
