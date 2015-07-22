@@ -216,7 +216,7 @@ public class Animator implements Runnable {
 		return new SequentialTransition(replaceFakeWithSource, 
 				// fall down
 				fallDown,
-				// dissappear
+				// disappear
 				disappear);
 	}
 	
