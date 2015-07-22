@@ -22,7 +22,7 @@ import static java.lang.Math.*;
  */
 public class Blade extends Path {
 	
-	public final Color SPRINT_COLOR = Color.color(random() * 0.5, random() * 0.5 + 0.5, 0.).darker();
+	public final Color SPRING_COLOR = Color.color(random() * 0.5, random() * 0.5 + 0.5, 0.).darker();
 	public final Color AUTUMN_COLOR = Color.color(random() * 0.4 + 0.3, random() * 0.1 + 0.4, random() * 0.2);
 	private final static double width = 3;
 	private double x = RandomUtil.getRandom(170);
