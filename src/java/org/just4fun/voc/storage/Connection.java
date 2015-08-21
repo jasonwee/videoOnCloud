@@ -4,6 +4,12 @@ import java.io.IOException;
 
 import org.just4fun.voc.file.BinaryFile;
 
+/**
+ * 
+ * @author jason
+ * @since 1.0
+ *
+ */
 public interface Connection {
 	
 	public boolean storeBinary(String name, BinaryFile file) throws IOException;
