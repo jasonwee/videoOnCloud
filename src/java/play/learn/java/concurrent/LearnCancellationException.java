@@ -5,6 +5,7 @@ import java.util.concurrent.CancellationException;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
+import java.util.concurrent.RejectedExecutionException;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.TimeoutException;
 import java.util.concurrent.FutureTask;
@@ -45,11 +46,17 @@ public class LearnCancellationException {
 				if(s !=null){
 					System.out.println("FutureTask2 output="+s);
 				}
+
+				// uncomment for RejectedExecutionException
+				//executor.shutdown();
+				//executor.execute(futureTask2);
 			} catch (CancellationException e) {
 				e.printStackTrace();
 			} catch (InterruptedException | ExecutionException e) {
 				e.printStackTrace();
 			} catch(TimeoutException e){
+				e.printStackTrace();
+			} catch (RejectedExecutionException e) {
 				e.printStackTrace();
 			}
 		}
