@@ -68,6 +68,14 @@ public class LearnConcurrentClassP3 {
 		keys.forEach((s) -> System.out.println(s));
 		System.out.println(chm.toString());
 		
+		ConcurrentHashMap.KeySetView<String, Boolean> keys1 = chm.newKeySet();
+		System.out.println(keys1.isEmpty());
+		System.out.println(keys1.toString());
+		keys1.add("four");
+		
+		keys1.forEach((s) -> System.out.println(s));
+		System.out.println(chm.toString());
+		
 		// --------------------
 		ConcurrentLinkedDeque<Integer> cldq = new ConcurrentLinkedDeque<Integer>(); 
 		cldq.add(1);
@@ -156,6 +164,7 @@ public class LearnConcurrentClassP3 {
 		ExecutorService executorService = Executors.newFixedThreadPool(1);
 		CompletionService<Integer> longRunningCompletionService = new ExecutorCompletionService<Integer>(executorService);
 		longRunningCompletionService.submit(() -> {System.out.println("done"); return 1;});
+		longRunningCompletionService.take();
 		executorService.shutdown();
 		
 		// --------------------
@@ -179,8 +188,8 @@ public class LearnConcurrentClassP3 {
 	
 	
 	private static void doSomethingElse() throws InterruptedException {
+		Thread.sleep(3000);
 		System.out.println(Thread.currentThread().getName() + " doing something else");
-		Thread.sleep(1000);
 	}
 
 
@@ -199,7 +208,12 @@ public class LearnConcurrentClassP3 {
 		     } catch (InterruptedException ex) {} // return;
 		   }
 
-		   void doWork() { System.out.println(Thread.currentThread().getName() + " doing work"); }
+		   void doWork() { System.out.println(Thread.currentThread().getName() + " doing work"); try {
+			Thread.sleep(200);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}}
 		 }
 
 }
