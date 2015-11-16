@@ -4,9 +4,10 @@ import java.io.IOException;
 import java.net.URL;
 import java.net.URLConnection;
 import java.util.Arrays;
-import java.util.List;
 import java.util.concurrent.ForkJoinPool;
 import java.util.concurrent.ForkJoinPool.ForkJoinWorkerThreadFactory;
+import java.util.concurrent.ArrayBlockingQueue;
+import java.util.concurrent.BlockingQueue;
 import java.util.concurrent.ForkJoinTask;
 import java.util.concurrent.ForkJoinWorkerThread;
 import java.util.concurrent.Future;
@@ -21,6 +22,9 @@ import java.util.concurrent.RecursiveTask;
 import java.util.concurrent.ScheduledThreadPoolExecutor;
 import java.util.concurrent.Semaphore;
 import java.util.concurrent.SynchronousQueue;
+import java.util.concurrent.ThreadLocalRandom;
+import java.util.concurrent.ThreadPoolExecutor;
+import java.util.concurrent.TimeUnit;
 
 public class LearnConcurrentClassP4 {
 
@@ -129,6 +133,52 @@ public class LearnConcurrentClassP4 {
 		a.interrupt();
 		b.interrupt();
 		
+		// --------------------
+		// ThreadLocalRandom
+		ThreadLocalRandom tlr = ThreadLocalRandom.current();
+		System.out.println(tlr.nextInt());
+		
+		// --------------------
+		// ThreadPoolExecutor
+		BlockingQueue<Runnable> blockingQueue = new ArrayBlockingQueue<Runnable>(4);
+		ThreadPoolExecutor tpe = new ThreadPoolExecutor(1, 1, 1, TimeUnit.SECONDS, blockingQueue);
+		
+		// --------------------
+		//ThreadPoolExecutor.AbortPolicy
+		ThreadPoolExecutor.AbortPolicy ap = new ThreadPoolExecutor.AbortPolicy();
+		try {
+		ap.rejectedExecution(() -> System.out.println("abort"), tpe);
+		} catch (Exception e) {
+			
+		}
+		
+		// --------------------
+		//ThreadPoolExecutor.CallerRunsPolicy
+		ThreadPoolExecutor.CallerRunsPolicy crp = new ThreadPoolExecutor.CallerRunsPolicy();
+		try {
+		crp.rejectedExecution(() -> System.out.println("run"), tpe);
+		} catch (Exception e) {
+			
+		}
+		
+		// --------------------
+		//ThreadPoolExecutor.DiscardOldestPolicy
+		ThreadPoolExecutor.DiscardOldestPolicy dop = new ThreadPoolExecutor.DiscardOldestPolicy();
+		try {
+		dop.rejectedExecution(() -> System.out.println("abort"), tpe);
+		} catch (Exception e) {
+			
+		}
+		
+		// --------------------
+		//ThreadPoolExecutor.DiscardPolicy
+		ThreadPoolExecutor.DiscardPolicy dp = new ThreadPoolExecutor.DiscardPolicy();
+		try {
+		dp.rejectedExecution(() -> System.out.println("discard"), tpe);
+		} catch (Exception e) {
+			
+		}
+		tpe.shutdown();
 	}
 	
 	static void testPhaser(final Phaser phaser, final int sleepTime) {
