@@ -1,11 +1,15 @@
 package play.learn.java.concurrent;
 
+import java.io.IOException;
+import java.net.URL;
+import java.net.URLConnection;
 import java.util.Arrays;
 import java.util.List;
 import java.util.concurrent.ForkJoinPool;
 import java.util.concurrent.ForkJoinPool.ForkJoinWorkerThreadFactory;
 import java.util.concurrent.ForkJoinTask;
 import java.util.concurrent.ForkJoinWorkerThread;
+import java.util.concurrent.Future;
 import java.util.concurrent.FutureTask;
 import java.util.concurrent.LinkedBlockingDeque;
 import java.util.concurrent.LinkedBlockingQueue;
@@ -14,6 +18,9 @@ import java.util.concurrent.Phaser;
 import java.util.concurrent.PriorityBlockingQueue;
 import java.util.concurrent.RecursiveAction;
 import java.util.concurrent.RecursiveTask;
+import java.util.concurrent.ScheduledThreadPoolExecutor;
+import java.util.concurrent.Semaphore;
+import java.util.concurrent.SynchronousQueue;
 
 public class LearnConcurrentClassP4 {
 
@@ -93,6 +100,34 @@ public class LearnConcurrentClassP4 {
 		RecursiveTask<Integer> fibo = new Fibonacci(10);
 		fibo.invoke();
 		System.out.println(fibo.get());
+
+		// --------------------
+		ScheduledThreadPoolExecutor stpe = new ScheduledThreadPoolExecutor(10);
+		Future<Integer> total = stpe.submit(new Summer(88,99));
+		System.out.println(total.get());
+		stpe.shutdown();
+		
+		// --------------------
+		//Semaphore
+		// try put 2, blocking forever.
+		ConnectionLimiter cl = new ConnectionLimiter(3);
+		URLConnection conn = cl.acquire(new URL("http://www.google.com"));
+		conn = cl.acquire(new URL("http://www.yahoo.com"));
+		conn = cl.acquire(new URL("http://www.youtube.com"));
+		cl.release(conn);
+		
+		// --------------------
+		// SynchronousQueue
+		final SynchronousQueue<String> queue = new SynchronousQueue<String>();
+		Thread a = new Thread(new QueueProducer(queue));
+		a.start();
+		Thread b = new Thread(new QueueConsumer(queue));
+		b.start();
+		
+		Thread.sleep(1000);
+		
+		a.interrupt();
+		b.interrupt();
 		
 	}
 	
@@ -174,6 +209,72 @@ public class LearnConcurrentClassP4 {
 		}
 	}
 	
+	static class ConnectionLimiter {
+		private final Semaphore semaphore;
+		
+		private ConnectionLimiter(int max) {
+			semaphore = new Semaphore(max);
+		}
+		
+		public URLConnection acquire(URL url) throws IOException, InterruptedException {
+			semaphore.acquire();
+			return url.openConnection();
+		}
+		
+		public void release(URLConnection conn) {
+			try {
+				// blahblah
+			} finally {
+				semaphore.release();
+			}
+		}
+	}
+	
+	static class QueueProducer implements Runnable {
+		
+		private SynchronousQueue<String> queue;
 
+		public QueueProducer(SynchronousQueue<String> queue) {
+			this.queue = queue;
+		}
+
+		@Override
+		public void run() {
+			String event = "SYNCHRONOUS_EVENT";
+			String another_event = "ANOTHER_EVENT";
+			
+			try {
+				queue.put(event);
+				System.out.printf("[%s] published event : %s %n", Thread.currentThread().getName(), event);
+				
+				queue.put(another_event);
+				System.out.printf("[%s] published event : %s %n", Thread.currentThread().getName(), another_event);
+			} catch (InterruptedException e) {
+			}
+			
+		}
+		
+	}
+	
+	static class QueueConsumer implements Runnable {
+		
+		private SynchronousQueue<String> queue;
+
+		public QueueConsumer(SynchronousQueue<String> queue) {
+			this.queue = queue;
+		}
+
+		@Override
+		public void run() {
+			try {
+				String event = queue.take();
+				// thread will block here
+				System.out.printf("[%s] consumed event : %s %n", Thread.currentThread().getName(), event);
+			} catch (InterruptedException e) {
+			}
+			
+		}
+		
+	}
 
 }
