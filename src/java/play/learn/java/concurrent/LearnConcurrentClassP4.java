@@ -42,14 +42,11 @@ public class LearnConcurrentClassP4 {
 		// --------------------
 		// ForkJoinWorkerThread
 		ForkJoinWorkerThreadFactory customFactory = new ForkJoinWorkerThreadFactory() {
-
 			@Override
 			public ForkJoinWorkerThread newThread(ForkJoinPool pool) {
 				return null;
 			}
-			
 		};
-		
 		
 		// --------------------
 		// FutureTask
@@ -96,8 +93,18 @@ public class LearnConcurrentClassP4 {
 		
 		// --------------------
 		//RecursiveAction
-		long[] array = {1,2,3,4,5,6,7,8,9};
+		long[] array = {1,3,2,5,4,9,5,7,8};
 		RecursiveAction ar = new SortTask(array);
+		ar.invoke();
+		System.out.println("array " + array[0]);
+		System.out.println("array " + array[1]);
+		System.out.println("array " + array[2]);
+		System.out.println("array " + array[3]);
+		System.out.println("array " + array[4]);
+		System.out.println("array " + array[5]);
+		System.out.println("array " + array[6]);
+		System.out.println("array " + array[7]);
+		System.out.println("array " + array[8]);
 		
 		// --------------------
 		//RecursiveTask
