@@ -39,6 +39,7 @@ public class ConnectionDatastaxDriver implements Connection {
 	
 	private Cluster cluster;
 	private Session session;
+	private QueryBuilder queryBuilder;
 	
 	private String keyspace = null;
 	private String columnFamily = null;
@@ -54,9 +55,9 @@ public class ConnectionDatastaxDriver implements Connection {
 		this.columnFamily = config.getColumnFamily();
 		this.blockSize = config.getBlockSize();
 		
-		List<InetSocketAddress> whiteList = Arrays.asList(new InetSocketAddress("192.168.0.2", 9042));
+		List<InetSocketAddress> whiteList = Arrays.asList(new InetSocketAddress("2001:e68:5424:ef50:224:1ff:fed7:82ea", 9042));
 		WhiteListPolicy wlp = new WhiteListPolicy(new RoundRobinPolicy(), whiteList);
-		cluster = Cluster.builder().addContactPoint("192.168.0.2").withLoadBalancingPolicy(wlp).build();
+		cluster = Cluster.builder().addContactPoint("2001:e68:5424:ef50:224:1ff:fed7:82ea").withLoadBalancingPolicy(wlp).build();
 		
 		if (logger.isDebugEnabled()) {
 			Metadata metadata = cluster.getMetadata();
@@ -67,6 +68,7 @@ public class ConnectionDatastaxDriver implements Connection {
 			}
 		}
 		session = cluster.connect();
+		queryBuilder = new QueryBuilder(cluster);
 		
 		maybeCreateSchema();
 	}
@@ -78,7 +80,7 @@ public class ConnectionDatastaxDriver implements Connection {
 	public void maybeCreateSchema() {
 		String statement = null;
 				
-		statement = String.format("select count(1) as count from system.schema_keyspaces where keyspace_name = '%s';", keyspace);
+		statement = String.format("select count(1) as count from system_schema.keyspaces where keyspace_name = '%s';", keyspace);
 		ResultSet rs = session.execute(statement);
 		List<Row> rows = rs.all();
 		if (rows.size() != 1) {
@@ -91,7 +93,7 @@ public class ConnectionDatastaxDriver implements Connection {
 			session.execute(statement);
 		}
 		
-		statement = String.format("select count(1) from system.schema_columnfamilies where keyspace_name = '%s' and columnfamily_name = '%s';", keyspace, columnFamily);
+		statement = String.format("select count(1) from system_schema.tables where keyspace_name = '%s' and 	table_name = '%s';", keyspace, columnFamily);
 		rs = session.execute(statement);
 		rows = rs.all();
 		if (rows.size() != 1) {
@@ -108,14 +110,15 @@ public class ConnectionDatastaxDriver implements Connection {
 	// CRUD
 	
 	public void update(String key, String columnName, String columnValue) {
-		Update update = QueryBuilder.update(keyspace, columnFamily);
+		
+		Update update = queryBuilder.update(keyspace, columnFamily);
 		update.with(set("value", columnValue));
 		update.where(eq("key", key)).and(eq("column1", columnName));
 		session.execute(update);
 	}
 	
 	public void update(String key, byte[] columnName, byte[] columnValue) {
-		Update update = QueryBuilder.update(keyspace, columnFamily);
+		Update update = queryBuilder.update(keyspace, columnFamily);
 		update.with(set("value", ByteBuffer.wrap(columnValue)));
 		update.where(eq("key", key)).and(eq("column1", ByteBuffer.wrap(columnName)));
 		session.execute(update);
@@ -131,13 +134,13 @@ public class ConnectionDatastaxDriver implements Connection {
 	}
 	
 	public void delete(String key, String columnName) {
-		Delete delete = QueryBuilder.delete().from(keyspace, columnFamily);
+		Delete delete = queryBuilder.delete().from(keyspace, columnFamily);
 		delete.where(eq("key", key)).and(eq("column1",columnName));
 		session.execute(delete);
 	}
 	
 	public void delete(String key) {
-		Delete delete = QueryBuilder.delete().from(keyspace, columnFamily);
+		Delete delete = queryBuilder.delete().from(keyspace, columnFamily);
 		delete.where(eq("key", key));
 		session.execute(delete);
 	}
