@@ -6,6 +6,7 @@ import java.util.List;
 public class CassandraClientConfiguration {
 
 	private List<String> hosts = new ArrayList<String>();
+	private List<String> ipv6Hosts = new ArrayList<String>();
 
 	private String clusterName = null;
 
@@ -16,10 +17,11 @@ public class CassandraClientConfiguration {
 	private int blockSize;
 
 	public CassandraClientConfiguration() {
-		this.clusterName = "just4fun";
+		this.clusterName = "just6fun";
 		this.keyspace = "jw_schema1";
 		this.columnFamily = "video";
 		this.hosts.add("192.168.0.2:9160");
+		this.ipv6Hosts.add("2001:e68:5424:ef50:224:1ff:fed7:82ea");
 		this.blockSize = 16384;
 	}
 
