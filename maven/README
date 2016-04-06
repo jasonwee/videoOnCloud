@@ -1,0 +1,19 @@
+start a mvn project
+$ mvn archetype:generate -DgroupId=com.yourorganization -DartifactId=my-application1 -DarchetypeArtifacId=maven-archetype-quickstart -DinteractiveMode=falsea
+
+compile the project
+$ mvn compile
+
+test the project
+$ mvn test
+
+package the project
+$ mvn package
+
+to install the package, into your home .m2 directory
+$ mvn install
+
+maven eclipse  
+$ mvn eclipse:eclipse 
+
+read more here https://community.oracle.com/docs/DOC-995861
