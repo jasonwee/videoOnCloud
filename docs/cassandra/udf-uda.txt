@@ -1,0 +1,83 @@
+try user defined function and user defined aggregate on cassandra 3.0.0 using
+this blog. http://christopher-batey.blogspot.my/2015/05/cassandra-aggregates-min-max-avg-group.html
+
+1. create table
+cqlsh:jw_schema1> CREATE TABLE keyvalue(key text primary key, value int);
+cqlsh:jw_schema1> 
+
+2. create sample data
+cqlsh:jw_schema1> INSERT INTO keyvalue (key, value ) VALUES ( 'chris', 5);
+cqlsh:jw_schema1> INSERT INTO keyvalue (key, value ) VALUES ( 'luke', 10);
+cqlsh:jw_schema1> INSERT INTO keyvalue (key, value ) VALUES ( 'patrick', 15);
+cqlsh:jw_schema1> INSERT INTO keyvalue (key, value ) VALUES ( 'haddad', 20);
+
+3. enable this in cassandra yaml file and restart cassandra.
+enable_user_defined_functions: true
+
+4. run in cqlsh
+CREATE FUNCTION maxI(current int, candidate int)
+CALLED ON NULL INPUT
+RETURNS int LANGUAGE java AS
+'if (current == null) return candidate; else return Math.max(current,
+candidate);' ;
+
+CREATE AGGREGATE maxAgg(int)
+SFUNC maxI
+STYPE int
+INITCOND null;
+
+5. test run
+cqlsh:jw_schema1> select maxAgg(value) from keyvalue;
+
+ jw_schema1.maxagg(value)
+--------------------------
+                       20
+
+(1 rows)
+
+Warnings :
+Aggregation query used without partition key
+
+cqlsh:jw_schema1> 
+
+cqlsh:jw_schema1> select * from keyvalue;
+
+ key     | value
+---------+-------
+  haddad |    20
+   chris |     5
+ patrick |    15
+    luke |    10
+
+(4 rows)
+
+
+6. udf
+CREATE OR REPLACE FUNCTION state_group_and_count( state map<text, int>, type
+text )
+CALLED ON NULL INPUT
+RETURNS map<text, int>
+LANGUAGE java AS '
+Integer count = (Integer) state.get(type);  if (count == null) count = 1; else
+count++; state.put(type, count); return state; ' ;
+
+CREATE OR REPLACE AGGREGATE group_and_count(text) 
+SFUNC state_group_and_count 
+STYPE map<text, int> 
+INITCOND {};
+
+7. uda
+CREATE FUNCTION state_group_and_total( state map<text, int>, type text, amount
+int )
+CALLED ON NULL INPUT
+RETURNS map<text, int>
+LANGUAGE java AS '
+Integer count = (Integer) state.get(type);  if (count == null) count = amount;
+else count = count + amount; state.put(type, count); return state; ' ;
+
+
+CREATE OR REPLACE AGGREGATE group_and_total(text, int) 
+SFUNC state_group_and_total 
+STYPE map<text, int> 
+INITCOND {};
+
