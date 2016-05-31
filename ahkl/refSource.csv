@@ -1,0 +1,13 @@
+id,identifier,countrygroup,description
+1,SRC-GROUP-CA,Group,Commercial Asia
+2,SRC-HKG-GH,Hong Kong,GoHome
+3,SRC-HKG-GH-BC,Hong Kong,GoHome (Business Centre)
+4,SRC-IDN-M123,Indonesia,Mobil123
+5,SRC-IDN-R123,Indonesia,Rumah123
+6,SRC-IDN-R123-LAND,Indonesia,Rumah123 (Land)
+7,SRC-IND-IP,India,iProperty India
+8,SRC-MYS-IP,Malaysia,iProperty Malaysia
+9,SRC-SGP-INFO,Singapore,Infotools
+10,SRC-SGP-IP,Singapore,iProperty Singapore
+11,SRC-SGP-SGH,Singapore,SG House
+12,SRC-SGP-TP,Singapore,Think Property Singapore

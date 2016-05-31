@@ -1,0 +1,80 @@
+id,type,description
+0,property_alert,Property alert
+1,enquiry_email,Email enquiry
+2,enquiry_sms,SMS enquiry
+4,view_agency,View agency profile
+6,view_listing,View listing detail
+7,view_map,View map
+8,view_photo,View photo
+9,shortlisted,Property shortlisted
+11,share_google,Shared on Google
+12,share_twitter,Shared on Twitter
+14,wanted_request,Property wanted request
+15,view_developer,View developer profile
+17,click_to_email,Click to email direct
+19,download_brochure,Download brochure
+21,get_directions,Get directions
+22,share_email,Sent to friend by email
+23,view_splash,View splash screen
+24,select_profile,Select profile (buyer / renter / new property)
+26,view_home,View home screen
+27,view_recent,View recent listings
+28,click_recent,Click recent listings
+29,view_featured,View featured listings
+31,view_adspace,View ad space
+32,click_adspace,Click ad space
+33,view_new_launch,View new launch
+35,view_near_you,View near you
+37,view_news,View editorial
+38,click_news,Click editorial
+39,view_news_detail,View editorial detail
+40,view_search_form,View search form
+41,view_result_list,View search results (list)
+42,view_result_grid,View search results (grid)
+43,view_result_map,View search results (map)
+44,click_search_filter,Click search filter
+45,click_sort,Click sort
+46,view_gts,View GTS
+47,click_gts,Click GTS
+48,view_fagent,View featured agent
+49,click_fagent,Click featured agent
+50,view_development,View development detail
+51,click_to_bookmark,Click to bookmark
+52,click_to_remove_bookmark,Click to remove bookmark
+54,view_contact,View contact
+55,click_to_calculate,Click to calculate
+56,reveal_email,Reveal email event
+57,view_website,View website
+58,click_to_feedback,Click feedback
+59,view_login,View consumer login page
+60,login_iproperty,iProperty login
+61,login_facebook,Facebook login
+62,logout,Logout
+63,view_bookmark,View bookmark
+65,compare_remove,Remove from comparion
+66,compare_view,View comparison
+67,view_settings,View settings
+68,share_facebook_contest,Shared on Facebook (contest)
+69,view_fb_campaign,View Facebook campaign
+70,click_fb_campaign,Click Facebook campaign
+71,consumer_signup,Consumer account signup
+73,view_saved_search,View list of saved searches
+74,click_to_save_search,Save search parameter
+75,view_ad,View DFP ad
+76,view_nearby_listing,View Nearby Listing
+77,click_nearby_listing,Select Nearby Listing
+78,view_amenities,View Amenities
+79,click_to_search_developer,Search Developer
+80,view_developer_result,View Developer Result
+81,view_developer_listing,View Developer Listing
+83,view_agent_result,View Agent Result
+84,view_agent_listing,View Agent Listing
+86,view_calculator,View Calculator
+89,view_landing,View landing page by section
+90,play_listing_video,Play video in development or unit listing detail
+91,click_video_showcase,Click on video showcase image
+93,click_developer,click to view developer profile
+94,play_video_showcase,Click play in video showcase popup
+95,play_video_gallery,Click play in video gallery popup
+97,click_video_gallery_detail,Click detail button on video gallery
+98,click_showcase,click on showcase

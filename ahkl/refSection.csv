@@ -1,0 +1,29 @@
+id,identifier,description
+0,SEC-PROPERTY-ALERT,Property alert
+1,SEC-HOME,Home page
+2,SEC-LISTING,Listing detail
+3,SEC-PRO-AGENCY,Agency profile
+4,SEC-PRO-AGENT,Agent profile
+5,SEC-PRO-DEVELOPER,Developer profile
+6,SEC-SR-AGENT,Agent search results
+7,SEC-SR-DEVELOPER,Developer search results
+8,SEC-SR-LISTING,Listing search results
+9,SEC-BOOKMARK,Bookmarks
+10,SEC-CHROME,Application chrome
+11,SEC-COMPARE,Compare
+12,SEC-DEVELOPMENT,Development details
+13,SEC-NEWS,Editorial
+14,SEC-SPLASH,Splash screen
+15,SEC-PRO-USER,User profile
+16,SEC-SR-DEVELOPMENT,Development search results
+17,SEC-SR-ADV-CONSUMER,Listing and development advanced search
+18,SEC-LAUNCH-SOON,Launch soon
+19,SEC-IVIRTUAL,iVirtual
+20,SEC-KWS,Keyword search
+21,SEC-SR-LISTING-MV,Listing map view search result
+22,SEC-SR-LISTING-GV,Listing gallery view search result
+23,SEC-SR-DEVELOPMENT-MV,Development map view search result
+24,SEC-SR-DEVELOPMENT-GV,Development gallery view search result
+25,SEC-DEVELOPMENT-REVIEW,Development review
+28,SEC-HOME-DEVELOPMENT,Development landing page
+29,SEC-DEV-LISTING,New launch unit listing detail

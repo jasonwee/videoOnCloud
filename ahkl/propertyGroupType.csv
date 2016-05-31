@@ -1,0 +1,12 @@
+ProGrpType,ProCatType,Description
+G,A,Agricultural Land
+C,C,Commercial Land
+H,C,Hotel/Resort
+S,C,Shop/Office/Retail Space
+F,I,Factory/Warehouse
+I,I,Industrial Land
+A,R,Apartment/Flat
+B,R,Semi-D/Bungalow
+E,R,Condo/Serviced Residence
+R,R,Residential Land
+T,R,Terrace/Link/Townhouse

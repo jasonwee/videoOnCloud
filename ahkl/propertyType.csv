@@ -1,0 +1,52 @@
+ProType,ProCatType,ProGrpType,Description
+AL,A,G,Agricultural Land
+CL,C,C,Commercial Land
+HR,C,H,Hotel/Resort
+BC,C,S,Business Centre
+CB,C,S,Commercial Bungalow
+CD,C,S,Commercial Semi-D
+DS,C,S,Designer Suites
+OF,C,S,Office
+RO,C,S,Retail-Office
+RS,C,S,Retail Space
+SF,C,S,Sofo
+SH,C,S,Shop
+SO,C,S,Shop-Office
+SS,C,S,Soho
+SV,C,S,Sovo
+FD,I,F,Detached factory
+FK,I,F,Link factory
+FS,I,F,Semi- D factory
+FT,I,F,Factory
+LI,I,F,Light Industrial
+WH,I,F,Warehouse
+IL,I,I,Industrial Land
+AD,R,A,Apartment Duplex
+AP,R,A,Apartment
+FL,R,A,Flat
+BG,R,B,Bungalow House
+BL,R,B,Bungalow Land
+CH,R,B,Cluster Homes
+LB,R,B,Link Bungalow
+SD,R,B,Semi-detached House
+TV,R,B,Twin Villas
+TW,R,B,Twin Courtyard Villa
+ZB,R,B,Zero-Lot Bungalow
+CO,R,E,Condominium
+E2,R,E,Duplex
+E3,R,E,Triplex
+ES,R,E,Soho
+PH,R,E,Penthouse
+SA,R,E,Service Apartment
+SR,R,E,Serviced Residence
+TC,R,E,Townhouse Condo
+RL,R,R,Residential Land
+1T,R,T,1-sty Terrace/Link House
+2T,R,T,2-sty Terrace/Link House
+3T,R,T,3-sty Terrace/Link House
+5T,R,T,1.5-sty Terrace/Link House
+6T,R,T,2.5-sty Terrace/Link House
+7T,R,T,3.5-sty Terrace/Link House
+8T,R,T,4-5 sty Terrace/Link House
+9T,R,T,4-sty Terrace/Link House
+TH,R,T,Townhouse

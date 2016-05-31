@@ -1,0 +1,32 @@
+id,identifier,countrygroup,description
+1,PRO-GROUP-CA,Group,Commercial Asia
+2,PRO-GROUP-ILUX,Group,iLuxury Asia
+3,PRO-HKG-GH,Hong Kong,GoHome
+4,PRO-HKG-H18,Hong Kong,House18
+5,PRO-HKG-O18,Hong Kong,Office18
+6,PRO-IDN-M123,Indonesia,Mobil123
+7,PRO-IDN-R123,Indonesia,Rumah123
+8,PRO-IDN-R123-MOB,Indonesia,Rumah123 mobile
+9,PRO-IDN-RDP,Indonesia,Rumah dan Properti
+10,PRO-IND-IP,India,iProperty India
+11,PRO-MYS-IP,Malaysia,iProperty Malaysia
+12,PRO-MYS-IP-MOB,Malaysia,iProperty Malaysia mobile
+13,PRO-MYS-RE,Malaysia,Real Estate Malaysia
+14,PRO-MYS-TP,Malaysia,Think Property Malaysia
+15,PRO-SGP-INFO,Singapore,Infotools
+16,PRO-SGP-IP,Singapore,iProperty Singapore
+17,PRO-SGP-IP-MOB,Singapore,iProperty Singapore mobile
+18,PRO-SGP-SGH,Singapore,SG House
+19,PRO-SGP-TP,Singapore,Think Property Singapore
+20,PRO-MYS-IAGENT,Malaysia,iProperty Malaysia iAgent
+21,PRO-SGP-IAGENT,Singapore,iProperty Singapore iAgent
+22,PRO-GROUP-MOB-IPAD-V2,Group,Group mobile iPad v2
+23,PRO-GROUP-MOB-MOBWEB-V2,Group,Group mobile web v2
+24,PRO-GROUP-MOB-W8,Group,Group mobile Windows 8
+25,PRO-GROUP-MOB-WP8,Group,Group mobile Windows Phone 8
+26,PRO-GROUP-MOB-SAMSUNGTV,Group,Group mobile Samsung TV
+27,PRO-GROUP-MOB-MOBWEB-V1,Group,Group mobile web v1
+28,PRO-GROUP-MOB-MOBWEB-V2-LITE,Group,Group mobile web v2 Lite
+29,PRO-GROUP-MOB-ANDROID-V2,Group,Group mobile Android v2
+30,PRO-GROUP-MOB-IPHONE-V2,Group,Group mobile iPhone v2
+31,PRO-GROUP-MOB-WP8-V2,Group,iProperty Consumer App for Windows Phone 8.1
