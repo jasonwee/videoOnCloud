@@ -1,0 +1,32 @@
+//Closure cl = { task -> println "I'm $task.project.name" }
+//task hello << cl
+//project(':bluewhale') {
+//  task hello << cl
+//}
+
+allprojects {
+  task hello <<  { task -> println "I'm $task.project.name" }
+}
+
+//subprojects {
+//  hello << {println "- I depend on water"}
+//}
+subprojects {
+  hello {
+    doLast {println "- I depend on water"}
+    afterEvaluate { Project project ->
+      if (project.arctic) { doLast {
+         println '- I love to spend time in the arctic waters.'}
+      }
+    }
+  }
+}
+
+//project(':bluewhale').hello << {
+//  println "- I'm the largest animal that has ever lived on this planet."
+//}
+
+//configure(subprojects.findAll {it.name != 'tropicalFish'}) {
+//  hello << {println '- I love to spend time in the arctic waters.'}
+//}
+
