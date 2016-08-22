@@ -2,6 +2,7 @@ package play.learn.java.classloader;
 
 import java.io.FileInputStream;
 import java.io.IOException;
+import java.lang.reflect.Method;
 import java.net.URL;
 import java.net.URLClassLoader;
 import java.util.ArrayList;
@@ -61,6 +62,9 @@ public class ClassLoader {
 			System.out.println("className : " + className);
 			Class c = cl.loadClass(className);
 			System.out.println(c.getMethods()[0]);
+			
+			// to invoke the method, read about this
+			//http://stackoverflow.com/questions/160970/how-do-i-invoke-a-java-method-when-given-the-method-name-as-a-string
 		}
 		
 
