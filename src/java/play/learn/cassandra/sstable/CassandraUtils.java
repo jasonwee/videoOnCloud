@@ -2,8 +2,12 @@ package play.learn.cassandra.sstable;
 
 import java.io.ByteArrayInputStream;
 import java.io.File;
+import java.io.FileInputStream;
+import java.io.IOException;
 import java.io.InputStream;
+import java.io.InputStreamReader;
 import java.io.PrintStream;
+import java.lang.reflect.Field;
 import java.nio.ByteBuffer;
 import java.util.Arrays;
 import java.util.Collection;
@@ -15,11 +19,14 @@ import java.util.Map;
 import java.util.Spliterator;
 import java.util.Spliterators;
 import java.util.TreeMap;
+import java.util.UUID;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicInteger;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 import java.util.stream.StreamSupport;
+
+import javax.management.Query;
 
 import jline.console.ConsoleReader;
 
@@ -27,15 +34,21 @@ import org.apache.cassandra.config.CFMetaData;
 import org.apache.cassandra.config.Config;
 import org.apache.cassandra.config.DatabaseDescriptor;
 import org.apache.cassandra.config.Schema;
-import org.apache.cassandra.cql3.UserTypes;
+import org.apache.cassandra.cql3.QueryProcessor;
+import org.apache.cassandra.cql3.statements.CFStatement;
+import org.apache.cassandra.cql3.statements.CreateTableStatement;
 import org.apache.cassandra.db.SerializationHeader;
 import org.apache.cassandra.db.SystemKeyspace;
 import org.apache.cassandra.db.marshal.AbstractType;
+import org.apache.cassandra.db.marshal.UTF8Type;
+import org.apache.cassandra.db.marshal.UserType;
 import org.apache.cassandra.db.rows.Cell;
 import org.apache.cassandra.db.rows.EncodingStats;
 import org.apache.cassandra.db.rows.Row;
 import org.apache.cassandra.db.rows.Unfiltered;
 import org.apache.cassandra.db.rows.UnfilteredRowIterator;
+import org.apache.cassandra.dht.IPartitioner;
+import org.apache.cassandra.dht.LocalPartitioner;
 import org.apache.cassandra.dht.Murmur3Partitioner;
 import org.apache.cassandra.io.compress.CompressionMetadata;
 import org.apache.cassandra.io.sstable.Component;
@@ -47,16 +60,25 @@ import org.apache.cassandra.io.sstable.metadata.MetadataComponent;
 import org.apache.cassandra.io.sstable.metadata.MetadataType;
 import org.apache.cassandra.io.sstable.metadata.StatsMetadata;
 import org.apache.cassandra.io.sstable.metadata.ValidationMetadata;
+import org.apache.cassandra.schema.Functions;
+import org.apache.cassandra.schema.KeyspaceMetadata;
+import org.apache.cassandra.schema.KeyspaceParams;
+import org.apache.cassandra.schema.Tables;
 import org.apache.cassandra.schema.Types;
+import org.apache.cassandra.schema.Views;
 import org.apache.cassandra.utils.EstimatedHistogram;
 import org.apache.cassandra.utils.FBUtilities;
+import org.joda.time.Duration;
+import org.joda.time.format.PeriodFormat;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import com.datastax.driver.core.UserType;
+import com.google.common.base.Preconditions;
 import com.google.common.base.Strings;
+import com.google.common.collect.Lists;
 import com.google.common.collect.Maps;
 import com.google.common.collect.MinMaxPriorityQueue;
+import com.google.common.io.CharStreams;
 
 public class CassandraUtils {
 	private static final Logger logger = LoggerFactory.getLogger(CassandraUtils.class);
@@ -77,7 +99,7 @@ public class CassandraUtils {
 		Schema.instance.setKeyspaceMetadata(SystemKeyspace.metadata());
 	}
 	
-	public static CFMetaData tableFromBestSource(File sstablePath) {
+	public static CFMetaData tableFromBestSource(File sstablePath)  throws IOException, NoSuchFieldException, IllegalAccessException {
 		// TODO add CQL/Thrift mechanisms as well
 		
 		CFMetaData metadata;
@@ -100,16 +122,101 @@ public class CassandraUtils {
 		if (knownTypes.isEmpty()) {
 			return Types.none();
 		} else {
-			return Types.of(knownTypes.values().toArray(new UserTypes[0]));
+			return Types.of(knownTypes.values().toArray(new UserType[0]));
 		}
 	}
 	
-	public static InputStream findSchema() {
-		
+	public static InputStream findSchema() throws IOException {
+		String cqlPath = System.getProperty("sstabletools.schema");
+		InputStream in;
+		if (!Strings.isNullOrEmpty(cqlPath)) {
+			in = new FileInputStream(cqlPath);
+		} else {
+			in = Query.class.getClassLoader().getResourceAsStream("schema.cql");
+			if (in == null && new File("schema.cql").exists()) {
+				in = new FileInputStream("schema.cql");
+			}
+		}
+		return in;
 	}
 	
-	public static void loadTablesFromRemote(String host, int port) {
+	public static CFMetaData tableFromCQL(InputStream source) throws IOException {
+		return tableFromCQL(source, null);
+	}
+	
+	public static CFMetaData tableFromCQL(InputStream source, UUID cfid) throws IOException {
+		String schema = CharStreams.toString(new InputStreamReader(source, "UTF-8"));
+		CFStatement statement = (CFStatement) QueryProcessor.parseStatement(schema);
+		String keyspace = "";
+		try {
+			keyspace = statement.keyspace() == null ? "turtles" : statement.keyspace();
+		} catch (AssertionError e) { // if -ea added we should provide lots of warnings that things probably wont work
+			logger.error("Remove '-ea' JVM option when using sstable-tools library");
+			keyspace = "turtles";
+		}
+		statement.prepareKeyspace(keyspace);
+		if (Schema.instance.getKSMetaData(keyspace) == null) {
+			Schema.instance.setKeyspaceMetadata(KeyspaceMetadata.create(keyspace, KeyspaceParams.local(), Tables.none(), Views.none(), getTypes(), Functions.none()));
+		}
+		CFMetaData cfm;
+		if (cfid != null) {
+			cfm = ((CreateTableStatement) statement.prepare().statement).metadataBuilder().withId(cfid).build();
+			KeyspaceMetadata prev = Schema.instance.getKSMetaData(keyspace);
+			List<CFMetaData> tables = Lists.newArrayList(prev.tablesAndViews());
+			tables.add(cfm);
+			Schema.instance.setKeyspaceMetadata(prev.withSwapped(Tables.of(tables)));
+			Schema.instance.load(cfm);
+		} else {
+			cfm = ((CreateTableStatement) statement.prepare().statement).getCFMetaData();
+		}
+		return cfm;
+	}
+	
+	public static Object readPrivate(Object obj, String name) throws NoSuchFieldException, SecurityException, IllegalArgumentException, IllegalAccessException {
+		Field type = obj.getClass().getDeclaredField(name);
+		type.setAccessible(true);
+		return type.get(obj);
+	}
+	
+	public static CFMetaData tableFromSSTable(File path) throws IOException, NoSuchFieldException, IllegalAccessException {
+		Preconditions.checkNotNull(path);
+		Descriptor desc = Descriptor.fromFilename(path.getAbsolutePath());
 		
+		EnumSet<MetadataType> types = EnumSet.of(MetadataType.VALIDATION, MetadataType.STATS, MetadataType.HEADER);
+		Map<MetadataType, MetadataComponent> sstableMetadata = desc.getMetadataSerializer().deserialize(desc, types);
+		ValidationMetadata validationMetadata = (ValidationMetadata) sstableMetadata.get(MetadataType.VALIDATION);
+		Preconditions.checkNotNull(validationMetadata, "Validation Metadata could not be resolved, accompanying Statistics.db file must be missing.");
+		SerializationHeader.Component header = (SerializationHeader.Component) sstableMetadata.get(MetadataType.HEADER);
+		Preconditions.checkNotNull(header, "Metadata could not be resolved, accompanying Statistics.db file must be missing.");
+		
+		IPartitioner partitioner = validationMetadata.partitioner.endsWith("LocalPartitioner") ? 
+				new LocalPartitioner(header.getKeyType()) :
+				FBUtilities.newPartitioner(validationMetadata.partitioner);
+				
+		DatabaseDescriptor.setPartitionerUnsafe(partitioner);
+		AbstractType<?> keyType = header.getKeyType();
+		List<AbstractType<?>> clusteringTypes = header.getClusteringTypes();
+		Map<ByteBuffer, AbstractType<?>> staticColumns = header.getStaticColumns();
+		Map<ByteBuffer, AbstractType<?>> regularColumns = header.getRegularColumns();
+		int id = cfCounter.incrementAndGet();
+		CFMetaData.Builder builder = CFMetaData.Builder.create("turtle" + id, "turtles" + id);
+		staticColumns.entrySet().stream()
+		             .forEach(entry ->
+		                          builder.addStaticColumn(UTF8Type.instance.getString(entry.getKey()),entry.getValue()));
+		regularColumns.entrySet().stream()
+		             .forEach(entry ->
+		                          builder.addRegularColumn(UTF8Type.instance.getString(entry.getKey()), entry.getValue()));
+		List<AbstractType<?>> partTypes = keyType.getComponents();
+		for (int i = 0; i < partTypes.size(); i++) {
+			builder.addPartitionKey("partition" + (i > 0 ? i : ""), partTypes.get(i));
+		}
+		for (int i = 0; i < clusteringTypes.size(); i++) {
+			builder.addClusteringColumn("row" + (i > 0 ? i : ""), clusteringTypes.get(i));
+		}
+		CFMetaData metaData = builder.build();
+		Schema.instance.setKeyspaceMetadata(KeyspaceMetadata.create(metaData.ksName, KeyspaceParams.local(),
+				Tables.of(metaData), Views.none(), getTypes(), Functions.none()));
+		return metaData;
 	}
 	
 	public static <T> Stream<T> asStream(Iterator<T> iter) {
@@ -131,6 +238,22 @@ public class CassandraUtils {
 		return sb.toString();
 	}
 	
+	public static String toDateString(long time, TimeUnit unit, boolean color) {
+		return wrapQuiet(new java.text.SimpleDateFormat("MM/dd/yyyy HH:mm:ss").format(new java.util.Date(unit.toMillis(time))), color);
+	}
+	
+	public static String toDurationString(long duration, TimeUnit unit, boolean color) {
+		return wrapQuiet(PeriodFormat.getDefault().print(new Duration(unit.toMillis(duration)).toPeriod()), color);
+	}
+	
+	public static String toByteString(long bytes, boolean si, boolean color) {
+		int unit = si ? 1000 : 1024;
+		if (bytes < unit) return bytes + " B";
+		int exp = (int) (Math.log(bytes) / Math.log(unit));
+		String pre = (si ? "kMGTPE" : "KMGTPE").charAt(exp - 1) + (si ? "" : "i");
+		return wrapQuiet(String.format("%.1f %sB", bytes / Math.pow(unit, exp), pre), color);
+	}
+	
 	private static class ValuedByteBuffer {
 		public long value;
 		public ByteBuffer buffer;
@@ -147,11 +270,11 @@ public class CassandraUtils {
 	
 	private static Comparator<ValuedByteBuffer> VCOMP = Comparator.comparingLong(ValuedByteBuffer::getValue).reversed();
 	
-	public static void printStats(String fname, PrintStream out) {
+	public static void printStats(String fname, PrintStream out) throws IOException, NoSuchFieldException, IllegalAccessException {
 		printStats(fname, out, null);
 	}
 	
-	public static void printStats(String fname, PrintStream out, ConsoleReader console) {
+	public static void printStats(String fname, PrintStream out, ConsoleReader console) throws IOException, NoSuchFieldException, IllegalAccessException {
 		boolean color = console == null || console.getTerminal().isAnsiSupported();
 		String c = color ? TableTransformer.ANSI_BLUE : "";
 		String s = color ? TableTransformer.ANSI_CYAN : "";
