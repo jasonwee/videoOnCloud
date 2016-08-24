@@ -2,9 +2,11 @@ package play.learn.cassandra.sstable;
 
 import java.io.ByteArrayInputStream;
 import java.io.File;
+import java.io.InputStream;
 import java.io.PrintStream;
 import java.nio.ByteBuffer;
 import java.util.Arrays;
+import java.util.Collection;
 import java.util.Comparator;
 import java.util.EnumSet;
 import java.util.Iterator;
@@ -12,23 +14,42 @@ import java.util.List;
 import java.util.Map;
 import java.util.Spliterator;
 import java.util.Spliterators;
+import java.util.TreeMap;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicInteger;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 import java.util.stream.StreamSupport;
 
-import jline.ConsoleReader;
+import jline.console.ConsoleReader;
 
 import org.apache.cassandra.config.CFMetaData;
 import org.apache.cassandra.config.Config;
 import org.apache.cassandra.config.DatabaseDescriptor;
 import org.apache.cassandra.config.Schema;
+import org.apache.cassandra.cql3.UserTypes;
+import org.apache.cassandra.db.SerializationHeader;
+import org.apache.cassandra.db.SystemKeyspace;
 import org.apache.cassandra.db.marshal.AbstractType;
+import org.apache.cassandra.db.rows.Cell;
+import org.apache.cassandra.db.rows.EncodingStats;
+import org.apache.cassandra.db.rows.Row;
+import org.apache.cassandra.db.rows.Unfiltered;
+import org.apache.cassandra.db.rows.UnfilteredRowIterator;
 import org.apache.cassandra.dht.Murmur3Partitioner;
+import org.apache.cassandra.io.compress.CompressionMetadata;
 import org.apache.cassandra.io.sstable.Component;
 import org.apache.cassandra.io.sstable.Descriptor;
-import org.apache.cassandra.io.sstable.SSTableReader;
+import org.apache.cassandra.io.sstable.ISSTableScanner;
+import org.apache.cassandra.io.sstable.format.SSTableReader;
+import org.apache.cassandra.io.sstable.metadata.CompactionMetadata;
+import org.apache.cassandra.io.sstable.metadata.MetadataComponent;
+import org.apache.cassandra.io.sstable.metadata.MetadataType;
+import org.apache.cassandra.io.sstable.metadata.StatsMetadata;
+import org.apache.cassandra.io.sstable.metadata.ValidationMetadata;
+import org.apache.cassandra.schema.Types;
+import org.apache.cassandra.utils.EstimatedHistogram;
+import org.apache.cassandra.utils.FBUtilities;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -50,10 +71,10 @@ public class CassandraUtils {
 		
 		// partitioner is not set in client mode.
 		if (DatabaseDescriptor.getPartitioner() == null)
-			DatabaseDescriptor.setPartitioner(Murmur3Partitioner.instance);
+			DatabaseDescriptor.setPartitionerUnsafe(Murmur3Partitioner.instance);
 		
 		// need system keyspace metadata registered for functions used in CQL like count/avg/json
-		Schema.instance.setKeyspaceDefinition(SystemKeyspace.metadata());
+		Schema.instance.setKeyspaceMetadata(SystemKeyspace.metadata());
 	}
 	
 	public static CFMetaData tableFromBestSource(File sstablePath) {
@@ -96,6 +117,20 @@ public class CassandraUtils {
 		return StreamSupport.stream(splititer, false);
 	}
 	
+	public static String wrapQuiet(String toWrap, boolean color) {
+		StringBuilder sb = new StringBuilder();
+		if (color) {
+			sb.append(TableTransformer.ANSI_WHITE);
+		}
+		sb.append("(");
+		sb.append(toWrap);
+		sb.append(")");
+		if (color) {
+			sb.append(TableTransformer.ANSI_RESET);
+		}
+		return sb.toString();
+	}
+	
 	private static class ValuedByteBuffer {
 		public long value;
 		public ByteBuffer buffer;
@@ -117,7 +152,7 @@ public class CassandraUtils {
 	}
 	
 	public static void printStats(String fname, PrintStream out, ConsoleReader console) {
-		boolean color = console == null || console.getTerminal().isANSISupported();
+		boolean color = console == null || console.getTerminal().isAnsiSupported();
 		String c = color ? TableTransformer.ANSI_BLUE : "";
 		String s = color ? TableTransformer.ANSI_CYAN : "";
 		String r = color ? TableTransformer.ANSI_RESET : "";
@@ -306,6 +341,83 @@ public class CassandraUtils {
                 out.printf("%sRegularColumns%s:%s {%s}%n", c, s, r, FBUtilities.toString(regulars));
             }
 		}
+	}
+	
+	public static final TreeMap<Double, String> bars = new TreeMap<Double, String>() {{
+		this.put(7.0 / 8.0, "▉"); // 7/8th left block
+		this.put(3.0 / 4.0, "▊"); // 3/4th block
+		this.put(5.0 / 8.0, "▋"); // five eighths
+		this.put(3.0 / 8.0, "▍"); // three eighths
+		this.put(1.0 / 4.0, "▎");
+		this.put(1.0 / 8.0, "▏");
+	}};
+	
+	private static class TermHistogram {
+		long max;
+		long min;
+		double sum;
+		int maxCountLength = 5;
+		int maxValueLength = 5;
+		
+		public TermHistogram(Collection<Map.Entry<Double, Long>> histogram) {
+			histogram.stream().forEach(e -> { 
+				max = Math.max(max, e.getValue());
+				min = Math.min(min, e.getValue());
+				sum += e.getValue();
+				maxCountLength = Math.max(maxCountLength, ("" + e.getValue()).length());
+				maxValueLength = Math.max(maxValueLength, ("" + e.getKey().longValue()).length() );
+			});
+		}
+		
+		public TermHistogram(EstimatedHistogram histogram) {
+			long[] counts = histogram.getBuckets(false);
+			for (int i = 0; i < counts.length; i++) {
+				long e = counts[i];
+				if (e > 0) {
+					max = Math.max(max, e);
+					min = Math.min(min, e);
+					sum += e;
+					maxCountLength = Math.max(maxCountLength, ("" + e).length());
+					maxValueLength = Math.max(maxValueLength, ("" + histogram.getBucketOffsets()[i]).length());
+				}
+			}
+		}
+		
+		public String asciiHistogram(Long count, int length) {
+			StringBuilder sb = new StringBuilder();
+			long barVal = count;
+			int intWidth = (int) (barVal * 1.0 / max * length);
+			double remainderWidth = (barVal * 1.0 / max * length) - intWidth;
+			sb.append(Strings.repeat("▉", intWidth));
+			if (bars.floorKey(remainderWidth) != null) {
+				sb.append("" + bars.get(bars.floorKey(remainderWidth)));
+			}
+			return sb.toString();
+		}
+
+		public static void printHistogram(EstimatedHistogram histogram, PrintStream out, boolean colors) {
+			String bcolor = colors ? "\u001B[36m" : "";
+			String reset = colors ? "\u001B[0m" : "";
+			String histoColor = colors ? "\u001B[37m" : "";
+			
+			TermHistogram h = new TermHistogram(histogram);
+			out.printf("%s  %-" + h.maxValueLength + "s | %-" + h.maxCountLength + "s   %%   Histogram %n", bcolor, "Value", "Count");
+			long[] counts = histogram.getBucketOffsets();
+			long[] offsets = histogram.getBucketOffsets();
+			for (int i = 0; i < counts.length; i++) {
+				if (counts[i] > 0) {
+					String histo = h.asciiHistogram(counts[i], 30);
+					out.printf(reset + "  %-", h.maxValueLength + "d %s|%s %" + h.maxCountLength + "s %s %s%s %n",
+							offsets[i],
+							bcolor, reset,
+							counts[i],
+							wrapQuiet(String.format("%3s", (int) (100 * ((double) counts[i] / h.sum))), true),
+							histoColor,
+							histo);
+				}
+			}
+		}
+		
 	}
 	
 }
