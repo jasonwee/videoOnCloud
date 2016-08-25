@@ -26,8 +26,6 @@ import java.util.stream.Collectors;
 import java.util.stream.Stream;
 import java.util.stream.StreamSupport;
 
-import javax.management.Query;
-
 import jline.console.ConsoleReader;
 
 import org.apache.cassandra.config.CFMetaData;
@@ -419,6 +417,7 @@ public class CassandraUtils {
 				String bcolor = color ? "\u001B[36m" : "";
 				String reset = color ? "\u001B[0m" : "";
 				String histoColor = color ? "\u001B[37m" : "";
+				//TODO fix this
 				out.printf("%s  %-" + h.maxValueLength + "s                       | %-" + h.maxCountLength + "s   %%   Histogram %n", bcolor, "Value", "Count");
 				stats.estimatedTombstoneDropTime.getAsMap().entrySet().stream().forEach(e -> {
 					String histo = h.asciiHistogram(e.getValue(), 30);
@@ -530,7 +529,7 @@ public class CassandraUtils {
 			for (int i = 0; i < counts.length; i++) {
 				if (counts[i] > 0) {
 					String histo = h.asciiHistogram(counts[i], 30);
-					out.printf(reset + "  %-", h.maxValueLength + "d %s|%s %" + h.maxCountLength + "s %s %s%s %n",
+					out.printf(reset + "  %-" + h.maxValueLength + "d %s|%s %" + h.maxCountLength + "s %s %s%s %n",
 							offsets[i],
 							bcolor, reset,
 							counts[i],
