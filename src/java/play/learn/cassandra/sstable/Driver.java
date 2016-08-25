@@ -13,6 +13,10 @@ public class Driver {
 	}
 
 	public static void main(String[] args) {
+		
+		args = new String[]{"describe", "sstable/ma-837-big-Data.db"};
+		
+		
 		if (args.length == 0) {
 			printCommands();
 			System.exit(-1);
@@ -42,7 +46,7 @@ public class Driver {
 	}
 	
 	private static void printCommands() {
-		System.err.println("Available comamnds: cqlsh, describe, hints");
+		System.err.println("Available commands: describe");
 	}
 
 }
