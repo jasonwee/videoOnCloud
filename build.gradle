@@ -39,7 +39,7 @@ test {
     }
 }
 
-sourceCompatibility = 1.5
+sourceCompatibility = 1.8
 version = '1.0'
 jar {
     manifest {
@@ -49,7 +49,7 @@ jar {
 }
 
 // import ant build file.
-ant.importBuild 'build.xml'
+//ant.importBuild 'build.xml'
 
 // common for subprojects
 subprojects {
