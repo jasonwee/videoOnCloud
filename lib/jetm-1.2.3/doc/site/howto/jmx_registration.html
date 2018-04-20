@@ -1,0 +1,161 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en_US" xml:lang="en_US">
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=ISO-8859-1"/>
+  <title>Java(TM) Execution Time Measurement Library</title>
+  <link rel="stylesheet" type="text/css" href="../default.css"/>
+</head>
+
+<body>
+
+<div class="menu">
+  <a href="../index.html">Home</a>
+  |
+  <a href="../doc.html"><b>Documentation</b></a>
+  |
+  <a href="../faq.html">FAQ</a>
+  |
+  <a href="../../api/index.html">JavaDoc</a>
+  |
+  <a href="../files.html"><b>Download</b></a>
+  |
+  <a href="../svn.html">SVN</a>
+  |
+  <a href="http://sourceforge.net/mail/?group_id=109626">Mailing Lists</a>
+  |
+  <a href="http://sourceforge.net/projects/jetm/">Sourceforge Project Page</a>
+</div>
+
+<div id="content">
+<div id="header">Java&trade; Execution Time Measurement Library</div>
+
+<div id="subheader">Runtime performance monitoring made easy</div>
+
+<div id="main">
+
+<h3>EtmMonitor JMX Howto</h3>
+
+<p>
+  JETM provides means to expose an EtmMonitor through JMX. This page describes the necessary steps
+  for manual registration, for Springframework based registration and automatic registration using
+  a JETM plugin.
+</p>
+
+<h4>JMX support using JETM plugin</h4>
+
+<p>
+  Whenever you are using static <a href="etm_manager_configuration.html">EtmManager configuration</a>
+  you can use the <a href="../../api/etm/core/jmx/EtmMonitorJmxPlugin.html">EtmMonitorJmxPlugin</a> for JMX
+  registration.
+</p>
+
+<p>
+  The following example enables JMX support for an EtmMonitor configuration and alters the
+  MBean name to <i>etm:service=PerformanceMonitoringService</i>. If you don't provide this property
+  the default name <i>etm:service=PerformanceMonitor</i> will be used. Internally this feature registers the
+  <i>EtmMonitorJmxPlugin</i> mentioned above.
+</p>
+
+<div class="code"><pre>&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;!DOCTYPE jetm-config PUBLIC "-// void.fm //DTD JETM Config 1.2//EN"
+                             "http://jetm.void.fm/dtd/jetm_config_1_2.dtd"&gt;
+&lt;jetm-config&gt;
+  &lt;features&gt;
+    ...
+  
+    <b>&lt;jmx monitorObjectName="etm:service=PerformanceMonitor"/&gt;</b>
+  &lt;/features&gt;
+
+&lt;/jetm-config&gt;</pre>
+</div>
+<p>
+  The plugin will also register all top level performance results as JMX beans.
+</p>
+
+<h4>JMX support using manual registration</h4>
+
+<p>
+  Of course it is possible to register an EtmMonitor manually. Use the class
+  <a href="../../api/etm/core/jmx/EtmMonitorMBean.html">EtmMonitorMBean</a> to do so.
+</p>
+
+<div class="code"><pre>
+EtmMonitor monitor = ...;
+
+ArrayList mbeanServers = MBeanServerFactory.findMBeanServer(<span class="java-keyword">null</span>);
+MBeanServer mbeanServer = (MBeanServer) mbeanServers.get(0);
+
+<span class="java-keyword">if</span> (mbeanServer != null) {
+
+  ObjectName objectName = new ObjectName("etm:service=PerformanceMonitor");
+  <span class="java-quote">// register EtmMonitor using EtmMonitorMBean</span>
+  <span class="java-keyword">try</span> {
+    mbeanServer.registerMBean(<b>new EtmMonitorMBean(monitor)</b>, objectName);
+  }
+}
+</pre>
+</div>
+
+<h4>JMX support using Spring Framework MBeanExporter</h4>
+
+<p>
+  If you are using Spring for configuration management you can easily export any EtmMonitor instance
+  using the Springframework class <i>MBeanExporter</i>. This class can export valid JMX MBeans to an MBeanServer
+  by declaration or automatically.
+</p>
+
+<p>
+  The following configuration example exports all JMX MBeans including our
+  <a href="../../api/etm/core/jmx/EtmMonitorMBean.html">EtmMonitorMBean</a> using the JMX name
+  <i>etm:service=PerformanceMonitor</i>. It assumes that your application runs within an JMX
+  enabled infrastructure (such as JBoss, Tomcat or Bea Weblogic). For all other plattforms
+  see spring <i>MBeanExporter</i> documentation.
+</p>
+
+<div class="code"><pre>&lt;beans&gt;
+
+  &lt;bean id="etmMonitor" class="etm.core.monitor.NestedMonitor"
+        init-method="start" destroy-method="stop"/&gt;
+
+  &lt;bean name="etm:service=PerformanceMonitor"
+        class="etm.core.jmx.EtmMonitorMBean" autowire="constructor"/&gt;
+
+  &lt;bean class="org.springframework.jmx.export.MBeanExporter"&gt;
+    &lt;property name="autodetect" value="true"/&gt;
+  &lt;/bean&gt;
+
+&lt;/beans&gt;</pre>
+</div>
+<h4>Further notes</h4>
+
+<p>
+  Accessing performance results via JMX is kind a awkward since everything pretty much depends on your
+  JMX browser. For instance the Sun JDK <a href="http://java.sun.com/developer/technicalArticles/J2SE/jconsole.html">JConsole</a>
+  will render strange performance results while the JBoss JMX console can be used as a replacement for our
+  <a href="drop-in-console.html">JETM HTTP Console</a>.
+</p>
+</div>
+</div>
+<div class="menu">
+  <a href="../index.html">Home</a>
+  |
+  <a href="../doc.html"><b>Documentation</b></a>
+  |
+  <a href="../faq.html">FAQ</a>
+  |
+  <a href="../../api/index.html">JavaDoc</a>
+  |
+  <a href="../files.html"><b>Download</b></a>
+  |
+  <a href="../svn.html">SVN</a>
+  |
+  <a href="http://sourceforge.net/mail/?group_id=109626">Mailing Lists</a>
+  |
+  <a href="http://sourceforge.net/projects/jetm/">Sourceforge Project Page</a>
+</div>
+
+</body>
+<!-- Last modified  $Date:2007-01-16 01:50:19 +0100 (Tue, 16 Jan 2007) $ -->
+</html>

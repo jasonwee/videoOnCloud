@@ -1,0 +1,246 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en_US" xml:lang="en_US">
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=ISO-8859-1"/>
+  <title>Java(TM) Execution Time Measurement Library</title>
+  <link rel="stylesheet" type="text/css" href="../default.css"/>
+</head>
+
+<body>
+<div class="menu">
+  <a href="../index.html">Home</a>
+  |
+  <a href="../doc.html"><b>Documentation</b></a>
+  |
+  <a href="../faq.html">FAQ</a>
+  |
+  <a href="../../api/index.html">JavaDoc</a>
+  |
+  <a href="../files.html"><b>Download</b></a>
+  |
+  <a href="../svn.html">SVN</a>
+  |
+  <a href="http://sourceforge.net/mail/?group_id=109626">Mailing Lists</a>
+  |
+  <a href="http://sourceforge.net/projects/jetm/">Sourceforge Project Page</a>
+</div>
+
+<div id="content">
+<div id="header">Java&trade; Execution Time Measurement Library</div>
+
+<div id="subheader">Runtime performance monitoring made easy</div>
+
+<div id="main">
+<h3>JETM Web Integration</h3>
+
+<p>
+  JETM offers some basic web integration capabilities. The following page contains a step-by-step guide to enable
+  JETM performance monitoring in a web application. If you are using the Spring Framework please see
+  <a href="spring_integration.html">Spring Framework Integration</a>.
+</p>
+
+<h4>Step 1: Attach JETM to web application lifecycle</h4>
+
+<p>
+  First of all the JETM runtime has to be started. Therefore we attach JETM to the web application
+  lifecycle using a <i>ServletContextListener</i>. The <a
+  href="../../api/etm/contrib/integration/web/EtmMonitorContextListener.html">
+  EtmMonitorContextListener</a> is a <i>ServletContextListener</i> implementation that starts and stops JETM at web
+  application start and stop. It will use the EtmMonitor described in a file called <i>jetm-config.xml</i> that
+  should be part of the web application classpath.
+</p>
+
+<p>
+  In order to integrate JETM to your web application add the following listener configuration to your web.xml and
+  create a new file called jetm-config.xml that contains the second XML code fragment.
+
+<p>
+
+<div class="code"><pre>&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;web-app version="2.4"
+         xmlns="http://java.sun.com/xml/ns/j2ee"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee
+                             http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd"&gt;
+  &lt;listener&gt;
+    &lt;listener-class&gt;<b>etm.contrib.integration.web.EtmMonitorContextListener</b>&lt;/listener-class&gt;
+  &lt;/listener&gt;
+&lt;web-app&gt; 
+</pre>
+</div>
+
+<div class="code"><pre>&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;!DOCTYPE jetm-config PUBLIC "-// void.fm //DTD JETM Config 1.2//EN"
+                             "http://jetm.void.fm/dtd/jetm_config_1_2.dtd"&gt;
+&lt;jetm-config type="nested"&gt;
+
+&lt;/jetm-config&gt;</pre>
+</div>
+
+<a name="monitor_servlet"></a>
+<h4>Step 2: Access aggregated results</h4>
+
+<p>
+  As described in <a href="drop-in-console.html">JETM drop-in HTTP Console</a> aggregated performance results can be
+  accessed through
+  a dedicated servlet called <i>HttpConsoleServlet</i>. The following web.xml fragment provides access to performance
+  results at <i>http://{HOST}:{PORT}/{ROOT}/performance/</i>:
+</p>
+
+<div class="code"><pre>  ...
+
+  &lt;servlet&gt;
+    &lt;servlet-name&gt;performanceMonitor&lt;/servlet-name&gt;
+    &lt;servlet-class&gt;<b>etm.contrib.integration.web.HttpConsoleServlet</b>&lt;/servlet-class&gt;
+    &lt;load-on-startup&gt;1&lt;/load-on-startup&gt;
+  &lt;/servlet&gt;
+
+  ...
+
+  &lt;servlet-mapping&gt;
+    &lt;servlet-name&gt;performanceMonitor&lt;/servlet-name&gt;
+    &lt;url-pattern&gt;/performance/*&lt;/url-pattern&gt;
+  &lt;/servlet-mapping&gt;</pre>
+</div>
+
+<a name="http_filter"></a>
+
+<h4>Step 3: Monitor HTTP or SOAP Requests</h4>
+
+<p>
+  For high level performance monitoring JETM includes two HTTP servlet filters that may be used to record execution
+  times of HTTP or SOAP requests. The class <a
+  href="../../api/etm/contrib/integration/web/HttpRequestPerformanceFilter.html">
+  HttpRequestPerformanceFilter</a> will record HTTP GET and POST requests and use the request uri as name;
+  the class <a
+  href="../../api/etm/contrib/integration/web/SoapActionPerformanceFilter.html">SoapActionPerformanceFilter</a>
+  can be used to record document/literal SOAP requests that provide a "SOAPAction" HTTP Header.
+</p>
+
+<p>
+  The following web.xml excerpt enables SOAPAction based monitoring for a web service endpoint at <i>/services/*</i>.
+</p>
+
+<div class="code"><pre>  ...
+  
+  &lt;filter&gt;
+    &lt;filter-name&gt;performance-monitor&lt;/filter-name&gt;
+    &lt;filter-class&gt;<b>etm.contrib.integration.web.SoapActionPerformanceFilter</b>&lt;/filter-class&gt;
+  &lt;/filter&gt;
+      
+  &lt;filter-mapping&gt;
+    &lt;filter-name&gt;performance-monitor&lt;/filter-name&gt;
+    &lt;url-pattern&gt;<b>/services/*</b>&lt;/url-pattern&gt;
+  &lt;/filter-mapping&gt;
+</pre>
+</div>
+
+<h4>Step 4: Customize web integration</h4>
+
+<p>
+  If you want to customize the configuration in Steps I to Step III the following options exists:
+</p>
+<h5>Customize JETM configuration file location</h5>
+
+<p>
+  It is possible to override the name of the file using the web application context parameter
+  <i>jetm.config.filename</i>. Example:
+</p>
+
+<div class="code"><pre>
+&lt;context-param&gt;
+  &lt;param-name&gt;jetm.config.filename&lt;/param-name&gt;
+  &lt;param-value&gt;custom-config.xml&lt;/param-value&gt;
+&lt;/context-param&gt;
+</pre>
+</div>
+<p>
+  As an alternative the jetm config file may be loaded from file system. This feature can be enabled
+  by specifying jetm.config.filepath as context parameter. In the example below
+  the jetm config file is expected at <i>/etc/yourapp</i> under the name supplied with <i>
+  jetm.config.filename</i>. If jetm.config.filename is unset, the default name <i>jetm-config.xml</i>
+  will be used.
+</p>
+
+<div class="code"><pre>
+&lt;context-param&gt;
+  &lt;param-name&gt;jetm.config.filepath&lt;/param-name&gt;
+  &lt;param-value&gt;/etc/yourapp&lt;/param-value&gt;
+&lt;/context-param&gt;
+</pre>
+</div>
+<p>
+  While this feature sounds convinient a hard coded filepath within a web.xml descriptor is often considered
+  a design or programming error. Therefore the path to a jetm config file can be specified using
+  a system property. Just write <i>jetm.config.filepath</i> as ant style property and its
+  value will be retrieved from {@link System#getProperty(String)} using the given name. Example:
+</p>
+
+<div class="code"><pre>
+&lt;context-param&gt;
+  &lt;param-name&gt;jetm.config.filepath&lt;/param-name&gt;
+  &lt;param-value&gt;${myapp.jetm.path}&lt;/param-value&gt;
+&lt;/context-param&gt;
+</pre>
+</div>
+</div>
+<h5>Customize JETM configuration</h5>
+
+<p>
+  The JETM runtime offers a lot more features that can be specified in the jetm configuration file. For a full list
+  of options see <a href="etm_manager_configuration.html#xml_type_config">XML-based EtmManager configuration</a>.</p>
+
+<h5>Add further EtmPoints to source code</h5>
+
+<p>
+  Performance data provided by our simple Servlet Filter are certainly a good start but never deliver the level of
+  detail
+  required to understand performance issues. Therefore we recommend reading <a
+  href="../intro/monitoring_strategies.html">
+  monitoring strategies</a> that should help improving performance monitoring coverage.
+</p>
+
+<h5>Alter console behavior</h5>
+
+<p>
+  Right now the HTTP console does not offer a high grade on customization. Nevertheless you cab define whether
+  performance
+  results should be rendered collpased or expanded initially. Therefore add the servlet init parameter <i>expanded</i>
+  and enable or disable expanded result rendering.
+</p>
+
+<div class="code"><pre>&lt;servlet&gt;
+  &lt;servlet-name&gt;performanceMonitor&lt;/servlet-name&gt;
+  &lt;servlet-class&gt;etm.contrib.integration.web.HttpConsoleServlet&lt;/servlet-class&gt;
+  &lt;init-param&gt;
+    &lt;param-name&gt;<b>expanded</b>&lt;/param-name&gt;
+    &lt;param-value&gt;<b>true</b>&lt;/param-value&gt;
+  &lt;/init-param&gt;
+  &lt;load-on-startup&gt;1&lt;/load-on-startup&gt;
+&lt;/servlet&gt;
+</pre>
+</div>
+
+</div>
+<div class="menu">
+  <a href="../index.html">Home</a>
+  |
+  <a href="../doc.html"><b>Documentation</b></a>
+  |
+  <a href="../faq.html">FAQ</a>
+  |
+  <a href="../../api/index.html">JavaDoc</a>
+  |
+  <a href="../files.html"><b>Download</b></a>
+  |
+  <a href="../svn.html">SVN</a>
+  |
+  <a href="http://sourceforge.net/mail/?group_id=109626">Mailing Lists</a>
+  |
+  <a href="http://sourceforge.net/projects/jetm/">Sourceforge Project Page</a>
+</div>
+</body>
+<!-- Last modified  $Date:2007-01-16 01:50:19 +0100 (Tue, 16 Jan 2007) $ -->
+</html>

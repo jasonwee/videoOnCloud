@@ -1,0 +1,299 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en_US" xml:lang="en_US">
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=ISO-8859-1"/>
+  <title>Java(TM) Execution Time Measurement Library</title>
+  <link rel="stylesheet" type="text/css" href="../default.css"/>
+</head>
+
+<body>
+
+<div class="menu">
+  <a href="../index.html">Home</a>
+  |
+  <a href="../doc.html"><b>Documentation</b></a>
+  |
+  <a href="../faq.html">FAQ</a>
+  |
+  <a href="../../api/index.html">JavaDoc</a>
+  |
+  <a href="../files.html"><b>Download</b></a>
+  |
+  <a href="../svn.html">SVN</a>
+  |
+  <a href="http://sourceforge.net/mail/?group_id=109626">Mailing Lists</a>
+  |
+  <a href="http://sourceforge.net/projects/jetm/">Sourceforge Project Page</a>
+</div>
+<div id="content">
+<div id="header">Java&trade; Execution Time Measurement Library</div>
+
+<div id="subheader">Runtime performance monitoring made easy</div>
+
+<div id="main">
+<h3>JETM: Five minute tutorial</h3>
+
+<p>
+  This tutorial demonstrates some advanced features of JETM. It assumes you have
+  already taken a look at <a href="advanced_concepts.html">advanced concepts</a>.
+  If you are new to JETM better start with <a href="one_minute_tutorial.html">one minute tutorial</a>.
+</p>
+
+<p>
+  In this tutorial we will enhance a Java&trade; application such that we are able to gain performance statistics
+  without touching source code at all. Out of convenience we use the Springframework as runtime and performance
+  monitoring infrastructure (and there are <a href="monitoring_strategies.html#declarative"> further options</a> to
+  do so).
+</p>
+
+<p>
+  <i>Attention:</i> If you never heard about the Springframework before this tutorial might take longer than five
+  minutes. In this case we recommend reading the
+  <a href="http://static.springframework.org/spring/docs/2.0.x/reference/beans.html" target="_blank">introductional
+    material</a> at springframework.org.
+</p>
+<h4>Step 1: Prerequisites</h4>
+
+<p>
+  The JETM samples archive includes all required sources and dependencies for this tutorial. <a href="../files.html">Download</a>
+  the archive and expand it.
+</p>
+
+<p>
+  There are two options to execute the tutorial application:
+  If you want to run the tutorial from within your favourite IDE just create a new project from the content of
+  <i>tutorial/five-minute</i> and ensure that
+</p>
+<ul>
+  <li><i>lib/jetm-{VERSION}.jar</i>,</li>
+  <li><i>lib/jetm-optional-{VERSION}.jar</i> and</li>
+  <li>all libraries in <i>tutorial/five-minute/lib</i></li>
+</ul>
+<p>
+  are in your project classpath. Alternatively you can just use <a href="http://ant.apache.org">ant</a> and run this
+  tutorial from the command line. Therefore a valid <i>ant</i> installation (>= 1.6.x) is required.
+</p>
+
+<h4>Step 2: Examine tutorial source code</h4>
+
+<p>
+  Our five minute tutorial application is a simple console grocery store, where you can buy apples, oranges and such.
+  It is made of the
+  <a href="../../../samples/tutorial/five-minute/src/java/etm/tutorial/fiveminute/store/GroceryStoreImpl.java"><i>Store</i></a>
+  itself that is using a
+  <a
+    href="../../../samples/tutorial/five-minute/src/java/etm/tutorial/fiveminute/store/dao/StockDaoImpl.java"><i>Dao</i></a>
+  Mockup for persistence. The class
+  <a
+    href="../../../samples/tutorial/five-minute/src/java/etm/tutorial/fiveminute/client/OrderClient.java"><i>OrderClient</i></a>
+  acts as a client to our store and is executed with the help of
+  <a href="../../../samples/tutorial/five-minute/src/java/etm/tutorial/fiveminute/Main.java"><i>Main</i></a>.
+</p>
+
+<p>
+  Starting in <i>Main</i> you will see that the application loads its configuration from
+  <a href="../../../samples/tutorial/five-minute/src/java/five-minute-tutorial.xml"><i>five-minute-tutorial.xml</i></a>,
+  a spring configuration file. This file contains all bean (class) definitions that are wired automatically using
+  constructor injection.
+</p>
+
+<p>
+  The lines
+</p>
+
+<div class="code"><pre>
+ OrderClient client = (OrderClient) context.getBean("orderClient");
+ client.execute(); 
+</pre>
+</div>
+<p>
+  retrieve a fully configured instance of the class <i>OrderClient</i> and execute the demo. The surrounding thread is
+  used to avoid blocking when executed within <i>ant</i>.
+</p>
+
+<h4>Step 3: Run the tutorial application</h4>
+
+<p>
+  We are now ready to run the tutorial application. Depending on whether you run the demo from your IDE or from command
+  line the process is slightly different.
+</p>
+<table>
+  <tr>
+    <td valign="top" width="120">IDE Setup</td>
+    <td>
+      1. Compile the demo in your IDE.<br/>
+      2. Execute the main class <i>etm.tutorial.fiveminute.Main</i>.<br/>
+      3. Interact with tutorial application.<br/>
+    </td>
+  </tr>
+  <tr>
+    <td valign="top">Command line</td>
+    <td>
+      1. Change to directory <i>tutorial/five-minute</i><br/>
+      2. Execute <i>ant demo</i> from the commandline<br/>
+      3. Interact with tutorial application.<br/>
+    </td>
+  </tr>
+</table>
+<p>
+  You should now see at your console the JETM Grocery Store output:
+</p>
+
+<div class="code"><pre>Welcome to the JETM Grocery Store!
+
+We currently have in stock:
+ ------------------------------
+ | ID | Qty | Item    | Price |
+ ------------------------------
+ |  1 |  15 |  apples | $2.99 |
+ |  2 |   5 | oranges | $1.49 |
+ |  3 |  20 | bananas | $1.99 |
+ |  4 |  11 |  grapes | $2.49 |
+ ------------------------------
+
+Enter item id to order (or 0 exit): 
+</pre>
+</div>
+<p>
+  Not that pretty - but works for now;)
+</p>
+<h4>Step 4: Enable performance monitoring</h4>
+
+<p>
+  If you examine the tutorial classes you will notice that there isn't a single <i>etm.*</i> import. This is
+  because we will monitor execution performance purely by configuration.
+</p>
+
+<p>Eventually you have noticed in <i>five-minute-tutorial.xml</i> the tag <i>&lt;jetm:runtime&gt;</i>. This Spring 2.0
+  bean definition attachs a single JETM runtime to the Spring lifecycle. Nevertheless
+  performance monitoring has to be enabled manually on a per-bean basis.
+</p>
+
+<p>
+  The tag <i>&lt;jetm:monitoring&gt;</i> will be used for this purpose: As you can see in
+  <i>five-minute-tutorial.xml</i> past section <i>&lt;!-- Step 4: ... --&gt;</i> you can register beans using wildcards
+  (<i>*Dao</i>) and complete names (<i>groceryStore</i>). Uncomment the section and restart the application.
+</p>
+
+<div class="code"><pre>&lt;!-- Step 4: Enable performance monitoring --&gt;
+&lt;jetm:monitoring&gt;
+  &lt;jetm:bean-pattern&gt;<b>*Dao</b>&lt;/jetm:bean-pattern&gt;
+  &lt;jetm:bean-pattern&gt;<b>groceryStore</b>&lt;/jetm:bean-pattern&gt;
+&lt;/jetm:monitoring&gt;</pre>
+</div>
+<p>
+  Interestingly the application is running just like before - and there aren't any performance details. That's
+  because we enabled performance monitoring but did not add means to access the collected details.
+</p>
+
+<h4>Step 5: Access aggregated results</h4>
+
+<p>
+  One option to access those details is the build-in <a href="../howto/drop-in-console.html">HTTP console</a>.
+</p>
+
+<p>
+  Therefore uncomment the bean definition past <i>&lt;!-- Step 5: ... &gt;</i> and restart the application.
+</p>
+
+<div class="code"><pre>&lt;!-- Step 5: Access aggregated results --&gt;
+<b>&lt;jetm:console expanded="true"/&gt;</b>
+</pre>
+</div>
+<p>
+  Now point your browser to <a href="http://localhost:40000">http://localhost:40000</a> and you will see aggregated
+  performance statistics.
+</p>
+
+<p>
+  The attribute <i>expanded</i> in the bean definition decides whether all performance results should be rendered
+  (including the nested ones) or just the top level results only. To see the difference set this property to
+  <i>false</i> (or remove it) and restart the tutorial application.
+</p>
+
+<h4>Step 6: Alter aggregation chain</h4>
+
+<p>
+  By default all collected performance data will be buffered and aggregated as soon as a certain threshold was reached.
+  The default threshold is 1000 measurements. However there is one negative side effect: The thread that collected
+  the last result will be used to calculate the aggregated performance statistics.
+</p>
+
+<p>
+  This negative effect can be minimized by using interval based buffering that buffers collected results for a
+  certain period of time and aggregates them asynchronously. In the example below we enable interval based buffering
+  as JETM runtime feature. Simply uncomment the interval definition past <i> &lt;!-- Step 6: ... &gt;</i> and restart
+  the demo.
+</p>
+
+<div class="code"><pre>&lt;!-- Step 6: Alter aggregation chain --&gt;
+&lt;jetm:runtime&gt;
+  &lt;jetm:features&gt;
+
+    <b>&lt;jetm:interval-buffer interval="1000"/&gt;</b>
+
+    ...
+  &lt;/jetm:features&gt;
+&lt;/jetm:runtime&gt;</pre>
+</div>
+
+
+<h4>Step 7: Log raw performance results</h4>
+
+<p>
+  While being able to access aggregated performance statistics it still may be useful to have access
+  to raw performance data for post processing. This can be achieved by enabling the JETM runtime feature <i>raw data</i>
+  logging.
+</p>
+
+<div class="code"><pre>&lt;!-- Step 7: Log raw performance results --&gt;
+&lt;jetm:runtime&gt;
+  &lt;jetm:features&gt;
+     ...
+
+    <b>&lt;jetm:raw-data-log type="commons"/&gt;</b>
+
+  &lt;/jetm:features&gt;
+&lt;/jetm:runtime&gt;</pre>
+</div>
+<p>
+  After restarting the tutorial application raw performance data will be logged to a file called <i>performance.log</i>
+  in the directory <i>tutorial/five-minute</i>. The example above uses Jakarte commons-logging to log the raw
+  performance
+  data.
+</p>
+
+<p>
+  That's it!
+</p>
+
+<h4>Next...</h4>
+
+<p>Now proceed to the remaining <a href="../doc.html">JETM documentation</a>.
+</p>
+</div>
+
+</div>
+<div class="menu">
+  <a href="../index.html">Home</a>
+  |
+  <a href="../doc.html"><b>Documentation</b></a>
+  |
+  <a href="../faq.html">FAQ</a>
+  |
+  <a href="../../api/index.html">JavaDoc</a>
+  |
+  <a href="../files.html"><b>Download</b></a>
+  |
+  <a href="../svn.html">SVN</a>
+  |
+  <a href="http://sourceforge.net/mail/?group_id=109626">Mailing Lists</a>
+  |
+  <a href="http://sourceforge.net/projects/jetm/">Sourceforge Project Page</a>
+</div>
+
+</body>
+<!-- Last modified  $Date: 2007-06-18 22:38:38 +0200 (Mo, 18 Jun 2007) $ -->
+</html>

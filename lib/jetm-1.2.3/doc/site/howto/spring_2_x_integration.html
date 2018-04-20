@@ -1,0 +1,252 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en_US" xml:lang="en_US">
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=ISO-8859-1"/>
+  <title>Java(TM) Execution Time Measurement Library</title>
+  <link rel="stylesheet" type="text/css" href="../default.css"/>
+</head>
+
+<body>
+<div class="menu">
+  <a href="../index.html">Home</a>
+  |
+  <a href="../doc.html"><b>Documentation</b></a>
+  |
+  <a href="../faq.html">FAQ</a>
+  |
+  <a href="../../api/index.html">JavaDoc</a>
+  |
+  <a href="../files.html"><b>Download</b></a>
+  |
+  <a href="../svn.html">SVN</a>
+  |
+  <a href="http://sourceforge.net/mail/?group_id=109626">Mailing Lists</a>
+  |
+  <a href="http://sourceforge.net/projects/jetm/">Sourceforge Project Page</a>
+</div>
+
+<div id="content">
+<div id="header">Java&trade; Execution Time Measurement Library</div>
+
+<div id="subheader">Runtime performance monitoring made easy</div>
+
+<div id="main">
+
+<h3>JETM Springframework 2.x integration</h3>
+
+<p>
+  If you already use the new Spring 2.x schema based configuration you can use the JETM namespace to configure
+  performance monitoring. Otherwhise use Spring 1.x <a href="spring_1_x_integration.html">dtd based configuration</a>.
+</p>
+
+<p>
+  Be aware that these <a href="spring_integration.html#prerequisites_constraints">prerequisites
+  and constraints</a> apply.
+</p>
+
+<h4>Performance monitoring step-by-step</h4>
+<h5>Step I: Initialize JETM runtime</h5>
+
+
+<p>
+  In order to enable performance monitoring the JETM runtime has to be configured.
+  Therefore you need to add the JETM namespace and a tag called <i>jetm:runtime</i> to your Spring 2.x configuration.
+</p>
+
+<div class="code"><pre>&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       <b>xmlns:jetm="http://jetm.void.fm/schema/jetm_spring_config_1_2"</b>
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+                           http://www.springframework.org/schema/beans/spring-beans-2.0.xsd
+                           <b>http://jetm.void.fm/schema/jetm_spring_config_1_2
+                             http://jetm.void.fm/schema/jetm_spring_config_1_2.xsd</b>"&gt;
+
+  ...
+    
+  <b>&lt;jetm:runtime /&gt;</b>
+
+  ...  
+&lt;/beans&gt;</pre>
+</div>
+<p>
+  Since the runtime should exist globally you need to ensure that the runtime definition happens in your spring
+  configuration root. Otherwhise child definitions may not be able to access the runtime.
+</p>
+<h5>Step II: Monitor Spring managed beans</h5>
+
+<p>
+  The tag <i>jetm:monitoring</i> will register Spring managed beans for performance monitoring. Once registered the
+  JETM runtime will record execution times of all public methods in those beans. Simply supply a comma separated
+  list of bean names you are interested in. Use wildcards if you want.
+</p>
+
+<div class="code"><pre>&lt;jetm:monitoring&gt;
+  &lt;jetm:bean-pattern&gt;<b>*Service,MyBean</b>&lt;/jetm:bean-pattern&gt;
+&lt;/jetm:monitoring&gt;</pre>
+</div>
+
+<h5>Step III: Access aggregated results</h5>
+
+<p>
+  The <a href="drop-in-console.html">standalone HTTP console</a> provides access to aggregated performance results.
+  Simply add the following fragment to your Spring configuration and point your browser to
+  <i>http://{HOSTNAME}:40000</i> to access it.
+</p>
+
+
+<div class="code">
+  <pre>&lt;jetm:console /&gt;</pre>
+</div>
+
+<p> If your application is a web application you probably want to use the servlet based monitoring console instead.
+  See <a href="spring_web_integration.html">Spring web integration</a> for further details.</p>
+
+<h4>Further configuration options</h4>
+
+<p>
+  So far we have been using default configurations only.
+</p>
+
+<p>
+  The tag <i>jetm-runtime</i> configures the JETM runtime using the defaults <i>nested monitor</i>,
+  <i>best available timer</i> and <i>threshold based buffering (1000 measurements)</i>. The tag <i>jetm-console</i>
+  will launch a HTTP console at port 40000. And both <i>jetm-monitoring</i> and <i>jetm-console</i> automatically locate
+  the JETM runtime by looking for a spring managed bean implementing the interface
+  <a href="../../api/etm/core/monitor/EtmMonitor.html">EtmMonitor</a>.
+</p>
+
+<p>
+  Of course all those defaults may be altered.
+</p>
+
+<h5>JETM runtime attributes</h5>
+
+<p>
+  The tag <i>jetm-runtime</i> supports the optional attributes <i>type</i> and <i>timer</i>. The attribute <i>type</i>
+  defines the type of the monitor. Use <i>nested</i>, <i>flat</i> or a full qualified class name that implements
+  EtmMonitor. The attribute <i>timer</i> defines the type of the timer. Use <i>jdk15</i>, <i>sun</i>, <i>default</i>
+  or a full qualified class name that implements ExecutionTimer.
+</p>
+
+<div class="code">
+  <pre>&lt;jetm:runtime <b>type="flat" timer="default"</b> /&gt;</pre>
+</div>
+
+<h5>JETM aggregation chain</h5>
+
+<p>
+  As stated above the default aggregation chain uses a threshold based buffer. If you want to alter this behavior you
+  may chose between activating a distinct feature from a predefined set or specifying the complete aggregator chain
+  manually.
+</p>
+
+<p>
+  The nested element <i>jetm:features</i> supports access to predefined JETM aggregation features. Currently it is
+  possible to alter the buffering capabilities, enable aggregation persistence and raw data logging. For further details
+  see nested elements <i>jetm:interval-buffer</i>, <i>jetm:threshold-buffer</i>,<i>jetm:persistence</i> and
+  <i>jetm:raw-data-log</i> in <a href="../../support/schema/jetm_spring_config_1_2.xsd">JETM spring configuration schema</a>.
+</p>
+
+<p>The following example buffers collected details for 5000 miliseconds before aggregation. Furthermore aggregated
+  performance results are persistent and will survive VM restarts, see
+  <a href="aggregation_persistence.html">Aggregation Persistence</a> for details.</p>
+
+<div class="code"><pre>&lt;jetm:runtime&gt;
+  &lt;jetm:features&gt;
+    &lt;jetm:interval-buffer interval="5000"/&gt;
+    &lt;jetm:persistence /&gt;
+  &lt;/jetm:features&gt;
+&lt;/jetm:runtime&gt;</pre>
+</div>
+
+
+<p>Alternatively you may define the used aggreation chain similar to
+  <a href="etm_manager_configuration.html#xml_config">xml-based EtmManager</a> configuration. The
+  chain consists of one root chain element and n chain elements that process recorded execution times in the specified
+  order.
+</p>
+
+<div class="code"><pre>&lt;jetm:runtime&gt;
+  &lt;jetm:aggregator-chain&gt;
+    &lt;jetm:chain-element class="etm.core.aggregation.BufferedTimedAggregator"&gt;
+      &lt;jetm:property name="aggregationInterval"&gt;10000&lt;/jetm:property&gt;
+    &lt;/jetm:chain-element&gt;
+
+    &lt;jetm:chain-element class="etm.contrib.aggregation.log.CommonsLoggingAggregator"&gt;
+      &lt;jetm:property name="logName"&gt;my.application.raw-performance-data&lt;/jetm:property&gt;
+    &lt;/jetm:chain-element&gt;
+    
+    &lt;jetm:chain-root class="etm.core.aggregation.RootAggregator" /&gt;
+  &lt;/jetm:aggregator-chain&gt;
+&lt;/jetm:runtime&gt;</pre>
+</div>
+
+<h5>JETM runtime plugins</h5>
+
+<p>
+  Again - similar to <a href="etm_manager_configuration.html#xml_config">xml-based EtmManager</a> configuration you
+  can register <i>EtmPlugins</i> to a JETM runtime. Use the nested <i>jetm:plugin</i> element to do so.
+</p>
+
+<div class="code"><pre>&lt;jetm:runtime&gt;
+  &lt;jetm:extension&gt;
+    &lt;jetm:plugin class="etm.contrib.renderer.plugin.Log4jDumpOnShutdownPlugin"&gt;
+      &lt;jetm:property name="logName"&gt;my.log.category&lt;/jetm:property&gt;
+    &lt;/jetm:plugin&gt;
+  &lt;/jetm:extension&gt;
+&lt;/jetm:runtime&gt;</pre>
+</div>
+
+<h5>JETM runtime references</h5>
+
+<p>
+  Most likely you will never have more that one JETM runtime in your Spring configuration. In the unlikely event of
+  having more than one add an <i>id</i> to your JETM runtime and use the attribute <i>runtime-ref</i> to refer to it.
+</p>
+
+<div class="code"><pre>&lt;jetm:runtime <b>id="monitorOne"</b>/&gt;
+
+&lt;jetm:runtime id="monitorTwo"/&gt;
+
+&lt;jetm:monitoring <b>runtime-ref="monitorOne"</b>&gt;
+  &lt;jetm:bean-pattern&gt;*Service,MyBean&lt;/jetm:bean-pattern&gt;
+&lt;/jetm:monitoring&gt;
+
+&lt;jetm:console <b>runtime-ref="monitorOne"</b>/&gt;</pre>
+</div>
+
+<h5>Standalone HTTP console properties</h5>
+
+<p>The build-in console can be configured using the optional attributes <i>listen-port</i>, <i>worker-size</i> and
+  <i>runtime-ref</i>.</p>
+
+<div class="code">
+  <pre>&lt;jetm:console listen-port="<b>45000</b>" worker-size="<b>3</b>"/&gt;</pre>
+</div>
+
+</div>
+
+</div>
+<div class="menu">
+  <a href="../index.html">Home</a>
+  |
+  <a href="../doc.html"><b>Documentation</b></a>
+  |
+  <a href="../faq.html">FAQ</a>
+  |
+  <a href="../../api/index.html">JavaDoc</a>
+  |
+  <a href="../files.html"><b>Download</b></a>
+  |
+  <a href="../svn.html">SVN</a>
+  |
+  <a href="http://sourceforge.net/mail/?group_id=109626">Mailing Lists</a>
+  |
+  <a href="http://sourceforge.net/projects/jetm/">Sourceforge Project Page</a>
+</div>
+</body>
+<!-- Last modified  $Date: 2007-06-18 22:38:38 +0200 (Mo, 18 Jun 2007) $ -->
+</html>

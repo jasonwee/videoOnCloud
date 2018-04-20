@@ -1,0 +1,397 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en_US" xml:lang="en_US">
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=ISO-8859-1"/>
+  <title>Java(TM) Execution Time Measurement Library</title>
+  <link rel="stylesheet" type="text/css" href="../default.css"/>
+</head>
+
+<body>
+
+<div class="menu">
+  <a href="../index.html">Home</a>
+  |
+  <a href="../doc.html"><b>Documentation</b></a>
+  |
+  <a href="../faq.html">FAQ</a>
+  |
+  <a href="../../api/index.html">JavaDoc</a>
+  |
+  <a href="../files.html"><b>Download</b></a>
+  |
+  <a href="../svn.html">SVN</a>
+  |
+  <a href="http://sourceforge.net/mail/?group_id=109626">Mailing Lists</a>
+  |
+  <a href="http://sourceforge.net/projects/jetm/">Sourceforge Project Page</a>
+</div>
+
+<div id="content">
+<div id="header">Java&trade; Execution Time Measurement Library</div>
+
+<div id="subheader">Runtime performance monitoring made easy</div>
+
+<div id="main">
+<h3>JETM Etm Manager Configuration</h3>
+
+<p>
+  This page explains how to configure an EtmManager using
+  <a href="#java_config">Java</a> or
+  <a href="#xml_config">XML-based</a> configuration. Both configuration strategies imply that you
+  are using <a href="../intro/monitoring_strategies.html#programmatic">programmatic</a> performance measurement.
+  Alternatively you may use <a href="../intro/monitoring_strategies.html#declarative">declarative</a> performance
+  measurement.
+</p>
+
+<h4>Common concepts</h4>
+
+<p>
+  The class <a href="../../api/etm/core/configuration/EtmManager.html">EtmManager</a> may be used
+  to retrieve a previously configured EtmMonitor. As seen in <a href="../intro/basic_concepts.html">basic concepts</a>
+  this behavior
+  is pretty similar to the static Logger access provided by Log4J or similar
+  tools. However an EtmManager will always return an instance of
+  <a href="../../api/etm/core/monitor/NullMonitor.html">NullMonitor</a> unless it's configured
+  to provide a different implementation. JETM ships with two different configurator implementations
+  called BasicEtmConfigurator and XmlEtmConfigurator to do so.
+</p>
+
+<p>
+  Since the created EtmMonitor setup may bind resources such as threads both configurators will create a valid
+  configuration, but will not start the monitor itself. Before using it you need to start it. It
+  is also recommended to stop the monitor before shutting down the application. See
+  following examples for further details.
+</p>
+
+<p>
+  Be aware that you need to execute the configuration process before calling
+  <a href="../../api/etm/core/configuration/EtmManager.html#getEtmMonitor()">EtmManager.getEtmMonitor()</a>
+  for the first time. Otherwhise performance measurements may create unexpected results.
+</p>
+
+<a name="java_config"></a>
+<h4>Java runtime configuration</h4>
+
+<p>
+  Within Java you may configure the EtmManager using the class
+  <a href="../../api/etm/core/configuration/BasicEtmConfigurator.html">BasicEtmConfigurator</a>. It provides methods
+  to specify the used EtmMonitor, ExecutionTimer and Aggregator chain. The following configuration examples
+  use the class <a href="../../../samples/tutorial/one-minute/src/java/etm/tutorial/oneminute/BusinessService.java"><i>BusinessService.java</i></a>
+  introduced in <a href="../intro/one_minute_tutorial.html">one minute tutorial</a>.
+</p>
+
+<h5>Default Setup</h5>
+
+<div class="code"><pre>  <span class="java-quote">// initialize measurement subsystem</span>
+  <b>BasicEtmConfigurator.configure();</b>
+
+  <span class="java-quote">// startup measurement subsystem</span>
+  EtmMonitor etmMonitor = EtmManager.getEtmMonitor();
+  <b>etmMonitor.start();</b>
+
+  <span class="java-quote">// instantiate business service</span>
+  BusinessService service = new BusinessService();
+
+  <span class="java-quote">// execute business logic</span>
+  service.someMethod();
+  service.someMethod();
+  service.someMethod();
+  service.nestedMethod();
+
+  <span class="java-quote">// visualize results</span>
+  etmMonitor.render(new SimpleTextRenderer());
+
+  <span class="java-quote">// shutdown measurement framework</span>
+  <b>etmMonitor.stop();</b></pre>
+</div>
+
+<h5>Using nested monitor instance</h5>
+
+<div class="code"><pre>  <span class="java-quote">// initialize measurement subsystem</span>
+  <b>BasicEtmConfigurator.configure(true);</b>
+
+  <span class="java-quote">// startup measurement subsystem</span>
+  EtmMonitor etmMonitor = EtmManager.getEtmMonitor();
+  <b>etmMonitor.start();</b>
+
+  <span class="java-quote">// instantiate business service</span>
+  BusinessService service = new BusinessService();
+
+  <span class="java-quote">// execute business logic</span>
+  service.someMethod();
+  service.someMethod();
+  service.someMethod();
+  service.nestedMethod();
+
+  <span class="java-quote">// visualize results</span>
+  etmMonitor.render(new SimpleTextRenderer());
+
+  <span class="java-quote">// shutdown measurement framework</span>
+  <b>etmMonitor.stop();</b></pre>
+</div>
+
+<h5>Using specific timer</h5>
+
+<div class="code"><pre>  <span class="java-quote">// initialize measurement subsystem</span>
+  <b>BasicEtmConfigurator.configure(true, new SunHighResTimer());</b>
+
+  <span class="java-quote">// startup measurement subsystem</span>
+  EtmMonitor etmMonitor = EtmManager.getEtmMonitor();
+  <b>etmMonitor.start();</b>
+
+  <span class="java-quote">// instantiate business service</span>
+  BusinessService service = new BusinessService();
+
+  <span class="java-quote">// execute business logic</span>
+  service.someMethod();
+  service.someMethod();
+  service.someMethod();
+  service.nestedMethod();
+
+  <span class="java-quote">// visualize results</span>
+  etmMonitor.render(new SimpleTextRenderer());
+
+  <span class="java-quote">// shutdown measurement framework</span>
+  <b>etmMonitor.stop();</b></pre>
+</div>
+
+<h5>Using specific aggregator</h5>
+
+<div class="code"><pre>  <span class="java-quote">// initialize measurement subsystem</span>
+  <b>Aggregator aggregatorChain = new BufferedTimedAggregator(new RootAggregator());
+    BasicEtmConfigurator.configure(true, aggregatorChain);</b>
+
+  <span class="java-quote">// startup measurement subsystem</span>
+  EtmMonitor etmMonitor = EtmManager.getEtmMonitor();
+  <b>etmMonitor.start();</b>
+
+  <span class="java-quote">// instantiate business service</span>
+  BusinessService service = new BusinessService();
+
+  <span class="java-quote">// execute business logic</span>
+  service.someMethod();
+  service.someMethod();
+  service.someMethod();
+  service.nestedMethod();
+
+  <span class="java-quote">// visualize results</span>
+  etmMonitor.render(new SimpleTextRenderer());
+
+  <span class="java-quote">// shutdown measurement framework</span>
+  <b>etmMonitor.stop();</b></pre>
+</div>
+
+<p>For further configuration options see
+  <a href="../../api/etm/core/configuration/BasicEtmConfigurator.html#configure()">BasicEtmConfigurator JavaDoc</a>.
+</p>
+
+<a name="xml_config"></a>
+<h4>Xml configuration</h4>
+
+<p>With the help of <a href="../../api/etm/core/configuration/XmlEtmConfigurator.html">XmlEtmConfigurator</a>
+  the EtmManager can be configured using an xml file that complies to a
+  <a href="../../support/dtd/">JETM configuration DTD</a>. The configuration file allows you to specify
+  the EtmMonitor and ExecutionTimer by full qualified classname or type and the used aggregator chain that processes
+  measurement results.
+</p>
+
+<p>
+  The usage of XmlEtmConfigurator is similar to BasicEtmConfigurator; instead of java objects
+  this configurator requires an xml configuration that may be provided as String, File, URL or InputStream.
+</p>
+
+<div class="code"><pre>  <span class="java-quote">// initialize measurement subsystem</span>
+  <b>XmlEtmConfigurator.configure(new File("jetm-config.xml"));</b>
+
+  <span class="java-quote">// startup measurement subsystem</span>
+  EtmMonitor etmMonitor = EtmManager.getEtmMonitor();
+  <b>etmMonitor.start();</b>
+
+  <span class="java-quote">// instantiate business service</span>
+  BusinessService service = new BusinessService();
+
+  <span class="java-quote">// execute business logic</span>
+  service.someMethod();
+  service.someMethod();
+  service.someMethod();
+  service.nestedMethod();
+
+  <span class="java-quote">// visualize results</span>
+  etmMonitor.render(new SimpleTextRenderer());
+
+  <span class="java-quote">// shutdown measurement framework</span>
+  <b>etmMonitor.stop();</b></pre>
+</div>
+
+<p>
+  XmlEtmConfigurator uses the given xml configuration to override internal defaults.
+  The defaults are: A NestedMonitor that uses the best available timer implementation and buffers collected details
+  until a threshold of 1000 performance results is reached.
+</p>
+
+<a name="xml_type_config"></a>
+<h5>EtmMonitor type configuration</h5>
+
+<p>It is possible to select a certain EtmMonitor implementation by specifying a full qualified
+  classname or a type property. Currently supported types are <i>nested</i> (NestedMonitor),
+  <i>flat</i> (FlatMonitor) and <i>null</i> (NullMonitor). See <a href="../../api/index.html">JavaDoc</a>
+  for further details.
+</p>
+
+<div class="code"><pre>&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;!DOCTYPE jetm-config PUBLIC "-// void.fm //DTD JETM Config 1.2//EN"
+                             "http://jetm.void.fm/dtd/jetm_config_1_2.dtd"&gt;
+
+&lt;jetm-config type="<b>nested</b>"/&gt;
+</pre>
+</div>
+
+
+<h5>Custom timer configuration</h5>
+
+<p>You can select an ExecutionTimer implementation by specifying a full qualified
+  classname or a type property. Currently supported types are <i>default</i> (DefaultTimer),
+  <i>sun</i> (SunHighResTimer) and <i>jdk50</i> (Java15NanoTimer). See <a href="../../api/index.html">JavaDoc</a>
+  for further details.
+</p>
+
+<div class="code"><pre>&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;!DOCTYPE jetm-config PUBLIC "-// void.fm //DTD JETM Config 1.2//EN"
+                             "http://jetm.void.fm/dtd/jetm_config_1_2.dtd"&gt;
+  
+&lt;jetm-config timer="<b>etm.core.timer.DefaultTimer</b>"/&gt;</pre>
+</div>
+
+<h5>Further JETM configuration options</h5>
+
+<p>
+  As stated above the default aggregation chain uses a threshold based buffer. If you want to alter this behavior you
+  may chose between activating a distinct feature from a predefined set or specifying the complete aggregator chain
+  manually.
+</p>
+
+<p>
+  The nested element <i>features</i> supports access to predefined JETM aggregation features. Currently it is
+  possible to alter the buffering capabilities, enable aggregation persistence and raw data logging. For further details
+  see nested elements <i>interval-buffer</i>, <i>threshold-buffer</i>,<i>persistence</i> and
+  <i>raw-data-log</i> in <a href="../../support/dtd/jetm_config_1_2.dtd">JETM configuration DTD</a>.
+</p>
+
+<p>The following example buffers collected details for 5000 miliseconds before aggregation. Furthermore aggregated
+  performance results are persistent and will survive VM restarts, see
+  <a href="aggregation_persistence.html">Aggregation Persistence</a> for details.</p>
+
+
+<div class="code"><pre>&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;!DOCTYPE jetm-config PUBLIC "-// void.fm //DTD JETM Config 1.2//EN"
+                             "http://jetm.void.fm/dtd/jetm_config_1_2.dtd"&gt;
+
+&lt;jetm-config&gt;
+  &lt;features&gt;
+    <b>&lt;interval-buffer interval="5000"/&gt;
+      &lt;persistence&gt;
+      &lt;file-backend path="${java.io.tmpdir}"&gt;
+      &lt;/persistence&gt;</b>
+  &lt;/features&gt;
+&lt;/jetm-config&gt;</pre>
+</div>
+
+
+<p>
+  Alternatively the aggregator chain can be configured using the <i>aggregator-chain</i> element. This element takes
+  an unlimited number of <i>chain-element</i>s and one (optional) <i>chain-root</i> element. Every EtmPoint will be
+  processed by the list of chain-elements in descending order and finally by the given chain-root aggregator. If there
+  is no <i>chain-root</i> element it will default to
+  <a href="../../api/etm/core/aggregation/RootAggregator.html">RootAggregator</a> automatically.
+</p>
+
+<p>
+  Both <i>chain-element</i> and <i>chain-root</i> may depend on runtime properties. These runtime properties can be
+  configured using the nested <i>property</i> elements. For each property the aggregator class has to offer a
+  set<i>Name</i> method that takes either a <i>boolean</i>, <i>int</i>, <i>long</i>, <i>String</i> or <i>Class</i>
+  argument. XmlEtmConfigurator will automatically convert the given string values to the appropriate type of the setter
+  method.
+</p>
+
+<p>
+  The following example shows an aggregator chain that bufferes raw measurements for one second before asynchronously
+  logging
+  and aggregating them.
+</p>
+
+<div class="code"><pre>&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;!DOCTYPE jetm-config PUBLIC "-// void.fm //DTD JETM Config 1.2//EN"
+                             "http://jetm.void.fm/dtd/jetm_config_1_2.dtd"&gt;
+&lt;jetm-config&gt;
+  &lt;aggregator-chain&gt;
+
+    &lt;chain-element class="<b>etm.core.aggregation.BufferedTimedAggregator</b>&gt;
+      &lt;!-- Set aggregation interval to 1 second --&gt;
+      &lt;property name="<b>aggregationInterval</b>"&gt;<b>1000</b>&lt;/property&gt;
+    &lt;/chain-element&gt;
+
+    &lt;chain-element class="<b>etm.contrib.aggregation.log.CommonsLoggingAggregator</b>"&gt;
+      &lt;!-- Set commons-logging log category --&gt;
+      &lt;property name="<b>logName</b>"&gt;<b>etm-result</b>&lt;/property&gt;
+    &lt;/chain-element&gt;
+
+  &lt;/aggregator-chain&gt;
+&lt;/jetm-config&gt;</pre>
+</div>
+<p>
+  Similar to <i>features</i> ant-style property values will be expanded by looking for System.getProperty() values with
+  the given name.
+</p>
+
+<h5>Using EtmMonitor plugins</h5>
+
+<p>Sometimes it is necessary to manage additional resources as part of the EtmMonitor lifecycle. Therefore JETM provides
+  a simple but powerful plugin mechanism that allows to register classes to an EtmMonitor instance.
+  See <a href="drop-in-console.html">HTTP Console</a> for plugin example.</p>
+<h5>Enable autostart</h5>
+
+<p>
+  While it is recommend to start and stop an EtmMonitor manually it can be automatically started. Simply set
+  <i>autostart</i> to true and xml-based JETM configurations will startup an EtmMonitor automatically. Additionally
+  a Shutdown Hook will be registered to stop and free resources during VM shutdown.
+</p>
+
+<div class="code"><pre>&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;!DOCTYPE jetm-config PUBLIC "-// void.fm //DTD JETM Config 1.2//EN"
+                             "http://jetm.void.fm/dtd/jetm_config_1_2.dtd"&gt;
+&lt;jetm-config <b>autostart="true"</b>&gt;
+
+ ...
+
+&lt;/jetm-config&gt;</pre>
+</div>
+<p>
+  Warning: Do not use this mechanism within Java&trade; EE applications if you plan to use hot redeploy. In this
+  environment the ShutDown Hook will never be called and therefore allocated resources will never
+  be freed.
+</p>
+
+</div>
+</div>
+<div class="menu">
+  <a href="../index.html">Home</a>
+  |
+  <a href="../doc.html"><b>Documentation</b></a>
+  |
+  <a href="../faq.html">FAQ</a>
+  |
+  <a href="../../api/index.html">JavaDoc</a>
+  |
+  <a href="../files.html"><b>Download</b></a>
+  |
+  <a href="../svn.html">SVN</a>
+  |
+  <a href="http://sourceforge.net/mail/?group_id=109626">Mailing Lists</a>
+  |
+  <a href="http://sourceforge.net/projects/jetm/">Sourceforge Project Page</a>
+</div>
+</body>
+<!-- Last modified  $Date:2007-01-16 01:50:19 +0100 (Tue, 16 Jan 2007) $ -->
+</html>

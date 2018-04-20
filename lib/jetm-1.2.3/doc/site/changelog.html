@@ -1,0 +1,188 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en_US" xml:lang="en_US">
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=ISO-8859-1"/>
+  <title>Java(TM) Execution Time Measurement Library</title>
+  <link rel="stylesheet" type="text/css" href="default.css"/>
+</head>
+<body>
+<div class="menu">
+  <a href="index.html">Home</a>
+  |
+  <a href="doc.html"><b>Documentation</b></a>
+  |
+  <a href="faq.html">FAQ</a>
+  |
+  <a href="../api/index.html">JavaDoc</a>
+  |
+  <a href="files.html"><b>Download</b></a>
+  |
+  <a href="svn.html">SVN</a>
+  |
+  <a href="http://sourceforge.net/mail/?group_id=109626">Mailing Lists</a>
+  |
+  <a href="http://sourceforge.net/projects/jetm/">Sourceforge Project Page</a>
+</div>
+<div id="content">
+<div id="header">Java&trade; Execution Time Measurement Library</div>
+<div id="subheader">Runtime performance monitoring made easy</div>
+<div id="main">
+
+<h3>JETM Changelog</h3>
+
+<h4>Release 1.2.2</h4>
+<pre>New features
+ - First revision TabularData in JMX Beans (recommended by Nat Luengnaruemitchai)
+ - (Undocumented) JBoss AOP Support (target release will be JETM 1.3.0)
+ - Experimental JETM Connector for .ear deployment (target release will be JETM 1.3.0)
+
+ Changes, Fixes and Improvements
+ - Switched back to non Thread Context Classloader resource loading
+ - Fixed possible NullPointers in MonitoringBeanDefinitionParser (reported by Nat Luengnaruemitchai)
+ - Fixed NullPointer in 1.2 XML configuration parsing for interval based monitoring
+ - RFC 2616 compliant HTTP status response linefeeds (reported by Nat Luengnaruemitchai)
+ - Clarified aop.xml requirement for AspectWerkz offline weaving
+ - Fixed further documentation/javadoc errors</pre>
+
+<h4>Release 1.2.1</h4>
+<pre> New features
+  - Dump current state to log file during reset - if dump plugin is active
+
+ Changes, Fixes and Improvements
+  - Removed blocking during EtmMonitor.render()
+  - Improved locking during collection and aggregation
+  - HTTP Console: Fixed average division by zero
+  - HTTP Console: Fixed broken reset link in MeasurementPoint detailed view
+  - HTTP Console: Aligned sort order for overview and detail view
+  - HTTP Console: Switched to better resource loading
+  - JETM Web Demo: Fixed wrong filter pattern for logging
+  - JETM Web Demo: Removed Java 5.0 dependency
+  - JETM Samples: Removed util namespace from 5 minute tutorial(#1706118)
+  - Build and Test: Java 1.4 support
+</pre>
+
+<h4>Release 1.2.0</h4>
+<pre> New features
+  - Improved Spring integration using Spring 2.x namespaces
+  - Sort by name, executions and times in HTTP console
+  - Switch collapsed/expanded mode in HTTP console during runtime
+  - Added support for persistent aggregation results
+  - Added HTTP console servlet for EtmManager and Spring Managed EtmMonitors
+  - Activated JMX support (deprecated old JMX MBeans), now export top
+    level performance results as JMX MBean
+  - Simplified XML based configuration (use jetm_config_1_2.dtd therefore)
+  - Added basic RRD4j support
+  - Added EtmPluginMetadata - thus enabling lookup for runtime configuration
+    such as HTTP Console listen port
+  - Added Filter for aggregator chains.
+  - Added event system - especially useful for plugins
+
+ Changes, Fixes and Improvements
+  - Five minute tutorial added
+  - Documentation improvements
+  - Deprecated Flat- and NestedAggregator in favour of one common RootAggregator
+  - Deprecated MeasurementPoint in favour of EtmMonitor#createPoint()
+  - Decreased EtmMonitor locking sections
+  - Added setter for plugins for better Spring integration
+  - Improved logging, now using log4j/java 1.4 logging if available
+    (reverts to standard out if not)
+  - Now writing warnings if monitor is not running
+  - Reverted to shared java.util.Timer for scheduling
+  - Minor fixes to logging aggregators
+  - Altered startup order of plugin and aggregator 
+  - Added init(EtmMonitorContext) to plugin and aggregator lifecycle
+  - Added system property support for jetm-config.xml
+
+  - Switched from CVS to SVN (history not migrated)
+</pre>
+
+<h4>Release 1.1.1</h4>
+<pre>Changes, Fixes and Improvements
+  - Switched to thread context classloader to load resources.
+</pre>
+
+<h4>Release 1.1.0</h4>
+<pre> New features
+ - AspectWerkz Support
+ - Generic Web App Integration Support
+ - Expanded/Collapsed HTTP Console result rendering
+ - Dump on shutdown plugin
+
+ Changes, Fixes and Improvements
+ - robots.txt for HTTP console added (disabled actions)
+ - EtmManager.getEtmMonitor() now returns a proxy, this allows
+   late EtmMonitor init.
+ - Removed auto referesh in HTTP console
+ - Added reset(MeasurementPointName) to EtmMonitor
+ - Improved SimpleTextRenderer layout
+ - Logging aggregators now support filtering
+</pre>
+
+<h4>Release 1.0.0</h4>
+<pre> New features
+ - Spring based demo (currently available online only)
+
+ Changes, Fixes and Improvements
+ - Javadoc cleanup
+ - Fixed logging aggregator bugs
+</pre>
+
+<h4>Release 0.8.0</h4>
+<pre> New features
+  - Enabled Plugin Support for XML Configuration
+  - Added HTTPConsoleServer Plugin
+
+ Changes, Fixes and Improvements
+  - EtmMonitor instances have now two states (required for plugin mechanism)
+  - HTTPConsoleServer Startup Thread fixes.
+  - Minor layout changes in SimpleHtmlRenderer
+  - Autostart for EtmManager configurations
+</pre>
+
+<h4>Release 0.7.0</h4>
+<pre> New features
+  - Added spring support
+  - Added AOP Alliance support
+  - Added log framework abstractions
+  - Added log4j style configurators
+  - Added drop-in HTTP console
+
+ Changes, Fixes and Improvements
+  - Removed StaticMeasurementPoint and MonitorFactory and switched
+    to Log4J/Commons Loging type configuration for static monitoring
+  - Improved online documentation, javadoc and examples
+  - Aggregators now use mixed constructor/setter injection for required
+    and optional dependencies
+  - Minor API changes in monitor constructors
+  - Moved BufferedTimedAggregator to core package
+  - Moved Jdk14DumpAggregator to Jdk14LogAggregator (new package)
+  - Temporary disabled JBoss support
+</pre>
+
+<p>For changelog prior to 0.7.0 see CVS</p>
+
+</div>
+
+</div>
+<div class="menu">
+  <a href="index.html">Home</a>
+  |
+  <a href="doc.html"><b>Documentation</b></a>
+  |
+  <a href="faq.html">FAQ</a>
+  |
+  <a href="../api/index.html">JavaDoc</a>
+  |
+  <a href="files.html"><b>Download</b></a>
+  |
+  <a href="svn.html">SVN</a>
+  |
+  <a href="http://sourceforge.net/mail/?group_id=109626">Mailing Lists</a>
+  |
+  <a href="http://sourceforge.net/projects/jetm/">Sourceforge Project Page</a>
+</div>
+</body>
+<!-- Last modified  $Date: 2007-07-09 23:13:29 +0200 (Mo, 09 Jul 2007) $ -->
+</html>

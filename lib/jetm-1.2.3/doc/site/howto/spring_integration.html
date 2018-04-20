@@ -1,0 +1,120 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en_US" xml:lang="en_US">
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=ISO-8859-1"/>
+  <title>Java(TM) Execution Time Measurement Library</title>
+  <link rel="stylesheet" type="text/css" href="../default.css"/>
+</head>
+
+<body>
+<div class="menu">
+  <a href="../index.html">Home</a>
+  |
+  <a href="../doc.html"><b>Documentation</b></a>
+  |
+  <a href="../faq.html">FAQ</a>
+  |
+  <a href="../../api/index.html">JavaDoc</a>
+  |
+  <a href="../files.html"><b>Download</b></a>
+  |
+  <a href="../svn.html">SVN</a>
+  |
+  <a href="http://sourceforge.net/mail/?group_id=109626">Mailing Lists</a>
+  |
+  <a href="http://sourceforge.net/projects/jetm/">Sourceforge Project Page</a>
+</div>
+
+<div id="content">
+  <div id="header">Java&trade; Execution Time Measurement Library</div>
+
+  <div id="subheader">Runtime performance monitoring made easy</div>
+
+  <div id="main">
+    <h3>JETM Springframework integration</h3>
+
+    <p>
+      Due to the nature of Spring managed applications JETM performance monitoring can easily added without
+      touching application source code at all. This is done using Spring AOP. With it's help it
+      is possible to monitor execution times purely by configuration.
+    </p>
+
+    <p>
+      Depending on your runtime environment choose one of the following integration strategies. Please note that these
+      strategies rely on prerequisites and come with constraints listed below.
+    </p>
+    <ul>
+      <li><a href="spring_2_x_integration.html">Spring 2.x integration</a> - requires XSD based configuration</li>
+      <li><a href="spring_1_x_integration.html">Spring 1.x/2.x integration</a> - uses DTD based configuration</li>
+      <li><a href="spring_web_integration.html">Extensions</a> for Spring managed web applications</li>
+    </ul>
+
+
+    <a name="prerequisites_constraints"></a>
+    <h4>Prerequisites and constraints</h4>
+
+    <h5>Springframework 1.x or 2.x?</h5>
+
+    <p>
+      Even though JETM supports both Springframework 1.x and 2.x the integration itself slightly differs. This is
+      because
+      of the newly introduced configuration namespace support in Springframework 2.x. If you are free to choose your
+      Springframework version we recommend using Springframework 2.x, otherwhise you need use the old 1.x style
+      JETM configuration.
+    </p>
+
+    <p>
+      Featurewhise there is no difference between Springframework 2.x and 1.x, however in 2.x the configuration is
+      simplified.
+    </p>
+
+    <h5>Classpath Setup</h5>
+
+    <p>
+      JETM depends on Springframework classes and it's dependencies. It is necessary to add the following jars to the
+      application classpath.
+    </p>
+    <ul>
+      <li>Spring Framework: spring.jar <i>or</i> spring-aop.jar, spring-beans.jar, spring-context.jar,
+        spring-core.jar
+      </li>
+      <li>AOP-Alliance API: aopalliance.jar</li>
+      <li>CGLIB: cglib-nodep-x.jar</li>
+      <li>Commons-Logging: commons-logging.jar</li>
+    </ul>
+
+
+    <h5>ApplicationContext required</h5>
+
+    <p>
+      Be aware that your spring configuration must be running within an <a
+      href="http://www.springframework.org/docs/reference/beans.html#context-introduction">ApplicationContext</a>.
+      Normally this is the case if you create the Spring runtime using a Web ContextLoaderListener or Web
+      ContextLoaderServlet or any ApplicationContext subclass. If you just use a BeanFactory JETM performance monitoring
+      will not work automatically (Hint: Register BeanPostProcessors - e.g. BeanNameAutoProxyCreator - manually).
+    </p>
+  </div>
+
+</div>
+<div class="menu">
+  <a href="../index.html">Home</a>
+  |
+  <a href="../doc.html"><b>Documentation</b></a>
+  |
+  <a href="../faq.html">FAQ</a>
+  |
+  <a href="../../api/index.html">JavaDoc</a>
+  |
+  <a href="../files.html"><b>Download</b></a>
+  |
+  <a href="../svn.html">SVN</a>
+  |
+  <a href="http://sourceforge.net/mail/?group_id=109626">Mailing Lists</a>
+  |
+  <a href="http://sourceforge.net/projects/jetm/">Sourceforge Project Page</a>
+</div>
+</body>
+<!-- Last modified  $Date: 2007-06-18 22:38:38 +0200 (Mo, 18 Jun 2007) $ -->
+</html>
