@@ -40,6 +40,7 @@ public class SSTableScrub {
 		Options options = Options.parseArgs(args);
 		
 		try {
+			/*
 			OutputHandler handler = new OutputHandler.SystemOutput(options.verbose, options.debug);
 			
             if (Directories.sstablesNeedsMigration())
@@ -160,7 +161,7 @@ public class SSTableScrub {
 
             SSTableDeletingTask.waitForDeletions();
             System.exit(0); // We need that to stop non daemonized threads
-            
+            */
 		} catch (Exception e) {
 			System.err.println(e.getMessage());
 			if (options.debug)
