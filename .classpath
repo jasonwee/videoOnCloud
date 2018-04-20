@@ -5,35 +5,6 @@
 	<classpathentry kind="src" path="test/long"/>
 	<classpathentry kind="src" path="test/unit"/>
 	<classpathentry kind="src" path="test/ui"/>
-	<classpathentry kind="lib" path="lib/cassandra-current/lib/antlr-3.2.jar"/>
-	<classpathentry kind="lib" path="lib/cassandra-current/lib/apache-cassandra-2.0.7.jar"/>
-	<classpathentry kind="lib" path="lib/cassandra-current/lib/apache-cassandra-clientutil-2.0.7.jar"/>
-	<classpathentry kind="lib" path="lib/cassandra-current/lib/apache-cassandra-thrift-2.0.7.jar"/>
-	<classpathentry kind="lib" path="lib/cassandra-current/lib/commons-cli-1.1.jar"/>
-	<classpathentry kind="lib" path="lib/cassandra-current/lib/commons-codec-1.2.jar"/>
-	<classpathentry kind="lib" path="lib/cassandra-current/lib/commons-lang3-3.1.jar"/>
-	<classpathentry kind="lib" path="lib/cassandra-current/lib/compress-lzf-0.8.4.jar"/>
-	<classpathentry kind="lib" path="lib/cassandra-current/lib/concurrentlinkedhashmap-lru-1.3.jar"/>
-	<classpathentry kind="lib" path="lib/cassandra-current/lib/high-scale-lib-1.1.2.jar"/>
-	<classpathentry kind="lib" path="lib/cassandra-current/lib/jackson-core-asl-1.9.2.jar"/>
-	<classpathentry kind="lib" path="lib/cassandra-current/lib/jackson-mapper-asl-1.9.2.jar"/>
-	<classpathentry kind="lib" path="lib/cassandra-current/lib/jamm-0.2.5.jar"/>
-	<classpathentry kind="lib" path="lib/cassandra-current/lib/jbcrypt-0.3m.jar"/>
-	<classpathentry kind="lib" path="lib/cassandra-current/lib/jline-1.0.jar"/>
-	<classpathentry kind="lib" path="lib/cassandra-current/lib/json-simple-1.1.jar"/>
-	<classpathentry kind="lib" path="lib/cassandra-current/lib/libthrift-0.9.1.jar"/>
-	<classpathentry kind="lib" path="lib/cassandra-current/lib/log4j-1.2.16.jar"/>
-	<classpathentry kind="lib" path="lib/cassandra-current/lib/lz4-1.2.0.jar"/>
-	<classpathentry kind="lib" path="lib/cassandra-current/lib/metrics-core-2.2.0.jar"/>
-	<classpathentry kind="lib" path="lib/cassandra-current/lib/reporter-config-2.1.0.jar"/>
-	<classpathentry kind="lib" path="lib/cassandra-current/lib/servlet-api-2.5-20081211.jar"/>
-	<classpathentry kind="lib" path="lib/cassandra-current/lib/slf4j-api-1.7.2.jar"/>
-	<classpathentry kind="lib" path="lib/cassandra-current/lib/slf4j-log4j12-1.7.2.jar"/>
-	<classpathentry kind="lib" path="lib/cassandra-current/lib/snakeyaml-1.11.jar"/>
-	<classpathentry kind="lib" path="lib/cassandra-current/lib/snappy-java-1.0.5.jar"/>
-	<classpathentry kind="lib" path="lib/cassandra-current/lib/snaptree-0.1.jar"/>
-	<classpathentry kind="lib" path="lib/cassandra-current/lib/super-csv-2.1.0.jar"/>
-	<classpathentry kind="lib" path="lib/cassandra-current/lib/thrift-server-0.3.3.jar"/>
 	<classpathentry kind="lib" path="lib/hector-current.jar" sourcepath="docs/hector-core-1.1-5-SNAPSHOT-sources.jar"/>
 	<classpathentry kind="lib" path="lib/commons-lang-2.4.jar"/>
 	<classpathentry kind="lib" path="lib/json-20131018.jar"/>
@@ -57,11 +28,99 @@
 	<classpathentry kind="lib" path="lib/mongo-hadoop-core-1.3.2.jar"/>
 	<classpathentry kind="lib" path="lib/commons-compress-1.9/commons-compress-1.9.jar"/>
 	<classpathentry kind="lib" path="lib/lucene-queryparser-4.8.1.jar"/>
+	<classpathentry kind="lib" path="lib/jcommon-1.0.23.jar"/>
+	<classpathentry kind="lib" path="lib/jfreechart-1.0.19.jar"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.8"/>
 	<classpathentry kind="lib" path="/usr/lib/jvm/jdk1.8.0_45/jre/lib/ext/jfxrt.jar"/>
 	<classpathentry kind="lib" path="lib/guava-18.0.jar"/>
 	<classpathentry kind="lib" path="lib/commons-io-2.4.jar"/>
 	<classpathentry kind="lib" path="lib/netty-all-4.0.33.Final.jar"/>
 	<classpathentry kind="lib" path="lib/selenium-2.48.2/selenium-java-2.48.2.jar"/>
+	<classpathentry kind="lib" path="lib/commons-math3-3.6.1.jar"/>
+	<classpathentry kind="lib" path="lib/pdfbox-app-2.0.2.jar" sourcepath="docs/pdfbox-2.0.2-src.zip"/>
+	<classpathentry kind="lib" path="lib/jline-2.13.jar"/>
+	<classpathentry kind="lib" path="lib/cassandra-current/lib/airline-0.6.jar"/>
+	<classpathentry kind="lib" path="lib/cassandra-current/lib/antlr-runtime-3.5.2.jar"/>
+	<classpathentry kind="lib" path="lib/cassandra-current/lib/apache-cassandra-3.7.jar"/>
+	<classpathentry kind="lib" path="lib/cassandra-current/lib/apache-cassandra-clientutil-3.7.jar"/>
+	<classpathentry kind="lib" path="lib/cassandra-current/lib/apache-cassandra-thrift-3.7.jar"/>
+	<classpathentry kind="lib" path="lib/cassandra-current/lib/asm-5.0.4.jar"/>
+	<classpathentry kind="lib" path="lib/cassandra-current/lib/caffeine-2.2.6.jar"/>
+	<classpathentry kind="lib" path="lib/cassandra-current/lib/cassandra-driver-core-3.0.1-shaded.jar"/>
+	<classpathentry kind="lib" path="lib/cassandra-current/lib/cassandra-driver-internal-only-3.0.0-6af642d.zip"/>
+	<classpathentry kind="lib" path="lib/cassandra-current/lib/commons-cli-1.1.jar"/>
+	<classpathentry kind="lib" path="lib/cassandra-current/lib/commons-codec-1.2.jar"/>
+	<classpathentry kind="lib" path="lib/cassandra-current/lib/commons-lang3-3.1.jar"/>
+	<classpathentry kind="lib" path="lib/cassandra-current/lib/commons-math3-3.2.jar"/>
+	<classpathentry kind="lib" path="lib/cassandra-current/lib/compress-lzf-0.8.4.jar"/>
+	<classpathentry kind="lib" path="lib/cassandra-current/lib/concurrent-trees-2.4.0.jar"/>
+	<classpathentry kind="lib" path="lib/cassandra-current/lib/concurrentlinkedhashmap-lru-1.4.jar"/>
+	<classpathentry kind="lib" path="lib/cassandra-current/lib/disruptor-3.0.1.jar"/>
+	<classpathentry kind="lib" path="lib/cassandra-current/lib/ecj-4.4.2.jar"/>
+	<classpathentry kind="lib" path="lib/cassandra-current/lib/futures-2.1.6-py2.py3-none-any.zip"/>
+	<classpathentry kind="lib" path="lib/cassandra-current/lib/guava-18.0.jar"/>
+	<classpathentry kind="lib" path="lib/cassandra-current/lib/high-scale-lib-1.0.6.jar"/>
+	<classpathentry kind="lib" path="lib/cassandra-current/lib/hppc-0.5.4.jar"/>
+	<classpathentry kind="lib" path="lib/cassandra-current/lib/jackson-core-asl-1.9.2.jar"/>
+	<classpathentry kind="lib" path="lib/cassandra-current/lib/jackson-mapper-asl-1.9.2.jar"/>
+	<classpathentry kind="lib" path="lib/cassandra-current/lib/jamm-0.3.0.jar"/>
+	<classpathentry kind="lib" path="lib/cassandra-current/lib/javax.inject.jar"/>
+	<classpathentry kind="lib" path="lib/cassandra-current/lib/jbcrypt-0.3m.jar"/>
+	<classpathentry kind="lib" path="lib/cassandra-current/lib/jcl-over-slf4j-1.7.7.jar"/>
+	<classpathentry kind="lib" path="lib/cassandra-current/lib/jflex-1.6.0.jar"/>
+	<classpathentry kind="lib" path="lib/cassandra-current/lib/jna-4.0.0.jar"/>
+	<classpathentry kind="lib" path="lib/cassandra-current/lib/joda-time-2.4.jar"/>
+	<classpathentry kind="lib" path="lib/cassandra-current/lib/json-simple-1.1.jar"/>
+	<classpathentry kind="lib" path="lib/cassandra-current/lib/libthrift-0.9.2.jar"/>
+	<classpathentry kind="lib" path="lib/cassandra-current/lib/log4j-over-slf4j-1.7.7.jar"/>
+	<classpathentry kind="lib" path="lib/cassandra-current/lib/logback-classic-1.1.3.jar"/>
+	<classpathentry kind="lib" path="lib/cassandra-current/lib/logback-core-1.1.3.jar"/>
+	<classpathentry kind="lib" path="lib/cassandra-current/lib/lz4-1.3.0.jar"/>
+	<classpathentry kind="lib" path="lib/cassandra-current/lib/metrics-core-3.1.0.jar"/>
+	<classpathentry kind="lib" path="lib/cassandra-current/lib/metrics-logback-3.1.0.jar"/>
+	<classpathentry kind="lib" path="lib/cassandra-current/lib/netty-all-4.0.36.Final.jar"/>
+	<classpathentry kind="lib" path="lib/cassandra-current/lib/ohc-core-0.4.3.jar"/>
+	<classpathentry kind="lib" path="lib/cassandra-current/lib/ohc-core-j8-0.4.3.jar"/>
+	<classpathentry kind="lib" path="lib/cassandra-current/lib/primitive-1.0.jar"/>
+	<classpathentry kind="lib" path="lib/cassandra-current/lib/reporter-config-base-3.0.0.jar"/>
+	<classpathentry kind="lib" path="lib/cassandra-current/lib/reporter-config3-3.0.0.jar"/>
+	<classpathentry kind="lib" path="lib/cassandra-current/lib/sigar-1.6.4.jar"/>
+	<classpathentry kind="lib" path="lib/cassandra-current/lib/six-1.7.3-py2.py3-none-any.zip"/>
+	<classpathentry kind="lib" path="lib/cassandra-current/lib/slf4j-api-1.7.7.jar"/>
+	<classpathentry kind="lib" path="lib/cassandra-current/lib/snakeyaml-1.11.jar"/>
+	<classpathentry kind="lib" path="lib/cassandra-current/lib/snappy-java-1.1.1.7.jar"/>
+	<classpathentry kind="lib" path="lib/cassandra-current/lib/snowball-stemmer-1.3.0.581.1.jar"/>
+	<classpathentry kind="lib" path="lib/cassandra-current/lib/ST4-4.0.8.jar"/>
+	<classpathentry kind="lib" path="lib/cassandra-current/lib/stream-2.5.2.jar"/>
+	<classpathentry kind="lib" path="lib/cassandra-current/lib/thrift-server-0.3.7.jar"/>
+	<classpathentry kind="lib" path="lib/tomcat/apache-tomcat-8.5.4/lib/annotations-api.jar"/>
+	<classpathentry kind="lib" path="lib/tomcat/apache-tomcat-8.5.4/lib/catalina-ant.jar"/>
+	<classpathentry kind="lib" path="lib/tomcat/apache-tomcat-8.5.4/lib/catalina-ha.jar"/>
+	<classpathentry kind="lib" path="lib/tomcat/apache-tomcat-8.5.4/lib/catalina-storeconfig.jar"/>
+	<classpathentry kind="lib" path="lib/tomcat/apache-tomcat-8.5.4/lib/catalina-tribes.jar"/>
+	<classpathentry kind="lib" path="lib/tomcat/apache-tomcat-8.5.4/lib/catalina.jar"/>
+	<classpathentry kind="lib" path="lib/tomcat/apache-tomcat-8.5.4/lib/ecj-4.5.1.jar"/>
+	<classpathentry kind="lib" path="lib/tomcat/apache-tomcat-8.5.4/lib/el-api.jar"/>
+	<classpathentry kind="lib" path="lib/tomcat/apache-tomcat-8.5.4/lib/jasper-el.jar"/>
+	<classpathentry kind="lib" path="lib/tomcat/apache-tomcat-8.5.4/lib/jasper.jar"/>
+	<classpathentry kind="lib" path="lib/tomcat/apache-tomcat-8.5.4/lib/jaspic-api.jar"/>
+	<classpathentry kind="lib" path="lib/tomcat/apache-tomcat-8.5.4/lib/jsp-api.jar"/>
+	<classpathentry kind="lib" path="lib/tomcat/apache-tomcat-8.5.4/lib/servlet-api.jar"/>
+	<classpathentry kind="lib" path="lib/tomcat/apache-tomcat-8.5.4/lib/tomcat-api.jar"/>
+	<classpathentry kind="lib" path="lib/tomcat/apache-tomcat-8.5.4/lib/tomcat-coyote.jar"/>
+	<classpathentry kind="lib" path="lib/tomcat/apache-tomcat-8.5.4/lib/tomcat-dbcp.jar"/>
+	<classpathentry kind="lib" path="lib/tomcat/apache-tomcat-8.5.4/lib/tomcat-i18n-es.jar"/>
+	<classpathentry kind="lib" path="lib/tomcat/apache-tomcat-8.5.4/lib/tomcat-i18n-fr.jar"/>
+	<classpathentry kind="lib" path="lib/tomcat/apache-tomcat-8.5.4/lib/tomcat-i18n-ja.jar"/>
+	<classpathentry kind="lib" path="lib/tomcat/apache-tomcat-8.5.4/lib/tomcat-jdbc.jar"/>
+	<classpathentry kind="lib" path="lib/tomcat/apache-tomcat-8.5.4/lib/tomcat-jni.jar"/>
+	<classpathentry kind="lib" path="lib/tomcat/apache-tomcat-8.5.4/lib/tomcat-util-scan.jar"/>
+	<classpathentry kind="lib" path="lib/tomcat/apache-tomcat-8.5.4/lib/tomcat-util.jar"/>
+	<classpathentry kind="lib" path="lib/tomcat/apache-tomcat-8.5.4/lib/tomcat-websocket.jar"/>
+	<classpathentry kind="lib" path="lib/tomcat/apache-tomcat-8.5.4/lib/websocket-api.jar"/>
+	<classpathentry kind="lib" path="lib/Rootbeer.jar" sourcepath="/home/jason/oss/rootbeer1/src"/>
+	<classpathentry kind="lib" path="lib/aparapi.jar"/>
+	<classpathentry kind="lib" path="lib/jaunt1.3.1.jar"/>
+	<classpathentry kind="lib" path="lib/jmockit-1.8.jar"/>
 	<classpathentry kind="output" path="build/classes/main"/>
 </classpath>
