@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<project default="jar" name="videoOnCloud" basedir=".">
+
+	<property name="distribution" value="videoOnCloud"/>
+	<property name="target" value="../build"/>
+	<property name="src" value="../src"/>
+	<property name="lib" value="../lib"/>
+	<property name="main-jar-class" value="Test"/>
+	<property name="main-test-runner-class" value="TestRunner"/>
+	<tstamp>
+		<format property="version" pattern="yy.MM.dd" />
+	</tstamp>
+	<tstamp>
+		<format property="date" pattern="yyyyMMdd-HHmmss-z" />
+	</tstamp>
+	<property name="bin" value="../bin"/>
+	<property name="res" value="${src}/resources"/>
+	<property name="javadoc" value="${target}/javadoc"/>
+	<property name="testclassesdir" value="${target}/test-classes"/>
+	<property name="testreportdir" value="${target}/test-reports"/>
+	<property name="classesdir" value="${bin}"/>
+	<property file="${target}/build.properties" />
+	<property environment="env"/>
+
+	<path id="test.build.classpath">
+		<fileset dir="${lib}">
+			<include name="*.jar"/>
+			<exclude name="**/hector-0.7.0-20-20101203/**"/>
+		</fileset>
+		<pathelement path="${bin}"/>
+	</path>
+
+	<path id="classpath">
+		<fileset dir="${lib}">
+			<include name="**/*.jar"/>
+			<exclude name="**/elasticsearch-0.20.5/**"/>
+		</fileset>
+	</path>
+
+	<target name="clean-test" depends="init" description="Clean up the generated test directories">
+		<delete dir="${testclassesdir}"></delete>
+		<delete dir="${testreportdir}"></delete>
+	</target>
+
+        <target name="clean" depends="clean-test, init" description="delete jar file if any and clean test directories">
+                <delete>
+                        <fileset dir="." includes="*.jar" />
+                </delete>
+                <delete dir="${javadoc}" />
+        </target>
+
+	<target name="init" unless="init.done">
+		<tstamp>
+			<format property="ts" pattern="yyyyMMdd-HHmmss-z" />
+		</tstamp>
+		<property name="Project" value="${distribution}" />
+		<property name="year" value="2018" />
+
+		<!-- Info ............................................................... -->
+		<echo message=" == ${Project} build file ================================" />
+		<echo message="" />
+		<echo message="    JAVA_HOME: ${env.JAVA_HOME}" />
+		<echo message="    ANT:       ${ant.java.version}" />
+		<echo message="    JAVA:      ${java.version}" />
+		<echo message="    VM:        ${java.vm.version}, ${java.vm.vendor}" />
+
+		<available property="Junit.present" classname="junit.framework.Test"/>
+
+		<property name="init.done" value="true" />
+	</target>
+
+	<target name="help" depends="init" description="Displays the usage">
+		<echo message="" />
+		<echo message="The following build targets are available:" />
+		<echo message="" />
+		<echo message=" -- Building ------------------------------------------------------" />
+		<echo message="" />
+		<echo message="    jar" />
+		<echo message="        Builds jar files" />
+		<echo message="        (Creates ${target}/.)" />
+		<echo message="    javadoc" />
+		<echo message="        Generates the API documentation." />
+		<echo message="        (Creates ${javadoc}.)" />
+		<echo message="" />
+		<echo message="    clean" />
+		<echo message="        Removes all output files and directories." />
+                <echo message="" />
+                <echo message="    ant -p"/>
+                <echo message="        To list all known targets"/>
+		<echo message="    " />
+		<echo message="See the comments in the build.xml file for more details." />
+	</target>
+
+	<target name="javadoc" description="create javadoc">
+		<javadoc access="public"
+			additionalparam="-J-Xmx180m -link https://docs.oracle.com/javase/8/docs/api/"
+			author="true"
+			classpath="/lib/log4j-1.2.16.jar:/lib/servlet-api.jar"
+			destdir="${javadoc}"
+			doctitle="${distribution}"
+			nodeprecated="false"
+			nodeprecatedlist="false"
+			noindex="false"
+			nonavbar="false"
+			notree="false"
+			splitindex="true"
+			use="true"
+			version="true">
+			<fileset dir="${src}" defaultexcludes="yes">
+				<include name="**/*.java" />
+				<exclude name="foo/**/*.java" />
+			</fileset>
+			<link href="http://logging.apache.org/log4j/docs/api/" />
+			<link href="https://docs.oracle.com/javase/8/docs/api/" />
+			<link href="http://jigsaw.w3.org/Doc/Programmer/api" />
+			<link href="." />
+
+		</javadoc>
+	</target>
+
+	<target name="jar" depends="clean, compile" description="Creates a bin jar">
+		<mkdir dir="${target}"/>
+		<mkdir dir="${bin}"/>
+		<defaultexcludes echo="false" add="**/trash/*.class"/>
+		<defaultexcludes echo="false" add="trash"/>
+		<jar destfile="${distribution}-${version}.jar" basedir="${bin}" >
+			<manifest>
+				<attribute name="Main-Class" value="${main-jar-class}"/>
+				<attribute name="Project-Name" value="${distribution}"/>
+				<attribute name="Build-Version" value="${version}"/>
+				<attribute name="Build-Date" value="${date}"/>
+				<attribute name="Built-By" value="${user.name}"/>
+			</manifest>
+		</jar>
+	</target>
+
+	<target name="junit-present" unless="Junit.present" depends="init" description="check if junit present in the path.">
+		<echo>================================= WARNING ================================</echo>
+		<echo>Junit isn't present in classpath directory. Tests not executed.</echo>
+		<echo>==========================================================================</echo>
+	</target>
+	<target name="compile" depends="init" description="compile classes">
+		<javac destdir="${bin}" source="1.8" target="1.8" debug="true"
+			includeantruntime="false" classpathref="classpath"
+			fork="yes" srcdir="${src}">
+			<compilerarg value="-Xlint:-empty"/>
+			<!-- src path="${src}" /-->
+			<exclude name="**/java/play/learn/cassandra/sstable/**.java"/>
+			<exclude name="**/java/play/learn/java/**.java"/>
+			<exclude name="**/play/learn/tomcat/IngressServlet.java"/>
+			<exclude name="**/play/learn/tomcat/IngressServletV1.java"/>
+		</javac>
+	</target>
+	<target name="compile-tests" if="Junit.present" depends="junit-present,jar" description="compile test directory">
+		<mkdir dir="${testclassesdir}"></mkdir>
+		<javac includeantruntime="true" destdir="${testclassesdir}" deprecation="true" debug="true" optimize="false" excludes="**/package.html">
+			<src>
+				<pathelement location="${src}/test"></pathelement>
+			</src>
+			<classpath>
+				<path refid="test.build.classpath"></path>
+				<pathelement path="${classesdir}"></pathelement>
+			</classpath>
+		</javac>
+	</target>
+	<target name="internal-test" if="Junit.present" depends="junit-present,compile,compile-tests">
+		<mkdir dir="${testreportdir}"></mkdir>
+		<junit dir="." failureproperty="test.failure" printSummary="yes" fork="true" haltonerror="true">
+			<sysproperty key="basedir" value="."></sysproperty>
+			<formatter type="xml"></formatter>
+			<formatter usefile="false" type="plain"></formatter>
+			<classpath>
+				<path refid="test.build.classpath"></path>
+				<pathelement path="${testclassesdir}"></pathelement>
+				<pathelement path="${classesdir}"></pathelement>
+			</classpath>
+			<batchtest todir="${testreportdir}">
+				<fileset dir="${src}">
+					<exclude name="foo/bar/**"/>
+					<include name="**/*Test.java"/>
+				</fileset>
+			</batchtest>
+		</junit>
+	</target>
+	<target name="test" description="Run test cases locally." if="test.failure" depends="internal-test">
+		<fail message="There were test failures."></fail>
+	</target>
+
+
+</project>
