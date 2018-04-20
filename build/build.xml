@@ -150,6 +150,8 @@
 			<!-- src path="${src}" /-->
 			<exclude name="**/java/play/learn/cassandra/sstable/**.java"/>
 			<exclude name="**/java/play/learn/java/**.java"/>
+			<exclude name="**/java/org/just4fun/concurrent/**.java"/>
+			<exclude name="**/java/play/learn/weka/LearnWeka.java"/>
 			<exclude name="**/play/learn/tomcat/IngressServlet.java"/>
 			<exclude name="**/play/learn/tomcat/IngressServletV1.java"/>
 		</javac>
