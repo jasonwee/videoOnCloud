@@ -68,7 +68,7 @@ public class ConnectionDatastaxDriver implements Connection {
 			}
 		}
 		session = cluster.connect();
-		queryBuilder = new QueryBuilder(cluster);
+		//queryBuilder = new QueryBuilder(cluster);
 		
 		maybeCreateSchema();
 	}
