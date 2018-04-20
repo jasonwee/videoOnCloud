@@ -126,7 +126,7 @@
 		<mkdir dir="${bin}"/>
 		<defaultexcludes echo="false" add="**/trash/*.class"/>
 		<defaultexcludes echo="false" add="trash"/>
-		<jar destfile="${distribution}-${version}.jar" basedir="${bin}" >
+		<jar destfile="${distribution}-test.jar" basedir="${bin}" >
 			<manifest>
 				<attribute name="Main-Class" value="${main-jar-class}"/>
 				<attribute name="Project-Name" value="${distribution}"/>
