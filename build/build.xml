@@ -65,6 +65,8 @@
 		<echo message="    JAVA:      ${java.version}" />
 		<echo message="    VM:        ${java.vm.version}, ${java.vm.vendor}" />
 
+		<mkdir dir="${bin}" />
+
 		<available property="Junit.present" classname="junit.framework.Test"/>
 
 		<property name="init.done" value="true" />
