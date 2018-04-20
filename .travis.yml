@@ -1,11 +1,19 @@
 language: java
 jdk:
-- oraclejdk8
+ - oraclejdk8
+
 script: ant -f build/build.xml jar
+
 notifications:
   slack: just6fun:Eh0j5aOJi6d7bgPzRuZNd7JO
+
 deploy:
   provider: releases
   api_key:
     secure: dW0f+5wxdLzBqiGKrzOL72QX6SabYt6UTrfXdFOc1So0P5Va89B140Q61gN/H77rI3t0+zlgkdbgAT/0wJASGPdB0ydptrnFAKwYb2qOLjaimYXSoPQD7NrKip4KR7S/dE26AMe5VWBqMnHk1LbzUIUGTNbqlQz0Q7w5iywSEZbq7N94dNAYjTkiuxnx2SC0eHjVDXeAQROh0c1pcWGzkuZ954Wl+EoLqO0gZAmZv0tROtDs/hMrHOBlRliK0cGTuZaP6jYBX2pyTkGDBPA/LFX9BpRvHXdfKljT2nPAzW2o8RcunkhvMH3n/cm6X/ZJxQYcDYkwPetT8u0flGJ2fMi5QssNQTsFzQaTh0XyikvaInXSLDWraV+2q5mHzGl2CTvHz4HViM66PI2i4bN1ziR/DCp5mig235d59XOkBJLKMy7BvO2trTMz+zg3W8+9ej1GtutSeWDw0o6BH0QN9uziyIm0thA5vALxG7wsnnc31sBOlu6GiZkFV2o6pVP7JrlPELelsTByncdtVEHLaRruumAsLGSJ9TCzWJ93J6iRRloOQslt/VWUGCWGaRSyh0O06Q9Gmkh2MtffZs7JSuS/ebpDRbpS7OvPs6PBZnrnqUPyYzIU0R/l56JYCP05PcOaq4deUtueE+OUItfHMZK4NkkudjtPTIIaMo+ejtY=
-  file: build/videoOnCloud-test.jar
+  skip_cleanup: true
+  file:
+  - build/videoOnCloud-test.jar
+  on: 
+    tags: true
+    repo: jasonwee/videoOnCloud
