@@ -1,0 +1,69 @@
+2.1 two tracks : design and research
+---------------------------------------
+design projects
+research projects
+
+https://www.edsurge.com/news/2015-06-03-edtech-conferences-you-need-to-know
+
+
+2.2 citi training
+---------------------------------------
+citi Collaborative Institutional Training Initiative
+An Institutional Review Board, or IRB, is a university organization that oversees human subjects research. If you want to do any research on human subjects, then your research must be approved by IRB. We'll talk about how to get IRB approval in the Research Basics portion of this course.
+
+https://en.wikipedia.org/wiki/Institutional_review_board
+https://www.udacity.com/wiki/Educational_Technology#!#research-basics
+http://researchintegrity.gatech.edu/irb-required-training
+
+
+2.3 how to read an academic publication
+---------------------------------------
+* Read the abstract.
+* Read the introduction. 
+* Read the conclusion.
+* Read other relevant sections.
+
+http://dspace.library.uu.nl/bitstream/handle/1874/16899/kirschner_06_minimal_guidance.pdf
+http://www.davidjoyner.net/blog/wp-content/uploads/2015/03/IUI2015_Camera-Ready.pdf
+http://www.cs.columbia.edu/~hgs/netbib/efficientReading.pdf
+https://www.cc.gatech.edu/fac/Spencer.Rugaber/txt/research_paper.txt
+http://www.eecs.harvard.edu/~michaelm/postscripts/ReadPaper.pdf
+http://ccr.sigcomm.org/online/files/p83-keshavA.pdf
+https://www.cs.jhu.edu/~jason/advice/how-to-read-a-paper.html
+
+
+2.4 finding sources and articles
+---------------------------------------
+* Use Google Scholar
+* Follow the Reference List
+* Follow the Authors
+* Use the Georgia Tech Library
+* Ask!
+
+https://scholar.google.com/
+https://scholar.google.com/citations?view_op=search_authors
+https://scholar.google.com/citations?mauthors=David+Joyner&hl=en&view_op=search_authors
+https://scholar.google.com/citations?user=yaCigtkAAAAJ&hl=en
+http://www.library.gatech.edu/
+
+
+2.5 contributing to the library
+---------------------------------------
+
+
+2.6 sharing your work outside the class
+---------------------------------------
+
+
+2.7 tips for the class: project ideas
+---------------------------------------
+* Things to Research
+* Things to Build
+TA Symbiosis = Transactional Analysis Symbiosis
+
+https://www.hbs.edu/mba/academic-experience/Pages/the-hbs-case-method.aspx
+
+
+2.8 Exemplary Peer Reviews
+---------------------------------------
+
