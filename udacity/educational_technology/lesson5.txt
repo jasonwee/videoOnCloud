@@ -1,0 +1,57 @@
+date start : 15 june 2018
+
+5.1 introduction to controlled experiments 
+---------------------------------------
+a controlled experiment is where we get some participants, randonly assign them
+to certain conditions and then treat each condition in a different way.
+
+what we do to each condition is called a treatment and then each group of
+participants is called a condition.
+
+
+5.2 introductory resources
+---------------------------------------
+https://camtools.cam.ac.uk/wiki/site/e30faf26-bc0c-4533-acbc-cff4f9234e1b/controlled%20experiments.html
+https://www.simplypsychology.org/experimental-method.html
+https://www.simplypsychology.org/
+http://web.csulb.edu/~msaintg/ppa696/696exper.htm
+https://www.boundless.com/
+non responsive link http://moodle.technion.ac.il/pluginfile.php/219643/mod_resource/content/0/Campbell_and_Stanley_1963.pdf
+https://www.education.com/articles/
+http://www.socialresearchmethods.net/kb/desexper.php
+nxdomain http://http//www.socialresearchmethods.net/
+
+
+5.3 scholarly readings
+---------------------------------------
+https://www.cebma.org/wp-content/uploads/Davies-What-is-Evidence-Based-Education.pdf
+server error http://mres.gmu.edu/pmwiki/uploads/Main/Shadish1996.pdf
+https://www.researchgate.net/profile/Ron_Kohavi/publication/221654095_Practical_guide_to_controlled_experiments_on_the_web_Listen_to_your_customers_not_to_the_hippo/links/0046351bcb1649eda4000000/Practical-guide-to-controlled-experiments-on-the-web-Listen-to-your-customers-not-to-the-hippo.pdf
+https://link.springer.com/content/pdf/10.1007/s10618-008-0114-1.pdf
+http://www.ruxizhang.com/uploads/4/4/0/2/44023465/puzzlingoutcomesincontrolledexperiments.pdf
+https://www.exp-platform.com/Documents/2009-ExPpitfalls.pdf
+https://www.econstor.eu/bitstream/10419/30553/1/617263477.pdf
+404 http://dspace.utamu.ac.ug:8080/xmlui/bitstream/handle/123456789/151/%5BLouis_Cohen,_Lawrence_Manion,_Keith_Morrison%5D_Res(BookFi.org).pdf
+https://www.udacity.com/wiki/Educational_Technology/Controlled_Experiments/Exemplary_Controlled_Experiments
+
+
+5.4 Controlled Experiments: Controlled and Quasi-Experiments in Education
+---------------------------------------
+http://www.eenee.de/dms/EENEE/Analytical_Reports/EENEE_AR11.pdf
+http://www.nber.org/reporter/summer03/angrist.html
+https://ies.ed.gov/ncee/pubs/evidence_based/randomized.asp
+http://pareonline.net/getvn.asp?v=19&n=6
+https://books.google.com/books?id=ku1JAgAAQBAJ&lpg=PT81&ots=DEibReQs3Y&dq=controlled%20experiments%20in%20education&pg=PT73#v=onepage&q&f=false
+https://books.google.com.my/books?id=mLh0Oza3V1IC&lpg=PA315&ots=SNETDnycrp&dq=controlled+experiments+in+education&pg=PA312&redir_esc=y#v=onepage&q&f=false
+https://books.google.com.my/books?id=mLh0Oza3V1IC&dq=controlled+experiments+in+education&source=gbs_navlinks_s&redir_esc=y
+https://www.researchgate.net/publication/222522703_Controlled_experiment_replication_in_evaluation_of_e-learning_system%27s_educational_influence
+
+
+5.5 Controlled Experiments: Exemplary Controlled Experiments
+---------------------------------------
+https://sites.google.com/site/assistmentsstudies/home
+https://docs.google.com/viewer?a=v&pid=sites&srcid=ZGVmYXVsdGRvbWFpbnxraW1rZWxseTkxNXxneDpjMDE1ZDJiOWYyZjYyNTM
+http://web.cs.wpi.edu/~gogo/papers/Razzaq_aied2007.pdf
+https://drive.google.com/file/d/0B2X0QD6q79ZJSHB5TXZlblVDVFU/edit
+https://sites.google.com/site/assistmentsstudies/studiesinprogress/choice-in-feedback-mediums
+http://csjarchive.cogsci.rpi.edu/proceedings/2009/papers/291/paper291.pdf
