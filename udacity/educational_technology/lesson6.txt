@@ -1,0 +1,55 @@
+date start : 22 june 2018
+
+6.1 introduction to survey research
+---------------------------------------
+in survey research, we're not actually making a change to our participants.
+we're just asking them to report on their opinion, their perspectives, their
+experiences. 
+
+
+6.2 introductory resources
+---------------------------------------
+http://www.smc.edu/EnrollmentDevelopment/InstitutionalResearch/Documents/Staff_Development_Resources/Designing%20and%20Conducting%20Survey%20Research.pdf
+https://writing.colostate.edu/guides/index.cfm
+http://www.socialresearchmethods.net/kb/survey.php
+http://http//www.socialresearchmethods.net/
+http://www.research.psu.edu/training/research-protections-workshops/orp-video-archive/documents/irb-101-best-practices-in-survey-research.pdf
+https://explorable.com/survey-research-design
+http://fluidsurveys.com/university/3-types-survey-research-use-can-benefit-organization/
+https://www.qualtrics.com/support/research-resources/introduction-survey-research/
+https://writing.colostate.edu/guides/index.cfm
+
+
+6.3 scholarly readings
+---------------------------------------
+http://gradnyc.com/wp-content/uploads/2012/08/GNYC_Academy_Workshop-3_Conducting-Survey-Research.pdf
+http://web.stanford.edu/dept/communication/faculty/krosnick/Survey_Research.pdf
+https://www.rand.org/pubs/monograph_reports/MR1480.html
+https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3257493/
+https://studysites.uk.sagepub.com/gray3e/study/chapter14/Journal%20articles/Web_based_SurveysSJFREELINK.pdf
+http://dspace.utamu.ac.ug:8080/xmlui/bitstream/handle/123456789/151/%5BLouis_Cohen,_Lawrence_Manion,_Keith_Morrison%5D_Res(BookFi.org).pdf
+
+
+6.4 making a good survey
+---------------------------------------
+http://samples.sainsburysebooks.co.uk/9780471654735_sample_379207.pdf
+https://www.amazon.com/Methods-Testing-Evaluating-Survey-Questionnaires/dp/0471458414
+https://dism.ssri.duke.edu/survey-help
+http://www.socialresearchmethods.net/kb/survwrit.htm
+http://http//www.socialresearchmethods.net/
+https://writing.colostate.edu/guides/index.cfm
+https://writing.colostate.edu/guides/index.cfm
+https://www.sciencebuddies.org/science-fair-projects/references/how-to-design-a-survey
+https://www.statpac.com/surveys/
+http://dspace.utamu.ac.ug:8080/xmlui/bitstream/handle/123456789/151/%5BLouis_Cohen,_Lawrence_Manion,_Keith_Morrison%5D_Res(BookFi.org).pdf
+
+
+6.5 sampling tips
+---------------------------------------
+http://ocw.jhsph.edu/courses/hsre/pdfs/hsre_lect11_burton.pdf
+http://www.iiep.unesco.org/en
+http://www.pewresearch.org/methodology/u-s-survey-research/sampling/
+http://stattrek.com/survey-research/sampling-methods.aspx?Tutorial=AP
+https://explorable.com/methods-of-survey-sampling
+https://www.statpac.com/surveys/sampling.htm
+http://dspace.utamu.ac.ug:8080/xmlui/bitstream/handle/123456789/151/%5BLouis_Cohen,_Lawrence_Manion,_Keith_Morrison%5D_Res(BookFi.org).pdf
