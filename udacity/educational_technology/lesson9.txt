@@ -1,0 +1,47 @@
+date start : 29 june 2018
+
+9.1 introduction to design based research
+---------------------------------------
+
+
+
+9.2 introductory resources
+---------------------------------------
+http://dbr.coe.uga.edu/explain01.htm
+http://edutechwiki.unige.ch/en/Design-based_research
+http://dbr.coe.uga.edu/FAQ.html
+http://www.designbasedresearch.org/index.html
+http://www.lkl.ac.uk/projects/designresearch/
+http://www.personal.psu.edu/mdm392/blogs/design/2010/11/following-a-design-based-research-cycle.html
+https://www.edcan.ca/
+
+
+9.3 scholarly readings
+---------------------------------------
+http://www.didaktik.itn.liu.se/Texter/Barab_Squire_2004.pdf
+https://ideascale.com/userimages/sub-1/898000/panel_upload_12279/30221206.pdf
+http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.488.5019&rep=rep1&type=pdf
+http://faculty.washington.edu/pbell/EPDBR_Bell.pdf
+http://www.irrodl.org/index.php/irrodl/article/view/1626/2710
+http://ascilite.org.au/ajet/ajet27/reeves.pdf
+https://www.j-ets.net/journals/11_4/3.pdf
+http://treeves.coe.uga.edu/EDIT9990/Joseph2004.pdf
+http://pkj-um.net/referensi/research/Lina_Markauskaite,_Peter_Freebody,_Jude_Irwin_Methodological_Choice_and_Design_Scholarship,_Policy_and_Practice_in_Social_and_Educational_Research___2010.pdf#page=50
+http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.110.652&rep=rep1&type=pdf
+
+
+
+9.4 examples of dbr in action
+---------------------------------------
+dbr or design based research
+
+http://rivercity5.activeworlds.com/rivercityproject/documents/dedeICLS04.pdf
+http://rivercity.activeworlds.com/rivercityproject/documents/nelson_edtech_nov2.pdf
+https://www.researchgate.net/profile/Daniel_Andriessen/publication/242695924_Combining_design-based_research_and_action_research_to_test_management_solutions/links/0a85e5341353c4c185000000.pdf
+http://tophe.net/papers/cscl02hoadley.pdf
+https://hal.archives-ouvertes.fr/hal-00529922/document
+https://www.researchgate.net/publication/256618979_An_Introduction_to_Design-Based_Research_with_an_Example_From_Statistics_Education
+http://ro.uow.edu.au/cgi/viewcontent.cgi?article=2308&context=edupapers
+http://www.mv.helsinki.fi/home/kjuuti/Juuti_lavonen_nordina_dbr.pdf
+https://www.it.iitb.ac.in/~sri/papers/dbr4LOs-nfe2013.pdf
+

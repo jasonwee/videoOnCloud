@@ -1,0 +1,125 @@
+date start : 29 june 2018
+
+8.1 introduction to quantitative research
+---------------------------------------
+quantitative research is effectively research with numbers.
+
+
+
+8.2 introductory resources
+---------------------------------------
+https://www.bcps.org/offices/lis/researchcourse/develop_quantitative.html
+http://www.edu.plymouth.ac.uk/resined/quantitative/quanthme.htm
+http://www.sportsci.org/jour/0001/wghdesign.html
+https://www.tesol.org/read-and-publish/journals/tesol-quarterly/tesol-quarterly-research-guidelines/quantitative-research-guidelines
+https://explorable.com/quantitative-research-design
+https://www.marketingdonut.co.uk/marketing/market-research/what-is-quantitative-research-
+http://www.dobney.com/Research/quantitative_research.htm
+http://dissertation.laerd.com/how-to-structure-quantitative-research-questions.php
+http://www.johnlpryor.com/JP_Digital_Portfolio/EDU_7901_files/EDU%207901%20Data%20Definitions.pdf
+
+
+
+8.3 scholarly readings
+---------------------------------------
+http://elibrary.kiu.ac.ug:8080/jspui/bitstream/1/53/1/(2)%20doing%20quantitive%20research%20in%20education%20with%20spss%20by%20daniel%20muijs.pdf
+http://www33.homepage.villanova.edu/edward.fierros/pdf/Johnson.pdf
+http://www.socsci.uci.edu/~castellj/fieldstudies/webdocs/W-Readings/IntegratingQualandQuant.pdf
+http://dspace.utamu.ac.ug:8080/xmlui/bitstream/handle/123456789/151/%5BLouis_Cohen,_Lawrence_Manion,_Keith_Morrison%5D_Res(BookFi.org).pdf
+https://www.udacity.com/wiki/Educational_Technology/Controlled_Experiments/Exemplary_Controlled_Experiments
+
+
+
+8.4 basic stats: t-tests
+---------------------------------------
+http://www.socialresearchmethods.net/kb/stat_t.php
+http://docs.statwing.com/examples-and-definitions/t-test/
+http://blog.minitab.com/blog/statistics-and-quality-data-analysis/what-is-a-t-test-and-why-is-it-like-telling-a-kid-to-clean-up-that-mess-in-the-kitchen
+http://math.iit.edu/~mccomic/525/notes/MatchedPairsNotes.pdf
+https://stattrek.com/hypothesis-test/paired-means.aspx?Tutorial=AP
+https://statistics.laerd.com/statistical-guides/dependent-t-test-statistical-guide-3.php
+http://sites.nicholas.duke.edu/statsreview/means/paired/
+http://www.psychology.emory.edu/clinical/bliwise/Tutorials/TOM/meanstests/tone.htm
+https://libguides.library.kent.edu/SPSS/OneSampletTest
+https://explorable.com/independent-one-sample-t-test
+https://www.graphpad.com/quickcalcs/ttest1.cfm
+http://www.socscistatistics.com/tests/ttestdependent/Default2.aspx
+https://www.graphpad.com/quickcalcs/OneSampleT1.cfm?Format=SD
+
+
+
+8.5 basic stats: anova
+---------------------------------------
+An Analysis of Variance, or ANOVA
+http://mathworld.wolfram.com/ANOVA.html
+http://www.statstutor.ac.uk/resources/uploaded/onewayanova.pdf
+http://onlinestatbook.com/2/analysis_of_variance/intro.html
+https://explorable.com/anova
+http://www.physics.csbsju.edu/stats/anova.html
+http://www.physics.csbsju.edu/stats/anova_pnp_NGROUP_form.html
+http://vassarstats.net/anova1u.html?
+
+
+
+8.6 basic stats: linear regression 
+---------------------------------------
+https://onlinecourses.science.psu.edu/stat501/node/250/
+http://www.stat.yale.edu/Courses/1997-98/101/linreg.htm
+http://onlinestatbook.com/2/regression/intro.html
+https://www.graphpad.com/quickcalcs/linear1/
+https://www.youtube.com/watch?t=128&v=IO8RQ-V3Xmw
+http://dspace.utamu.ac.ug:8080/xmlui/bitstream/handle/123456789/151/%5BLouis_Cohen,_Lawrence_Manion,_Keith_Morrison%5D_Res(BookFi.org).pdf
+
+
+
+8.7 advanced stats
+---------------------------------------
+A MANOVA, or Multivariate Analysis of Variance
+https://onlinecourses.science.psu.edu/stat505/node/159/
+https://pareonline.net/getvn.asp?v=19&n=17
+https://www.statmethods.net/stats/anova.html
+https://onlinecourses.science.psu.edu/stat501/node/283/
+http://www.stat.yale.edu/Courses/1997-98/101/linmult.htm
+https://www.youtube.com/watch?v=ZwtxHXh-ZXU
+https://www.graphpad.com/guides/prism/6/curve-fitting/index.htm?stat_other_kinds_of_regression.htm
+https://blogs.mathworks.com/loren/2011/01/13/data-driven-fitting/
+https://www.fasebj.org/doi/pdf/10.1096/fasebj.1.5.3315805
+http://dspace.utamu.ac.ug:8080/xmlui/bitstream/handle/123456789/151/%5BLouis_Cohen,_Lawrence_Manion,_Keith_Morrison%5D_Res(BookFi.org).pdf
+
+
+
+8.8  qualitative vs quantitatve research
+---------------------------------------
+http://macrothink.org/journal/index.php/ije/article/viewFile/446/361
+http://www.leeds.ac.uk/educol/documents/00001487.htm
+http://www.southalabama.edu/colleges/ceps/
+https://www.xavier.edu/library/students/documents/qualitative_quantitative.pdf
+http://guides.lib.utexas.edu/nursinghtml/links/research_qua.html
+http://researchguides.ebling.library.wisc.edu/c.php?g=293229&p=1953453
+https://explorable.com/quantitative-and-qualitative-research?gid=1582
+https://www.surveygizmo.com/resources/blog/quantitative-qualitative-research/
+https://atlasti.com/quantitative-vs-qualitative-research/
+https://www.bl.uk/business-and-ip-centre/articles/qualitative-and-quantitative-research-for-small-business
+
+
+
+8.9 online statistics courses
+---------------------------------------
+https://www.udacity.com/course/intro-to-statistics--st101
+https://www.udacity.com/course/intro-to-descriptive-statistics--ud827
+https://www.udacity.com/course/intro-to-inferential-statistics--ud201
+https://www.coursera.org/browse?source=deprecated_spark_cdp
+https://www.coursera.org/learn/inferential-statistics
+https://ocw.mit.edu/courses/political-science/17-874-quantitative-research-methods-multivariate-spring-2004/
+https://www.edx.org/course/explore-statistics-r-kix-kiexplorx-0
+https://www.edx.org/course/introduction-r-data-science
+https://www.edx.org/course/big-data-education-pennx-bde1x-0
+https://www.udacity.com/course/data-analyst-nanodegree--nd002
+https://www.udacity.com/course/machine-learning--ud262
+https://www.udacity.com/course/intro-to-machine-learning--ud120
+https://www.udacity.com/course/intro-to-data-science--ud359
+https://https//www.udacity.com/course/data-analysis-with-r--ud651
+https://www.coursera.org/specializations/jhu-data-science
+https://www.coursera.org/learn/machine-learning
+https://www.edx.org/course/data-science-essentials
+
