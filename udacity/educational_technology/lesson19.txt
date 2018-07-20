@@ -1,0 +1,89 @@
+date start : 20 july 2018
+
+19.1 introduction to intelligent tutors
+---------------------------------------
+
+
+19.2 introductory resources
+---------------------------------------
+https://net.educause.edu/ir/library/pdf/ELI7098.pdf
+http://faculty.cs.niu.edu/~freedman/papers/link2000.pdf
+http://www.uni-obuda.hu/journal/Samuelis_10.pdf
+https://www.stottlerhenke.com/papers/astd_learning_circuits_2000_its_what_how.pdf
+http://edutechwiki.unige.ch/en/Intelligent_tutoring_system
+https://www.udacity.com/wiki/Educational_Technology/Intelligent_Tutoring_Systems/Introductory_Resources?plain=true
+http://www.adlnet.org/wp-content/uploads/2011/08/woolf_intelligent_systems_part1_iFest2011.pdf
+https://en.wikipedia.org/wiki/Intelligent_tutoring_system
+https://en.wikipedia.org/wiki/Cognitive_tutor
+http://www.academia.edu/2382949/Intelligent_tutoring_Systems_An_overview
+
+
+19.3 scholarly readings
+---------------------------------------
+http://ijcai.org/Proceedings/09/Papers/012.pdf
+https://kilthub.figshare.com/
+http://www.dtic.mil/dtic/tr/fulltext/u2/a312246.pdf
+http://www.learnlab.org/opportunities/summer/readings/06IJAIED.pdf
+http://www.tommurray.us/atoolsbook/atoolsPDFProofs/c17_AtoolsOverview.pdf
+http://csjarchive.cogsci.rpi.edu/2002v26/i02/p0147p0179/00000078.pdf
+https://www.researchgate.net/profile/Roger_Azevedo/publication/226691303_Beyond_intelligent_tutoring_systems_Using_computers_as_METAcognitive_tools_to_enhance_learning/links/0046353702dc28f8ba000000.pdf
+https://kilthub.figshare.com/
+http://act-r.psy.cmu.edu/wordpress/wp-content/uploads/2012/12/119CogMod_IntTut.pdf
+http://pegasus.javeriana.edu.co/~CIS0830IS03/archives/enlaces/[49].pdf
+https://pslcdatashop.web.cmu.edu/KDDCup/FAQ/Ritter-Koed-Hadley-Corb-Lilly.pdf
+http://www.columbia.edu/~rsb2162/New%20potentials%20for%20ITS-source.pdf
+http://people.ict.usc.edu/~lane/AIED2009-IEG-WorkshopProceedings-FINAL.pdf#page=9
+http://www.davidjoyner.net/blog/wp-content/uploads/2015/03/IUI2015_Camera-Ready.pdf
+
+
+
+19.4 biography of researchers
+---------------------------------------
+http://www.cs.cmu.edu/~./aleven/
+https://facultyclusters.ncsu.edu/
+http://act-r.psy.cmu.edu/peoplepages/ja/
+http://www.tc.columbia.edu/academics/index.htm?facid=rsb2162
+http://www.cs.ubc.ca/~conati/
+http://pact.cs.cmu.edu/corbett.html
+http://pact.cs.cmu.edu/koedinger.html
+https://www.wpi.edu/academics/faculty/directory
+http://pact.cs.cmu.edu/koedinger.html
+http://people.tamu.edu/~mazda/
+http://www.cs.cmu.edu/~bmclaren/research.html
+http://idoroll.com/
+https://www.cics.umass.edu/faculty/directory/woolf_beverly
+https://www.carnegielearning.com/
+http://www.isp.pitt.edu/research/educational-technology-group
+http://web0.memphis.edu/mitsc/
+http://web.cs.wpi.edu/Research/trg/
+
+
+
+19.5 ongoing projects
+---------------------------------------
+https://www.carnegielearning.com/products/software-platform/mathia-learning-software/
+https://www.assistments.org/
+http://web0.memphis.edu/mitsc/capabilities/team-memphis-projects/metatutor/index.php
+https://www.andrewmolney.name/projects/autotutor
+http://www.gurututor.org/
+http://www.deeptutor.org/
+https://www.udacity.com/wiki/Educational_Technology/Intelligent_Tutoring_Systems/Ongoing_Projects?plain=true
+https://www.nsf.gov/awardsearch/showAward?AWD_ID=1418244
+http://people.tamu.edu/~mazda/
+
+
+19.6 in the media
+---------------------------------------
+https://www.nytimes.com/2012/09/16/magazine/how-computerized-tutors-are-learning-to-teach-humans.html
+https://psychcentral.com/news/2012/03/04/tutoring-software-autotutor-responds-to-students-emotions/35563.html
+http://edition.cnn.com/2008/TECH/science/08/07/robot.teachers/index.html?iref=newssearch
+http://news.psu.edu/story/288216/2013/09/18/academics/professor-finds-web-based-tutoring-system-improves-students
+https://phys.org/news/2015-01-big-technology.html
+https://www.newyorker.com/tech/elements/will-computers-ever-replace-teachers
+
+
+
+19.7 david joyner on intelligent tutoring
+---------------------------------------
+
+

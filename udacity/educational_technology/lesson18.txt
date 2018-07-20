@@ -1,0 +1,71 @@
+date start : 20 july 2018
+
+18.1 introduction to learning management system
+---------------------------------------
+learning management systems are tools or collections of tools that are meant to
+help teachers and educators with the admistration of their classrooms.
+
+
+18.2 introductory resources
+---------------------------------------
+https://www.mindflash.com/learning-management-systems/what-is-an-lms
+https://www.td.org/~/media/Files/Publications/LMS_fieldguide_20091
+https://library.educause.edu/topics/teaching-and-learning/learning-management-systems-lms
+https://er.educause.edu/articles/2014/4/selecting-a-learning-management-system-advice-from-an-academic-perspective
+https://www.businessnewsdaily.com/4772-learning-management-system.html
+http://edutechwiki.unige.ch/en/Learning_management_system
+https://en.wikipedia.org/wiki/Learning_management_system
+https://en.wikipedia.org/wiki/List_of_learning_management_systems
+https://www.lynda.com/Education-LMS-tutorials/Learning-Management-System-LMS-Fundamentals/156622-2.html
+
+
+
+18.3 scholarly readings
+---------------------------------------
+http://www.eurodl.org/materials/contrib/2006/Christian_Dalsgaard.htm
+https://www.udacity.com/wiki/Educational_Technology/Learning_Management_Systems/Scholarly_Readings?plain=true
+http://hibgroupbpr.pbworks.com/f/Second+Life.pdf#page=22
+https://ctools.umich.edu/access/content/group/research/papers/CAE1356.pdf
+https://hal.archives-ouvertes.fr/hal-00692067/document
+http://sgraf.athabascau.ca/publications/graf_kinshuk_eLearn2007.pdf
+http://adapt.athabascau.ca/publications/papers/graf_kinshuk_liu_icalt08.pdf
+http://fie-conference.org/fie2007/papers/1194.pdf
+https://files.eric.ed.gov/fulltext/EJ840788.pdf
+
+
+
+18.4 biography of researchers
+---------------------------------------
+https://scholar.google.com/citations?user=Fl1LnlYAAAAJ&hl=en&oi=sra
+https://scholar.google.com/citations?user=o6uxdKgAAAAJ&hl=en
+https://scholar.google.com/citations?user=Pl8tpZwAAAAJ&hl=en&oi=sra
+https://scholar.google.com/citations?user=3JiQmlcAAAAJ&hl=en
+
+
+18.5 ongoing projects
+---------------------------------------
+https://www.canvaslms.com/
+https://sakaiproject.org/
+https://moodle.org/
+https://www.edmodo.com/
+https://www.d2l.com/
+https://classroom.google.com/u/0/h
+http://www.blackboard.com/learning-management-system/blackboard-learn.html
+https://www.litmos.com/
+https://en.wikipedia.org/wiki/List_of_learning_management_systems
+
+
+18.6 in the media
+---------------------------------------
+https://www.chronicle.com/blogs/wiredcampus/pearson-and-google-jump-into-learning-management-systems/33636
+https://www.forbes.com/sites/joshbersin/2014/08/28/the-red-hot-market-for-learning-technology-platforms/#55f669b047bb
+https://elearningindustry.com/the-20-best-learning-management-systems
+https://elearningindustry.com/7-tips-selecting-learning-management-system
+https://www.kqed.org/mindshift/39332/techniques-for-unleashing-student-work-from-learning-management-systems
+https://pages.questexweb.com/FierceTechExec-Pub-Signup_FierceTechExec-Signup-Offer-Archived.html
+http://www.marketwired.com/press-release/learning-management-systems-lms-market-worth-783-billion-2018-forecasted-marketsandmarkets-1845977.htm
+https://thejournal.com/articles/2013/05/13/study-ranks-accessibility-of-top-learning-management-systems.aspx
+https://campustechnology.com/Articles/2015/01/29/Iowa-College-Adopts-New-LMS-To-Move-Beyond-Managing-Learning.aspx
+https://www.edsurge.com/news/2014-01-15-blackboard-acquires-myedu-to-retool-the-lms
+
+
