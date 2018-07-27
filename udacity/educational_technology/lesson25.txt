@@ -1,0 +1,72 @@
+date start : 27 july 2018
+
+25.1 introduction to sim based learning
+---------------------------------------
+
+
+25.2 introductory resources
+---------------------------------------
+https://net.educause.edu/ir/library/pdf/ELI3004.pdf
+https://www.edutopia.org/online-games-simulations-teaching-tools
+https://kognito.com/articles/games_simulations_relationships_learning.pdf
+http://teorije-ucenja.zesoi.fer.hr/doku.php?id=instructional_design:simulation-based_learning
+https://serc.carleton.edu/sp/library/simulations/index.html
+http://www.ssih.org/About-SSH/About-Simulation
+https://net.educause.edu/ir/library/pdf/ERB1003.pdf
+https://www.eurosis.org/cms/?q=node/61
+https://en.wikipedia.org/wiki/Instructional_simulation
+
+
+
+25.3 scholarly readings
+---------------------------------------
+https://telearn.archives-ouvertes.fr/hal-00190680/document
+http://computationalmodelingblogs.stanford.edu/winter2012/files/2012/01/thinking-in-levels.pdf
+http://digitalcommons.ilr.cornell.edu/cgi/viewcontent.cgi?article=1493&context=cahrswp
+https://files.eric.ed.gov/fulltext/ED398900.pdf
+https://www.cited.org/ged-classes-in-sleetmute-ak.html
+https://www.udacity.com/wiki/Educational_Technology/Simulation-Based_Learning/Scholarly_Readings?plain=true
+https://www.cogsci.northwestern.edu/cogsci2004/papers/paper228.pdf
+http://www.j-ets.net/journals/10_3/17.pdf
+http://sgi.cueltd.net/publications/papers/CAE1235.pdf
+https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3195067/
+https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2966567/
+http://www.davidjoyner.net/blog/wp-content/uploads/2014/12/JoynerGoelPapin_IUI2014.pdf
+
+
+
+25.4 biography of researchers
+---------------------------------------
+http://dts-web1.it.vanderbilt.edu/~biswasg//
+https://scholar.google.com/citations?user=hD8qt3oAAAAJ&hl=en
+https://scholar.google.com/citations?user=tRwRtswAAAAJ&hl=en
+https://education.mit.edu/about/our-team/eric-klopfer/
+https://education.mit.edu/about/our-team/scot-osterweil/
+https://www.media.mit.edu/people/mres/overview/
+http://edsimulation.blogspot.com/
+http://www.sesp.northwestern.edu/profile/?p=89
+http://cisl.stanford.edu/
+https://www.excelsior.edu/
+https://wp0.vanderbilt.edu/oele/
+https://ccl.northwestern.edu/
+
+
+25.5 ongoing projects
+---------------------------------------
+https://ccl.northwestern.edu/netlogo/
+https://wp0.vanderbilt.edu/oele//research/bettysbrain.php
+
+
+
+25.6 in the media
+---------------------------------------
+https://www.kqed.org/mindshift/41500/can-an-immersive-video-game-teach-the-nuances-of-american-history
+https://www.kqed.org/mindshift/40364/teaching-geopolitics-fantasy-football-as-a-learning-game
+http://www.tradearabia.com/news/REAL_282618.html
+https://www.medgadget.com/2011/09/a-visit-to-stanfords-center-for-immersive-and-simulation-based-learning.html
+https://www.jems.com/welcome.html?destination=/articles/2014/08/simulation-based-assessment-facilitates.html
+
+
+25.7 david joyner on exploratory learning environments
+---------------------------------------
+

@@ -1,0 +1,89 @@
+date start : 27 july 2018
+
+24.1 introduction to game based learning
+---------------------------------------
+
+
+24.2 introductory resources
+---------------------------------------
+https://www.newmedia.org/game-based-learning--what-it-is-why-it-works-and-where-its-going.html
+http://soe.unc.edu/resources/technology/support/learn/index.php
+https://a.s.kqed.net/pdf/news/MindShift-GuidetoDigitalGamesandLearning.pdf
+http://ocw.metu.edu.tr/pluginfile.php/10919/mod_resource/content/1/GAME01.pdf
+http://www.theknowledgeguru.com/game-based-learning-infographic/
+https://www.hugedomains.com/domain_profile.cfm?d=eduxtive&e=com
+http://archive.teachfind.com/becta/emergingtechnologies.becta.org.uk/upload-dir/downloads/page_documents/research/emerging_technologies/game_based_learning.pdf
+https://www.eurosis.org/cms/?q=node/61
+https://en.wikipedia.org/wiki/Educational_game
+http://neatoday.org/2014/06/23/gamification-in-the-classroom-the-right-or-wrong-way-to-motivate-students/
+https://en.wikipedia.org/wiki/Gamification_of_learning
+
+
+
+24.3 scholarly readings
+---------------------------------------
+http://pubs.cogs.indiana.edu/pubspdf/24817/24817_barab09.pdf
+http://www.jacobenfield.com/R347/readings/barab_2005.pdf
+http://s3.amazonaws.com/academia.edu.documents/30541767/rapport_gaming.pdf?AWSAccessKeyId=AKIAJ56TQJRTWSMTNPEA&Expires=1439766390&Signature=tpaOA0aAyvO3r0WxAdNtO6OVfLc%3D&response-content-disposition=inline
+https://www.researchgate.net/profile/Eric_Klopfer/publication/220686500_Entering_the_education_arcade/links/0fcfd5107d2b9876fe000000.pdf
+https://www.researchgate.net/profile/Eric_Klopfer/publication/216814115_Collaborative_learning_through_augmented_reality_role_playing/links/0fcfd5107d2b9e9bfb000000.pdf
+http://www.j-ets.net/journals/10_3/17.pdf
+http://www.academia.edu/3113476/Fighting_baddies_and_collecting_bananas_Teachers_perceptions_of_game-based_literacy_learning
+http://nexus.hs-bremerhaven.de/Library.nsf/a249ddae15ac617ac12573460029d00b/7c149b90321f33dec12575690037d644/$FILE/p316-klopfer.pdf
+http://dspace.mit.edu/openaccess-disseminate/1721.1/93079
+https://books.google.com.my/books?id=KDxTBgAAQBAJ&lpg=PA65&ots=hJ39XR-CGT&dq=why+gamification+is+bullshit&lr=&pg=PA65&redir_esc=y#v=onepage&q=why%20gamification%20is%20bullshit&f=false
+https://link.springer.com/article/10.1007%2Fs10956-013-9436-x
+http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.206.624&rep=rep1&type=pdf
+https://www.researchgate.net/profile/Betsy_Disalvo/publication/220795048_Questioning_video_games'_influence_on_CS_interest/links/54ff3dbe0cf2741b69f5b6a6.pdf
+http://130.216.33.163/courses/compsci747s2c/lectures/paul/GameBasedLearning_CSEducation.pdf
+http://people.ict.usc.edu/~lane/AIED2009-IEG-WorkshopProceedings-FINAL.pdf#page=9
+http://lrieber.coe.uga.edu/valueofplay.html
+http://www.dtic.mil/dtic/sitemap-change-notice.html
+https://www.igi-global.com/journal/international-journal-game-based-learning/41019
+
+
+24.4 biography of researchers
+---------------------------------------
+http://sashabarab.org/
+http://bogost.com/
+https://education.mit.edu/about/our-team/eric-klopfer/
+https://education.mit.edu/about/our-team/scot-osterweil/
+https://gamingmag.org/
+
+https://www.instituteofplay.org/about/context/history-of-games-learning
+https://gamesandimpact.org/
+https://education.mit.edu/
+https://gamingmag.org/
+https://www.excelsior.edu/
+
+
+24.5 ongoing projects
+---------------------------------------
+https://gamesandimpact.org/play2connect/
+https://gamesandimpact.org/quest2teach/
+https://gamesandimpact.org/impact-guides/
+https://education.mit.edu/portfolio_page/digital-games-in-the-humanities/
+https://education.mit.edu/portfolio_page/radix/
+http://persuasivegames.com/games/
+http://foundry10.org/teach-with-portals/
+https://hechingerreport.org/is-making-a-game-out-of-learning-bad-for-learning/
+https://www.nytimes.com/2010/09/19/magazine/19video-t.html?_r=0
+https://www.forbes.com/forbes/welcome/?toURL=https://www.forbes.com/sites/jordanshapiro/2013/07/01/it-only-takes-about-42-minutes-to-learn-algebra-with-video-games/&refURL=&referrer=
+http://er.educause.edu/articles/2006/1/digital-gamebased-learning-its-not-just-the-digital-natives-who-are-restless
+http://www.papert.org/articles/Doeseasydoit.html
+https://www.edsurge.com/news/2014-05-28-what-game-based-learning-can-do-for-student-achievement
+http://ww2.kqed.org/mindshift/2015/07/31/taking-the-first-steps-towards-teaching-with-video-games/
+https://www.kqed.org/mindshift/39930/three-awesome-educational-games-hiding-in-plain-sight
+http://www.autzones.com/din6000/textes/semaine10/Klopfer+Yoon(2005).pdf
+https://kernelmag.dailydot.com/issue-sections/features-issue-sections/14066/educational-video-games-gold-rush/
+http://bogost.com/writing/blog/gamification_is_bullshit/
+https://inventingthemedium.com/2013/05/06/an-example-of-gamification-that-isnt-bullshit/
+
+
+24.6 in the media
+---------------------------------------
+
+
+24.7 cameron pittman on games
+---------------------------------------
+
