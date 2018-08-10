@@ -1,0 +1,72 @@
+date start : 10 august 2018
+
+
+
+34.1 introductory resources
+---------------------------------------
+https://www.kqed.org/mindshift/11628/5-tools-to-introduce-programming-to-kids
+http://www.exploringcs.org/archives/resources/cs-statistics
+https://edu.google.com/computer-science/?modal_active=none
+https://hanselminutes.com/488/redesigning-computer-science-101-education-with-omoju-miller
+https://computinged.wordpress.com/2014/10/15/we-need-to-fix-the-computer-science-teaching-problem/
+http://delivery.acm.org/10.1145/2720000/2716345/p8-barr.pdf?ip=24.30.1.1&id=2716345&acc=OPEN&key=4D4702B0C3E38B35%2E4D4702B0C3E38B35%2E4D4702B0C3E38B35%2E6D218144511F3437&CFID=542128671&CFTOKEN=91162559&__acm__=1441078981_211170be1f818b5ba2aa0e7a5ebfdd35
+http://www.iste.org/standards/for-computer-science-educators
+https://www.csteachers.org/default.aspx
+https://study.com/directory/category/Computer_Sciences.html
+http://services.google.com/fh/files/misc/searching-for-computer-science_report.pdf
+https://csedweek.org/
+
+
+
+34.2 scholarly readings
+---------------------------------------
+http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.180.3706&rep=rep1&type=pdf
+https://www.researchgate.net/profile/Elliot_Soloway/publication/220420326_Teaching_the_Nintendo_generation_to_program/links/0912f512cb2e8c14f0000000.pdf
+http://coweb.cc.gatech.edu/mediaComp-plan/uploads/37/ITICSE-mediacomp2.pdf
+https://www.fing.edu.uy/grupos/nifcc/material/2015/13th-holmboe.pdf
+http://s3.amazonaws.com/academia.edu.documents/30892229/Yardi_ComputingEducation09.pdf?AWSAccessKeyId=AKIAJ56TQJRTWSMTNPEA&Expires=1441083900&Signature=N312lPftE6pUZtWwsEHGCEFMuWw%3D&response-content-disposition=inline
+http://130.216.33.163/courses/compsci747s2c/lectures/paul/GameBasedLearning_CSEducation.pdf
+https://collaboration.csc.ncsu.edu/laurie/Papers/PP%20in%20Introductory_CSED.pdf
+https://www.researchgate.net/profile/Betsy_Disalvo/publication/220795048_Questioning_video_games'_influence_on_CS_interest/links/54ff3dbe0cf2741b69f5b6a6.pdf
+http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.206.624&rep=rep1&type=pdf
+http://miwalab.cog.human.nagoya-u.ac.jp/database/paper/2002-12-10.pdf
+https://www.tandfonline.com/toc/ncse20/current#.VeUSsPlViko
+https://sigcse.org/sigcse/
+http://cseducation.org/
+
+
+
+34.3 biography of researchers
+---------------------------------------
+https://scholar.google.com/citations?user=BXEDBDUAAAAJ&hl=en&oi=ao
+https://computinged.wordpress.com/
+http://www.soe.umich.edu/people/profile/elliot_soloway/
+
+
+
+34.4 ongoing projects
+---------------------------------------
+http://www.helloruby.com/
+http://www.exploringcs.org/for-teachers-districts/curriculum
+https://blockly-games.appspot.com/?__utma=173272373.20770367.1441077899.1441077899.1441077899.1&__utmb=173272373.4.8.1441077937232&__utmc=173272373&__utmx=-&__utmz=173272373.1441077899.1.1.utmcsr=google|utmccn=(organic)|utmcmd=organic|utmctr=(not%20provided)&__utmv=-&__utmk=257185355
+http://googlecreativelab.github.io/coder/
+https://girlswhocode.com/
+https://code.org/computing-in-the-core/csea
+https://code.org/
+https://csfirst.withgoogle.com/en/home
+https://www.udacity.com/
+https://www.hackreactor.com/
+
+
+
+34.5 in the media
+---------------------------------------
+https://techcrunch.com/2014/07/23/modernizing-computer-science-education/
+https://thejournal.com/articles/2015/02/02/school-leaders-mostly-mystified-by-computer-science-education.aspx
+https://www.kvia.com/news/education/study-computer-science-not-offered-in-schools-because-of-cost/35014878
+https://www.usnews.com/news/articles/2013/12/27/tech-companies-work-to-combat-computer-science-education-gap
+https://obamawhitehouse.archives.gov/blog/2014/12/08/celebrating-computer-science-education-week-kids-code-white-house
+http://techland.time.com/2012/07/16/can-we-fix-computer-science-education-in-america/
+https://www.npr.org/sections/alltechconsidered/2014/02/17/271151462/a-push-to-boost-computer-science-learning-even-at-an-early-age
+https://www.wired.com/2015/08/schools-dont-think-kids-want-learn-computer-science/
+
