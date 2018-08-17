@@ -1,0 +1,226 @@
+cs101
+
+date start : 17 august 2018
+
+1.1 introduction
+---------------------------------------
+https://www.udacity.com/wiki/cs101/unit-1
+http://www.cs.virginia.edu/~evans/cs101/unit1-notes.pdf
+https://www.udacity.com/wiki/cs101/unit1-python-reference
+https://www.udacity.com/file?file_key=agpzfnVkYWNpdHl1ckQLEgZDb3Vyc2UiBWNzMzczDAsSCUNvdXJzZVJldiIHZmViMjAxMgwLEgRVbml0GAIMCxIMQXR0YWNoZWRGaWxlGJl1DA
+https://parezcoydigo.wordpress.com/2012/07/19/python-interpreter-text-editor-ide-for-udacity-cs101/
+https://www.udacity.com/wiki/cs101/resources
+https://discussions.udacity.com/
+http://ecmendenhall.github.io/projects/davedavefind.html
+https://blog.udacity.com/2012/05/winners-of-udacitys-cs101-contest.html
+http://davedavefind.tumblr.com/
+https://blog.udacity.com/2013/02/cs101-one-year-later.html
+
+
+
+1.2 Advice from sergey brin
+---------------------------------------
+https://discussions.udacity.com/c/standalone-courses/intro-to-computer-science
+
+
+
+1.3 Overview of the unit
+---------------------------------------
+https://discussions.udacity.com/c/standalone-courses/intro-to-computer-science
+
+
+
+1.4 Quiz: First Quiz
+---------------------------------------
+
+
+
+1.5 What is Programming
+---------------------------------------
+
+
+
+1.6 Quiz: What is a program
+---------------------------------------
+
+
+
+1.7 Quiz: First programming quiz
+---------------------------------------
+
+
+
+1.8 Congratulations
+---------------------------------------
+
+
+
+1.9 Quiz: language ambiguity
+---------------------------------------
+
+
+
+1.10 grammar
+---------------------------------------
+
+
+
+1.11 backus naur form
+---------------------------------------
+
+
+
+1.12 quiz: backus naur quiz
+---------------------------------------
+
+
+
+1.13 quiz: python expressions
+---------------------------------------
+
+
+
+1.14 quiz: speed of light
+---------------------------------------
+
+
+
+1.15 processsors
+---------------------------------------
+
+
+
+1.16 grace hopper
+---------------------------------------
+
+
+
+1.17 variables
+---------------------------------------
+
+
+
+1.18 quiz: variables quiz
+---------------------------------------
+
+
+
+1.19 variables can vary
+---------------------------------------
+
+
+
+1.20 quiz: varying variables quiz 1
+---------------------------------------
+
+
+
+1.21 quiz: variying variables quiz 2
+---------------------------------------
+
+
+
+1.22 quiz: spirit age
+---------------------------------------
+
+
+
+1.23 strings
+---------------------------------------
+
+
+
+1.24 quiz: valid strings
+---------------------------------------
+
+
+
+1.25 ada
+---------------------------------------
+
+
+
+1.26 quiz: hello!!!
+---------------------------------------
+
+
+
+1.27 strings and numbers
+---------------------------------------
+
+
+
+1.28 indexing strings
+---------------------------------------
+name = 'Dave'
+print name[-1]
+print name[0]
+print name[2]
+
+'test'[0]
+
+
+1.29 quiz: same value
+---------------------------------------
+
+
+
+1.30 selecting sub sequences
+---------------------------------------
+
+
+
+1.31 quiz: capital udacity
+---------------------------------------
+
+
+
+1.32 quiz: understanding selection
+---------------------------------------
+
+
+
+1.33 finding strings in strings
+---------------------------------------
+
+
+
+1.34 quiz: testing
+---------------------------------------
+
+
+
+1.35 quiz: testing2
+---------------------------------------
+
+
+
+1.36 finding with numbers
+---------------------------------------
+
+
+
+1.37 quiz: finding with numbers quiz
+---------------------------------------
+
+
+
+1.38 string theory
+---------------------------------------
+
+
+
+1.39 quiz : extracting links
+---------------------------------------
+
+
+
+1.40 quiz: final quiz
+---------------------------------------
+
+
+
+1.41 Great Job!
+---------------------------------------
+
+
