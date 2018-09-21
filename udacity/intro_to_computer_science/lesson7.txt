@@ -1,0 +1,26 @@
+date start : 21 september 2018
+
+
+7.1  quiz: weekend
+---------------------------------------
+def weekend(day):
+    # your code here
+    if day == 'Saturday' or day == 'Sunday':
+        return True
+    return False  
+
+
+7.2  quiz: stamps
+---------------------------------------
+def stamps(n):
+    return n / 5, (n % 5) / 2, (n % 5) % 2
+
+
+7.3  quiz: range of a set
+---------------------------------------
+def set_range(x, y, z):
+    return max(x, y, z) - min(x, y, z)
+
+
+
+

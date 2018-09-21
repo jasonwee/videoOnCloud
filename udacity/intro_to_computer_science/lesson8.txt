@@ -1,0 +1,60 @@
+date start : 21 september 2018
+
+
+8.1  quiz: superhero nuisance
+---------------------------------------
+return product if set(product) <= set(debris) \
+                   else "Give me something that's not useless next time.
+
+
+
+8.2  quiz: days old
+---------------------------------------
+def daysBetweenDates(year1, month1, day1, year2, month2, day2):
+    d0 = date(year1, month1, day1)
+    d1 = date(year2, month2, day2)
+    delta = d1 - d0
+    return delta.days
+
+
+
+8.3  quiz: 10 row abacus
+---------------------------------------
+def print_abacus(value):
+       abacus_row = "00000*****"   
+       power = 10**9
+       while power >= 1:
+           if value == 0 or (power > value):
+               print '|' + abacus_row + '   |'
+           else:
+               point = value / power
+               value = value % power
+               print '|' + abacus_row[0:-point] + '   ' + abacus_row[-point:] + '|'  
+           power = power / 10
+
+
+
+8.4  quiz: jungle animal
+---------------------------------------
+def jungle_animal(animal, my_speed):
+    if animal == 'zebra':
+        print 'Try to ride a zebra!'
+        return
+    if animal == 'cheetah':
+        if my_speed <= 115:
+            print 'Stay calm and wait!'
+            return
+        else:
+            print 'Run!'
+            return
+    print "Introduce yourself!"
+
+
+
+8.5  quiz: leap your baby
+---------------------------------------
+def is_leap_baby(day,month,year):
+    if day==29 and month==2:
+        if year%4==0 and year%100!=0 or year%400==0:
+            return True
+    return False
