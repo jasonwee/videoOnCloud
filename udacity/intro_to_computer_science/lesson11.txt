@@ -1,0 +1,276 @@
+date start : 05 october 2018
+
+
+11.1 introduction
+---------------------------------------
+
+
+
+11.2 quiz: stooges
+---------------------------------------
+stooges = ['Moe', 'Larry', 'Curly']
+
+
+11.3 quiz: days in a month
+---------------------------------------
+return days_in_month[month-1]
+
+
+11.4 nested lists
+---------------------------------------
+
+
+
+11.5 quiz: countries
+---------------------------------------
+print countries[1][1]
+
+
+
+11.6 quiz: relative size
+---------------------------------------
+cpop = countries[0][2]
+rpop = countries[2][2]
+print cpop / rpop
+
+
+11.7 mutation
+---------------------------------------
+
+
+
+11.8 a list of strings
+---------------------------------------
+
+
+11.9 quiz: different stooges
+---------------------------------------
+stooges[2] = 'Shemp'
+
+
+11.10 yellow mutation
+---------------------------------------
+
+
+11.11 aliasing
+---------------------------------------
+
+
+11.12 quiz: secret agent man
+---------------------------------------
+8
+
+
+11.13 quiz: replace spy
+---------------------------------------
+def replace_spy(spy):
+    spy[2] = spy[2] + 1
+
+
+11.14 list oeprations
+---------------------------------------
+
+
+11.15 list addition and length
+---------------------------------------
+
+
+11.16 quiz: len quiz
+---------------------------------------
+5
+
+
+11.17 quiz: append quiz
+---------------------------------------
+3
+
+
+11.18 how computers store data
+---------------------------------------
+
+
+11.19 dram
+---------------------------------------
+
+
+11.20 quiz: memory hierarchy
+---------------------------------------
+
+
+
+
+11.21 quiz: hard drives
+---------------------------------------
+
+
+
+11.22 quiz: loops and lists
+---------------------------------------
+i <= len(p)
+
+
+11.23 for loops
+---------------------------------------
+
+
+
+11.24 quiz: sum list
+---------------------------------------
+def sum_list(numbers):
+    sum = 0
+    for i in numbers:
+        sum = sum + i
+    return sum
+
+
+
+11.25 quiz: measure udacity
+---------------------------------------
+def measure_udacity(U):
+    count = 0
+    for e in U:
+        if e[0] == 'U':
+           count = count + 1
+    return count
+
+
+
+11.26 quiz: find element
+---------------------------------------
+def find_element(L, V):
+    pos = -1
+    idx = 0
+    for l in L:
+        if l == V:
+            return idx
+        idx = idx + 1
+    return pos
+
+def find_element(p, t):
+    i = 0
+    while i < len(p):
+       if p[i] == t:
+           return i
+       i = i + 1
+    return -1
+
+
+11.27 quiz: index
+---------------------------------------
+
+
+def find_element(mylist, value):
+    if value in mylist:
+        return mylist.index(value)
+    return -1
+
+
+
+11.28 guest speaker
+---------------------------------------
+
+
+
+
+11.29 quiz: union
+---------------------------------------
+def union(a, b):
+    for e in b:
+        if e not in a:
+            a.append(e)
+
+
+11.30 pop
+---------------------------------------
+
+
+11.31 quiz: pop quiz
+---------------------------------------
+
+
+
+11.32 collecting links
+---------------------------------------
+
+
+11.33 get all links
+---------------------------------------
+
+
+11.34 links
+---------------------------------------
+
+
+11.35 quiz: string get all links
+---------------------------------------
+[]
+
+
+11.36 quiz: updating links
+---------------------------------------
+links.append(url)
+
+
+11.37 quiz: finishing get all links
+---------------------------------------
+return links
+
+
+11.38 finishing the web crawler
+---------------------------------------
+https://udacity.github.io/cs101x/index.html
+
+
+11.39 quiz: crawling process
+---------------------------------------
+
+
+11.40 quiz: crawl web
+---------------------------------------
+def crawl_web(seed):
+    tocrawl = [seed]
+    crawled = []
+
+
+
+11.41 quiz: crawl web loop
+---------------------------------------
+def crawl_web(seed):
+    tocrawl = [seed]
+    crawled = []
+    while tocrawl:
+        page = tocrawl.pop()
+
+
+
+11.42 quiz: crawl if
+---------------------------------------
+def crawl_web(seed):
+    tocrawl = [seed]
+    crawled = []
+    while tocrawl:
+        page = tocrawl.pop()
+        if page not in crawled
+
+
+
+
+11.43 quiz: finishing crawl web
+---------------------------------------
+def crawl_web(seed):
+    tocrawl = [seed]
+    crawled = []
+    while tocrawl:
+        page = tocrawl.pop()
+        if page not in crawled:
+            union(tocrawl, get_all_links(get_page(page)))
+            crawled.append(page)
+    return crawled
+
+
+
+11.44 conclusion
+---------------------------------------
+
+
+
