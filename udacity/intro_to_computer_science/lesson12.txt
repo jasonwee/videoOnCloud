@@ -1,0 +1,99 @@
+date start : 12 october 2018
+
+
+12.1 quiz: lists
+---------------------------------------
+[0, 1, 1]
+
+
+12.2 quiz: mutating lists
+---------------------------------------
+2, 3, 4
+
+
+12.3 quiz: product list
+---------------------------------------
+def product_list(list_of_numbers):
+    y = 1
+    for x in list_of_numbers:
+        y *= x;
+    return y
+
+
+12.4 quiz: greatest
+---------------------------------------
+def greatest(list_of_numbers):
+    x = 0
+    for y in list_of_numbers:
+        if y > x:
+            x = y
+    return x
+
+
+12.5 quiz: lists of lists
+---------------------------------------
+def total_enrollment(list_u):
+    a = 0;
+    b = 0;
+    for x in list_u:
+        a += x[1]
+        b += x[1] * x[2]
+    return (a, b)
+
+
+
+12.6 quiz:  max pages
+---------------------------------------
+def crawl_web(seed, max_pages):
+    tocrawl = [seed]
+    crawled = []
+    while tocrawl:
+        page = tocrawl.pop()
+        if page not in crawled and len(crawled) < max_pages:
+            union(tocrawl, get_all_links(get_page(page)))
+            crawled.append(page)
+    return crawled
+
+
+12.7 quiz: max depth
+---------------------------------------
+
+def crawl_web(seed,max_depth):
+    tocrawl = [seed]
+    crawled = []
+    next_depth = []
+    depth = 0
+    while tocrawl and depth <= max_depth:
+        page = tocrawl.pop()
+        if page not in crawled:
+            union(next_depth, get_all_links(get_page(page)))
+            crawled.append(page)
+        if not tocrawl:
+            tocrawl, next_depth = next_depth, []
+            depth = depth + 1
+    return crawled
+
+
+
+12.8 quiz: sudoku
+---------------------------------------
+def check_sudoku(p):
+    n = len(p)
+    digit = 1
+    while digit <= n:
+        i = 0
+        while i < n:
+           row_count = 0
+           col_count = 0
+           j = 0
+           while j < n:
+               if p[i][j] == digit:
+                   row_count += 1
+               if p[j][i] == digit:
+                   col_count += 1
+               j += 1
+           if row_count != 1 or col_count != 1:
+               return False
+           i = i + 1
+         digit = digit + 1
+     return True

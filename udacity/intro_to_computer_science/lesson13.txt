@@ -1,0 +1,36 @@
+date start : 12 october 2018
+
+
+13.1 quiz: exploring list properties
+---------------------------------------
+showing list1 and list2:
+[1, 2, 3, 4, 5, 6]
+[1, 2, 3, 4, [5, 6]]
+
+
+13.2 quiz: symmetric square
+---------------------------------------
+def symmetric(matrix):
+    # Your code here
+    n = len(matrix)
+    # Check if it's really a square matrix:
+    for row in matrix:
+        if len(row) != n:
+            return False
+    # Now check if it's symmetric:
+    for i in range(n):
+        for j in range(n):
+            if matrix[i][j] != matrix[j][i]:
+                return False
+    return True
+
+13.3 quiz: mean of a list
+---------------------------------------
+def list_mean(mylist):
+    sum = 0
+    for x in mylist:
+        sum += x
+    mean = float(sum) / len(mylist)
+    return mean
+
+
