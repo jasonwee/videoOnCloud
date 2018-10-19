@@ -1,0 +1,68 @@
+date start : 19 october 2018
+
+
+14.1 quiz: antisymmetric square
+---------------------------------------
+def antisymmetric(A):
+    n = len(A)
+    for row in A:
+        if len(row) != n:
+            return False
+    for i in range(n):
+        for j in range(n):
+            if A[i][j] != -A[j][i]:
+                return False
+    return True
+
+
+
+14.2 quiz: recognize identity matrix
+---------------------------------------
+def is_identity_matrix(matrix):
+    n = len(matrix)
+    for row in matrix:
+        if len(row) != n:
+            return False
+    for i in range(n):
+        for j in range(n):
+            if i == j and matrix[i][j] != 1:
+                return False
+            elif i != j and matrix[i][j] != 0:
+                return False
+    return True
+
+
+
+14.3 quiz: numbers in a lists
+---------------------------------------
+
+def numbers_in_lists(string):
+    y = -42 # something less than the numbers from 1-9
+    result_list, sub_list = [], []
+    for x in map(int, string):
+        if x <= y:
+            sub_list.append(x)
+        else:
+            if sub_list:
+                result_list.append(sub_list)
+                sub_list = []
+            result_list.append(x)
+            y = x
+    if sub_list:
+        result_list.append(sub_list)
+    return result_list
+
+
+14.4 quiz: frequency analysis
+---------------------------------------
+
+def plusOne(freq_list, char):
+    mapping = {'a':1, 'b':2, 'c':3, 'd':4, 'e':5, 'f':6, 'g':7, 'h':8, 'i':9, 'j':10, 'k':11, 'l':12, 'm':13, 'n':14, 'o':15, 'p':16, 'q':17, 'r':18, 's':19, 't':20, 'u':21, 'v':22, 'w':23, 'x':24, 'y':25, 'z':26}
+    freq_list[mapping[char]-1] += 1
+    
+def freq_analysis(message):
+    n = len(message)
+    freq_list = [0.0] * 26
+    for i in message:
+        plusOne(freq_list, i)
+    return [x / n for x in freq_list]
