@@ -1,0 +1,121 @@
+date start : 26 october 2018
+
+
+15.1 introduction
+---------------------------------------
+
+
+
+15.2 quiz: data structures
+---------------------------------------
+4
+
+
+15.3 quiz: add to index
+---------------------------------------
+def add_to_index(index,keyword,url):
+    for entry in index:
+        if entry[0] == keyword:
+            entry[1].append(url)
+            return index
+    index.append([keyword,[url]])
+    return index
+
+
+
+15.4 quiz: lookup
+---------------------------------------
+def lookup(index,keyword):
+    for i in index:
+        if i[0] == keyword:
+            return i[1]
+    return []
+
+
+15.5 building the web index
+---------------------------------------
+
+
+
+15.6 quiz: add page to index
+---------------------------------------
+def add_page_to_index(index,url,content):
+    for keyword in content.split():
+        add_to_index(index, keyword, url)
+
+
+
+15.7 quiz: finishing the web crawler
+---------------------------------------
+add_page_to_index(index, page, content)
+
+
+
+15.8 startup 
+---------------------------------------
+
+
+
+15.9 the internet
+---------------------------------------
+
+
+
+15.10 quiz: networks
+---------------------------------------
+5
+
+
+15.11 smoke signals
+---------------------------------------
+
+
+
+15.12 quiz: latency
+---------------------------------------
+
+
+
+15.13 bandwidth
+---------------------------------------
+
+
+
+15.14 quiz: bits
+---------------------------------------
+2
+
+
+15.15 buckets of bits
+---------------------------------------
+
+
+
+15.16 quiz: what is your bandwidth?
+---------------------------------------
+10
+
+
+15.17 traceroute
+---------------------------------------
+
+
+
+15.18 quiz: traveling data
+---------------------------------------
+1/7th
+
+
+15.19 making a network
+---------------------------------------
+
+
+
+15.20 protocols
+---------------------------------------
+
+
+
+15.21 conclusion
+---------------------------------------
+
