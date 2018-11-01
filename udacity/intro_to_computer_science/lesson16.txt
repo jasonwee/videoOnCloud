@@ -1,0 +1,68 @@
+date start : 02 november 2018
+
+
+16.1  quiz: data structures
+---------------------------------------
+3
+
+
+16.2 quiz: ben bitdiddle
+---------------------------------------
+3
+
+
+16.3 quiz: networking
+---------------------------------------
+3rd row, 1st column
+
+
+16.4 quiz: better splitting
+---------------------------------------
+    separator = splitlist[0]
+    for character in splitlist:
+        source = source.replace(character, separator)
+    return [e for e in source.split(separator) if e]
+
+
+16.5 quiz: improving the index
+---------------------------------------
+    for entry in index:
+        if entry[0] == keyword:
+            if not url in entry[1]:
+                entry[1].append(url)
+            return
+
+16.6 quiz: counting clicks
+---------------------------------------
+def record_user_click(index,keyword,url):
+    urls = lookup(index, keyword)
+    if urls:
+        for entry in urls:
+            if entry[0] == url:
+                entry[1] = entry[1]+1
+
+def add_to_index(index, keyword, url):
+    #for entry in index:
+    #    if entry[0] == keyword:
+    #        entry[1].append(url)
+    #        return
+    # not found, add new keyword to index
+    #index.append([keyword, [url]])
+    # format of index: [[keyword, [[url, count], [url, count],..]],...]
+    for entry in index:
+        if entry[0] == keyword:
+            for urls in entry[1]:
+                if urls[0] == url:
+                    return
+            entry[1].append([url,0])
+            return
+    # not found, add new keyword to index
+    index.append([keyword, [[url,0]]])
+
+
+16.7 quiz: time spent at routers
+---------------------------------------
+50.0
+
+
+
