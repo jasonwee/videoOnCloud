@@ -1,0 +1,88 @@
+date start : 09 november 2018
+
+
+17.1  quiz: word count
+---------------------------------------
+def count_words(input):
+    length = len(input.split())
+    return length
+
+
+17.2 quiz: latency
+---------------------------------------
+def speed_fraction(time, distance):
+    time = (0.0 + time) / 2
+    distance = (0.0 + distance)
+    return (distance / time) / (speed_of_light / 1000)
+
+
+17.3 quiz: converting seconds
+---------------------------------------
+def convert_seconds(seconds):
+    hour = int(seconds / 3600.0)
+    if (hour == 1):
+        hour = str(hour) + " hour,"
+    else:
+        hour = str(hour) + " hours,"
+        
+    minute = int((seconds % 3600.0) / 60)
+    if (minute == 1):
+        minute = str(minute) + " minute,"
+    else:
+        minute = str(minute) + " minutes,"
+    
+    second = (seconds % 3600) % 60 
+    if (second == 1):
+        second = str(second) + " second"
+    else:
+        second = str(second) + " seconds"
+    
+    return hour + " " + minute + " " + second
+
+
+17.4 quiz: download calculator
+---------------------------------------
+# Helper formula to covert to bits
+def convert_to_bits(size, unit):
+    powers = [['k', 10], ['M', 20], ['G', 30], ['T', 40], ['B', 3]]
+    unit = list(unit)
+    exponent, i = 0, 0
+    while i < len(powers):
+        j = 0
+        while j < len(unit):
+            if powers[i][0] == unit[j]:
+                exponent += powers[i][1]
+            j += 1
+        i += 1
+    return float(size * 2**exponent)
+
+def download_time(file, file_units, bandwidth, bandwidth_units):
+    # Get number of seconds the transfer takes
+    file = convert_to_bits(file, file_units)
+    bandwidth = convert_to_bits(bandwidth, bandwidth_units)
+    seconds = file / bandwidth
+    
+    h, m, s, string = 0, 0, 0, ''
+    
+    # Get hours, minutes, and seconds
+    h = int(seconds / 3600)
+    seconds = seconds % 3600
+    m = int(seconds / 60)
+    seconds = seconds % 60
+    s = seconds
+
+    # Build string to print
+    string += str(h) + ' hour'
+    if h != 1:
+        string += 's'
+    string += ', ' + str(m) + ' minute'
+    if m != 1:
+        string += 's'
+    string += ', ' + str(s) + ' second'
+    if s != 1:
+        string += 's'
+    return string
+
+
+
+
