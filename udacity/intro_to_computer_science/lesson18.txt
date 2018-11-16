@@ -1,0 +1,205 @@
+date start : 16 november 2018
+
+
+18.1  introduction
+---------------------------------------
+
+
+
+18.2 making things fast
+---------------------------------------
+
+
+
+18.3 quiz: measuring speed
+---------------------------------------
+first three
+
+
+18.4 stopwatch
+---------------------------------------
+
+
+
+18.5 spin loop
+---------------------------------------
+
+
+18.6 quiz: predicting run time
+---------------------------------------
+50seconds
+
+18.7 make big index
+---------------------------------------
+
+
+
+18.8 quiz: index size vs time
+---------------------------------------
+10million keywords
+
+
+
+18.9 quiz: lookup time
+---------------------------------------
+0.0seconds
+
+
+18.10 quiz: worst case
+---------------------------------------
+last two
+
+
+18.11 quiz: fast enough
+---------------------------------------
+2nd and fourth
+
+
+18.12 making lookup faster
+---------------------------------------
+
+
+
+18.13 quiz: hash table
+---------------------------------------
+2,3,4
+
+
+18.14 hash function
+---------------------------------------
+
+
+
+18.15 modulus operator
+---------------------------------------
+
+
+
+18.16 quiz: modulus quiz
+---------------------------------------
+0 0 3
+
+
+18.17 quiz: equivalent expressions
+---------------------------------------
+2, 3
+
+
+18.18 quiz: bad hash
+---------------------------------------
+2,3,4
+
+
+18.19 quiz: better hash functions
+---------------------------------------
+def hash_string(keyword, buckets):
+    h = 0
+    for c in keyword:
+        h = (h + ord(c)) % buckets
+    return h
+
+
+18.20 testing hash functions
+---------------------------------------
+
+
+
+18.21 quiz: keywords and buckets
+---------------------------------------
+3, 5
+
+
+18.22 quiz: implementing hash tables
+---------------------------------------
+3
+
+
+18.23 quiz: empty hash table
+---------------------------------------
+def make_hashtable(nbuckets):
+    return [[] for i in range(nbuckets)]
+
+
+18.24 quiz: the hard way
+---------------------------------------
+2
+
+
+18.25 quiz: finding buckets
+---------------------------------------
+return htable[hash_string(keyword, len(htable))]
+
+
+18.26 quiz: adding keywords
+---------------------------------------
+def hashtable_add(htable, key, value):
+    bucket = hashtable_get_bucket(htable, key)
+    bucket.append([key, value])
+
+
+18.27 quiz: lookup
+---------------------------------------
+    buckets = hashtable_get_bucket(htable, key)
+    for b in buckets:
+        if b[0] == key:
+            return b[1]
+    return None
+
+
+
+
+18.28 quiz: update
+---------------------------------------
+def hashtable_update(htable,key,value):
+    bucket = hashtable_get_bucket(htable, key)
+    for b in bucket:
+        if b[0] == key:
+            b[1] = value
+            return htable
+    bucket.append([key, value])
+    return htable
+
+
+18.29 dictionaries
+---------------------------------------
+
+
+
+18.30 using dictionaries
+---------------------------------------
+
+
+
+18.31 quiz: population
+---------------------------------------
+population = {'Shanghai': 17.8, 'Istanbul': 13.3,'Karachi': 13.0, 'Mumbai': 12.5,}
+
+
+18.32 a noble gas
+---------------------------------------
+
+
+
+18.33 quiz: modifying the search engines
+---------------------------------------
+2, 4, 5
+
+
+18.34 quiz: changing lookup
+---------------------------------------
+def lookup(index, keyword):
+    if keyword in index:
+        return index[keyword]
+    return None
+
+
+18.35 quiz: coming up next
+---------------------------------------
+
+
+
+
+
+
+
+
