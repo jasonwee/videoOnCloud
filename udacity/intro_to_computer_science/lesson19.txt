@@ -1,0 +1,99 @@
+date start : 23 november 2018
+
+
+19.1 quiz: growth
+---------------------------------------
+1, 3
+
+
+19.2 quiz: hash string
+---------------------------------------
+1, 2
+
+
+19.3 quiz: is offered
+---------------------------------------
+def is_offered(courses, course, hexamester):
+    courses_offer = courses_offered(courses, hexamester)
+    if courses_offer:
+        if course in courses_offer:
+            return True
+    return False
+
+
+
+19.4 quiz: when offered
+---------------------------------------
+def when_offered(courses,course):
+    hexamester = []
+    for c in courses:
+        if course in courses[c]:
+            hexamester.append(c)
+    return hexamester
+
+
+19.5 quiz: involved
+---------------------------------------
+def involved(courses, person):
+    result = {}
+    for course in courses:
+        # course = apr2012
+        for id in courses[course]:
+            # id = cs262
+            if person == courses[course][id]['teacher']:
+                if course in result:
+                    list_id = result[course]
+                    if list_id:
+                        list_id.append(id)
+                        result[course] = list_id
+                    else:
+                        result[course] = [id]
+                else:
+                    result[course] = [id]
+            if 'assistant' in courses[course][id] and person == courses[course][id]['assistant']:
+                if course in result:
+                    list_id = result[course]
+                    if list_id:
+                        list_id.append(id)
+                        result[course] = list_id
+                    else:
+                        result[course] = [id]
+                else:
+                    result[course] = [id]
+    return result
+
+19.6 quiz: refactoring
+---------------------------------------
+def bucket_find(bucket, key):
+    for entry in bucket:
+        if entry[0] == key:
+            return entry
+    return None
+
+def hashtable_update(htable, key, value):
+    bucket = hashtable_get_bucket(htable, key)
+    entry = bucket_find(bucket, key)
+    if entry:
+        entry[1] = value
+    else:
+        bucket.append([key, value])
+
+def hashtable_lookup(htable, key):
+    entry = bucket_find(hashtable_get_bucket(htable, key), key)
+    if entry:
+        return entry[1]
+    else:
+        return None
+
+
+
+
+19.7 quiz: memoization
+---------------------------------------
+def cached_execution(cache, proc, proc_input):
+    if proc_input not in cache:
+        cache[proc_input] = proc(proc_input)
+    return cache[proc_input]
+
+
+
