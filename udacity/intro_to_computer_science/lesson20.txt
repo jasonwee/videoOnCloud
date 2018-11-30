@@ -1,0 +1,45 @@
+date start : 30 november 2018
+
+
+20.1 quiz: shift a letter
+---------------------------------------
+def shift(letter):
+   if letter == 'z':
+        return 'a'
+   else:
+        return chr(ord(letter) + 1)
+
+
+
+
+
+
+20.2 quiz: shift n letters
+---------------------------------------
+def shift_n_letters(letter, n):
+    letter_index = ord(letter) - ord('a')
+    shifted_index = (letter_index + n) % 26
+    return chr(ord('a') + shifted_index)
+
+
+
+
+
+20.3 quiz: rotate
+---------------------------------------
+def shift_n_letters(letter,n):
+    return chr(ord('a') + (ord(letter) - ord('a') + n) % 26)
+    
+def rotate(string,n):
+    rotated = ''
+    for char in string:
+        if char == ' ':
+            rotated += char
+        else:
+            rotated += shift_n_letters(char,n)
+    return rotated
+
+
+
+
+
