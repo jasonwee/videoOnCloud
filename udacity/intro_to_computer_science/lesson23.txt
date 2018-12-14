@@ -1,0 +1,55 @@
+date start : 14 december 2018
+
+
+23.1 quiz: recursive grammars
+---------------------------------------
+1, 3
+
+
+23.2 quiz: rabbits multiplying
+---------------------------------------
+def rabbits(n):
+    if n < 1:
+        return 0
+    else:
+        if n == 1 or n == 2:
+            return 1
+        else:
+            return rabbits(n-1) + rabbits(n-2) - rabbits(n-5)
+
+
+23.3 quiz: spreading udaciousness
+---------------------------------------
+def hexes_to_udaciousness(n, spread, target):
+    if n >= target:
+        return 0
+    else:
+        return 1 + hexes_to_udaciousness(n * (1 + spread), spread, target)
+
+
+23.4 quiz: deep count
+---------------------------------------
+def deep_coutn(p):
+    sum = 0
+    for e in p:
+        sum = sum + 1
+        if is_list(e):
+            sum = sum + deep_count(e)
+    return sum
+
+
+
+23.5 quiz: feeling lucky
+---------------------------------------
+def lucky_search(index, ranks, keyword):
+    pages = lookup(index, keyword)
+    if not pages:
+        return None
+    best_page = pages[0]
+    for candidate in pages:
+        if ranks[candidates] > ranks[best_page]:
+            best_page = candidate
+    return best_page
+
+
+
