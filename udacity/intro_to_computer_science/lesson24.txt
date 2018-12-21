@@ -1,0 +1,60 @@
+date start : 21 december 2018
+
+
+24.1 quiz: family trees
+---------------------------------------
+def ancestors(genealogy, person):
+    if person in genealogy:
+        parents = genealogy[person]
+        result = parents
+        for parent in parents:
+            result = result + ancestors(genealogy, parent)
+        return result
+    return []
+
+
+
+24.2 quiz: khayyam triangle
+---------------------------------------
+
+def make_next_row(row):
+    result = []
+    prev = 0
+    for e in row:
+        result.append(e + prev)
+        prev = e
+    result.append(prev)
+    return result
+
+def triangle(n):
+    result = []
+    current = [1]
+    for unused in range(0, n):
+        result.append(current)
+        current = make_next_row(current)
+    return result
+
+
+24.3 quiz: only a little lucky
+---------------------------------------
+
+def quicksort_pages(pages, ranks):
+    if not pages or len(pages) <= 1:
+        return pages
+    else:
+        pivot = ranks[pages[0]]
+        worse = []
+        better = []
+    for page in pages[1:]:
+        if ranks[page] <= pivot:
+            worse.append(page)
+        else:
+            better.append(page)
+    return quicksort_pages(better, ranks) + [pages[0]] + quicksort_pages(worse,
+ranks)
+
+def ordered_search(index, ranks, keyword):
+    pages = lookup(index, keyword)
+    return quicksort_pages(pages, ranks)
+
+
