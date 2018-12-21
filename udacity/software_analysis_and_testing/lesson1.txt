@@ -1,0 +1,116 @@
+cs6340
+
+date start : 21 december 2018
+
+1.1 intro to software analysis and testing
+---------------------------------------
+
+
+
+1.2 why take this course?
+---------------------------------------
+
+
+
+1.3 ariane rocket disaster
+---------------------------------------
+
+
+
+1.4 ariane disaster post-mortem
+---------------------------------------
+
+
+
+1.5 security vulnerabilities
+---------------------------------------
+
+
+
+1.6 what is a program analysis?
+---------------------------------------
+
+
+
+1.7 dynamic program analysis
+---------------------------------------
+
+
+
+1.8 static program analysis
+---------------------------------------
+
+
+
+1.9 quiz: program invariants
+---------------------------------------
+42
+
+
+1.10 discovering invariants 1
+---------------------------------------
+
+
+
+1.11 discovering invariants 2
+---------------------------------------
+
+
+
+1.12 terminology
+---------------------------------------
+
+
+
+1.13 example static analysis problem
+---------------------------------------
+
+
+
+1.14 iterative appproximation 1
+---------------------------------------
+
+
+
+1.15 quiz: iterative approximation 2
+---------------------------------------
+1, ?, ?
+
+
+1.16 quiz: dynamic vs static analysis
+---------------------------------------
+B C A D
+
+
+1.17 undecidability of program properties
+---------------------------------------
+
+
+
+1.18 who needs program analysis?
+---------------------------------------
+
+
+
+1.19 compilers
+---------------------------------------
+
+
+
+1.20 software quality tools
+---------------------------------------
+
+
+
+1.21 integrated developement environments
+---------------------------------------
+
+
+
+1.22 what have we learned?
+---------------------------------------
+
+
+
+
+
