@@ -1,0 +1,147 @@
+date start : 28 december 2018
+
+
+1.1 introduction to software testing
+---------------------------------------
+
+
+
+1.2 software development today
+---------------------------------------
+
+
+
+1.3 key observations
+---------------------------------------
+
+
+
+1.4 the need for specifications
+---------------------------------------
+
+
+
+1.5 developer != tester
+---------------------------------------
+
+
+
+1.6 other observatoins
+---------------------------------------
+
+
+
+1.7 outline of this lesson
+---------------------------------------
+
+
+
+1.8 classification of testing approaches
+---------------------------------------
+
+
+
+1.9 automated vs manual testing
+---------------------------------------
+
+
+1.10 black box vs white box testing
+---------------------------------------
+
+
+
+1.11 an example: mobile app security
+---------------------------------------
+
+
+
+1.12 the automated testing problem
+---------------------------------------
+
+
+
+1.13 pre- and post-conditions
+---------------------------------------
+
+
+
+1.14 conditions example
+---------------------------------------
+
+
+
+1.15 more on pre- and post-conditions
+---------------------------------------
+
+
+1.16 using pre- and post-conditions
+---------------------------------------
+
+
+1.17 quiz: pre-conditions
+---------------------------------------
+A != null && B != null && A.length <= B.length
+
+
+1.18 quiz: post-conditions
+---------------------------------------
+1,2,4,5
+
+
+1.19 executable post-condition
+---------------------------------------
+
+
+
+1.20 how good is your test suite?
+---------------------------------------
+
+
+
+1.21 code coverage
+---------------------------------------
+
+
+
+1.22 types of code coverage
+---------------------------------------
+
+
+
+
+1.23 quiz: code coverage metrics
+---------------------------------------
+ 80, 50, 0, 1
+
+
+1.24 mutation analysis
+---------------------------------------
+
+
+
+1.25 quiz: mutation analysis 1
+---------------------------------------
+2,3,4 no
+
+
+
+1.26 quiz: mutation analysis 2
+---------------------------------------
+1, 0, 0
+
+
+1.27 a problem
+---------------------------------------
+
+
+
+1.28 what have we learned?
+---------------------------------------
+
+
+
+
+1.29 reality
+---------------------------------------
+
+
