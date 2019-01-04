@@ -1,0 +1,132 @@
+date start : 04 january 2018
+
+
+1.1 introduction to random testing
+---------------------------------------
+
+
+
+1.2 random testing (fuzzing)
+---------------------------------------
+
+
+
+1.3 the infinite monkey theorem
+---------------------------------------
+
+
+
+1.4 random testing: case studies
+---------------------------------------
+
+
+
+1.5 a popular fuzzing study
+---------------------------------------
+
+
+
+1.6 fuzzing unix utilities: aftermath
+---------------------------------------
+
+
+
+1.7 a silver lining: security bugs
+---------------------------------------
+
+
+
+1.8 fuzz testing for mobile apps
+---------------------------------------
+
+
+
+1.9 generating multiple input events
+---------------------------------------
+
+
+1.10 generating gestures
+---------------------------------------
+
+
+
+1.11 grammar of monkey events
+---------------------------------------
+
+
+
+1.12 quiz: monkey events
+---------------------------------------
+DOWN(89,215) UP(89,215)
+DOWN(89,215)  MOVE(89,103) MOVE(37,103) UP(37,103) 
+
+
+1.13 testing concurrent programs
+---------------------------------------
+
+
+
+1.14 cuzz: fuzzing thread schedules
+---------------------------------------
+
+
+
+1.15 depth of a concurrency bug 1
+---------------------------------------
+
+
+1.16 depth of a concurrency bug 2
+---------------------------------------
+
+
+1.17 quiz: concurrency bug depth
+---------------------------------------
+2
+(1,7) (6,2)
+
+
+1.18 cuzz algorithm
+---------------------------------------
+
+
+1.19 probabilistic guarantee
+---------------------------------------
+
+
+
+1.20 proof of guarantee (sketch)
+---------------------------------------
+
+
+
+1.21 measured vs worst-case probability
+---------------------------------------
+
+
+
+1.22 cuzz: case study
+---------------------------------------
+
+
+
+
+1.23 cuzz: key takeaways
+---------------------------------------
+
+
+
+1.24 random testing: pros and cons
+---------------------------------------
+
+
+
+1.25 coverage of random testing
+---------------------------------------
+
+
+
+1.26 what have we learned?
+---------------------------------------
+
+
+
