@@ -1,4 +1,4 @@
-package play.learn.java.event_aggregator;
+package play.learn.java.design.event_aggregator;
 
 public class LordBaelish extends EventEmitter {
 
