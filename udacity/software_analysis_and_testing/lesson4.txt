@@ -1,0 +1,213 @@
+date start : 11 january 2018
+
+
+4.1 intro to automated test generation
+---------------------------------------
+
+
+
+4.2 outline
+---------------------------------------
+
+
+
+4.3 korat
+---------------------------------------
+
+
+
+4.4 the problem
+---------------------------------------
+
+
+
+4.5 an insight
+---------------------------------------
+
+
+
+4.6 how do we generate test inputs?
+---------------------------------------
+
+
+
+4.7 scheme for representing shapes
+---------------------------------------
+
+
+
+4.8 quiz: representing shapes
+---------------------------------------
+N0 N1 N2 null null null null
+
+N0 N1 null null N2 null null
+
+
+4.9 a simple algorithm
+---------------------------------------
+
+
+4.10 quiz: enumerating shapes
+---------------------------------------
+
+
+
+4.11 the general case for binary trees
+---------------------------------------
+
+
+
+4.12 a lot of trees!
+---------------------------------------
+
+
+4.13 an overestimate
+---------------------------------------
+
+
+
+4.14 how many trees?
+---------------------------------------
+
+
+
+4.15 another insight
+---------------------------------------
+
+
+4.16 the technique
+---------------------------------------
+
+
+4.17 the pre-condition for binary trees 1
+---------------------------------------
+
+
+4.18 the pre-condition for binary trees 2
+---------------------------------------
+
+
+4.19 example using pre-condition
+---------------------------------------
+
+
+
+4.20 enumerating tests
+---------------------------------------
+
+
+
+4.21 example: enumerating binary trees
+---------------------------------------
+
+
+
+4.22 quiz: enumerating binary trees 1
+---------------------------------------
+N0 null N1 null N2 null null
+N0 null N1 N2 null null null
+
+
+
+4.23 quiz: enumerating binary trees 2
+---------------------------------------
+N0 N1 null null null null null
+N0 N1 N2 null null null null
+
+
+4.24 experimental results
+---------------------------------------
+
+
+
+4.25 strengths and weaknesses
+---------------------------------------
+
+
+
+4.26 weaknesses
+---------------------------------------
+
+
+
+4.27 feedback-directed random testing
+---------------------------------------
+
+
+
+4.28 overview
+---------------------------------------
+
+
+
+4.29 randoop
+---------------------------------------
+
+
+4.30 randoop algorithm
+---------------------------------------
+
+
+
+4.31 classifying a sequence
+---------------------------------------
+
+
+
+4.32 illegal sequences
+---------------------------------------
+
+
+4.33 redundant sequences
+---------------------------------------
+
+
+
+4.34 some errors found by randoop
+---------------------------------------
+
+
+
+4.35 quiz: randoop test generation 1
+---------------------------------------
+BinaryTree bt = new BinaryTree(null);
+adds to componetns for future extension
+
+
+4.36 quiz: randoop test generation 2
+---------------------------------------
+BinaryTree bt = new BinaryTree(null);
+bt.removeRoot();
+
+discards it as illegal
+
+
+
+4.37 quiz: randoop test generation 3
+---------------------------------------
+Node v1 = new Node(null, null);
+Node v2 = new Node(v1, v1);
+BinaryTree bt = new BinaryTree(v2);
+
+no
+
+
+4.38 quiz: korat and randoop
+---------------------------------------
+korat randoop
+
+korat
+      randoop
+korat randoop
+
+
+4.39 test generation: the bigger picture
+---------------------------------------
+
+
+
+4.40 what have we learned?
+---------------------------------------
+
+
+
