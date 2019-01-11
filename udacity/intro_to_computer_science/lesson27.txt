@@ -1,0 +1,91 @@
+date start : 11 january 2019
+
+
+27.1 quiz: pick one
+---------------------------------------
+def pick_one(a, b, c):
+    if a:
+        return b
+    else:
+        return c
+
+27.2 quiz: triangular numbers
+---------------------------------------
+def triangular(n):
+    if n == 1:
+        return 1
+    else:
+        return n + triangular(n-1)
+
+27.3 quiz: linear time
+---------------------------------------
+1, 2
+
+27.4 quiz: remove tags
+---------------------------------------
+def remove_tags(string):
+    start = string.find('<')
+    while start != -1:
+        end = string.find('>', start)
+        string = string[:start]+ " " +  string[end + 1:]
+        start = string.find('<')
+    return string.split()
+
+27.5 quiz: date converter
+---------------------------------------
+def date_converter(lang, date):
+    (m, d, y) = date.split('/')
+    return '{0} {1} {2}'.format(d, lang[int(m)], y)
+
+27.6 quiz: termination
+---------------------------------------
+1, 3
+
+
+27.7 quiz: find and replace
+---------------------------------------
+def make_converter(match, replacement):
+    return [match, replacement]
+
+def apply_converter(converter, string):
+    previous = None
+    while previous != string:
+        previous = string
+        position = string.find(converter[0])
+        if position != -1:
+            string = string[:position] + converter[1] + string[position + len(converter[0]):]
+    return string
+
+
+27.8 quiz: longest repetition
+---------------------------------------
+def longest_repetition(input_list):
+    best_element = None
+    length = 0
+    current = None
+    current_length = 0
+    for i in input_list:
+        if current != element:
+            current = element
+            current_length = 1
+        else:
+            current_length = current_length + 1
+        if current_length > length:
+            best_element = current
+            length = current_length
+    return best_element
+
+
+27.9 quiz: deep reverse
+---------------------------------------
+def deep_reverse(p):
+    if is_list(p):
+        result = []
+        for i in range(len(p) - 1, -1, -1):
+            result.append(deep_reverse(p[i]))
+        return result
+    else:
+        return p	
+
+
+
