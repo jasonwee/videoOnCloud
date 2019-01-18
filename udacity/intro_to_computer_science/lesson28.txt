@@ -1,0 +1,83 @@
+date start : 18 january 2019
+
+
+29.1 quiz: starling and bell
+---------------------------------------
+def stirling(n, k):
+    if n < k:
+        return 0
+    if n == k or k == 1:
+        return 1
+    return k*stirling(n-1, k) + stirling(n-1, k-1)
+
+def bell(n):
+    total = 0
+    for k in range(1, n+1):
+        total = total + stirling(n, k)
+    return total
+
+
+29.2 quiz: combating link spam
+---------------------------------------
+
+def is_reciprocal_link(graph, source, destination, k):
+    if k == 0:
+        if destination == source:
+            return True
+        return False
+    if source in graph[destination]:
+        return True
+    for node in graph[destination]:
+        if is_reciprocal_link(graph, source, node, k-1):
+            return True
+    return False
+
+def compute_ranks(graph, k):
+    d = 0.8 # damping factor
+    numloops = 10
+    ranks = {}
+    npages = len(graph)
+    for page in graph:
+        ranks[page] = 1.0 / npages
+    for i in range(0, numloops):
+        newranks = {}
+        for page in graph:
+            newrank = (1 - d) / npages
+            for node in graph:
+                if page in graph[node]:
+                    if not is_reciprocal_link(graph, node, page, k):
+                        newrank = newrank + d * (ranks[node]/len(graph[node]))
+            newranks[page] = newrank
+        ranks = newranks
+    return ranks
+
+
+
+29.3 quiz: elementary cellular automation
+---------------------------------------
+def cellular_automaton(string, pattern_number, generations):
+    patterns = {}
+    pattern_list = ['...', '..x', '.x.', '.xx', 'x..', 'x.x', 'xx.', 'xxx']
+    n = len(string)
+
+    # build my patterns dictionary
+    for i in range(7, -1, -1):
+        if pattern_number/(2**i) == 1:
+            patterns[pattern_list[i]] = 'x'
+            pattern_number = pattern_number - 2**i
+        else:
+            patterns[pattern_list[i]] = '.'
+
+
+    # make a new string by applying pattern to string
+    # generations times
+    for j in range(0, generations):
+        new_string = ''
+        for i in range(0, n):
+            pattern = string[i-1] + string[i] + string[(i+1)%n]
+            new_string = new_string + patterns[pattern]
+        string = new_string
+    return new_string
+
+
+
