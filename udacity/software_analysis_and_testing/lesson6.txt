@@ -1,0 +1,185 @@
+date start : 25 january 2018
+
+
+6.1 introduction to pointer analysis
+---------------------------------------
+
+
+
+6.2 introducing pointers
+---------------------------------------
+
+
+
+6.3 pointer aliasing
+---------------------------------------
+
+
+
+6.4 may-alias analysis
+---------------------------------------
+
+
+
+6.5 must-alias analysis
+---------------------------------------
+
+
+
+6.6 why is pointer analysis hard?
+---------------------------------------
+
+
+
+6.7 approximation to the rescue
+---------------------------------------
+
+
+
+6.8 approximation to the rescue 2
+---------------------------------------
+
+
+
+6.9 example java program
+---------------------------------------
+
+
+6.10 abstracting the heap
+---------------------------------------
+
+
+6.11 abstracting control flow
+---------------------------------------
+
+
+
+6.12 chaotic iteration algorithm
+---------------------------------------
+
+
+6.13 kinds of statements
+---------------------------------------
+
+
+
+6.14 is this grammar enough?
+---------------------------------------
+
+
+
+6.15 example program in normal form
+---------------------------------------
+
+
+6.16 quiz: normal form of programs
+---------------------------------------
+tmp = v2.f
+v1.f = tmp
+
+tmp1 = v1.f
+tmp2 = v2.h
+tmp1.g = tmp2
+
+
+6.17 rule for object allocation sites
+---------------------------------------
+
+
+6.18 rule for object copy
+---------------------------------------
+
+
+6.19 rule for field writes
+---------------------------------------
+
+
+
+6.20 rule for field reads
+---------------------------------------
+
+
+
+6.21 pointer analysis example
+---------------------------------------
+
+
+
+6.22 quiz: pointer analysis example 2
+---------------------------------------
+2
+
+
+6.23 classifying pointer analysis algorithms
+---------------------------------------
+
+
+
+6.24 flow sensitivity
+---------------------------------------
+
+
+
+6.25 context sensitivity
+---------------------------------------
+
+
+
+6.26 heap abstraction
+---------------------------------------
+
+
+
+6.27 scheme #1: allocation site-based
+---------------------------------------
+
+
+
+6.28 scheme #2: type-based
+---------------------------------------
+
+
+
+6.29 scheme #3: heap-insensitive
+---------------------------------------
+
+
+
+6.30 tradeoffs in heap abstraction schemes
+---------------------------------------
+
+
+
+6.31 quiz: may-alias analysis
+---------------------------------------
+No
+No
+
+No
+Yes
+Yes
+Yes
+
+
+
+6.32 modeling aggregate data types: arrays
+---------------------------------------
+
+6.33 modeling aggregate data types: records
+---------------------------------------
+
+
+6.34 quiz: pointer analysis classification
+----------------------------------------
+B
+B
+A
+B
+A
+
+
+6.35 what have we learned?
+---------------------------------------
+
+
+
