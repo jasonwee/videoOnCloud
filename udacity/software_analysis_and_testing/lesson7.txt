@@ -1,0 +1,124 @@
+date start : 01 february 2018
+
+
+7.1 intro to constraint based analysis
+---------------------------------------
+
+
+
+7.2 motivation
+---------------------------------------
+
+
+
+7.3 what is constraint based analysis?
+---------------------------------------
+
+
+
+7.4 benefits of constraint based analysis
+---------------------------------------
+
+
+
+7.5 quiz: specification & implementation quiz
+---------------------------------------
+2, 4
+
+
+7.6 outline of the lesson
+---------------------------------------
+
+
+
+7.7 a constraint language: datalog
+---------------------------------------
+
+
+
+7.8 syntax of datalog: example
+---------------------------------------
+
+
+
+7.9 semantics of datalog: example
+---------------------------------------
+
+
+7.10 quiz: computation using datalog
+---------------------------------------
+2, 3
+
+
+7.11 outline revisited
+---------------------------------------
+
+
+
+7.12 reaching definitions analysis
+---------------------------------------
+
+
+7.13 reaching definitions analysis 2
+---------------------------------------
+
+
+
+7.14 quiz: live variables analysis
+---------------------------------------
+in(n,v) gen(n,v)
+in(n,v) out(n,v), kill(n,v)
+out(n,v) in(m,v), next(n,m)
+
+
+7.15 outline revisited again
+---------------------------------------
+
+
+7.16 pointer analysis in datalog
+---------------------------------------
+
+
+7.17 intra-procedural pointer analysis
+---------------------------------------
+
+
+7.18 inter-precedural pointer analysis
+---------------------------------------
+
+
+7.19 quiz: querying pointer analysis
+---------------------------------------
+2,4
+
+
+7.20 context sensitivity
+---------------------------------------
+
+
+
+7.21 cloning-based inter-precedural analysis
+---------------------------------------
+
+
+
+7.22 what about recursion?
+---------------------------------------
+
+
+7.23 summary based inter-procedural analysis
+---------------------------------------
+
+
+
+7.24 other constraint languages
+---------------------------------------
+
+
+
+7.25 what have we learned?
+---------------------------------------
+
+
+
+
