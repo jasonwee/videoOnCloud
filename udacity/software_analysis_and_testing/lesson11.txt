@@ -1,0 +1,131 @@
+date start : 01 march 2018
+
+
+11.1 intro to dynamic symbolic execution
+---------------------------------------
+
+
+
+11.2 motivation
+---------------------------------------
+
+
+
+11.3 approach
+---------------------------------------
+
+
+
+11.4 execution path of a program
+---------------------------------------
+
+
+
+11.5 computation tree example
+---------------------------------------
+
+
+11.6 existing approach 1
+---------------------------------------
+
+
+
+11.7 existing approach 2
+---------------------------------------
+
+
+
+11.8 combined approach
+---------------------------------------
+
+
+
+11.9 an illustrative example
+---------------------------------------
+
+
+
+
+11.10 quiz: computation tree
+---------------------------------------
+c1
+c1 and c2
+not c1
+c1 and not c2
+
+
+
+
+11.11 a more complex example
+---------------------------------------
+
+
+
+11.12 quiz: example application
+---------------------------------------
+9  5!= x0  7 == x0  
+7  5 == x0
+5 
+
+
+
+11.13 a third example
+---------------------------------------
+
+
+
+11.14 quiz: properties of dse
+---------------------------------------
+2
+
+
+11.15 testing data structures
+---------------------------------------
+
+
+11.16 data structures example
+---------------------------------------
+
+
+
+11.17 approach in nutshell
+---------------------------------------
+
+
+11.18 quiz: characteristics of dse
+---------------------------------------
+automated, white box
+systematic
+path-sensitive
+non-sampled
+
+
+11.19 case study: sglib c library
+---------------------------------------
+
+
+11.20 case study: needham-scheroder protocol
+---------------------------------------
+
+
+
+11.21 realistic implementations
+---------------------------------------
+
+
+
+11.22 case study: sage tool at microsoft
+---------------------------------------
+
+
+
+11.23 sage crashign a media parser
+---------------------------------------
+
+
+
+11.24 what have we learned?
+---------------------------------------
+
+
+
