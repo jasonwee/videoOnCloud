@@ -1,0 +1,158 @@
+date start : 15 march 2019
+
+2.1 introduction
+---------------------------------------
+
+
+
+2.2 quiz: meet marla
+---------------------------------------
+hypertension
+diabetes
+heart disease
+chronic kidney disease
+
+
+2.3 acute medical problems
+---------------------------------------
+
+
+
+2.4 quiz: identifying chronic diseases
+---------------------------------------
+an upper respistory tract infection
+arm fracture
+
+
+2.5 quiz: categorizing
+---------------------------------------
+A
+C
+
+
+2.6 chronic disease summary
+---------------------------------------
+
+
+
+2.7 marla's chronic diseases
+---------------------------------------
+
+
+
+2.8 fragmentation and lack of coordination
+---------------------------------------
+
+
+2.9 primary care physician (pcp)
+---------------------------------------
+
+
+
+2.10 health maintenance organization (hmo)
+---------------------------------------
+
+
+
+
+2.11 the decline of pcps
+---------------------------------------
+
+
+
+2.12 quiz: the job of a pcp
+---------------------------------------
+1,2,3,4
+
+
+2.13 quiz: pcps in the us 
+---------------------------------------
+none
+
+
+2.14 quiz: types of pcps
+---------------------------------------
+1
+
+
+2.15 chronic disease summary 2
+---------------------------------------
+
+
+2.16 healthcare spending
+---------------------------------------
+
+
+
+2.17 proliferation of specialists
+---------------------------------------
+
+
+
+2.18 pcp vs specialists
+---------------------------------------
+
+
+2.19 value of a pcp
+---------------------------------------
+
+
+
+2.20 PCPs need it help
+---------------------------------------
+
+
+
+
+2.21 PCPs improve care coordination
+---------------------------------------
+
+
+
+2.22 it to the rescue
+---------------------------------------
+
+
+
+2.23 using it to build a better healthcare system
+---------------------------------------
+
+
+
+2.24 team projects background
+---------------------------------------
+
+
+
+2.25 team projects current situation
+---------------------------------------
+
+
+2.26 team projects fhir app platform
+---------------------------------------
+
+
+
+2.27 team projects georgia techs fhir platform
+---------------------------------------
+
+
+
+2.28 recap
+---------------------------------------
+
+
+2.29 interview with gerard anderson
+---------------------------------------
+
+
+
+2.30 conclusion
+---------------------------------------
+
+
+
+
+
+
+
