@@ -1,0 +1,218 @@
+date start : 22 march 2019
+
+
+3.1 introduction
+---------------------------------------
+
+
+
+3.2 health data logistics
+---------------------------------------
+
+
+3.3 quiz: other industries
+---------------------------------------
+https://www.udacity.com/wiki/ud514/vocabulary
+https://www.udacity.com/wiki/ud514/acronyms
+
+Wal-Mart, Fedex, UPS
+
+
+3.4 broken system
+---------------------------------------
+
+
+3.5 medications case study
+---------------------------------------
+
+
+3.6 e prescribing
+---------------------------------------
+
+
+
+3.7 quiz: medication quiz 1
+---------------------------------------
+1) They can't afford them;
+2) No one has explained why they are important;
+3) They don't like the side effects
+
+
+3.8 quiz: medication quiz 2
+---------------------------------------
+The e-prescribing companies say its because of convenience.  The doctor e-prescribes and the patient just goes to their pharmacy and picks up the medication.
+
+3.9 rising tide of chronic disease
+---------------------------------------
+
+
+3.10 providing new incentives
+---------------------------------------
+https://www.pcpcc.org/sites/default/files/media/better_best_guide_full_2011.pdf
+
+
+
+3.11 the physician group practice demonstration
+---------------------------------------
+
+
+
+3.12 quiz: pioneer ACOs
+---------------------------------------
+pioneer acos
+
+3.13 a new national goal
+---------------------------------------
+
+
+3.14 three hitech components
+---------------------------------------
+
+
+3.15 ehr certification components
+---------------------------------------
+
+
+3.16 data collection
+---------------------------------------
+
+
+
+3.17 healthcare quality
+---------------------------------------
+
+
+
+3.18 quiz: privacy, security and trust
+---------------------------------------
+audit of provider records
+
+
+3.19 quiz: ehr certification quiz
+---------------------------------------
+audit of ehr vendor sales data
+
+
+3.20 certification testing
+---------------------------------------
+
+
+
+
+3.21 quiz: quality reporting
+---------------------------------------
+https://www.ahrq.gov/gam/index.html
+
+an hba1c level under 9
+
+
+3.22 quiz: quality metrics quiz 2
+---------------------------------------
+regular measurements of blood pressure
+
+
+
+3.23 quiz: ehr overview
+---------------------------------------
+not sure
+
+3.24 quiz: clinical data quiz
+---------------------------------------
+
+physician's recording of blood pressure
+
+
+3.25 stages of mu
+---------------------------------------
+
+
+3.26 stage 1 mu
+---------------------------------------
+
+
+
+3.27 stage 1 menu set measures
+---------------------------------------
+http://www.cms.gov/Regulations-and-Guidance/Legislation/EHRIncentivePrograms/Downloads/EP-MU-TOC.pdf
+
+
+3.28 stage 2 mu
+---------------------------------------
+
+
+
+
+3.29 quiz: stage 2 patient participation
+---------------------------------------
+http://www.healthit.gov/providers-professionals/achieve-meaningful-use/core-measures-2/patient-ability-electronically-view-download-transmit-vdt-health-information
+
+patient engagement
+
+
+
+3.30 mu stage 3
+---------------------------------------
+
+
+
+
+3.31 meaningful use stage 3
+---------------------------------------
+
+
+
+3.32 future of stage 3
+---------------------------------------
+
+
+3.33 incentive changes
+---------------------------------------
+
+
+3.34 quiz: incentive payments
+---------------------------------------
+these are providers caring for poor patients
+often in rural areas
+
+
+3.35 status update
+---------------------------------------
+
+
+3.36 adopter demographics
+---------------------------------------
+
+
+
+3.37 adopter attitudes
+---------------------------------------
+
+
+
+3.38 quiz: adopter demographics quiz
+---------------------------------------
+physicians working in an hmo
+
+
+3.39 quiz: adopter attitude quiz
+---------------------------------------
+they are both happy and unhappy
+
+
+3.40 doug fridsma interview
+---------------------------------------
+
+
+
+
+3.41 recap
+---------------------------------------
+
+
+
+3.42 conclusion
+---------------------------------------
+
+
+
+
