@@ -1,0 +1,183 @@
+date start : 29 march 2019
+
+
+4.1 introduction
+---------------------------------------
+
+
+4.2 reasons for HIE
+---------------------------------------
+
+
+4.3 key challenges interoperability
+---------------------------------------
+
+
+4.4 key challenges patient identification
+---------------------------------------
+
+
+4.5 quiz: key challenges finding documents
+---------------------------------------
+all of these
+
+4.6 quiz: hie capability quiz
+---------------------------------------
+make sure data being aggregated is all for the same patient
+
+
+4.7 hie classifications
+---------------------------------------
+
+
+4.8 hie scope enterprise
+---------------------------------------
+
+
+4.9 quiz: hie business case
+---------------------------------------
+make it free
+
+
+4.10 hie status
+---------------------------------------
+
+
+
+4.11 7 steps to hie
+---------------------------------------
+
+
+
+4.12 hie architecture
+---------------------------------------
+
+
+4.13 hie functionality
+---------------------------------------
+
+
+4.14 quiz: hie classification quiz 1
+---------------------------------------
+maturity
+
+
+4.15 quiz: hie classification quiz 2
+---------------------------------------
+all of these
+
+
+4.16 ihie services
+---------------------------------------
+
+
+
+4.17 interview with john kansky
+---------------------------------------
+
+
+
+4.18 ihie support
+---------------------------------------
+
+
+4.19 quiz: connect architecture
+---------------------------------------
+because a hospital already has that module or system or because they want the CONNECT module or system to work differently or need to customize it for their environment and the other systems they have.
+
+
+4.20 connect features
+---------------------------------------
+
+
+4.21 federated architecture direct
+---------------------------------------
+
+
+4.22 maria sees dr johnson
+---------------------------------------
+
+
+4.23 dr johnson's new emr
+---------------------------------------
+
+
+
+4.24 sending marla's record
+---------------------------------------
+
+
+
+4.25 quiz: direct technical concepts
+---------------------------------------
+all of the above
+
+
+4.26 message disposition notification
+---------------------------------------
+
+
+
+4.27 quiz: trust among hisps
+---------------------------------------
+grow exponentially
+
+
+4.28 direct pull
+---------------------------------------
+
+
+
+4.29 quiz: patient data repositories
+---------------------------------------
+1) Patients will be more likely to submit data if they control access to it;
+2) The patient has to decide who can access their dat so they should control the repository; 
+3) Patients will be contributing more and more of the data so they should control the repository; 
+4) It facilitates patients using their data to find clinical trials that they could enter;5) It facilitates use of their data to provide personalized search, education and another support services.
+
+
+4.30 direct workflow issues
+---------------------------------------
+
+
+
+4.31 interview with riqi part 1
+---------------------------------------
+
+
+
+4.32 interview with riqi part 2
+---------------------------------------
+
+
+
+4.33 interview with riqi part 3
+---------------------------------------
+
+
+
+4.34 interview with riqi part 4
+---------------------------------------
+
+
+
+4.35 quiz: healthvault activity
+---------------------------------------
+check the box
+
+
+4.36 interview with david kibbe
+---------------------------------------
+
+
+
+4.37 recap
+---------------------------------------
+
+
+
+4.38 conclusion
+---------------------------------------
+
+
+
