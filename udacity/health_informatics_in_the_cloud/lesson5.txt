@@ -1,0 +1,134 @@
+date start : 05 april 2019
+
+
+5.1 introduction
+---------------------------------------
+hipaa = health insurance portability and accountability act
+phi = protected health information
+
+5.2 patient engagement
+---------------------------------------
+
+
+5.3 privacy, security and trust
+---------------------------------------
+
+
+5.4 quiz: p/s/t quiz 1
+---------------------------------------
+privacy
+
+
+5.5 quiz: p/s/t quiz 2
+---------------------------------------
+security
+
+
+5.6 quiz: p/s/t quiz 3
+---------------------------------------
+trust
+
+
+5.7 the trifecta
+---------------------------------------
+
+
+5.8 privacy consent models
+---------------------------------------
+
+
+5.9 data segmentation
+---------------------------------------
+
+
+5.10 data segmentation models
+---------------------------------------
+
+
+
+5.11 quiz: data segmentation activity
+---------------------------------------
+complication
+
+
+5.12 quiz: data segmentation quiz
+---------------------------------------
+select and deselect item that they want to share
+
+
+5.13 security and trust
+---------------------------------------
+
+
+5.14 public key infrastructure
+---------------------------------------
+
+
+5.15 public and private keys
+---------------------------------------
+
+
+5.16 pki for security 
+---------------------------------------
+
+
+
+5.17 encryprion for trust
+---------------------------------------
+
+
+
+5.18 quiz: pki security trust quiz 1
+---------------------------------------
+sender public key
+
+5.19 quiz: pki security trust quiz 2
+---------------------------------------
+recipient public key
+
+
+5.20 registration authority
+---------------------------------------
+
+
+5.21 quiz: certificate authority
+---------------------------------------
+So that browsers can verify that source of the key using the CA's public key which is usually shipped with browsers to facilitate this check.
+
+5.22 pki on the web
+---------------------------------------
+
+
+5.23 quiz: pki on the web quiz 1
+---------------------------------------
+VeriSign
+
+
+5.24 quiz: pki on the web quiz 2
+---------------------------------------
+april
+
+
+5.25 quiz: pki on the web quiz 3
+---------------------------------------
+30 82 01
+
+
+5.26 other pki issues
+---------------------------------------
+
+
+
+5.27 recap
+---------------------------------------
+
+
+5.28 interview with don detmer
+---------------------------------------
+
+
+
+5.29 conclusion
+---------------------------------------
+
+
