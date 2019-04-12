@@ -1,0 +1,148 @@
+date start : 12 april 2019
+
+
+2.1 introduction
+---------------------------------------
+
+
+
+2.2 lesson outline
+---------------------------------------
+http://pandas.pydata.org/pandas-docs/stable/generated/pandas.DataFrame.html
+http://pandas.pydata.org/pandas-docs/stable/generated/pandas.read_csv.html
+http://pandas.pydata.org/pandas-docs/stable/indexing.html
+http://pandas.pydata.org/pandas-docs/stable/gotchas.html?#label-based-slicing-conventions
+http://pandas.pydata.org/pandas-docs/stable/visualization.html
+http://pandas.pydata.org/pandas-docs/stable/generated/pandas.DataFrame.plot.html
+https://matplotlib.org/api/pyplot_api.html#matplotlib.pyplot.plot
+
+
+2.3 data in csv files
+---------------------------------------
+
+
+
+2.4 quiz: which fields should be in a csv file?
+---------------------------------------
+date/time
+price of the stock
+
+
+2.5 real stock data
+---------------------------------------
+https://finance.yahoo.com/quote/hcp?ltr=1
+https://finance.yahoo.com/quote/HCP/history?ltr=1
+https://finance.yahoo.com/chart/HCP?ltr=1#eyJpbnRlcnZhbCI6ImRheSIsInBlcmlvZGljaXR5IjoxLCJ0aW1lVW5pdCI6bnVsbCwiY2FuZGxlV2lkdGgiOjgsInZvbHVtZVVuZGVybGF5Ijp0cnVlLCJhZGoiOnRydWUsImNyb3NzaGFpciI6dHJ1ZSwiY2hhcnRUeXBlIjoibGluZSIsImV4dGVuZGVkIjpmYWxzZSwibWFya2V0U2Vzc2lvbnMiOnt9LCJhZ2dyZWdhdGlvblR5cGUiOiJvaGxjIiwiY2hhcnRTY2FsZSI6ImxpbmVhciIsInN0dWRpZXMiOnsidm9sIHVuZHIiOnsidHlwZSI6InZvbCB1bmRyIiwiaW5wdXRzIjp7ImlkIjoidm9sIHVuZHIiLCJkaXNwbGF5Ijoidm9sIHVuZHIifSwib3V0cHV0cyI6eyJVcCBWb2x1bWUiOiIjMDBiMDYxIiwiRG93biBWb2x1bWUiOiIjRkYzMzNBIn0sInBhbmVsIjoiY2hhcnQiLCJwYXJhbWV0ZXJzIjp7IndpZHRoRmFjdG9yIjowLjQ1LCJjaGFydE5hbWUiOiJjaGFydCJ9fX0sInBhbmVscyI6eyJjaGFydCI6eyJwZXJjZW50IjoxLCJkaXNwbGF5IjoiSENQIiwiY2hhcnROYW1lIjoiY2hhcnQiLCJ0b3AiOjB9fSwic2V0U3BhbiI6e30sImxpbmVXaWR0aCI6Miwic3RyaXBlZEJhY2tncm91ZCI6dHJ1ZSwiZXZlbnRzIjp0cnVlLCJjb2xvciI6IiMwMDgxZjIiLCJldmVudE1hcCI6eyJjb3Jwb3JhdGUiOnsiZGl2cyI6dHJ1ZSwic3BsaXRzIjp0cnVlfSwic2lnRGV2Ijp7fX0sInN5bWJvbHMiOlt7InN5bWJvbCI6IkhDUCIsInN5bWJvbE9iamVjdCI6eyJzeW1ib2wiOiJIQ1AifSwicGVyaW9kaWNpdHkiOjEsImludGVydmFsIjoiZGF5IiwidGltZVVuaXQiOm51bGwsInNldFNwYW4iOnt9fV19
+
+close : actual price reported at exchange when the stock close for that day
+adjusted close : is the number data provider generated for us and after adjusted for
+stock split and dividend payment.
+
+
+2.6 pandas dataframe
+---------------------------------------
+
+
+
+2.7 example csv file
+---------------------------------------
+
+
+
+2.8 quiz: read csv
+---------------------------------------
+http://pandas.pydata.org/pandas-docs/stable/generated/pandas.DataFrame.head.html
+
+import pandas as pd
+
+
+def test_run():
+    """Function called by Test Run."""
+    df = pd.read_csv("data/AAPL.csv")
+    # TODO: Print last 5 rows of the data frame
+    print df.tail(5)
+
+
+if __name__ == "__main__":
+    test_run()
+
+
+
+2.9 select rows
+---------------------------------------
+
+
+
+2.10 compute max clsoing price
+---------------------------------------
+
+
+
+2.11 quiz: compute mean volume
+---------------------------------------
+"""Compute mean volume"""
+
+import pandas as pd
+
+def get_mean_volume(symbol):
+    """Return the mean volume for stock indicated by symbol.
+    
+    Note: Data for a stock is stored in file: data/<symbol>.csv
+    """
+    df = pd.read_csv("data/{}.csv".format(symbol))  # read in data
+    # TODO: Compute and return the mean volume for this stock
+    return df['Volume'].mean()
+
+
+def test_run():
+    """Function called by Test Run."""
+    for symbol in ['AAPL', 'IBM']:
+        print "Mean Volume"
+        print symbol, get_mean_volume(symbol)
+
+
+if __name__ == "__main__":
+    test_run()
+
+
+
+2.12 plotting stock price data
+---------------------------------------
+
+import matplotlib.pyplot as plt
+
+print df['Adj Close']
+df['Adj Close'].plot()
+plt.show()
+
+
+
+2.13 quiz: plot high prices for ibm
+---------------------------------------
+"""Plot High prices for IBM"""
+
+import pandas as pd
+import matplotlib.pyplot as plt
+
+def test_run():
+    df = pd.read_csv("data/IBM.csv")
+    # TODO: Your code here
+    df['High'].plot()
+    plt.title('high chart')
+    plt.ylabel('y axis')
+    plt.xlabel('x axis')
+    plt.show()  # must be called to show plots
+
+
+if __name__ == "__main__":
+    test_run()
+
+
+2.14 plot two columns
+---------------------------------------
+
+
+
+
+
+
