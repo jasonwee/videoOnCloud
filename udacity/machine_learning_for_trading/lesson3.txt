@@ -1,0 +1,121 @@
+date start : 19 april 2019
+
+
+3.1 working with multiple stocks
+---------------------------------------
+
+
+
+3.2 lesson outline
+---------------------------------------
+http://pandas.pydata.org/pandas-docs/stable/generated/pandas.DataFrame.html
+http://pandas.pydata.org/pandas-docs/stable/generated/pandas.date_range.html
+http://pandas.pydata.org/pandas-docs/stable/generated/pandas.DataFrame.dropna.html
+http://pandas.pydata.org/pandas-docs/stable/generated/pandas.DataFrame.join.html
+http://pandas.pydata.org/pandas-docs/stable/indexing.html
+http://pandas.pydata.org/pandas-docs/stable/generated/pandas.DataFrame.plot.html
+
+
+3.3 pandas dataframe recap
+---------------------------------------
+
+
+
+3.4 problems to solve
+---------------------------------------
+
+
+
+3.5 quiz: nyse trading days
+---------------------------------------
+252
+
+
+3.6 building a dataframe
+---------------------------------------
+
+
+
+3.7 "joining" dataframes
+---------------------------------------
+
+
+
+3.8 create an empty dataframe
+---------------------------------------
+
+
+
+3.9 join spy data
+---------------------------------------
+
+
+
+3.10 quiz: types of "join"
+---------------------------------------
+inner
+
+
+3.11 read in more stocks
+---------------------------------------
+
+
+
+3.12 quiz: utility functions for reading data
+---------------------------------------
+df_temp = pd.read_csv(symbol_to_path(symbol), index_col='Date',
+          parse_dates=True, usecols=['Date', 'Adj Close'], na_values=['nan'])
+df_temp = df_temp.rename(columns={'Adj Close': symbol})
+df = df.join(df_temp)
+if symbol == 'SPY': #drop dates spy did not trade
+    df = df.dropna(subset=["SPY"])
+
+
+3.13 obtaining a slice of data
+---------------------------------------
+
+
+3.14 more slicing
+---------------------------------------
+df.ix[]
+
+
+3.15 problems with plotting
+---------------------------------------
+
+
+3.16 quiz: how to plot on "equal footing"?
+---------------------------------------
+df1 = df1/df1[0]
+
+
+3.17 plotting multiple stocks
+---------------------------------------
+def plot_data(df, title='stock prices'):
+    ax = df.plot(title=title, fontsize=2)
+    ax.set_xlabel("Date")
+    ax.set_ylable("Price")
+    plt.show()
+
+
+3.18 quiz: slice and plot two stocks
+---------------------------------------
+def plot_selected(df, columns, start_index, end_index):
+    """Plot the desired columns over index values in the given range."""
+    # TODO: Your code here
+    # Note: DO NOT modify anything else!
+    plot_data(df.ix[start_index:end_index, columns])
+
+
+
+3.19 normalizing
+---------------------------------------
+def normalize_data(df):
+    return df/df.ix[0,:]
+
+
+3.20 lesson summary
+---------------------------------------
+
+
+
