@@ -1,0 +1,132 @@
+date start : 26 april 2019
+
+
+4.1 what is numpy?
+---------------------------------------
+
+
+
+4.2 lesson outline
+---------------------------------------
+http://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.values.html
+https://docs.scipy.org/doc/numpy/reference/generated/numpy.array.html
+https://docs.scipy.org/doc/numpy/reference/generated/numpy.ones.html
+https://docs.scipy.org/doc/numpy/reference/generated/numpy.zeros.html
+https://docs.scipy.org/doc/numpy/reference/routines.random.html
+
+https://docs.scipy.org/doc/numpy/reference/generated/numpy.ndarray.shape.html
+https://docs.scipy.org/doc/numpy/reference/generated/numpy.ndarray.ndim.html
+https://docs.scipy.org/doc/numpy/reference/generated/numpy.ndarray.size.html
+https://docs.scipy.org/doc/numpy/reference/generated/numpy.ndarray.dtype.html
+
+https://docs.scipy.org/doc/numpy/reference/generated/numpy.sum.html
+https://docs.scipy.org/doc/numpy/reference/generated/numpy.min.html
+https://docs.scipy.org/doc/numpy/reference/generated/numpy.max.html
+https://docs.scipy.org/doc/numpy/reference/generated/numpy.mean.html
+
+https://docs.scipy.org/doc/numpy/reference/generated/numpy.add.html
+https://docs.scipy.org/doc/numpy/reference/generated/numpy.subtract.html
+https://docs.scipy.org/doc/numpy/reference/generated/numpy.multiply.html
+https://docs.scipy.org/doc/numpy/reference/generated/numpy.divide.html
+
+https://docs.python.org/2/library/time.html#time.time
+https://docs.python.org/2/library/profile.html
+https://docs.scipy.org/doc/numpy/reference/arrays.indexing.html#basic-slicing-and-indexing
+https://docs.scipy.org/doc/numpy/reference/arrays.indexing.html#integer-array-indexing
+https://docs.scipy.org/doc/numpy/reference/arrays.indexing.html#boolean-array-indexing
+
+
+
+4.3 relationship to pandas
+---------------------------------------
+
+
+
+4.4 notes on notation
+---------------------------------------
+
+
+
+4.5 quiz: quiz: replace a slice
+---------------------------------------
+nd1[0:2,0:2] = nd2[-2:,2:4]
+
+
+4.6 creating numpy arrays
+---------------------------------------
+import numpy as np
+
+def test_run():
+    #list ot 1d array
+    print np.array([2,3,4])
+
+if __name__ == "__main__":
+    test_run()
+
+
+4.7 arrays with intial values
+---------------------------------------
+np.ones((5,4))
+
+
+4.8 quiz: specify the datatype
+---------------------------------------
+dtype , int
+
+
+4.9 generating random numbers
+---------------------------------------
+
+
+
+4.10 array attributes
+---------------------------------------
+
+
+4.11 operations on ndarrays
+---------------------------------------
+
+
+
+4.12 quiz: locate maximum value
+---------------------------------------
+def get_max_index(a):
+    """Return the index of the maximum value in given 1D array."""
+    # TODO: Your code here
+    return np.argmax(a)
+
+
+4.13 timing python operations
+---------------------------------------
+
+
+4.14 how fast is numpy?
+---------------------------------------
+
+
+4.15 accessing array elements
+---------------------------------------
+
+
+4.16 modifying array elements
+---------------------------------------
+
+
+4.17 indexing an array with another array
+---------------------------------------
+
+
+4.18 boolean or "mask" index arrays
+---------------------------------------
+
+
+
+4.19 arithmetic operations
+---------------------------------------
+
+
+4.20 learning more numpy
+---------------------------------------
+
+
+
