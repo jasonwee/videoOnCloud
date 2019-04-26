@@ -1,0 +1,130 @@
+date start : 26 april 2019
+
+
+8.1 introduction
+---------------------------------------
+
+
+8.2 the data business
+---------------------------------------
+
+
+8.3 collecting data
+---------------------------------------
+
+
+8.4 use the data
+---------------------------------------
+
+
+8.5 sources of error
+---------------------------------------
+
+
+8.6 medical errors
+---------------------------------------
+
+
+8.7 medical data collection
+---------------------------------------
+
+
+8.8 active error
+---------------------------------------
+
+
+8.9 passive error
+---------------------------------------
+
+
+8.10 inconsistent data
+---------------------------------------
+
+
+8.11 data collection challenge recap
+---------------------------------------
+
+
+8.12 case study m modal
+---------------------------------------
+
+
+8.13 quiz: snomed quiz
+---------------------------------------
+65546002
+
+8.14 interview with juergen fritsch
+---------------------------------------
+
+
+8.15 case study m modal integration
+---------------------------------------
+
+
+
+8.16 praxis
+---------------------------------------
+
+
+8.17 quiz: data collection quiz
+---------------------------------------
+
+
+8.18 physicians decide
+---------------------------------------
+
+
+8.19 data visualization challenges
+---------------------------------------
+
+
+8.20 key role for relationships
+---------------------------------------
+
+
+8.21 data visualization solutions
+---------------------------------------
+
+
+8.22 different patient types
+---------------------------------------
+
+
+8.23 quiz: different patients quiz
+---------------------------------------
+short and concise , better with some picture if it explain better of the describe situation.
+
+8.24 different medical specialties
+---------------------------------------
+
+
+8.25 quiz: different physicians quiz
+---------------------------------------
+the explanation should be phrase in accordance to the physician term of terminology.
+
+
+8.26 information intensive vision
+---------------------------------------
+
+
+8.27 cognitive support
+---------------------------------------
+
+
+8.28 scalling data
+---------------------------------------
+
+
+8.29 patient family involvement
+---------------------------------------
+
+
+8.30 recap
+---------------------------------------
+
+
+8.31 conclusion
+---------------------------------------
+
+
+
