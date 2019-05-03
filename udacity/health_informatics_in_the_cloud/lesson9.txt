@@ -1,0 +1,115 @@
+date start : 03 may 2019
+
+
+9.1 introduction
+---------------------------------------
+
+
+9.2 key phr attributes
+---------------------------------------
+phr = personal health record
+
+
+9.3 newer phr attributes
+---------------------------------------
+
+
+9.4 phr apps
+---------------------------------------
+
+
+9.5 upload a ccd
+---------------------------------------
+ccd = continuity care document
+
+
+9.6 healthvault
+---------------------------------------
+
+
+9.7 quiz: marla's ccd
+---------------------------------------
+
+
+9.8 PatientsLikeMe
+---------------------------------------
+
+
+9.9 interview with sally okun
+---------------------------------------
+
+
+9.10 quiz: patientsLikeMe quiz
+---------------------------------------
+sharing health information in between will help each others.
+
+9.11 patient portals
+---------------------------------------
+
+
+9.12 quiz: patient technologies
+---------------------------------------
+healthvault
+relay health
+
+9.13 blue button +
+---------------------------------------
+
+
+
+9.14 hanc
+---------------------------------------
+
+
+9.15 quiz: telehomecare
+---------------------------------------
+b&c
+
+
+9.16 home tele health modalities
+---------------------------------------
+
+
+9.17 dimensions of telehomcare
+---------------------------------------
+
+
+9.18 medication compliance at home
+---------------------------------------
+
+
+9.19 mobile devices
+---------------------------------------
+
+
+9.20 quiz: apps for medicine
+---------------------------------------
+i guess health data privacy under the regulated app is important.
+
+
+9.21 advice, assistance, education
+---------------------------------------
+
+
+9.22 virtual home visits
+---------------------------------------
+
+
+9.23 quiz: virtual home visits quiz
+---------------------------------------
+it depends
+
+
+9.24 challenges
+---------------------------------------
+
+
+9.25 the future
+---------------------------------------
+
+
+9.26 conclusion
+---------------------------------------
+
+
+
