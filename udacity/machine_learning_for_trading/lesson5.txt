@@ -1,0 +1,81 @@
+date start : 03 may 2019
+
+
+5.1 are you ready?
+---------------------------------------
+
+
+
+5.2 lesson outline
+---------------------------------------
+Bollinger Bands: A way of quantifying how far stock price has deviated from some norm.
+Daily returns: Day-to-day change in stock price.
+
+http://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.mean.html
+http://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.median.html
+http://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.std.html
+http://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.sum.html
+http://pandas.pydata.org/pandas-docs/stable/reference/index.html
+http://pandas.pydata.org/pandas-docs/stable/generated/pandas.rolling_mean.html
+http://pandas.pydata.org/pandas-docs/stable/generated/pandas.rolling_std.html
+http://pandas.pydata.org/pandas-docs/stable/user_guide/computation.html
+
+
+
+5.3 global statistics
+---------------------------------------
+
+
+
+5.4 compute global statistics
+---------------------------------------
+
+
+
+5.5 rolling statistics
+---------------------------------------
+
+
+5.6 quiz: which statistic to use?
+---------------------------------------
+rolling standard deviation
+
+
+5.7 bollinger bands
+---------------------------------------
+
+
+5.8 computing rolling statistics
+---------------------------------------
+
+
+5.9 quiz: calculate bollinger bands
+---------------------------------------
+def get_rolling_std(values, window):
+    pd.rolling_std(values, window)
+
+def get_bollinger_bands(rm, rstd):
+    upper_band = rm + rstd * 2
+    lower_band = rm - rstd * 2
+    return upper_band, lower_band
+
+
+
+
+5.10 daily returns
+---------------------------------------
+
+
+5.11 quiz: compute daily returns
+---------------------------------------
+def compute_daily_returns(df):
+    daily_returns = df.copy()
+    daily_returns[1:] = (df[1:] / df[:-1].values) - 1
+    daily_returns.ix[0,:] = 0
+    return daily_returns
+
+
+
+5.12 cumulative returns
+---------------------------------------
+
