@@ -1,0 +1,98 @@
+date start : 10 may 2019
+
+
+10.1 introduction
+---------------------------------------
+
+
+10.2 case study pophealth
+---------------------------------------
+
+
+10.3 quiz: pophealth quiz 1
+---------------------------------------
+speed and efficiency
+update problem
+
+
+10.4 quiz: pophealth quiz 2
+---------------------------------------
+data locker
+
+
+10.5 query reporting standards
+---------------------------------------
+
+
+10.6 pophealth practice level reporting
+---------------------------------------
+
+
+10.7 quiz: pophealth quiz
+---------------------------------------
+1st
+
+10.8 pophealth provider level reporting
+---------------------------------------
+
+
+10.9 case study quality health first introduction
+---------------------------------------
+
+
+10.10 quality healht first advanced query
+---------------------------------------
+
+
+
+10.11 process versus outcome measures recap
+---------------------------------------
+
+
+10.12 quality health first public process measure
+---------------------------------------
+
+
+10.13 quality health first public outcome measure
+---------------------------------------
+
+
+
+10.14 quiz: qhf public quality reporting quiz
+---------------------------------------
+mix of patients they see, social , demographics such as ethnicity
+
+
+10.15 case study wellcentive introduction
+---------------------------------------
+
+
+10.16 wellcentive payer metrics
+---------------------------------------
+
+
+10.17 wellcentive care management
+---------------------------------------
+
+
+10.18 quiz: wellcentive quiz
+---------------------------------------
+increase privacy and security issue
+
+10.19 interview with kirk elder
+---------------------------------------
+
+
+10.20 public health overview
+---------------------------------------
+
+
+10.21 case study tarrant county
+---------------------------------------
+
+
+10.22 conclusion
+---------------------------------------
+
+
+
