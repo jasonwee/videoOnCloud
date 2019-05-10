@@ -1,0 +1,43 @@
+date start : 10 may 2019
+
+
+6.1 introduction
+---------------------------------------
+
+
+
+6.2 pristine data
+---------------------------------------
+
+
+
+6.3 why data goes missing
+---------------------------------------
+An ETF or Exchange-Traded Fund is a basket of equities allocated in such a way that the overall portfolio tracks the performance of a stock exchange index. ETFs can be bought and sold on the market like shares.
+
+For example, SPY tracks the S&P 500 index (Standard & Poor's selection of 500 large publicly-traded companies).
+
+
+6.4 why this is a bad - what can we do?
+---------------------------------------
+1. fill forward
+2. fill backward
+
+
+6.5 quiz: pandas fillna()
+---------------------------------------
+http://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.fillna.html
+
+fillna(method='ffill')
+
+
+6.6 using fillna()
+---------------------------------------
+
+
+6.7 quiz: fill missing values
+---------------------------------------
+df_data.fillna(method='ffill', inplace='True')
+df_data.fillna(method='bfill', inplace='True')
+
+
