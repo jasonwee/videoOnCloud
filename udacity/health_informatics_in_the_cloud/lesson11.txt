@@ -1,0 +1,91 @@
+date start : 17 may 2019
+
+
+11.1 introduction
+---------------------------------------
+
+
+11.2 hQuery
+---------------------------------------
+
+
+11.3 quiz: hquery quiz
+---------------------------------------
+curly braces probelm
+
+
+11.4 i2b2
+---------------------------------------
+nih funded
+boston
+hquery opposite
+complex research env
+
+11.5 quiz: i2b2 quiz
+---------------------------------------
+extracting information
+
+
+11.6 popmednet
+---------------------------------------
+
+
+11.7 quiz: query technologies 1
+---------------------------------------
+hquery
+
+11.8 quiz: query technologies 2
+---------------------------------------
+i2b2
+
+11.9 quiz: query technologies 3
+---------------------------------------
+propmednet
+
+11.10 distributed query standards
+---------------------------------------
+
+
+
+11.11 four kinds of standards
+---------------------------------------
+
+
+11.12 declarative versus procedural
+---------------------------------------
+
+
+11.13 quiz: declarative vs procedural quiz
+---------------------------------------
+quick start guide
+
+
+11.14 query envelope
+---------------------------------------
+
+
+11.15 query format
+---------------------------------------
+
+
+11.16 query results
+---------------------------------------
+
+
+11.17 query data dictionary
+---------------------------------------
+
+
+11.18 quiz: query standards quiz
+---------------------------------------
+hqmf
+
+11.19 recap
+---------------------------------------
+
+
+11.20 conclusion
+---------------------------------------
+
+
+
