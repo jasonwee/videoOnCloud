@@ -1,0 +1,91 @@
+date start : 17 may 2019
+
+
+2.1 interview with sebastian
+---------------------------------------
+
+
+
+2.2 what is machine learning?
+---------------------------------------
+traditional software development
+* the input and the algorithm is known, and you write a function to produce an
+  output
+** input data
+** apply logic to it
+** which produces a result
+
+machine learning
+* you know the input and the output, but you don't knwo the algorithm that
+  creates the output given the input
+** take paris of input and output data
+** figure out the algorithm
+
+
+2.3 colab: converting celsium to fahrenheit
+---------------------------------------
+https://colab.research.google.com/github/tensorflow/examples/blob/master/courses/udacity_intro_to_tensorflow_for_deep_learning/l02c01_celsius_to_fahrenheit.ipynb
+
+Some Machine Learning terminology
+Feature — The input(s) to our model. In this case, a single value — the degrees in Celsius.
+
+Labels — The output our model predicts. In this case, a single value — the degrees in Fahrenhet.
+
+Example — A pair of inputs/outputs used during training. In our case a pair of values from celsius_q and fahrenhet_a at a specific index, such as (22,72).
+
+
+You will often see the layers defined inside the model definition, rather than beforehand:
+
+```python
+model = tf.keras.Sequential([
+  tf.keras.layers.Dense(units=1, input_shape=[1])
+])
+```
+
+
+
+Before training, the model has to be compiled. When compiled for training, the model is given:
+
+- **Loss function** — A way of measuring how far off predictions are from the desired outcome. (The measured difference is called the "loss".
+
+- **Optimizer function** — A way of adjusting internal values in order to reduce the loss.
+
+
+
+Train the model by calling the `fit` method. 
+
+
+
+2.4 recap
+---------------------------------------
+To do machine learning, you don't really need to understand these details. But for the curious: gradient descent iteratively adjusts parameters, nudging them in the correct direction a bit at a time until they reach the best values. In this case “best values” means that nudging them any more would make the model perform worse. The function that measures how good or bad the model is during each iteration is called the “loss function”, and the goal of each nudge is to “minimize the loss function.”
+
+Feature: The input(s) to our model
+Examples: An input/output pair used for training
+Labels: The output of the model
+Layer: A collection of nodes connected together within a neural network.
+Model: The representation of your neural network
+Dense and Fully Connected (FC): Each node in one layer is connected to each node in the previous layer.
+Weights and biases: The internal variables of model
+Loss: The discrepancy between the desired output and the actual output
+MSE: Mean squared error, a type of loss function that counts a small number of large discrepancies as worse than a large number of small ones.
+Gradient Descent: An algorithm the internal variables a bit at a time to gradually reduce the loss function.
+Optimizer: A specific implementation of the gradient descent algorithm. (There are many algorithms for this. In this course we will only use the “Adam” Optimizer, which stands for ADAptive with Momentum. It is considered the best-practice optimizer.)
+Learning rate: The “step size” for loss improvement during gradient descent.
+Batch: The set of examples used during training of the neural network
+Epoch: A full pass over the entire training dataset
+Forward pass: The computation of output values from input
+Backward pass (backpropagation): The calculation of internal variable adjustments according to the optimizer algorithm, starting from the output layer and working back through each layer to the input.
+
+
+2.5 dense layers
+---------------------------------------
+
+
+
+2.6 summary
+---------------------------------------
+
+
+
+
