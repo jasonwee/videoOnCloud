@@ -1,0 +1,66 @@
+date start : 17 may 2019
+
+
+7.1 histograms and scatterplots
+---------------------------------------
+
+
+
+7.2 a closer look at daily returns
+---------------------------------------
+
+
+
+7.3 quiz: what would it look like?
+---------------------------------------
+3rd graph
+
+
+7.4 histogram of daily returns
+---------------------------------------
+
+
+7.5 how to plot a histogram
+---------------------------------------
+
+
+7.6 computing histogram statistics
+---------------------------------------
+
+
+7.7 quiz: compare two histograms
+---------------------------------------
+xyz lower turn higher vol
+
+
+7.8 plot two histograms together
+---------------------------------------
+
+
+
+7.9 scatterplots
+---------------------------------------
+
+
+
+7.10 fitting a line to data points
+---------------------------------------
+
+
+7.11 slope does not equal correlation
+---------------------------------------
+
+
+7.12 quiz: correlation vs slope
+---------------------------------------
+ABC higher beta higher correlation
+
+
+7.13 scatterplots in python
+---------------------------------------
+
+
+7.14 real world use of kurtosis
+---------------------------------------
+
+
