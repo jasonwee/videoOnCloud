@@ -1,0 +1,77 @@
+date start : 24 may 2019
+
+
+8.1 overview
+---------------------------------------
+
+
+
+8.2 daily portfolio values
+---------------------------------------
+
+
+
+8.3 portfolio statistics
+---------------------------------------
+
+
+8.4 quiz: which portfolio is better?
+---------------------------------------
+abc
+xyz
+xyz
+
+8.5 sharpe ratio
+---------------------------------------
+risk adjusted ratio
+all else being equal
+* lower risk is better
+* higher return is better
+SR also considers risk free rate of return
+
+
+8.6 quiz: form of the sharpe ratio
+---------------------------------------
+Rp : portfolio return
+Rp : risk free rate of return
+Op : stddev of portfolio return
+
+3rd one
+
+
+8.7 computing sharpe ratio
+---------------------------------------
+s = E[Rp -Rf]
+    --------
+    std[Rp -Rf]
+
+s = mean (daily_rets - daily_rf)
+   ------------------------------
+    std (daily_rets - daily_rf)
+
+what is the risk free rate?
+
+* libor
+* 3mo t-bill
+* 0%
+
+8.8 but wait, there's more!
+---------------------------------------
+
+
+
+8.9 quiz: what is the sharpe ratio?
+---------------------------------------
+ ____
+/252   x  (10 -2 )
+         ---------
+            10
+
+12.7
+
+
+8.10 putting it all together
+---------------------------------------
+
+
+
