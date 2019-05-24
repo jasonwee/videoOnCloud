@@ -1,0 +1,106 @@
+date start : 24 may 2019
+
+
+12.1 introduction
+---------------------------------------
+
+
+12.2 quiz: big data
+---------------------------------------
+none
+
+12.3 controlled trials
+---------------------------------------
+
+
+12.4 different questions
+---------------------------------------
+
+
+12.5 quiz: research questions quiz
+---------------------------------------
+a manufactuerer wants to know if its worth developing a new drug
+
+
+12.6 decision trees
+---------------------------------------
+
+
+12.7 markov models
+---------------------------------------
+
+
+12.8 discrete event simulation (des)
+---------------------------------------
+
+
+12.9 agent based simulations
+---------------------------------------
+
+
+12.10 quiz: modelling quiz 1
+---------------------------------------
+discrete events simulation
+agent-based event simulation
+
+
+12.11  quiz: modelling quiz 2
+---------------------------------------
+markov models
+
+
+12.12 center for health discovery and well being case study
+---------------------------------------
+
+
+12.13 rahul basole interview
+---------------------------------------
+
+
+12.14 optimal treatment of depression case study
+---------------------------------------
+
+
+12.15 early diagnosis of congestive heart failure case study
+---------------------------------------
+
+
+12.16 interview with jimeng sun part 1
+---------------------------------------
+
+
+12.17 interview with jimeng sun part 2
+---------------------------------------
+
+
+12.18 personalized cancel care case study
+---------------------------------------
+
+
+12.19 quiz: personalized cancel care quiz
+---------------------------------------
+cancer mutated
+
+12.20 clinical processes
+---------------------------------------
+broken video
+
+
+12.21 case study evidence based design
+---------------------------------------
+
+
+12.22 quiz: process mining quiz
+---------------------------------------
+small number of patients
+small number of hospitals
+
+12.23 recap
+---------------------------------------
+broken video
+
+12.24 conclusion
+---------------------------------------
+
+
+
