@@ -1,0 +1,57 @@
+date start : 31 may 2019
+
+
+9.1 what is an optimizer?
+---------------------------------------
+find minimum values of functions
+build parameterized models based on data
+refine allocations to stocks in portfolios
+
+
+9.2 minimization example
+---------------------------------------
+
+
+
+9.3 minimizer in python
+---------------------------------------
+
+
+9.4 quiz: how to defeat a minimizer
+---------------------------------------
+1,2,4
+
+
+9.5 convex problems
+---------------------------------------
+choose two points , draw line
+convex if line is above graph
+
+Convex function
+Wikipedia: "... a real-valued function f(x) defined on an interval is called convex if the line segment between any two points on the graph of the function lies above the graph ..."
+
+9.6 building a parameterized model
+---------------------------------------
+
+
+9.7 quiz: what is a good error metric?
+---------------------------------------
+2,3
+
+9.8 minimizer finds coefficients
+---------------------------------------
+
+
+9.9 fit a line to given data points
+---------------------------------------
+
+
+9.10 and it works for polynomials too!
+---------------------------------------
+
+
+9.11 wrapping up optimizers
+---------------------------------------
+
+
+
