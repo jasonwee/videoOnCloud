@@ -1,0 +1,24 @@
+date start : 31 may 2019
+
+
+5.1 quiz: gathering requirements
+---------------------------------------
+is there a minimum length?
+is there a maximum length?
+does short word like an, the, if , etc included as count?
+
+
+5.2 quiz: choosing good questions
+---------------------------------------
+how will the user specify input?
+
+
+5.3 requirements interview
+---------------------------------------
+
+
+5.4 average sentence length requirements
+---------------------------------------
+
+
+
