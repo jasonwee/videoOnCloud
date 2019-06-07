@@ -1,0 +1,122 @@
+date start : 07 june 2019
+
+
+6.1 lesson overview
+---------------------------------------
+
+
+6.2 interview with jane cleland-huang
+---------------------------------------
+
+
+6.3 general re definition
+---------------------------------------
+re = requirements engineering
+
+
+6.4 software intensive systems
+---------------------------------------
+
+
+6.5 software quality
+---------------------------------------
+
+
+6.6 identifying purpose
+---------------------------------------
+
+
+6.7 completeness and pertinence
+---------------------------------------
+
+
+6.8 quiz: pertinence quiz
+---------------------------------------
+1,2,4
+
+
+6.9 quiz: completeness quiz
+---------------------------------------
+no
+
+6.10 quiz: irrelevant requirements quiz
+---------------------------------------
+2,3
+
+6.11 best practices
+---------------------------------------
+
+
+6.12 re definition breakdown
+---------------------------------------
+
+
+6.13 defining requirements
+---------------------------------------
+
+
+6.14 quiz: defining requirements quiz
+---------------------------------------
+1
+3
+2
+3
+
+6.15 functional and nonfunctional requirements
+---------------------------------------
+
+
+6.16 user and system requirements
+---------------------------------------
+
+
+6.17 quiz: requirements quiz
+---------------------------------------
+2,3
+
+
+6.18 requirement origins
+---------------------------------------
+
+
+6.19 elicitation problems
+---------------------------------------
+
+
+6.20 traditional techniques
+---------------------------------------
+
+
+6.21 other techniques
+---------------------------------------
+
+
+6.22 modeling requirements
+---------------------------------------
+
+
+6.23 analyzing requirements
+---------------------------------------
+
+
+6.24 requirements prioritization
+---------------------------------------
+
+
+6.25 quiz: requirements prioritization quiz
+---------------------------------------
+M
+S
+M
+N
+S
+
+6.26 requirements engineering process
+---------------------------------------
+
+
+6.27 srs
+---------------------------------------
+srs = software requirements specification 
+
+
