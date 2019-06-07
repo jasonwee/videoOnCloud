@@ -1,0 +1,238 @@
+cs258
+
+date start : 07 june 2019
+
+
+1.1 introduction
+---------------------------------------
+
+
+
+1.2 what is testing
+---------------------------------------
+
+
+
+1.3 what happens when we test software
+---------------------------------------
+
+
+
+1.4 quiz: mars climate orbiter
+---------------------------------------
+specification
+
+
+1.5 fixed sized queue
+---------------------------------------
+
+
+
+1.6 quiz: filling the queue
+---------------------------------------
+d
+
+
+1.7 quiz: what we learn
+---------------------------------------
+1,3
+
+
+1.8 equavalent tests
+---------------------------------------
+
+
+
+1.9 quiz: testing the queue
+---------------------------------------
+def test2():
+    q = Queue(2)
+    res = q.empty()
+    if not res:
+        print "test2 NOT OK"
+        return
+    res = q.enqueue(1)
+    if not res:
+        print "test2 NOT OK"
+        return
+    res = q.enqueue(2)
+    if not res:
+        print "test2 NOT OK"
+        return
+    res = q.enqueue(3)
+    if q.tail != 0:
+        print "test2 NOT OK"
+        return
+    print "test2 OK"
+
+
+def test3():
+    q = Queue(1)
+    res = q.empty()
+    if not res:
+        print "test3 NOT OK"
+        return
+    x = q.dequeue()
+    if not x is None:
+        print "test3 NOT OK"
+        return
+    res = q.enqueue(1)
+    if not res:
+        print "test3 NOT OK"
+        return
+    x = q.dequeue()
+    if x != 1 or q.head != 0:
+        print "test3 NOT OK"
+        return
+    print "test3 OK"   
+
+1.10 creating testable software
+---------------------------------------
+
+
+1.11 assertions
+---------------------------------------
+
+
+1.12 quiz: checkrep
+---------------------------------------
+if self.tail > self.head:
+    assert(self.tail - self.head) == self.size
+if self.tail < self.head:
+    assert(self.head - self.tail) == (self.max - self.size)
+if self.tail == self.head:
+    assert(self.size == 0) or (self.size == self.max)
+return    
+
+
+1.13 why assertions
+---------------------------------------
+
+
+1.14 are assertions used in production
+---------------------------------------
+
+
+
+1.15 disabling assertions
+---------------------------------------
+
+
+
+1.16 when to use assertiions
+---------------------------------------
+
+
+
+1.17 quiz: specifications
+---------------------------------------
+both
+
+
+1.18 quiz: refining the specification
+---------------------------------------
+i
+not a number
+throw exception
+
+
+1.19 quiz: domains and ranges
+---------------------------------------
+yes
+
+
+1.20 quiz: good test cases
+---------------------------------------
+all 4
+
+
+
+1.21 crashme
+---------------------------------------
+
+
+
+1.22 quiz: testing a gui
+---------------------------------------
+all
+
+
+1.23 trust relationships
+---------------------------------------
+
+
+1.24 quiz: fault injection
+---------------------------------------
+fault that we want our code to be robust to
+
+
+1.25 timing dependent problems
+---------------------------------------
+
+
+
+1.26 therac 25
+---------------------------------------
+
+
+1.27 quiz: testing timing
+---------------------------------------
+abc
+
+
+1.28 taking time into account
+---------------------------------------
+
+
+
+1.29 nonfunctional inputs
+---------------------------------------
+
+
+
+1.30 testing survey
+---------------------------------------
+
+
+
+1.31 unit testing
+---------------------------------------
+
+
+1.32 integration testing
+---------------------------------------
+
+
+
+1.33 system testing
+---------------------------------------
+
+
+1.34 other kinds of testing
+---------------------------------------
+
+
+
+1.35 quiz: testing car software
+---------------------------------------
+stress testing
+
+
+1.36 quiz: testing a web service
+---------------------------------------
+system validation testing
+
+
+1.37 quiz: testing a new library
+---------------------------------------
+unit testing
+
+
+1.38 being great at testing
+---------------------------------------
+
+
+
+
+
+
