@@ -1,0 +1,31 @@
+date start : 07 june 2019
+
+
+10.1 what is portfolio optimization?
+---------------------------------------
+
+
+10.2 the difference optimization can make
+---------------------------------------
+
+
+
+10.3 quiz: which criteria is easiest to solve for?
+---------------------------------------
+cumulative return
+
+Cumulative return is the most trivial measure to use - simply investing all your money in the stock with maximum return (and none in others) would be your optimal portfolio, in this case.
+
+
+Hence, it is the easiest to solve for. But probably not the best for risk mitigation.
+
+
+10.4 framing the problem
+---------------------------------------
+
+
+10.5 ranges and constraints
+---------------------------------------
+
+
+
