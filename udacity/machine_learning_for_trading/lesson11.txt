@@ -1,0 +1,71 @@
+date start : 14 june 2019
+
+
+11.1 overview
+---------------------------------------
+
+
+11.2 computational investing
+---------------------------------------
+Capital Assets Pricing Model (CAPM)
+
+
+
+11.3 types of funds
+---------------------------------------
+ETF : exchange traded fund
+
+
+11.4 liquidity and capitalization
+---------------------------------------
+
+
+11.5 quiz: what type of fund is it?
+---------------------------------------
+M
+E
+M
+H
+E
+
+mutal fund : 5 letters
+etf        : 3 or 4 letters
+
+11.6 incentives for fund managers
+---------------------------------------
+Assets Under Management (AUM) is the total amount of money being managed by the fund.
+
+
+
+11.7 two and twenty
+---------------------------------------
+
+
+
+11.8 quiz: incentives quiz
+---------------------------------------
+aum accumulation : expense ratio, two + twenty
+profits          : two + twenty 
+risk taking      : two + twenty
+
+
+11.9 how funds attract investors
+---------------------------------------
+
+
+11.10 hedge fund goals and metrics
+---------------------------------------
+goals
+* beat a benchmark
+* absolute
+metrics
+* cumulative return
+* volatility 
+* risk / reward
+
+
+11.11 the computing inside a hedge fund
+---------------------------------------
+
+
+
