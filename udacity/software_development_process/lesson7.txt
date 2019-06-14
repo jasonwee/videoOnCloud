@@ -1,0 +1,149 @@
+date start : 14 june 2019
+
+
+7.1 lesson overview
+---------------------------------------
+
+
+7.2 object orientation introduction
+---------------------------------------
+
+
+7.3 objects and classes
+---------------------------------------
+
+
+7.4 benefits of oo
+---------------------------------------
+
+
+7.5 quiz: oo benefits quiz
+---------------------------------------
+1
+2
+4
+
+7.6 oo analysis history
+---------------------------------------
+
+
+7.7 oo analysis overview
+---------------------------------------
+
+
+7.8 quiz: modeling classes quiz
+---------------------------------------
+item
+shopping cart
+user
+
+
+7.9 running example explanation
+---------------------------------------
+
+
+7.10 uml structural diagrams: class diagram 
+---------------------------------------
+
+7.11 class diagram: class
+---------------------------------------
+
+
+7.12 class diagram: attributes
+---------------------------------------
+
+
+7.13 class diagram: operations
+---------------------------------------
+
+
+7.14 class diagram: relationships
+---------------------------------------
+
+dependencis: x uses y                    --------->   
+
+associations / aggrations : x has a y    ______________
+                                         ______________<>
+generalization : x is a y                ______________|>
+
+
+
+
+7.15 quiz: class diagram relationships quiz
+---------------------------------------
+1
+2
+4
+6
+8
+9
+
+7.16 class diagram: dependency relationship
+---------------------------------------
+
+
+7.17 class diagram: association & aggregation relationships
+---------------------------------------
+
+
+7.18 class diagram: generalization relationship
+---------------------------------------
+
+
+7.19 class diagram: creation tips
+---------------------------------------
+
+
+7.20 uml structural diagrams: component diagram
+---------------------------------------
+
+
+7.21 uml structural diagrams: deployment
+---------------------------------------
+
+
+7.22 uml behavioral diagrams: use case
+---------------------------------------
+
+
+7.23 use case diagram: actors
+---------------------------------------
+
+
+7.24 building a use case diagram
+---------------------------------------
+
+
+7.25 use case example
+---------------------------------------
+
+
+7.26 role of use cases
+---------------------------------------
+
+
+7.27 use case diagram: creation tips
+---------------------------------------
+
+
+7.28 uml behavioral diagrams: sequence
+---------------------------------------
+
+
+7.29 uml behavioral diagrams: state transition diagram
+---------------------------------------
+
+
+7.30 state transition diagram example
+---------------------------------------
+
+
+7.31 quiz: recap quiz
+---------------------------------------
+2, 4
+
+7.32 quiz: recap quiz
+---------------------------------------
+2,3
+
+
