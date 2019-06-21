@@ -1,0 +1,200 @@
+date start : 14 june 2019
+
+
+3.1 introduction
+---------------------------------------
+
+
+
+3.2 how much testing is enough
+---------------------------------------
+
+
+
+3.3 partitioning the input domain
+---------------------------------------
+
+
+
+3.4 coverage
+---------------------------------------
+
+
+3.5 test coverage
+---------------------------------------
+
+
+
+3.6 splay tree
+---------------------------------------
+
+
+3.7 splay tree issues
+---------------------------------------
+
+
+3.8 splay tree example
+---------------------------------------
+
+
+
+3.9 improving coverage
+---------------------------------------
+
+
+
+3.10 quiz: problems with coverage
+---------------------------------------
+def isPrime2(number):  
+    ###Your isPrime2 code here.
+    return isPrime(number)
+
+
+3.11 coverage metrics
+---------------------------------------
+
+
+3.12 quiz: testing coverage
+---------------------------------------
+def test():
+    ###Your code here.
+    # Change l to something that manages full coverage. You may 
+    # need to call stats twice with different input in order 
+    # to achieve full coverage.
+    l = [31, 11, 41, 11, 2]
+    stats(l)
+    
+    l = [2, 2]
+    stats(l)
+
+def test1():
+    ###Your test1 code here. Depending on what 
+    # bug you choose to put in the stats function, 
+    # you may or may not need to modify test1.
+    l = [-1, -2, -2]
+    stats(l)
+    l = [-1, -1]
+    stats(l) 
+
+
+3.13 quiz: fooling coverage
+---------------------------------------
+median = (lst_sorted[middle] + ls
+
+
+
+3.14 branch coverage
+---------------------------------------
+
+
+
+3.15 quiz: 8 bit adder
+---------------------------------------
+def test():
+    # Write test cases that achieve 100% 
+    # Statement coverage of add8. You 
+    # will need to call add8 multiple 
+    # times in order to do this.
+    ###Your code here.
+    add8(1,2,3,4,5,6,7,8,1,2,3,4,5,6,7,8,1)
+
+----
+
+def split(n):
+    return (n&0x1,n&0x2,n&0x4,n&0x8,n&0x10,n&0x20,n&0x40,n&0x80)
+    
+
+def glue(b0,b1,b2,b3,b4,b5,b6,b7,c):
+    t = 0
+    if b0:
+        t+=1
+    if b1:
+        t+=2
+    if b2:
+        t+=4
+    if b3:
+        t+=8
+    if b4:
+        t+=16
+    if b5:
+        t+=32
+    if b6:
+        t+=64
+    if b7:
+        t+=128
+    if c: 
+        t+=256
+    return t
+
+
+def myadd(a,b):
+  (a0,a1,a2,a3,a4,a5,a6,a7) = split(a)
+  (b0,b1,b2,b3,b4,b5,b6,b7) = split(b)
+  (s0,s1,s2,s3,s4,s5,s6,s7,c) = add8(a0,a1,a2,a3,a4,a5,a6,a7,b0,b1,b2,b3,b4,b5,b6,b7,False)
+  return glue (s0,s1,s2,s3,s4,s5,s6,s7,c)
+
+myadd(0,0)
+myadd(0,1)
+myadd(255,255)
+
+
+3.16 other metrics
+---------------------------------------
+
+
+
+3.17 mc dc coverage
+---------------------------------------
+
+
+3.18 quiz: path coverage
+---------------------------------------
+8
+
+
+3.19 boundary value coverage
+---------------------------------------
+
+
+3.20 concurrent software
+---------------------------------------
+
+
+
+3.21 synchronization coverage
+---------------------------------------
+
+
+
+3.22 when coverage doesnt work
+---------------------------------------
+
+
+
+3.23 infeasible code
+---------------------------------------
+
+
+3.24 code not worth covering
+---------------------------------------
+
+
+3.25 inadequate test suite
+---------------------------------------
+
+
+
+3.26 sqlite
+---------------------------------------
+
+
+
+3.27 automated whitebox testing
+---------------------------------------
+
+
+3.28 how to use coverage
+---------------------------------------
+
+
+

@@ -1,0 +1,107 @@
+date start : 21 june 2019
+
+
+4.1 quiz: queue coverage
+---------------------------------------
+def test():
+    q = Queue(2)
+    assert q
+    q.checkRep()
+
+    empty = q.empty()
+    assert empty
+    q.checkRep()
+
+    full = q.full()
+    assert not full
+    q.checkRep()
+
+    result = q.dequeue()
+    assert result == None
+    q.checkRep()
+
+    result = q.enqueue(10)
+    assert result == True
+    q.checkRep()
+
+    result = q.enqueue(20)
+    assert result == True
+
+    empty = q.empty()
+    assert not empty
+    q.checkRep()
+
+    full = q.full()
+    assert full
+    q.checkRep()
+
+    result = q.enqueue(30)
+    assert result == False
+    q.checkRep()
+
+    result = q.dequeue()
+    assert result == 10
+    q.checkRep()
+
+    result = q.dequeue()
+    assert result == 20
+    q.checkRep()
+
+
+4.2 quiz: splay tree coverage
+---------------------------------------
+def test():
+    s = SplayTree()
+    current_min = None
+    current_max = None
+
+    empty = s.isEmpty()
+    assert empty == True
+    _min = s.findMin()
+    assert _min == None
+    _max = s.findMax()
+    assert _max == None
+
+    found = s.find(10)
+    assert found == None
+
+    s.insert(100)
+    current_min = 100
+    current_max = 100
+
+    for i in range(10, 20):
+        empty = s.isEmpty()
+        assert empty == False
+
+        s.insert(i)
+        s.insert(i)
+
+        if not current_min or i < current_min:
+            current_min = i
+        if not current_max or i > current_max:
+            current_max = i
+
+        found = s.find(i)
+        assert found == i
+
+        _min = s.findMin()
+        assert _min == current_min
+
+        _max = s.findMax()
+        assert _max == current_max
+
+    for i in range(10,20):
+        empty = s.isEmpty()
+        assert empty == False
+
+        s.remove(i)
+        s.remove(i)
+
+        found = s.find(i)
+        assert found == None
+
+    s.insert(373)
+    s.remove(373)
+
+
+
