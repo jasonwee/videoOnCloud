@@ -1,0 +1,62 @@
+date start : 21 june 2019
+
+
+12.1 overview
+---------------------------------------
+
+
+12.2 what is in an order?
+---------------------------------------
+buy or sell
+symbol
+#shares
+limit or market
+price
+
+
+12.3 the order book
+---------------------------------------
+buy is bid
+sell is ask
+
+12.4 quiz: up or down
+---------------------------------------
+down
+
+12.5 how orders affect the order book
+---------------------------------------
+
+
+12.6 how orders get to the exchange
+---------------------------------------
+
+
+12.7 how hedge funds exploit market mechanics
+---------------------------------------
+
+
+
+12.8 additional order types
+---------------------------------------
+broker
+* stop loss
+* stop gain
+* trailing stop
+
+12.9 mechanics of short selling : entry
+---------------------------------------
+
+
+12.10 quiz: short selling
+---------------------------------------
+1000
+
+12.11 mechanics of short selling: exit
+---------------------------------------
+
+
+12.12 what can go wrong?
+---------------------------------------
+
+
+
