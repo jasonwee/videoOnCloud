@@ -1,0 +1,112 @@
+date start : 28 june 2019
+
+
+9.1 lesson overview
+---------------------------------------
+
+
+9.2 interview with nenad medvidovic
+---------------------------------------
+
+
+9.3 what is software architecture?
+---------------------------------------
+
+
+9.4 general definition of swa 
+---------------------------------------
+swa = software archtecture
+
+
+9.5 prescriptive vs descriptive architecture
+---------------------------------------
+
+
+9.6 architectural evolution
+---------------------------------------
+
+
+9.7 architectural degradation
+---------------------------------------
+
+
+9.8 architectural recovery
+---------------------------------------
+
+
+9.9 quiz: architectural recovery quiz
+---------------------------------------
+2
+
+
+9.10 real world example
+---------------------------------------
+
+
+9.11 more examples
+---------------------------------------
+
+
+9.12 final example
+---------------------------------------
+
+
+9.13 quiz: architectural design quiz
+---------------------------------------
+1,3 
+
+
+9.14 architectural elements
+---------------------------------------
+
+
+
+
+9.15 components, connectors, and configurations
+---------------------------------------
+
+
+9.16 configuration example
+---------------------------------------
+
+
+9.17 deployment architectural perspective
+---------------------------------------
+
+
+9.18 architectural sytles
+---------------------------------------
+
+
+
+
+9.19 types of architectural styles
+---------------------------------------
+
+
+9.20 quiz: architectural styles quiz
+---------------------------------------
+
+android  b,c
+skype    d,e
+www      d,f
+dropbox  d
+
+9.21 p2p architectures
+---------------------------------------
+
+
+9.22 napster example
+---------------------------------------
+
+
+9.23 skype example
+---------------------------------------
+
+
+9.24 takeaway message
+---------------------------------------
+
+
+
+
