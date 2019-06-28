@@ -1,0 +1,217 @@
+date start : 28 june 2019
+
+
+5.1 random testing
+---------------------------------------
+
+
+5.2 testing compilers
+---------------------------------------
+
+
+5.3 random testing example
+---------------------------------------
+
+
+5.4 random testing loop
+---------------------------------------
+
+
+5.5 testing a unix utility
+---------------------------------------
+
+
+5.6 testing read all
+---------------------------------------
+
+
+5.7 fixing the test
+---------------------------------------
+
+
+5.8 testing fault injection
+---------------------------------------
+
+
+5.9 how it fits in the loop
+---------------------------------------
+
+
+5.10 input validity
+---------------------------------------
+
+
+5.11 random browser input
+---------------------------------------
+
+
+5.12 generating credit card numbers
+---------------------------------------
+
+
+5.13 luhns algorithm
+---------------------------------------
+def is_luhn_valid(n):
+    ###Your code here.
+    LUHN_ODD_LOOKUP = (0, 2, 4, 6, 8, 1, 3, 5, 7, 9)  # sum_of_digits (index * 2)
+    
+    if not isinstance(n, str):
+        n = str(n)
+    try:
+        evens = sum(int(p) for p in n[-1::-2])
+        odds = sum(LUHN_ODD_LOOKUP[int(p)] for p in n[-2::-2])
+        return ((evens + odds) % 10 == 0)
+    except ValueError:  # Raised if an int conversion fails
+        return False
+
+
+5.14 quiz: luhns algorithm cont
+---------------------------------------
+
+
+
+5.15 problems with random tests
+---------------------------------------
+
+
+
+5.16 mandatory input validity
+---------------------------------------
+
+
+
+5.17 complaints about random testing
+---------------------------------------
+
+
+
+5.18 fuzzing
+---------------------------------------
+
+
+5.19 fuzzing for penetration testing
+---------------------------------------
+
+
+5.20 fuzzing for software robustness
+---------------------------------------
+
+
+5.21 alternate histories
+---------------------------------------
+
+
+5.22 fdiv
+---------------------------------------
+
+
+5.23 1988 internet worm
+---------------------------------------
+
+
+ 
+5.24 apis
+---------------------------------------
+
+
+ 
+5.25 fuzzing filesystems
+---------------------------------------
+
+
+ 
+5.26 quiz: the queue 
+---------------------------------------
+# Write a random tester for the Queue class.
+def test():
+    N = 4 
+    add = 0 
+    remove = 0 
+    addFull = 0 
+    removeEmpty = 0 
+    q = Queue(N)
+    q.checkRep()
+    l = []
+    for i in range(100000):
+        if (random.random() < 0.5):
+            z = random.randint(0, 1000000)
+            res = q.enqueue(z)
+            q.checkRep()
+            if res:
+                l.append(z)
+                add += 1
+            else:
+                assert len(l) == N
+                assert q.full()
+                q.checkRep()
+                addFull += 1
+        else:
+            dequeued = q.dequeue()
+            q.checkRep()
+            if dequeued is None:
+                assert len(l) == 0
+                assert q.empty()
+                q.checkRep()
+                removeEmpty += 1
+            else:
+                expected_value = l.pop(0)
+                assert dequeued == expected_value
+                remove += 1
+    while True:
+        res = q.dequeue()
+        q.checkRep()
+        if res is None:
+            break;
+        z = l.pop(0)
+        assert z == res
+    assert len(l) == 0
+
+ 
+ 
+5.27 generating random inputs
+---------------------------------------
+
+
+ 
+5.28 mutation based random testing
+---------------------------------------
+
+
+ 
+5.29 generating mutators
+---------------------------------------
+
+
+ 
+5.30 oracles
+---------------------------------------
+
+
+ 
+5.31 medium oracles
+---------------------------------------
+
+
+
+5.32 strong oracles 
+---------------------------------------
+
+
+ 
+5.33 function inverse pairs
+---------------------------------------
+
+
+5.34 null space transformations
+---------------------------------------
+
+
+
+
+
+
+
+
+
+
+
