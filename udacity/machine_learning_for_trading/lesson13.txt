@@ -1,0 +1,75 @@
+date start : 28 june 2019
+
+
+13.1 overview
+---------------------------------------
+
+
+
+13.2 quiz: what is a company worth?
+---------------------------------------
+10 and 25
+
+
+13.3 why company value matters
+---------------------------------------
+
+
+
+13.4 quiz: the balch bond
+---------------------------------------
+2 3 1
+
+
+13.5 the value of a future dollar
+---------------------------------------
+PV = FV / (1 + IR)i
+
+
+13.6 intrinsic value
+---------------------------------------
+Interest Rate and Discount Rate are terms that refer to essentially the same quantity, but are used to distinguish two slightly different use cases:
+
+Interest Rate is used with a given Present Value, to figure out what the Future Value would be.
+Discount Rate is used when we have a known or desired Future Value, and want to compute the corresponding Present Value.
+For instance, in this case we want to sum up all future dividends - equal to a constant ($1 or FV) every year.
+
+
+13.7 quiz: intrinsic value quiz
+---------------------------------------
+pv = fv / dr
+   = 2 / 0.4
+   = 50
+
+
+13.8 book value
+---------------------------------------
+book value = total assets minus intangible assets and liabilities
+
+
+13.9 market capitalization
+---------------------------------------
+market capitalization = number of shares x price
+
+
+13.10 why information affects stock price
+---------------------------------------
+
+
+
+13.11 quiz: compute company value
+---------------------------------------
+80m
+20m
+75m
+
+13.12 quiz: would you buy this stock?
+---------------------------------------
+yes
+
+
+13.13 summary
+---------------------------------------
+
+
+
