@@ -1,0 +1,69 @@
+date start : 05 july 2019
+
+
+14.1 the capital asset pricing model
+---------------------------------------
+
+
+14.2 definition of a portfolio
+---------------------------------------
+rp = sum of stock times its weight
+
+
+14.3 quiz: portfolio return
+---------------------------------------
+rp = 0.75  1% + (-0.25)  (-2%)
+   = 0.75% + 0.5%
+   = 1.25%
+
+
+
+14.4 the market portfolio
+---------------------------------------
+us    : sp 500
+uk    : fta
+japan : topix
+
+cap weighted 
+wi = mkt capi / sum of mkt caps
+
+
+14.5 the capm equation
+---------------------------------------
+ri(t) = pi rm (t) + ai(t)
+
+
+14.6 quiz: compare alpha and beta
+---------------------------------------
+higher alpha  abc
+higher beta   abc
+
+
+14.7 capm vs active management
+---------------------------------------
+pssive : buy index and hold
+active : pick stocks ---> overweight
+                     ---> underweight
+
+
+
+14.8 capm for portfolios
+---------------------------------------
+
+
+14.9 quiz: implications of capm quiz
+---------------------------------------
+upward market      larger beta
+downward markets   smaller beta
+
+
+
+14.10 implications of capm
+---------------------------------------
+
+
+14.11 arbitrage pricing theory
+---------------------------------------
+
+
+
