@@ -1,0 +1,81 @@
+date start : 05 july 2019
+
+
+6.1 quiz: sudoku checker
+---------------------------------------
+
+from collections import Counter
+
+def check_dups(l):
+    counts = Counter()
+    for cell in l:
+        if cell != 0: counts[cell] += 1
+        if cell > 9 or counts[cell] > 1: return False
+    return True
+
+def check_sudoku(grid):
+    if len(grid) != 9: return False
+    if sum(len(row) == 9 for row in grid) != 9: return None
+    for row in grid:
+        if not check_dups(row): return False
+    return True
+
+6.2 quiz: sudoku solver
+---------------------------------------
+import copy
+import sys
+
+
+def check_sudoku(grid):
+
+    if type(grid) is not list or len(grid) != 9:
+        return None
+
+    for row in range(0, 9):
+        if type(grid[row]) is not list or len(grid[row]) != 9:
+            return None
+        for col in range(0,9):
+            if (type(grid[row][col]) is not int or grid[row][col] < 0 or grid[row][col] > 9 ):
+                return None
+
+    # check rows
+    for row in range(0,9):
+        d = {}
+        for col in range(0, 9):
+            val = grid[row][col]
+            if val != 0 and val in d:
+                return False
+            d[val] = 1
+
+    # check columns
+    for col in range(0,9):
+        d = {}
+        for row in range(0, 9):
+            val = grid[row][col]
+            if val != 0 and val in d:
+                return False
+            d[val] = 1
+    return True
+          
+
+def solve_sudoku(__grid):
+    res = check_sudoku(__grid)
+    if res is None or res is False:
+        return res
+
+    grid = copy.deepcopy(__grid)
+
+    # fidn the first 0 element and change it to each of 1..9,
+    # recursively calling this function on the result
+    for row in range(0, 9):
+        for col in range(0, 9):
+            if grid[row][col] == 0:
+                for n in range(1, 10):
+                    grid[row][col] = n
+                    new = solve_sudoku(grid)
+                    if new is not False:
+                        return new
+                #backtrack
+                return False
+    # if we get here, we found no zeros and done
+    return grid
