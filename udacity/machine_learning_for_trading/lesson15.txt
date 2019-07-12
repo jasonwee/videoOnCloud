@@ -1,0 +1,47 @@
+date start : 12 july 2019
+
+
+15.1 risks for hedge funds
+---------------------------------------
+
+
+
+15.2 two stock scenario
+---------------------------------------
+
+
+
+15.3 quiz: two stock scenario quiz
+---------------------------------------
+11    5.50
+-19   -9.50
+-4     -4
+
+15.4 two stock capm math
+---------------------------------------
+
+
+
+15.5 quiz: allocations remove market risk
+---------------------------------------
+bp = wa x 1 + wb x 2 = 0
+.66
+-.33
+
+
+15.6 how does it work?
+---------------------------------------
+Wa = .66  Wb = -.33  rm = 10%
+
+rp = wa ba rm  + wa aa + wb bb rm + wb ab
+   = ( .66 1.0 rm + -.33 x 2.0 . rm )
+   = 0 . rm  + .66 x 1.0 + -.33 x 1.0
+   = 1.0%
+
+
+15.7 capm for hedge funds summary
+---------------------------------------
+
+
+
+
