@@ -1,0 +1,74 @@
+date start : 12 july 2019
+
+
+11.1 lesson overview
+---------------------------------------
+
+
+11.2 history of design patterns
+---------------------------------------
+
+
+11.3 patterns catalogue
+---------------------------------------
+
+
+11.4 pattern format
+---------------------------------------
+
+
+11.5 factory method pattern
+---------------------------------------
+
+
+11.6 factory method pattern example
+---------------------------------------
+
+
+11.7 stragegy pattern
+---------------------------------------
+
+
+11.8 strategy pattern example & demo
+---------------------------------------
+
+
+11.9 other common patterns
+---------------------------------------
+
+
+11.10 choosing a pattern
+---------------------------------------
+
+
+11.11 quiz: choosing a pattern quiz
+---------------------------------------
+class Singleton 
+{ 
+    // static variable single_instance of type Singleton 
+    private static Singleton single_instance = null; 
+  
+    // variable of type String 
+    public String s; 
+  
+    // private constructor restricted to this class itself 
+    private Singleton() 
+    { 
+        s = "Hello I am a string part of Singleton class"; 
+    } 
+  
+    // static method to create instance of Singleton class 
+    public static Singleton getInstance() 
+    { 
+        if (single_instance == null) 
+            single_instance = new Singleton(); 
+  
+        return single_instance; 
+    } 
+} 
+
+11.12 negative design patterns
+---------------------------------------
+
+
+
