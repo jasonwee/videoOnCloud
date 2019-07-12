@@ -1,0 +1,84 @@
+date start : 12 july 2019
+
+
+7.1 introduction
+---------------------------------------
+
+
+7.2 random testing in the bigger picture
+---------------------------------------
+
+
+7.3 how random testing should work
+---------------------------------------
+
+
+7.4 random system testers
+---------------------------------------
+
+
+7.5 tuning rules and probabilities
+---------------------------------------
+
+
+7.6 filesystem testing
+---------------------------------------
+
+
+7.7 fuzzing the bounded queue
+---------------------------------------
+
+
+7.8 first attempt
+---------------------------------------
+
+
+7.9 tuning probabilities in practice
+---------------------------------------
+
+
+7.10 stressing the whole system
+---------------------------------------
+
+
+7.11 testing bitwise functions
+---------------------------------------
+
+
+7.12 bitwise implementation
+---------------------------------------
+
+
+7.13 coverage for random testing
+---------------------------------------
+
+
+7.14 improving the fuzzer
+---------------------------------------
+
+
+7.15 domain specific knowledge
+---------------------------------------
+
+
+7.16 fuzzing implicit inputs
+---------------------------------------
+
+
+7.17 can random testing inspire confidence
+---------------------------------------
+
+
+7.18 tradeoffs in random testing
+---------------------------------------
+
+
+7.19 tradeoffs in random testing 2
+---------------------------------------
+
+
+7.20 tradeoffs in random testing 3
+---------------------------------------
+
+
+
