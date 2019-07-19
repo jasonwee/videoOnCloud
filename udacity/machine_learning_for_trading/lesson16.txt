@@ -1,0 +1,68 @@
+date start : 19 july 2019
+
+
+16.1 technical versus fundamental analysis
+---------------------------------------
+
+
+
+16.2 characteristics
+---------------------------------------
+price and volume
+indicators
+
+16.3 quiz: potential indicators
+---------------------------------------
+T
+T
+F
+F
+
+
+16.4 when is technical analysis valuable?
+---------------------------------------
+individual indicators weak
+combinations stronger
+look for constrasts (stock vs market)
+shorter time periods
+
+
+16.5 when is technical analysis valuable? (part 2)
+---------------------------------------
+
+
+16.6 a few indicator: momentum
+---------------------------------------
+momentum[t] = price [t] / price[t-n] - 1 
+
+
+16.7 a few indicator: simple moving average
+---------------------------------------
+
+
+16.8 a few indicator: bollinger bands
+---------------------------------------
+
+
+
+16.9 quiz: buy or sell?
+---------------------------------------
+sell
+nada
+buy
+buy
+
+16.10 normalization
+---------------------------------------
+normed = values - mean
+        --------------
+         values.std()
+
+
+16.11 wrap up
+---------------------------------------
+
+
+
+
+
