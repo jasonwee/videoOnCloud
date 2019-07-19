@@ -1,0 +1,123 @@
+date start : 19 july 2019
+
+
+3.1 design concepts
+---------------------------------------
+
+
+
+3.2 quiz: terms quiz
+---------------------------------------
+y
+w
+z
+x
+
+3.3 quiz: programming or design quiz
+---------------------------------------
+scale
+emphasis on non-functional requirements
+
+3.4 software design
+---------------------------------------
+
+
+
+3.5 design notation
+---------------------------------------
+
+
+
+3.6 quiz: weather quiz
+---------------------------------------
+array
+
+
+3.7 apporaches to software design
+---------------------------------------
+
+
+
+3.8 issues with design
+---------------------------------------
+
+
+3.9 quiz: design review quiz
+---------------------------------------
+not cost or time effective
+
+
+3.10 design validation
+---------------------------------------
+
+
+
+3.11 other design issues
+---------------------------------------
+
+
+3.12 design documentation
+---------------------------------------
+
+
+3.13 quiz: documentation quiz
+---------------------------------------
+military contractor
+
+
+3.14 traditional design documentation
+---------------------------------------
+
+
+
+3.15 leonardo objects
+---------------------------------------
+
+
+
+3.16 design rationale
+---------------------------------------
+
+
+3.17 coupling and cohesion
+---------------------------------------
+
+
+3.18 quiz: java quiz 1
+---------------------------------------
+reduced coupling
+
+
+3.19 quiz: java quiz 2
+---------------------------------------
+increase coupling
+
+
+3.20 informatin hiding
+---------------------------------------
+
+
+3.21 abstraction and refinement
+---------------------------------------
+
+
+3.22 aesthetics
+---------------------------------------
+
+
+3.23 design philosophy
+---------------------------------------
+
+
+3.24 quiz: metaphors quiz
+---------------------------------------
+client-server
+icons
+firewalls
+
+
+3.25 summary
+---------------------------------------
+
+
+
