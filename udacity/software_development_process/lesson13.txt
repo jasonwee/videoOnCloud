@@ -1,0 +1,68 @@
+date start : 26 july 2019
+
+
+13.1 lesson overview
+---------------------------------------
+
+
+13.2 introduction
+---------------------------------------
+
+
+13.3 failure, fault and error
+---------------------------------------
+
+
+13.4 quiz: failurek fault, and error quiz
+---------------------------------------
+failure
+
+
+13.5 quiz: failure, fault and error quiz
+---------------------------------------
+3
+
+
+13.6 quiz: failure, fault ,a nd error quiz
+---------------------------------------
+dont know
+
+
+13.7 verification approaches
+---------------------------------------
+
+
+13.8 pros and cons of approaches
+---------------------------------------
+
+
+13.9 quiz: verification approaches quiz
+---------------------------------------
+billy gates
+
+
+13.10 testing introduction
+---------------------------------------
+
+
+13.11 testing granularity levels
+---------------------------------------
+
+
+13.12 alpha and beta testing
+---------------------------------------
+
+
+13.13 black and white box testing introduction
+---------------------------------------
+
+
+13.14 black box testing example
+---------------------------------------
+
+
+13.15 white box testing example
+---------------------------------------
+
+
+
