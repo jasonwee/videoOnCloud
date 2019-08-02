@@ -1,0 +1,91 @@
+date start : 02 august 2019
+
+
+19.1 overview
+---------------------------------------
+
+
+19.2 grinold's fundamental law
+---------------------------------------
+* performance
+* skill
+* breadth
+
+
+IR = information ratio
+IC = information coefficient
+BR = breadth
+
+performance = skill x square root of breadth
+
+
+
+19.3 the coin flipping casino
+---------------------------------------
+
+
+19.4 quiz: which bet is better?
+---------------------------------------
+bet 2
+
+19.5 quiz: coin-flip casino: reward
+---------------------------------------
+20
+
+19.6 coin-flip casino: risk 1
+---------------------------------------
+
+
+19.7 coin-flip casino: risk 2
+---------------------------------------
+
+
+19.8 quiz: coin-flip casino: reward/risk
+---------------------------------------
+20  1   20 
+
+19.9 coin-filp casino: observations
+---------------------------------------
+
+
+19.10 coin-flip casino: lessons
+---------------------------------------
+
+
+19.11 back to the real world
+---------------------------------------
+
+
+
+19.12 ir, ic and breadth
+---------------------------------------
+IR, information ratio
+
+rp(t) = bp rm (t) + ap(t)
+         market     skill
+
+ir = mean (ap(t))
+     ------------
+     stddev(ap(t))
+
+19.13 ir, ic and breadth (cont.)
+---------------------------------------
+ir, information ratio  
+
+ic, information coefficient 
+correlation of forestcasts to returns
+
+br, breadth
+number of trading opportunitites per year
+
+19.14 the fundamental law
+---------------------------------------
+ir     = ic      x   square root of br
+perf     skill       breadth
+
+
+19.15 quiz: simons vs buffet
+---------------------------------------
+120 000 000
+
+
