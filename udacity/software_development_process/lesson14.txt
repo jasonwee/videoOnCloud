@@ -1,0 +1,107 @@
+date start : 02 august 2019
+
+
+14.1 lesson overview
+---------------------------------------
+
+
+14.2 overview
+---------------------------------------
+
+
+14.3 systematic functional testing approach
+---------------------------------------
+
+
+14.4 quiz: overview quiz
+---------------------------------------
+1
+
+14.5 quiz: overview quiz
+---------------------------------------
+cell merging
+chart creation
+statistical function
+
+14.6 test data selection
+---------------------------------------
+
+
+14.7 quiz: test data selection quiz
+---------------------------------------
+~ 600 years
+
+
+14.8 why not random testing?
+---------------------------------------
+
+
+14.9 partition testing
+---------------------------------------
+
+
+14.10 partition testing example
+---------------------------------------
+
+
+14.11 boundary values
+---------------------------------------
+
+
+14.12 boundary values example
+---------------------------------------
+
+
+14.13 deriving test case specifications
+---------------------------------------
+
+
+14.14 cateogry partition method
+---------------------------------------
+
+
+14.15 identify categories
+---------------------------------------
+
+
+14.16 partition categories into choices
+---------------------------------------
+
+
+14.17 identify constraints among choices
+---------------------------------------
+
+
+14.18 produce and evaluate test case specifications
+---------------------------------------
+
+
+14.19 generate test ases from test case specifications
+---------------------------------------
+
+
+14.20 category partition demo
+---------------------------------------
+
+
+14.21 mode based testing
+---------------------------------------
+
+
+14.22 finite state machines
+---------------------------------------
+
+
+14.23 finite state machines example
+---------------------------------------
+
+
+14.24  finite state machines considerations
+---------------------------------------
+
+
+14.25 summary
+---------------------------------------
+
+
+
