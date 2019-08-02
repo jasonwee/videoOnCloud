@@ -1,0 +1,151 @@
+date start : 02 august 2019
+
+
+5.1 analysis
+---------------------------------------
+
+
+
+5.2 object oriented analysis (ooa)
+---------------------------------------
+
+
+5.3 quiz: object quiz
+---------------------------------------
+b
+
+
+5.4 object oriented analysis and design
+---------------------------------------
+
+
+
+5.5 ooa
+---------------------------------------
+
+
+
+5.6 steps in ooa
+---------------------------------------
+
+
+5.7 technique
+---------------------------------------
+
+
+
+5.8 quiz: step1: locate nouns quiz
+---------------------------------------
+pile
+parts
+tree
+count
+leaves
+leaf
+counter
+subtrees,
+zero
+
+
+5.9 issues
+---------------------------------------
+
+
+5.10 quiz: step 2: candidate classes quiz
+---------------------------------------
+part, pile, tree, leaf, counter 
+
+
+5.11 initial class model diagram
+---------------------------------------
+
+
+5.12 caveats
+---------------------------------------
+
+
+5.13 quiz: step 3: adjectives quiz
+---------------------------------------
+empty
+two, left, right
+leaf
+single
+
+
+
+5.14 adjective issues
+---------------------------------------
+
+
+
+5.15 updated class model
+---------------------------------------
+
+
+
+5.16 step 4: operations
+---------------------------------------
+
+
+5.17 quiz: action verbs quiz
+---------------------------------------
+get, put, is, take, examine, consist, increment, throw, split, display, counting, set, keep
+get, put, take, examine, consist, increment, throw, split, display, count, set, keep
+
+
+
+5.18 quiz: operations in class quiz
+---------------------------------------
+p  p
+t  p
+c  t
+c
+
+
+
+5.19 operations in classes
+---------------------------------------
+
+
+5.20 operations issues
+---------------------------------------
+
+
+5.21 step 5: relationships
+---------------------------------------
+	
+
+5.22 generalizations
+---------------------------------------
+
+
+5.23 quiz: generalization quiz
+---------------------------------------
+tree --- leaf
+
+5.24 aggregations
+---------------------------------------
+
+
+5.25 quiz: aggregation quiz 
+---------------------------------------
+pile tree
+tree tree
+
+5.26 associations
+---------------------------------------
+
+
+5.27 quiz: associations quiz
+---------------------------------------
+leaf counter
+
+5.28 relationship issues
+---------------------------------------
+
+
+5.29 summary
+---------------------------------------
+
+
+
