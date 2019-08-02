@@ -1,0 +1,37 @@
+date start : 26 july 2019
+
+
+18.1 our hypothesis
+---------------------------------------
+
+
+
+18.2 emh assumptions
+---------------------------------------
+emh : efficient market hypothesis
+
+
+18.3 origin of information
+---------------------------------------
+price/volume
+fundamental
+exogenous : information about the world that affect a company
+company insiders
+
+18.4 forms of the emh
+---------------------------------------
+weak : future prices cannot be predicted by analyzing historical prices
+semi strong : prices adjust rapidly to new public information
+strong : prices reflect all ifnormation public and private
+
+18.5 quiz: the emh prohibits
+---------------------------------------
+technical : weak, semi strong, strong
+fundamental :  semi strong, strong
+insider strong
+
+18.6 is the emh correct?
+---------------------------------------
+
+
+
