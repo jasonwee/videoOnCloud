@@ -1,0 +1,142 @@
+date start : 09 august 2019
+
+
+2.1 a framework's base features
+---------------------------------------
+
+
+
+2.2 what is a template?
+---------------------------------------
+
+
+
+2.3 backbone project setup
+---------------------------------------
+
+
+2.4 underscore templates
+---------------------------------------
+
+
+
+2.5 constructor function
+---------------------------------------
+
+
+
+2.6 constructor function quiz
+---------------------------------------
+var numLetters = function(letter) {
+  return new Function(
+    "times",
+    "if (times < 0) return ''; \
+    var result = ''; \
+    times = Math.round(times); \
+    while(times--) { result += '" +
+      letter +
+      "' } \
+    return result;"
+  );
+};
+
+2.7 walk-thru the `template` function
+---------------------------------------
+
+
+
+2.8 filling the template with data
+---------------------------------------
+
+
+
+2.9 interview with scott
+---------------------------------------
+
+
+
+2.10 template `variables` and js's `with`
+---------------------------------------
+
+
+2.11 template bug quiz
+---------------------------------------
+D
+
+
+2.12 build your own templating function quiz
+---------------------------------------
+
+
+
+2.13 addEventListener
+---------------------------------------
+
+
+2.14 setting up backbone events
+---------------------------------------
+
+
+2.15 walk-thru backbone's `events.on`
+---------------------------------------
+
+
+
+2.16 adding events quiz
+---------------------------------------
+jack.on('birthday party presents', purchase);
+
+jack.on('presents', build);
+
+
+
+2.17 walk-thru backbone's `events.trigger`
+---------------------------------------
+
+
+
+2.18 events quiz
+---------------------------------------
+buy a bicycle
+
+
+2.19 build your own event system quiz
+---------------------------------------
+
+
+
+2.20 a router & the babone.history object
+---------------------------------------
+
+
+2.21 routing quiz
+---------------------------------------
+''
+'mountain/:id'
+'download/*brochure'
+
+2.22 hashchange * pushstate
+---------------------------------------
+
+
+
+2.23 stepping thru backbone.history.start()
+---------------------------------------
+
+
+2.24 backbone's fragement count quiz
+---------------------------------------
+2
+checkUrl
+loadUrl
+
+2.25 lesson highlight summary quiz
+---------------------------------------
+
+
+
+2.26 outro
+---------------------------------------
+
+
+
