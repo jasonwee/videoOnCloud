@@ -1,0 +1,43 @@
+date start : 09 august 2019
+
+
+20.1 overview
+---------------------------------------
+
+
+20.2 what is risk?
+---------------------------------------
+
+
+
+20.3 visualizing return vs risk
+---------------------------------------
+
+
+20.4 quiz: building a portfolio
+---------------------------------------
+B A C
+
+
+20.5 can we do better?
+---------------------------------------
+
+
+20.6 why covariance matters
+---------------------------------------
+
+
+20.7 mean variance optimization
+---------------------------------------
+mvo : mean variance optimization
+
+inputs
+* expected return
+* volatility
+* covariance
+* target return
+
+
+20.8 the efficient frontier
+---------------------------------------
+
