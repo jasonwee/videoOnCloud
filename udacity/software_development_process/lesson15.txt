@@ -1,0 +1,95 @@
+date start : 09 august 2019
+
+
+15.1 lesson overview
+---------------------------------------
+
+
+15.2 overview
+---------------------------------------
+
+
+15.3 coverage criteria intro
+---------------------------------------
+
+
+15.4 quiz: coverage criteria intro quiz
+---------------------------------------
+a+b > 0
+a+b < 0 
+
+15.5 quiz: coverage criteria intro quiz
+---------------------------------------
+1 1 red 2
+-1 -1 blue -2
+
+15.6 statement coverage
+---------------------------------------
+
+
+15.7 quiz: statement coverage quiz
+---------------------------------------
+may not find all the bugs
+
+
+15.8 control flow graphs
+---------------------------------------
+
+
+15.9 branch coverage
+---------------------------------------
+
+
+15.10 condition coverage
+---------------------------------------
+
+
+15.11 quiz: subsumption quiz
+---------------------------------------
+no
+
+15.12 branch and condition coverage
+---------------------------------------
+
+
+15.13 quiz: subsumption quiz
+---------------------------------------
+yes
+
+15.14 test criteria subsumption
+---------------------------------------
+
+
+15.15 quiz: b&c coverage quiz
+---------------------------------------
+x=1
+y=0
+
+15.16 mc/dc coverage
+---------------------------------------
+mc : modified condition
+dc : decision coverage
+
+
+
+15.17 other criteria
+---------------------------------------
+
+
+15.18 quiz: review quiz
+---------------------------------------
+yes
+
+15.19 quiz: review quiz
+---------------------------------------
+no
+
+15.20 quiz: review quiz
+---------------------------------------
+no
+
+15.21 summary
+---------------------------------------
+
+
+
