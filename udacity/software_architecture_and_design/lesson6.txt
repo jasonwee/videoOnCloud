@@ -1,0 +1,111 @@
+date start : 09 august 2019
+
+
+6.1 introduction
+---------------------------------------
+
+
+
+6.2 classes
+---------------------------------------
+
+
+6.3 name compartment
+---------------------------------------
+
+
+6.4 class features
+---------------------------------------
+
+
+
+6.5 attributes compartment
+---------------------------------------
+
+
+
+6.6 operations compartment
+---------------------------------------
+
+
+6.7 quiz: abstract class quiz
+---------------------------------------
+truck, car, bus
+mileage, vin
+move foward, carry passengers
+
+
+6.8 more example classes
+---------------------------------------
+
+
+6.9 quiz: class description quiz
+---------------------------------------
+account
+balance
+deposit, withdrawal
+
+6.10 advanced features
+---------------------------------------
+
+
+6.11 relationships
+---------------------------------------
+
+
+6.12 associations
+---------------------------------------
+
+
+6.13 association class
+---------------------------------------
+
+
+6.14 aggregation & composition
+---------------------------------------
+
+
+
+6.15 quiz: aggregation & composition quiz
+---------------------------------------
+ABAC
+
+
+6.16 qualifiers
+---------------------------------------
+
+
+6.17 links
+---------------------------------------
+
+
+6.18 generalizations 
+---------------------------------------
+
+
+
+6.19 quiz: constraints quiz
+---------------------------------------
+overlapping
+incomplete
+
+disjoint 
+incomplete
+
+6.20 quiz: superclass & subclass Quiz
+---------------------------------------
+vege superclass
+omini subclass
+
+6.21 quiz: summary quiz
+---------------------------------------
+                 diagram
+   
+	structure diag        behavior diagram
+component diag obj diag       activity diag sequence diag
+
+6.22 summary
+---------------------------------------
+
+
+
