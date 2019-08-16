@@ -1,0 +1,70 @@
+date start : 16 august 2019
+
+
+21.1 overview
+---------------------------------------
+
+
+
+
+21.2 the ml problem 
+---------------------------------------
+
+
+
+21.3 quiz: what's x and y?
+---------------------------------------
+x                     y
+price momentum        future price
+bollinger value       future return
+current price
+
+
+21.4 supervised regression learning
+---------------------------------------
+supervised  : provide example x,y
+regresssion : numerical prediction
+learning    : train with dataa
+
+* linear regression (parametric)
+* k nearest neighbor (knn) (instance based)
+* decision trees
+* decision forests
+
+
+
+21.5 robot navigation example
+---------------------------------------
+
+
+21.6 how it works with stock data
+---------------------------------------
+
+
+21.7 example at a fintech company
+---------------------------------------
+
+
+21.8 price forecasting demo
+---------------------------------------
+confidence
+back test score
+
+
+21.9 backtesting
+---------------------------------------
+
+
+21.10 ml tool in use
+---------------------------------------
+
+
+21.11 problems with regression
+---------------------------------------
+
+
+21.12 problem we will focus on
+---------------------------------------
+
+
+
