@@ -1,0 +1,178 @@
+date start : 16 august 2019
+
+
+3.1 welcome to angular
+---------------------------------------
+
+
+
+3.2 angular what?
+---------------------------------------
+
+
+
+3.3 quiz repos & feedback chrome extension
+---------------------------------------
+
+
+3.4 up and running with angular quiz
+---------------------------------------
+haxorz
+
+
+3.5 the angular ecosystem
+---------------------------------------
+
+
+
+3.6 new feature 1 quiz
+---------------------------------------
+template
+controller
+
+
+3.7 new feature 2 quiz
+---------------------------------------
+router
+template
+service
+controller
+
+
+3.8 a simple app
+---------------------------------------
+
+
+
+3.9 installing yeoman
+---------------------------------------
+
+
+
+3.10 an structured app
+---------------------------------------
+
+
+3.11 an angular module
+---------------------------------------
+
+
+3.12 create a module quiz
+---------------------------------------
+eb6e6f6f#6
+
+
+
+3.13 bootstrap the app
+---------------------------------------
+
+
+3.14 bootstrap an app quiz
+---------------------------------------
+jofjofjof
+
+
+3.15 templates and expressions
+---------------------------------------
+
+
+
+3.16 expression quiz
+---------------------------------------
+static
+{{brick.color}}
+{{brick.size}}
+{{brick.price}}
+static
+￼
+
+
+
+3.17 interview with scott
+---------------------------------------
+
+
+
+3.18 angular controllers
+---------------------------------------
+
+
+3.19 angular controllers quiz
+---------------------------------------
+CTRL
+
+
+3.20 scope
+---------------------------------------
+
+
+3.21 scope/$scope in controllers
+---------------------------------------
+
+
+
+3.22 scope quiz
+---------------------------------------
+5
+
+
+3.23 take a breather
+---------------------------------------
+
+
+3.24 the long awaited directives
+---------------------------------------
+
+
+3.25 directives quiz
+---------------------------------------
+madSkillz
+
+
+3.26 dependency injection skit
+---------------------------------------
+
+
+3.27 services
+---------------------------------------
+
+
+
+3.28 services quiz
+---------------------------------------
+stupendous!
+
+￼
+
+
+3.29 order manager feature
+---------------------------------------
+
+
+
+3.30 a couple of ways to inject in angular
+---------------------------------------
+
+
+3.31 routing via ui-router
+---------------------------------------
+
+
+3.32 managing application state
+---------------------------------------
+
+
+3.33 nested views
+---------------------------------------
+
+
+3.34 routing quiz
+---------------------------------------
+OnTheRoadToGreatness
+
+
+3.35 outro
+---------------------------------------
+
+
+
