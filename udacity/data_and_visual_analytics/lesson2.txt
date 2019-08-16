@@ -1,0 +1,102 @@
+date start : 16 august 2019
+
+
+2.1 quiz: the power of r
+---------------------------------------
+textcat
+10 20
+
+
+
+2.2 why r
+---------------------------------------
+
+
+
+2.3 quiz: using windows?
+---------------------------------------
+no
+
+
+2.4 install rstudio on windows
+---------------------------------------
+
+
+
+2.5 install rstudio on a mac
+---------------------------------------
+
+
+
+2.6 quiz: ready to explore data?
+---------------------------------------
+
+
+
+2.7 quiz: rstudio layout
+---------------------------------------
+1   1
+2   4
+4   2
+2   3
+
+
+2.8 quiz: demystifying r
+---------------------------------------
+20.09062
+
+
+2.9 getting help
+---------------------------------------
+
+
+
+2.10 read and subset data
+---------------------------------------
+
+
+
+2.11 quiz: r markdown documents
+---------------------------------------
+fiat 128
+honda civic
+lotus eropa
+toyata corolla
+
+
+2.12 factor variables
+---------------------------------------
+
+
+
+2.13 quiz: ordered factors
+---------------------------------------
+income.level
+
+
+2.14 quiz: setting levels or ordered factors
+---------------------------------------
+reddit <- read.csv('/home/jason/oss/videoOnCloud/udacity/data_and_visual_analytics/lesson2/reddit.csv')
+
+reddit$age.range <- ordered(reddit$age.range, levels=c('Under 18', '18-24','25-34', '35-44', '45-54', '55-64', '65 of above'))
+
+qplot(data=reddit, x = age.range)
+
+
+
+2.15 data munging
+---------------------------------------
+
+
+
+2.16 advice for data scientists
+---------------------------------------
+
+
+
+2.17 congratulations
+---------------------------------------
+
+
+
+
