@@ -1,0 +1,138 @@
+date start : 23 august 2019
+
+
+4.1 welcome to ember
+---------------------------------------
+
+
+
+4.2 required es6 knowledge
+---------------------------------------
+
+
+
+4.3 installing ember-cli
+---------------------------------------
+
+
+4.4 using ember-cli to generate a new app
+---------------------------------------
+
+
+
+4.5 ember-cli shortcuts & aliases quiz
+---------------------------------------
+1,3
+
+
+4.6 an ember app's file structure
+---------------------------------------
+
+
+
+4.7 routes, routers, and templates - oh my
+---------------------------------------
+
+
+
+4.8 generating a route & template
+---------------------------------------
+
+
+
+4.9 quiz repos & feedback chrome extension
+---------------------------------------
+
+
+
+4.10 Route & Template Quiz
+---------------------------------------
+routeNinja!
+
+
+4.11 Viewing a menu item
+---------------------------------------
+
+
+4.12 nested routes
+---------------------------------------
+
+
+
+4.13 nested routes quiz
+---------------------------------------
+jofJOFjof
+
+
+4.14 interview with allen
+---------------------------------------
+
+
+4.15 handlebars
+---------------------------------------
+
+
+
+4.16 outro
+---------------------------------------
+
+
+
+4.17 handlebars quiz
+---------------------------------------
+
+
+
+4.18 loading dynamic data
+---------------------------------------
+
+
+4.19 updating the item template
+---------------------------------------
+
+
+
+4.20 dynamic data quiz part 1
+---------------------------------------
+
+
+4.21 dynamic data quiz part 2
+---------------------------------------
+
+
+
+4.22 components ember-style custom html
+---------------------------------------
+
+
+
+4.23 component quiz
+---------------------------------------
+
+
+4.24 order tracking feature
+---------------------------------------
+
+
+4.25 consuming a service
+---------------------------------------
+
+
+
+4.26 using services quiz
+---------------------------------------
+oneServiceToRuleThemAll
+
+￼
+
+4.27 responding to user actions
+---------------------------------------
+
+
+
+4.28 actions quiz
+---------------------------------------
+actionActionWeWantAction
+
+
+
