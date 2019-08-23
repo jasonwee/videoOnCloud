@@ -1,0 +1,62 @@
+date start : 23 august 2019
+
+
+22.1 introduction
+---------------------------------------
+
+
+22.2 parametric regression
+---------------------------------------
+
+
+
+22.3 k nearest neighbor
+---------------------------------------
+knn : k nearest neighbor
+
+
+
+22.4 quiz: how to predict
+---------------------------------------
+use the mean of their y values
+
+
+22.5 kernel regression
+---------------------------------------
+
+
+22.6 quiz: parametric vs non parametric
+---------------------------------------
+canon parametric
+bee non parametric
+
+22.7 training and testing
+---------------------------------------
+
+
+22.8 learning apis
+---------------------------------------
+for linear regression:
+  learner = lin reg learner()
+  learner.train(Xtrain, Ytrain)
+  y = learner.query(Xtest)
+
+for knn:
+  learner = knn learner (k =3 )
+  learner.train(Xtrain, Ytrain)
+  y = learner.query(Xtest)
+
+22.9 example for linear regression
+---------------------------------------
+class LinRegLearner::
+   def __init__():
+      pass
+
+   def train(x,y):
+      self.m, self.b = favorite_linreg(x,y)
+
+   def query(x):
+      y = self.m . x + self.b
+      return y
+
+
