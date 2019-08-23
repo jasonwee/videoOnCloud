@@ -1,0 +1,103 @@
+date start : 23 august 2019
+
+
+17.1 lesson overview
+---------------------------------------
+
+
+17.2 introduction
+---------------------------------------
+
+
+17.3 quiz: introduction
+---------------------------------------
+2
+
+17.4 reasons to refactor
+---------------------------------------
+
+17.5 history of refactorings
+---------------------------------------
+
+17.6 types of refactorings
+---------------------------------------
+
+
+17.7 collapse hierarchy
+---------------------------------------
+
+
+17.8 quiz: consolidate conditional expression
+---------------------------------------
+	// TODO: add a function here with the signature: public boolean notEligibleForDisability()
+	public boolean notEligibleForDisability() {
+	    if (seniority < 2 || monthsDisabled > 12 || isPartTime) return true; else return false;
+	}
+
+ 	public double disabilityAmount() {
+		// TODO: replace these checks with a single function call
+		if (notEligibleForDisability())
+		    return 0;
+		else
+		    return 1;
+
+		// in a real program, there would be other logic for determining
+		// the amount of disability the employee is eligible for here
+
+		// the following is a dummy return value to make the compiler happy
+		// and differentiate between the above cases and others
+		//return 1;
+	}
+
+17.9 decompose conditionals
+---------------------------------------
+
+
+17.10 extract class
+---------------------------------------
+
+
+17.11 inline class
+---------------------------------------
+
+
+17.12 extract method
+---------------------------------------
+
+
+17.13 refactoring demo
+---------------------------------------
+
+
+
+17.14 quiz: extract method refactoring quiz
+---------------------------------------
+1
+4
+
+17.15 refactoring risks
+---------------------------------------
+
+
+17.16 cost of refactoring
+---------------------------------------
+
+
+
+17.17 when not to refactor
+---------------------------------------
+
+
+17.18 bad smells
+---------------------------------------
+
+
+17.19 bad smell examples
+---------------------------------------
+
+
+17.20 quiz: bad smell quiz
+---------------------------------------
+2
+4
+
