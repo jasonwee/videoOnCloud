@@ -1,0 +1,86 @@
+date start : 30 august 2019
+
+
+23.1 overview
+---------------------------------------
+
+
+23.2 a closer look at knn solutions
+---------------------------------------
+
+
+
+23.3 quiz: what happens as K varies
+---------------------------------------
+c
+a
+b
+
+false
+
+
+23.4 quiz: what happens as D varies
+---------------------------------------
+c
+a
+b
+
+true
+
+
+23.5 metric 1 rms error
+---------------------------------------
+rms = root mean square
+
+
+23.6 in sample vs out of sample
+---------------------------------------
+root mean square error
+
+rmse = square of of (sum (ytest - ypredict)^2 / N)
+
+
+23.7 quiz: which is worse?
+---------------------------------------
+out of sample error
+
+23.8 cross validation
+---------------------------------------
+training chunk 60%
+test           40%
+
+
+23.9 roll forward cross validation
+---------------------------------------
+
+
+
+23.10 metric 2: correlation
+---------------------------------------
+
+
+
+23.11 quiz: correlation and rms error
+---------------------------------------
+can't be sure
+
+
+23.12 overfitting
+---------------------------------------
+in sample error decreasing
+out of sample increasing
+
+two of the above condition, it is called as overfitting
+
+23.13 quiz: overfitting quiz
+---------------------------------------
+b
+
+
+23.14 quiz: a few other consideraitons
+---------------------------------------
+space for saving model : linear regression
+compute time to train  : knn
+compute time to query  : linear regression 
+ease to add new data   : knn
+
