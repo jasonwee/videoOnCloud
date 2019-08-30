@@ -1,0 +1,306 @@
+date start : 30 august 2019
+
+
+4.1 video time 
+---------------------------------------
+
+
+
+4.2 course notes
+---------------------------------------
+
+
+
+4.3 recommended reading
+---------------------------------------
+https://s3.amazonaws.com/content.udacity-data.com/courses/gt-cse6242/recommended+reading/R.pdf
+
+
+4.4 downloading r
+---------------------------------------
+
+
+
+4.5 download for ubuntu
+---------------------------------------
+To install R:
+apt-get install r-base r-base-dev libatlas3-base littler r-cran-getopt
+
+If you want to install python libraries:
+apt-get install python-rpy python-rpy-doc python-rpy2
+￼
+
+
+4.6 r documentation
+---------------------------------------
+https://www.statmethods.net/
+http://www.cookbook-r.com/
+https://www.r-bloggers.com/
+https://stackoverflow.com/tags/r/info
+https://stackoverflow.com/questions/tagged/r-faq%20
+https://google.github.io/styleguide/Rguide.xml
+
+
+4.7 use r in the lesson
+---------------------------------------
+
+
+
+4.8 lesson preview
+---------------------------------------
+
+
+
+4.9 r, python, and matlab similarities
+---------------------------------------
+
+
+ 
+4.10 r, python, and matlab differences
+---------------------------------------
+
+
+
+4.11 running r
+---------------------------------------
+
+
+
+4.12 quiz: r language quiz
+---------------------------------------
+white spaces are dropped
+
+
+4.13 r help documentation
+---------------------------------------
+
+
+
+4.14 r commands
+---------------------------------------
+
+
+
+4.15 scalars
+---------------------------------------
+
+
+
+4.16 factors
+---------------------------------------
+
+
+
+4.17 quiz: vectors quiz
+---------------------------------------
+433431
+6
+FALSE FALSE FALSE FALSE
+0 0 0
+
+
+4.18 quiz: vectors quiz 2
+---------------------------------------
+3.2 3.2 3.2 3.2 3.2 3.2 3.2 3.2 3.2 3.2
+0.0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0
+0.0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0
+
+
+4.19 quiz: comparison commands quiz
+---------------------------------------
+TRUE TRUE TRUE TRUE TRUE TRUE FALSE FALSE FALSE FALSE FALSE
+TRUE
+FALSE
+1 2 3 4 5 6
+
+ 
+4.20 quiz: subset commands quiz
+---------------------------------------
+0.0 0.1 0.2 0.3 0.4 0.5
+0.0 0.1 0.2 0.3 0.4 0.5
+0.0 0.0 0.0 0.0 0.0 0.0 0.6 0.7 0.8 0.9 1.0
+
+
+4.21 qiuz: creating arrays quiz
+---------------------------------------
+     [,1] [,2] [,3] [,4] [,5]
+[1,]    1    5    9   13   17
+[2,]    2    6   10   14   18
+[3,]    3    7   11   15   19
+[4,]    4    8   12   16   20
+
+
+4.22 quiz: reading arrays quiz
+---------------------------------------
+     [,1] [,2] [,3] [,4] [,5]
+[1,]    2    6   10   14   18
+[2,]    3    7   11   15   19
+[3,]    4    8   12   16   20
+
+     [,1] [,2]
+[1,]    1    5
+[2,]    2    6
+
+
+4.23 quiz: manipulating arrays quiz
+---------------------------------------
+3  11
+5  13
+
+11 35
+14 46
+
+
+4.24 quiz: inner product and transpose quiz
+---------------------------------------
+     [,1]
+[1,]  565
+
+     [,1] [,2] [,3] [,4]
+[1,]    1    2    3    4
+[2,]    5    6    7    8
+[3,]    9   10   11   12
+[4,]   13   14   15   16
+[5,]   17   18   19   20
+
+
+4.25 quiz: outer product quiz
+---------------------------------------
+     [,1] [,2] [,3] [,4]
+[1,]    1    2    3    4
+[2,]    2    4    6    8
+[3,]    3    6    9   12
+[4,]    4    8   12   16
+
+
+4.26 quiz: concatenation quiz
+---------------------------------------
+     [,1] [,2] [,3] [,4] [,5]
+[1,]    1    5    9   13   17
+[2,]    1    5    9   13   17
+
+
+4.27 quiz: concatenation quiz 2
+---------------------------------------
+     [,1] [,2]
+[1,]    1    1
+[2,]    5    5
+[3,]    9    9
+[4,]   13   13
+[5,]   17   17
+
+
+4.28 quiz: lists quiz
+---------------------------------------
+name age no.children children.ages   John
+55     18
+John   18
+
+
+4.29 quiz: dataframes quiz
+---------------------------------------
+        name age salary
+1 John Smith  42  50000
+2   Jane Doe  45  55000
+
+ 
+4.30 quiz: dataframes modification quiz
+---------------------------------------
+        NAME AGE SALARY
+
+
+4.31 iris dataset
+---------------------------------------
+
+
+
+4.32 quiz: datasets quiz 1
+---------------------------------------
+names(iris)
+head(iris, 4)
+iris[1]
+iris$Sepal.Length[1:10]
+attach(iris, warn.conflicts = FALSE)
+
+
+4.33 quiz: datasets quiz 2
+---------------------------------------
+mean(iris$Sepal.Length)
+colMeans(iris[,1:4])
+subset(iris, Sepal.Length < 5 & Species == "setosa")
+dim(subset(iris, Species == "setosa"))[1]
+summary(iris)
+
+
+4.34 if else
+---------------------------------------
+
+
+
+4.35 quiz: loops quiz
+---------------------------------------
+ 
+total = function(n){
+    sum = 0
+    
+    ###Put the code for the 'for' loop here.
+    for (i in 1:100) {
+        sum = sum + i
+    }
+    
+    print(sum)
+    return(sum)
+}
+
+
+4.36 quiz: repeat loops quiz
+---------------------------------------
+repeat {
+  sum = sum - num
+  num = num -1
+  if (sum ==0) break
+
+}
+
+
+4.37 quiz:  while loops quiz
+---------------------------------------
+while (b>a) {
+  sum = sum + 1
+  a = a+ 1
+  b = b -1
+
+}
+
+
+4.38 functions
+---------------------------------------
+
+
+
+4.39 quiz: funcitons quiz
+---------------------------------------
+foo(10, 20,  30)
+
+foo(y=20,x=10, z=30)
+
+foo(z=30)
+
+
+ 
+4.40 vectorized code
+---------------------------------------
+
+
+
+4.41 external native api
+---------------------------------------
+
+
+
+4.42 lesson summary
+---------------------------------------
+
+
+
+
