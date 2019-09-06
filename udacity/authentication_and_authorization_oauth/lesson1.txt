@@ -1,0 +1,62 @@
+ud330
+
+date start : 06 september 2019
+
+
+1.1 intro 
+---------------------------------------
+
+
+
+1.2 course map
+---------------------------------------
+
+
+
+1.3 authentication
+---------------------------------------
+
+
+1.4 quiz: authentication is hard
+---------------------------------------
+strong encryption
+secure communcation
+main-in-the-middle attack
+
+1.5 quiz: implementing authentication is hard
+---------------------------------------
+server client
+server
+server client
+
+1.6 using third party auth providers
+---------------------------------------
+
+
+1.7 authorization
+---------------------------------------
+
+
+1.8 authentication without authorization
+---------------------------------------
+
+
+1.9 auth providers
+---------------------------------------
+
+
+
+1.10 pros and cons using third party
+---------------------------------------
+
+
+1.11 quiz: follow the flow
+---------------------------------------
+
+
+
+1.12 outro
+---------------------------------------
+
+
+
