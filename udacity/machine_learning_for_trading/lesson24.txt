@@ -1,0 +1,44 @@
+date start : 06 september 2019
+
+
+24.1 overview
+---------------------------------------
+
+
+24.2 ensemble learners
+---------------------------------------
+take all and then take the mean between them
+
+
+24.3 quiz: how to build an ensemble
+---------------------------------------
+D
+
+24.4 bootstrap aggregatring bagging
+---------------------------------------
+
+
+24.5 quiz: overfitting
+---------------------------------------
+1st one
+
+
+24.6 bagging example
+---------------------------------------
+
+
+24.7 boosting
+---------------------------------------
+
+
+24.8 quiz: overfitation
+---------------------------------------
+ada boost
+
+
+24.9 summary
+---------------------------------------
+
+
+
+
