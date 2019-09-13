@@ -1,0 +1,57 @@
+date start : 13 september 2019
+
+
+25.1 overview
+---------------------------------------
+
+
+25.2 the rl problem
+---------------------------------------
+rl = reinforce learning
+
+
+25.3 quiz: trading as an rl problem
+---------------------------------------
+buy : action
+sell : action
+holding long : state
+bollinger value : state
+return from trade : reward
+daily return : state, reward
+
+25.4 mapping trading to rl
+---------------------------------------
+
+
+25.5 markov decision problems
+---------------------------------------
+
+
+25.6 unknown transitions and rewards
+---------------------------------------
+experience tuple <s1,a1,s1,r1>
+<s2,a2,s2,r2>
+...
+...
+...
+<sn,an,sn,rn>
+
+25.7 what to optimize?
+---------------------------------------
+
+
+25.8 quiz: which approach gets $1M?
+---------------------------------------
+1,3,4
+
+25.9 summary
+---------------------------------------
+s : state
+a : action
+t : transition probability
+r : reward
+
+find TT(s) -> a
+
+
+
