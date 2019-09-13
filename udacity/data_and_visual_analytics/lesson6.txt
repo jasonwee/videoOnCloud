@@ -1,0 +1,55 @@
+date start : 13 september 2019
+
+
+6.1 lesson instructions
+---------------------------------------
+
+
+
+6.2 quiz: debug: basic syntax playground
+---------------------------------------
+
+
+6.3 quiz: debug: log-factorial
+---------------------------------------
+
+
+
+6.4 quiz: debug: vectors playground
+---------------------------------------
+
+
+6.5 quiz: debug: arrays playground
+---------------------------------------
+
+
+
+6.6 quiz: debug: array manipulation
+---------------------------------------
+
+
+6.7 quiz: debug: lists playround
+---------------------------------------
+
+
+
+6.8 quiz: debug: dataframe playground 
+---------------------------------------
+
+
+6.9 quiz: debug: motortrend cars
+---------------------------------------
+
+
+
+6.10 quiz: debug: factors playground
+---------------------------------------
+
+
+6.11 quiz: debug: diamonds
+---------------------------------------
+
+
+
+
+
