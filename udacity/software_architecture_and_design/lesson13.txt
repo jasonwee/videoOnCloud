@@ -1,0 +1,151 @@
+date start : 20 september 2019
+
+
+13.1 modeling with statecharts
+---------------------------------------
+
+
+13.2 description
+---------------------------------------
+
+
+
+13.3 exercise introduction
+---------------------------------------
+
+
+13.4 quiz: percetps quiz
+---------------------------------------
+volume knob
+speaker
+am/fm switch
+time display
+wake button
+tuning dial position
+frequency bar location
+
+
+
+13.5 quiz: percepts states quiz
+---------------------------------------
+720
+
+
+13.6 display fsm
+---------------------------------------
+
+
+
+13.7 quiz: mode switch quiz
+---------------------------------------
+on off music alarm
+
+
+13.8 station indicator
+---------------------------------------
+
+
+13.9 station indicator fsm
+---------------------------------------
+
+
+13.10 speaker
+---------------------------------------
+
+
+13.11 so far
+---------------------------------------
+
+
+
+13.12 external contorls and stimuli
+---------------------------------------
+
+
+13.13 from actions to events
+---------------------------------------
+
+
+13.14  quiz: outermost layer statechart quiz
+---------------------------------------
+Unplugged
+Plugged
+
+
+13.15 adding events
+---------------------------------------
+
+
+13.16 event allocation
+---------------------------------------
+
+
+13.17 new sub-machines
+---------------------------------------
+
+
+13.18 setting the time
+---------------------------------------
+
+
+13.19 responses to events
+---------------------------------------
+
+
+13.20 quiz: stimulus response table
+---------------------------------------
+music 
+alarm
+alarm
+music 
+off
+
+13.21 stimulus response table
+---------------------------------------
+
+
+
+13.22 quiz: timer events quiz
+---------------------------------------
+1 2 4
+
+
+
+13.23 internal states
+---------------------------------------
+
+
+
+13.24 other internal events
+---------------------------------------
+
+
+13.25 guarded transitions
+---------------------------------------
+
+
+13.26 cascaded events
+---------------------------------------
+
+
+13.27 example
+---------------------------------------
+
+
+13.28 still to do
+---------------------------------------
+
+
+13.29 validation
+---------------------------------------
+
+
+13.30 statechart modeling method
+---------------------------------------
+
+
+13.31 conclusion
+---------------------------------------
+
+
+
