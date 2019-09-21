@@ -1,0 +1,276 @@
+date start : 20 september 2019
+
+
+7.1 video time
+---------------------------------------
+
+
+
+7.2 recommended reading
+---------------------------------------
+https://s3.amazonaws.com/content.udacity-data.com/courses/gt-cse6242/recommended+reading/graphics.pdf
+https://s3.amazonaws.com/content.udacity-data.com/courses/gt-cse6242/recommended+reading/ggplot2-book.pdf
+
+
+
+7.3 course notes
+---------------------------------------
+https://s3.amazonaws.com/content.udacity-data.com/courses/gt-cse6242/course+notes/L2+Data+Visualization+-+Course+Notes.pdf
+https://s3.amazonaws.com/content.udacity-data.com/courses/gt-cse6242/Student+Generated+Notes/DAVA2-DataVisualization.pdf
+
+
+
+7.4 lesson preview
+---------------------------------------
+
+
+
+7.5 quiz: wind quiz
+---------------------------------------
+chicago
+
+
+
+7.6 base graphics
+---------------------------------------
+
+
+7.7 ggplot2
+---------------------------------------
+
+
+
+7.8 loading faithful data
+---------------------------------------
+
+
+7.9 strip plots
+---------------------------------------
+
+
+
+7.10 quiz: strip plots quiz
+---------------------------------------
+faithful eruptions
+
+
+7.11 quiz: strip plots analysis quiz
+---------------------------------------
+1
+
+
+7.12 histograms
+---------------------------------------
+
+
+7.13 quiz: histogram quiz
+---------------------------------------
+ABC
+
+
+7.14 line plots
+---------------------------------------
+
+
+7.15 smoothed histograms
+---------------------------------------
+
+
+7.16 quiz: smoothed histograms quiz
+---------------------------------------
+h=1   h=2
+            gaussian
+            triangular
+            tricube
+            uniform
+
+
+7.17 quiz: varied h quiz
+---------------------------------------
+1/8  1/3   1
+
+
+7.18 quiz: old faithful histogram quiz
+---------------------------------------
+faithful
+0.3
+1.5
+red
+
+7.19 scatter plot
+---------------------------------------
+
+
+7.20 qiuz: scatter plot quiz
+---------------------------------------
+2
+short
+long
+
+
+7.21 loading mtcars and mpg data
+---------------------------------------
+
+
+
+7.22 variable relationships and scatter plots
+---------------------------------------
+
+
+
+7.23 quiz: scatter plot correlation quiz
+---------------------------------------
+low positive
+no correlation
+high negative
+low negative
+
+
+7.24 multivariable scatter plots
+---------------------------------------
+
+
+
+7.25 noisy data
+---------------------------------------
+
+
+
+7.26 quiz: noisy data quiz
+---------------------------------------
+disp  mpg   mtcars
+MPG vs Eng Displacement
+loess  0  0.2
+TRUE
+
+
+
+7.27 facets
+---------------------------------------
+
+
+
+7.28 quiz: facets quiz
+---------------------------------------
+wt
+mpg
+.~amf
+mtcars
+MPG vs. weight by transmission
+
+
+
+7.29 quiz: facets quiz 2
+---------------------------------------
+wt
+mpg
+vsf~.
+mtcars
+MPG vs. weight by transmission
+
+
+
+7.30 quiz: facets quiz 3
+---------------------------------------
+wt
+mpg
+vsf~amf
+mtcars
+MPG vs. weight by transmission
+
+
+
+
+
+7.31 quiz: facets data inference quiz
+---------------------------------------
+MV
+AF
+
+
+
+7.32 quiz: facets quiz 4
+---------------------------------------
+'cty' 'hwy' 'displ'
+GGally
+DF
+
+
+7.33 contour plots
+---------------------------------------
+
+
+
+7.34 quiz: contour plots quiz
+---------------------------------------
+seq
+expand.grid
+x y
+ggplot  aes
+stat_contour
+
+
+7.35 blox plots
+---------------------------------------
+
+
+
+7.36 quiz: box plot quiz 2
+---------------------------------------
+aes
+geom_boxplot
+coord_flip
+scale_x_discrete
+
+
+7.37 quiz: box plot quiz 2
+---------------------------------------
+aes  reorder
+geom_boxplot
+coord_flip
+scale_x_discrete   "class"
+
+7.38 quiz: box plot inference quiz
+---------------------------------------
+1  5
+7  3
+4  2
+6
+
+
+7.39 quiz: box plot inference quiz 2
+---------------------------------------
+subcompacts
+2-seaters
+suvs 2-seaters
+
+
+7.40 qqplots
+---------------------------------------
+
+
+
+7.41 quiz: qqplots quiz
+---------------------------------------
+C
+A
+B
+
+
+7.42 quiz: qqplots quiz 2
+---------------------------------------
+B
+A
+
+
+7.43 qqplot example
+---------------------------------------
+
+
+
+7.44 lesson summary
+---------------------------------------
+
+
+
+
