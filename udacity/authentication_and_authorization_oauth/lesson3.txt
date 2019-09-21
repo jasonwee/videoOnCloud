@@ -1,0 +1,56 @@
+date start : 20 september 2019
+
+
+3.1 lesson 3 introduction
+---------------------------------------
+
+
+
+3.2 implementing a local permission system
+---------------------------------------
+
+
+
+3.3 quiz: updating the user model
+---------------------------------------
+
+
+
+3.4 creating a new user
+---------------------------------------
+
+
+
+3.5 quiz: obtaining credentials of an existing user
+---------------------------------------
+user_id = getUserID(login_session['email'])
+if not user_id:
+    user_id = createUser(login_session)
+login_session['user_id'] = user_id
+
+
+
+3.6 quiz: protect menu pages
+---------------------------------------
+
+if 'username' not in login_session:
+    return render_template('publicrestaurants.html', restaurants=restaurants)
+else:
+    return render_template('restaurants.html', restaurants=restaurants)
+
+
+creator = getUserInfo(restaurant.user_id)
+items = session.query(MenuItem).filter_by(restaurant_id=restaurant_id).all()
+if 'username' not in login_session or creator.id != login_session['user_id']:
+    return render_template('publicmenu.html', items=items, restaurant =
+restaurant, creator=creator)
+else:
+    return render_template('menu.html', items=items, restaurant = restaurant,
+creator=creator)
+
+
+3.7 wrap-up lesson 3
+---------------------------------------
+
+
+
