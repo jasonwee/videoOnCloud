@@ -1,0 +1,87 @@
+date start : 20 september 2019
+
+
+26.1 overview
+---------------------------------------
+
+
+26.2 what is q?
+---------------------------------------
+s : state
+a : action
+
+q[s,a] = immediate reward + discounted reward
+
+26.3 learning procedure
+---------------------------------------
+
+
+26.4 update rule
+---------------------------------------
+
+
+26.5 update rule - notes
+---------------------------------------
+Q'[s, a] = (1 - α) · Q[s, a] + α · (r + γ · Q[s', argmaxa'(Q[s', a'])])
+
+r = R[s, a] is the immediate reward for taking action a in state s,
+
+γ ∈ [0, 1] (gamma) is the discount factor used to progressively reduce the value of future rewards,
+
+s' is the resulting next state,
+
+argmaxa'(Q[s', a']) is the action that maximizes the Q-value among all possible actions a' from s', and,
+
+α ∈ [0, 1] (alpha) is the learning rate used to vary the weight given to new experiences compared with past Q-values.
+
+26.6 two finer points
+---------------------------------------
+
+
+26.7 the trading problem: actions
+---------------------------------------
+
+
+26.8 quiz: the trading probelms: rewards
+---------------------------------------
+daily return
+
+26.9 quiz: the trading probelms: state
+---------------------------------------
+sma : simple moving average
+
+adjusted close /sma
+bollinger band value
+p/e ratio
+holding stock
+return since entry
+
+26.10 creating the state
+---------------------------------------
+
+26.11 discretizing
+---------------------------------------
+
+
+26.12 q-learning recap
+---------------------------------------
+
+
+26.13 summary 
+---------------------------------------
+Advantages
+The main advantage of a model-free approach like Q-Learning over model-based techniques is that it can easily be applied to domains where all states and/or transitions are not fully defined.
+As a result, we do not need additional data structures to store transitions T(s, a, s') or rewards R(s, a).
+Also, the Q-value for any state-action pair takes into account future rewards. Thus, it encodes both the best possible value of a state (maxa Q(s, a)) as well as the best policy in terms of the action that should be taken (argmaxa Q(s, a)).
+
+
+Issues
+The biggest challenge is that the reward (e.g. for buying a stock) often comes in the future - representing that properly requires look-ahead and careful weighting.
+Another problem is that taking random actions (such as trades) just to learn a good strategy is not really feasible (you'll end up losing a lot of money!).
+In the next lesson, we will discuss an algorithm that tries to address this second problem by simulating the effect of actions based on historical data.
+
+26.14 resources
+---------------------------------------
+
+
+
