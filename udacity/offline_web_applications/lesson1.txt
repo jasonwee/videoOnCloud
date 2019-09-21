@@ -1,0 +1,68 @@
+ud899
+
+date start : 20 september 2019
+
+
+1.1 intro 
+---------------------------------------
+
+
+
+1.2 the problem
+---------------------------------------
+
+
+
+1.3 the benefits of offline first
+---------------------------------------
+
+
+1.4 what can slow us down
+---------------------------------------
+all
+
+
+1.5 what does online first look like
+---------------------------------------
+good connectivity
+offline
+
+
+1.6 what are ways to be offline first
+---------------------------------------
+1
+2
+
+
+1.7 introducing the demo app
+---------------------------------------
+
+
+
+1.8 installing the demo app
+---------------------------------------
+
+
+1.9 running the demo app
+---------------------------------------
+
+
+
+1.10 exploring the demo apps code
+---------------------------------------
+
+
+1.11 changing connection types
+---------------------------------------
+
+
+
+1.12 testing lie fi mode
+---------------------------------------
+
+
+1.13 introducing service worker
+---------------------------------------
+
+
+
