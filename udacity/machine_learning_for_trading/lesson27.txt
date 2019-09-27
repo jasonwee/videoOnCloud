@@ -1,0 +1,51 @@
+date start : 27 september 2019
+
+
+27.1 overview
+---------------------------------------
+
+
+27.2 dyna-q big picture
+---------------------------------------
+init q table
+observe s                 <---+
+execute a, observe s'r        |
+update q with <s,a,s,r>    ---+
+
+27.3 learning T
+---------------------------------------
+
+
+27.4 quiz: how to evaluate T?
+---------------------------------------
+Tc[s,a,s'] / summationi Tc [s,a,i]
+
+
+
+27.5 learning R
+---------------------------------------
+R'[s,a] = (1-alpha)R[s,a] | alpha x r
+
+
+27.6 dyna Q recap
+---------------------------------------
+
+
+
+27.7 summary
+---------------------------------------
+Summary
+The Dyna architecture consists of a combination of:
+
+direct reinforcement learning from real experience tuples gathered by acting in an environment,
+updating an internal model of the environment, and,
+using the model to simulate experiences.
+
+https://s3.amazonaws.com/content.udacity-data.com/courses/ud501/images/Dyna-architecture.png
+
+
+
+27.8 resources
+---------------------------------------
+
+
