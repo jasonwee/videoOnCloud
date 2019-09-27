@@ -1,0 +1,101 @@
+date start : 27 september 2019
+
+
+14.1 software architecture
+---------------------------------------
+
+
+14.2 key word in context
+---------------------------------------
+
+
+
+14.3 example of circular shifts
+---------------------------------------
+
+
+14.4 example with multiple titles
+---------------------------------------
+
+
+
+14.5 kiwic exercise
+---------------------------------------
+
+
+14.6 quiz: diagramming kiwic quiz 
+---------------------------------------
+
+
+
+14.7 components
+---------------------------------------
+
+
+14.8 shared data
+---------------------------------------
+
+
+14.9 pipe and filter
+---------------------------------------
+
+
+14.10 pipe and filter diagram
+---------------------------------------
+
+
+14.11 abstract data types
+---------------------------------------
+
+
+
+14.12 abstract data type diagram
+---------------------------------------
+
+
+14.13 implicit invocation
+---------------------------------------
+
+
+14.14 implicit invocation diagram
+---------------------------------------
+
+
+14.15 quiz: shared data approach quiz
+---------------------------------------
++
++
+-
+
+14.16 evaluation
+---------------------------------------
+
+
+14.17 quiz: enhancements quiz
+---------------------------------------
+gui interface
+search
+sorting
+
+
+14.18 quiz: reusability quiz
+---------------------------------------
+pipe and filter
+
+
+14.19 quiz: data change resilience
+---------------------------------------
+shared data
+
+
+14.20 quiz: deletion quiz
+---------------------------------------
+abstract data type
+
+
+14.21 lessons
+---------------------------------------
+
+
+
+
