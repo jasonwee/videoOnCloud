@@ -1,0 +1,112 @@
+date start : 27 september 2019
+
+
+2.1 an overview of service worker
+---------------------------------------
+
+
+
+2.2 scoping quiz
+---------------------------------------
+5,6,7
+
+
+2.3 adding a service worker to the project
+---------------------------------------
+
+
+2.4 registering a service worker
+---------------------------------------
+
+
+2.5 the service worker lifecycle
+---------------------------------------
+
+
+2.6 enabling service worker dev tools
+---------------------------------------
+
+
+2.7 service worker dev tools
+---------------------------------------
+
+
+
+2.8 service worker dev tools 2
+---------------------------------------
+
+
+2.9 service worker dev tools contiued
+---------------------------------------
+
+
+2.10 hijacking requests
+---------------------------------------
+
+
+2.11 hijacking requests 1 quiz
+---------------------------------------
+
+
+
+2.12 hijacking requests 2
+---------------------------------------
+
+
+2.13 hijacking requests 2 quiz
+---------------------------------------
+
+
+2.14 hijacking requests 2
+---------------------------------------
+
+
+2.15 hijacking requests 3 quiz
+---------------------------------------
+
+
+2.16 caching and serving assets
+---------------------------------------
+
+
+2.17 install and cache quiz
+---------------------------------------
+
+
+2.18 cache response quiz
+---------------------------------------
+
+
+2.19 updating the static cache
+---------------------------------------
+
+
+2.20 update your cass quiz
+---------------------------------------
+
+
+2.21 update your css 2
+---------------------------------------
+
+
+2.22 adding ux to the update process
+---------------------------------------
+
+
+2.23 adding ux quiz
+---------------------------------------
+
+
+2.24 triggering an update
+---------------------------------------
+
+
+2.25 triggering an update quiz
+---------------------------------------
+
+
+2.26 caching the page skeleton
+---------------------------------------
+
+
+
