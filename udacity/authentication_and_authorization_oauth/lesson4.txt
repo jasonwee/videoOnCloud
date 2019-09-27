@@ -1,0 +1,46 @@
+date start : 27 september 2019
+
+
+4.1 adding additional oauth providers
+---------------------------------------
+
+
+
+4.2 registering your app with facebook
+---------------------------------------
+
+
+
+4.3 client-side login with facebook sdk
+---------------------------------------
+
+
+
+4.4 quiz: updating login.html
+---------------------------------------
+
+
+
+4.5 update project.py(part 1)
+---------------------------------------
+
+
+
+4.6 update project.py(part 2)
+---------------------------------------
+
+
+
+4.7 quiz: updating project.py code
+---------------------------------------
+
+
+4.8 exploring other oauth 2.0 providers
+---------------------------------------
+
+
+4.9 outro
+---------------------------------------
+
+
+
