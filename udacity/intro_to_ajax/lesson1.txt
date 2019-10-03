@@ -1,0 +1,72 @@
+ud110
+
+date start : 04 october 2019
+
+
+1.1 pre-introduction
+---------------------------------------
+
+
+
+1.2 intro
+---------------------------------------
+
+
+
+1.3 client server demonstration
+---------------------------------------
+
+
+1.4 ajax definition
+---------------------------------------
+
+
+1.5 quiz: asnchronous vs synchronous requests
+---------------------------------------
+
+
+1.6 facebook example 1
+---------------------------------------
+
+
+1.7 facebook example 2
+---------------------------------------
+
+
+1.8 facebook's ajax request
+---------------------------------------
+
+
+1.9 quiz: twitter quiz
+---------------------------------------
+items_html
+
+
+1.10 quiz: necesasry components of an ajax request
+---------------------------------------
+1
+
+1.11 api inspiration
+---------------------------------------
+ 
+
+
+1.12 quiz: finding examples of api use
+---------------------------------------
+1 
+
+
+1.13 quiz: api brainstorm
+---------------------------------------
+google streetview
+wikipedia
+ny times
+
+
+
+1.14 quiz: download the project
+---------------------------------------
+ 
+
+
+
