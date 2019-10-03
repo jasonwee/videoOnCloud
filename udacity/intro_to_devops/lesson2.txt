@@ -1,0 +1,80 @@
+date start : 04 october 2019
+
+
+2.1 introduction
+---------------------------------------
+
+
+
+2.2 roels and perspectives
+---------------------------------------
+
+
+
+2.3 quiz: wind and shade
+---------------------------------------
+1,3,4,6
+
+2.4 different environments
+---------------------------------------
+
+
+2.5 solving the environment problem
+---------------------------------------
+
+
+2.6 installation requirements
+---------------------------------------
+
+
+2.7 quiz: installation status
+---------------------------------------
+
+
+
+2.8 practice project overview
+---------------------------------------
+
+
+2.9 quiz: packer overview
+---------------------------------------
+2
+
+
+2.10 quiz: building the image
+---------------------------------------
+{{.Provider}}
+box
+
+
+2.11 using the image locally
+---------------------------------------
+
+
+
+2.12 quiz: launching the app
+---------------------------------------
+devops
+
+
+2.13 access configuration for cloud
+---------------------------------------
+
+
+2.14 getting started
+---------------------------------------
+
+
+2.15 choose a cloud provider
+---------------------------------------
+
+
+2.16 additional resources
+---------------------------------------
+
+
+2.17 outro
+---------------------------------------
+
+
+
