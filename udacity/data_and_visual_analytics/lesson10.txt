@@ -1,0 +1,201 @@
+date start : 11 october 2019
+
+
+10.1 video time
+---------------------------------------
+
+
+
+10.2 recommended reading
+---------------------------------------
+https://s3.amazonaws.com/content.udacity-data.com/courses/gt-cse6242/recommended+reading/logreg.pdf
+
+
+10.3 course notes
+---------------------------------------
+https://s3.amazonaws.com/content.udacity-data.com/courses/gt-cse6242/course+notes/L4+Logistic+Regression+-+Course+Notes.pdf
+https://s3.amazonaws.com/content.udacity-data.com/courses/gt-cse6242/Student+Generated+Notes/4-LogisticRegression.pdf
+
+
+
+10.4 lesson preview
+---------------------------------------
+
+
+
+10.5 logistic regression
+---------------------------------------
+
+
+
+10.6 binary classification
+---------------------------------------
+
+
+10.7 quiz: binary classification quiz
+---------------------------------------
+1
+2
+3
+
+
+
+10.8 lesson dataset
+---------------------------------------
+
+
+10.9 definitions
+---------------------------------------
+
+
+
+10.10 linkedin example
+---------------------------------------
+
+
+
+
+10.11 quiz: visual binary classification quiz
+---------------------------------------
+1
+
+
+10.12 linear classifiers
+---------------------------------------
+
+
+10.13 quiz: predicted classes quiz
+---------------------------------------
+levels of radiation exposure,         (2, 1, 0, 0.5)
+age, gender, bmi
+
+present
+         not present
+
+10.14 why linear classifiers
+---------------------------------------
+
+
+
+10.15 the linear plane part 1
+---------------------------------------
+
+
+
+10.16 the linear plane part 2
+---------------------------------------
+
+
+10.17 quiz: decision boundary quiz
+---------------------------------------
+not necessarily
+
+
+10.18 bias term
+---------------------------------------
+
+
+
+10.19 increasing data dimensionality
+---------------------------------------
+
+
+
+10.20 classifiers
+---------------------------------------
+
+
+10.21 quiz: label probability quiz
+---------------------------------------
+C
+D
+A
+
+
+10.22 maximum likelihood estimator part 1
+---------------------------------------
+
+
+
+
+10.23 maximum likelihood estimator part 2
+---------------------------------------
+
+
+
+10.24 mle defined
+---------------------------------------
+
+
+10.25 quiz: mle quiz
+---------------------------------------
+compute f(x) on a grid of all possible values and find the maximum.
+do this for scalars x or low dimensional vectors x.
+(it does not scale to higher dimensions. an alternative technique that does
+scale is gradient ascent.)
+
+
+10.26 probabilistic classifiers
+---------------------------------------
+
+
+
+10.27 quiz: decision boundary quiz
+---------------------------------------
+3
+
+
+
+10.28 decision boundary & the hyperplane
+---------------------------------------
+
+
+
+10.29 prediction confidence
+---------------------------------------
+
+
+
+10.30 mle and iterative optimization
+---------------------------------------
+
+
+
+10.31 gradient descent part 1
+---------------------------------------
+
+
+
+10.32 gradient descent part 2
+---------------------------------------
+
+
+
+
+10.33 stochastic gradient descent
+---------------------------------------
+
+
+
+10.34 overfitting
+---------------------------------------
+
+
+10.35 regularization
+---------------------------------------
+
+
+
+10.36 notes
+---------------------------------------
+
+
+
+10.37 lesson summary
+---------------------------------------
+
+
+
+
+
+
