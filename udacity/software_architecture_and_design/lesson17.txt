@@ -1,0 +1,178 @@
+date start : 18 october 2019
+
+
+17.1 text browser case study
+---------------------------------------
+
+
+17.2 text browser
+---------------------------------------
+
+
+
+17.3 exercise
+---------------------------------------
+
+
+17.4 phase 0 preparation
+---------------------------------------
+
+
+
+17.5 phase 0 summary
+---------------------------------------
+
+
+17.6 phase 1
+---------------------------------------
+
+
+
+17.7 phase 1 steps
+---------------------------------------
+
+
+17.8 decomposition
+---------------------------------------
+
+
+17.9 phase 1 diagram
+---------------------------------------
+
+
+17.10 ocl postcondition constraint
+---------------------------------------
+
+
+17.11 another postcondition
+---------------------------------------
+
+
+17.12 third ocl constraint
+---------------------------------------
+
+
+17.13 pahse 1 summary
+---------------------------------------
+
+
+17.14 phase 2
+---------------------------------------
+
+
+
+17.15 phase 2 steps
+---------------------------------------
+
+
+17.16 quiz: text browser arch quiz
+---------------------------------------
+Model View Controller, Client Server, Shared Memory
+
+
+17.17 layered & implicit invocation
+---------------------------------------
+
+
+17.18 benefits and costs
+---------------------------------------
+
+
+
+17.19 assigning components to layers
+---------------------------------------
+
+
+
+17.20 phase 2 diagram
+---------------------------------------
+
+
+
+17.21 ocl updates
+---------------------------------------
+
+
+
+17.22 quiz: resize window quiz
+---------------------------------------
+viewport
+
+
+17.23 constraint placement
+---------------------------------------
+
+
+
+17.24 quiz: invariant maintenance strategies
+---------------------------------------
+displaysDocument
+
+
+17.25 invariant maintenance strategies
+---------------------------------------
+
+
+
+17.26 quiz: centralized strategy quiz
+---------------------------------------
+mediated strategy
+
+
+17.27 quiz: decentralized strategy quiz
+---------------------------------------
+distributed responsibility
+
+
+17.28 tradeoff between locality and complexity
+---------------------------------------
+
+
+
+17.29 example continued
+---------------------------------------
+
+
+17.30 aggregation
+---------------------------------------
+
+
+
+17.31 quiz: aggregated responsibility quiz
+---------------------------------------
+
+
+
+
+17.32 distributed responsibility
+---------------------------------------
+
+
+
+17.33 quiz: distributed responsibility quiz
+---------------------------------------
+component will pass message to different component, a lot of messages passing around
+
+
+17.34 mediators
+---------------------------------------
+
+
+
+17.35 quiz: mediated responsibility quiz
+---------------------------------------
+pass message to the connected component
+
+
+17.36 summary of process
+---------------------------------------
+
+
+
+17.37 conclusion
+---------------------------------------
+
+
+
+
+
