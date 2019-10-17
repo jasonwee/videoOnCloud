@@ -1,0 +1,196 @@
+date start : 18 october 2019
+
+
+11.1 video time
+---------------------------------------
+
+
+
+11.2 recommended reading
+---------------------------------------
+https://s3.amazonaws.com/content.udacity-data.com/courses/gt-cse6242/recommended+reading/linReg.pdf
+
+
+11.3 course notes
+---------------------------------------
+https://s3.amazonaws.com/content.udacity-data.com/courses/gt-cse6242/course+notes/L5+Linear+Regression+-+Course+Notes.pdf
+https://s3.amazonaws.com/content.udacity-data.com/courses/gt-cse6242/Student+Generated+Notes/5-LinearRegression.pdf
+
+
+
+11.4 lesson preview
+---------------------------------------
+
+
+
+11.5 quiz: intuitive linear regression quiz
+---------------------------------------
+3
+
+
+
+11.6 quiz: line quiz
+---------------------------------------
+y = 2 + .5x
+
+
+11.7 quiz: prediction quiz
+---------------------------------------
+5.008
+
+
+11.8 quiz: meaning of prediction quiz
+---------------------------------------
+2,3
+
+
+11.9 linear regression model
+---------------------------------------
+
+
+
+11.10 quiz: variable quantities quiz
+---------------------------------------
+1,2,3
+
+
+
+11.11 linear transformations
+---------------------------------------
+
+
+11.12 linear transformation example
+---------------------------------------
+
+
+11.13 quiz: linear transformation quiz
+---------------------------------------
+3
+
+
+11.14 training data part 1
+---------------------------------------
+
+
+
+11.15 training data part 2
+---------------------------------------
+
+
+
+11.16 minimizing the sum of square deviations part 1
+---------------------------------------
+
+
+11.17 minimizing the sum of square deviations part 2 
+---------------------------------------
+
+
+11.18 minimizing the sum of square deviations part 3
+---------------------------------------
+
+
+
+11.19 coefficient of determination
+---------------------------------------
+
+
+
+11.20 diamonds dataset
+---------------------------------------
+
+
+11.21 diamonds dataset
+---------------------------------------
+
+
+11.22 using lm
+---------------------------------------
+
+
+11.23 linear regression in r
+---------------------------------------
+
+
+11.24 using lm
+---------------------------------------
+
+
+11.25 m1 simple linear regression
+---------------------------------------
+
+
+11.26 quiz: regression quiz
+---------------------------------------
+none
+
+
+11.27 cor command
+---------------------------------------
+
+
+
+11.28 adjusting for non linearity
+---------------------------------------
+
+
+
+11.29 adjusting for the model for non linearity
+---------------------------------------
+
+
+
+11.30 m2 regression model with non linearity factored in
+---------------------------------------
+
+
+
+11.31 checking the fit
+---------------------------------------
+
+
+
+11.32 quiz: good residual plots quiz
+---------------------------------------
+C D D B A A
+
+
+
+11.33 quiz: improving the model quiz
+---------------------------------------
+3, 4
+
+
+11.34 adding an explanatory variable
+---------------------------------------
+
+
+11.35 m3 carat and color
+---------------------------------------
+
+
+
+11.36 compare three models
+---------------------------------------
+
+
+
+11.37 log model
+---------------------------------------
+
+
+
+11.38 m4 log model in r
+---------------------------------------
+
+
+
+11.39 linear model formulas
+---------------------------------------
+
+
+11.40 lesson summary
+---------------------------------------
+
+
+
