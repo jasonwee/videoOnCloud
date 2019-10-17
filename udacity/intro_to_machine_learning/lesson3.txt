@@ -1,0 +1,189 @@
+date start : 18 october 2019
+
+
+3.1 welcome to svm
+---------------------------------------
+
+
+
+3.2 quiz: separating line
+---------------------------------------
+top line
+
+
+3.3 quiz: choosing between separating lines
+---------------------------------------
+top line
+
+
+3.4 quiz: what makes a good separating line
+---------------------------------------
+somethign else
+
+
+3.5 quiz: practice with margins
+---------------------------------------
+mid line
+
+
+3.6 quiz: svms and tricky data distributions
+---------------------------------------
+bottom line
+
+
+3.7 quiz: svm response to outliers
+---------------------------------------
+do the best it can
+
+
+3.8 quiz: svm outlier practice
+---------------------------------------
+far right line
+
+
+3.9 handoff to katie
+---------------------------------------
+
+
+3.10 svm in sklearn
+---------------------------------------
+
+
+3.11 svm decision boundary
+---------------------------------------
+
+
+3.12 quiz: coding up the svm
+---------------------------------------
+from sklearn.svm import SVC
+clf = SVC(kernel="linear")
+clf.fit(features_train, labels_train)
+pred = clf.predict(features_test)
+
+
+from sklearn.metrics import accuracy_score
+acc = accuracy_score(pred, labels_test)
+
+
+
+3.13 nonlinear svms
+---------------------------------------
+
+
+3.14 quiz: nonlinear data
+---------------------------------------
+no
+
+
+3.15 quiz: a new feature
+---------------------------------------
+yes
+
+
+3.16 visualizing the new feature
+---------------------------------------
+
+
+
+3.17 quiz: separating with the new feature
+---------------------------------------
+yes
+
+
+3.18 quiz: practice making a new feature
+---------------------------------------
+second
+
+
+3.19 kernel trick
+---------------------------------------
+
+
+3.20 quiz: playing around with kernel choices
+---------------------------------------
+all + more
+
+
+3.21 quiz: kernel and gamma
+---------------------------------------
+3rd
+
+
+3.22 quiz: svm c parameter
+---------------------------------------
+2nd
+
+
+3.23 svm gamma parameter
+---------------------------------------
+
+
+3.24 quiz: overfitting
+---------------------------------------
+all 3
+
+
+3.25 svm strengths and weaknesses
+---------------------------------------
+
+
+3.26 svm mini-project video
+---------------------------------------
+
+
+3.27 svm mini-project
+---------------------------------------
+
+
+3.28 quiz: svm author id accuracy
+---------------------------------------
+98.4%
+
+
+3.29 quiz: svm author id timing
+---------------------------------------
+slower
+
+3.30 quiz: a smaller training set
+---------------------------------------
+88%
+
+3.31 quiz: speed-accuracy tradeoff
+---------------------------------------
+2,3
+
+
+3.32 quiz: deploy an rbf kernel
+---------------------------------------
+
+
+3.33 quiz:  optimize c parameter
+---------------------------------------
+10000.
+
+
+3.34 quiz: accurracy after optimizing c
+---------------------------------------
+98
+less complex
+
+3.35 quiz: optimized rbf vs. linear svn: accuracy
+---------------------------------------
+99%
+
+3.36 quiz: extracing predictions from an svm
+---------------------------------------
+1 
+0
+1
+
+
+3.37 quiz: how many chris emails predicted?
+---------------------------------------
+
+
+3.38 final thoughts on deploying svms
+---------------------------------------
+
+
+
