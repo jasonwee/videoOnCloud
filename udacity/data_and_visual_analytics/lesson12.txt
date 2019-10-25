@@ -1,0 +1,163 @@
+date start : 25 october 2019
+
+
+12.1 video time
+---------------------------------------
+
+
+
+12.2 recommended reading
+---------------------------------------
+https://s3.amazonaws.com/content.udacity-data.com/courses/gt-cse6242/recommended+reading/regularization.pdf
+
+
+12.3 course notes
+---------------------------------------
+https://s3.amazonaws.com/content.udacity-data.com/courses/gt-cse6242/course+notes/L6+Regularization+-+Course+Notes.pdf
+https://s3.amazonaws.com/content.udacity-data.com/courses/gt-cse6242/Student+Generated+Notes/6-Regularization.pdf
+
+
+
+12.4 lesson preview
+---------------------------------------
+
+
+
+12.5 what is regularization?
+---------------------------------------
+
+
+
+12.6 model complexity
+---------------------------------------
+
+
+12.7 quiz: bias variation quiz
+---------------------------------------
+C A B
+
+
+12.8 quiz: target quiz
+---------------------------------------
+LBLV    LBHV
+LVHB    HBHV
+
+12.9 goldilocks principle
+---------------------------------------
+
+
+
+12.10 quiz: overfitting quiz
+---------------------------------------
+both
+
+
+12.11 maximum likelihood estimator
+---------------------------------------
+
+
+12.12 mean squared error
+---------------------------------------
+
+
+12.13 regularization methods
+---------------------------------------
+
+
+12.14 james stein shrinkage
+---------------------------------------
+
+
+
+12.15 james stein notes
+---------------------------------------
+
+
+
+12.16 quiz: james stein weakness quiz
+---------------------------------------
+non uniform shrinking
+
+
+12.17 breiman's garrote
+---------------------------------------
+
+
+12.18 ridge regression
+---------------------------------------
+
+
+
+12.19 ridge trace
+---------------------------------------
+
+
+
+12.20 quiz: estimator comparison quiz
+---------------------------------------
+olsc <- lm(y~ x1 + x2 + x3c)
+summary(olsc)
+
+12.21 quiz: ridge regression quiz
+---------------------------------------
+ridgec <- lm.ridge(y ~ x1+x2+x3c, lambda = seq(0, .1, .001))
+summary(ridge)
+
+12.22 lasso estimator
+---------------------------------------
+
+
+12.23 quiz: lasso ridge quiz
+---------------------------------------
+lasso ridge
+
+12.24 linear rigression part 1
+---------------------------------------
+
+
+12.25 linear rigression part 2
+---------------------------------------
+
+
+12.26 linear rigression part 3
+---------------------------------------
+
+
+12.27 lasso plots
+---------------------------------------
+
+
+
+12.28 quiz: mtcars and lasso quiz
+---------------------------------------
+Install.packages("glmnet")
+library(glmnet)
+
+mtcarsLasso = glmnet(as.matrix(mtcars[-1]), mtcars [,1])
+
+
+12.29 mle comparisons
+---------------------------------------
+
+
+
+12.30 elastic net estimator
+---------------------------------------
+
+
+
+12.31 elastic net graph
+---------------------------------------
+
+
+
+12.32 lesson summary
+---------------------------------------
+
+
+
+12.33 course summary
+---------------------------------------
+
+
+
