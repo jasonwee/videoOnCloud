@@ -1,0 +1,205 @@
+date start : 25 october 2019
+
+
+4.1 welcome to decision trees
+---------------------------------------
+
+
+
+4.2 quiz: linearly separable data
+---------------------------------------
+no
+
+
+4.3 quiz: multiple linear questions
+---------------------------------------
+no
+
+
+4.4 quiz: constructing a decision tree first split
+---------------------------------------
+3
+
+
+4.5 quiz: constructing a decision tree 2nd split
+---------------------------------------
+2
+
+
+4.6 quiz: class labels after second split
+---------------------------------------
+x
+
+
+4.7 quiz: constructing a decision tree/third split
+---------------------------------------
+4
+
+
+4.8 quiz: coding a decision tree
+---------------------------------------
+from sklearn import tree
+clf = tree.DecisionTreeClassifier()
+clf = clf.fit(features_train, labels_train)
+
+4.9 quiz: decision tree accuracy
+---------------------------------------
+from sklearn import tree
+from sklearn import metrics
+
+clf = tree.DecisionTreeClassifier()
+clf = clf.fit(features_train, labels_train)
+pred = clf.predict(features_test)
+acc = metrics.accuracy_score(labels_test, pred)
+
+4.10 quiz: decision tree parameters
+---------------------------------------
+1
+
+
+4.11 quiz: min samples split
+---------------------------------------
+2   50
+
+4.12 quiz: decisoin tree accuracy
+---------------------------------------
+from sklearn import tree
+from sklearn import metrics
+
+clf = tree.DecisionTreeClassifier(min_samples_split=2)
+clf = clf.fit(features_train, labels_train)
+pred = clf.predict(features_test)
+acc_min_samples_split_2 = metrics.accuracy_score(labels_test, pred)
+
+clf = tree.DecisionTreeClassifier(min_samples_split=50)
+clf = clf.fit(features_train, labels_train)
+pred = clf.predict(features_test)
+acc_min_samples_split_50 = metrics.accuracy_score(labels_test, pred)
+
+4.13 data impurity and entropy
+---------------------------------------
+
+
+4.14 quiz: minimizing impurity in splitting
+---------------------------------------
+2
+
+
+4.15 formula of entropy
+---------------------------------------
+
+
+4.16 quiz: entropy calculation part 1
+---------------------------------------
+2
+
+
+4.17 quiz: entropy calculation part 2
+---------------------------------------
+4
+
+4.18 quiz:  entropy calculation part 3
+---------------------------------------
+.5
+
+
+4.19 quiz: entropy calculation part 4
+---------------------------------------
+.5
+
+4.20 quiz: entropy calculation part 5
+---------------------------------------
+1
+
+4.21 information gain
+---------------------------------------
+
+
+4.22 quiz: information gain calculation part 1
+---------------------------------------
+3
+
+4.23 quiz: information gain calculation part 2
+---------------------------------------
+0
+
+4.24 quiz: information gain calculation part 3
+---------------------------------------
+.66
+
+4.25 quiz: information gain calculation part 4
+---------------------------------------
+.33
+
+4.26 quiz: information gain calculation part 5
+---------------------------------------
+.92 or 0.9184
+
+4.27 quiz: information gain calculation part 6
+---------------------------------------
+0.3112
+
+4.28 quiz: information gain calculation part 7
+---------------------------------------
+1
+
+
+4.29 quiz: information gain calculation part 8
+---------------------------------------
+1
+
+4.30 quiz: information gain calculation part 9
+---------------------------------------
+0
+
+
+4.31 quiz: information gain calculation part 10
+---------------------------------------
+1
+
+
+4.32 tuning criterian parameter
+---------------------------------------
+
+
+4.33 bias-variance dilemma
+---------------------------------------
+
+
+4.34 dt strengths and weaknesses
+---------------------------------------
+
+
+4.35 decision tree mini-project video
+---------------------------------------
+
+
+4.36 decisiont tree mini-project
+---------------------------------------
+https://github.com/udacity/ud120-projects/tree/master/decision_tree
+https://docs.google.com/document/d/1h6UwiyNjdoyiQz6reh2sfch1O5A0dfYP1I8pH9G05eM/edit
+
+
+4.37 quiz: your first email dt: accuracy
+---------------------------------------
+98
+
+
+4.38 quiz: speeding up via feature selection 1
+---------------------------------------
+
+
+4.39 quiz: changing the number of features
+---------------------------------------
+
+
+4.40 quiz: selectpercentile and complexity
+---------------------------------------
+more complex
+
+
+4.41 quiz: accuracy using 1% of features
+---------------------------------------
+96
+
+
