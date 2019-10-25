@@ -1,0 +1,105 @@
+date start : 25 october 2019
+
+
+18.1 non functional reqs & arch styles
+---------------------------------------
+
+
+18.2 qualities
+---------------------------------------
+
+
+
+18.3 quiz: non functional qualities quiz
+---------------------------------------
+performance, precision, security
+
+18.4 quiz: functional and non functional requirements quiz
+---------------------------------------
+F
+N
+N
+F
+
+
+18.5 quality catalog
+---------------------------------------
+
+
+18.6 quiz: applications quiz
+---------------------------------------
+2
+5
+1
+3
+4
+
+
+18.7 architectural styles
+---------------------------------------
+
+
+18.8 review of architectural styles
+---------------------------------------
+
+
+18.9 pipe and filter performance
+---------------------------------------
+
+
+18.10 pipe and filter maintainability
+---------------------------------------
+
+
+18.11 pipe and filter other qualities
+---------------------------------------
+
+
+18.12 layering qualities
+---------------------------------------
+
+
+18.13 blackboard realibility and security
+---------------------------------------
+
+
+18.14 other blackboard qualities
+---------------------------------------
+
+
+18.15 object orientation maintainability
+---------------------------------------
+
+
+18.16 object orientation security
+---------------------------------------
+
+
+18.17 other object orientation qualities
+---------------------------------------
+
+
+18.18 implicit invocation qualities
+---------------------------------------
+
+
+18.19 quiz: side effects quiz 1
+---------------------------------------
+c
+d
+a
+b
+
+
+18.20 quiz: side effects quiz 2
+---------------------------------------
+a
+d
+c
+b
+
+18.21 summary
+---------------------------------------
+
+
+
