@@ -1,0 +1,101 @@
+date start : 01 november 2019
+
+
+19.1 connectors
+---------------------------------------
+
+
+19.2 atomic elements
+---------------------------------------
+
+
+
+19.3 quiz: pipe and filter quiz
+---------------------------------------
+pipe connector
+filter component
+
+
+19.4 service categories
+---------------------------------------
+
+
+19.5 quiz: services quiz
+---------------------------------------
+f     o
+o     o
+o     f
+f     o
+o     o
+
+
+19.6 variety of connectors
+---------------------------------------
+
+
+19.7 procedure call connectors
+---------------------------------------
+
+
+19.8 event connectors
+---------------------------------------
+
+
+19.9 data access connectors
+---------------------------------------
+
+
+19.10 linkage connectors
+---------------------------------------
+
+
+19.11 stream connectors
+---------------------------------------
+
+
+19.12 arbitrator connectors
+---------------------------------------
+
+
+19.13 adaptor connectors
+---------------------------------------
+
+
+19.14 distributor connectors
+---------------------------------------
+
+
+19.15 summary of connector types
+---------------------------------------
+
+
+19.16 quiz: connector type quiz
+---------------------------------------
+procedure call
+arbitrator
+stream
+linkage
+data access
+
+19.17 composite connector examples
+---------------------------------------
+
+
+19.18 connector design
+---------------------------------------
+
+
+19.19 validataion rules
+---------------------------------------
+
+
+19.20 linux case study
+---------------------------------------
+
+
+
+19.21 summary
+---------------------------------------
+
+
+
