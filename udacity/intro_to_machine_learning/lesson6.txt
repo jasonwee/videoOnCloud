@@ -1,0 +1,166 @@
+date start : 08 november 2019
+
+
+6.1 introduction
+---------------------------------------
+
+
+
+6.2 what is a poi
+---------------------------------------
+
+
+6.3 accuracy vs. training set size
+---------------------------------------
+
+
+6.4 downloading enron data
+---------------------------------------
+
+
+6.5 quiz: types of data quiz 1
+---------------------------------------
+numerical
+
+
+6.6  quiz: types of data quiz 2
+---------------------------------------
+categorical
+
+
+6.7  quiz: types of data quiz 3
+---------------------------------------
+time series
+
+
+6.8  quiz: types of data quiz 4
+---------------------------------------
+text
+
+6.9  quiz: types of data quiz 5
+---------------------------------------
+numeric
+
+
+6.10  quiz: types of data quiz 6
+---------------------------------------
+text
+
+
+6.11 enron dataset mini-project video
+---------------------------------------
+
+
+
+6.12 datasets and questions mini-project
+---------------------------------------
+
+
+6.13 quiz: size of the enron dataset
+---------------------------------------
+146
+
+6.14 quiz: features in enron dataset
+---------------------------------------
+21
+
+6.15 quiz: fidnings pois in the enron data
+---------------------------------------
+18
+
+6.16 quiz: how many pois exist?
+---------------------------------------
+35
+
+6.17 quiz: problems with incomplete data
+---------------------------------------
+incomplete view of data
+
+
+6.18 quiz: query the dataset 1 
+---------------------------------------
+1095040
+
+6.19 quiz: query the dataset 2 
+---------------------------------------
+11
+
+6.20 quiz: query the dataset 3
+---------------------------------------
+19250000
+
+
+6.21 quiz: research the enron fraud
+---------------------------------------
+3,4
+
+
+6.22 quiz: enron ceo
+---------------------------------------
+Jeffrey Skilling
+
+
+6.23 quiz: enron chairman
+---------------------------------------
+Kenneth Lay
+
+
+6.24 quiz: enron cfo
+---------------------------------------
+Andrew Fastow
+
+6.25 quiz: follow the money
+---------------------------------------
+lay
+103559793
+
+
+6.26 quiz: unfilled features
+---------------------------------------
+nan
+
+
+6.27 quiz: dealing with unfilled features
+---------------------------------------
+95
+111
+
+6.28 dict-to-array conversion
+---------------------------------------
+
+
+6.29 quiz: missing pois 1 (optional)
+---------------------------------------
+14.38
+
+
+6.30 quiz: missing pois 2 (optional)
+---------------------------------------
+0
+
+
+6.31 quiz: missing pois 3 (optional)
+---------------------------------------
+non pois
+
+
+6.32 quiz: missing pois 4 (optional) 
+---------------------------------------
+156
+31
+
+6.33 quiz: missing pois 5 (optional)
+---------------------------------------
+28
+10
+
+6.34 quiz: missing pois 6 (optional) 
+---------------------------------------
+yes
+
+
+6.35 mixing data sources (optional)
+---------------------------------------
+
+
+
