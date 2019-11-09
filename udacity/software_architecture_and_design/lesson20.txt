@@ -1,0 +1,90 @@
+date start : 08 november 2019
+
+
+20.1 adls
+---------------------------------------
+
+
+20.2 acme
+---------------------------------------
+
+
+
+20.3 amce features
+---------------------------------------
+
+
+20.4 architecture vocabulary
+---------------------------------------
+
+
+
+20.5 simple architecture example
+---------------------------------------
+
+
+20.6 quiz: acme quiz
+---------------------------------------
+err-trap sinka;
+alert source;
+
+20.7 acme graphical view
+---------------------------------------
+
+
+20.8 decompositin
+---------------------------------------
+
+
+20.9 representations
+---------------------------------------
+
+
+20.10 example representation
+---------------------------------------
+
+
+20.11 extending acme
+---------------------------------------
+
+
+20.12 properties
+---------------------------------------
+
+
+20.13 properties example
+---------------------------------------
+
+
+20.14 families
+---------------------------------------
+
+
+20.15 example family
+---------------------------------------
+
+
+20.16 open semantic framework
+---------------------------------------
+
+
+20.17 quiz: acme features quiz 1
+---------------------------------------
+b
+e
+f
+c
+a
+d
+
+20.18 quiz: acme features quiz 2
+---------------------------------------
+a way to express the behavior of components and connectors
+a representation for functional properties
+a way to map between code and architecture element
+
+20.19 acme imitations
+---------------------------------------
+
+
+
