@@ -1,0 +1,230 @@
+date start : 15 november 2019
+
+
+7.1 quiz: continous output quiz
+---------------------------------------
+output
+
+
+7.2 quiz: continous quiz
+---------------------------------------
+output
+
+
+7.3 quiz: age: continous or discrete?
+---------------------------------------
+continous
+
+
+7.4 quiz: weather: continous or discrete
+---------------------------------------
+discrete
+
+7.5 quiz: Email Author : continous or discrete
+---------------------------------------
+discrete
+
+7.6 quiz: Phone Number : continous or discrete
+---------------------------------------
+discrete
+
+7.7 quiz: Income : continous or discrete
+---------------------------------------
+continous
+
+
+7.8 quiz: continous feature quiz
+---------------------------------------
+speed in mph
+
+
+7.9 quiz: supervised learning w/ continous output
+---------------------------------------
+far bottom and far right
+
+
+7.10 quiz: equation of the regression line
+---------------------------------------
+6.25   0
+
+
+
+
+7.11 slope and intercept
+---------------------------------------
+
+
+
+7.12 quiz: slope quiz
+---------------------------------------
+most left
+
+
+7.13: quiz intercept quiz
+---------------------------------------
+most left
+
+
+7.14 quiz: predictions using regresion
+---------------------------------------
+225
+
+
+7.15 quiz: adding an intercept
+---------------------------------------
+255
+
+
+7.16 handoff to katie
+---------------------------------------
+
+
+7.17 coding it up
+---------------------------------------
+
+
+
+7.18 quiz: age/net worth regression in sklearn
+---------------------------------------
+from sklearn.linear_model import LinearRegression
+reg = LinearRegression()
+reg.fit(ages_train, net_worths_train)
+
+
+
+7.19 extracting information from sklearn
+---------------------------------------
+
+
+7.20 extracting score data from sklearn
+---------------------------------------
+
+
+7.21 linear regression erros
+---------------------------------------
+
+
+7.22 quiz: error quiz
+---------------------------------------
+-18.75
+
+
+7.23 quiz: errors and fit quality
+---------------------------------------
+3,4
+
+
+7.24 minimizing sum of squared errors
+---------------------------------------
+
+
+
+7.25 algorithms for minimizing squared errors
+---------------------------------------
+
+
+
+7.26 quiz: why minimize sse
+---------------------------------------
+middle line
+
+
+7.27 problem with minimizing absolute errors
+---------------------------------------
+
+
+
+7.28 quiz: evaluating regression by eye
+---------------------------------------
+about the same
+
+
+7.29 quiz: problem with sse
+---------------------------------------
+right
+
+
+
+7.30 r squared metric for regression
+---------------------------------------
+
+
+
+
+7.31 r squared in sklearn
+---------------------------------------
+
+
+
+7.32 visualizing regression
+---------------------------------------
+
+
+
+7.33 quiz: what data is good for linear regression
+---------------------------------------
+4
+
+
+7.34 comparing classification and regression
+---------------------------------------
+
+
+7.35 quiz: multivariate regression quiz
+---------------------------------------
+5 2.5  -200
+
+
+7.36 quiz: multi-variate regression quiz 2
+---------------------------------------
+1 -10  500
+
+
+7.37 regression mini-project video
+---------------------------------------
+target bonus
+input salary
+
+
+7.38 regression mini-porject
+---------------------------------------
+
+
+7.39 quiz: bonus target and features
+---------------------------------------
+
+
+7.40 visualizing regression data
+---------------------------------------
+
+
+
+7.41 quiz: extracting slop and intercept
+---------------------------------------
+5.44
+-102360.54
+
+
+7.42 quiz: regression score: training data
+---------------------------------------
+0.045
+
+
+7.43 quiz: regression score: test data
+---------------------------------------
+-1.48
+
+7.44 quiz: regressing bonus against lti
+---------------------------------------
+-0.59
+
+
+7.45 quiz: salary vs lti for predicting bonus
+---------------------------------------
+lti
+
+7.46 quiz: sneak peek: outliers break regressions
+---------------------------------------
+2.27
+
+
