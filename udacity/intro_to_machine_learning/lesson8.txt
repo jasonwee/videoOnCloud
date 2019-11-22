@@ -1,0 +1,92 @@
+date start : 22 november 2019
+
+
+8.1 quiz: outliers in regression
+---------------------------------------
+most top
+
+
+8.2 quiz: what causes outliers
+---------------------------------------
+1,2,4
+
+
+8.3 quiz: outlier selection
+---------------------------------------
+1,3,4,5
+
+
+8.4 outlier detection
+---------------------------------------
+
+
+8.5 quiz: outlier detection using residual errors
+---------------------------------------
+b
+
+8.6 quiz: effect of outlier removal on regression
+---------------------------------------
+steeper
+
+
+8.7 summary of outlier removal strategy
+---------------------------------------
+
+
+
+8.8 outliers mini-project video
+---------------------------------------
+
+
+8.9 outliers mini-project
+---------------------------------------
+
+
+8.10 quiz: slope of regression with outliers
+---------------------------------------
+5.07
+
+
+8.11 quiz: score of regression with outliers
+---------------------------------------
+0.88
+
+
+8.12 quiz: slope after cleaning
+---------------------------------------
+6.36
+
+
+8.13: quiz: score after cleaning
+---------------------------------------
+0.98
+
+
+8.14 enron outliers
+---------------------------------------
+
+
+8.15 quiz: identify the biggest enron outlier
+---------------------------------------
+
+
+8.16 quiz: remove enron outlier?
+---------------------------------------
+2
+
+8.17 quiz: any more outliers?
+---------------------------------------
+4 more
+
+
+8.18 quiz: identifying two more outliers
+---------------------------------------
+LAY KENNETH L
+SKILLING JEFFREY K
+
+
+8.19 quiz: remove these outliers?
+---------------------------------------
+leave them in
+
+
