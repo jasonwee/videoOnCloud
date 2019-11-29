@@ -1,0 +1,112 @@
+date start : 29 november 2019
+
+
+9.1 unsupervised learning
+---------------------------------------
+
+
+9.2 clustering movies
+---------------------------------------
+
+
+9.3 quiz: how many clusters?
+---------------------------------------
+2
+
+
+9.4 quiz: match points with clusters
+---------------------------------------
+above 4
+
+9.5 quiz: optimizing centers (rubber bands)
+---------------------------------------
+left most
+
+9.6 quiz:moving centers 2
+---------------------------------------
+3rd from left
+
+9.7 quiz: match points (again)
+---------------------------------------
+left 4
+
+
+
+9.8 handoff to katie
+---------------------------------------
+
+
+9.9 quiz: k-means cluster visualization
+---------------------------------------
+3
+
+
+9.10 k-means clustering visualization 2
+---------------------------------------
+
+
+9.11 k-means clustering visualization 3
+---------------------------------------
+
+
+9.12 sklearn
+---------------------------------------
+
+
+9.13 some challenges of k-means
+---------------------------------------
+
+
+9.14 quiz: limitations of k-means
+---------------------------------------
+no
+
+
+9.15 quiz: counterintuitive clusters
+---------------------------------------
+yes
+
+
+9.16 quiz: couterintuitive clusters 2
+---------------------------------------
+yes
+
+
+9.17 clustering mini-project video
+---------------------------------------
+
+
+9.18 k-means clustering mini-project
+---------------------------------------
+
+
+9.19 quiz: clustering features
+---------------------------------------
+salary
+exercised_stock_options
+
+9.20 quiz: deploying clustering
+---------------------------------------
+
+
+9.21 quiz: clustering with 3 features
+---------------------------------------
+yes, 4 point changes
+
+
+9.22 quiz: stock option range
+---------------------------------------
+34348384
+3285
+
+9.23 quiz: salary range
+---------------------------------------
+1111258
+477
+
+
+9.24 quiz: clustering changes
+---------------------------------------
+points at 0.4
+
+
