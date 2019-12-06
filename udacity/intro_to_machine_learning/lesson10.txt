@@ -1,0 +1,81 @@
+date start : 06 december 2019
+
+
+10.1 quiz: chris's t-shirt size(intuition)
+---------------------------------------
+large
+
+
+10.2 quiz: a metric for chris
+---------------------------------------
+146.1
+
+
+10.3 quiz: height + weight for cameron
+---------------------------------------
+180.9
+
+
+10.4 quiz: sarah's height + weight
+---------------------------------------
+120.2
+
+
+10.5 quiz: chri's shirt size by our metric
+---------------------------------------
+sarah
+
+
+10.6 comparing features with different scales
+---------------------------------------
+
+
+10.7 quiz: feature scaling formula quiz 1
+---------------------------------------
+115
+
+
+10.8 quiz: feature scaling formula quiz 2
+---------------------------------------
+175
+
+
+10.9 quiz: feature scaling formula quiz 3
+---------------------------------------
+0.42
+
+10.10 quiz: min/max rescaler coding quiz
+---------------------------------------
+x' = x-xmin / xmax - xmin
+
+10.11 min/max scaler in sklearn
+---------------------------------------
+
+
+10.12 quiz: quiz on algorithms requiring rescaling
+---------------------------------------
+2,4
+
+10.13 feature scaling mini-project video
+---------------------------------------
+
+
+10.14 feature scaling mini-project
+---------------------------------------
+
+
+10.15 quiz: what kind of scaling
+---------------------------------------
+MinMaxScaler
+
+
+10.16 quiz: computing rescaled features
+---------------------------------------
+0.18
+0.03
+
+10.17 quiz: when to deploy feature scaling
+---------------------------------------
+critical
+
+
