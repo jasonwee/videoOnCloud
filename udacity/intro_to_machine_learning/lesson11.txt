@@ -1,0 +1,96 @@
+date start : 13 december 2019
+
+
+11.1 quiz: dimensions when learning from text
+---------------------------------------
+hard to tell
+
+
+11.2 quiz: bag of words
+---------------------------------------
+101000
+
+11.3 quiz: q very nice day
+---------------------------------------
+111000
+
+11.4 quiz: mr. day loves a nice day
+---------------------------------------
+102000
+
+11.5 quiz: properties of bag of words
+---------------------------------------
+no
+yes
+no
+
+11.6 bag of words in sklearn
+---------------------------------------
+
+
+11.7 quiz: low-information words
+---------------------------------------
+hi, will, the
+
+
+11.8 quiz: stopwords
+---------------------------------------
+3
+
+11.9 quiz: getting stopwords from nltk
+---------------------------------------
+153
+
+
+11.10 stemming to consolidate vocabulary
+---------------------------------------
+
+
+11.11 stemming with nltk
+---------------------------------------
+
+
+11.12 quiz: order of operations in text processing
+---------------------------------------
+steamming
+
+
+11.13 quiz: weighting by term frequency
+---------------------------------------
+rare
+
+
+11.14 why upweight rare words
+---------------------------------------
+
+
+11.15 text learning mini-project video
+---------------------------------------
+
+
+11.16 text learning mini-project
+---------------------------------------
+
+
+11.17 quiz: warming up with parseOutText()
+---------------------------------------
+Hi Everyone  If you can read this message youre properly using parseOutText  Please proceed to the next part of the project
+
+
+11.18 quiz: deplooying stemming
+---------------------------------------
+
+
+11.19 quiz: clean away "signature words"
+---------------------------------------
+tjonesnsf stephani and sam need nymex calendar
+
+
+11.20 quiz: tfldf it
+---------------------------------------
+38757
+
+11.21 quiz: accesing tfldf features
+---------------------------------------
+stephaniethank
+
