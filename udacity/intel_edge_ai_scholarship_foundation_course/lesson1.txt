@@ -1,0 +1,85 @@
+date start : 20 december 2019
+
+
+1.1 instructor intro
+---------------------------------------
+
+
+
+1.2 what is ai at the edge?
+---------------------------------------
+The edge means local (or near local) processing, as opposed to just anywhere in the cloud.
+
+answer:
+cloud
+edge
+cloud 
+edge
+
+
+
+1.3 why is ai at the edge important?
+---------------------------------------
+network impacts
+latency considerations
+security concerns
+optimizations for local inference
+
+
+1.4 applications of ai at the edge
+---------------------------------------
+
+answer:
+nuclear reactor where monitoring and controlling the power plant and ensure everything is okay as network lagging is not acceptable.
+
+1.5 historical context
+---------------------------------------
+
+answer:
+1
+2
+3
+
+
+
+1.6 course structure
+---------------------------------------
+
+
+
+1.7 why are the topics distinct?
+---------------------------------------
+
+IR : Intermediate Representation
+
+answer:
+
+model optimizer  : convert a model for further use with the toolkit
+open model zoo   : obtain a pre-trained model
+inference engine : perform inference on an intermediate representation
+
+
+1.8 releveant tools and prerequisites
+---------------------------------------
+https://software.intel.com/en-us/openvino-toolkit/hardware
+https://software.intel.com/en-us/articles/intel-neural-compute-stick-2-and-open-source-openvino-toolkit
+https://docs.openvinotoolkit.org/latest/index.html
+
+
+
+1.9 what you will build
+---------------------------------------
+
+
+
+1.10 recap
+---------------------------------------
+
+
+
+
+
+
+
+
+
