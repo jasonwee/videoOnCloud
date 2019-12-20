@@ -1,0 +1,141 @@
+date start : 20 december 2019
+
+
+12.1 why feature selection?
+---------------------------------------
+
+
+12.2 a new enron feature
+---------------------------------------
+
+
+12.3 quiz: a new enron feature quiz
+---------------------------------------
+if from_emails and from_emails[0] in poi_email_list:
+        from_poi = True    
+
+
+12.4 quiz: visualizing your new feature
+---------------------------------------
+    if all_messages == 'NaN':
+        return fraction
+    
+    if poi_messages == 'NaN':
+        poi_messages = 0
+    
+    fraction = float(poi_messages)/float(all_messages)
+
+12.5 beware of feature bugs!
+---------------------------------------
+
+
+12.6 example: buggy feature
+---------------------------------------
+
+
+12.7 quiz: getting rid of features
+---------------------------------------
+all four
+
+
+12.8 features != information
+---------------------------------------
+
+
+12.9 univariate feature selection
+---------------------------------------
+
+
+12.10 quiz: feature selection in tfidf vectorizer
+---------------------------------------
+50%
+
+12.11 quiz: bias, variance, and number of features
+---------------------------------------
+high bias
+
+
+12.12 quiz: bias, variance, and number of features pt 2
+---------------------------------------
+high variance
+
+12.13 overfitting by eye
+---------------------------------------
+
+
+12.14 balancing error with number of features
+---------------------------------------
+
+
+12.15 regularization
+---------------------------------------
+
+
+12.16 lasso regression
+---------------------------------------
+
+
+12.17 quiz: lasso code quiz
+---------------------------------------
+, labels)
+
+12.18 quiz: lasso prediction with sklearn quiz
+---------------------------------------
+regression.predict([2,4])
+
+12.19 quiz: lasso coefficients with sklearn quiz
+---------------------------------------
+regression.coef_
+
+
+12.20 quiz: using lasso in sklearn quiz
+---------------------------------------
+1
+
+
+12.21 feature selection min-project video
+---------------------------------------
+
+
+12.22 feature selection min-project 
+---------------------------------------
+
+
+12.23 quiz: overfitting a decision tree 1
+---------------------------------------
+low
+
+12.24 quiz: overfitting a decision tree 2
+---------------------------------------
+high
+
+12.25 quiz: number of features and overfitting
+---------------------------------------
+150
+
+12.26 quiz: accuracy of your overfit decision tree
+---------------------------------------
+0.94
+
+12.27 quiz: identify the most powerful features
+---------------------------------------
+0.76
+33614
+
+12.28 quiz: use tfidf to get the most important word
+---------------------------------------
+sshacklensf
+
+12.29 quiz: remove, repeat
+---------------------------------------
+cgermannsf
+
+12.30 quiz: checking important features again
+---------------------------------------
+1st
+
+12.31 quiz: accuracy of the overfit tree
+---------------------------------------
+0.81
+
+
