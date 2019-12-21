@@ -1,0 +1,386 @@
+date start : 21 december 2019
+
+
+5.1 introduction
+---------------------------------------
+
+
+
+5.2 opencv basics
+---------------------------------------
+OpenCV is an open-source library for various image processing and computer vision techniques that runs on a highly optimized C++ back-end, although it is available for use with Python and Java as well.
+
+
+answer : 1,2,3,4
+
+https://docs.opencv.org/master/d9/df8/tutorial_root.html
+
+
+
+
+
+
+5.3 handling input streams
+---------------------------------------
+
+
+
+
+
+5.4 exercise: handling input streams
+---------------------------------------
+def capture_stream(args):
+    ### TODO: Handle image, video or webcam
+    # Create a flag for single images
+    image_flag = False
+    # Check if the input is a webcam
+    if args.i == 'CAM':
+        args.i = 0
+    elif args.i.endswith('.jpg') or args.i.endswith('.bmp'):
+        image_flag = True
+
+    ### TODO: Get and open video capture
+    cap = cv2.VideoCapture(args.i)
+    cap.open(args.i)
+    
+    ### TODO: Re-size the frame to 100x100
+
+    ### TODO: Add Canny Edge Detection to the frame, 
+    ###       with min & max values of 100 and 200
+    ###       Make sure to use np.dstack after to make a 3-channel image
+
+    ### TODO: Write out the frame, depending on image or video
+    # Create a video writer for the output video
+    if not image_flag:
+        # The second argument should be `cv2.VideoWriter_fourcc('M','J','P','G')`
+        # on Mac, and `0x00000021` on Linux
+        # 100x100 to match desired resizing
+        out = cv2.VideoWriter('out.mp4', 0x00000021, 30, (100,100))
+    else:
+        out = None
+    
+    # Process frames until the video ends, or process is exited
+    while cap.isOpened():
+        # Read the next frame
+        flag, frame = cap.read()
+        if not flag:
+            break
+        key_pressed = cv2.waitKey(60)
+
+        ### TODO: Re-size the frame to 100x100
+        frame = cv2.resize(frame, (100,100))
+
+        ### TODO: Add Canny Edge Detection to the frame, 
+        ###       with min & max values of 100 and 200
+        ###       Make sure to use np.dstack after to make a 3-channel image
+        frame = cv2.Canny(frame, 100, 200)
+        frame = np.dstack((frame, frame, frame))
+
+        ### TODO: Write out the frame, depending on image or video
+        if image_flag:
+            cv2.imwrite('output_image.jpg', frame)
+        else:
+            out.write(frame)
+        # Break if escape key pressed
+        if key_pressed == 27:
+            break
+
+    ### TODO: Close the stream and any windows at the end of the application
+    if not image_flag:
+        out.release()
+    cap.release()
+    cv2.destroyAllWindows()
+
+
+
+python app.py -i blue-car.jpg
+python app.py -i test_video.mp4
+￼
+
+5.5 solution: handling input streams
+---------------------------------------
+
+
+
+
+5.6 gathering useful information from model outputs
+---------------------------------------
+answer : for road signs, for example, if the signs shown it is a speed limit, the car speed should less than or equal to the speed limit.
+
+
+
+5.7 exercise: process model outputs
+---------------------------------------
+def assess_scene(result, counter, incident_flag):
+    '''
+    Based on the determined situation, potentially send
+    a message to the pets to break it up.
+    '''
+    if result[0][1] == 1 and not incident_flag:
+        timestamp = counter / 30
+        print("Log: Incident at {:.2f} seconds.".format(timestamp))
+        print("Break it up!")
+        incident_flag = True
+    elif result[0][1] != 1:
+        incident_flag = False
+    
+    return incident_flag
+
+def infer_on_video(args):
+    # Initialize the Inference Engine
+    plugin = Network()
+
+    # Load the network model into the IE
+    plugin.load_model(args.m, args.d, CPU_EXTENSION)
+    net_input_shape = plugin.get_input_shape()
+
+    # Get and open video capture
+    cap = cv2.VideoCapture(args.i)
+    cap.open(args.i)
+
+    # Process frames until the video ends, or process is exited
+    counter = 0
+    incident_flag = False
+    while cap.isOpened():
+        # Read the next frame
+        flag, frame = cap.read()
+        if not flag:
+            break
+        key_pressed = cv2.waitKey(60)
+        counter += 1
+
+        # Pre-process the frame
+        p_frame = cv2.resize(frame, (net_input_shape[3], net_input_shape[2]))
+        p_frame = p_frame.transpose((2,0,1))
+        p_frame = p_frame.reshape(1, *p_frame.shape)
+
+        # Perform inference on the frame
+        plugin.async_inference(p_frame)
+
+        # Get the output of inference
+        if plugin.wait() == 0:
+            result = plugin.extract_output()
+            ### TODO: Process the output
+            
+            incident_flag = assess_scene(result, counter, incident_flag)
+            
+
+        # Break if escape key pressed
+        if key_pressed == 27:
+            break
+
+    # Release the capture and destroy any OpenCV windows
+    cap.release()
+    cv2.destroyAllWindows()
+
+python app.py -m model.xml
+
+
+5.8 solution: process model outputs
+---------------------------------------
+
+
+5.9 intro to mqtt
+---------------------------------------
+MQTT : MQ Telemetry Transport
+
+
+
+
+5.10 communicating with mqtt
+---------------------------------------
+
+
+answer :
+client.publish("students", data)
+client.subscribe("students")
+
+
+https://pypi.org/project/paho-mqtt/
+https://software.intel.com/en-us/SetupGateway-MQTT
+
+
+5.11 streaming images to a server
+---------------------------------------
+
+
+
+answer : there might be some error or any object not known before and edge device should inform the server
+
+
+5.12 handling statistics and images from a node server
+---------------------------------------
+
+
+
+5.13 exercise: server communications
+---------------------------------------
+
+
+from inference import Network
+### TODO: Import any libraries for MQTT and FFmpeg
+import sys
+import paho.mqtt.client as mqtt
+
+INPUT_STREAM = "test_video.mp4"
+CPU_EXTENSION = "/opt/intel/openvino/deployment_tools/inference_engine/lib/intel64/libcpu_extension_sse4.so"
+ADAS_MODEL = "/home/workspace/models/semantic-segmentation-adas-0001.xml"
+
+
+CLASSES = ['road', 'sidewalk', 'building', 'wall', 'fence', 'pole', 
+'traffic_light', 'traffic_sign', 'vegetation', 'terrain', 'sky', 'person',
+'rider', 'car', 'truck', 'bus', 'train', 'motorcycle', 'bicycle', 'ego-vehicle']
+
+# MQTT server environment variables
+HOSTNAME = socket.gethostname()
+IPADDRESS = socket.gethostbyname(HOSTNAME)
+MQTT_HOST = IPADDRESS
+MQTT_PORT = 3001
+MQTT_KEEPALIVE_INTERVAL = 60
+
+
+def infer_on_video(args, model):
+    ### TODO: Connect to the MQTT server
+    client = mqtt.Client()
+    client.connect(MQTT_HOST, MQTT_PORT, MQTT_KEEPALIVE_INTERVAL)
+
+    # Initialize the Inference Engine
+    plugin = Network()
+
+    # Load the network model into the IE
+    plugin.load_model(model, args.d, CPU_EXTENSION)
+    net_input_shape = plugin.get_input_shape()
+
+    # Get and open video capture
+    cap = cv2.VideoCapture(args.i)
+    cap.open(args.i)
+
+    # Grab the shape of the input 
+    width = int(cap.get(3))
+    height = int(cap.get(4))
+
+    # Process frames until the video ends, or process is exited
+    while cap.isOpened():
+        # Read the next frame
+        flag, frame = cap.read()
+        if not flag:
+            break
+        key_pressed = cv2.waitKey(60)
+
+        # Pre-process the frame
+        p_frame = cv2.resize(frame, (net_input_shape[3], net_input_shape[2]))
+        p_frame = p_frame.transpose((2,0,1))
+        p_frame = p_frame.reshape(1, *p_frame.shape)
+
+        # Perform inference on the frame
+        plugin.async_inference(p_frame)
+
+        # Get the output of inference
+        if plugin.wait() == 0:
+            result = plugin.extract_output()
+            # Draw the output mask onto the input
+            out_frame, classes = draw_masks(result, width, height)
+            class_names = get_class_names(classes)
+            speed = randint(50,70)
+            
+            ### TODO: Send the class names and speed to the MQTT server
+            ### Hint: The UI web server will check for a "class" and
+            ### "speedometer" topic. Additionally, it expects "class_names"
+            ### and "speed" as the json keys of the data, respectively.
+            client.publish("class", json.dumps({"class_names": class_names}))
+            client.publish("speedometer", json.dumps({"speed": speed}))
+
+        ### TODO: Send frame to the ffmpeg server
+        sys.stdout.buffer.write(out_frame)
+        sys.stdout.flush()
+
+        # Break if escape key pressed
+        if key_pressed == 27:
+            break
+
+    # Release the capture and destroy any OpenCV windows
+    cap.release()
+    cv2.destroyAllWindows()
+    ### TODO: Disconnect from MQTT
+    client.disconnect()
+
+
+python app.py | ffmpeg -v warning -f rawvideo -pixel_format bgr24 -video_size 1280x720 -framerate 24 -i - http://0.0.0.0:3004/fac.ffm
+
+
+
+
+5.14 solution: server communications
+---------------------------------------
+
+
+
+
+5.15 analyzing performance basics
+---------------------------------------
+
+answer : 2,3,4
+
+
+
+
+5.16 model use cases
+---------------------------------------
+
+object surrounding? not sure
+
+
+5.17 concerning end user needs
+---------------------------------------
+
+costing and reduce duration of producing a working solution.
+
+
+5.18 recap
+---------------------------------------
+
+
+5.19 lesson glossary
+---------------------------------------
+OpenCV
+A computer vision (CV) library filled with many different computer vision functions and other useful image and video processing and handling capabilities.
+
+MQTT
+A publisher-subscriber protocol often used for IoT devices due to its lightweight nature. The paho-mqtt library is a common way of working with MQTT in Python.
+
+Publish-Subscribe Architecture
+A messaging architecture whereby it is made up of publishers, that send messages to some central broker, without knowing of the subscribers themselves. These messages can be posted on some given “topic”, which the subscribers can then listen to without having to know the publisher itself, just the “topic”.
+
+Publisher
+In a publish-subscribe architecture, the entity that is sending data to a broker on a certain “topic”.
+
+Subscriber
+In a publish-subscribe architecture, the entity that is listening to data on a certain “topic” from a broker.
+
+Topic
+In a publish-subscribe architecture, data is published to a given topic, and subscribers to that topic can then receive that data.
+
+FFmpeg
+Software that can help convert or stream audio and video. In the course, the related ffserver software is used to stream to a web server, which can then be queried by a Node server for viewing in a web browser.
+
+Flask
+A Python framework useful for web development and another potential option for video streaming to a web browser.
+
+Node Server
+A web server built with Node.js that can handle HTTP requests and/or serve up a webpage for viewing in a browser.
+
+
+5.20 course recap
+---------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
