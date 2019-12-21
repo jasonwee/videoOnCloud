@@ -1,0 +1,214 @@
+date start : 21 december 2019
+
+
+3.1 introduction
+---------------------------------------
+
+
+
+3.2 the model optimizer
+---------------------------------------
+The Model Optimizer helps convert models in multiple different frameworks to an Intermediate Representation, which is used with the Inference Engine.
+
+
+answer : 2
+
+
+documentation : https://docs.openvinotoolkit.org/latest/_docs_MO_DG_Deep_Learning_Model_Optimizer_DevGuide.html
+
+
+
+
+3.3 optimization techniques
+---------------------------------------
+* quantization
+* freezing 
+* fusion
+
+
+answer: quantization
+        freezing
+        fusion
+
+
+Quantization is related to the topic of precision I mentioned before, or how many bits are used to represent the weights and biases of the model.
+https://nervanasystems.github.io/distiller/quantization.html
+
+
+Freezing TensorFlow models will remove certain operations and metadata only needed for training, such as those related to backpropagation.
+
+Fusion relates to combining multiple layer operations into a single operation.
+https://docs.openvinotoolkit.org/latest/_docs_MO_DG_prepare_model_Model_Optimization_Techniques.html
+
+
+3.4 supported frameworks
+---------------------------------------
+
+
+answer : all of it
+
+https://caffe.berkeleyvision.org/
+https://www.tensorflow.org/
+https://mxnet.apache.org/
+https://onnx.ai/
+https://kaldi-asr.org/doc/dnn.html
+
+
+
+
+3.5 intermediate representations
+---------------------------------------
+
+answer: true
+
+https://docs.openvinotoolkit.org/latest/_docs_MO_DG_prepare_model_convert_model_Converting_Model.html
+https://docs.openvinotoolkit.org/latest/_docs_MO_DG_prepare_model_Supported_Frameworks_Layers.html
+https://docs.openvinotoolkit.org/latest/_docs_MO_DG_prepare_model_convert_model_IRLayersCatalogSpec.html
+
+
+3.6 using the model optimizer with tensorflow models
+---------------------------------------
+
+https://docs.openvinotoolkit.org/latest/_docs_MO_DG_prepare_model_convert_model_Convert_Model_From_TensorFlow.html
+https://github.com/tensorflow/models/blob/master/research/object_detection/g3doc/detection_model_zoo.md
+
+
+
+3.7 exercise: convert a tf model
+---------------------------------------
+python /opt/intel/openvino/deployment_tools/model_optimizer/mo.py --input_model frozen_inference_graph.pb --tensorflow_object_detection_api_pipeline_config pipeline.config --reverse_input_channels --tensorflow_use_custom_operations_config /opt/intel/openvino/deployment_tools/model_optimizer/extensions/front/tf/ssd_v2_support.json
+
+
+
+3.8 solution: convert a tf model
+---------------------------------------
+
+
+
+
+3.9 using the model optimizer with caffe models
+---------------------------------------
+https://docs.openvinotoolkit.org/latest/_docs_MO_DG_prepare_model_convert_model_Convert_Model_From_Caffe.html
+
+
+
+
+
+
+3.10 exercise: convert a caffe model
+---------------------------------------
+
+python /opt/intel/openvino/deployment_tools/model_optimizer/mo.py --input_model squeezenet_v1.1.caffemodel --input_proto deploy.prototxt
+
+
+3.11 solution: convert a caffe model
+---------------------------------------
+
+
+
+3.12 using the model optimizer with onnx models
+---------------------------------------
+
+
+3.13 exercise: convert an onnix model
+---------------------------------------
+python /opt/intel/openvino/deployment_tools/model_optimizer/mo.py --input_model model.onnx
+
+
+
+3.14 solution: convert an onnx model
+---------------------------------------
+
+
+3.15 cutting parts of a model
+---------------------------------------
+Some common reasons for cutting are:
+
+The model has pre- or post-processing parts that don’t translate to existing Inference Engine layers.
+The model has a training part that is convenient to be kept in the model, but is not used during inference.
+The model is too complex with many unsupported operations, so the complete model cannot be converted in one shot.
+The model is one of the supported SSD models. In this case, you need to cut a post-processing part off.
+There could be a problem with model conversion in the Model Optimizer or with inference in the Inference Engine. To localize the issue, cutting the model could help to find the problem
+
+
+
+3.16 supported layers
+---------------------------------------
+answer: false
+
+
+3.17 custom layers
+---------------------------------------
+
+
+
+
+https://docs.openvinotoolkit.org/latest/_docs_MO_DG_prepare_model_Supported_Frameworks_Layers.html
+https://docs.openvinotoolkit.org/latest/_docs_MO_DG_prepare_model_customize_model_optimizer_Customize_Model_Optimizer.html
+https://docs.openvinotoolkit.org/latest/_docs_MO_DG_prepare_model_customize_model_optimizer_Offloading_Sub_Graph_Inference.html
+
+
+
+3.18 exercise: custom layers
+---------------------------------------
+
+
+3.19 recap
+---------------------------------------
+
+
+3.20 lesson glossary
+---------------------------------------
+Model Optimizer
+A command-line tool used for converting a model from one of the supported frameworks to an Intermediate Representation (IR), including certain performance optimizations, that is compatible with the Inference Engine.
+
+Optimization Techniques
+Optimization techniques adjust the original trained model in order to either reduce the size of or increase the speed of a model in performing inference. Techniques discussed in the lesson include quantization, freezing and fusion.
+
+Quantization
+Reduces precision of weights and biases (to lower precision floating point values or integers), thereby reducing compute time and size with some (often minimal) loss of accuracy.
+
+Freezing
+In TensorFlow this removes metadata only needed for training, as well as converting variables to constants. Also a term in training neural networks, where it often refers to freezing layers themselves in order to fine tune only a subset of layers.
+
+Fusion
+The process of combining certain operations together into one operation and thereby needing less computational overhead. For example, a batch normalization layer, activation layer, and convolutional layer could be combined into a single operation. This can be particularly useful for GPU inference, where the separate operations may occur on separate GPU kernels, while a fused operation occurs on one kernel, thereby incurring less overhead in switching from one kernel to the next.
+
+Supported Frameworks
+The Intel® Distribution of OpenVINO™ Toolkit currently supports models from five frameworks (which themselves may support additional model frameworks): Caffe, TensorFlow, MXNet, ONNX, and Kaldi.
+
+Caffe
+The “Convolutional Architecture for Fast Feature Embedding” (CAFFE) framework is an open-source deep learning library originally built at UC Berkeley.
+
+TensorFlow
+TensorFlow is an open-source deep learning library originally built at Google. As an Easter egg for anyone who has read this far into the glossary, this was also your instructor’s first deep learning framework they learned, back in 2016 (pre-V1!).
+
+MXNet
+Apache MXNet is an open-source deep learning library built by Apache Software Foundation.
+
+ONNX
+The “Open Neural Network Exchange” (ONNX) framework is an open-source deep learning library originally built by Facebook and Microsoft. PyTorch and Apple-ML models are able to be converted to ONNX models.
+
+Kaldi
+While still open-source like the other supported frameworks, Kaldi is mostly focused around speech recognition data, with the others being more generalized frameworks.
+
+Intermediate Representation
+A set of files converted from one of the supported frameworks, or available as one of the Pre-Trained Models. This has been optimized for inference through the Inference Engine, and may be at one of several different precision levels. Made of two files:
+
+.xml - Describes the network topology
+.bin - Contains the weights and biases in a binary file
+Supported Layers
+Layers supported for direct conversion from supported framework layers to intermediate representation layers through the Model Optimizer. While nearly every layer you will ever use is in the supported frameworks is supported, there is sometimes a need for handling Custom Layers.
+
+Custom Layers
+Custom layers are those outside of the list of known, supported layers, and are typically a rare exception. Handling custom layers in a neural network for use with the Model Optimizer depends somewhat on the framework used; other than adding the custom layer as an extension, you otherwise have to follow instructions specific to the framework.
+
+
+
+
+
+
+
+
+
+
