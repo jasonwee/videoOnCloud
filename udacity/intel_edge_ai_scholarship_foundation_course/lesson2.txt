@@ -1,0 +1,264 @@
+date start : 20 december 2019
+
+
+2.1 introduction
+---------------------------------------
+
+
+
+2.2 the openvino toolkit
+---------------------------------------
+OpenVINO : Open Visual Inferencing and Neural Network Optimization
+
+answer: 3
+
+
+2.3 pre-trained models in openvino
+---------------------------------------
+pre-trained models refer to models where training has already occurred
+
+
+
+
+2.4 types of ocmputer vision models
+---------------------------------------
+Types of Computer Vision Models
+* Classification
+* Detection
+* Segmentation
+
+
+
+2.5 case studies in computer vision
+---------------------------------------
+SSD (or single shot multibox detector) is an object detection network that combined classification with object detection through the use of default bounding boxes at different network levels. 
+
+ResNet utilized residual layers to “skip” over sections of layers, helping to avoid the vanishing gradient problem with very deep neural networks.
+
+MobileNet utilized layers like 1x1 convolutions to help cut down on computational complexity and network size, leading to fast inference without substantial decrease in accuracy.
+
+
+answer: 2
+
+answer: 1
+
+
+
+
+https://arxiv.org/abs/1506.02640
+https://arxiv.org/abs/1506.01497
+https://arxiv.org/abs/1704.04861
+https://arxiv.org/abs/1512.03385
+https://arxiv.org/pdf/1409.4842.pdf
+https://arxiv.org/abs/1512.02325
+
+
+2.6 available pre-trained models in openvino
+---------------------------------------
+
+
+answer: 1,2,3,5
+
+
+2.7 exercise: laoding pre-trained models
+---------------------------------------
+
+$ cd /opt/intel/openvino/deployment_tools/tools/model_downloader
+
+# human-pose-estimation-0001
+$ sudo ./downloader.py --name human-pose-estimation-0001 -o /home/workspace
+
+# text-detection-0004                                   
+$ sudo ./downloader.py --name text-detection-0004 --precisions FP16 -o /home/workspace
+
+# vehicle-attributes-recognition-barrier-0039
+$sudo ./downloader.py --name vehicle-attributes-recognition-barrier-0039 --precisions INT8 -o /home/workspace
+
+
+
+
+2.8 solution: loading pre-trained models
+---------------------------------------
+
+
+2.9 optimizations on the pre-trained models
+---------------------------------------
+
+
+
+2.10 choosing the right model for your app
+---------------------------------------
+answer : 
+detect people, vehicles and bikes
+pedestrian detection
+identify roadside objcts
+human post estimation
+
+
+
+2.11 pre-processing inputs
+---------------------------------------
+In OpenCV, you can use cv2.imread to read in images in BGR format, and cv2.resize to resize them. The images will be similar to a numpy array, so you can also use array functions like .transpose and .reshape on them as well, which are useful for switching the array dimension order.
+
+
+2.12 exercise: pre-procesing inputs
+---------------------------------------
+https://docs.openvinotoolkit.org/latest/_models_intel_human_pose_estimation_0001_description_human_pose_estimation_0001.html
+http://docs.openvinotoolkit.org/latest/_models_intel_text_detection_0004_description_text_detection_0004.html
+https://docs.openvinotoolkit.org/latest/_models_intel_vehicle_attributes_recognition_barrier_0039_description_vehicle_attributes_recognition_barrier_0039.html
+
+def preprocessing(input_image, height, width):
+    '''
+    Given an input image, height and width:
+    - Resize to height and width
+    - Transpose the final "channel" dimension to be first
+    - Reshape the image to add a "batch" of 1 at the start 
+    '''
+    image = cv2.resize(input_image, (width, height))
+    image = image.transpose((2,0,1))
+    image = image.reshape(1, 3, height, width)
+
+    return image
+    
+    
+
+
+def pose_estimation(input_image):
+    '''
+    Given some input image, preprocess the image so that
+    it can be used with the related pose estimation model
+    you downloaded previously. You can use cv2.resize()
+    to resize the image.
+    '''
+    preprocessed_image = np.copy(input_image)
+    preprocessed_image = preprocessing(preprocessed_image, 256, 456)
+
+    return preprocessed_image
+    
+
+
+def text_detection(input_image):
+    '''
+    Given some input image, preprocess the image so that
+    it can be used with the related text detection model
+    you downloaded previously. You can use cv2.resize()
+    to resize the image.
+    '''
+    preprocessed_image = np.copy(input_image)
+    preprocessed_image = preprocessing(preprocessed_image, 768, 1280)
+
+    return preprocessed_image
+    
+    
+def car_meta(input_image):
+    '''
+    Given some input image, preprocess the image so that
+    it can be used with the related car metadata model
+    you downloaded previously. You can use cv2.resize()
+    to resize the image.
+    '''
+    preprocessed_image = np.copy(input_image)
+    preprocessed_image = preprocessing(preprocessed_image, 72, 72)
+
+    return preprocessed_image
+
+
+2.13 solution: pre-processing inputs
+---------------------------------------
+
+
+2.14 handling network outputs
+---------------------------------------
+answer : 3
+
+
+
+
+2.15 running your firset edge app
+---------------------------------------
+
+
+
+
+2.16 exercise: deploy an app at the edge
+---------------------------------------
+
+app.py
+--------
+preprocessed_image = preprocessing(image, h, w)
+
+output_func = handle_output(args.t)
+processed_output = output_func(output, image.shape)
+
+
+handle_models.py
+--------
+heatmaps = output['Mconv7_stage2_L2']
+
+out_heatmap = np.zeros([heatmaps.shape[1], input_shape[0], input_shape[1]])
+for h in range(len(heatmaps[0])):
+    out_heatmap[h] = cv2.resize(heatmaps[0][h], input_shape[0:2][::-1])
+
+return out_heatmap
+
+
+
+text_classes = output['model/segm_logits/add']
+
+out_text = np.empty([text_classes.shape[1], input_shape[0], input_shape[1]])
+for t in range(len(text_classes[0])):
+    out_text[t] = cv2.resize(text_classes[0][t], input_shape[0:2][::-1])
+
+return out_text
+
+
+
+
+color = output['color'].flatten()
+car_type = output['type'].flatten()
+
+color_pred = np.argmax(color)
+
+type_pred = np.argmax(car_type)
+
+return color_pred, type_pred
+
+
+
+python app.py -i "images/blue-car.jpg" -t "CAR_META" -m "/home/workspace/models/vehicle-attributes-recognition-barrier-0039.xml" -c "/opt/intel/openvino/deployment_tools/inference_engine/lib/intel64/libcpu_extension_sse4.so"
+
+
+
+2.17 solution: deploy an app at the edge
+---------------------------------------
+
+
+
+2.18 recap
+---------------------------------------
+
+
+2.19 lesson glossary
+---------------------------------------
+Pre-Trained Model
+Computer Vision and/or AI models that are already trained on large datasets and available for use in your own applications. These models are often trained on datasets like ImageNet. Pre-trained models can either be used as is or used in transfer learning to further fine-tune a model. The OpenVINO™ Toolkit provides a number of pre-trained models that are already optimized for inference.
+
+
+Transfer Learning
+The use of a pre-trained model as a basis for further training of a neural network. Using a pre-trained model can help speed up training as the early layers of the network have feature extractors that work in a wide variety of applications, and often only late layers will need further fine-tuning for your own dataset. OpenVINO™ does not deal with transfer learning, as all training should occur prior to using the Model Optimizer.
+
+
+YOLO
+One of the original neural networks to only take a single look at an input image, whereas earlier networks ran a classifier multiple times across a single image at different locations and scales.
+
+
+
+
+
+
+
+
+
+
+
+
