@@ -1,0 +1,173 @@
+date start : 27 december 2019
+
+
+13.1 quiz: data dimensionality
+---------------------------------------
+2
+
+13.2 quiz: trickier data dimensionality
+---------------------------------------
+1
+
+13.3 quiz: one-dimensional, or two?
+---------------------------------------
+1
+
+13.4 quiz: slightly less perfect data
+---------------------------------------
+1
+
+13.5 quiz: trickiest data dimensionality
+---------------------------------------
+2
+
+13.6 pca for data transformation
+---------------------------------------
+
+
+13.7 quiz: center of a new coordinate system
+---------------------------------------
+2,3
+
+13.8 quiz: principla axis of new coordinate system
+---------------------------------------
+1
+
+13.9 quiz: second principal component of new system
+---------------------------------------
+-1
+1
+
+13.10 quiz: practice finding centers
+---------------------------------------
+3
+3
+
+13.11 quiz: practice finding new axes
+---------------------------------------
+2
+2
+
+
+13.12 quiz: which data is ready for pca
+---------------------------------------
+all yes
+
+
+13.13 quiz: when does an axis dominate
+---------------------------------------
+yes no yes
+
+
+13.14 quiz: measurable vs latent features quiz
+---------------------------------------
+linear regression
+
+
+13.15 quiz: from four features to two
+---------------------------------------
+1
+2
+
+13.16 quiz: compression while preserving information
+---------------------------------------
+select kbest
+
+13.17 quiz: composite features
+---------------------------------------
+4th
+
+
+13.18 quiz: maximal variance
+---------------------------------------
+further right
+
+
+13.19 quiz: advantages of maximal variance
+---------------------------------------
+2nd
+
+
+13.20 quiz: maximal variance and information loss
+---------------------------------------
+green
+
+13.21 info loss and principal components
+---------------------------------------
+
+
+13.22 quiz: neighborhood composite feature
+---------------------------------------
+1st one
+
+
+13.23 pca for feature transformation
+---------------------------------------
+
+
+13.24 quiz: maximum number of pcs quiz
+---------------------------------------
+4
+
+13.25 review/definition of pca
+---------------------------------------
+
+
+13.26 applying pca to real data
+---------------------------------------
+
+
+13.27 quiz: pca on the enron finance
+---------------------------------------
+black line
+
+
+13.28 pca in sklearn
+---------------------------------------
+
+
+13.29 when to use pca
+---------------------------------------
+
+
+13.30 quiz: pca for facial recognition
+---------------------------------------
+1
+2
+
+13.31 eigenfaces code
+---------------------------------------
+
+
+13.32 pca mini-project intro
+---------------------------------------
+
+
+13.33 pca mini-project
+---------------------------------------
+
+
+13.34 quiz: explained variance of each pc
+---------------------------------------
+0.193
+0.151
+
+13.35 quiz: how many pcs to use?
+---------------------------------------
+better
+
+
+13.36 quiz: f1 score vs no. of pcs used
+---------------------------------------
+better
+
+
+13.37 quiz: dimensionlity reduction and overfitting
+---------------------------------------
+performance drop with many pcs
+
+
+13.38 quiz: selecting principal components
+---------------------------------------
+2nd 
+
