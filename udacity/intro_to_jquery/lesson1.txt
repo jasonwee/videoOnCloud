@@ -1,0 +1,73 @@
+ud245
+
+date start : 03 january 2020
+
+
+1.1 course introduction
+---------------------------------------
+
+
+
+1.2 why does jquery exist?
+---------------------------------------
+
+
+
+1.3 quiz: what is jquery actually
+---------------------------------------
+a function
+an object
+
+1.4 money, money, money(the $)
+---------------------------------------
+
+
+
+1.5 how to use the $
+---------------------------------------
+
+
+1.6 quiz: dom inspiration
+---------------------------------------
+ul
+
+
+1.7 how is jquery included in a page?
+---------------------------------------
+
+
+1.8 quiz: select by tags
+---------------------------------------
+listElements = $('li');
+
+
+1.9 quiz: select by classes quiz
+---------------------------------------
+articleItems = $('.article-item')
+
+
+
+1.10 quiz: select by ids
+---------------------------------------
+nav = $('#nav');
+
+
+1.11 family tree revisited
+---------------------------------------
+
+
+
+1.12 quiz: filters quiz
+---------------------------------------
+h1 = articleList.siblings()
+
+kids = articleList.children();
+
+parents = articleList.parents();
+
+
+1.13 high five!
+---------------------------------------
+
+
+
