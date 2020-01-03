@@ -1,0 +1,90 @@
+date start : 03 january 2020
+
+
+14.1 cross validation for fun and profit
+---------------------------------------
+
+
+14.2 quiz: benefits of testing
+---------------------------------------
+1
+2
+
+
+14.3 quiz: train/test split in sklearn
+---------------------------------------
+features_train, features_test, labels_train, labels_test = cross_validation.train_test_split(iris.data, iris.target, test_size=0.4, random_state=0)
+
+
+14.4 quiz: where to use training vs. testing data 1
+---------------------------------------
+training features
+
+
+14.5 quiz: where to use training vs. testing data 2
+---------------------------------------
+training features
+
+14.6 quiz: where to use training vs. testing data 3
+---------------------------------------
+test features
+
+
+14.7 quiz: where to use training vs. testing data 4
+---------------------------------------
+test features
+
+
+14.8 quiz: k-fold cross validation
+---------------------------------------
+left
+right
+right
+
+
+14.9 k-fold cv in sklearn
+---------------------------------------
+
+
+14.10 practical advice for k-fold in sklearn
+---------------------------------------
+
+
+
+14.11 cross validation for parameter tuning
+---------------------------------------
+
+
+
+
+14.12 gridsearchcv in skelearn
+---------------------------------------
+
+
+14.13 quiz: gridsearchcv in sklearn
+---------------------------------------
+c
+gamma
+
+
+14.14 on to the validation mini-project
+---------------------------------------
+
+
+14.15 validation mini-project video
+---------------------------------------
+
+
+14.16 validation mini-project
+---------------------------------------
+
+
+14.17 quiz: your first(overfit) poi identifier
+---------------------------------------
+0.989
+
+14.18 quiz: deploying a training/testing regime
+---------------------------------------
+0.724
+
+
