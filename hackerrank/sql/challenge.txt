@@ -1,0 +1,17 @@
+select * from city where COUNTRYCODE = 'USA' AND POPULATION > 100000;
+
+select name from city where COUNTRYCODE = 'USA' AND POPULATION > 120000;
+
+select * from city;
+
+select * from city where ID = 1661;
+
+select * from city where COUNTRYCODE = 'JPN';
+
+select name from city where COUNTRYCODE = 'JPN';
+
+SELECT CITY, STATE from STATION;
+
+SELECT distinct(CITY) from STATION WHERE right(ID,1) % 2 = 0;
+
+
