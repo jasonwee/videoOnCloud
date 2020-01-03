@@ -2,6 +2,8 @@ language: java
 jdk:
  - oraclejdk8
 
+install: ant deps
+
 script: ant -f build/build.xml jar
 
 notifications:
