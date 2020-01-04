@@ -14,4 +14,28 @@ SELECT CITY, STATE from STATION;
 
 SELECT distinct(CITY) from STATION WHERE right(ID,1) % 2 = 0;
 
+select count(1) - count(distinct(city)) from station;
 
+(
+    SELECT CITY, LENGTH(CITY) AS `length`
+    FROM STATION
+    WHERE 1
+    ORDER BY `length` ASC, CITY ASC
+    LIMIT 1
+) UNION (
+    SELECT CITY, LENGTH(CITY) AS `length`
+    FROM STATION
+    WHERE 1
+    ORDER BY `length` DESC, CITY ASC
+    LIMIT 1
+)
+
+select city from station where city REGEXP '^[aeiou]';
+
+select distinct(city) from station where city REGEXP '[aeiou]$';
+
+select distinct(city) from station where city REGEXP '^[aeiou]' and city REGEXP '[aeiou]$';
+
+select distinct(city) from station where city not REGEXP '^[aeiou]';
+
+select distinct(city) from station where city not REGEXP '[aeiou]$';
