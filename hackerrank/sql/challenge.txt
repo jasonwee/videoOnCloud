@@ -77,5 +77,47 @@ group by h.hacker_id, h.name
 having count(s.hacker_id) > 1
 order by count(s.hacker_id) desc, s.hacker_id asc
 
+SELECT CASE WHEN A + B <= C OR A + C <= B OR B + C <= A THEN 'Not A Triangle'
+            WHEN A = B AND B = C THEN 'Equilateral'
+            WHEN A = B OR A = C OR B = C THEN 'Isosceles'
+            ELSE 'Scalene'
+        END
+FROM TRIANGLES
 
 
+SELECT CONCAT(Name, CONCAT(
+    '(', CONCAT(LEFT(Occupation,1),')')))  
+FROM OCCUPATIONS
+ORDER BY Name ASC;
+
+SELECT CONCAT('There are a total of', CONCAT(' ', CONCAT(COUNT(Occupation), CONCAT(' ', CONCAT(LOWER(Occupation),'s.')))))
+FROM OCCUPATIONS
+GROUP BY Occupation
+ORDER BY COUNT(OCCUPATION), OCCUPATION ASC;
+
+
+SELECT N, IF(P IS NULL,'Root',IF((SELECT COUNT(*) FROM BST WHERE P=B.N)>0,'Inner','Leaf')) FROM BST AS B ORDER BY N;
+
+
+select c.company_code, c.founder, 
+    count(distinct l.lead_manager_code), count(distinct s.senior_manager_code), 
+    count(distinct m.manager_code),count(distinct e.employee_code) 
+from Company c, Lead_Manager l, Senior_Manager s, Manager m, Employee e 
+where c.company_code = l.company_code 
+    and l.lead_manager_code=s.lead_manager_code 
+    and s.senior_manager_code=m.senior_manager_code 
+    and m.manager_code=e.manager_code 
+group by c.company_code order by c.company_code;
+
+
+select  
+        C.company_code ,
+        C.founder,
+        count(distinct lead_manager_Code),
+        count(distinct senior_manager_Code),
+        count(distinct Manager_Code),
+        count(distinct Employee_Code)
+    from Company C
+        join Employee E on E.company_Code = C.company_Code
+    group by C.company_code , C.founder
+    order by C.company_code asc
