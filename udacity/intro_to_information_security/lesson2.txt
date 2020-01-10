@@ -1,0 +1,93 @@
+date start : 10 january 2020
+
+
+2.1 video time
+---------------------------------------
+
+
+
+2.2 recommended reading
+---------------------------------------
+
+
+
+2.3 course notes
+---------------------------------------
+
+
+2.4 part 1 introduction
+---------------------------------------
+
+
+
+2.5 lesson introduction
+---------------------------------------
+
+
+2.7 quiz: security impact uqiz
+---------------------------------------
+facebook, twitter, mozilla
+
+2.8 cyber assets at risk
+---------------------------------------
+
+
+2.9 vulnerabilities and attacks
+---------------------------------------
+
+
+2.10 a real world example
+---------------------------------------
+
+
+2.11 quiz: black market prices quiz
+---------------------------------------
+2
+40
+27
+10
+
+2.12 quiz: sony pictures quiz
+---------------------------------------
+3
+2
+1
+
+
+2.13 revisiting threats, etc
+---------------------------------------
+
+
+2.14 what should we do it in cyber security?
+---------------------------------------
+
+
+
+2.15 quiz: security  requirements quiz
+---------------------------------------
+confidentiality
+
+
+2.16 what should the good guys do?
+---------------------------------------
+
+
+2.17 quiz: losses due to cyber crime quiz
+---------------------------------------
+2
+
+2.18 how do we address cyber security?
+---------------------------------------
+
+
+2.19 quiz: security mindset quiz
+---------------------------------------
+2
+
+
+2.20 lesson summary
+---------------------------------------
+
+
+
+
