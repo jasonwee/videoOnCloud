@@ -1,0 +1,66 @@
+date start : 17 january 2020
+
+
+3.1 intro to event listening with jquery
+---------------------------------------
+
+
+
+3.2 what are browser events?
+---------------------------------------
+
+
+
+3.3 quiz: monitorEvents quiz
+---------------------------------------
+mouseout
+mouseover
+mousemove
+
+
+3.4 anatomy of a jquery event listener
+---------------------------------------
+
+
+
+3.5 quiz: jquery event listener order quiz
+---------------------------------------
+b c d a
+
+
+3.6 quiz: jquery event listener
+---------------------------------------
+$('#my-button').click('remove', function() {
+    $('#my-button').remove();
+    $("body").addClass('success');
+});
+
+
+3.7 the event object
+---------------------------------------
+
+
+3.8 the convenience method
+---------------------------------------
+
+
+
+3.9 quiz: convenience methods quiz
+---------------------------------------
+hover
+
+
+3.10 jquery's multifunctional .on method
+---------------------------------------
+
+
+3.11 event delegation
+---------------------------------------
+
+
+3.12 outro
+---------------------------------------
+
+
+
+
