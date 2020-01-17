@@ -1,0 +1,111 @@
+date start : 17 january 2020
+
+
+3.1 intro
+---------------------------------------
+
+
+3.2 Gaussian Noise
+---------------------------------------
+
+
+
+3.3 Averaging Assumptions
+---------------------------------------
+
+
+
+3.4 Quiz: Noise Quiz
+---------------------------------------
+answer: b
+
+
+3.5 Weighted Moving Average
+---------------------------------------
+
+
+3.6 Quiz: Moving Average Quiz
+---------------------------------------
+answer: a
+
+
+3.7 Quiz: Compare Filter Results Quiz
+---------------------------------------
+answer: original
+[14641]
+[11111]
+
+3.8 Moving Average in 2D
+---------------------------------------
+
+
+3.9 Correlation Filtering
+---------------------------------------
+
+
+3.10 Averaging Filter
+---------------------------------------
+
+
+3.11 Quiz: Blur Quiz
+---------------------------------------
+answer: c
+
+3.12 Gaussian Filter
+---------------------------------------
+
+
+3.13 Quiz: Gaussian Quiz
+---------------------------------------
+answer: a
+
+
+3.14 Variance or Standard Deviation
+---------------------------------------
+
+
+3.15 Matlab
+---------------------------------------
+
+
+3.16 Quiz: Remove Noise
+---------------------------------------
+answer: 
+% Apply a Gaussian filter to remove noise
+img = imread('saturn.png');
+imshow(img);
+
+% TODO: Add noise to the image
+noise_sigma = 25;
+noise = randn(size(img)) * noise_sigma;
+noisy_img = img + noise;
+imshow(noisy_img);
+
+% TODO: Now apply a Gaussian filter to smooth out the noise
+% Note: You may need to pkg load image;
+
+%% create a guassian filter
+filter_size = 11;
+filter_sigma = 2;
+pkg load image;
+filter = fspecial('gaussian', filter_size, filter_sigma);
+
+%% apply it to remove noise
+smoothed = imfilter(noisy_img, filter);
+imshow(smoothed);
+
+
+
+3.17 Quiz: Gaussian Filter Quiz
+---------------------------------------
+answer: d
+
+3.18 Keeping The Two Gaussians Straight
+---------------------------------------
+
+
+3.19 End
+---------------------------------------
+
+
+
