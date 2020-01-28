@@ -1,0 +1,169 @@
+date start : 24 january 2020
+
+
+4.1 video time
+---------------------------------------
+
+
+
+4.2 recommended reading
+---------------------------------------
+
+
+
+4.3 course notes
+---------------------------------------
+
+
+
+4.4 lesson introduction
+---------------------------------------
+
+
+4.5 operating systems defined
+---------------------------------------
+
+
+4.6 operating systems
+---------------------------------------
+
+
+4.7 need for trusting an operating system
+---------------------------------------
+
+
+
+4.8 os and resource protection
+---------------------------------------
+
+
+
+4.9 quiz: secure os quiz 1
+---------------------------------------
+2
+
+
+4.10 quiz: secure os quiz 2
+---------------------------------------
+higher
+
+
+4.11 quiz: secure os quiz 3
+---------------------------------------
+1
+
+4.12 how can we trust an os
+---------------------------------------
+
+
+
+4.13 system calls from user to os code
+---------------------------------------
+
+
+4.14 untrusted user code isolation
+---------------------------------------
+
+
+4.15 quiz: user isolation quiz
+---------------------------------------
+1
+2
+
+
+4.16 address space
+---------------------------------------
+
+
+4.17 unit of isolation
+---------------------------------------
+
+
+4.18 address translation
+---------------------------------------
+
+
+
+4.19 code protection
+---------------------------------------
+
+
+4.20 process protection through memory management
+---------------------------------------
+
+
+4.21 quiz: revisting stack overflow quiz
+---------------------------------------
+1
+
+4.22 preventing malicious code execution
+---------------------------------------
+
+
+4.23 os isolation from application code part 1
+---------------------------------------
+
+
+4.24 os isolation from application code part 2
+---------------------------------------
+
+
+4.25 kernel memory split
+---------------------------------------
+
+
+4.26 quiz: execution privilege level quiz
+---------------------------------------
+os
+os
+os 
+user
+
+4.27 complete mediation the tcb
+---------------------------------------
+
+
+4.28 complete mediation the user code
+---------------------------------------
+
+
+4.29 complete mediation os
+---------------------------------------
+
+
+4.30 virtualization
+---------------------------------------
+
+
+4.31 limiting the damage of a hacked os
+---------------------------------------
+
+
+4.32 virtualization security layers
+---------------------------------------
+
+
+4.33 correctness the final tcb requirement
+---------------------------------------
+
+
+4.34 quiz: tcb requirements quiz
+---------------------------------------
+tamper-proof
+
+
+4.35 quiz: size of security code quiz
+---------------------------------------
+10k x
+
+
+4.36 quiz: hypervisor code  quiz
+---------------------------------------
+150k
+
+
+4.37 lesson summary
+---------------------------------------
+
+
+
