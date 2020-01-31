@@ -1,0 +1,159 @@
+date start : 31 january 2020
+
+
+5.1 video time
+---------------------------------------
+
+
+
+5.2 recommended reading
+---------------------------------------
+
+
+
+5.3 course notes
+---------------------------------------
+
+
+
+5.4 lesson introduction
+---------------------------------------
+
+
+5.5 what is authentication
+---------------------------------------
+
+
+5.6 authenticaiton goals
+---------------------------------------
+
+
+5.7 quiz: authentication quiz
+---------------------------------------
+theft
+
+
+5.8 how is authentication implemented
+---------------------------------------
+
+
+
+5.9 quiz: login attacks quiz
+---------------------------------------
+false positive
+
+
+5.10 quiz: implementation quiz
+---------------------------------------
+have
+
+
+5.11 Threat modeling of the password method
+---------------------------------------
+
+
+
+5.12 importance of a trusted path
+---------------------------------------
+
+
+
+5.13 quiz: passowrd popularity quiz
+---------------------------------------
+123456
+password
+qwerty
+123456789
+
+5.14 implementing password authentication
+---------------------------------------
+
+
+5.15 hash functions
+---------------------------------------
+
+
+5.16 quiz: password quiz
+---------------------------------------
+2
+
+
+5.17 quiz: hashed passwords quiz
+---------------------------------------
+2
+
+
+5.18 quiz: hash function characteristics quiz
+---------------------------------------
+2
+3
+
+
+
+5.19 brute force guessing of passwords
+---------------------------------------
+
+
+5.20 passwords are not really random
+---------------------------------------
+
+
+5.21 brute force figure
+---------------------------------------
+
+
+
+5.22 quiz: unique pins quiz
+---------------------------------------
+10k
+
+
+5.23 quiz: brute force quiz
+---------------------------------------
+72 power 6
+
+
+5.24 quiz: touch screen passwords quiz
+---------------------------------------
+2
+3
+
+
+5.25 problems with passwords
+---------------------------------------
+
+
+5.26 something you have authentication
+---------------------------------------
+
+
+
+
+5.27 something you are authentication
+---------------------------------------
+
+
+5.28 other methods
+---------------------------------------
+
+
+5.29 quiz: multi factor authentication quiz
+---------------------------------------
+true
+
+
+5.30 quiz: chip and pin authentication quiz
+---------------------------------------
+vulnerabilities
+
+
+5.31 quiz: biometric authentication quiz
+---------------------------------------
+yes
+
+
+5.32 lesson summary
+---------------------------------------
+
+
+
