@@ -1,0 +1,60 @@
+date start : 31 january 2020
+
+
+5.1 intro
+---------------------------------------
+
+
+
+5.2 1d correlation
+---------------------------------------
+
+
+
+5.3 matlab cross correlation doc
+---------------------------------------
+
+
+
+5.4 quiz: find template 1d quiz
+---------------------------------------
+c = normxcorr2(t, s);
+[maxValue rawIndex] = max(c);
+index = rawIndex - size(t, 2) + 1;
+
+5.5 template matching
+---------------------------------------
+
+
+5.6 quiz: find template 2d quiz
+---------------------------------------
+ c = normxcorr2(template, img);
+ [yRaw xRaw] = find(c == max(c(:)));
+ yIndex = yRaw - size(template, 1) + 1;
+ xIndex = xRaw - size(template, 2) + 1;
+
+5.7 where's waldo?
+---------------------------------------
+
+
+
+5.8 quiz: what is it good for quiz
+---------------------------------------
+3
+
+
+5.9 non identical template matching
+---------------------------------------
+
+
+5.10 quiz: normalized correlation quiz
+---------------------------------------
+c
+
+
+5.11 end
+---------------------------------------
+
+
+
+
