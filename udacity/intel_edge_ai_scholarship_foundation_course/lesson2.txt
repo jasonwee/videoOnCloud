@@ -27,7 +27,10 @@ Types of Computer Vision Models
 * Detection
 * Segmentation
 
-
+answer:
+classification
+segmentation
+detection
 
 2.5 case studies in computer vision
 ---------------------------------------
