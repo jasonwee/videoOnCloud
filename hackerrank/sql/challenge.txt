@@ -121,3 +121,62 @@ select
         join Employee E on E.company_Code = C.company_Code
     group by C.company_code , C.founder
     order by C.company_code asc
+
+
+select count(1) from city where population > 100000;
+
+
+select count(population) from city  where district = 'California';
+
+
+
+select avg(population) from city  where district = 'California';
+
+
+
+select floor(avg(population)) from city;
+
+
+
+select sum(population) from city where countrycode = 'JPN';
+
+
+
+select max(population) - min(population) from city;
+
+
+
+SELECT CEIL(AVG(Salary)-AVG(REPLACE(Salary,'0',''))) FROM EMPLOYEES;
+
+
+
+select (salary * months) as earnings, count(*) from employee group by 1 order by earnings desc limit 1;
+
+
+select round(sum(lat_n), 2), round(sum(long_w), 2) from station;
+
+
+select round(sum(lat_n), 4) from station where lat_n between 38.7880 and 137.2345;
+
+
+
+select round(max(lat_n), 4) from station where lat_n < 137.2345;
+
+
+
+Select ROUND(LONG_W,4) from STATION WHERE LAT_N = (SELECT MAX(LAT_N) FROM STATION WHERE LAT_N<137.2345);
+
+
+Select ROUND(lat_n,4) from STATION WHERE LAT_N = (SELECT MIN(LAT_N) FROM STATION WHERE LAT_N>38.7780);
+
+
+select round(min(long_w),4)  from station  where lat_n> 38.7780  group by lat_n asc  limit 1;
+
+
+select round(max(lat_n)- min(lat_n) + max(long_w)-min(long_w),4) from station;
+
+
+
+
+
+
