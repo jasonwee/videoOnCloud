@@ -1,0 +1,145 @@
+date start : 07 february 2020
+
+
+6.1 video time
+---------------------------------------
+
+
+6.2 recommended reading
+---------------------------------------
+
+
+
+6.3 course notes
+---------------------------------------
+
+
+
+6.4 lesson introduction
+---------------------------------------
+
+
+6.5 controlling accesses to resources
+---------------------------------------
+
+
+6.6 access and authenticaton
+---------------------------------------
+
+
+6.7 access control matrix defined
+---------------------------------------
+
+
+6.8 access control matrix
+---------------------------------------
+
+
+
+6.9 quiz: data confidentiality quiz
+---------------------------------------
+1
+
+
+6.10 quiz: determining access quiz
+---------------------------------------
+2
+
+
+6.11 quiz: discretionary access control quiz
+---------------------------------------
+no
+
+
+
+6.12 implementing access control
+---------------------------------------
+
+
+
+6.13 example access control matrix
+---------------------------------------
+
+
+
+6.14 acl implementation 
+---------------------------------------
+
+
+6.15 c lists implementation
+---------------------------------------
+
+
+6.16 acl and c lists implementation acl vs c list
+---------------------------------------
+
+
+6.17 quiz: ace quiz
+---------------------------------------
+capability
+
+
+6.18 quiz: ace access quiz
+---------------------------------------
+2
+3
+
+
+6.19 quiz: revocation of rights quiz
+---------------------------------------
+acls
+
+
+6.20 access control implementation part 1
+---------------------------------------
+
+
+
+6.21 access control implementation setuid
+---------------------------------------
+
+
+
+6.22 access control implementation part 2
+---------------------------------------
+
+
+6.23 how does the os implement acl
+---------------------------------------
+
+
+6.24 quiz: time to check vs time to use quiz
+---------------------------------------
+1
+
+
+6.25 quiz: unix file sharing quiz
+---------------------------------------
+false
+
+
+6.26 quiz: setuid bit quiz
+---------------------------------------
+u1
+
+
+
+6.27 role based access control
+---------------------------------------
+
+
+6.28 quiz: rbac benefits quiz
+---------------------------------------
+false
+
+
+6.29 quiz: access control policy quiz
+---------------------------------------
+1
+
+
+6.30 lesson summary
+---------------------------------------
+
+
+
