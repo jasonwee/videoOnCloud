@@ -1,3 +1,29 @@
-https://courses.edx.org/courses/course-v1:LinuxFoundationX+LFS158x+2T2019/course/
+date start : 14 february 2020
+
+
+
+
+
+1.1 introduction and leanring objectives
+---------------------------------------
+
+
+
+1.2 from monolith to microservices
+---------------------------------------
+A monolith has a rather expensive taste in hardware. Being a large, single piece of software which continuously grows, it has to run on a single system which has to satisfy its compute, memory, storage, and networking requirements. The hardware of such capacity is both complex and pricey.
+
+Microservices can be deployed individually on separate servers provisioned with fewer resources - only what is required by each service and the host system itself.
+
+
+
+
+1.3 knowledge check
+---------------------------------------
+
+
+1.4 learning objectives (review)
+---------------------------------------
+
 
 
