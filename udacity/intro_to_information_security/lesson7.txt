@@ -1,0 +1,238 @@
+date start : 14 february 2020
+
+
+7.1 video time
+---------------------------------------
+
+
+7.2 recommended reading
+---------------------------------------
+
+
+
+7.3 course notes
+---------------------------------------
+
+
+
+7.4 lesson introduction
+---------------------------------------
+
+
+7.5 discretionary access control
+---------------------------------------
+
+
+7.6 two problems with dac
+---------------------------------------
+
+
+7.7 quiz: dac quiz
+---------------------------------------
+mac
+
+
+7.8 mandatory access control (mac) models
+---------------------------------------
+
+
+
+7.9 implementing mac
+---------------------------------------
+
+
+7.10 implementing mac example
+---------------------------------------
+
+
+7.11 quiz: health data quiz
+---------------------------------------
+hippa
+
+
+7.12 quiz: security clearance quiz
+---------------------------------------
+5m
+
+
+
+7.13 comparing labels
+---------------------------------------
+
+
+
+7.14 comparing labels example
+---------------------------------------
+
+
+7.15 ordering among labels
+---------------------------------------
+
+
+7.16 quiz: order quiz
+---------------------------------------
+total
+
+
+7.17 quiz: label domination quiz
+---------------------------------------
+3
+
+
+7.18 quiz: sensitive data quiz
+---------------------------------------
+1
+3
+
+7.19 using labels for mac confidentiality
+---------------------------------------
+
+
+7.20 preventing information flow with blp
+---------------------------------------
+
+
+
+7.21 quiz: unclassified documents quiz
+---------------------------------------
+false
+
+
+7.22 quiz: classified data quiz
+---------------------------------------
+true
+
+7.23 quiz: blp model quiz
+---------------------------------------
+1
+
+
+7.24 other mac models
+---------------------------------------
+
+
+7.25 policies for commercial environments part 1
+---------------------------------------
+
+
+7.26 policies for commercial environments part 2
+---------------------------------------
+
+
+
+7.27 quiz: clark wilson quiz 
+---------------------------------------
+2
+
+
+7.28 quiz: coi quiz
+---------------------------------------
+2
+
+
+7.29 quiz: rbac quiz
+---------------------------------------
+2
+
+
+7.30 quiz: mac support quiz
+---------------------------------------
+1
+4
+
+7.31 revisiting tcb
+---------------------------------------
+
+
+7.32 trusting software
+---------------------------------------
+
+
+7.33 tcb design principles
+---------------------------------------
+
+
+7.34 quiz: least privilege quiz
+---------------------------------------
+yes
+
+
+7.35 quiz: tcb high assurance quiz
+---------------------------------------
+open design
+
+
+7.36 quiz: design principle quiz
+---------------------------------------
+2
+
+
+7.37 support key security features
+---------------------------------------
+
+
+7.38 data protection
+---------------------------------------
+
+
+7.39 trusted paths
+---------------------------------------
+
+
+7.40 kernel design
+---------------------------------------
+
+
+7.41 kernel design and tcb
+---------------------------------------
+
+
+7.42 revisiting assurance
+---------------------------------------
+
+
+7.43 assurance challenges
+---------------------------------------
+
+
+7.44 quiz: reducing tcb size quiz
+---------------------------------------
+3
+
+
+7.45 quiz: testing tcb quiz
+---------------------------------------
+1
+
+
+7.46 quiz: model checking quiz
+---------------------------------------
+2
+
+
+7.47 security evaluations: the orange book
+---------------------------------------
+
+
+7.48 security evalutions: common criteria
+---------------------------------------
+
+
+7.49 quiz: tcsec divisions quiz
+---------------------------------------
+c
+
+7.50 quiz: earning an eal4 certification quiz
+---------------------------------------
+2
+
+
+7.51 quiz: cost benefit certification tradeoffs quiz
+---------------------------------------
+2
+
+
+7.52  lesson summary
+---------------------------------------
+
+
