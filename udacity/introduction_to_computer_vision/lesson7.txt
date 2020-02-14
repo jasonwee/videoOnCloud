@@ -1,0 +1,84 @@
+date start : 14 february 2020
+
+
+7.1 intro
+---------------------------------------
+
+
+7.2 derivative of gaussian filter 2d
+---------------------------------------
+
+
+
+7.3 quiz: smoothing quiz
+---------------------------------------
+d
+
+
+7.4 effect of sigma on derivatives
+---------------------------------------
+
+
+7.5 canny edge operator
+---------------------------------------
+
+
+7.6 canny edge detector
+---------------------------------------
+
+
+7.7 for your eyes only demo
+---------------------------------------
+
+
+7.8 quiz: for your eyes only
+---------------------------------------
+% TODO: Find edges in frizzy and froomer images
+frizzy_edge = (edge(rgb2gray(frizzy),'canny'));
+froomer_edge = (edge(rgb2gray(froomer), 'canny'));
+
+% TODO: Display common edge pixels
+k = size(frizzy_edge)
+for i = 1 : k(1)
+    for j = 1 : k(2)
+        if (frizzy_edge(i,j) == froomer_edge(i,j)) 
+             commonEdge(i,j) = frizzy_edge(i,j);
+        else
+             commonEdge(i,j)=0;
+        end
+    end
+end
+ 
+imshow(commonEdge);
+
+
+7.9 quiz: for yoru eyes only quiz
+---------------------------------------
+007
+
+
+7.10 canny results
+---------------------------------------
+
+
+
+7.11 quiz: canny edge quiz
+---------------------------------------
+c
+
+
+7.12 single 2d edge detection filter
+---------------------------------------
+
+
+
+7.13 edge demo
+---------------------------------------
+
+
+
+7.14 end
+---------------------------------------
+
+
+
