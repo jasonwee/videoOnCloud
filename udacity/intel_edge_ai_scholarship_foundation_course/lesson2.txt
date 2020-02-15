@@ -177,7 +177,7 @@ answer : 3
 
 
 
-2.15 running your firset edge app
+2.15 running your first edge app
 ---------------------------------------
 
 
