@@ -176,7 +176,37 @@ select round(min(long_w),4)  from station  where lat_n> 38.7780  group by lat_n 
 select round(max(lat_n)- min(lat_n) + max(long_w)-min(long_w),4) from station;
 
 
+SELECT ROUND(POW(POW(ABS(MAX(LAT_N) - MIN(LAT_N)), 2) + POW(ABS(MAX(lONG_W)-MIN(LONG_W)),2),1/2),4) FROM STATION;
 
+
+SELECT ROUND(AVG(dd.LAT_N), 4) as median_val
+FROM (
+SELECT d.LAT_N, @rownum:=@rownum+1 as `row_number`, @total_rows:=@rownum
+  FROM STATION d, (SELECT @rownum:=0) r
+  WHERE d.LAT_N is NOT NULL
+  ORDER BY d.LAT_N
+) as dd
+WHERE dd.row_number IN ( FLOOR((@total_rows+1)/2), FLOOR((@total_rows+2)/2) );
+
+
+select submission_date , ( SELECT COUNT(distinct hacker_id)  
+FROM Submissions s2  
+WHERE 
+   s2.submission_date = s1.submission_date AND 
+   (SELECT COUNT(distinct s3.submission_date) FROM Submissions s3 
+   WHERE s3.hacker_id = s2.hacker_id AND 
+         s3.submission_date < s1.submission_date) = dateDIFF(s1.submission_date , '2016-03-01')) ,
+         (select hacker_id  from submissions s2 where s2.submission_date = s1.submission_date 
+         group by hacker_id order by count(submission_id) desc , hacker_id limit 1) as shit,
+         (select name from hackers where hacker_id = shit)
+         from (select distinct submission_date from submissions) s1
+          group by submission_date
+
+
+SELECT REPEAT('* ', @NUMBER := @NUMBER - 1) FROM information_schema.tables, (SELECT @NUMBER:=21) t LIMIT 20
+
+
+SELECT REPEAT('* ', @NUMBER := @NUMBER + 1) FROM information_schema.tables, (SELECT @NUMBER:=0) t LIMIT 20
 
 
 
