@@ -1,0 +1,57 @@
+date start : 21 february 2020
+
+
+
+
+
+2.1 introduction
+---------------------------------------
+With container images, we confine the application code, its runtime, and all of its dependencies in a pre-defined format. And, with container runtimes like runC, containerd, or rkt we can use those pre-packaged images, to create one or more containers. All of these runtimes are good at running containers on a single host. But, in practice, we would like to have a fault-tolerant and scalable solution, which can be achieved by creating a single controller/management unit, after connecting multiple nodes together. This controller/management unit is generally referred to as a container orchestrator. 
+
+
+
+
+2.2 container orchestration
+---------------------------------------
+Containers are application-centric methods to deliver high-performing, scalable applications on any infrastructure of your choice. Containers are best suited to deliver microservices by providing portable, isolated virtual environments for applications to run without interference from other running applications.
+
+
+Microservices are lightweight applications written in various modern programming languages, with specific dependencies, libraries and environmental requirements. To ensure that an application has everything it needs to run successfully it is packaged together with its dependencies.
+
+A container image bundles the application along with its runtime and dependencies, and a container is deployed from the container image offering an isolated executable environment for the application. Containers can be deployed from a specific image on many platforms, such as workstations, Virtual Machines, public cloud, etc.
+
+
+Container orchestrators are tools which group systems together to form clusters where containers' deployment and management is automated at scale while meeting the requirements mentioned above.
+
+the list below provides a few different container orchestration tools and services available today:
+
+Amazon Elastic Container Service
+Amazon Elastic Container Service (ECS) is a hosted service provided by Amazon Web Services (AWS) to run Docker containers at scale on its infrastructure.
+Azure Container Instances
+Azure Container Instance (ACI) is a basic container orchestration service provided by Microsoft Azure.
+Azure Service Fabric
+Azure Service Fabric is an open source container orchestrator provided by Microsoft Azure.
+Kubernetes
+Kubernetes is an open source orchestration tool, started by Google, part of the Cloud Native Computing Foundation (CNCF) project.
+Marathon
+Marathon is a framework to run containers at scale on Apache Mesos.
+Nomad
+Nomad is the container orchestrator provided by HashiCorp.
+Docker Swarm
+Docker Swarm is a container orchestrator provided by Docker, Inc. It is part of Docker Engine.
+
+
+
+
+
+
+2.3 knowledge check
+---------------------------------------
+
+
+
+2.4 leanring objectives (review)
+---------------------------------------
+
+
+
