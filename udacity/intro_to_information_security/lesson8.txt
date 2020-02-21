@@ -1,0 +1,131 @@
+date start : 21 february 2020
+
+
+8.1 video time
+---------------------------------------
+
+
+8.2 recommended reading
+---------------------------------------
+
+
+
+8.3 course notes
+---------------------------------------
+
+
+
+8.4 lesson introduction
+---------------------------------------
+
+
+8.5 importance of database security
+---------------------------------------
+
+
+8.6 quiz: database threats quiz
+---------------------------------------
+2
+
+8.7 quiz: database hacking quiz
+---------------------------------------
+all
+
+8.8 relational database systems(rdbs) part 1
+---------------------------------------
+
+
+
+8.9 relational database systems(rdbs) part 2
+---------------------------------------
+
+
+8.10 relational database systems(rdbs) part 3 
+---------------------------------------
+
+
+8.11 quiz: key value quiz
+---------------------------------------
+no
+
+8.12 quiz: database views quiz
+---------------------------------------
+1
+
+
+8.13 database access control
+---------------------------------------
+
+
+8.14 quiz: database access control quiz
+---------------------------------------
+1
+
+8.15 quiz: cascading authorizations quiz
+---------------------------------------
+yes
+
+
+8.16 quiz: dac or mac quiz
+---------------------------------------
+mac
+
+
+8.17 attacks on databases sql injections part 1
+---------------------------------------
+
+
+8.18 attacks on databases- sql injections part 2
+---------------------------------------
+
+
+8.19 sql injection defenses
+---------------------------------------
+
+
+8.20 quiz: sql login quiz
+---------------------------------------
+all
+
+
+8.21 quiz: sql login quiz 2
+---------------------------------------
+2
+
+
+8.22 inference attacks on databases part 1
+---------------------------------------
+
+
+8.23 inference attacks on databases part 2
+---------------------------------------
+
+
+8.24 inference attacks on databases part 3
+---------------------------------------
+
+
+8.25 defenses against inference attacks
+---------------------------------------
+
+
+8.26 defenses against inference attacks process
+---------------------------------------
+
+
+
+8.27 quiz: sql inference attack quiz
+---------------------------------------
+yes
+
+
+8.28 quiz: sql inference attack quiz 2
+---------------------------------------
+yes
+
+
+8.29 lesson summary
+---------------------------------------
+
+
+
