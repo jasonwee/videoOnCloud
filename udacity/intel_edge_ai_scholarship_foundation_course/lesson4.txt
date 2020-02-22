@@ -1,12 +1,12 @@
 date start : 21 december 2019
 
 
-2.1 introduction
+4.1 introduction
 ---------------------------------------
 
 
 
-2.2 the inference engine
+4.2 the inference engine
 ---------------------------------------
 
 answer: 3
@@ -15,7 +15,7 @@ answer: 3
 https://docs.openvinotoolkit.org/latest/_docs_IE_DG_Deep_Learning_Inference_Engine_DevGuide.html
 
 
-2.3 supported devices
+4.3 supported devices
 ---------------------------------------
 
 
@@ -25,13 +25,13 @@ answer : all of it
 
 https://docs.openvinotoolkit.org/latest/_docs_IE_DG_supported_plugins_Supported_Devices.html
 
-2.4 using the inference engine with an ir
+4.4 using the inference engine with an ir
 ---------------------------------------
 
 
 
 
-2.5 exercise: feed an ir to the inference engine
+4.5 exercise: feed an ir to the inference engine
 ---------------------------------------
 import os
 from openvino.inference_engine import IENetwork, IECore
@@ -71,12 +71,12 @@ def load_to_IE(model_xml):
 
 
 
-2.6 solution: feed an ir to the inference engine
+4.6 solution: feed an ir to the inference engine
 ---------------------------------------
 
 
 
-2.7 sending inference requests to the ie
+4.7 sending inference requests to the ie
 ---------------------------------------
 
 
@@ -86,7 +86,7 @@ https://docs.openvinotoolkit.org/latest/classie__api_1_1ExecutableNetwork.html
 https://docs.openvinotoolkit.org/latest/classie__api_1_1InferRequest.html
 
 
-2.8 asynchronous requests
+4.8 asynchronous requests
 ---------------------------------------
 
 
@@ -94,7 +94,7 @@ answer:
 async
 sync
 
-2.9 exercise: inference requests
+4.9 exercise: inference requests
 ---------------------------------------
 
 def async_inference(exec_net, input_blob, image):
@@ -119,23 +119,23 @@ def sync_inference(exec_net, input_blob, image):
 
     return result 
 
-2.10 solution: inference requests
+4.10 solution: inference requests
 ---------------------------------------
 
 
 
-2.11 handling results
+4.11 handling results
 ---------------------------------------
 
 answer: 3
 
 
-2.12 integrating into your app
+4.12 integrating into your app
 ---------------------------------------
 
 
 
-2.13 exercise: integrate into an app
+4.13 exercise: integrate into an app
 ---------------------------------------
 app.py
 
@@ -150,7 +150,7 @@ def draw_boxes(frame, result, args, width, height):
             ymin = int(box[4] * height)
             xmax = int(box[5] * width)
             ymax = int(box[6] * height)
-            cv2.rectangle(frame, (xmin, ymin), (xmax, ymax), (0, 0, 255), 1)
+            cv4.rectangle(frame, (xmin, ymin), (xmax, ymax), (0, 0, 255), 1)
     return frame
 
 def infer_on_video(args):
@@ -162,7 +162,7 @@ def infer_on_video(args):
     net_input_shape = plugin.get_input_shape()
 
     # Get and open video capture
-    cap = cv2.VideoCapture(args.i)
+    cap = cv4.VideoCapture(args.i)
     cap.open(args.i)
 
     # Grab the shape of the input 
@@ -170,9 +170,9 @@ def infer_on_video(args):
     height = int(cap.get(4))
 
     # Create a video writer for the output video
-    # The second argument should be `cv2.VideoWriter_fourcc('M','J','P','G')`
+    # The second argument should be `cv4.VideoWriter_fourcc('M','J','P','G')`
     # on Mac, and `0x00000021` on Linux
-    out = cv2.VideoWriter('out.mp4', 0x00000021, 30, (width,height))
+    out = cv4.VideoWriter('out.mp4', 0x00000021, 30, (width,height))
     
     # Process frames until the video ends, or process is exited
     while cap.isOpened():
@@ -180,10 +180,10 @@ def infer_on_video(args):
         flag, frame = cap.read()
         if not flag:
             break
-        key_pressed = cv2.waitKey(60)
+        key_pressed = cv4.waitKey(60)
 
         ### TODO: Pre-process the frame
-        p_frame = cv2.resize(frame, (net_input_shape[3], net_input_shape[2]))
+        p_frame = cv4.resize(frame, (net_input_shape[3], net_input_shape[2]))
         p_frame = p_frame.transpose((2,0,1))
         p_frame = p_frame.reshape(1, *p_frame.shape)
 
@@ -207,7 +207,7 @@ def infer_on_video(args):
     # Release the out writer, capture, and destroy any OpenCV windows
     out.release()
     cap.release()
-    cv2.destroyAllWindows()
+    cv4.destroyAllWindows()
 
 
 
@@ -240,24 +240,24 @@ inference.py
 
 python app.py -m frozen_inference_graph.xml -ct 0.6 -c BLUE
 
-2.14 solution: integrate into an app
+4.14 solution: integrate into an app
 ---------------------------------------
 
 
 
 
-2.15 behind the scenes of inference engine
+4.15 behind the scenes of inference engine
 ---------------------------------------
 allow local processing thus speed up on getting the result on the edge device.
 
 
 
-2.16 recap
+4.16 recap
 ---------------------------------------
 
 
 
-2.17 lesson glossary
+4.17 lesson glossary
 ---------------------------------------
 nference Engine
 Provides a library of computer vision functions, supports calls to other computer vision libraries such as OpenCV, and performs optimized inference on Intermediate Representation models. Works with various plugins specific to different hardware to support even further optimizations.
