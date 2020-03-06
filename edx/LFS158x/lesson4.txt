@@ -1,0 +1,111 @@
+date start : 06 march 2020
+
+
+
+
+
+4.1 introduction and learning objectives
+---------------------------------------
+
+
+
+4.2 kubernetes architecture
+---------------------------------------
+* One or more master nodes
+* One or more worker nodes
+* Distributed key-value store, such as etcd.
+
+The master node provides a running environment for the control plane responsible for managing the state of a Kubernetes cluster, and it is the brain behind all operations inside the cluster. 
+
+
+
+A master node has the following components:
+* API server
+* Scheduler
+* Controller managers
+* etcd.
+
+
+The role of the kube-scheduler is to assign new objects, such as pods, to nodes. 
+
+
+The controller managers are control plane components on the master node running controllers to regulate the state of the Kubernetes cluster. Controllers are watch-loops continuously running and comparing the cluster's desired state (provided by objects' configuration data) with its current state (obtained from etcd data store via the API server). In case of a mismatch corrective action is taken in the cluster until its current state matches the desired state.
+
+
+
+The kube-controller-manager runs controllers responsible to act when nodes become unavailable, to ensure pod counts are as expected, to create endpoints, service accounts, and API access tokens.
+
+
+
+The cloud-controller-manager runs controllers responsible to interact with the underlying infrastructure of a cloud provider when nodes become unavailable, to manage storage volumes when provided by a cloud service, and to manage load balancing and routing.
+
+
+
+etcd is a distributed key-value data store used to persist a Kubernetes cluster's state. New data is written to the data store only by appending to it, data is never replaced in the data store. Obsolete data is compacted periodically to minimize the size of the data store.
+
+
+
+A worker node provides a running environment for client applications. 
+
+
+
+A Pod is the smallest scheduling unit in Kubernetes. It is a logical collection of one or more containers scheduled together. We will explore them further in later chapters.
+
+
+
+A worker node has the following components:
+* Container runtime
+* kubelet
+* kube-proxy
+* Addons for DNS, Dashboard, cluster-level monitoring and logging.
+
+
+The kubelet is an agent running on each node and communicates with the control plane components from the master node. It receives Pod definitions, primarily from the API server, and interacts with the container runtime on the node to run containers associated with the Pod. It also monitors the health of the Pod's running containers.
+
+
+
+The kubelet connects to the container runtime using Container Runtime Interface (CRI). CRI consists of protocol buffers, gRPC API, and libraries.
+
+
+
+
+dockershim
+With dockershim, containers are created using Docker installed on the worker nodes. Internally, Docker uses containerd to create and manage containers.
+
+
+cri-containerd
+With cri-containerd, we can directly use Docker's smaller offspring containerd to create and manage containers.
+ 
+
+CRI-O
+CRI-O enables using any Open Container Initiative (OCI) compatible runtimes with Kubernetes. At the time this course was created, CRI-O supported runC and Clear Containers as container runtimes. However, in principle, any OCI-compliant runtime can be plugged-in.
+
+
+The kube-proxy is the network agent which runs on each node responsible for dynamic updates and maintenance of all networking rules on the node. It abstracts the details of Pods networking and forwards connection requests to Pods.
+
+
+
+Addons are cluster features and functionality not yet available in Kubernetes, therefore implemented through 3rd-party pods and services.
+* DNS - cluster DNS is a DNS server required to assign DNS records to Kubernetes objects and resources
+* Dashboard - a general purposed web-based user interface for cluster management
+* Monitoring - collects cluster-level container metrics and saves them to a central data store
+* Logging - collects cluster-level container logs and saves them to a central log store for analysis.
+
+
+The Kubernetes network model aims to reduce complexity, and it treats Pods as VMs on a network, where each VM receives an IP address - thus each Pod receiving an IP address. This model is called "IP-per-Pod" and ensures Pod-to-Pod communication, just as VMs are able to communicate with each other.
+
+
+
+
+
+
+4.3 knowledge check
+---------------------------------------
+
+
+
+4.4 leanring objectives (review)
+---------------------------------------
+
+
+
