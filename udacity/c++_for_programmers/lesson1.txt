@@ -1,0 +1,654 @@
+ud210
+
+date start : 06 march 2020
+
+
+1.1 introduction to c++
+---------------------------------------
+
+
+
+1.2 why learn c++
+---------------------------------------
+
+
+
+1.3 where is c++ used?
+---------------------------------------
+
+
+1.4 what makes c++ different
+---------------------------------------
+
+
+
+1.5 course introduction
+---------------------------------------
+
+
+1.6 textbook recommendations
+---------------------------------------
+
+
+1.7 program structure
+---------------------------------------
+
+
+
+1.8 prog. quizzes explained
+---------------------------------------
+
+
+
+1.9 comments
+---------------------------------------
+
+
+
+1.10 adding comments
+---------------------------------------
+/* */
+
+//
+
+
+
+1.11 style guide
+---------------------------------------
+https://github.com/Microsoft/AirSim/blob/master/docs/coding_guidelines.md
+https://google.github.io/styleguide/cppguide.html
+
+
+1.12 HelloWorld Programming Quiz
+---------------------------------------
+#include <iostream>
+
+int main() 
+{
+    std::cout << "Hello world, I am ready for C++";
+    return 0;
+}
+
+
+
+1.13 HelloWorld Answer
+---------------------------------------
+
+
+1.14 Prog. Quiz Checker
+---------------------------------------
+
+
+
+1.15 Compile and Link
+---------------------------------------
+
+
+
+1.16 Using Namespace
+---------------------------------------
+
+
+
+
+1.17 Namespace Programming Quiz
+---------------------------------------
+/*Use the namespace keyword to simplify typing*/
+
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+    cout << "Hey, writing std:: is pain, ";
+    cout << "change the program so I don't have to write it.";
+    return 0;
+}
+
+
+
+1.18 Namespace Answer
+---------------------------------------
+
+
+
+1.19 Write to the Console
+---------------------------------------
+int integer = 4543;
+std::cout<<"The value of integer is "<<integer;
+
+
+1.20 Print Variables Programming Quiz
+---------------------------------------
+
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+    cout<<"int "<<sizeof(int)<<",";
+    cout<<"short "<<sizeof(short)<<",";
+    cout<<"long "<<sizeof(long)<<",";
+    cout<<"char "<<sizeof(char)<<",";
+    cout<<"float "<<sizeof(float)<<",";
+    cout<<"double "<<sizeof(double)<<",";
+    cout<<"bool "<<sizeof(bool)<<"\n";
+    return 0;
+}
+
+
+
+
+1.21 print variables answer
+---------------------------------------
+
+
+
+1.22 define constants
+---------------------------------------
+const int weightGoal = 100;
+
+
+
+
+1.23 enumerated constants
+---------------------------------------
+enum type_name {
+  value1,
+  value2,
+  value3,
+  .
+  .
+} object_names;
+
+
+enum MONTH {Jan, Feb, Mar, Apr, May, Jun, Jul, Aug, Sep, Oct, Nov, Dec};
+
+
+http://www.cplusplus.com/doc/tutorial/other_data_types/
+
+/*Enum example*/
+
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+    //define MONTHS as having 12 possible values
+    enum MONTHS {Jan, Feb, Mar, Apr,May,Jun,Jul,Aug,Sep,Oct,Nov,Dec};
+    
+    //define bestMonth as a variable type MONTHS
+    MONTHS bestMonth;
+    
+    //assign bestMonth one of the values of MONTHS
+    bestMonth = Jan;
+    
+    //now we can check the value of bestMonths just 
+    //like any other variable
+    if(bestMonth == Jan)
+    {
+        cout<<"I'm not so sure January is the best month\n";
+    }
+    return 0;
+}
+
+
+
+1.24 format output
+---------------------------------------
+#include <iomanip>
+
+std::cout<<"\n\nThe text without any formating\n";
+std::cout<<"Ints"<<"Floats"<<"Doubles"<< "\n";
+std::cout<<"\nThe text with setw(15)\n";
+std::cout<<"Ints"<<std::setw(15)<<"Floats"<<std::setw(15)<<"Doubles"<< "\n";
+std::cout<<"\n\nThe text with tabs\n";
+std::cout<<"Ints\t"<<"Floats\t"<<"Doubles"<< "\n";
+
+
+
+1.25 formatting output programming quiz
+---------------------------------------
+#include <iostream>
+#include <iomanip>
+
+int main()
+{
+    int a = 45;
+    float b = 45.323;
+    double c = 45.5468;
+    int aa = a + 9;
+    float bb = b + 9;
+    double cc = c + 9;
+    int aaa = aa + 9;
+    float bbb = bb + 9;
+    double ccc = cc + 9;
+
+    
+
+
+    std::cout<<"Ints"<<std::setw(15)<<"Floats"<<std::setw(15)<<"Doubles"<< "\n";
+    std::cout<<aaa<<std::setw(15)<<bbb<<std::setw(15)<<ccc<< "\n";
+    //std::cout<<"\n\nThe text with tabs\n";
+    //std::cout<<"Ints\t"<<"Floats\t"<<"Doubles"<< "\n";
+
+    return 0;
+}
+
+
+1.26 formatting output answer
+---------------------------------------
+ #include <iostream>
+ #include <iomanip>
+
+ int main()
+ {
+     int a = 45;
+     float b = 45.323;
+     double c = 45.5468;
+     int aa = a + 9;
+     float bb = b + 9;
+     double cc = c + 9;
+     int aaa = aa + 9;
+     float bbb = bb + 9;
+     double ccc = cc + 9;
+
+     std::cout<<"print with set width = 10\n";
+     std::cout<<"Ints"<<std::setw(10);
+     std::cout<<"Floats"<<std::setw(10);
+     std::cout<<"Doubles"<<std::setw(10) << "\n";
+
+     std::cout<< a;
+     std::cout<< std::setw(12)<< b;
+     std::cout<< std::setw(10)<< c << "\n";    
+
+     std::cout<< aa;
+     std::cout<< std::setw(12)<< bb;
+     std::cout<< std::setw(10)<< cc << "\n";  
+
+     std::cout<< aaa;
+     std::cout<< std::setw(12)<< bbb;
+     std::cout<< std::setw(10)<< ccc << "\n\n"; 
+
+     std::cout<<"print with tabs\n";
+     std::cout<<"Int"<<"\tFloats"<<"\tDoubles\n";
+     std::cout<< aaa<<"\t"<< bbb<<"\t"<< ccc <<"\n"; 
+
+     return 0;
+ }
+
+
+1.27 file io
+---------------------------------------
+#include <iostream>
+#include <fstream>
+#include <string>
+using namespace std;
+
+int main () {
+    string line;
+    //create an output stream to write to the file
+    //append the new lines to the end of the file
+    ofstream myfileI ("input.txt", ios::app);
+    if (myfileI.is_open())
+    {
+        myfileI << "\nI am adding a line.\n";
+        myfileI << "I am adding another line.\n";
+        myfileI.close();
+    }
+    else cout << "Unable to open file for writing";
+
+    //create an input stream to read the file
+    ifstream myfileO ("input.txt");
+    //During the creation of ifstream, the file is opened. 
+    //So we do not have explicitly open the file. 
+    if (myfileO.is_open())
+    {
+        while ( getline (myfileO,line) )
+        {
+            cout << line << '\n';
+        }
+        myfileO.close();
+    }
+
+    else cout << "Unable to open file for reading";
+
+    return 0;
+}
+
+1.28 file io programming quiz
+---------------------------------------
+
+
+1.29 header files
+---------------------------------------
+Traditionally, these files are called header files and they have an .hpp extension. 
+
+
+
+ #include "main.hpp"
+
+
+
+
+1.30 header files programming quiz
+---------------------------------------
+/*This is a header file. 
+**Put in a header file every thing that is related to 
+**"how to do a task".
+**Put the "what to do" in the main program.
+*/
+
+#include <iostream>
+#include <string>
+
+using namespace std;
+
+
+
+---
+
+#include "main.hpp"
+
+int main()
+{
+    cout<<"Hello, I use header files!";
+    return 0;
+}
+
+
+1.31 header files answer
+---------------------------------------
+
+
+1.32 user input
+---------------------------------------
+
+
+1.33 user input programming quiz
+---------------------------------------
+/*This program accepts inputs from the input.txt file*/ 
+
+#include <iostream>
+#include <string>
+
+
+int main()
+{
+    int year = 0;
+    int age = 0;
+    std::string name = " ";
+    //print a message to the user
+    std::cout<<"What year is your favorite? ";
+    
+    //get the user response and assign it to the variable year
+    std::cin >> year;
+    
+    //output response to user
+    std::cout<<"How interesting, your favorite year is "<<year<<"!\n";
+    
+    //print a message to the user
+    std::cout<<"At what age did you learn to ride a bike? ";
+    
+    //get the user response and assign it to the variable age
+    std::cin >> age;
+    
+    //output response to user
+    std::cout<<"How interesting you learned to ride at "<<age<<"!\n";
+    
+    std::cout<<"What is your name? ";
+    std::cin>>name;
+    std::cout<<"Hello "<<name<<" !\n";
+    return 0;
+}
+
+
+
+
+
+"g++", "-o main.out", "main.cpp"
+"./main.out", stdin=open("input.txt", "r")
+
+
+
+
+1991
+5
+Bob
+
+
+
+
+1.34 quiz: user io limitations quiz
+---------------------------------------
+cannot read space
+
+
+
+1.35 string input
+---------------------------------------
+http://www.cplusplus.com/reference/string/string/getline/
+
+
+#include<iostream>
+#include<string>
+
+int main()
+{
+    std::string userName; 
+    std::cout<<"Tell me your nickname?: ";
+    std::getline(std::cin, userName);
+    std::cout<<"Hello "<<userName<<"\n";
+    return 0;
+}
+
+1.36 cin and strings programming quiz
+---------------------------------------
+#include<iostream>
+#include<string>
+
+int main()
+{
+    std::string name; 
+    std::string address; 
+    std::string phoneNumber; 
+    std::string name1; 
+    std::string address1; 
+    std::string phoneNumber1; 
+    //std::cout<<"Tell me your name?: ";
+    std::getline(std::cin, name);
+    std::getline(std::cin, address);
+    std::getline(std::cin, phoneNumber);
+    std::getline(std::cin, name1);
+    std::getline(std::cin, address1);
+    std::getline(std::cin, phoneNumber1);
+    std::cout<<name<<"\n";
+    std::cout<<"\t\t "<<address<<"\n";
+    std::cout<<"\t\t"<<phoneNumber<<"\n";
+    std::cout<<name1<<"\n";
+    std::cout<<"\t\t "<<address1<<"\n";
+    std::cout<<"\t\t"<<phoneNumber1<<"\n";
+    return 0;
+}
+
+
+1.37 cin and strings answer
+---------------------------------------
+#include<iostream>
+#include<string>
+
+int main()
+{
+    std::string name1, address1, phoneNo1;
+    std::string name2, address2, phoneNo2;
+
+    //get user1 information
+    std::cout<<"User1 what is your name?\n";
+    std::getline(std::cin, name1);
+    std::cout<<"User1 what is your address?\n";
+    std::getline(std::cin, address1);
+    std::cout<<"User1 what is your phone number?\n";
+    std::getline(std::cin, phoneNo1);
+
+    //get user2 information
+    std::cout<<"User2 what is your name?\n";
+    std::getline(std::cin, name2);
+    std::cout<<"User2 what is your address?\n";
+    std::getline(std::cin, address2);
+    std::cout<<"User2 what is your phone number?\n";
+    std::getline(std::cin, phoneNo2);
+
+    //print information
+    std::cout<<"\n\n"<<name1<<"\n";
+    std::cout<<"\t\t"<<address1<<"\n";
+    std::cout<<"\t\t"<<phoneNo1<<"\n";
+
+    std::cout<<"\n\n"<<name2<<"\n";
+    std::cout<<"\t\t"<<address2<<"\n";
+    std::cout<<"\t\t"<<phoneNo2<<"\n";    
+    return 0;
+}
+
+1.38 more on strings
+---------------------------------------
+http://www.cplusplus.com/reference/sstream/
+
+#include <iostream>
+#include <string>
+#include <sstream>
+
+int main ()
+{
+  std::string stringLength;
+  float inches = 0;
+  float yardage = 0;
+
+  std::cout << "Enter number of inches: ";
+  std::getline (std::cin,stringLength);
+  std::stringstream(stringLength) >> inches;
+  std::cout<<"You entered "<<inches<<"\n";
+  yardage = inches/36;
+  std::cout << "Yardage is " << yardage;
+  return 0;
+}
+
+1.39 stringstream programming quiz
+---------------------------------------
+#include <iostream>
+#include <string>
+#include <sstream>
+
+int main ()
+{
+  std::string lengthStr, widthStr;
+  float length = 0;
+  float width = 0;
+  float area = 0;
+
+  std::cout << "Enter length: ";
+  std::getline (std::cin,lengthStr);
+  std::cout << "Enter width: ";
+  std::getline (std::cin,widthStr);
+  std::stringstream(lengthStr) >> length;
+  std::stringstream(widthStr) >> width;
+  area = length * width;
+  std::cout << "area is " << area;
+  return 0;
+}
+
+
+1.40 stringstream answer
+---------------------------------------
+ /*Goal: practice getting string inputs and 
+ **converting them to numeric variables using
+ **stringstream.
+ **
+ **Prompt the user for the length of a room. 
+ **Then prompt for the width of the room.
+ **Print out the area of the room. 
+ */
+
+ #include <iostream>
+ #include <string>
+ #include <sstream>
+
+ int main ()
+ {
+   std::string stringLength, stringWidth;
+   float length = 0;
+   float width = 0;
+   float area = 0;
+
+   std::cout << "Enter the length of the room: ";
+   //get the length as a string
+   std::getline (std::cin,stringLength);
+   //convert to a float
+   std::stringstream(stringLength) >> length;
+   //get the width as a string
+   std::cout << "Enter width: ";
+   std::getline (std::cin,stringWidth);
+   //convert to a float
+   std::stringstream(stringWidth) >> width;
+   area = length * width;
+   std::cout << "\nThe area of the room is: " << area << std::endl;
+   return 0;
+ }
+
+
+
+1.41 how to learn c++
+---------------------------------------
+
+
+1.42 c++ guidelines
+---------------------------------------
+https://github.com/isocpp/CppCoreGuidelines
+
+
+1.43 debugging practice
+---------------------------------------
+
+
+#include "main.hpp"
+
+ int main ()
+ {
+   int FTemp = 0;
+   int CTemp = 0;
+
+   cout << "Enter a Farenheit temperature: ";
+   cin >> FTemp;
+
+   CTemp = (FTemp - 32) * (5/9);
+   cout << "\n" <<FTemp << " in Farenheit = "  << CTemp << "in Celsius\n";
+   return 0;
+ }
+
+
+1.44 debugging answer
+---------------------------------------
+#include "main.hpp"
+
+     int main ()
+      {
+        float FTemp = 0;
+        float CTemp = 0;
+
+        cout << "Enter a Farenheit temperature: ";
+        cin>>FTemp;
+
+        CTemp = (FTemp - 32.0) / (9.0/5.0);
+        cout << "\n"<<FTemp <<" in farenheit = " <<CTemp<<" in Celcius\n";
+        return 0;
+      }
+
+1.45 student playground
+---------------------------------------
+
+
+
+
+
