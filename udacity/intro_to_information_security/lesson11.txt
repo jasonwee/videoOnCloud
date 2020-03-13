@@ -1,0 +1,184 @@
+date start : 13 march 2020
+
+
+11.1 video time
+---------------------------------------
+
+
+11.2 recommended reading
+---------------------------------------
+
+
+
+11.3 course notes
+---------------------------------------
+
+
+
+11.4 lesson introduction
+---------------------------------------
+
+
+11.5 defense in depth
+---------------------------------------
+
+
+11.6 what is a firewall
+---------------------------------------
+
+
+11.7 quiz: firewalls quiz
+---------------------------------------
+1
+3
+
+11.8 firewall design goals
+---------------------------------------
+
+
+11.9 firewall access policy
+---------------------------------------
+
+
+11.10 firewall limitations
+---------------------------------------
+
+
+11.11 additional, convenient firewall features
+---------------------------------------
+
+
+
+11.12 quiz: firewall features quiz
+---------------------------------------
+1  1
+3  3
+
+11.13 firewalls and filtering
+---------------------------------------
+
+
+11.14 filtering types
+---------------------------------------
+
+
+11.15 packet filtering
+---------------------------------------
+
+
+11.16 packet filtering firewall
+---------------------------------------
+
+
+11.17 quiz: firewall filtering quiz
+---------------------------------------
+3  1
+1  3
+2  2
+
+11.18 typical firewall configuration
+---------------------------------------
+
+
+11.19 packet filtering examples
+---------------------------------------
+
+
+11.20 modifying the rules on source ports
+---------------------------------------
+
+
+11.21 packet filtering advantages
+---------------------------------------
+
+
+
+11.22 packet filtering weaknesses
+---------------------------------------
+
+
+11.23 packet filtering firewall countermeasures
+---------------------------------------
+
+
+
+11.24 quiz: packet filtering quiz
+---------------------------------------
+2
+3
+
+11.25 stateful inspection firewall
+---------------------------------------
+
+
+11.26 connection state table
+---------------------------------------
+
+
+11.27 application level gateway
+---------------------------------------
+
+
+11.28 quiz: filtering quiz
+---------------------------------------
+T
+T
+F
+T
+
+
+11.29 bastion hosts
+---------------------------------------
+
+
+11.30 host based firewalls
+---------------------------------------
+
+
+11.31 host based firewall advantages
+---------------------------------------
+
+
+11.32 personal firewalls
+---------------------------------------
+
+
+11.33 advanced firewall protection
+---------------------------------------
+
+
+11.34 quiz: personal firewalls quiz
+---------------------------------------
+1
+3
+
+11.35 deploying firewalls
+---------------------------------------
+
+
+11.36 internal firewalls
+---------------------------------------
+
+
+11.37 distributed firewall deployment
+---------------------------------------
+
+
+11.38 quiz: firewall deployment quiz
+---------------------------------------
+A
+
+
+11.39 quiz: stand aloen firewall quiz
+---------------------------------------
+B
+
+11.40 firewall topologies
+---------------------------------------
+
+
+11.41 lesson summary
+---------------------------------------
+
+
+
