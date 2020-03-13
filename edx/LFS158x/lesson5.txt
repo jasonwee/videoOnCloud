@@ -1,0 +1,55 @@
+date start : 13 march 2020
+
+
+
+
+
+5.1 introduction and learning objectives
+---------------------------------------
+
+
+
+5.2 installing kubernetes
+---------------------------------------
+Kubernetes can be installed using different configurations. The four major installation types are briefly presented below:
+
+* All-in-One Single-Node Installation
+In this setup, all the master and worker components are installed and running on a single-node. While it is useful for learning, development, and testing, and it should not be used in production. Minikube is one such example, and we are going to explore it in future chapters.
+* Single-Node etcd, Single-Master and Multi-Worker Installation
+In this setup, we have a single-master node, which also runs a single-node etcd instance. Multiple worker nodes are connected to the master node.
+* Single-Node etcd, Multi-Master and Multi-Worker Installation
+In this setup, we have multiple-master nodes configured in HA mode, but we have a single-node etcd instance. Multiple worker nodes are connected to the master nodes.
+* Multi-Node etcd, Multi-Master and Multi-Worker Installation
+In this mode, etcd is configured in clustered HA mode, the master nodes are all configured in HA mode, connecting to multiple worker nodes. This is the most advanced and recommended production setup.
+
+
+These are only a few localhost installation options available to deploy single- or multi-node Kubernetes clusters on our workstation/laptop:
+
+* Minikube - single-node local Kubernetes cluster
+* Docker Desktop - single-node local Kubernetes cluster for Windows and Mac
+* CDK on LXD - multi-node local cluster with LXD containers.
+
+
+
+
+* kubeadm
+kubeadm is a first-class citizen on the Kubernetes ecosystem. It is a secure and recommended way to bootstrap a single- or multi-node Kubernetes cluster. It has a set of building blocks to setup the cluster, but it is easily extendable to add more features. Please note that kubeadm does not support the provisioning of hosts.
+* kubespray
+With kubespray (formerly known as kargo), we can install Highly Available Kubernetes clusters on AWS, GCE, Azure, OpenStack, or bare metal. Kubespray is based on Ansible, and is available on most Linux distributions. It is a Kubernetes Incubator project.
+* kops
+With kops, we can create, destroy, upgrade, and maintain production-grade, highly-available Kubernetes clusters from the command line. It can provision the machines as well. Currently, AWS is officially supported. Support for GCE is in beta, and VMware vSphere in alpha stage, and other platforms are planned for the future. Explore the kops project for more details.
+* kube-aws
+With kube-aws we can create, upgrade and destroy Kubernetes clusters on AWS from the command line. Kube-aws is also a Kubernetes Incubator project.
+
+
+5.3 knowledge check
+---------------------------------------
+
+
+
+5.4 learning objectives (review)
+---------------------------------------
+
+
+
+
