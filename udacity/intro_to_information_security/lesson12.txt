@@ -1,0 +1,314 @@
+date start : 20 march 2020
+
+
+12.1 video time
+---------------------------------------
+
+
+12.2 recommended reading
+---------------------------------------
+
+
+
+12.3 course notes
+---------------------------------------
+
+
+
+12.4 lesson introduction
+---------------------------------------
+
+
+12.5 defense in depth
+---------------------------------------
+
+
+12.6 intrusion examples
+---------------------------------------
+
+
+12.7 quiz: intrusion detection quiz
+---------------------------------------
+F
+I
+I
+F
+
+12.8 intrusion detection system (ids)
+---------------------------------------
+
+
+12.9 intruder behavior
+---------------------------------------
+
+
+12.10 quiz: intruder quiz
+---------------------------------------
+T
+F
+T
+F
+T
+
+12.11 quiz: types of backdoors quiz
+---------------------------------------
+C
+A
+B
+
+
+12.12 elements of intrusion detection
+---------------------------------------
+
+
+12.13 components of intrusion detection systems
+---------------------------------------
+
+
+12.14 intrusion detection approaches
+---------------------------------------
+
+
+12.15 analysis approaches
+---------------------------------------
+
+
+12.16 quiz: analysis detection quiz
+---------------------------------------
+all true
+
+
+12.17 quiz: signature detection quiz
+---------------------------------------
+2
+3
+
+12.18 a variety of classification approaches
+---------------------------------------
+
+
+12.19 quiz: anomoly quiz
+---------------------------------------
+all
+
+
+12.20 statistical approaches
+---------------------------------------
+
+
+12.21 knowledge based approach
+---------------------------------------
+
+
+
+12.22 quiz: statistical & knowledge based approaches quiz
+---------------------------------------
+S
+K
+
+12.23 machine learning appproaches
+---------------------------------------
+
+
+
+12.24 machine learning intruder detection approaches
+---------------------------------------
+
+
+12.25 quiz: machien learning quiz
+---------------------------------------
+similar to past attacks
+
+
+12.26 limitations of anomaly detection
+---------------------------------------
+
+
+12.27 anomaly detection example
+---------------------------------------
+
+
+12.28 misuse or signature detection
+---------------------------------------
+
+
+12.29 quiz: anomalous behavior quiz
+---------------------------------------
+uses a firewall
+
+
+12.30 signature apporaches
+---------------------------------------
+
+
+12.31 signature approach advantages & disadvantages
+---------------------------------------
+
+
+12.32 quiz: zero day market place quiz
+---------------------------------------
+all
+
+12.33 rule based detection
+---------------------------------------
+
+
+12.34 misuse signature intruder detection
+---------------------------------------
+
+
+12.35 quiz: attacks quiz
+---------------------------------------
+S
+D
+P
+
+12.36 monitoring networks and hosts
+---------------------------------------
+
+
+12.37 network ids
+---------------------------------------
+
+
+12.38 network based ids (nids)
+---------------------------------------
+
+
+12.39 host ids
+---------------------------------------
+
+
+12.40 quiz: nids quiz
+---------------------------------------
+prioritize the report
+
+
+12.41 inline sensors
+---------------------------------------
+
+
+12.42 passive sensors
+---------------------------------------
+
+
+12.43 firewall versus network ids
+---------------------------------------
+
+
+12.44 quiz: ids quiz
+---------------------------------------
+T
+T
+F
+T
+T
+
+12.45 nids sensor deployed
+---------------------------------------
+
+
+12.46 quiz: nids sensor deployed quiz
+---------------------------------------
+2
+4
+
+12.47 snort
+---------------------------------------
+
+
+12.48 snort components 
+---------------------------------------
+
+
+12.49 snort configuration
+---------------------------------------
+
+
+12.50 snort rules
+---------------------------------------
+
+
+12.51 snort rules options
+---------------------------------------
+
+
+12.52 snort rule actions
+---------------------------------------
+
+
+12.53 snort rule example
+---------------------------------------
+
+
+12.54 quiz: snort quiz
+---------------------------------------
+all
+
+12.55 honeypots
+---------------------------------------
+
+
+12.56 honeypots classification
+---------------------------------------
+
+
+12.57 honeypot deployment
+---------------------------------------
+
+
+12.58 quiz: honeypot quiz
+---------------------------------------
+T
+F
+F
+
+12.59 evaluating ids
+---------------------------------------
+
+
+12.60 bayesian detection rate
+---------------------------------------
+
+
+12.61 architecture of network ids
+---------------------------------------
+
+
+12.62 quiz: ids quiz
+---------------------------------------
+1
+3
+
+12.63 eluding network ids
+---------------------------------------
+
+
+12.64 insertion attack
+---------------------------------------
+
+
+12.65 evasion attack
+---------------------------------------
+
+
+12.66 dos attacks on network ids
+---------------------------------------
+
+
+12.67 intrusion prevention systems (ips)
+---------------------------------------
+
+
+12.68 quiz: ids attack quiz
+---------------------------------------
+all
+
+
+12.69 lesson summary
+---------------------------------------
+
+
+
+
+
