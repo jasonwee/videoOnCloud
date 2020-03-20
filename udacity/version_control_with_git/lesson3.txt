@@ -1,0 +1,70 @@
+date start : 20 march 2020
+
+
+3.1 intro
+---------------------------------------
+
+
+
+3.2 displaying a repository's commits
+---------------------------------------
+git status
+
+can't tell
+
+no clue
+
+richard
+
+Convert social links from text to images
+
+Mon Dec 5 10:11:51
+
+5de135a
+
+
+
+3.3 changing how git log displays information
+---------------------------------------
+q
+
+3.4 viewing modified files
+---------------------------------------
+no way to know
+
+2 files
+
+2 files
+
+4 lines
+
+
+
+
+3.5 viewing file changes
+---------------------------------------
+line 127
+
+#2e3d49
+
+4
+
+ignore whitespaces
+
+
+
+3.6 viewing a specific commit
+---------------------------------------
+2
+
+5 files
+
+h2
+
+
+3.7 outro
+---------------------------------------
+
+
+
+
