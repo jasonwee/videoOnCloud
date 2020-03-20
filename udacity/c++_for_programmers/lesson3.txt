@@ -1,0 +1,288 @@
+date start : 20 march 2020
+
+
+3.1 C++ Learning Strategy
+---------------------------------------
+
+
+
+3.2 Introduction
+---------------------------------------
+
+
+
+
+3.3 Arithmetic Operations
+---------------------------------------
+#include<cmath>
+
+std::pow(base, exponent)
+
+
+//3^5 is equal to std::pow(3, 5)
+std::pow(3, 5)
+
+
+
+
+
+#include<cmath>
+
+ //pi is equal to M_PI
+M_PI = 3.14159265358979323846
+
+
+http://www.cplusplus.com/doc/tutorial/operators/
+
+
+
+
+
+
+3.4 Arithmetic Operations Programming Quiz
+---------------------------------------
+#include<iostream>
+#include<cmath>
+
+using namespace std;
+
+int main()
+{
+    //Dimension of the cube
+    float cubeSide = 5.4;
+    //Dimension of sphere
+    float sphereRadius = 2.33;
+    //Dimensions of cone
+    float coneRadius = 7.65;
+    float coneHeight = 14;
+    
+    float volCube = pow(cubeSide, 3);
+    float volSphere = (4/3) * M_PI * pow(sphereRadius, 3) ;
+    float volCone = M_PI * pow(coneRadius, 2) * (coneHeight/3);
+    
+    cout << volCube << endl;
+    cout << volSphere << endl;
+    cout << volCone << endl;
+    
+    return 0;
+}
+
+157.464
+52.9854
+857.985
+
+
+3.5 Arithmetic Operations Answer
+---------------------------------------
+
+
+3.6 Variable Assignment
+---------------------------------------
+#include<iostream>
+
+int main()
+{
+    
+    int a = 65;
+    char charA = 65;
+    char charB = 'B';
+    float answer = 0;
+    char charC = 67;
+    int integer = 80;
+    float floatNumber = 0.0;
+    
+    std::cout<<"a = "<<a<<"\n";
+    std::cout<<"charA = "<<charA<<"\n";
+    std::cout<<"charB = "<<charB<<"\n";
+    
+    //we can assign an integer to a float
+    floatNumber = integer;
+    std::cout<<"integer = "<<integer<<"\n\n";
+    std::cout<<"floatNumber = integer = "<<floatNumber<<"\n";
+    
+    //we can assign a char to a float
+    floatNumber = charB;
+    std::cout<<"floatNumber = charB = "<<floatNumber<<"\n";  
+    
+    answer = floatNumber/4;
+    std::cout<<"answer = floatNumber/4 = "<<answer<<"\n"; 
+    
+    //But assigning a float to a char doesn't quite work
+    charC = answer;
+    std::cout<<"charC = answer = "<<charC<<"\n";
+    
+    //assigning a float to an interger, results in the float being truncated
+    integer = answer;
+    std::cout<<"integer = floatNumber = "<<integer<<"\n";   
+    return 0;
+}
+
+
+
+
+3.7 Correct Variable Types
+---------------------------------------
+answer: 24
+
+
+3.8 Correct Variable Type 2 Quiz
+---------------------------------------
+answer: 8
+
+
+3.9 Correct Variable Type Programming Quiz
+---------------------------------------
+#include <iostream>
+int main(void)
+{
+    int numerator = 4;
+    int denominator = 5;
+
+    float answer = numerator *1.0 / denominator;
+    std::cout<<"answer = "<<answer;
+    return 0;
+}
+
+
+
+3.10 Correct Variable Answer
+---------------------------------------
+
+
+3.11 PreFix and PostFix
+---------------------------------------
+Incrementing
+
+prefix: ++a
+postfix: a++
+Decrementing
+
+prefix: --a
+postfix: a--
+The difference between prefix and postfix is subtle, but crucial.
+
+
+
+Prefix operators increment the value of the variable, then return the reference to the variable.
+
+Postfix operators create a copy of the variable and increments the value of the variable. Then it returns a copy from BEFORE the increment.
+
+
+https://en.cppreference.com/w/cpp/language/operator_incdec
+
+
+
+
+3.12 PreFix and PostFix Program Example
+---------------------------------------
+#include<iostream>
+
+using namespace std;
+
+int main()
+{
+    int a, b = 0;
+    int post, pre = 0;
+    cout<<"Inital values: \t\t\tpost = "<<post<<" pre= "<<pre<<"\n";
+    post = a++;
+    pre = ++b;
+    cout<<"After one postfix and prefix: \tpost = "<<post<<" pre= "<<pre<<"\n";
+    post = a++;
+    pre = ++b;
+    cout<<"After two postfix and prefix: \tpost = "<<post<<" pre= "<<pre<<"\n";  
+    return 0;
+}
+
+
+
+
+3.13 Variable Assignment Operators
+---------------------------------------
+
+#include<iostream>
+
+int main()
+{
+    int a = 0;
+    std::cout<<"Variable\t\tOperation\tResult\n";
+    std::cout<<"a = "<<a;
+    a += 2;
+    std::cout<<"\t\t\ta += 2 \t\t a = "<<a<<"\n";
+
+    std::cout<<"a = "<<a<<" : ";
+    a -= 4;
+    std::cout<<"\t\ta -= 4 \t\t a = "<<a<<"\n";
+    
+    int b = 3;
+    std::cout<<"a = "<<a<<", b = "<<b<<" : ";
+    a *= b;
+    std::cout<<"\ta *= b \t\t a = "<<a<<"\n";
+    
+    std::cout<<"a = "<<a<<", b = "<<b<<" : ";
+    a /= b;
+    std::cout<<"\ta /= b \t\t a = "<<a<<"\n";
+        
+    
+    return 0;
+}
+
+
+
+
+
+3.14 Debug Program
+---------------------------------------
+/*Fix the errors and get an error free compilation and execution.*/
+
+//#include<input.txt>
+#include<iostream>
+#include<cmath>
+
+int main()
+{
+    int coeff1, coeff2, constant;
+    int exp1, exp2;
+    int y;
+    int x;
+    //Calculate the value of y for a user defined three term polynomial
+    //Get the coefficients, exponents, and the constants
+    std::cout<<"What is the first coefficient?";
+    std::cin>>coeff1;
+    std::cout<<coeff1<<"\n";
+    std::cout<<"What is the exponent of the first term?";
+    std::cin>>exp1;
+    std::cout<<exp1<<"\n";
+    std::cout<<"What is the second coefficient?";
+    std::cin>>coeff2;
+    std::cout<<coeff2<<"\n";
+    std::cout<<"What is the exponent of the second term?";
+    std::cin>>exp2;
+    std::cout<<exp2<<"\n";
+    std::cout<<"What is the constant?";
+    std::cin>>constant;
+    std::cout<<constant<<"\n";
+    //Print the complete equation
+    std::cout<<"The polynomial we are solving is:\n";
+    std::cout<<"\t"<<coeff1<<"*x^exp1"<<" + "<<coeff2<<"*x^"<<exp2<<"+ "<<constant;
+    std::cout<<"\nWhat is the value of x?";
+    std::cin>>x;
+    std::cout<<x<<"\n";
+    //Solve the equation with the given x
+    y = coeff1*std::pow(x,exp1) + coeff2*std::pow(x,exp2) + constant;
+    std::cout<<"y = "<<coeff1<<"*"<<x<<"^"<<exp1<<" + "<<coeff2<<"*"<<x<<"^"<<exp2<<constant<<" = "<<y;
+    return 0;
+}
+
+
+
+
+
+3.15 Debug Answer
+---------------------------------------
+
+
+3.16 Quiz: Student Playground
+---------------------------------------
+
+
+
