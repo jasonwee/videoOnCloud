@@ -1,0 +1,36 @@
+date start : 20 march 2020
+
+
+
+
+
+6.1 introduction
+---------------------------------------
+kubectl
+kubectl is a binary used to access and manage any Kubernetes cluster. It is installed separately from Minikube. Since we will install kubectl after the Minikube installation, we may see warnings during the Minikube initialization - safe to disregard for the time being, but do keep in mind that we will have to install kubectl to be able to manage the Kubernetes cluster. We will explore kubectl in more detail in future chapters.
+
+https://kubernetes.io/docs/setup/learning-environment/minikube/
+https://github.com/kubernetes/minikube
+
+
+6.2 minikube - a local single node kubernetes cluster
+---------------------------------------
+
+https://kubernetes.io/docs/tasks/tools/install-minikube/
+https://www.virtualbox.org/wiki/Linux_Downloads
+https://github.com/kubernetes/minikube/releases
+
+see installing_k8s.png
+
+
+
+6.3 knowledge check
+---------------------------------------
+
+
+
+6.4 leanring objectives (review)
+---------------------------------------
+
+
+
