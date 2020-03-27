@@ -1,0 +1,804 @@
+date start : 27 march 2020
+
+
+4.1 Intro to Control Flow
+---------------------------------------
+
+
+
+4.2 Relational Operators
+---------------------------------------
+/*Goal: learn if-else statements in C++*/
+
+#include<iostream>
+#include<string>
+
+int main()
+{
+    //instead of printing 0 and 1, create an array where 
+    //0 = False, 1 = True
+    std::string TorF[] = {"False", "True"};
+    
+    int a = 100;
+    int b = 33;
+    int c = 33;
+    
+    //Print out the string values of each relational operation
+    std::cout<<"a < b is "<<TorF[a<b];
+    std::cout<<"\na > b is "<<TorF[a>b];
+    std::cout<<"\na != b is "<<TorF[a!=b];
+    std::cout<<"\nc >= b is "<<TorF[c>=b];
+    std::cout<<"\nc <= b is "<<TorF[c<=b];    
+    return 0;
+}
+
+
+
+4.3 Logic Operators
+---------------------------------------
+#include<iostream>
+#include<string>
+
+int main()
+{
+    int A = 5;
+    int B = 4;
+    int C = 5;
+    int D = 0;
+    
+    std::string TorF[] = {"False", "True"};
+    
+    //The && operator
+    std::cout<<"A == C is "<<TorF[A==C];
+    std::cout<<"\n(B == D) is "<<TorF[B==D]; 
+    std::cout<<"\n(B > D) is "<<TorF[B>D]; 
+    //A true && false = false
+    std::cout<<"\n\n(A ==C) && (B == D) is "<<TorF[(A ==C) && (B == D)];  
+    //A true and true = true
+    std::cout<<"\n(A ==C) && (B > D) is "<<TorF[(A ==C) && (B > D)];     
+
+    //The || operator
+    //A true || false = true
+    std::cout<<"\n\n(A ==C) || (B == D) is "<<TorF[(A ==C) || (B == D)];  
+    //A true || true = true
+    std::cout<<"\n(A ==C) || (B > D) is "<<TorF[(A ==C) || (B > D)];  
+    
+    //The 'Not' operator
+    std::cout<<"\n\nA < B is "<<TorF[A<B];
+    std::cout<<"\n!(A < B) is "<<TorF[!(A<B)];
+    
+    std::cout<<"\n\nA == C is "<<TorF[A==C];
+    std::cout<<"\n!(A == C) is "<<TorF[!(A==C)];    
+    
+    return 0;
+}
+
+
+
+4.4 Truth Table Programming Quiz
+---------------------------------------
+
+
+
+4.5 Truth Table Answer
+---------------------------------------
+/*Goal: use logical and relational operators in a C++ program. 
+**Find all possible outputs for the given expression
+**Hint: there are three inputs, so there are 8 possible input combinations (2^3)
+**Which means there is an output for each combination of inputs.
+**The expression: (A and B and C) or (A and( (not B) or (not C))) = Q
+*/
+
+#include<iostream>
+
+
+int main()
+{
+    //(A and B and C) or (A and( (not B) or (not C))) = Q
+    
+    //Use this output format
+    //std::cout<<"A\tB\tC\t(A && B && C)\t\t(!B||!C)\t\t(A&&(!B||!C))\t\tQ\n";
+    //return 0;
+       //(A and B and C) or (A and( (not B) or (not C))) = Q
+
+    int A = 0;
+    int B = 0;
+    int C = 0;
+    int Q;
+    Q = (A && B && C) || (A && (!B || !C));
+
+    std::cout<<"A\tB\tC\t(A && B && C)\t\t(!B||!C)\t(A&&(!B||!C))\tQ\n";
+    std::cout<<A<<"\t"<<B<<"\t"<<C<<"\t\t"<<(A && B && C)<<"\t\t"<<(!B||!C)<<"\t\t"<<(A&&(!B||!C))<<"\t\t"<<Q<<"\n";
+
+    C = 1;
+    Q = (A && B && C) || (A && (!B || !C));
+    std::cout<<A<<"\t"<<B<<"\t"<<C<<"\t\t"<<(A && B && C)<<"\t\t"<<(!B||!C)<<"\t\t"<<(A&&(!B||!C))<<"\t\t"<<Q<<"\n";
+
+    C = 0; 
+    B = 1;
+    Q = (A && B && C) || (A && (!B || !C));
+    std::cout<<A<<"\t"<<B<<"\t"<<C<<"\t\t"<<(A && B && C)<<"\t\t"<<(!B||!C)<<"\t\t"<<(A&&(!B||!C))<<"\t\t"<<Q<<"\n";
+
+    C = 1; 
+    B = 1;
+    Q = (A && B && C) || (A && (!B || !C));
+    std::cout<<A<<"\t"<<B<<"\t"<<C<<"\t\t"<<(A && B && C)<<"\t\t"<<(!B||!C)<<"\t\t"<<(A&&(!B||!C))<<"\t\t"<<Q<<"\n";
+
+    C = 0; 
+    B = 0;
+    A = 1;
+    Q = (A && B && C) || (A && (!B || !C));
+    std::cout<<A<<"\t"<<B<<"\t"<<C<<"\t\t"<<(A && B && C)<<"\t\t"<<(!B||!C)<<"\t\t"<<(A&&(!B||!C))<<"\t\t"<<Q<<"\n";
+
+    C = 1; 
+    B = 0;
+    A = 1;
+    Q = (A && B && C) || (A && (!B || !C));
+    std::cout<<A<<"\t"<<B<<"\t"<<C<<"\t\t"<<(A && B && C)<<"\t\t"<<(!B||!C)<<"\t\t"<<(A&&(!B||!C))<<"\t\t"<<Q<<"\n";
+
+    C = 0; 
+    B = 1;
+    A = 1;
+    Q = (A && B && C) || (A && (!B || !C));
+    std::cout<<A<<"\t"<<B<<"\t"<<C<<"\t\t"<<(A && B && C)<<"\t\t"<<(!B||!C)<<"\t\t"<<(A&&(!B||!C))<<"\t\t"<<Q<<"\n";
+
+    C = 1; 
+    B = 1;
+    A = 1;
+    Q = (A && B && C) || (A && (!B || !C));
+    std::cout<<A<<"\t"<<B<<"\t"<<C<<"\t\t"<<(A && B && C)<<"\t\t"<<(!B||!C)<<"\t\t"<<(A&&(!B||!C))<<"\t\t"<<Q<<"\n";
+
+    return 0;
+}
+
+
+
+
+4.6 Quiz: Truth Table Output Quiz
+---------------------------------------
+q = a
+
+
+4.7 Truth Table Simplified
+---------------------------------------
+/*The simplified code for the Truth Table programming quiz.
+*/
+
+
+#include<iostream>
+
+
+int main()
+{
+    //(A and B and C) or (A and( (not B) or (not C))) = Q
+
+    int A = 0;
+    int B = 0;
+    int C = 0;
+    int Q;
+    Q = A;
+
+    //case 0:
+    std::cout<<"A\tB\tC\t\tQ\n";
+    std::cout<<A<<"\t"<<B<<"\t"<<C<<"\t\t"<<Q<<"\n";
+
+    C = 1;
+    Q = A;
+    std::cout<<A<<"\t"<<B<<"\t"<<C<<"\t\t"<<Q<<"\n";
+
+    C = 0; 
+    B = 1;
+    Q = A;
+    std::cout<<A<<"\t"<<B<<"\t"<<C<<"\t\t"<<Q<<"\n";
+
+    C = 1; 
+    B = 1;
+    Q = A;
+    std::cout<<A<<"\t"<<B<<"\t"<<C<<"\t\t"<<Q<<"\n";
+
+    C = 0; 
+    B = 0;
+    A = 1;
+    Q = A;
+    std::cout<<A<<"\t"<<B<<"\t"<<C<<"\t\t"<<Q<<"\n";
+
+    C = 1; 
+    B = 0;
+    A = 1;
+    Q = A;
+    std::cout<<A<<"\t"<<B<<"\t"<<C<<"\t\t"<<Q<<"\n";
+
+    C = 0; 
+    B = 1;
+    A = 1;
+    Q = A;
+    std::cout<<A<<"\t"<<B<<"\t"<<C<<"\t\t"<<Q<<"\n";
+
+    C = 1; 
+    B = 1;
+    A = 1;
+    Q = A;
+    std::cout<<A<<"\t"<<B<<"\t"<<C<<"\t\t"<<Q<<"\n";
+
+    return 0;
+}
+
+
+
+4.8 if statements
+---------------------------------------
+if(boolean expression)
+{
+     //statements to execute if the boolean expression is true
+}
+
+/*Goal: use if statements*/
+
+#include<iostream>
+
+int main()
+{
+    int a = 10;
+    
+    std::cout<<"This program checks the value of a.\n";
+    
+    if(a == 6)
+    {
+        std::cout<<"a is equal to a half dozen.\n";
+    }
+    
+    std::cout<<"There is not much to say about a\n";
+    return 0;
+}
+
+
+
+
+
+
+4.9 if-else Statements
+---------------------------------------
+if(boolean expression)
+{
+     //statements to execute if the boolean expression is true
+}
+else if (boolean expression #2)
+{
+     //statements to execute if the 'else if' boolean expression  #2 is true
+}
+
+else
+{
+     //statements to execute if the boolean expressions 
+    //'if' and 'else if'  are false
+}
+
+
+
+/*Goal: learn if-else statements in C++
+**The user guess in in the input.txt file
+**Change the value to test each of the possible 
+**code branches.*/
+
+#include<iostream>
+
+int main()
+{
+    int TARGET = 33;
+    int guess;
+    std::cout<<"Guess a number between 0 - 100\n";
+    std::cin>>guess;
+    
+    std::cout<<"You guessed: "<<guess<<"\n";
+    
+    
+    if(guess < TARGET)
+    {
+        std::cout<<"Your guess is too low.\n";
+    }
+    else if(guess > TARGET)
+    {
+        std::cout<<"Your guess is too high.\n";
+    }
+    else
+    {
+        std::cout<<"Yay! You guessed correctly.\n";
+    }
+    
+    
+    return 0;
+}
+
+
+4.10 if-else Programming Quiz
+---------------------------------------
+/*Goal: practice if-else statements in C++
+**Write a program to select the best pet. 
+*/
+
+#include<iostream>
+
+int main()
+{
+   char skin, location;
+   std::cout<<"Would you like an animal with fur(f), feathers(t), or scales(s)?";
+   std::cin>>skin;
+   std::cout<<skin<<"\n";
+   
+   //Use if-else statements to control program flow
+   if (skin == 'f') 
+     std::cout<<"Get a dog"<<"\n";
+   else if (skin == 't')
+     std::cout<<"Get a bird"<<"\n";
+   else if (skin == 's') {
+   std::cout<<"Would you like an animal that lives in water(w), land(l), or both(b)?";
+   std::cin>>location;
+   std::cout<<location<<"\n";
+   
+   //Use if-else statements to control program flow
+     if (location == 'w')
+       std::cout<<"Get a fish"<<"\n";  
+     else if (location == 'l')
+       std::cout<<"Get a gecko"<<"\n";
+     else if (location == 'b')
+       std::cout<<"Get a frog"<<"\n";
+     else
+       std::cout<<"Enter water(w), land(l), or both(b)\n";
+       
+    } else
+      std::cout<<"Please choose fur(f), feathers(t), scales(s)"<<"\n"; 
+   
+   return 0;
+}
+
+
+
+4.11 if-else Answer
+---------------------------------------
+
+
+4.12 switch Statements
+---------------------------------------
+switch(expression)
+{
+     case constant-expression : statements;
+                               break; (this is optional);
+     case constant-expression : statements;
+                               break; (this is optional);
+     ...
+
+     default : //optional
+        statements;
+}
+
+
+
+/*Goal: demonstrate use cases for the switch statement.*/
+
+#include <iostream>
+
+int main()
+{
+    int menuItem = 1;
+    
+    std::cout<<"What is your favorite winter sport?: \n";
+    std::cout<<"1.Skiing\n2: Sledding\n3: Sitting by the fire";
+    std::cout<<"\n4.Drinking hot chocolate\n";
+    std::cout<<"\n\n";
+    
+    switch(menuItem)
+    {
+        case(1): std::cout<<"Skiing?! Sounds dangerous!\n";
+                 break;
+        case(2): std::cout<<"Sledding?! Sounds like work!\n";
+                 break; 
+        case(3): std::cout<<"Sitting by the fire?! Sounds warm!\n";
+                 break;
+        case(4): std::cout<<"Hot chocolate?! Yum!\n";
+                 break;
+        default: std::cout<<"Enter a valid menu item";
+    }
+    
+    char begin;
+    std::cout<<"\n\nWhere do you want to begin?\n";
+    std::cout<<"B. At the beginning?\nM. At the middle?";
+    std::cout<<"\nE. At the end?\n\n";
+    begin = 'M';  
+    
+    switch(begin)
+    {
+        case('B'): std::cout<<"Once upon a time there was a wolf.\n";
+        case('M'): std::cout<<"The wolf hurt his leg.\n";
+        case('E'): std::cout<<"The wolf lived happily everafter\n";
+    }
+    return 0;
+}
+
+
+
+
+
+4.13 switch Statement Program
+---------------------------------------
+/*Goal: understand the switch statement in C++
+**This example does not use a break statement between 
+**the possibilities, which means all menu items below the selected
+**one are executed. 
+*/
+
+
+#include<iostream>
+
+int main()
+{
+    char menuItem;
+    std::cout<<"Choose your holiday package:\n";
+    std::cout<<"L: luxury package\nS: standard package\n";
+    std::cout<<"B: basic package ";
+    
+    std::cin>>menuItem;
+    std::cout<<menuItem<<"\n";
+        std::cout<<"The "<<menuItem<<" package includes:\n";
+    
+    switch(menuItem)
+    {
+        case 'L': 
+        {
+            std::cout<<"\tSpa Day\n";
+            std::cout<<"\tSailboat Tour\n";
+        }
+        case 'S':
+        {
+            std::cout<<"\tCity Tour\n";
+            std::cout<<"\tComplimentary Happy Hour\n";  
+        }
+        case 'B':
+        {
+            std::cout<<"\tAirport Transfers\n";
+            std::cout<<"\tComplimentary Breakfast\n"; 
+            break;
+        }
+        default:
+            std::cout<<"Please select the L,S,B package.\n";
+    }
+    return 0;
+}
+
+
+
+
+
+
+4.14 switch Programming Quiz
+---------------------------------------
+/*Now I would like you to do a switch statement with breaks
+**between the cases. Create a program that asks the user for
+**two float numbers. Then asks the user if they would like to:
+**add the numbers, subtract the numbers, multiply the numbers, 
+**divide the numbers.
+**The program should then print the numbers with the chosen
+**operation and the solution. 
+*/
+
+#include <iostream>
+
+int main()
+{
+    float in1, in2;
+    char operation;
+    std::cout<<"Enter two numbers:\n";
+    std::cin>>in1;
+    std::cin>>in2;
+    std::cout<<"Enter the operation '+','-','*','/':\n";
+    std::cin>>operation;
+    switch (operation) {
+        case '+': {
+            std::cout<<in1<<" + "<<in2<<" = "<<in1 + in2<<"\n";
+            break;
+        }
+        case '-' : {
+            std::cout<<in1<<" - "<<in2<<" = "<<in1 - in2<<"\n";
+            break;
+        }
+        case '*' : {
+            std::cout<<in1<<" * "<<in2<<" = "<<in1 * in2<<"\n";
+            break;
+        }
+        case '/' : {
+            std::cout<<in1<<" / "<<in2<<" = "<<in1 / in2<<"\n";
+            break;
+        }
+        default:
+          std::cout<<"Enter the operation '+','-','*','/':\n";
+        
+    }
+    return 0;
+}
+
+
+
+4.15 switch Programming Answer
+---------------------------------------
+
+
+4.16 for Loops
+---------------------------------------
+for ( declaration : range ) statement;
+
+for (initialization; condition; increase) statement;
+
+
+/*Goal: examine a for loop example. */
+
+#include <iostream>
+
+int main()
+{
+    for(int i=0; i< 10;i++)
+    {
+        std::cout<<"i = "<<i<<"\n";
+    }
+    return 0;
+}
+
+
+
+4.17 for Loop Programming Quiz
+---------------------------------------
+/*Write a program that asks a user for five numbers.
+**Print out the sum and average of the five numbers.
+*/
+
+#include <iostream>
+
+int main()
+{
+    int temp;
+    float sum;
+    
+    for(int i=1; i<= 5;i++)
+    {   
+        //std::cout<<"i = "<<i<<"\n";
+        std::cout<<"Please enter a number\n";
+        std::cin>>temp;
+        sum += temp;
+    }
+    std::cout<<sum<<"\n";
+    std::cout<<sum/5<<"\n";
+    return 0;
+}
+
+
+
+4.18 for Loop Answer
+---------------------------------------
+
+
+4.19 while Loops
+---------------------------------------
+while(condition)
+{
+     statements;
+}
+
+/*Goal: understand the syntax of while loops*/
+
+#include <iostream>
+
+int main()
+{
+    int entry = 0;
+    
+    //with this while loop the condition is true
+    //so the statements are executed
+    while(entry <=5)
+    {
+        std::cout<<"incrementing entry = "<<entry<<"\n";
+        entry++;
+    }
+    
+    //with this while loop the condition is false
+    //so the statements are not executed
+    while(entry < 5)
+    {
+        std::cout<<"decrementing entry = "<<entry<<"\n";
+        entry--;
+    }
+        
+    return 0;
+}
+
+
+
+
+4.20 do while Loops
+---------------------------------------
+do
+{
+     statements;
+}while(condition );
+
+
+/*Goal: understand the do..while loop*/
+
+#include <iostream>
+
+
+int main()
+{
+    int count = 0;
+    
+    //This do..while loop will execute until count =5
+    do
+    {
+        std::cout<<"Count = "<<count<<"\n";
+        count++;
+    }while(count < 5);
+
+
+    int otherCount = 6; 
+    //This do..while loop will execute once. Even though
+    //otherCount > 5
+    do
+    {
+        std::cout<<"othercount = "<<otherCount<<"\n";
+        otherCount++;
+    }while(otherCount < 5);
+    
+    return 0;
+}
+
+
+
+
+
+4.21 while Loops Programming Quiz
+---------------------------------------
+/*Goal: In the programming quiz, use a while loop to prompt
+**the user to guess a target number. 
+**Tell the user if the guess is too high or too low. 
+**The user enters -1  or guesses the target number to end 
+**the program.
+*/
+
+#include <iostream>
+#include<sstream>
+
+int main()
+{
+    //use 55 as the number to be guessed
+    int target = 55;
+    int guess = -1;
+    std::cout<<"Guess a number between 0 and 100: ";
+    std::cin>>guess;
+    std::cout<<guess<<"\n";
+    
+    while (guess != target) {
+        if ( guess > target)
+           std::cout<<"your guess is too high\n";
+        else if ( guess < target)
+           std::cout<<"your guess is too low\n";
+        else if (guess == -1 || guess == 'q') {
+           std::cout<<"quitting\n";
+           break;
+        } else if (guess == target) {
+           std::cout<<"your guess is correct!\n";
+           break;
+        }
+        std::cout<<"Guess a number between 0 and 100: ";
+        std::cin>>guess;
+        std::cout<<guess<<"\n";
+        if (guess == target) {
+           std::cout<<"your guess is correct!\n";
+           break;
+        }
+    }
+            
+    return 0;
+}
+
+
+
+
+4.22 while Loops Answer
+---------------------------------------
+/*Goal: In the programming quiz, use a while loop to prompt
+**the user to guess a target number. 
+**Tell the user if the guess is too high or too low. 
+**The user enters -1  or guesses the target number to end 
+**the program.
+*/
+#include <iostream>
+#include<sstream>
+
+int main()
+{
+    int target = 55;
+    std::string userString;
+    int guess = -1;
+
+    while(guess != target )
+    {
+        std::cout<<"Guess a number between 0 and 100: ";
+        std::cin>>guess;
+        std::cout<<guess<<"\n";
+        if(guess > target)
+            std::cout<<"Your guess is too high\n";
+        else if(guess < target)
+            std::cout<<"Your guess is too low\n";
+        else
+            std::cout<<"You guessed the target!\n";
+
+        //Note I had to use double quotes around "q"
+        //because it is a string
+        if(guess == -1)
+        {
+            std::cout<<"good bye!";
+            break;
+        }
+    }
+    return 0;
+}
+
+
+
+4.23 while Loops Random Ans
+---------------------------------------
+
+
+4.24 Infinite Loops
+---------------------------------------
+for( ; ;)
+{
+     std::cout<<"This for loop will run forever\n";
+}
+
+
+while(1)
+{
+     std::cout<<"This while loop will run forever\n";
+}
+
+
+
+4.25 Exiting Loops
+---------------------------------------
+/*Goal: understand the break and conitnue statements*/
+
+#include<iostream>
+
+
+int main()
+{
+    int a = 0;
+    while(a < 5)
+    {
+        std::cout<<"a = "<<a<<"\n";       
+        a++;
+        if(a == 3)
+            break;
+    }
+    std::cout<<"The first statement after the first while loop\n\n";
+    
+    
+    while(a < 15)
+    {
+        a++;
+        if(a == 10)
+        {
+            std::cout<<"\tWhen a=10, go back to the top of the loop";
+            std::cout<<"\n\tThis means a=10 is skipped.\n";
+            continue;
+        }
+        std::cout<<"After continue a = "<<a<<"\n";           
+    }
+    return 0;
+}
+
+
+4.26 Quiz: Student Playground
+---------------------------------------
+
+
+
+
