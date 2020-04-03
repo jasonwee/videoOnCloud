@@ -1,0 +1,192 @@
+date start : 03 april 2020
+
+
+5.1 Why Learn Pointers
+---------------------------------------
+
+
+
+5.2 How are pointers used?
+---------------------------------------
+
+
+
+
+5.3 Pointers
+---------------------------------------
+
+http://www.cplusplus.com/doc/tutorial/pointers/
+
+#include <iostream>
+
+int main()
+{
+    int a = 54;
+    std::cout<<"a = "<<a<<"\n";
+    std::cout<<"address of a is at &a = "<< &a<<"\n";
+    return 0;
+}
+
+
+
+
+
+5.4 Dereferencing Pointers
+---------------------------------------
+But what if we have a pointer and want to access the value stored in that address? That process is called dereferencing, and it is indicated by adding the operator * before the variable's name. This same operator should be used to declare a variable that is meant to store a pointer.
+
+ // this is an integer variable with value = 54
+int a = 54; 
+
+// this is a pointer that holds the address of the variable 'a'.
+// if 'a' was a float, rather than int, so should be its pointer.
+int * pointerToA = &a;  
+
+// If we were to print pointerToA, we'd obtain the address of 'a':
+std::cout << "pointerToA stores " << pointerToA << '\n';
+
+// If we want to know what is stored in this address, we can dereference pointerToA:
+std::cout << "pointerToA points to " << * pointerToA << '\n';
+
+
+
+
+5.5 Pointers Programming Quiz
+---------------------------------------
+
+/*For this program print for each variable
+**print the value of the variable, 
+**then print the address where it is stored. 
+*/
+#include<iostream>
+#include<string>
+
+int main()
+{
+    int givenInt;
+    float givenFloat;
+    double givenDouble ;
+    std::string givenString;
+    char givenChar;
+    
+    std::cout<<"givenInt = "<<givenInt<<"\n";
+    std::cout<<"givenFloat = "<<givenFloat<<"\n";
+    std::cout<<"givenDouble = "<<givenDouble<<"\n";
+    std::cout<<"givenString = "<<givenString<<"\n";
+    std::cout<<"givenChar = "<<givenChar<<"\n";
+
+    int * pointerToGivenInt = &givenInt;
+    float * pointerToGivenFloat = &givenFloat;
+    double * pointerToGivenDouble = &givenDouble;
+    std::string * pointerToGivenString = &givenString;
+    char * pointerToGivenChar = &givenChar;
+    
+    std::cout << "pointerToGivenInt stores value " << * pointerToGivenInt << '\n';
+    std::cout << "pointerToGivenFloat stores value " << * pointerToGivenFloat << '\n';
+    std::cout << "pointerToGivenDouble stores value " << * pointerToGivenDouble << '\n';
+    std::cout << "pointerToGivenString stores value " << * pointerToGivenString << '\n';
+    std::cout << "pointerToGivenChar stores value " << * pointerToGivenChar << '\n';
+
+
+    return 0;
+}
+
+
+
+5.6 Pointers Programming Answer
+---------------------------------------
+//*Sample program for Pointers*/
+
+#include<iostream>
+#include<string>
+
+int main()
+{
+    std::string name;
+    int givenInt;
+    float givenFloat;
+    double givenDouble;
+    std::string givenString;
+    char givenChar;
+    int *pointerGivenInt;
+    int **pointerPointerGivenInt;
+
+    pointerGivenInt = &givenInt;
+    pointerPointerGivenInt = &pointerGivenInt;
+
+   //Get the values of each variable
+    std::cout<<"integer = \n";
+    std::cin>>givenInt;
+    std::cout<<"float = \n";
+    std::cin>>givenFloat;
+    std::cout<<"double = \n";
+    std::cin>>givenDouble;
+    //We need to use cin.ignore so cin will ignore 
+   //the characters in the buffer leftover
+   //from the givenDouble
+    std::cin.ignore();
+    std::cout<<"character = \n";
+    std::cin>>givenChar;
+
+    std::cout<<"string = \n";
+    std::cin.ignore();
+    std::getline (std::cin,givenString);
+
+
+    //The value stored in the data
+    std::cout<<"integer = "<<givenInt<<"\n";
+    std::cout<<"float = "<<givenFloat<<"\n";
+    std::cout<<"double = "<<givenDouble<<"\n";
+    std::cout<<"string = "<<givenString<<"\n";
+    std::cout<<"character = "<<(char)givenChar<<"\n\n";
+
+    //The address of the data - use pointers
+    std::cout<<"address integer = "<<&givenInt<<"\n";
+    std::cout<<"address float = "<<&givenFloat<<"\n";
+    std::cout<<"address double = "<<&givenDouble<<"\n";
+    std::cout<<"address string = "<<&givenString<<"\n";
+    std::cout<< "address character = " << (void *) &givenChar<<"\n\n";
+
+   //Use indirection to the get the value stored at the address
+    std::cout<< "pointer of givenInt = " << *pointerGivenInt<<"\n";
+    std::cout<< "pointer of pointer of givenInt = " << **pointerPointerGivenInt<< "\n";
+
+    return 0;
+}
+
+5.7 More on Pointers Answer
+---------------------------------------
+/*Goal: Find out why you care about pointers*/
+
+#include<iostream>
+#include<string>
+
+int main ()
+{
+  int * pointerI;
+  int number;
+  char character;
+  char * pointerC;
+  std::string sentence;
+  std::string *pointerS;
+  
+  pointerI = &number;
+  *pointerI = 45;
+  
+  pointerC = &character;
+  *pointerC = 'f';
+  
+  pointerS = &sentence;
+  *pointerS = "Hey look at me, I know pointers!";
+  
+  std::cout << "number = "<<number<<"\n";
+  std::cout<<"character = "<<character<<"\n";
+  std::cout<<"sentence = "<<sentence<<"\n";
+
+  return 0;
+}
+
+
+
+5.8 Quiz: Student Playground
+---------------------------------------
