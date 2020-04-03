@@ -1,0 +1,58 @@
+date start : 03 april 2020
+
+
+5.1 intro
+---------------------------------------
+
+
+
+5.2 tagging
+---------------------------------------
+--decorate
+
+git tag -d v-1
+git tag --delete v-1
+
+git tag -a beta  b552fa5  
+
+5.3 branching
+---------------------------------------
+master
+
+4
+
+footer-fix
+
+
+
+5.4 branching effectively
+---------------------------------------
+2
+
+git diff
+
+
+
+5.5 merging
+---------------------------------------
+yes
+
+allisons-mobile-footer-fix
+
+
+
+
+5.6 merge conflicts
+---------------------------------------
+all
+
+yes
+
+
+
+5.7 outro
+---------------------------------------
+
+
+
+
