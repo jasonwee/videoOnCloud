@@ -1,0 +1,79 @@
+date start : 03 april 2020
+
+
+
+
+
+8.1 Introduction and Learning Objectives
+---------------------------------------
+
+
+
+8.2 Kubernetes Building Blocks
+---------------------------------------
+A Pod is the smallest and simplest Kubernetes object. It is the unit of deployment in Kubernetes, which represents a single instance of the application. A Pod is a logical collection of one or more containers, which:
+
+Are scheduled together on the same host with the Pod
+Share the same network namespace
+Have access to mount the same external storage (volumes).
+
+
+
+
+
+
+Labels are key-value pairs attached to Kubernetes objects (e.g. Pods, ReplicaSets). Labels are used to organize and select a subset of objects, based on the requirements in place. Many objects can have the same Label(s). Labels do not provide uniqueness to objects. Controllers use Labels to logically group together decoupled objects, rather than using objects' names or IDs.
+
+
+
+Controllers use Label Selectors to select a subset of objects. Kubernetes supports two types of Selectors:
+
+* Equality-Based Selectors
+Equality-Based Selectors allow filtering of objects based on Label keys and values. Matching is achieved using the =, == (equals, used interchangeably), or != (not equals) operators. For example, with env==dev or env=dev we are selecting the objects where the env Label key is set to value dev. 
+* Set-Based Selectors
+Set-Based Selectors allow filtering of objects based on a set of values. We can use in, notin operators for Label values, and exist/does not exist operator for Label keys. For example, with env in (dev,qa) we are selecting objects where the env Label is set to either dev or qa; with !app we select objects with no Label key app.
+
+
+
+A ReplicaSet is the next-generation ReplicationController. ReplicaSets support both equality- and set-based selectors, whereas ReplicationControllers only support equality-based Selectors. Currently, this is the only difference.
+
+With the help of the ReplicaSet, we can scale the number of Pods running a specific container application image. Scaling can be accomplished manually or through the use of an autoscaler.
+
+
+
+Deployment objects provide declarative updates to Pods and ReplicaSets. The DeploymentController is part of the master node's controller manager, and it ensures that the current state always matches the desired state. It allows for seamless application updates and downgrades through rollouts and rollbacks, and it directly manages its ReplicaSets for application scaling. 
+
+
+
+If multiple users and teams use the same Kubernetes cluster we can partition the cluster into virtual sub-clusters using Namespaces. The names of the resources/objects created inside a Namespace are unique, but not across Namespaces in the cluster.
+
+To list all the Namespaces, we can run the following command:
+
+$ kubectl get namespaces
+NAME              STATUS       AGE
+default           Active       11h
+kube-node-lease   Active       11h
+kube-public       Active       11h
+kube-system       Active       11h
+
+
+
+Generally, Kubernetes creates four default Namespaces: kube-system, kube-public, kube-node-lease, and default. The kube-system Namespace contains the objects created by the Kubernetes system, mostly the control plane agents. The default Namespace contains the objects and resources created by administrators and developers. By default, we connect to the default Namespace. kube-public is a special Namespace, which is unsecured and readable by anyone, used for special purposes such as exposing public (non-sensitive) information about the cluster. The newest Namespace is kube-node-lease which holds node lease objects used for node heartbeat data. Good practice, however, is to create more Namespaces to virtualize the cluster for users and developer teams.
+
+With Resource Quotas, we can divide the cluster resources within Namespaces. We will briefly cover resource quotas in one of the future chapters.
+
+
+
+
+
+
+8.3 Knowledge Check
+---------------------------------------
+
+
+
+8.4 Learning Objectives (Review)
+---------------------------------------
+
+
+
