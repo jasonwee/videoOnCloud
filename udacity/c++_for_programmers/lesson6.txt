@@ -1,0 +1,390 @@
+date start : 10 april 2020
+
+
+6.1 Find Min & Max
+---------------------------------------
+#include<iostream>
+#include<string>
+#include<stdio.h>
+
+int main ()
+{
+    int number;
+    int max = -1;
+    int min = 100;
+    int avg = 0;
+    for (int i = 0; i < 15; i++) {
+        scanf("%d", &number);
+        //printf ("number %d\n",number);
+        if (number > max)
+           max = number;
+        if (number < min)
+           min = number;
+        avg += number;
+        
+    }
+    
+    printf ("%d\n",min);
+    printf ("%d\n",max);
+    printf ("%f\n",avg/15.0);
+    return 0;
+}
+
+
+
+
+6.2 Find Min & Max Answer
+---------------------------------------
+#include <iostream>
+
+int main()
+{
+    int userInput = 0;
+    int maxNumber = 0;
+    int minNumber = 100;
+    int sumTotal = 0;
+    float average = 0; 
+
+    //get the numbers from the user
+    for(int i = 0; i < 15; i++)
+    {
+        std::cout << "Enter a number: ";
+        std::cin>>userInput;
+        std::cout << userInput << "\n";
+        if(userInput > maxNumber)
+        {
+            maxNumber = userInput;
+        }
+        if(userInput < minNumber)
+        {
+            minNumber = userInput;
+        }
+        sumTotal = sumTotal + userInput;
+    }
+    std::cout << "Maximum number = " << maxNumber << "\n";
+    std::cout << "Minimum number = " << minNumber << "\n";
+    average = sumTotal / 15.0;
+    std::cout << "Average = " << average << "\n";
+    return 0;
+}
+
+
+
+
+
+6.3 Arrays
+---------------------------------------
+variableType arrayName [ ] = {variables to be stored in the array};
+or
+variableType arrayName[array size]
+
+https://www.tutorialspoint.com/cplusplus/cpp_arrays.htm
+
+
+
+
+
+
+6.4 Array Practice
+---------------------------------------
+#include <iostream>
+#include <stdio.h>
+#include <algorithm>
+
+
+int main()
+{
+    int userInput[40];
+    int number;
+    for(int i = 0; i <40; i++)
+    {
+      std::cin>>number;   
+      //std::cout << number << "\n";
+      userInput[i] = number;
+    }
+    for (int i = 0; i < 40; i++) {
+        std::cout << userInput[i] << " ";
+    }
+    std::cout << "\n";
+    for (int i = 39; i >= 0; i--) {
+        std::cout << userInput[i] << " ";
+    }
+    std::cout << "\n";
+    /*
+    sort(userInput, userInput+40);
+    for (int i = 0; i < 40; i++) {
+        std::cout << userInput[i] << " ";
+    }
+    */
+    std::sort(userInput, userInput + 40);
+    for (int i = 0; i < 40; i++) {
+        std::cout << userInput[i] << " ";
+    }
+    return 0;
+}
+
+
+
+
+6.5 Array Practice Answer
+---------------------------------------
+#include <iostream>
+ #include <stdio.h>
+
+ int main()
+ {
+     int userInput[40];
+
+     //Enter the numbers into an array called userInput
+     for(int i = 0; i < 40; i++)
+     {
+         scanf("%d", &userInput[i]);
+     }
+     //print the array
+     std::cout<<"\nThe array\n";
+     for(int i = 0; i < 40; i++)
+     {
+         std::cout << userInput[i] <<" ";
+     }
+     //print the array in reverse order
+     std::cout<<"\n\nThe array in reverse order\n";
+     for(int i = 39; i >= 0; i--)
+     {
+         std::cout << userInput[i] <<" ";
+     }    
+     //sorting the array
+      for(int i = 0; i < 40; i++)
+     {
+         for(int j = 0; j < 39 - i; j++)
+             {
+                 if(userInput[j] > userInput[j + 1])
+                 {
+                     int temp;
+                     temp=userInput[j];
+                     userInput[j]=userInput[j + 1];
+                     userInput[j + 1]=temp;
+                 }
+             }
+     }
+std::cout<<"\n\nThe array sorted\n";
+    for(int i = 0; i< 40; i++)
+{
+    std::cout << userInput[i] <<" ";
+}
+return 0;
+} 
+
+
+
+6.6 Array Searches
+---------------------------------------
+#include <iostream>
+#include <stdio.h>
+
+int main()
+{
+    int searchArray[10] = {324,4567,6789,5421345,7,65,8965,12,342,485};
+    //use searchKey for the number to be found
+    //use location for the array index of the found value
+    int searchKey = -1;
+    int location = -1;
+    
+    //TODO: write code to determine if integers entered by 
+    //the user are in searchArray
+    int userInput; 
+    scanf("%d", &userInput);
+    while (userInput != -1) {
+        searchKey = userInput;
+        for (int i = 0; i < 10; i++) {
+            if (searchArray[i] == userInput) {
+                
+                location = i;
+                break;
+            }
+            
+        }
+        
+        //Use these commands to give feedback to the user
+        if(location != -1) {
+           std::cout<<searchKey<<" is at location "<<location<<" in the array.\n";
+        } else {
+           std::cout<<searchKey<<" is not in the array.\n";
+        }
+        location = -1;
+        scanf("%d", &userInput);
+    }
+    return 0;
+}
+
+
+
+6.7 Array Searches Answer
+---------------------------------------
+ #include <iostream>
+ #include <stdio.h>
+
+ int main()
+ {
+     int searchKey = 0;
+     int searchArray[10] = {324,4567,6789,5421345,7,65,8965,12,342,485};
+     int location = 0;
+
+     while(1)
+     {
+         std::cout<<"Enter an integer ('-1' to quit): ";
+         scanf("%d", &searchKey);
+         std::cout<< searchKey<<"\n";
+         if(searchKey == -1)
+         {
+             break;
+         }
+         for(int i = 0; i < 10; i++)
+         {
+             if(searchKey == searchArray[i])
+             {
+                 location = i;
+                 break;
+             }
+             location = -1;
+         }
+         if(location != -1)
+         {
+             std::cout<<searchKey<<" is at location "<<location<<" in the array.\n";
+         }
+         else
+         {
+             std::cout<<searchKey<<" is not in the array.\n";
+         }
+    }
+     return 0;
+ }
+
+6.8 MultiDimensional Arrays
+---------------------------------------
+typeOfVariable arrayName[size of dim.1][size of dim. 2] ...[size of dim. n];
+
+int array2Dimensions[2][3];
+
+
+
+
+
+
+#include<iostream>
+
+int main()
+{
+    int array2Dim[2][3] = {0,1,2,3,4,5};
+    for(int i=0; i<2;i++)
+        for(int j=0;j<3;j++)
+            std::cout<<"array2Dim["<<i<<"]["<<j<<"] = " << array2Dim[i][j]<<"\n";
+    return 0;
+}
+
+
+
+
+
+
+
+6.9 Multidimensional Arrays Programming Quiz
+---------------------------------------
+#include<iostream>
+#include <stdio.h>
+
+int main()
+{
+    //TODO: multiply a 4x4 array with vector of size 4. 
+    //Print the resultant product vector
+    int array2d[4][4];
+    int vector[4];
+    int product[4];
+    int num;
+    int sum;
+    
+    for (int i = 0; i < 4; i++) {
+        for (int j = 0; j < 4; j++) {
+            scanf("%d", &num);
+            array2d[i][j] = num;
+        }
+    }
+    
+    for (int i = 0; i < 4; i++) {
+        scanf("%d", &num);
+        vector[i] = num;
+    }
+    
+    for (int i = 0; i < 4; i++) {
+        for (int j = 0; j < 4; j++) {
+            sum += array2d[i][j];
+        }
+        product[i] = sum * vector[i];
+        sum = 0;
+    }
+    
+    for (int i = 0; i < 4; i++) {
+        printf("%d ", product[i]);
+    }
+    
+    return 0;
+}
+
+
+
+6.10 Multidimensional Arrays Answer
+---------------------------------------
+#include<iostream>
+
+int main()
+{
+    //array dimensions must be known at compile time
+    //so I used const int to set the row and col numbers
+    const int row = 4;
+    const int col = 4;
+
+    int arr[row][col];
+    int vector[row], product[row];
+    int sum;
+
+    //get the values for the array from the user
+    for(int i=0;i<row;i++)
+        for(int j=0;j<row;j++)
+        {
+            std::cout<<"arr["<<i<<"]["<<j<<"] = \n";
+            std::cin>>arr[i][j];
+            //std::cout<<"arr["<<i<<"]["<<j<<"] ="<<arr[i][j]<<"\n";
+        }
+
+    //getting the values for the vector from the user
+    for(int i=0; i<row; i++)
+    {
+        std::cout<<"vector["<<i<<"] = \n";
+        std::cin>>vector[i];
+        //std::cout<<"vector["<<i<<"] = "<<vector[i]<<"\n";
+    }
+    sum = 0;
+
+    for(int i=0;i<row;i++)
+    {
+        for(int j=0; j<row;j++)
+        {
+            sum = (arr[i][j] * vector[i]) + sum;
+        }
+        product[i] = sum;
+        sum=0;
+    }
+
+    for(int i=0;i<row;i++)
+    {
+        std::cout<<"product["<<i<<"] = "<<product[i]<<"\n";
+    }
+    return 0;
+}
+
+
+
+6.11 Quiz: Student Playground
+---------------------------------------
+
+
+
