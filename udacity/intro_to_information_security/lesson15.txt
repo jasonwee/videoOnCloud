@@ -1,0 +1,278 @@
+date start : 10 april 2020
+
+
+15.1 modular arithmetic review
+---------------------------------------
+
+
+15.2 modular arithmetic
+---------------------------------------
+
+
+
+15.3 quiz: mod quiz
+---------------------------------------
+4
+1
+21
+13
+374
+
+
+15.4 mod of negative numbers
+---------------------------------------
+-6 mod 18
+
+Q = -1 …. floor(-6/18)
+A = Q B + R
+-6 = -1 18 + R
+12 = R
+
+-6 mod 18 = 12
+
+15.5 quiz: negative numbers quiz
+---------------------------------------
+1
+5
+4
+
+Solution: -27 mod 4
+Q = floor(-27/4) = floor(-6.75) = -7
+A = Q B + R
+-27 = -7 4 + R
+1 = R
+
+Solution: -7 mod 6
+A = Q * B + R
+-7 = floor(-7/6) + R
+-7 = -12 + R
+5 = R
+
+Solution: -17 mod 7
+A = Q B + R
+-17 = floor(-17/7)7 + R
+-17 = -3*7 + R
+4 = R
+
+15.6 congruence
+---------------------------------------
+Congruence:
+A == B mod(C)
+means
+A mod(C) = B mod(C)
+
+
+For Example:
+(26 mod 5 = 1) and (11 mod 5 = 1) so ….
+(26 == 11 mod 5)
+
+
+
+15.7 quiz: congruence quiz
+---------------------------------------
+x = -4(mod 3)
+
+
+
+Step 1:
+-4(mod 3) = 2
+
+step 2: find the mod for each answer:
+-33(mod 3) = 0
+-1(mod 3) = 2
+12 (mod 3) = 0
+35 (mod 3) = 2
+45 (mod 3) = 0
+
+Answer:
+x = -1 or x = 35
+
+
+15.8 addition and substraction
+---------------------------------------
+
+
+15.9 quiz: addition quiz
+---------------------------------------
+2
+
+Given: A mod 3 = 1 and (-20 + A)mod 3 = Y
+Solve for Y
+
+Solution:
+
+(-20 + A) mod 3 = (-20 mod 3 + A mod 3)mod3
+(-20 + A) mod 3 = (1 + 1)mod 3
+(-20 + A) mod 3 = 2 mod 3
+(-20 + A) mod 3 = 2
+
+15.10 quiz: substraction quiz
+---------------------------------------
+2
+
+(918 - 236) mod 20 = Y
+
+Solution:
+(918 mod 20 + (-236 mod 20)) mod 20
+
+(18 + 4)mod 20 = 2
+
+
+
+15.11 multiplication
+---------------------------------------
+Modular Multiplication
+(A B) mod C = (A mod C B mod C) mod C
+
+Example:
+A mod 17 = 15
+B mod 17 = 9
+
+(AB)mod 17 =
+(15 9)mod 17 = 16
+
+
+
+15.12 quiz: multiplicaiton quiz
+---------------------------------------
+2611  135
+11  5
+55  3
+
+(2611 135) mod 13 is equivalent to:
+
+Solution:
+(2611 mod 13 135 mod 13)mod 13
+(11 * 5)mod 13
+(55)mod 13 = 3
+
+15.13 fast exponentiation
+---------------------------------------
+Fast Exponentiation
+Calculating AB mod C quickly when B = power of 2
+
+In other words: A^2 mod C =
+(A A) mod C =
+((A mod C) (A mod C)) mod C
+
+15.14 fast exponentiation example
+---------------------------------------
+Example: 7256 mod 13
+
+71 mod 13 = 7
+72 mod 13 = (7 mod 13 7 mod 13)mod 13 = (7 7)mod 13 = (49)mod 13 = 10
+74 mod 13 = (10 10)mod 13 = 100 mod 13 = 9
+78 mod 13 = (9 9) mod 13 = 81 mod 13 = 3
+716 mod 13= (3 3)mod 13 = 9 mod 13 = 9
+732 mod 13=(9 9)mod 13 = 81 mod 13 = 3
+764 mod 13 = (3 3) mod 13 = 9 mod 13 = 9
+7128 mod 13 = (9 9) mod 13 = 81 mod 13 = 3
+7256 mod 13 = (3 * 3) mod 13 = 9 mod 13 = 9
+
+
+15.15 quiz: fast exponentiation quiz
+---------------------------------------
+3
+
+41 mod 13 = 4
+42 mod 13 = (44) mod 13 = 3
+44 mod 13 = (99) mod 13 = 9
+48 mod 13 = (33) mod 13 = 3
+416 mod 13 = (99) mod 13 = 9
+432 mod 13 = (33) mod 13 = 3
+464 mod 13 = (99) mod 13 = 9
+4128 mod 13 = (3*3) mod 13 = 3
+
+15.16 exponentiation
+---------------------------------------
+
+15.17 quiz: exponentiation quiz
+---------------------------------------
+9
+
+178 = 128 + 32 + 16 + 2
+178 = 27 + 25 + 24 + 21
+
+
+9178 = 92^7 92^5 92^4 *92^1
+
+
+91 mod 36 = 9
+92 mod 36 = 9
+94 mod 36 = 9
+98 mod 36 = 9
+916 mod 36 = 9
+932 mod 36 = 9
+964 mod 36 = 9
+9128 mod 36 = 9
+
+
+9178mod 36 = 9 (178 mod 12) mod 36
+9178mod 36 = 910 mod 36
+9178mod 36 = (32)10 mod 36
+9178mod 36 = 320mod 36
+9178mod 36 = 3 (20 mod 12) mod 36
+9178mod 36 = 38 mod 36 = 9.
+
+
+
+15.18 mod inverse
+---------------------------------------
+The modular inverse of A (mod C) is A^-1
+(A A^-1) ≡ 1 (mod C) or equivalently
+(A A^-1) mod C = 1
+
+Only the numbers coprime to C (numbers that share no prime factors with C) have a modular inverse (mod C)
+
+
+
+15.19 mod inverse example
+---------------------------------------
+
+
+15.20 quiz: mod inverse quiz
+---------------------------------------
+2
+
+80 mod 5 = 0 mod 5
+81 mod 5 = 8 mod 5 = 3 mod 5
+82 mod 5 = 16 mod 5 = 1 mod 5
+83 mod 5 = 24 mod 5 = 4 mod 5
+8*4 mod 5 = 32 mod 5 = 2 mod 5
+
+The inverse of: 8 mod 5 = 2
+
+
+
+15.21 co-prime
+---------------------------------------
+
+
+
+15.22 prime root
+---------------------------------------
+
+
+15.23 quiz: prime root quiz
+---------------------------------------
+yes
+
+
+15.24 relatively prime
+---------------------------------------
+
+
+15.25 totients
+---------------------------------------
+
+
+15.26 quiz: totatives quiz
+---------------------------------------
+8
+
+
+The totatives of 30 are:
+{1, 7, 11, 13, 17, 19, 23, 29}
+So the number of totatives of 30 = 8
+
+
