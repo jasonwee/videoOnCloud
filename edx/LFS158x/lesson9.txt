@@ -1,0 +1,66 @@
+date start : 10 april 2020
+
+
+
+
+
+9.1 Introduction and Learning Objectives
+---------------------------------------
+
+
+
+9.2 Authentication, Authorization, and Admission Control 
+---------------------------------------
+To access and manage any Kubernetes resource or object in the cluster, we need to access a specific API endpoint on the API server. Each access request goes through the following three stages:
+
+* Authentication
+Logs in a user.
+* Authorization
+Authorizes the API requests added by the logged-in user.
+* Admission Control
+Software modules that can modify or reject the requests based on some additional checks, like a pre-set Quota.
+
+
+
+For authentication, Kubernetes uses different authentication modules:
+
+* Client Certificates
+To enable client certificate authentication, we need to reference a file containing one or more certificate authorities by passing the --client-ca-file=SOMEFILE option to the API server. The certificate authorities mentioned in the file would validate the client certificates presented to the API server. A demonstration video covering this topic is also available at the end of this chapter.
+* Static Token File
+We can pass a file containing pre-defined bearer tokens with the --token-auth-file=SOMEFILE option to the API server. Currently, these tokens would last indefinitely, and they cannot be changed without restarting the API server.
+* Bootstrap Tokens
+This feature is currently in beta status and is mostly used for bootstrapping a new Kubernetes cluster.
+* Static Password File
+It is similar to Static Token File. We can pass a file containing basic authentication details with the --basic-auth-file=SOMEFILE option. These credentials would last indefinitely, and passwords cannot be changed without restarting the API server.
+* Service Account Tokens
+This is an automatically enabled authenticator that uses signed bearer tokens to verify the requests. These tokens get attached to Pods using the ServiceAccount Admission Controller, which allows in-cluster processes to talk to the API server.
+* OpenID Connect Tokens
+OpenID Connect helps us connect with OAuth2 providers, such as Azure Active Directory, Salesforce, Google, etc., to offload the authentication to external services.
+* Webhook Token Authentication
+With Webhook-based authentication, verification of bearer tokens can be offloaded to a remote service.
+* Authenticating Proxy
+If we want to program additional authentication logic, we can use an authenticating proxy.
+
+
+
+
+
+
+
+Admission control is used to specify granular access control policies, which include allowing privileged containers, checking on resource quota, etc. We force these policies using different admission controllers, like ResourceQuota, DefaultStorageClass, AlwaysPullImages, etc. They come into effect only after API requests are authenticated and authorized.
+
+
+
+
+
+
+9.3 Knowledge Check
+---------------------------------------
+
+
+
+9.4 Learning Objectives (Review)
+---------------------------------------
+
+
+
