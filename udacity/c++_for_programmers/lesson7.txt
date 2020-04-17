@@ -1,0 +1,715 @@
+date start : 17 april 2020
+
+
+7.1 Functions
+---------------------------------------
+Function Syntax:
+
+retVariableType  functionName(parameter1, parameter2, ...,parameterN)
+{
+     statement(s);
+}
+
+
+Function Declaration: A function is declared with the syntax:
+
+returnVariableType  functionName(parameter1, parameter2, ...,parameterN);
+
+
+
+
+
+
+
+7.2 Func: No Ret, No Parameters
+---------------------------------------
+#include<iostream>
+
+void printMessage(); //note, this is placed BEFORE main()
+
+int main()
+{
+    printMessage();
+    return 0;
+}
+
+//note, the definition is conventionally placed after main
+void printMessage() 
+{
+    std::cout<<"HEY! I'm from a function!";
+} 
+
+
+
+7.3 Func. Prog.Quiz 1
+---------------------------------------
+#include<iostream>
+
+void printMessage();
+
+int main()
+{
+    
+    printMessage();
+    return 0;
+}
+
+void printMessage() {
+    std::cout<<"Functions";
+}
+
+
+
+7.4 Func Prog Quiz 1 Answer
+---------------------------------------
+
+
+
+7.5 Functions w Parameters
+---------------------------------------
+#include<iostream>
+
+void printProduct(int m1, int m2, int product) {
+    std::cout<<m1<<" * "<<m2<<" = "<<product;
+}
+
+int main()
+{
+    int m1 = 4;
+    int m2 = 5;
+    int product;
+
+    product = m1 * m2;
+    
+    printProduct(m1, m2, product);
+    return 0;
+}
+
+
+
+
+7.6 Func w Param. Answer 1
+---------------------------------------
+
+
+7.7 Func. in Header Files
+---------------------------------------
+/*Goal: Practice putting functions in a header file.
+**Move the function declaration and definition to the header file.
+**Don't forget to include the header file (main.hpp) in the main program. 
+*/
+
+/*GOAL: Practice writing functions
+
+/*Write a function called printProduct that prints the results of the multiplication 
+**of two integers. 
+*/
+#include<iostream>
+#include "main.hpp"
+
+int main()
+{
+    int m1 = 4;
+    int m2 = 5;
+    int product;
+
+    product = m1 * m2;
+    
+    printProduct(m1, m2, product);
+    return 0;
+}
+
+void printProduct(int m1, int m2, int product)
+{
+    std::cout<<m1<<" * "<<m2<<" = "<<product;
+}
+
+
+/*The header file for main.cpp*/
+
+void printProduct(int m1, int m2, int product);
+
+
+7.8 Func in Header Files Ans.
+---------------------------------------
+
+
+7.9 Func. w Return Values
+---------------------------------------
+returnVariableType functionName(parameter1, parameter2, ..., parameterN)
+{
+     variarble type returnVariable; 
+     statement(s);
+     return variable;
+}
+
+
+int calculateSum(int m1, int m2)
+{
+     int sum;
+     sum = m1 + m2;
+     return sum;
+}
+
+
+#include<iostream>
+using namespace std;
+
+float add(float m1, float m2);
+float sub(float m1, float m2);
+float mult(float m1, float m2);
+float div(float m1, float m2);
+
+int main()
+{
+    float m1 = 4.0;
+    float m2 = 3.5;
+    float answer;
+     
+    answer = add(m1, m2);
+    cout<<m1<<"+"<<m2<<" = "<<answer<<"\n";
+    
+    cout<<m1<<"-"<<m2<<" = "<<sub(m1,m2)<<"\n";
+    cout<<m1<<"*"<<m2<<" = "<<mult(m1,m2)<<"\n";
+    cout<<m1<<"/"<<m2<<" = "<<div(m1,m2)<<"\n";
+    return 0;
+}
+
+float add(float m1, float m2)
+{
+    return m1 + m2;
+}
+
+float sub(float m1, float m2)
+{
+    return m1 - m2;
+}
+
+float mult(float m1, float m2)
+{
+    return m1 * m2;
+}
+
+float div(float m1, float m2)
+{
+    return m1 / m2;
+}
+
+
+7.10 Func. w Ret. VAlues Prog. Quiz
+---------------------------------------
+#include "main.hpp"
+
+int main()
+{
+    int m1 = 33; 
+    int m2 = 66;
+    int total = sum(m1, m2);
+    printEquation(m1, m2,total,'+');
+    return 0;
+}
+
+
+
+
+#include<iostream>
+
+
+void printEquation(int m1, int m2, int sum, char operation);
+int sum(int m1, int m2);
+
+void printEquation(int m1, int m2, int sum, char operation) 
+{
+     //print the equation 'm1 operation  m2 = result'
+     std::cout<<m1<<" "<<operation<<" "<<m2<<" = "<<sum;
+}
+
+int sum(int m1, int m2)
+{
+     //add two integers and return the sum
+     return m1 + m2;
+}
+
+
+
+
+7.11 Func. w Return Values Ans
+---------------------------------------
+
+
+7.12 Functions that Alter Parameters
+---------------------------------------
+
+
+7.13 Quiz: Functions Altering Parameters
+---------------------------------------
+a value does not increase after increment method is called.
+
+
+
+7.14 Func. Altering Param. Prog. Quiz
+---------------------------------------
+/*The program is changed to return 
+**the modified variable 'a'
+**
+**P.S. This is a totally silly program. Why write a function, 
+**with all the function overhead, to increment a variable?
+**Silly!
+*/
+
+#include<iostream>
+
+int increment(int input);
+int main()
+{
+    int a = 34;
+    std::cout<<"Before the function call a = "<<a<<"\n";
+    a = increment(a);
+    std::cout<<"After the function call a = "<<a<<"\n";
+    return 0;
+}
+int increment(int input)
+{
+    input++;
+    std::cout<<"In the function call a = "<<input<<"\n";
+    return input;
+}
+
+
+
+
+
+7.15 Pass Variable by Reference
+---------------------------------------
+/*Goal: Learn to pass variables by reference. 
+**Once we learn this, we can modify variables in functions,
+**and the change will be available outside the scope of the 
+**modification.
+*/
+
+#include<iostream>
+
+void increment(int &input); //Note the addition of '&'
+
+int main()
+{
+    int a = 34;
+    std::cout<<"Before the function call a = "<<a<<"\n";
+    increment(a);
+    std::cout<<"After the function call a = "<<a<<"\n";
+    return 0;
+}
+void increment(int &input)//Note the addition of '&'
+{
+    input++; //**Note the LACK OF THE addition of '&'**
+    std::cout<<"In the function call a = "<<input<<"\n";
+}
+
+
+
+
+
+7.16 Func. Pass by Reference
+---------------------------------------
+#include "main.hpp"
+
+int main()
+{
+    char operation = '*';
+    float input1 = 9.8;
+    float input2 = 2.3;
+    float result;
+    
+    calculate(input1, input2, operation, result);
+    printEquation(input1, input2, operation, result);
+    return 0;
+}
+
+
+
+
+#include<iostream>
+/*The header file for main.cpp*/
+float calculate(float input1, float input2, char operation, float &result) {
+    if (operation == '+')
+        result = input1 + input2;
+    else if (operation == '-')
+        result = input1 - input2;
+    else if (operation == '*')
+        result = input1 * input2;        
+    else if (operation == '/')
+        result = input1 / input2;
+    return result;
+}
+
+void printEquation(float input1, float input2, char operation, float &result) {
+    std::cout<<input1<<" "<<operation<<" "<<input2<<" = "<<result;
+}
+
+
+
+
+7.17 Pass by Reference Ans
+---------------------------------------
+
+
+7.18 Arrays as Parameters
+---------------------------------------
+#include<iostream>
+#include<iomanip>
+
+//Pass the array as a pointer
+void arrayAsPointer(int *array, int size);
+//Pass the array as a sized array
+void arraySized(int array[3], int size);
+//Pass the array as an unsized array
+void arrayUnSized(int array[], int size);
+
+int main()
+{
+    const int size = 3;
+    int array[size] = {33,66,99};
+    //We are passing a pointer or reference to the array
+    //so we will not know the size of the array
+    //We have to pass the size to the function as well
+    arrayAsPointer(array, size);
+    arraySized(array, size);
+    arrayUnSized(array, size);
+    return 0;
+}
+
+void arrayAsPointer(int *array, int size)
+{
+    std::cout<<std::setw(5);
+    for(int i=0; i<size; i++) 
+        std::cout<<array[i]<<" ";
+    std::cout<<"\n";
+}
+
+void arraySized(int array[3], int size)
+{
+    std::cout<<std::setw(5);
+    for(int i=0; i<size; i++)
+        std::cout<<array[i]<<" ";
+    std::cout<<"\n";  
+}
+
+void arrayUnSized(int array[], int size)
+{
+    std::cout<<std::setw(5);
+    for(int i=0; i<size; i++)
+        std::cout<<array[i]<<" ";
+    std::cout<<"\n";  
+}
+
+
+
+7.19 Arrays as Param. Prog. Quiz
+---------------------------------------
+#include<iostream>
+
+int search(int *array, int size, int key);
+
+int main()
+{
+    const int size = 4;
+    int array[] = {345,75896,2,543};
+    int searchKey = 543;
+    std::cout<<"Found at: "<<search(array, size, searchKey);
+    return 0;
+}
+
+int search(int *array, int size, int key) {
+    for(int i=0; i<size; i++) 
+        if (array[i] == key) {
+            return i;
+        }
+    return -1;
+}
+
+
+7.20 Arrays as Param. Answer
+---------------------------------------
+
+
+7.21 Function Best Practices
+---------------------------------------
+Function Delcaration
+
+int doubleInput(const int input)
+
+
+
+Function Definition
+
+int doubleInput(const int input)
+{
+    int h = input *2;
+    return h;
+}
+
+
+
+
+7.22 Debug Program
+---------------------------------------
+/*Debug the program so that it executes correctly.
+**This program calculates floor or wall surface areas
+**For the purpose of remodeling estimates. 
+**It asks a user to enter their name, phone, address
+**Then enter the room they wish to remodel
+**The user is asked to select a task
+**then a material. 
+**The program will generate an estimate of 
+**the cost of the project. 
+**getUserInformation
+**The user inputs are in the input.txt file.*/
+
+
+    
+#include "main.hpp"
+
+int main()
+{
+
+
+
+    //user information
+    string userName = " ";
+    string phoneNumber = " ";
+    string userAddress = " ";
+    string remodelRoom = " ";
+    float roomWidth = 0;
+    float roomDepth = 0;
+    float roomHeight = 0;
+    float wallSurfaceArea = 0;
+    float floorArea = 0;
+    int task = 0;
+    
+    //estimate variables
+    int paintCost = 0;
+    int wallpaperCost = 0;
+    int carpetCost = 0;
+    int tileCost = 0;
+    int woodFloorCost = 0;
+    
+    //the possible task list
+    enum task {paint, wallpaper, carpet, tile, woodFloor};
+    
+    getUserInformation(userName, userAddress, phoneNumber);
+    remodelRoom = getRoomChoice();
+    task = getTaskAssignment();
+    
+    getRoomInformation(task, roomWidth, roomDepth, roomHeight);
+    
+    //print the information of the user and room
+    printJobInformation(userName, phoneNumber, userAddress, remodelRoom, task);
+    //printRoomInformation
+    
+    //If a wall treatment is to be done, get the wall surface area
+    //assume all four walls of the room are to be redone
+    if(task == paint || task == wallpaper)
+    {
+        //calculate and print the estimates
+        wallSurfaceArea = calcWallSurfaceArea(roomWidth, roomDepth, roomHeight);
+        paintCost = calcPaintCost(wallSurfaceArea);
+        wallpaperCost = calcWallPaperCost(wallSurfaceArea);
+        printWallCostComparisons(paintCost, wallpaperCost);
+    }
+    
+    //if a floor is to be done, get the square footage of the room
+    if(task == carpet || task == tile || task == woodFloor)
+    {
+        //calculate and print the estimates
+        floorArea = calcFloorArea(roomWidth, roomDepth);
+        carpetCost = calcCarpetCost(floorArea);
+        tileCost = calcTileCost(floorArea);
+        woodFloorCost = calcWoodFloor(floorArea);
+        printFloorCostComparisons(carpetCost, tileCost, woodFloorCost);
+    }
+    return 0;
+}
+
+
+
+
+
+/*The header file for main.cpp
+**This file has functions called from main.
+*/
+
+#include <string>
+#include <iostream>
+#include <sstream>
+#include <fstream>
+
+using namespace std;
+
+    //Cost of materials for the remodel
+    const float PAINTCOST = .50; //per square foot
+    const float WALLPAPERCOST = 2.00; //per square foot
+    const float CARPETCOST = 4.00; //per square foot
+    const float TILECOST = 5.50; //per square foot
+    const float WOODCOST = 6.00; //per square foot
+    
+ void getUserInformation( string &name, string &number, string &address);
+ string getRoomChoice();
+ int getTaskAssignment();
+ void printTask(int task);
+ void getRoomInformation(int task,float &roomWidth, float &roomDepth, float &roomHeight);
+ void printJobInformation(string userName, string phoneNumber,string userAddress, string remodelRoom, int task);
+ float calcWallSurfaceArea(float roomWidth,float roomDepth,float roomHeight);
+ float calcPaintCost(float wallSurfaceArea);
+ float calcWallPaperCost(float wallSurfaceArea);
+ void printWallCostComparisons(float paintCost, float wallpaperCost);
+ float calcFloorArea(float roomWidth, float roomDepth);
+ float calcCarpetCost(float floorArea);
+ float calcTileCost(float floorArea);
+ float calcWoodFloor(float floorArea);
+ void printFloorCostComparisons(float carpetCost,float tileCost, float woodFloorCost);
+
+
+
+ void getUserInformation(string &userName, string &phoneNumber,string &userAddress)
+ {
+    cout<<"Customer Name: \n";
+    getline(cin, userName);
+
+    cout<<"Customer Phone Number: \n";
+    getline(cin, phoneNumber);
+
+    cout<<"Customer Address: \n";
+    getline(cin, userAddress);
+    
+ }
+ 
+ string getRoomChoice()
+ {//We don't do anything with this information in the program
+    string room;
+    cout<<"What room are we remodeling?: \n";
+    getline(std::cin, room);    
+    return room;
+ }
+ 
+ int getTaskAssignment()
+ {  //the possible task list
+    //enum task {paint, wallpaper, carpet, tile, woodFloor};
+    int task;
+    std::cout<<"What job needs to be done?\n";
+    std::cout<<"0: Wallpaper\n";
+    std::cout<<"1: Paint\n";
+    std::cout<<"2: Carpet\n";
+    std::cout<<"3: Tile\n";
+    std::cout<<"4: Wood Floor\n";
+    cin>>task;
+    return task;
+ }
+ 
+ void printTask(int task)
+ {//depending on which task was selected, print the corresponding string
+    switch(task) {
+        case 0:
+            std::cout<<" paint ";
+            break;
+         case 1:
+            std::cout<<" wallpaper ";
+            break;  
+        case 2:
+            std::cout<<" carpet ";
+            break;
+        case 3:
+            std::cout<<" tile ";
+            break;
+        case 4:
+            std::cout<<" wood floor ";
+            break;
+        default:
+            std::cout<<" Ivalid task ";
+    }
+    //return task;
+ }
+ 
+ void getRoomInformation(int task,float &roomWidth, float &roomDepth, float &roomHeight)
+ {//all the tasks require the width and depth. 
+  //wall treatments require the height also
+    std::cout<<"What is the room width? \n";
+    std::cin>>roomWidth;
+    std::cout<<"What is the room depth? \n";
+    std::cin>>roomDepth;
+    if(task == 0 or task == 1)
+    {
+        std::cout<<"What is the room height? \n";
+        std::cin>>roomHeight;
+    }
+ }
+ 
+ void printJobInformation(string userName, string phoneNumber,string userAddress, string remodelRoom, int task)
+ {//print user information. This is the only place the
+  //remodel room string is used
+    cout<<"\n\nPreparing order for:\n\n"<<userName<<"\n";
+    cout<<"\t"<< phoneNumber<<"\n";
+    cout<<"\t"<< userAddress<<"\n";  
+    cout<<"\t"<<"Remodeling the "<<remodelRoom<<" with";
+    printTask(task);
+ }
+ 
+ float calcWallSurfaceArea(float roomWidth,float roomDepth,float roomHeight)
+ {//Calculate the wall surface area. Assume the room is rectangluar
+  //Assume the two walls opposite each other are the same
+    float wallWide = roomWidth * roomHeight * 2;//two walls
+    float wallDeep = roomDepth * roomHeight * 2;//two walls
+    return wallWide + wallDeep;
+ }
+ 
+ float calcPaintCost(float wallSurfaceArea)
+ {//cost estimates are simply surface area times material per sq. foot
+    return PAINTCOST * wallSurfaceArea;
+ }
+ 
+ float calcWallPaperCost(float wallSurfaceArea)
+ {//cost estimates are simply surface area times material per sq. foot
+    return WALLPAPERCOST * wallSurfaceArea;
+ }
+ 
+ void printWallCostComparisons(float paintCost, float wallpaperCost)
+ {//print the estimates for the wall coverings
+    std::cout<<"\nPaint Estimate: "<<paintCost<<"\n\n";
+    std::cout<<"Wallpaper Estimate: "<<wallpaperCost<<"\n\n";
+ }
+ 
+ float calcFloorArea(float roomWidth, float roomDepth)
+ {
+    return roomWidth * roomDepth;
+ }
+ float calcCarpetCost(float floorArea)
+ {//cost estimates are simply surface area times material per sq. foot
+    return CARPETCOST * floorArea;
+ }
+ float calcTileCost(float floorArea)
+ {//cost estimates are simply surface area times material per sq. foot
+    return TILECOST * floorArea;
+ }
+ float calcWoodFloor(float floorArea)
+ {//cost estimates are simply surface area times material per sq. foot
+    return WOODCOST * floorArea;
+ }
+ void printFloorCostComparisons(float carpetCost,float tileCost, float woodFloorCost)
+ {//print the estimates for the floor coverings
+    cout<<"\n\t\tCarpet Estimate: "<<carpetCost;
+    cout<<"\n\t\tTile Estimate: "<<tileCost;
+    cout<<"\n\t\tWood Estimate: "<<woodFloorCost;    
+ }
+
+
+
+
+
+
+7.23 Debug Answer
+---------------------------------------
+
+
+7.24 Quiz: Student Playground
+---------------------------------------
+
+
