@@ -1,0 +1,81 @@
+date start : 24 april 2020
+
+
+
+
+
+11.1 Introduction and Learning Objectives
+---------------------------------------
+
+
+
+11.2 Deploying a Stand-Alone Application
+---------------------------------------
+
+If a container in the Pod is running, but the application running inside this container is not responding to our requests, then that container is of no use to us. This kind of situation can occur, for example, due to application deadlock or memory pressure. In such a case, it is recommended to restart the container to make the application available.
+
+Rather than restarting it manually, we can use a Liveness Probe. Liveness probe checks on an application's health, and if the health check fails, kubelet restarts the affected container automatically.
+
+Liveness Probes can be set by defining:
+
+Liveness command
+Liveness HTTP request
+TCP Liveness Probe.
+
+
+
+In the following example, the kubelet sends the HTTP GET request to the /healthz endpoint of the application, on port 8080. If that returns a failure, then the kubelet will restart the affected container; otherwise, it would consider the application to be alive.
+
+livenessProbe:
+      httpGet:
+        path: /healthz
+        port: 8080
+        httpHeaders:
+        - name: X-Custom-Header
+          value: Awesome
+      initialDelaySeconds: 3
+      periodSeconds: 3
+
+
+
+With TCP Liveness Probe, the kubelet attempts to open the TCP Socket to the container which is running the application. If it succeeds, the application is considered healthy, otherwise the kubelet would mark it as unhealthy and restart the affected container.
+
+livenessProbe:
+      tcpSocket:
+        port: 8080
+      initialDelaySeconds: 15
+      periodSeconds: 20
+
+
+
+Sometimes, applications have to meet certain conditions before they can serve traffic. These conditions include ensuring that the depending service is ready, or acknowledging that a large dataset needs to be loaded, etc. In such cases, we use Readiness Probes and wait for a certain condition to occur. Only then, the application can serve traffic.
+
+A Pod with containers that do not report ready status will not receive traffic from Kubernetes Services.
+
+readinessProbe:
+  exec:
+    command:
+    - cat
+    - /tmp/healthy
+  initialDelaySeconds: 5
+  periodSeconds: 5
+
+Readiness Probes are configured similarly to Liveness Probes. Their configuration also remains the same.
+
+Please review the Kubernetes documentation for more details.
+
+
+
+
+
+
+11.3 Knowledge Check
+---------------------------------------
+
+
+
+11.4 Learning Objectives (Review)
+---------------------------------------
+
+
+
