@@ -1,0 +1,388 @@
+date start : 24 april 2020
+
+
+8.1 Is C++ an OOP Language?
+---------------------------------------
+
+
+
+8.2 Classes Introduction
+---------------------------------------
+
+
+
+
+8.3 Why Classes Prog. Quiz
+---------------------------------------
+
+
+8.4 Why Classes Prog. Answer
+---------------------------------------
+
+
+
+8.5 Classes
+---------------------------------------
+class Student
+{
+        string name;
+        int id;
+        int gradDate;
+
+    public:
+        void setName(string name);
+
+};
+
+
+
+
+8.6 Class Members
+---------------------------------------
+class Student
+{
+        string name;
+        int id;
+        int gradDate;
+
+    public:
+        void setName(string nameIn);
+        void setId(int idIn);
+        void setGradDate(int dateIn);
+        string getName();
+        int getId();
+        int getGradDate();
+        void print();
+};
+
+
+8.7 Defining Class Functions
+---------------------------------------
+
+
+8.8 A Class Defined
+---------------------------------------
+class Student
+{
+        string name;
+        int id;
+        int gradDate;
+
+    public:
+        void setName(string nameIn);
+        void setId(int idIn);
+        void setGradDate(int dateIn);
+        string getName();
+        int getId();
+        int getGradDate();
+        void print();
+};
+
+void Student::setName(string nameIn)
+{
+     name = nameIn;
+}
+
+void Student::setId(int idIn)
+{
+     id = idIn;
+}
+
+void Student::setGradDate(int gradDateIn)
+{
+     gradDate = gradDateIn;
+}
+
+void Student::print()
+{
+     cout<<name<<" "<<id<<" "<<gradDate;
+}
+
+string Student::getName()
+{
+     return name;
+}
+
+int Student::getId()
+{
+     return id; 
+}
+
+int Student::getGradDate()
+{
+     return gradDate;
+}
+
+
+8.9 Syntax
+---------------------------------------
+class ClassName
+{
+      member1;
+      member2;
+      ...
+
+public:
+     return variable accessFunction1(function parameters);
+     return variable accessFunction2(function parameters); 
+      ...
+} ;
+
+returnVariable ClassName:: accessFunction1(function parameters)
+{
+    function statements;
+}
+
+returnVariable ClassName:: accessFunction2(function parameters)
+{
+    function statements;
+}
+
+...
+
+
+
+
+8.10 Using a Class
+---------------------------------------
+#include<iostream>
+using namespace std;
+
+
+class Student
+{
+        string name;
+        int id;
+        int gradDate;
+
+    public:
+        void setName(string nameIn);
+        void setId(int idIn);
+        void setGradDate(int dateIn);
+        string getName();
+        int getId();
+        int getGradDate();
+        void print();
+};
+
+void Student::setName(string nameIn)
+{
+     name = nameIn;
+}
+
+void Student::setId(int idIn)
+{
+     id = idIn;
+}
+
+void Student::setGradDate(int gradDateIn)
+{
+     gradDate = gradDateIn;
+}
+
+void Student::print()
+{
+     cout<<name<<" "<<id<<" "<<gradDate;
+}
+
+string Student::getName()
+{
+     return name;
+}
+
+int Student::getId()
+{
+     return id; 
+}
+
+int Student::getGradDate()
+{
+     return gradDate;
+}
+
+int main()
+{
+    int integer1; 
+    float float1;
+    Student student1; 
+    
+    integer1 = 4; //assign a value to integer1
+    float1 = 4.333; //assign a value to float1
+
+    student1.setName("Catherine Gamboa"); //assign a value to the student name
+    student1.setId(54345); //assign a value to the student id number
+    student1.setGradDate(2017); //assign a value to the student grad date
+    
+    //Let's print the values of our variables
+    cout<<"integer1 = "<<integer1<<"\n";
+    cout<<"float1 = "<<float1<<"\n\n";
+    
+    //There are two ways we can print the values of our class:
+    //The first is to call the print function we created.
+    cout<<"Using the Student::print function\n";
+    cout<<"Student1 = ";
+    student1.print();
+    cout<<"\n\n";
+    
+    //The second is to access each member of the class using the get functions
+    cout<<"Using the student access functions\n";
+    cout<<"Student1 name = "<<student1.getName()<<"\n";
+    cout<<"Student1 ID = "<<student1.getId()<<"\n";
+    cout<<"Student1 Grad Date = "<<student1.getGradDate()<<"\n";
+    
+    
+    return 0; 
+}
+
+
+
+
+8.11 Classes Programming Quiz
+---------------------------------------
+
+
+
+8.12 Class Program Answer
+---------------------------------------
+/*Goal: practice creating and using a class*/
+
+#include"main.hpp"
+
+int main()
+{
+    Dog dog1, dog2;
+    dog1.setName("Trixie");
+    dog2.setName("Kali");
+    dog1.setLicenseNumber(1234);
+    dog2.setLicenseNumber(5678);
+
+    dog1.printInfo();
+    cout<<"\n";
+    dog2.printInfo();
+    return 0;
+}
+
+
+/*The header file for main.cpp*/
+
+#include<iostream>
+
+using namespace std;
+
+class Dog
+{
+    string name;
+    int licenseNumber;
+public:
+    void setName(string nameIn);
+    void setLicenseNumber(int licenseNumberIn);
+    string getName();
+    int getLicenseNumber();
+    void printInfo();
+};
+
+void Dog::setName(string nameIn)
+{
+    name = nameIn;
+}
+
+void Dog::setLicenseNumber(int licenseNumberIn)
+{
+    licenseNumber = licenseNumberIn;
+}
+
+string Dog::getName()
+{
+    return name;
+}
+
+int Dog::getLicenseNumber()
+{
+    return licenseNumber;
+}
+
+void Dog::printInfo()
+{
+    cout<<name<<" "<<licenseNumber;
+}
+
+
+
+8.13 Classes Prog. 2 Quiz
+---------------------------------------
+
+
+8.14 Classes Prog. 2 Answer
+---------------------------------------
+
+
+
+8.15 Memory Management
+---------------------------------------
+
+
+8.16 Constructors
+---------------------------------------
+
+
+8.17 Destructors
+---------------------------------------
+
+
+8.18 Helper Functions in Classes
+---------------------------------------
+
+
+8.19 Helper Functions Program
+---------------------------------------
+
+
+8.20 Helper Functions Prog. Answer
+---------------------------------------
+
+
+8.21 Classes and Arrays
+---------------------------------------
+
+
+
+8.22 Classes and Arrays Program
+---------------------------------------
+
+
+
+
+8.23 Classes and Arrays Answer
+---------------------------------------
+
+
+8.24 TicTacToe Prog, Quiz
+---------------------------------------
+
+
+
+8.25 Tic Tac Toe Answer
+---------------------------------------
+
+
+8.26 this Pointer
+---------------------------------------
+
+
+8.27 Quiz: Functions and classes Prog
+---------------------------------------
+
+
+8.28 Functions and Classes Answer
+---------------------------------------
+
+
+8.29 Constructors w Parameters
+---------------------------------------
+
+
+8.30 Student Playground
+---------------------------------------
+
+
+
