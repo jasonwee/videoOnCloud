@@ -1,0 +1,102 @@
+ud898
+
+date start : 01 may 2020
+
+
+1.1 course introduction
+---------------------------------------
+
+
+1.2 Callbacks vs Promises
+---------------------------------------
+
+
+
+1.3 Callbacks vs Thens
+---------------------------------------
+
+
+1.4 Course Map
+---------------------------------------
+Fulfilled (Resolved): it worked
+rejected            : it didn't work
+pending             : still waiting...
+settled             : something happened!
+
+
+1.5 Promise Timeline
+---------------------------------------
+
+
+1.6 Async Scenarios
+---------------------------------------
+answer : a, d
+
+
+1.7 Syntax
+---------------------------------------
+new Promise(function(resolve) {
+  console.log('first');
+  resolve();
+  console.log('second');
+}).then(function() {
+  console.log('third');
+});
+
+
+
+1.8 Write Your First Promise
+---------------------------------------
+function wait(ms) {
+	return new Promise(function(resolve) {
+		console.log(this);
+		window.setTimeout(function() {
+			resolve();
+		}, ms);
+	});
+};
+
+
+answer: global object
+
+1.9 Wrapping readyState
+---------------------------------------
+		function ready() {
+			// Credit to Jake Archibald
+			// https://github.com/jakearchibald/svgomg/blob/master/src/js/page/utils.js#L7
+		  return new Promise(function(resolve) {
+			  function checkState() {
+				  if (document.readyState !== 'loading') {
+				    resolve();
+				  }
+				}
+				document.addEventListener('readystatechange', checkState);
+				checkState();
+		  });
+		};
+
+		ready().then(wrapperResolved);
+
+
+
+1.10 IMPORTANT! Working w/Explanet Explorer
+---------------------------------------
+
+
+1.11 Wrap an XHR
+---------------------------------------
+
+
+1.12 Web Technologies
+---------------------------------------
+
+
+1.13 Fetch API
+---------------------------------------
+
+
+1.14 What Happens Next?
+---------------------------------------
+
+
+
