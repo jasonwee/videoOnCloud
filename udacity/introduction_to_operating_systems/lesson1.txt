@@ -1,0 +1,64 @@
+ud923
+
+date start : 01 may 2020
+
+
+1.1 are you ready?
+---------------------------------------
+
+
+
+1.2 c programming
+---------------------------------------
+
+
+
+1.3 c programming examples
+---------------------------------------
+
+
+1.4 working from the command line
+---------------------------------------
+
+
+
+1.5 command line example
+---------------------------------------
+
+
+1.6 using makefiles
+---------------------------------------
+
+
+1.7 makefile example
+---------------------------------------
+# specify the compiler
+CC=gcc
+
+# specify options for the compiler
+CFLAGS=-c -Wall
+
+all: hello
+
+hello: main.o hello.o
+    $(CC) main.o hello.o -o hello
+
+main.o: main.cpp
+    $(CC) $(CFLAGS) main.cpp
+
+hello.o: hello.cpp
+    $(CC) $(CFLAGS) hello.cpp
+
+clean:
+    rm -rf *o hello
+
+http://mrbook.org/blog/tutorials/make/
+
+
+
+1.8 i'm ready, let's go!
+---------------------------------------
+
+
+
+
