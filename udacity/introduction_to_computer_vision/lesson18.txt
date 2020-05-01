@@ -1,0 +1,92 @@
+date start : 01 may 2020
+
+
+18.1 intro
+---------------------------------------
+
+
+18.2 correspondence
+---------------------------------------
+
+
+
+18.3 quiz: find best match quiz
+---------------------------------------
+min_diff = Inf;
+best_x = 0;
+for x = 1:(size(strip)(2) - size(patch)(2))
+    other_patch = strip(:, x:(x + size(patch)(2) -1));
+    diff = sumsq((patch - other_patch)(:));
+    if diff < min_diff;
+        min_diff = diff;
+        best_x = x;
+    endif
+endfor
+
+
+18.4 correspondence problem
+---------------------------------------
+
+
+
+18.5 quiz: good regions to match quiz
+---------------------------------------
+3
+6
+8
+11
+
+
+18.6 effect of window size
+---------------------------------------
+
+
+
+18.7 occulusion
+---------------------------------------
+
+
+
+18.8 ordering constraint
+---------------------------------------
+
+
+18.9 quiz: match two strips quiz
+---------------------------------------
+num_blocks = floor(size(strip_left, 2) / b);
+disparity = zeros([1 num_blocks]);
+for block = 0:(num_blocks - 1)
+    x_left = block * b + 1;
+    patch_left = strip_left(:, x_left + b -1));
+    x_right = find_best_match(patch_left, strip_right);
+    disparity(1, block+1) = (x_left - x_right);
+endfor
+
+
+
+
+18.10 stereo results
+---------------------------------------
+
+
+
+18.11 dynamic programming formulation
+---------------------------------------
+
+
+
+18.12 coherent stereo on 2d grid
+---------------------------------------
+
+
+
+18.13 better results and challenges
+---------------------------------------
+
+
+
+18.14 end
+---------------------------------------
+
+
+
