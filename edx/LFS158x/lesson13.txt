@@ -1,0 +1,29 @@
+date start : 08 may 2020
+
+
+
+
+
+13.1 Introduction and Learning Objectives
+---------------------------------------
+
+
+
+13.2 configmaps and secrets
+---------------------------------------
+ConfigMaps allow us to decouple the configuration details from the container image. Using ConfigMaps, we pass configuration data as key-value pairs, which are consumed by Pods or any other system components and controllers, in the form of environment variables, sets of commands and arguments, or volumes. We can create ConfigMaps from literal values, from configuration files, from one or more files or directories.
+
+
+
+
+
+13.3 Knowledge Check
+---------------------------------------
+
+
+
+13.4 Learning Objectives (Review)
+---------------------------------------
+
+
+
