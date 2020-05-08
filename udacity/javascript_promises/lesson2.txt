@@ -1,0 +1,55 @@
+date start : 08 may 2020
+
+
+2.1 Fetch and Show First Planet
+---------------------------------------
+
+
+2.2 Error Handling Strategies
+---------------------------------------
+
+
+
+2.3 Chaining Thenables
+---------------------------------------
+13
+none
+4
+
+
+2.4 Series vs Parallel Requests
+---------------------------------------
+answer: 3
+
+
+2.5 Array Methods and Promises
+---------------------------------------
+
+
+2.6 Promises with .forEach
+---------------------------------------
+answer: series
+
+
+2.7 Promises with .map
+---------------------------------------
+
+
+
+2.8 All Promises
+---------------------------------------
+
+
+2.9 Course Outro
+---------------------------------------
+
+
+2.10 Exoplanets 101
+---------------------------------------
+
+
+2.11 Bonus Question: Parallel Requests
+---------------------------------------
+
+
+
