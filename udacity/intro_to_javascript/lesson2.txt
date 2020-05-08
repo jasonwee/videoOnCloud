@@ -1,0 +1,177 @@
+date start : 08 may 2020
+
+
+2.1 intro to data types
+---------------------------------------
+
+
+
+2.2 numbers
+---------------------------------------
+answer: -92
+-4
+-12
+4
+
+answer: false
+false
+true
+true
+
+
+2.3 comments
+---------------------------------------
+// this is a single-line comment
+
+/*
+this is
+a multi-line
+comment
+*/
+
+
+
+
+2.4 quiz: first expression (2-1)
+---------------------------------------
+console.log(10%3+100-1*2/8-58.75);
+
+
+2.5 Strings
+---------------------------------------
+
+
+2.6 String concatenation
+---------------------------------------
+answer: "helloworld"
+
+"Hello + 5*10"
+
+"Hello50"
+
+
+2.7 Variables
+---------------------------------------
+answer: 2,3
+
+
+2.8 Quiz: Converting Temperatures (2-2)
+---------------------------------------
+var celsius = 12;
+var fahrenheit = celsius * 1.8 + 32
+
+console.log(fahrenheit);
+
+
+
+2.9 String Index
+---------------------------------------
+w
+
+
+2.10 Escaping Strings
+---------------------------------------
+answer : 3
+
+
+2.11 Comparing Strings
+---------------------------------------
+"green" == "green"
+"green" > "blue"
+"green" > "Green"
+
+
+2.12 Quiz: Favorite Food (2-3)
+---------------------------------------
+console.log('Seafood');
+ 
+
+
+2.13 Quiz: String Equality for All (2-4)
+---------------------------------------
+var answer = "ALL Strings are CrEaTeD equal" == "ALL Strings are CrEaTeD equal";
+
+
+2.14 Quiz: All Tied Up (2-5)
+---------------------------------------
+var joke = 'Why couldn\'t the shoes go out and play?\nThey were all "tied" up!'
+console.log(joke);
+
+
+
+2.15 Quiz: Yosa Buson (2-6)
+---------------------------------------
+var haiku = "Blowing from the west\n" + "Fallen leaves gather\n" + "In the east.";
+
+
+
+2.16 Booleans
+---------------------------------------
+
+
+2.17 Quiz: Facebook Post (2-7)
+---------------------------------------
+Str
+Str
+Str
+Bool
+Num
+
+
+2.18 Null, Undefined, and NaN
+---------------------------------------
+answer: undefined
+
+
+
+2.19 Equality
+---------------------------------------
+answer:  NaN
+
+answer : 1,3,4,6
+
+
+2.20 Quiz: Semicolons! (2-8)
+---------------------------------------
+let thingOne = "red";
+let thingTwo = "blue";
+console.log(thingOne + " " + thingTwo);
+
+2.21 Quiz: What's my Name? (2-9)
+---------------------------------------
+var fullName = "Jason Wee";
+
+
+2.22 Quiz: Out to Dinner (2-10)
+---------------------------------------
+var bill = 10.25 + 3.99 + 7.15; 
+var tip = bill * 0.15;
+var total = bill + tip;
+console.log("$"+total.toFixed(2));
+
+
+2.23 Quiz: Mad Libs (2-11)
+---------------------------------------
+var adjective1 = 'amazing';
+var adjective2 = 'fun';
+var adjective3 = 'entertaining';
+
+// your code goes here
+var madLib = "The Intro to JavaScript course is "+adjective1+
+". James and Julia are so "+adjective2+
+". I cannot wait to work through the rest of this "+adjective3+" content!"
+console.log(madLib);
+
+2.24 Quiz: One Awesome Message(2-12)
+---------------------------------------
+var firstName = "Julia";
+var interest = "cats";
+var hobby = "play video games";
+var awesomeMessage = "Hi, my name is "+firstName+". I love " +interest+". In my spare time, I like to "+hobby+".";
+console.log(awesomeMessage);
+
+2.25 Lesson 2 Summary
+---------------------------------------
+
+
+
