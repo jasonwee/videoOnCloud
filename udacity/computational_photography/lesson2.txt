@@ -1,0 +1,57 @@
+date start : 08 may 2020
+
+
+2.1 intro
+---------------------------------------
+
+
+
+2.2 Lesson Objectives
+---------------------------------------
+
+
+
+2.3 What is Photography
+---------------------------------------
+
+
+
+2.4 What is Computational Photography
+---------------------------------------
+
+
+
+2.5 Computational Photography Combines
+---------------------------------------
+
+
+2.6 Limitations of Traditional Film Cameras
+---------------------------------------
+
+
+2.7 Computational PHotography Enables Imaging
+---------------------------------------
+
+
+
+2.8 Elements of Computational Photography
+---------------------------------------
+
+
+
+2.9 Quiz: Elements of Comp Photo
+---------------------------------------
+illumination optics sensors processing display user
+
+
+2.10 Rays to Pixels
+---------------------------------------
+
+
+
+2.11 Summary
+---------------------------------------
+
+
+
+
