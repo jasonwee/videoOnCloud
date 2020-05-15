@@ -1,0 +1,40 @@
+date start : 15 may 2020
+
+
+20.1 intro
+---------------------------------------
+
+
+20.2 ideal vs real intrinsic parameters
+---------------------------------------
+
+
+
+20.3 improving intrinsic parameters
+---------------------------------------
+
+
+20.4 quiz: intrisincs quiz
+---------------------------------------
+answer: a
+
+
+20.5 combining extrinsic and intrinsic calibration parameters
+---------------------------------------
+
+
+20.6 other ways to write the same equation
+---------------------------------------
+
+
+
+20.7 camera parameters
+---------------------------------------
+
+
+
+20.8 end
+---------------------------------------
+
+
+
