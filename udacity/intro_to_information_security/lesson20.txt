@@ -1,0 +1,146 @@
+date start : 15 may 2020
+
+
+20.1 video time
+---------------------------------------
+
+
+20.2 recommended reading
+---------------------------------------
+
+
+
+20.3 course notes
+---------------------------------------
+
+
+
+20.4 lesson introduction
+---------------------------------------
+
+
+
+20.5 introduction to wifi
+---------------------------------------
+
+
+
+20.6 quiz: wifi quiz
+---------------------------------------
+all 
+
+
+20.7 overview of wiki secuirty
+---------------------------------------
+
+
+20.8 overview of 80211i
+---------------------------------------
+
+
+20.9 quiz: wifi security standards quiz
+---------------------------------------
+wpa2
+
+
+20.10 overview of smartphone security
+---------------------------------------
+
+
+20.11 overview of ios security
+---------------------------------------
+
+
+
+20.12 quiz: operating system vulnerabilities quiz
+---------------------------------------
+apple mac os x
+linux kernel
+apple ios
+
+
+20.13 hardware security feature
+---------------------------------------
+
+
+
+20.14 ios trusted bootchain
+---------------------------------------
+
+
+20.15 file data encryption
+---------------------------------------
+
+
+
+20.16 quiz: security quiz
+---------------------------------------
+answer: 2
+
+
+20.17 mandatory code signing
+---------------------------------------
+
+
+
+20.18 restrict4ed app distribution model
+---------------------------------------
+
+
+20.19 quiz: app store security quiz
+---------------------------------------
+answer: 2
+
+
+20.20 sandboxing
+---------------------------------------
+
+
+20.21 address space layout randomization
+---------------------------------------
+
+
+20.22 quiz: ios security quiz
+---------------------------------------
+answer : all
+
+
+
+20.23 data execution prevention
+---------------------------------------
+
+
+
+20.24 passcodes and touch id
+---------------------------------------
+
+
+
+20.25 quiz: ios quiz
+---------------------------------------
+answer : 1,2
+
+
+20.26 android security overview
+---------------------------------------
+
+
+20.27 applications sandbox
+---------------------------------------
+
+
+20.28 android sandbox vs ios sandbox
+---------------------------------------
+
+
+20.29 code signing
+---------------------------------------
+
+
+20.30 quiz: android apps quiz
+---------------------------------------
+answer : all
+
+
+20.31 lesson summary
+---------------------------------------
