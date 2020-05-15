@@ -1,0 +1,33 @@
+date start : 15 may 2020
+
+
+
+
+
+14.1 Introduction and Learning Objectives
+---------------------------------------
+
+
+
+14.2 Ingress
+---------------------------------------
+According to kubernetes.io,
+
+"An Ingress is a collection of rules that allow inbound connections to reach the cluster Services."
+
+An Ingress Controller is an application watching the Master Node's API server for changes in the Ingress resources and updates the Layer 7 Load Balancer accordingly. Kubernetes supports different Ingress Controllers, and, if needed, we can also build our own. GCE L7 Load Balancer Controller and Nginx Ingress Controller are commonly used Ingress Controllers. Other controllers are Istio, Kong, Traefik, etc.
+
+
+
+
+
+14.3 Knowledge Check
+---------------------------------------
+
+
+
+14.4 Learning Objectives (Review)
+---------------------------------------
+
+
+
