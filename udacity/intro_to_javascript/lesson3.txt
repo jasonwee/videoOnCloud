@@ -1,0 +1,125 @@
+date start : 15 may 2020
+
+
+3.1 Intro to Conditionals
+---------------------------------------
+
+
+
+3.2 Quiz: Flowcharts (3-1)
+---------------------------------------
+answer: boolean
+a dragon appears and attacks
+
+
+
+3.3 Flowchart to Code
+---------------------------------------
+
+
+3.4 If...Else Statements
+---------------------------------------
+
+
+
+3.5 Else If Statements
+---------------------------------------
+answer: You paid the exact amount, have a nice day!
+Kendyll received a silver medal.
+
+
+3.6 Quiz: Even or Odd (3-2)
+---------------------------------------
+if (number % 2 === 0) {
+  console.log("even");
+} else {
+  console.log("odd");
+}
+
+
+3.7 Quiz: Musical Groups (3-3)
+---------------------------------------
+if (musicians <= 0) {
+    console.log("not a group");
+} else if (musicians === 1) {
+    console.log("solo");
+} else if (musicians === 2) {
+    console.log("duet");
+} else if (musicians === 3) {
+    console.log("trio");
+} else if (musicians === 4) {
+    console.log("quartet");
+} else if (musicians > 4) {
+    console.log("this is a large group");
+}
+
+
+3.8 Quiz: Murder Mystery (3-4)
+---------------------------------------
+
+
+3.9 More Complex Problems
+---------------------------------------
+
+
+3.10 Logical Operators
+---------------------------------------
+answer: 4
+||
+1,4,6
+
+
+3.11 Logical AND and OR
+---------------------------------------
+
+
+3.12 Quiz: Checking your Balance (3-5)
+---------------------------------------
+
+
+3.13 Quiz: Ice Cream (3-6)
+---------------------------------------
+
+
+3.14 Quiz: What do I Wear? (3-7)
+---------------------------------------
+
+
+3.15 Advanced Conditionals
+---------------------------------------
+
+
+3.16 Truthy and Falsy
+---------------------------------------
+"null"
+-5
+
+
+3.17 Ternary Operator
+---------------------------------------
+asnwer: 4
+
+
+3.18  Quiz: Navigating the Food Chain (3-8)
+---------------------------------------
+
+
+3.19 Switch Statement
+---------------------------------------
+answer: 3
+
+
+3.20 Failling-through
+---------------------------------------
+answr: 1
+
+
+3.21 Quiz: Back to School (3-9)
+---------------------------------------
+
+
+3.22 Lesson 3 Summary
+---------------------------------------
+
+
+
