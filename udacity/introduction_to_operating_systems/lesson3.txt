@@ -1,0 +1,98 @@
+date start : 15 may 2020
+
+
+3.1 Lesson Preview
+---------------------------------------
+
+
+
+3.2 Visual Metaphor
+---------------------------------------
+
+
+
+3.3 What is an Operating System?
+---------------------------------------
+
+
+3.4 Operating System Definition
+---------------------------------------
+
+
+
+3.5 Quiz: Operating System Components Quiz
+---------------------------------------
+answer:  file system, device driver, scheduler
+
+
+3.6 Quiz: Abstraction or Arbitration Quiz
+---------------------------------------
+answer: r, b, b
+
+
+3.7 Operating System Examples
+---------------------------------------
+
+
+
+3.8 OS Elements
+---------------------------------------
+
+
+3.9 OS Elements Example
+---------------------------------------
+
+
+3.10 OS Design Principles
+---------------------------------------
+
+
+3.11 OS Protection Boundary
+---------------------------------------
+
+
+3.12 System Call Flowchart
+---------------------------------------
+
+
+3.13 Crossing the OS Boundary
+---------------------------------------
+
+
+3.14 OS Services
+---------------------------------------
+
+
+3.15 Quiz: System Calls Quiz
+---------------------------------------
+answer: kill
+setgid
+mount
+sysctl
+
+
+3.16 Monolithic OS
+---------------------------------------
+
+
+3.17 Modular OS
+---------------------------------------
+
+
+3.18 Microkernel
+---------------------------------------
+
+
+3.19 Linux and Mac OS Architectures
+---------------------------------------
+
+
+3.20 Lesson Summary
+---------------------------------------
+
+
+3.21 Quiz: Lesson Review
+---------------------------------------
+answer: 
+
+
