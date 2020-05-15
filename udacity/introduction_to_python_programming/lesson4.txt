@@ -1,0 +1,622 @@
+date start : 15 may 2020
+
+
+4.1 introduction
+---------------------------------------
+
+
+
+4.2 conditional statements
+---------------------------------------
+
+
+
+4.3 practice: conditional statements
+---------------------------------------
+points = 174  # use this input to make your submission
+
+# write your if statement here
+if (points >= 1 and points <= 50):
+    result = "Congratulations! You won a wooden rabbit!"
+elif (points >= 51 and points <= 150):
+    result = "Oh dear, no prize this time."
+elif (points >= 151 and points <= 180):
+    result = "Congratulations! You won a wafer-thin mint!"
+elif (points >= 181 and points <= 200):
+    result = "Congratulations! You won a penguin!"
+    
+print(result)
+
+
+4.4 solution: conditional statements
+---------------------------------------
+
+
+
+4.5 quiz: conditional statements
+---------------------------------------
+answer = 10
+guess = 10
+
+if answer > guess:
+    result = "Oops!  Your guess was too low."
+elif answer < guess:
+    result = "Oops!  Your guess was too high."
+elif answer == guess:
+    result = "Nice!  Your guess matched the answer!"
+
+
+
+
+state = 'NY'
+purchase_amount = 100
+
+if state == 'CA':
+    tax_amount = .075
+    total_cost = purchase_amount*(1+tax_amount)
+    result = "Since you're from {}, your total cost is {}.".format(state, total_cost)
+
+elif state == 'MN':
+    tax_amount = .095
+    total_cost = purchase_amount*(1+tax_amount)
+    result = "Since you're from {}, your total cost is {}.".format(state, total_cost)
+
+elif state == 'NY':
+    tax_amount = .089
+    total_cost = purchase_amount*(1+tax_amount)
+    result = "Since you're from {}, your total cost is {}.".format(state, total_cost)
+
+print(result)
+
+
+4.6 solution: conditional statements
+---------------------------------------
+
+
+
+4.7 boolean expressions for conditions
+---------------------------------------
+
+
+
+4.8 quiz: boolean expressions for conditions
+---------------------------------------
+false
+false
+true
+true
+
+
+
+points = 174  # use this as input for your submission
+
+# establish the default prize value to None
+prize = None
+
+# use the points value to assign prizes to the correct prize names
+if (points >= 1 and points <= 50):
+    prize = "wooden rabbit"
+elif (points >= 51 and points <= 150):
+    prize = None
+elif (points >= 151 and points <= 180):
+    prize = "wafer-thin mint"
+elif (points >= 181 and points <= 200):
+    prize = "penguin"
+
+
+
+# use the truth value of prize to assign result to the correct prize
+if prize:
+    result = "Congratulations! You won a {}!".format(prize)
+else:
+    result = "Oh dear, no prize this time."
+
+print(result)
+
+4.9 solution: boolean expressions for conditions
+---------------------------------------
+
+
+
+
+4.10 for loops
+---------------------------------------
+
+
+
+
+4.11 practice: for loops
+---------------------------------------
+for s in sentence:
+    print(s)
+
+for i in range(5,35,5):
+    print (i)
+
+
+4.12 solution: for loops practice
+---------------------------------------
+
+
+
+4.13 quiz: for loops
+---------------------------------------
+for name in names:
+    usernames.append(name.replace(" ", "_").lower())
+
+answer : 3
+
+
+
+
+usernames = ["Joey Tribbiani", "Monica Geller", "Chandler Bing", "Phoebe Buffay"]
+
+# write your for loop here
+for idx in range(0, len(usernames)):
+    #print(usernames[idx]).replace(" ". "_").lower()
+    usernames[idx] = usernames[idx].replace(" ", "_").lower()
+
+
+print(usernames)
+
+
+tokens = ['<greeting>', 'Hello World!', '</greeting>']
+count = 0
+
+# write your for loop here
+for token in tokens:
+    if token.startswith('<') and token.endswith('>'):
+        count += 1
+
+
+print(count)
+
+
+
+
+items = ['first string', 'second string']
+html_str = "<ul>\n"  # "\ n" is the character that marks the end of the line, it does
+                     # the characters that are after it in html_str are on the next line
+
+# write your code here
+for item in items:
+    html_str = html_str + "<li>" + item + "</li>" + "\n"
+
+html_str+= "</ul>"
+
+print(html_str)
+
+
+
+4.14 solution for loops quiz
+---------------------------------------
+
+
+
+4.15 quiz: match inputs to outputs
+---------------------------------------
+[0,1,2,3]
+[4,5,6,7]
+[4,6,8]
+[]
+
+
+
+answer: 4
+
+
+
+
+4.16 building dictionaries
+---------------------------------------
+
+
+
+4.17 iterating through dictionaries with for loops
+---------------------------------------
+
+
+4.18 quiz: iterating through dictionaries
+---------------------------------------
+# You would like to count the number of fruits in your basket. 
+# In order to do this, you have the following dictionary and list of
+# fruits.  Use the dictionary and list to count the total number
+# of fruits, but you do not want to count the other items in your basket.
+
+result = 0
+basket_items = {'apples': 4, 'oranges': 19, 'kites': 3, 'sandwiches': 8}
+fruits = ['apples', 'oranges', 'pears', 'peaches', 'grapes', 'bananas']
+
+#Iterate through the dictionary
+for key,value in basket_items.items():
+    if key in fruits:
+        result += value
+
+#if the key is in the list of fruits, add the value (number of fruits) to result
+
+
+print(result)
+
+
+
+
+
+
+
+
+for key,value in basket_items.items():
+    if key in fruits:
+        result += value
+
+
+
+
+
+
+
+
+
+for key,value in basket_items.items():
+    if key in fruits:
+        fruit_count += value
+    else:
+        not_fruit_count += value
+
+
+
+4.19 solution: iterating through dictionaries
+---------------------------------------
+
+
+
+4.20 while loops
+---------------------------------------
+
+
+4.21 practice: while loops
+---------------------------------------
+# number to find the factorial of
+number = 6   
+
+# start with our product equal to one
+product = 1
+
+# track the current number being multiplied
+current = 1
+
+# write your while loop here
+while (current <= 6):
+
+    # multiply the product so far by the current number
+    product *= current
+    
+    # increment current with each iteration until it reaches number
+    current += 1
+
+
+
+# print the factorial of number
+print(product)
+
+
+
+
+
+
+
+
+
+# number to find the factorial of
+number = 6   
+
+# start with our product equal to one
+product = 1
+
+# write your for loop here
+for i in range(1,number+1):
+    product *= i
+
+
+# print the factorial of number
+print(product)
+
+
+
+
+
+4.22 solution: while loops practice
+---------------------------------------
+
+
+
+4.23 quiz: while loops
+---------------------------------------
+start_num = 0
+end_num = 10
+count_by = 2
+
+# write a while loop that uses break_num as the ongoing number to 
+#   check against end_num
+break_num = start_num
+while break_num < end_num:
+    break_num += count_by
+
+print(break_num)
+
+
+
+
+
+
+
+
+start_num = 0
+end_num = 10
+count_by = 2
+
+# write a while loop that uses break_num as the ongoing number to 
+#   check against end_num
+if start_num > end_num:
+    result = "Oops! Looks like your start value is greater than the end value. Please try again."
+
+else:
+    break_num = start_num
+    while break_num < end_num:
+        break_num += count_by
+
+    result = break_num
+
+print(result)
+
+
+
+
+
+limit = 40
+
+# write your while loop here
+nearest_square = 0
+i = 0
+while nearest_square < 40:
+    i += 1
+    nearest_square = i * i
+
+i-=1
+nearest_square = i * i
+
+print(nearest_square)
+
+4.24 solution: while loops quiz
+---------------------------------------
+limit = 40
+
+num = 0
+while (num+1)**2 < limit:
+    num += 1
+nearest_square = num**2
+
+print(nearest_square)
+
+
+4.25 for loops vs while loops
+---------------------------------------
+
+
+
+4.26 check for understanding: for and while loops
+---------------------------------------
+
+answer: all
+
+## Please use this space to test and run your code
+
+num_list = [422, 136, 524, 85, 96, 719, 85, 92, 10, 17, 312, 542, 87, 23, 86, 191, 116, 35, 173, 45, 149, 59, 84, 69, 113, 166]
+
+count_odd = 0
+list_sum = 0
+i = 0
+len_num_list = len(num_list)
+
+while (count_odd < 5) and (i < len_num_list): 
+    if num_list[i] % 2 != 0:
+        list_sum += num_list[i]
+        count_odd += 1
+    i += 1
+
+print ("The numbers of odd numbers added are: {}".format(count_odd))
+print ("The sum of the odd numbers added is: {}".format(list_sum))
+
+
+4.27 solution: hceck for understanding: for and while loops
+---------------------------------------
+
+
+
+4.28 break, continue
+---------------------------------------
+
+
+
+4.29 quiz: break, continue
+---------------------------------------
+news_ticker = ""
+for headline in headlines:
+    news_ticker += headline + " "
+    if len(news_ticker) >= 140:
+        news_ticker = news_ticker[:140]
+        break
+
+
+4.30 solution: break, continue
+---------------------------------------
+
+
+
+4.31 practice: loops
+---------------------------------------
+## Your code should check if each number in the list is a prime number
+check_prime = [26, 39, 51, 53, 57, 79, 85]
+
+## write your code here
+## HINT: You can use the modulo operator to find a factor
+# iterate through the check_prime list
+for num in check_prime:
+
+# search for factors, iterating through numbers ranging from 2 to the number itself
+    for i in range(2, num):
+
+# number is not prime if modulo is 0
+        if (num % i) == 0:
+            print("{} is NOT a prime number, because {} is a factor of {}".format(num, i, num))
+            break
+
+# otherwise keep checking until we've searched all possible factors, and then declare it prime
+        if i == num -1:    
+            print("{} IS a prime number".format(num))
+
+
+4.32 solution: loops
+---------------------------------------
+
+
+
+4.33 zip and enumerate
+---------------------------------------
+
+
+4.34 quiz: zip and enumerate
+---------------------------------------
+x_coord = [23, 53, 2, -12, 95, 103, 14, -5]
+y_coord = [677, 233, 405, 433, 905, 376, 432, 445]
+z_coord = [4, 16, -6, -42, 3, -6, 23, -1]
+labels = ["F", "J", "A", "Q", "Y", "B", "W", "X"]
+
+points = []
+# write your for loop here
+for i in zip(labels, x_coord, y_coord, z_coord):
+    #points.append(i)
+    points.append('{}: {}, {}, {}'.format(i[0], i[1], i[2], i[3] ))
+    
+
+for point in points:
+    print(point)
+
+
+
+
+cast = dict(zip(cast_names, cast_heights))
+print(cast)
+
+
+
+# define names and heights here
+names, heights = zip(*cast)
+
+
+data_transpose = tuple(zip(*data))
+
+
+
+cast = ["Barney Stinson", "Robin Scherbatsky", "Ted Mosby", "Lily Aldrin", "Marshall Eriksen"]
+heights = [72, 68, 72, 66, 76]
+
+# write your for loop here
+for i,c in enumerate(cast):
+    cast[i] = c + " " + str(heights[i])
+
+print(cast)
+
+
+
+
+
+
+4.35 solution: zip and enumerate
+---------------------------------------
+
+
+
+4.36 list comprehensions
+---------------------------------------
+
+squares = [x**2 for x in range(9) if x % 2 == 0]
+
+squares = [x**2 for x in range(9) if x % 2 == 0 else x + 3]
+
+squares = [x**2 if x % 2 == 0 else x + 3 for x in range(9)]
+
+
+4.37 quiz: list comprehensions
+---------------------------------------
+first_names = [name.split()[0].lower() for name in names]
+
+multiples_3 = [x * 3 for x in range(1,21)]
+print(multiples_3)
+
+
+passed = [name for name, score in scores.items() if score >= 65]
+print(passed)
+
+
+
+
+
+4.38 solution: list comprehensions
+---------------------------------------
+
+
+
+4.39 practice questions
+---------------------------------------
+nom_count_dict = {}
+for year, list_dir in nominated.items():
+    for director in list_dir:
+        if director not in nom_count_dict:
+            nom_count_dict[director] = 1
+        else:
+            nom_count_dict[director] += 1
+            
+            
+
+
+
+win_count_dict = {}
+for year, winnerlist in winners.items():
+    for winner in winnerlist:
+        win_count_dict[winner] = win_count_dict.get(winner, 0) + 1
+        
+        
+        
+        
+
+        
+win_count_dict = {}
+for year, winnerlist in winners.items():
+    for winner in winnerlist:
+        win_count_dict[winner] = win_count_dict.get(winner, 0) + 1
+
+#SECOND PART OF SOLUTION
+highest_count = 0
+most_win_director = []
+
+for key, value in win_count_dict.items():
+    if value > highest_count:
+        highest_count = value
+        most_win_director.clear()
+        most_win_director.append(key)
+    elif value == highest_count:
+        most_win_director.append(key)
+    else:
+        continue                
+
+
+4.40 solutions to practice questions
+---------------------------------------
+
+
+4.41 conclusion
+---------------------------------------
+
+
+
+
