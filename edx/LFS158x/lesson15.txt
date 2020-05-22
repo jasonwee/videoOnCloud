@@ -1,0 +1,95 @@
+date start : 22 may 2020
+
+
+
+
+
+15.1 Introduction and Learning Objectives
+---------------------------------------
+
+
+
+15.2 Advanced Topics 
+---------------------------------------
+With Annotations, we can attach arbitrary non-identifying metadata to any objects, in a key-value format:
+
+"annotations": {
+  "key1" : "value1",
+  "key2" : "value2"
+}
+
+Unlike Labels, annotations are not used to identify and select objects. Annotations can be used to:
+
+Store build/release IDs, PR numbers, git branch, etc.
+Phone/pager numbers of people responsible, or directory entries specifying where such information can be found
+Pointers to logging, monitoring, analytics, audit repositories, debugging tools, etc.
+Etc.
+
+
+A Job creates one or more Pods to perform a given task. The Job object takes the responsibility of Pod failures. It makes sure that the given task is completed successfully. Once the task is complete, all the Pods have terminated automatically. Job configuration options include:
+
+parallelism - to set the number of pods allowed to run in parallel;
+completions - to set the number of expected completions;
+activeDeadlineSeconds - to set the duration of the Job;
+backoffLimit - to set the number of retries before Job is marked as failed;
+ttlSecondsAfterFinished - to delay the clean up of the finished Jobs.
+
+
+
+
+
+Autoscaling can be implemented in a Kubernetes cluster via controllers which periodically adjust the number of running objects based on single, multiple, or custom metrics. There are various types of autoscalers available in Kubernetes which can be implemented individually or combined for a more robust autoscaling solution:
+
+Horizontal Pod Autoscaler (HPA) 
+HPA is an algorithm based controller API resource which automatically adjusts the number of replicas in a ReplicaSet, Deployment or Replication Controller based on CPU utilization.
+Vertical Pod Autoscaler (VPA) 
+VPA automatically sets Container resource requirements (CPU and memory) in a Pod and dynamically adjusts them in runtime, based on historical utilization data, current resource availability and real-time events.
+Cluster Autoscaler 
+Cluster Autoscaler automatically re-sizes the Kubernetes cluster when there are insufficient resources available for new Pods expecting to be scheduled or when there are underutilized nodes in the cluster.
+
+
+
+
+
+In cases when we need to collect monitoring data from all nodes, or to run a storage daemon on all nodes, then we need a specific type of Pod running on all nodes at all times. A DaemonSet is the object that allows us to do just that. It is a critical controller API resource for multi-node Kubernetes clusters. The kube-proxy agent running as a Pod on every single node in the cluster is managed by a DaemonSet.  
+
+
+With Kubernetes Cluster Federation we can manage multiple Kubernetes clusters from a single control plane. We can sync resources across the federated clusters and have cross-cluster discovery. This allows us to perform Deployments across regions, access them using a global DNS record, and achieve High Availability. 
+
+
+
+In Kubernetes, a resource is an API endpoint which stores a collection of API objects. For example, a Pod resource contains all the Pod objects.
+
+Although in most cases existing Kubernetes resources are sufficient to fulfill our requirements, we can also create new resources using custom resources. With custom resources, we don't have to modify the Kubernetes source.
+
+
+
+
+At times we need to define specific privileges and access control settings for Pods and Containers. Security Contexts allow us to set Discretionary Access Control for object access permissions, privileged running, capabilities, security labels, etc. However, their effect is limited to the individual Pods and Containers where such context configuration settings are incorporated in the spec section. 
+
+In order to apply security settings to multiple Pods and Containers cluster-wide, we can define Pod Security Policies. They allow more fine-grained security settings to control the usage of the host namespace, host networking and ports, file system groups, usage of volume types, enforce Container user and group ID, root privilege escalation, etc. 
+
+
+
+
+In Kubernetes, we have to collect resource usage data by Pods, Services, nodes, etc., to understand the overall resource consumption and to make decisions for scaling a given application. Two popular Kubernetes monitoring solutions are the Kubernetes Metrics Server and Prometheus.
+
+Metrics Server 
+Metrics Server is a cluster-wide aggregator of resource usage data - a relatively new feature in Kubernetes. 
+Prometheus
+Prometheus, now part of CNCF (Cloud Native Computing Foundation), can also be used to scrape the resource usage from different Kubernetes components and objects. Using its client libraries, we can also instrument the code of our application.
+
+
+
+
+
+15.3 Knowledge Check
+---------------------------------------
+
+
+
+15.4 Learning Objectives (Review)
+---------------------------------------
+
+
+
