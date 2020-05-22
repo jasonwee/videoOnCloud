@@ -1,0 +1,109 @@
+date start : 22 may 2020
+
+
+4.1 Lesson Preview
+---------------------------------------
+
+
+
+4.2 Visual Metaphor
+---------------------------------------
+
+
+
+4.3 What is a Process?
+---------------------------------------
+
+
+4.4 What Does a Process Look Like?
+---------------------------------------
+
+
+
+4.5 Process Address Space
+---------------------------------------
+
+
+4.6 Address Space and Memory Management
+---------------------------------------
+
+
+4.7 Quiz: Virtual Addresses Quiz
+---------------------------------------
+answer: 2
+
+
+4.8 Process Execution State
+---------------------------------------
+
+
+
+4.9 Process Control Block
+---------------------------------------
+
+
+4.10 How is a PCB Used?
+---------------------------------------
+
+
+4.11 Context Switch
+---------------------------------------
+
+
+4.12 Quiz: Hot Cache Quiz
+---------------------------------------
+answer: 2,3
+
+4.13 Process Life Cycle: States
+---------------------------------------
+
+
+4.14 Quiz: Process State Quiz
+---------------------------------------
+answer: running, ready
+
+4.15 Process Life Cycle: Creation
+---------------------------------------
+
+
+4.16 Quiz: Parent Process Quiz
+---------------------------------------
+answer:
+init
+zygote
+
+
+4.17 Role of the CPU Scheduler
+---------------------------------------
+
+
+4.18 Length of Process
+---------------------------------------
+
+
+4.19 What about I/O ?
+---------------------------------------
+
+
+4.20 Quiz: Scheduler Responsibility Quiz
+---------------------------------------
+answer: 1,4
+
+4.21 Inter Process Communication
+---------------------------------------
+
+
+4.22 Quiz: Shared Memory Quiz
+---------------------------------------
+depend
+
+
+4.23 Lesson Summary 
+---------------------------------------
+
+
+4.24 Quiz: Lesson Review
+---------------------------------------
+
+
+
