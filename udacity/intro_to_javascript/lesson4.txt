@@ -1,0 +1,156 @@
+date start : 22 may 2020
+
+
+4.1 Intro to Loops
+---------------------------------------
+
+
+
+4.2 While Loops
+---------------------------------------
+
+
+
+4.3 Parts of a While Loop
+---------------------------------------
+answer: 8
+
+1,3
+
+4.4 Quiz: JuliaJames (4-1)
+---------------------------------------
+var x = 1;
+
+while (x <= 20) {
+    // check divisibility
+    if (x % 3 === 0)
+       console.log("Julia");
+    if (x % 5 === 0)
+       console.log("James");
+    if (x % 3 === 0 && x % 5 === 0)
+       console.log("JuliaJames");
+    if (x % 3 !== 0 && x % 5 !== 0)
+       console.log(x);
+    // print Julia, James, or JuliaJames
+    // increment x
+    x = x + 1;
+}
+
+
+
+4.5 Quiz: 99 Bottles of Juice (4-2)
+---------------------------------------
+var num = 99;
+
+while (num >= 1) {
+    // check value of num
+    // print lyrics using num
+    var bottle="bottles"
+    if (num == 1)
+      bottle="bottle"
+    var after = num -1;
+    var after_bottle = "bottles";
+    if (after == 1)
+      after_bottle = "bottle"
+    console.log(num + " " + bottle + " of juice on the wall! "+num+" "+bottle+" of juice! Take one down, pass it around... "+after+" "+after_bottle+" of juice on the wall!")
+    // don't forget to check pluralization on the last line!
+    // decrement num
+    num--;
+}
+
+
+
+4.6 Quiz: Countdown, Liftoff! (4-3)
+---------------------------------------
+let t=60;
+
+while (t>=0) {
+    
+    if (t === 50)
+      console.log("Orbiter transfers from ground to internal power");
+    else if (t === 31)
+      console.log("Ground launch sequencer is go for auto sequence start");
+    else if (t === 16)
+      console.log("Activate launch pad sound suppression system");
+    else if (t === 10)
+      console.log("Activate main engine hydrogen burnoff system");
+    else if (t === 6)
+      console.log("Main engine start");
+    else if (t === 0)
+      console.log("Solid rocket booster ignition and liftoff!");
+    else
+      console.log("T-" + t + " seconds");
+    t--;
+}
+
+
+
+4.7 For Loops
+---------------------------------------
+
+
+4.8 Parts of a For Loop
+---------------------------------------
+
+
+4.9 Nested Loops
+---------------------------------------
+0 2 4 6
+
+
+4.10 Increment and Decrement
+---------------------------------------
+
+
+4.11 Quiz: Changing the Loop (4-4)
+---------------------------------------
+for (var x = 9; x >= 1; x = x -1) {
+    console.log("hello " + x);
+}
+
+
+4.12 Quiz: Fix the Error 1 (4-5)
+---------------------------------------
+// fix the for loop
+for (var x = 5; x < 10; x++) {
+    console.log(x);
+}
+
+
+
+4.13 Quiz: Fix the Error 2 (4-6)
+---------------------------------------
+// fix the for loop
+for (var k = 0; k < 200; k++) {
+    console.log(k);
+}
+
+
+
+4.14 Quiz: Factorials! (4-7)
+---------------------------------------
+// your code goes here
+let solution = 1;
+
+for (let i = 1; i <= 12; i ++) {
+    solution *= i
+}
+
+console.log(solution);
+
+
+
+4.15 Quiz: Find my Seat (4-8)
+---------------------------------------
+for (let i = 0; i < 26; i++) {
+    for (let j = 0; j < 100; j++) {
+        console.log(i + "-" + j);
+    }
+}
+
+
+4.16 Lesson 4 Summary
+---------------------------------------
+
+
+
