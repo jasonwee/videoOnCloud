@@ -1,0 +1,131 @@
+date start : 22 may 2020
+
+
+5.1 introduction
+---------------------------------------
+
+
+
+5.2 defining functions
+---------------------------------------
+
+
+
+5.3 quiz: defining functions
+---------------------------------------
+def population_density(population, land_area):
+    return population / land_area
+
+def readable_timedelta(days):
+    w = days / 7
+    d = days % 7;
+    return '{} week(s) and {} day(s).'.format(w, d)
+
+
+5.4 solution: defining functions
+---------------------------------------
+
+
+
+5.5 check for understanding: functions
+---------------------------------------
+assignment statement
+not a statement
+for loop
+method call
+while loop
+
+
+
+function
+function call
+argument 
+method
+
+
+list
+
+
+
+no argument
+
+
+
+
+
+5.6 variable scope
+---------------------------------------
+
+
+
+5.7 quiz: variable scope
+---------------------------------------
+an error occur
+
+
+5.8 solution: variable scope
+---------------------------------------
+
+
+
+5.9 check for understanding: variable scope
+---------------------------------------
+variable scope
+
+
+functions
+
+
+type error
+
+type error
+
+
+
+
+5.10 documentation
+---------------------------------------
+
+
+5.11 quiz: documentation
+---------------------------------------
+def readable_timedelta(days):
+    """
+    return a human readable of week/days given input days.
+    """
+    weeks = days // 7
+    remainder = days % 7
+    return "{} week(s) and {} day(s)".format(weeks, remainder)
+
+
+5.12 solution: documentation
+---------------------------------------
+
+
+
+5.13 lambda expressions
+---------------------------------------
+Components of a Lambda Function
+The lambda keyword is used to indicate that this is a lambda expression.
+Following lambda are one or more arguments for the anonymous function separated by commas, followed by a colon :. Similar to functions, the way the arguments are named in a lambda expression is arbitrary.
+Last is an expression that is evaluated and returned in this function. This is a lot like an expression you might see as a return statement in a function.
+With this structure, lambda expressions aren’t ideal for complex functions, but can be very useful for short, simple functions.
+
+
+
+
+5.14 quiz: lambda expressions
+---------------------------------------
+
+
+
+5.15 solution: lambda expressions
+---------------------------------------
+
+
+
+5.16 conclusion
+---------------------------------------
+
+
+
