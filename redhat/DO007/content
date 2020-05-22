@@ -1,0 +1,52 @@
+date start : 22 May 2020
+
+
+Ansible Essentials Introduction
+-------------------------------
+
+
+
+What is Ansible and the Ansible Way
+-------------------------------
+
+
+
+How Ansible Works
+-------------------------------
+
+
+
+Ad-Hoc Commands (and demonstration)
+-------------------------------
+
+
+Introduction to Playbooks (and demonstration)
+-------------------------------
+
+
+Introduction to Roles (and demonstration)
+-------------------------------
+
+
+Creating the Roles Structure with Ansible-Gaalxy (and demonstration)
+-------------------------------
+
+
+Breaking an Existing Playbook into a Role (and demonstration)
+-------------------------------
+
+
+Creating a New Role (and demonstration)
+-------------------------------
+
+
+Utilizing Roles in your Main Playbooks (and demonstration)
+-------------------------------
+
+
+Overview of Ansible Tower (and demonstration)
+-------------------------------
+
+
+
+
