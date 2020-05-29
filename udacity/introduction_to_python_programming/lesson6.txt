@@ -1,0 +1,298 @@
+date start : 29 may 2020
+
+
+6.1 introduction
+---------------------------------------
+
+
+
+6.2 python installation
+---------------------------------------
+
+
+
+6.3 install python using anaconda
+---------------------------------------
+
+
+6.4 [for windows] configuring git bash to run python
+---------------------------------------
+
+
+
+6.5 running a python script
+---------------------------------------
+
+
+
+6.6 programming environment setup
+---------------------------------------
+
+
+
+6.7 editing a python script
+---------------------------------------
+Welcome to Python3!
+
+             ____
+            / . .\
+            \  ---<
+             \  /
+   __________/ /
+-=:___________/
+
+<3, Juno
+
+
+
+6.8 scripting with raw input
+---------------------------------------
+name = input("Enter your name: ")
+print("Hello there, {}!".format(name.title()))
+
+
+
+
+
+6.9 quiz: scripting with raw input
+---------------------------------------
+
+
+
+
+6.10 solution: scripting with raw input
+---------------------------------------
+
+
+6.11 errors and exceptions
+---------------------------------------
+
+
+6.12 quiz: errors and exceptiosn
+---------------------------------------
+answer : 2, 5, 6
+
+answer : 
+correct type but inappropriate value
+assert fail
+sequence is out of range
+key can't be foudn in dictionary
+object of unsupported type
+
+
+6.13 handling errors
+---------------------------------------
+
+
+6.14 practice: handling input errors
+---------------------------------------
+
+
+
+6.15 solution: handling input errors
+---------------------------------------
+
+
+
+6.16 accessing error messages
+---------------------------------------
+
+
+
+6.17 reading and writing files
+---------------------------------------
+
+
+6.18 quiz: reading and writing files
+---------------------------------------
+answer: readline()
+
+def create_cast_list(filename):
+    cast_list = []
+    #use with to open the file filename
+    #use the for loop syntax to process each line
+    #and add the actor name to cast_list
+    with open(filename) as f:
+        for line in f:
+            name, other = line.split(',', 1)
+            cast_list.append(name)
+
+    return cast_list
+
+cast_list = create_cast_list('flying_circus_cast.txt')
+for actor in cast_list:
+    print(actor)
+
+￼
+
+6.19 solution: reading and writing files
+---------------------------------------
+
+
+
+6.20 quiz: practice debugging
+---------------------------------------
+identifier is not foudn in the local
+
+access a local variable before it is defined.
+
+assignation error.
+
+inapproriate type
+
+
+
+
+number = int(userInput)
+
+
+
+6.21 solutions for quiz: practice debugging
+---------------------------------------
+
+
+
+6.22 importing local scripts
+---------------------------------------
+
+
+
+6.23 the standard library
+---------------------------------------
+
+
+6.24 quiz: the standard library
+---------------------------------------
+# print e to the power of 3 using the math module
+import math
+
+print(math.exp(3))
+
+
+
+
+
+# Use an import statement at the top
+import random
+
+word_file = "words.txt"
+word_list = []
+
+#fill up the word_list
+with open(word_file,'r') as words:
+	for line in words:
+		# remove white space and make everything lowercase
+		word = line.strip().lower()
+		# don't include words that are too long or too short
+		if 3 < len(word) < 8:
+			word_list.append(word)
+
+# Add your function generate_password here
+# It should return a string consisting of three random words 
+# concatenated together without spaces
+def generate_password():
+    rand = random.randint(0,len(word_list)-1)
+    a, b, c = random.sample(range(1, len(word_list)-1), 3)
+    return word_list[a] + word_list[b] + word_list[c] 
+
+
+# test your function
+print(generate_password())
+
+
+
+
+
+datetime
+
+
+
+os
+
+
+
+
+csv
+
+￼
+zipfile
+
+
+timeit
+
+
+
+
+
+6.25 solution: the standard library
+---------------------------------------
+
+
+
+6.26 techniques for importing modules
+---------------------------------------
+
+
+
+6.27 quiz: techniques for importing modules
+---------------------------------------
+random.randint(0, 10)
+randint(0,10)
+rd.randint(0,10)
+rint(0,10)
+dont use this import statement
+
+
+
+
+6.28 third-party libraries
+---------------------------------------
+
+
+
+6.29 experimenting with an interpreter
+---------------------------------------
+
+
+
+6.30 online resources
+---------------------------------------
+answer: 4
+
+
+
+6.31 practice question
+---------------------------------------
+
+
+
+6.32 solution for practice question
+---------------------------------------
+# function that creates a flower_dictionary from filename
+def create_flowerdict(filename):
+    flower_dict = {}
+    with open(filename) as f:
+        for line in f:
+            letter = line.split(": ")[0].lower() 
+            flower = line.split(": ")[1].strip()
+            flower_dict[letter] = flower
+    return flower_dict
+
+# Main function that prompts for user input, parses out the first letter
+# includes function call for create_flowerdict to create dictionary
+def main(): 
+    flower_d = create_flowerdict('flowers.txt')
+    full_name = input("Enter your First [space] Last name only: ")
+    first_name = full_name[0].lower()
+    first_letter = first_name[0]
+# print command that prints final input with value from corresponding key in dictionary
+    print("Unique flower name with the first letter: {}".format(flower_d[first_letter]))
+
+main()
+
+
+6.33 conclusion
+---------------------------------------
+
+
+
