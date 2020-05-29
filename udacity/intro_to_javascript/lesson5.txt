@@ -1,0 +1,177 @@
+date start : 29 may 2020
+
+
+5.1 Intro to Functions
+---------------------------------------
+
+
+
+5.2 Function Example
+---------------------------------------
+
+
+
+5.3 Declaring Functions 
+---------------------------------------
+answer: 7
+parameters
+
+
+
+5.4 Function Recap
+---------------------------------------
+
+
+
+5.5 Quiz: Laugh it Off 1 (5-1)
+---------------------------------------
+function laugh() {
+    return "hahahahahahahahahaha!"
+}
+
+console.log(laugh());
+
+
+
+5.6 Quiz: Laugh it Off 1 (5-2)
+---------------------------------------
+function laugh(num) {
+  laughing=""
+  for (var i = 0; i < num; i++) {
+      laughing += "ha"
+  }
+  laughing+="!";
+  return laughing
+}
+
+console.log(laugh(3));
+
+
+5.7 Return Values
+---------------------------------------
+answer: zzz
+answer: 21
+answer: 1 will returned
+
+5.8 Using Return Values
+---------------------------------------
+answer: 4
+
+
+5.9 Scope
+---------------------------------------
+
+
+5.10 Scope Example
+---------------------------------------
+answer: a
+answer: y(), z()
+
+
+5.11 Shadowing
+---------------------------------------
+answer: 4
+answer: 2
+
+
+5.12 Global Variables
+---------------------------------------
+
+
+
+5.13 Scope Recap
+---------------------------------------
+
+
+5.14 Hoisting
+---------------------------------------
+answer: undefined Julia
+answer: undefined Julia
+answer: Hello Julia
+
+
+5.15 Hoisting Recap
+---------------------------------------
+
+
+5.16 Quiz: Build a Triangle (5-3)
+---------------------------------------
+// creates a line of * for a given length
+function makeLine(length) {
+    var line = "";
+    for (var j = 1; j <= length; j++) {
+        line += "* ";
+    }
+    return line + "\n";
+}
+
+// your code goes here.  Make sure you call makeLine() in your own code.
+function buildTriangle(length) {
+  var lines = ""
+  for (var j = 1; j <= length; j++) {
+      lines += makeLine(j);
+  }
+  return lines;
+}
+
+// test your code by uncommenting the following line
+console.log(buildTriangle(10));
+
+
+5.17 Function Expressions
+---------------------------------------
+
+
+5.18 Patterns with Function Expressions
+---------------------------------------
+
+
+5.19 Function Expression Recap
+---------------------------------------
+
+
+5.20 Quiz: Laugh (5-4)
+---------------------------------------
+var laugh = function(y) {
+    laughing = "";
+    for (var i = 0; i < y; i++) {
+        laughing += "ha";
+        
+    }
+    laughing += "!";
+    return laughing;
+}
+
+console.log(laugh(10));
+
+
+
+5.21 Quiz: Cry (5-5)
+---------------------------------------
+var cry = function blah() {
+    return "boohoo!";
+};
+
+console.log(cry());
+
+
+
+5.22 Quiz: Inline (5-6)
+---------------------------------------
+emotions("happy", function laugh(n) {
+    laughing = ""; 
+    for (var i = 0; i < n; i++) {
+        laughing += "ha";
+            
+    }   
+    laughing += "!";
+    return laughing;
+
+})
+
+
+5.23 Lesson 5 Summary
+---------------------------------------
+
+
+
