@@ -1,0 +1,28 @@
+date start : 29 may 2020
+
+
+
+
+
+16.1 Introduction and Learning Objectives
+---------------------------------------
+
+
+
+16.2 Authentication, Authorization, and Admission Control 
+---------------------------------------
+https://github.com/kubernetes/kubernetes/
+https://k8sport.wufoo.com/forms/sign-up/
+
+
+
+16.3 Knowledge Check
+---------------------------------------
+
+
+
+16.4 Learning Objectives (Review)
+---------------------------------------
+
+
+
