@@ -1,0 +1,188 @@
+date start : 05 june 2020
+
+
+23.1 video time
+---------------------------------------
+
+
+23.2 recommended reading
+---------------------------------------
+
+
+
+23.3 course notes
+---------------------------------------
+
+
+
+23.4 lesson introduction
+---------------------------------------
+
+
+
+23.5 us laws related to online abuse
+---------------------------------------
+
+
+
+23.6 quiz: legal deterrents quiz
+---------------------------------------
+yes
+
+
+23.7 quiz: cost of cybercrime quiz
+---------------------------------------
+over
+
+
+23.8 us computer fraud and abuse act (cfaa)
+---------------------------------------
+
+
+
+23.9 digital millennium copyright act pt 1
+---------------------------------------
+
+
+23.10 digital millennium copyright act pt 2
+---------------------------------------
+
+
+23.11 computer abause laws enforcement
+---------------------------------------
+
+
+23.12 quiz: melissa virus quiz
+---------------------------------------
+2
+
+
+23.13 quiz: unauthorized access quiz
+---------------------------------------
+no
+
+
+23.14 quiz: dmca exclusions quiz
+---------------------------------------
+1
+
+
+23.15 ethical issues
+---------------------------------------
+
+
+23.16 quiz: computer ethics quiz
+---------------------------------------
+1
+
+
+23.17 quiz: responsible disclosure quiz
+---------------------------------------
+2
+
+
+23.18 privacy definition
+---------------------------------------
+
+
+23.19 privacy is not a new problem
+---------------------------------------
+
+
+23.20 what is private
+---------------------------------------
+
+
+23.21 what is not private
+---------------------------------------
+
+
+23.22 instituitional privacy
+---------------------------------------
+
+
+23.23 quiz: privacy quiz
+---------------------------------------
+90%
+
+
+23.24 quiz: right to be forgotten quiz
+---------------------------------------
+1
+
+
+23.25 threats to privacy pt 1
+---------------------------------------
+
+
+23.26 threats to privacy pt 2
+---------------------------------------
+
+
+23.27 privacy thrats to online tracking info
+---------------------------------------
+
+
+23.28 example google privacy policy
+---------------------------------------
+
+
+
+23.29 google how is info used
+---------------------------------------
+
+
+23.30 google who is it shared with
+---------------------------------------
+
+
+23.31 google information security
+---------------------------------------
+
+
+23.32 quiz: eff quiz
+---------------------------------------
+1,3
+
+
+23.33 quiz: google privacy policy quiz
+---------------------------------------
+no
+
+
+23.34 quiz: legal deterrent quiz
+---------------------------------------
+all
+
+
+23.35 facebook privacy policies
+---------------------------------------
+
+
+23.36 privacy enhancing technologies
+---------------------------------------
+
+
+23.37 tor
+---------------------------------------
+
+
+23.38 controlling trackign on the internet
+---------------------------------------
+
+
+23.39 quiz: fandango quiz
+---------------------------------------
+did not secure user data
+
+
+23.40 quiz: tracking solution
+---------------------------------------
+tor
+
+
+23.41 lesson summary
+---------------------------------------
+
+
+
