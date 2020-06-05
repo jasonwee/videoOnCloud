@@ -1,0 +1,59 @@
+date start : 05 june 2020
+
+
+7.1 advanced topics
+---------------------------------------
+
+
+
+7.2 [optional] iterators and generators
+---------------------------------------
+Iterables are objects that can return one of their elements at a time, such as a list. Many of the built-in functions we’ve used so far, like 'enumerate,' return an iterator.
+
+Generators are a simple way to create iterators using functions. You can also define iterators using classes, which you can read more about here.
+
+def my_range(x):
+    i = 0
+    while i < x:
+        yield i
+        i += 1
+
+7.3 [optional] quiz: iterators and genrators
+---------------------------------------
+lessons = ["Why Python Programming", "Data Types and Operators", "Control Flow", "Functions", "Scripting"]
+
+def my_enumerate(iterable, start=0):
+    # Implement your generator function here
+    i = 0
+    while i < len(iterable):
+        yield start, iterable[i]
+        start+=1
+        i += 1
+
+
+for i, lesson in my_enumerate(lessons, 1):
+    print("Lesson {}: {}".format(i, lesson))
+
+
+
+
+def chunker(iterable, size):
+    for i in range(0, len(iterable), size):
+        yield iterable[i:i + size]
+
+for chunk in chunker(range(25), 4):
+    print(list(chunk))
+
+
+
+7.4 [optional] solution: iterators and generators
+---------------------------------------
+
+
+
+7.5 [optional] generator expressions
+---------------------------------------
+
+
+
+
