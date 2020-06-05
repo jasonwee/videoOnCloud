@@ -1,0 +1,89 @@
+date start : 05 june 2020
+
+
+6.1 Rrepresenting an Image
+---------------------------------------
+
+
+
+6.2 Recall the Comp Photo Pipeline
+---------------------------------------
+
+
+
+6.3 Lesson Objectives
+---------------------------------------
+
+
+6.4 Digital Image - 1
+---------------------------------------
+
+
+
+6.5 Digital Image - 2
+---------------------------------------
+
+
+6.6 Pixel
+---------------------------------------
+
+
+6.7 Quiz: How many pixels in an image
+---------------------------------------
+answer: 819200
+
+
+6.8 Quiz: Megapixels
+---------------------------------------
+answer: 1st
+
+
+6.9 Characteristics of a Digital Image
+---------------------------------------
+
+
+
+6.10 Quiz: Representing pixel values
+---------------------------------------
+answer: 2nd
+
+
+6.11 Digital Image is a Function
+---------------------------------------
+
+
+
+6.12 Sampling and Quantization
+---------------------------------------
+
+
+
+6.13 Digital Image Statistics
+---------------------------------------
+
+
+6.14 Color Digital Image An Example
+---------------------------------------
+
+
+6.15 Digital Image Formats
+---------------------------------------
+
+
+6.16 Exercises to do on your own
+---------------------------------------
+
+
+6.17 Read and write images
+---------------------------------------
+
+
+6.18 Understand image formats
+---------------------------------------
+
+
+6.19 Summary
+---------------------------------------
+
+
+
