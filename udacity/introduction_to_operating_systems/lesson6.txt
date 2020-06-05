@@ -1,0 +1,76 @@
+date start : 05 june 2020
+
+
+6.1 Lesson Preview
+---------------------------------------
+
+
+
+6.2 PThread Creation
+---------------------------------------
+
+
+
+6.3 Compiling PThreads
+---------------------------------------
+
+
+6.4 PThread Creation Example 1
+---------------------------------------
+
+
+
+6.5 Quiz: PThread Creation Quiz 1
+---------------------------------------
+answer: 
+Hello Thread
+Hello Thread
+Hello Thread
+Hello Thread
+
+6.6 PThread Creation Example 2
+---------------------------------------
+
+
+6.7 Quiz: PTherad Creation Quiz 2
+---------------------------------------
+answer: all
+
+
+6.8 PThread Creation Example 3
+---------------------------------------
+
+
+6.9 Quiz: PThread Creation Quiz 3
+---------------------------------------
+answer: 2,3
+
+6.10 PThread Mutexes
+---------------------------------------
+
+
+6.11 PThread Condition Variables
+---------------------------------------
+
+
+6.12 Producer and Consumer Example Part 1
+---------------------------------------
+
+
+6.13 Producer and Consumer Example Part 2
+---------------------------------------
+
+
+6.14 Producer and Consumer Example Part 3
+---------------------------------------
+
+
+6.15 Lesson Summary 
+---------------------------------------
+
+
+6.16 Quiz: Lesson Review
+---------------------------------------
+
+
+
