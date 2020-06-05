@@ -1,0 +1,230 @@
+date start : 05 june 2020
+
+
+6.1 Intro to Arrays
+---------------------------------------
+
+
+
+6.2 Donuts to Code
+---------------------------------------
+
+
+
+6.3 Creating an Array
+---------------------------------------
+answer: 2,3,4
+
+
+6.4 Accessing Array Elements
+---------------------------------------
+
+
+
+6.5 Array Index
+---------------------------------------
+answer: donuts[6]
+answer: 3
+
+
+6.6 Quiz: UdaciFamily (6-1)
+---------------------------------------
+var udaciFamily = ["Julia", "James", "Jason"];
+console.log(udaciFamily);
+
+
+6.7 Quiz: Building the Crew (6-1) 
+---------------------------------------
+var crew = [captain, second, pilot, companion, mercenary, mechanic];
+console.log(crew);
+
+6.8 Quiz: The Price is Right (6-1)
+---------------------------------------
+prices[0] = '1'
+prices[2] = '2'
+prices[6] = '3'
+console.log(prices);
+
+
+
+6.9 Array Properties and Methods
+---------------------------------------
+
+
+6.10 Length
+---------------------------------------
+answer: 4
+
+
+6.11 Push
+---------------------------------------
+
+
+6.12 Pop
+---------------------------------------
+answer: 2
+
+
+
+6.13 Splice
+---------------------------------------
+answer: 1
+
+
+
+6.14 Quiz: Colors of the Rainbow (6-4)
+---------------------------------------
+answer:
+
+// your code goes here
+rainbow.splice(2,1,"Yellow", "Green");
+rainbow.splice(-1,1,"Blue", "Purple");
+console.log(rainbow);
+
+
+6.15 Quiz: Quidditch Cup (6-5)
+---------------------------------------
+answer:
+function hasEnoughPlayers(team) {
+    if (team.length >= 7)
+      return true;
+    return false;
+}
+
+var team = ["Oliver Wood", "Angelina Johnson", "Katie Bell", "Alicia Spinnet", "George Weasley", "Fred Weasley", "Harry Potter"];
+console.log(hasEnoughPlayers(team));
+
+
+
+
+6.16 Quiz: Joining the Crew (6-6)
+---------------------------------------
+answer:
+crew.push(doctor);
+crew.push(sister);
+crew.push(shepherd);
+
+
+6.17 Quiz: Quiz: Checking out the Docs (6-7)
+---------------------------------------
+answer: reverse
+sort
+shift, splice
+join
+
+
+
+6.18 Array Loops
+---------------------------------------
+
+
+
+6.19 The forEach Loop
+---------------------------------------
+
+// Write your code here
+test.forEach(function (num){
+   if (num % 3 === 0) {
+      num += 100
+      console.log(num);
+   }
+});
+
+
+words = ["cat", "in", "hat"];
+words.forEach(function(word, num, all) {
+  console.log("Word " + num + " in " + all.toString() + " is " + word);
+});
+
+
+
+
+6.20 Quiz: Another Type of Loop (6-8)
+---------------------------------------
+answer: 
+// Write your code here
+test.forEach(function (num, idx, all){
+   if (num % 3 === 0) {
+      num += 100
+      test[idx] = num;
+      console.log(num);
+   }
+});
+
+
+
+6.21 Map
+---------------------------------------
+var donuts = ["jelly donut", "chocolate donut", "glazed donut"];
+
+var improvedDonuts = donuts.map(function(donut) {
+  donut += " hole";
+  donut = donut.toUpperCase();
+  return donut;
+});
+
+
+
+
+6.22 Quiz: I Got Bills (6-9)
+---------------------------------------
+answer: 
+
+var totals = bills.map(function (amount) {
+    amount *= 1.15
+    return Number(amount.toFixed(2));
+});
+
+console.log(totals);
+
+
+6.23 Arrays in Arrays
+---------------------------------------
+
+
+
+6.24 2D Donut Arrays
+---------------------------------------
+var donutBox = [
+  ["glazed", "chocolate glazed", "cinnamon"],
+  ["powdered", "sprinkled", "glazed cruller"],
+  ["chocolate cruller", "Boston creme", "creme de leche"]
+];
+
+// here, donutBox.length refers to the number of rows of donuts
+for (var row = 0; row < donutBox.length; row++) {
+  console.log(donutBox[row]);
+}
+
+
+
+for (var row = 0; row < donutBox.length; row++) {
+  // here, donutBox[row].length refers to the length of the donut array currently being looped over
+  for (var column = 0; column < donutBox[row].length; column++) {
+    console.log(donutBox[row][column]);
+  }
+}
+
+
+
+
+
+6.25 Quiz: Nested Numbers (6-10)
+---------------------------------------
+answer: 
+
+for (var row = 0; row < numbers.length; row++) {
+  for (var column = 0; column < numbers[row].length; column++) {
+    //console.log(numbers[row][column]);
+    if (numbers[row][column] % 2 === 0)
+      numbers[row][column] = "even";
+    else
+      numbers[row][column] = "odd";
+  }
+}
+
+
+6.26 Lesson 6 Summary
+---------------------------------------
+
+
