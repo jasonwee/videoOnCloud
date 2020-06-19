@@ -1,0 +1,164 @@
+date start : 19 june 2020
+
+
+8.1 Lesson Preview
+---------------------------------------
+
+
+
+8.2 Kernel vs. User Level Threads
+---------------------------------------
+
+
+
+8.3 Thread Data Structures: Single CPU
+---------------------------------------
+
+
+8.4 Thread Data Structures: At Scale
+---------------------------------------
+
+
+
+8.5 Hard and Light Process State
+---------------------------------------
+
+
+8.6 Rationale for Data Structures
+---------------------------------------
+
+
+8.7 Quiz: Thread Structures Quiz
+---------------------------------------
+answer: kthread_worker
+task_struct
+
+
+8.8 User Level Structures in Solaris 2.0
+---------------------------------------
+
+
+8.9 Kernel Level Structures in Solaris 2.0
+---------------------------------------
+
+
+8.10 Basic Thread Management Interaction
+---------------------------------------
+
+
+8.11 Quiz: PThread Concurrency Quiz
+---------------------------------------
+answer: pthread_setconcurrency
+0
+
+
+http://man7.org/linux/man-pages/man3/pthread_getconcurrency.3.html
+
+
+
+8.12 Thread Management Visibility and Design
+---------------------------------------
+
+
+8.13 Issues on Multiple CPUs
+---------------------------------------
+
+
+8.14 Synchronization-Related Issues
+---------------------------------------
+
+
+8.15 Quiz: Number of Threads Quiz
+---------------------------------------
+answer: 20
+MAX_THREADS
+
+
+8.16 Interrupts and Signals Intro
+---------------------------------------
+
+
+8.17 Visual Metaphor
+---------------------------------------
+
+
+8.18 Interrupt Handling
+---------------------------------------
+
+
+8.19 Signal Handling
+---------------------------------------
+
+
+8.20 Why Disable Interrupts or Signals
+---------------------------------------
+
+
+8.21 More on Signal Masks
+---------------------------------------
+
+
+8.22 Interrupts on Multicore Systems
+---------------------------------------
+
+
+8.23 Types of Signals
+---------------------------------------
+
+
+8.24 Quiz: Signals Quiz
+---------------------------------------
+answer: 
+SIGINT
+SIGURG
+SIGTTOU
+SIGXFSZ
+
+
+8.25 Interrupts as Threads
+---------------------------------------
+
+
+8.26 Interrupts: Top vs. Bottom Half
+---------------------------------------
+
+
+8.27 Performance of Threads as Interrupts
+---------------------------------------
+
+
+8.28 Threads and Signal Handling
+---------------------------------------
+
+
+8.29 Threads and signal Handling: Case 1
+---------------------------------------
+
+
+8.30 Threads and signal Handling: Case 2
+---------------------------------------
+
+
+8.31 Threads and signal Handling: Case 3
+---------------------------------------
+
+
+8.32 Threads and signal Handling: Case 4
+---------------------------------------
+
+
+8.33 Tasks in Linux
+---------------------------------------
+
+
+
+8.34 Lesson Summary
+---------------------------------------
+
+
+8.35 Quiz: Lesson Review
+---------------------------------------
+
+
+
+
