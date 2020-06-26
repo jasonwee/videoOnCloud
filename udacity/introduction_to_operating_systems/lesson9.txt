@@ -1,0 +1,123 @@
+date start : 26 june 2020
+
+
+9.1 Lesson Preview
+---------------------------------------
+
+
+
+9.2 Which Threading Model is Better?
+---------------------------------------
+
+
+
+9.3 Are Threads Useful?
+---------------------------------------
+
+
+9.4 Visual Metaphor
+---------------------------------------
+
+
+
+9.5 Performance Metrics Intro
+---------------------------------------
+
+
+9.6 Performance Metrics
+---------------------------------------
+
+
+9.7 Performance Metrics Summary
+---------------------------------------
+
+
+9.8 Really... Are Threads Useful?
+---------------------------------------
+
+
+9.9 Multi Process vs. Multi Threaded
+---------------------------------------
+
+
+9.10 Multi Process Web Server
+---------------------------------------
+
+
+9.11 Multi Threaded Web Server
+---------------------------------------
+
+
+9.12 Event-Driven Model
+---------------------------------------
+
+
+9.13 concurrency in the Event Driven Model
+---------------------------------------
+
+
+9.14 Event-Driven Mode: Why
+---------------------------------------
+
+
+9.15 Event-Driven Model: How
+---------------------------------------
+
+
+9.16 Helper Threads and Processes
+---------------------------------------
+
+
+9.17 Quiz: Models and Memory Quiz
+---------------------------------------
+answer: 3
+extra memory require for helper thread for concurrent blocking i/o not for all concurrent requests
+
+
+9.18 Flash Web Server
+---------------------------------------
+
+
+9.19 Apache Web Server
+---------------------------------------
+
+
+9.20 Experimental Methodology
+---------------------------------------
+
+
+9.21 Experimental Results
+---------------------------------------
+
+
+9.22 Summary of Performance Results
+---------------------------------------
+
+
+9.23 Quiz: Performance Observation Quiz
+---------------------------------------
+answer: 1,3
+
+
+9.24 Advice on Designing Experiments
+---------------------------------------
+
+
+9.25 Advice on Running Experiments
+---------------------------------------
+
+
+9.26 Quiz: Experimental Design Quiz
+---------------------------------------
+answer: 4
+
+
+9.27 Lesson Summary
+---------------------------------------
+
+
+9.28 Quiz: Lesson Review
+---------------------------------------
+
+
+
