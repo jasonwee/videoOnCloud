@@ -223,3 +223,77 @@ public class Solution {
         
     }
 }
+
+
+
+
+import java.util.*;
+import java.io.*;
+
+class Solution {
+
+	public static void main(String[] argh) {
+
+		Scanner sc = new Scanner(System.in);
+		int t = sc.nextInt();
+
+		for (int i = 0; i < t; i++) {
+
+			try {
+				long x = sc.nextLong();
+				System.out.println(x + " can be fitted in:");
+				if (x >= -128 && x <= 127)
+					System.out.println("* byte");
+				// Complete the code
+				if (x >= -Math.pow(2, 15) && x <= Math.pow(2, 15) - 1)
+					System.out.println("* short");
+				if (x >= -Math.pow(2, 31) && x <= Math.pow(2, 31) - 1)
+					System.out.println("* int");
+				if (x >= -Math.pow(2, 63) && x <= Math.pow(2, 63) - 1)
+					System.out.println("* long");
+			} catch (Exception e) {
+				System.out.println(sc.next() + " can't be fitted anywhere.");
+			}
+
+		}
+	}
+}
+
+
+
+import java.io.*;
+import java.util.*;
+import java.text.*;
+import java.math.*;
+import java.util.regex.*;
+
+public class Solution {
+
+    static boolean flag = true; 
+    static int B,H;
+
+    static{
+        Scanner scan = new Scanner(System.in);
+        B = scan.nextInt();
+        scan.nextLine();
+        H = scan.nextInt();
+        scan.close();
+        if(B>0 && H>0){
+            flag = true;
+
+        } else if(B<=0 || H<=0){
+            flag=false;
+            System.out.println("java.lang.Exception: Breadth and height must be positive");
+        }
+    }
+
+public static void main(String[] args){
+		if(flag){
+			int area=B*H;
+			System.out.print(area);
+		}
+		
+	}//end of main
+
+}//end of class
+
