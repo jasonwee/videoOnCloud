@@ -1,0 +1,87 @@
+date start : 03 july 2020
+
+
+10.1 image processing
+---------------------------------------
+
+
+
+10.2 Lesson Objectives
+---------------------------------------
+
+
+
+10.3 Mathematical Representation for Smoothing
+---------------------------------------
+
+
+10.4 Cross-Correlation Method
+---------------------------------------
+
+
+
+10.5 Example Box Filter
+---------------------------------------
+
+
+10.6 Example Gaussian Filter
+---------------------------------------
+
+
+10.7 Using Gaussian Filters for Smoothing
+---------------------------------------
+
+
+
+10.8 Filtering by a Kernel
+---------------------------------------
+
+
+
+10.9 Convolution Method
+---------------------------------------
+
+
+
+10.10 Convolution vs Cross-Correlation
+---------------------------------------
+
+
+
+10.11 Quiz: Predict Box Filter Output
+---------------------------------------
+1,3
+
+
+10.12 Quiz: Predict Gaussian Filter Output
+---------------------------------------
+1,3
+
+
+10.13 Quiz: Convolution vs X-Correlation 1
+---------------------------------------
+1,3
+
+10.14 Quiz: Convolution vs X-Correlation 2
+---------------------------------------
+1,3
+
+
+10.15 Quiz: Convolution vs X-Correlation 3
+---------------------------------------
+1
+
+
+10.16 Properties of Convolution
+---------------------------------------
+
+
+10.17 Linear Filters
+---------------------------------------
+
+
+10.18 Summary
+---------------------------------------
+
+
+
