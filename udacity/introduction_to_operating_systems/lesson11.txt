@@ -1,0 +1,148 @@
+date start : 10 july 2020
+
+
+
+
+11.1 Lesson Preview
+---------------------------------------
+
+
+11.2 Visual Metaphor
+---------------------------------------
+
+
+
+11.3 Scheduling Overview
+---------------------------------------
+
+
+11.4 Run to Completion Scheduling
+---------------------------------------
+
+
+11.5 Quiz: SJF Performance Quiz
+---------------------------------------
+0.25
+5
+1
+
+
+
+
+11.6 Preemptive Scheduling: SJF + Preempt
+---------------------------------------
+
+
+
+
+11.7 Preemptive Scheudling: Priority
+---------------------------------------
+
+
+11.8 Quiz: Preemptive Scheduling Quiz
+---------------------------------------
+8
+10
+11
+
+
+11.9 Priority Inversion
+---------------------------------------
+
+
+11.10 Round Robin Scheduling
+---------------------------------------
+
+
+11.11 Timesharing and Timeslices
+---------------------------------------
+
+
+11.12 How Long Should a Timeslice Be
+---------------------------------------
+
+
+11.13 CPU Bound Timeslice Length
+---------------------------------------
+
+
+11.14 I/O Bound Timeslice Length
+---------------------------------------
+
+
+
+11.15 Summarizing Timeslice Length
+---------------------------------------
+
+
+11.16 Quiz: Timeslice Quiz
+---------------------------------------
+91
+95
+
+11.17 Runqueue Data Structure
+---------------------------------------
+
+
+11.18 Linux O(1) Scheduler
+---------------------------------------
+
+
+11.19 Linux CFS Scheduler
+---------------------------------------
+
+
+11.20 Quiz: Linux Schedulers Quiz
+---------------------------------------
+answer: 3
+
+
+11.21 Scheduling on Multiprocessors
+---------------------------------------
+
+
+11.22 Hyperthreading
+---------------------------------------
+
+
+
+11.23 Scheduling for Hyperthreading Platforms
+---------------------------------------
+
+
+11.24 CPU Bound or Memory Bound
+---------------------------------------
+
+
+11.25 Scheduling with Hardware Counters
+---------------------------------------
+
+
+11.26 Quiz: CPI Experiment Quiz
+---------------------------------------
+high ipc
+cpi is a great metric
+
+
+11.27 CPI Experiment Results
+---------------------------------------
+
+
+11.28 Lesson Summary
+---------------------------------------
+
+
+11.29 Quiz: Lesson Review
+---------------------------------------
+how scheduling work and go through scheduling algorithm
+
+
+
+
+
+
+
+
+
+
+
