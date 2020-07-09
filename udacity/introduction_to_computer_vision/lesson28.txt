@@ -1,0 +1,75 @@
+date start : 10 july 2020
+
+
+28.1 Intro
+---------------------------------------
+
+
+28.2 Corner Detection
+---------------------------------------
+
+
+
+28.3 Harris Corners
+---------------------------------------
+
+
+
+28.4 Harris Corners Illustrated
+---------------------------------------
+
+
+
+28.5 Small Shifts
+---------------------------------------
+
+
+28.6 Second Order Taylor Expansion Part 1
+---------------------------------------
+
+
+28.7 Second Order Taylor Expansion Part 2 
+---------------------------------------
+
+
+28.8 Quadratic Approximation Simplication
+---------------------------------------
+
+
+28.9 Interpreting the Second Moment Matrix Part 1
+---------------------------------------
+
+
+28.10 Interpreting the Second Moment Matrix Part 2
+---------------------------------------
+
+
+28.11 Interpreting the Eigenvalues
+---------------------------------------
+
+
+28.12 Harris Corner Response Function
+---------------------------------------
+
+
+28.13 Textures Regions
+---------------------------------------
+
+
+28.14 Harris Detector Algorithm
+---------------------------------------
+
+
+28.15 Harris Detector Workflow
+---------------------------------------
+
+
+28.16 Other Corners
+---------------------------------------
+
+
+28.17 End
+---------------------------------------
+
+
+
