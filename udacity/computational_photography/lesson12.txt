@@ -1,0 +1,70 @@
+date start : 17 july 2020
+
+
+17.1 Intro
+---------------------------------------
+
+
+
+17.2 Lesson Objectives
+---------------------------------------
+
+
+
+17.3 Recall Differentaiting an image
+---------------------------------------
+
+
+17.4 Derivative as a local product
+---------------------------------------
+
+
+
+17.5 Derivative using cross correlation
+---------------------------------------
+
+
+17.6 Computing discrete gradients
+---------------------------------------
+
+
+17.7 Various Kernels for Computing Gradients
+---------------------------------------
+
+
+
+17.8 Impact of Noise on Gradients
+---------------------------------------
+
+
+
+17.9 Quiz: Match Gradient Plots
+---------------------------------------
+C
+A
+B
+
+
+17.10 Increasing Noise
+---------------------------------------
+
+
+
+17.11 Convolution and Graidents
+---------------------------------------
+
+
+17.12 Gradient to Edges
+---------------------------------------
+
+
+17.13 Canny Edge Detector
+---------------------------------------
+
+
+
+17.14 Summary
+---------------------------------------
+
+
+
