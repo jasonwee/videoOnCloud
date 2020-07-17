@@ -1,0 +1,42 @@
+date start : 17 july 2020
+
+
+29.1 intro
+---------------------------------------
+
+
+29.2 harris detector properties
+---------------------------------------
+
+
+
+29.3 more harris detector properties
+---------------------------------------
+
+
+
+29.4 scale invariant detection
+---------------------------------------
+
+
+
+29.5 one method for scale invariant detection
+---------------------------------------
+
+
+29.6 a good funciton for scale detection
+---------------------------------------
+
+
+29.7 key point localization
+---------------------------------------
+
+
+29.8 extrema at different scales
+---------------------------------------
+
+
+29.9 end
+---------------------------------------
+
+
