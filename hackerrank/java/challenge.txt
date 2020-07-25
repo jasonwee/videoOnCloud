@@ -467,3 +467,124 @@ public class Solution {
         System.out.println(getSmallestAndLargest(s, k));
     }
 }
+
+
+
+
+import java.io.*;
+import java.util.*;
+
+public class Solution {
+
+    public static void main(String[] args) {
+        
+        Scanner sc=new Scanner(System.in);
+        String A=sc.next();
+        /* Enter your code here. Print output to STDOUT. */
+        System.out.println(A.equals( new StringBuilder(A).reverse().toString()) 
+    ? "Yes" : "No");
+        
+    }
+}
+
+
+
+
+
+import java.util.Scanner;
+
+public class Solution {
+
+    static boolean isAnagram(String a, String b) {
+        // Complete the function
+        char A[]=a.toLowerCase().toCharArray(); 
+        char B[]=b.toLowerCase().toCharArray();
+        
+        java.util.Arrays.sort(A);
+        java.util.Arrays.sort(B);
+        
+        return java.util.Arrays.equals(A,B);
+    }
+
+    public static void main(String[] args) {
+    
+        Scanner scan = new Scanner(System.in);
+        String a = scan.next();
+        String b = scan.next();
+        scan.close();
+        boolean ret = isAnagram(a, b);
+        System.out.println( (ret) ? "Anagrams" : "Not Anagrams" );
+    }
+}
+
+
+
+import java.io.*;
+import java.util.*;
+
+public class Solution {
+
+    public static void main(String[] args) {
+        Scanner scan = new Scanner(System.in);
+        String s = scan.nextLine();
+        // Write your code here.
+        scan.close();
+        String delims = "[ .,?!]+";
+        String[] tokens = s.split(delims);
+        System.out.println(tokens.length);
+        for (int i = 0; i < tokens.length; i++) {
+            System.out.println(tokens[i]);
+        }
+    }
+}
+
+
+
+
+
+import java.io.*;
+import java.util.*;
+
+public class Solution {
+
+    public static void main(String[] args) {
+        Scanner scan = new Scanner(System.in);
+        scan.useDelimiter("\\Z");
+        String s = scan.next().trim();
+        if (s.length() > 0) {
+            String[] tokens = s.split("[!,?._'@\\s]+");
+            System.out.println(tokens.length);
+            for(String token : tokens) {
+                System.out.println(token);
+            }
+        } else {
+            System.out.println(0);
+        }
+        scan.close();
+    }
+}
+
+
+
+import java.util.Scanner;
+import java.util.regex.*;
+
+public class Solution
+{
+	public static void main(String[] args){
+		Scanner in = new Scanner(System.in);
+		int testCases = Integer.parseInt(in.nextLine());
+
+        for(int i=0;i<testCases;i++) {
+            try {
+                String pattern = in.nextLine();
+                Pattern.compile(pattern);
+                System.out.println("Valid");
+            } catch (Exception e) {
+                System.out.println("Invalid");
+            }
+        }
+	}
+}
+
+
