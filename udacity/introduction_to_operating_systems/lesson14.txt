@@ -1,0 +1,152 @@
+date start : 31 july 2020
+
+
+
+
+14.1 Lesson Preview
+---------------------------------------
+
+
+14.2 Visual Metaphor
+---------------------------------------
+
+
+
+14.3 More About Synchronization
+---------------------------------------
+
+
+14.4 Spinlocks
+---------------------------------------
+
+
+14.5 Semaphores
+---------------------------------------
+
+
+
+
+14.6 POSIX Semaphores
+---------------------------------------
+
+
+
+
+14.7 Quiz: Mutex Via Semaphore Quiz
+---------------------------------------
+0
+1
+https://linux.die.net/man/3/sem_init
+
+
+14.8 Reader Writer Locks
+---------------------------------------
+
+
+
+14.9 Using Reader Writer Locks
+---------------------------------------
+
+
+14.10 Monitors
+---------------------------------------
+
+
+14.11 More Synchronization Constructs
+---------------------------------------
+
+
+14.12 Sync Building Block Spinlock
+---------------------------------------
+
+
+14.13 Quiz: Spinlock Quiz 1
+---------------------------------------
+incorrect
+inefficient
+
+
+14.14 Quiz: Spinlock Quiz 2
+---------------------------------------
+incorrect
+inefficient
+
+
+14.15 Need for Hardware Support
+---------------------------------------
+
+
+14.16 Atomic Instructions
+---------------------------------------
+
+
+14.17 Shared Memory Multiprocessors
+---------------------------------------
+
+
+14.18 Cache Coherence
+---------------------------------------
+
+
+14.19 Cache Coherence and Atomics
+---------------------------------------
+
+
+14.20 Spinlock Performance Metrics
+---------------------------------------
+
+
+14.21 Quiz: Conflicting Metrics Quiz
+---------------------------------------
+2,3
+
+14.22 Test and Set Spinlock
+---------------------------------------
+
+
+14.23 Test and Test and Set Spinlock
+---------------------------------------
+
+
+14.24 Quiz: Test and Test and Set Spinlock Quiz
+---------------------------------------
+N
+N*N
+
+
+14.25 Spinlock "Delay" Alternatives
+---------------------------------------
+
+
+
+14.26 Picking a Delay
+---------------------------------------
+
+
+14.27 Queueing Lock
+---------------------------------------
+
+
+14.28 Queueing Lock Implementation
+---------------------------------------
+
+
+14.29 Quiz: Queing Lock Array Quiz
+---------------------------------------
+neither
+
+
+14.30 Spinlock Performance Comparisons
+---------------------------------------
+
+
+14.31 Lesson Summary
+---------------------------------------
+
+
+
+14.3 Quiz: Lesson Review
+---------------------------------------
+
+
+
