@@ -1,0 +1,151 @@
+date start : 07 august 2020
+
+
+
+
+13.1 Lesson Preview
+---------------------------------------
+
+
+13.2 Visual Metaphor
+---------------------------------------
+
+
+
+13.3 I/O Devices
+---------------------------------------
+
+
+13.4 Quiz: I/O Devices Quiz
+---------------------------------------
+i  i
+o  b
+o  b
+b
+
+13.5 I/O Device Features
+---------------------------------------
+
+
+
+
+13.6 CPU Device Interconnect
+---------------------------------------
+
+
+
+
+13.7 Device Drivers
+---------------------------------------
+
+
+13.8 Types of Devices
+---------------------------------------
+
+
+
+13.9 Quiz: I/O Devices as Files Quiz
+---------------------------------------
+cp file to printer
+cat file to printer
+echo hell world to printer
+
+
+13.10 Quiz: Pseudo Devices Quiz
+---------------------------------------
+/dev/null
+/dev/random
+
+
+13.11 Quiz: Looking at /Dev Quiz
+---------------------------------------
+/dev/tty,/dev/stdout,/dev/sda1,/dev/port,/dev/urandom
+
+
+13.12 CPU Device Interactions
+---------------------------------------
+
+
+13.13 Device Access PIO
+---------------------------------------
+
+
+13.14 Device Access DMA
+---------------------------------------
+
+
+13.15 Quiz: DMA vs PIO Quiz
+---------------------------------------
+pio
+depends
+
+
+13.16 Typical Device Access
+---------------------------------------
+
+
+13.17 OS Bypass
+---------------------------------------
+
+
+13.18 Sync vs. Async Access
+---------------------------------------
+
+
+13.19 Block Device Stack
+---------------------------------------
+
+
+13.20 Quiz: Block Device Quiz
+---------------------------------------
+BLKGETSIZE
+
+13.21 Virtual File System
+---------------------------------------
+
+
+13.22 Virtual File System Abstractions
+---------------------------------------
+
+
+13.23 VFS on Disk
+---------------------------------------
+
+
+13.24 ext2 Second Extended Filesystem
+---------------------------------------
+
+
+13.25 inodes
+---------------------------------------
+
+
+
+13.26 inodes with Indirect Pointers
+---------------------------------------
+
+
+
+13.27 Quiz: inode Quiz
+---------------------------------------
+16
+64
+
+
+13.28 Disk access Optimizations
+---------------------------------------
+
+
+
+13.29 Lesson Summary
+---------------------------------------
+
+
+
+13.30 Quiz: Lesson Review
+---------------------------------------
+
+
+
+
+
