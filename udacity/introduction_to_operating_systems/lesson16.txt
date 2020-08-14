@@ -1,0 +1,136 @@
+date start : 14 august 2020
+
+
+
+
+16.1 Lesson Preview
+---------------------------------------
+
+
+16.2 What is Virtualization
+---------------------------------------
+
+
+
+16.3 Defining Virtualization
+---------------------------------------
+
+
+16.4 Quiz: Virtualization Tech Quiz
+---------------------------------------
+virtualbox
+
+
+
+16.5 Benefits of Virtualization
+---------------------------------------
+
+
+
+
+16.6 Quiz: Benefits of Virtualization Quiz 1
+---------------------------------------
+3,4
+
+
+
+16.7 Quiz: Benefits of Virtualization Quiz 2
+---------------------------------------
+all
+
+
+16.8 Virtualization Models Bare Metal
+---------------------------------------
+
+
+16.9 Virtualization Models Hosted
+---------------------------------------
+
+
+16.10 Quiz: Bare Metal or Hosted Quiz
+---------------------------------------
+os: kvm, fusion, virtualbox, vmware player
+hv: vmware esx citrix xenserver, microsoft hyber-V
+
+
+16.11 Quiz: Virtualization Requirements Quiz
+---------------------------------------
+all
+
+
+16.12 Hardware Protection Levels
+---------------------------------------
+
+
+16.13 Processor Virtualization
+---------------------------------------
+
+
+16.14 x86 Virtualization in the Past
+---------------------------------------
+
+
+16.15 Quiz: Problematic Instructions Quiz
+---------------------------------------
+all
+
+
+16.16 Binary Translation
+---------------------------------------
+
+
+16.17 Paravirtualization
+---------------------------------------
+
+
+16.18 Quiz: BT and PV Quiz
+---------------------------------------
+1
+
+
+16.19 Memory Virtualization Full
+---------------------------------------
+
+
+16.20 Memory Virtualization Paravirtualized
+---------------------------------------
+
+
+16.21 Device Virtualization
+---------------------------------------
+
+
+16.22 Passthrough Model
+---------------------------------------
+
+
+16.23 Hypervisor Direct Model
+---------------------------------------
+
+
+16.24 Split Device Driver Model
+---------------------------------------
+
+
+16.25 Hardware Virtualization
+---------------------------------------
+
+
+16.26 Quiz: Hardware Virtualization Quiz
+---------------------------------------
+yes
+
+
+16.27 x86 VT Revolution
+---------------------------------------
+
+
+16.28 Lesson Summary
+---------------------------------------
+
+
+16.29 Quiz: Lesson Review
+---------------------------------------
+
+
+
