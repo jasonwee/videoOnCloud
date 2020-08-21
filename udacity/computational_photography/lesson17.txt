@@ -1,0 +1,84 @@
+date start : 21 august 2020
+
+
+17.1 Intro
+---------------------------------------
+
+
+
+17.2 Lesson Objectives
+---------------------------------------
+
+
+
+17.3 Recall Images and Camera
+---------------------------------------
+
+
+17.4 Reconstructing a Signal
+---------------------------------------
+
+
+
+17.5 Generating Consines in Octave
+---------------------------------------
+
+
+17.6 Quiz: Octave Sandbox
+---------------------------------------
+
+
+17.7 Reconstructing a Signal
+---------------------------------------
+
+
+
+17.8 Fourier Transform
+---------------------------------------
+
+
+
+17.9 Frequency Domain of a Signal
+---------------------------------------
+
+
+
+17.10 Time Frequency and Frequency Spectra
+---------------------------------------
+
+
+
+17.11 Frequency Spectra
+---------------------------------------
+
+
+17.12 Convolution Theorem and the Fourier Transform
+---------------------------------------
+
+
+17.13 Frequency Spectra for Images
+---------------------------------------
+
+
+
+17.14 Frequency Spectra for Real Images
+---------------------------------------
+
+
+17.15 Fourier Transform Some Observations
+---------------------------------------
+
+
+17.16 Using the Frequency Spectra
+---------------------------------------
+
+
+17.17 Blurring and Frequencies
+---------------------------------------
+
+
+17.18 Summary
+---------------------------------------
+
+
+
