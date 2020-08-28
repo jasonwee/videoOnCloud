@@ -1,0 +1,114 @@
+date start : 28 august 2020
+
+
+
+
+18.1 Lesson Preview
+---------------------------------------
+
+
+18.2 Visual Metaphor
+---------------------------------------
+
+
+
+18.3 Distributed File Systems
+---------------------------------------
+
+
+18.4 DFS Models
+---------------------------------------
+
+
+18.5 Remote File Service: Extremes
+---------------------------------------
+
+
+
+
+18.6 Remote File Service A Compromise
+---------------------------------------
+
+
+
+
+18.7 Stateless vs. Stateful File Server
+---------------------------------------
+
+
+18.8 Caching State in a DFS
+---------------------------------------
+
+
+
+18.9 Quiz: File Caching Quiz
+---------------------------------------
+in client memory
+
+
+18.10 File Sharing Semantics on a DFS
+---------------------------------------
+
+
+18.11 Quiz: DFS Data Structure Quiz
+---------------------------------------
+1,3,4
+
+18.12 File vs Directory Service
+---------------------------------------
+
+
+18.13 Replication and Partitioning
+---------------------------------------
+
+
+18.14 Quiz: Replication vs. Partitioning Quiz
+---------------------------------------
+100   300
+0     33
+
+
+18.15 Networking File System (NFS) Design
+---------------------------------------
+
+
+18.16 Quiz: NFS File Handle Quiz
+---------------------------------------
+3
+
+
+18.17 NFS Versions
+---------------------------------------
+
+
+18.18 Quiz: NFS Cache Consistency Quiz
+---------------------------------------
+neither
+
+
+18.19 Sprite Distributed File System
+---------------------------------------
+
+
+18.20 Sprite DFS Access Pattern Analysis
+---------------------------------------
+
+
+18.21 Sprite DFS From Analysis to Design
+---------------------------------------
+
+
+
+18.22 File Access Operations in Sprite
+---------------------------------------
+
+
+18.23 Lesson Summary
+---------------------------------------
+
+
+
+18.24 Quiz: Lesson Review
+---------------------------------------
+
+
