@@ -1,0 +1,42 @@
+date start : 04 september 2020
+
+
+37.1 Intro
+---------------------------------------
+
+
+37.2 Motion Applications
+---------------------------------------
+
+
+
+37.3 Motion and Perceptual Organization
+---------------------------------------
+
+
+37.4 Improverished Motion
+---------------------------------------
+
+
+
+37.5 Quiz: Examples of Impoverished Motion Quiz
+---------------------------------------
+https://www.youtube.com/watch?v=Dc12YlaE20A
+http://slazebni.cs.illinois.edu/spring19/lec10_optical_flow.pdf
+https://web.eecs.umich.edu/~jjcorso/t/598F14/files/lecture_1015_motion.pdf
+
+
+
+37.6 More Applications of Motion Analysis
+---------------------------------------
+
+
+37.7 Motion Estimation Techniques
+---------------------------------------
+
+
+37.8 End
+---------------------------------------
+
+
+
