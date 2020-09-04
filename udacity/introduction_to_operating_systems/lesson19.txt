@@ -1,0 +1,133 @@
+date start : 04 september 2020
+
+
+
+
+19.1 Lesson Preview
+---------------------------------------
+
+
+19.2 Visual Metaphor
+---------------------------------------
+
+
+
+19.3 Reviewing DFSs
+---------------------------------------
+
+
+19.4 Peer Distributed Applications
+---------------------------------------
+
+
+19.5 Distributed Shared Memory (DSM)
+---------------------------------------
+
+
+
+
+19.6 Hardware vs Software DSM
+---------------------------------------
+
+
+
+
+19.7 Quiz: Implementing DSM Quiz
+---------------------------------------
+prefetch pages
+
+
+19.8 DSM Design: Sharing Granularity
+---------------------------------------
+
+
+
+19.9 DSM Design: Access Algorithm
+---------------------------------------
+
+
+19.10 DSM Design: Migration vs Replication
+---------------------------------------
+
+
+19.11 Quiz: DSM Performance Quiz
+---------------------------------------
+caching , replication
+
+
+19.12 DMS Design: Consistency Management
+---------------------------------------
+
+
+19.13 DSM Architecture
+---------------------------------------
+
+
+19.14 Summarizing DSM Architecture
+---------------------------------------
+
+
+19.15 Indexing Distributed State
+---------------------------------------
+
+
+19.16 Implementing DSM
+---------------------------------------
+
+
+19.17 What is a Consistency Model
+---------------------------------------
+
+
+19.18 Strict Consistency
+---------------------------------------
+
+
+19.19 Sequential Consistency
+---------------------------------------
+
+
+19.20 Causal Consistency
+---------------------------------------
+
+
+19.21 Weak Consistency
+---------------------------------------
+
+
+19.22 Quiz: Consistency Models quiz 1
+---------------------------------------
+yes
+
+
+19.23 Quiz: Consistency Models quiz 2
+---------------------------------------
+yes
+no
+
+
+19.24 Quiz: Consistency Models quiz 3
+---------------------------------------
+no
+no
+
+
+19.25 Quiz: Consistency Models quiz 4
+---------------------------------------
+yes
+
+
+19.26 Quiz: Consistency Models quiz 5
+---------------------------------------
+no
+
+
+19.27 Lesson Summary
+---------------------------------------
+
+
+19.28 Quiz: Lesson Review
+---------------------------------------
+
+
+
