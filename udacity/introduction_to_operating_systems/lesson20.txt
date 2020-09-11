@@ -1,0 +1,121 @@
+date start : 11 september 2020
+
+
+
+
+20.1 Lesson Preview
+---------------------------------------
+
+
+20.2 Quiz: Data Center Quiz
+---------------------------------------
+510000
+285
+
+
+20.3 Internet Services
+---------------------------------------
+
+
+20.4 Internet Service Architectures
+---------------------------------------
+
+
+20.5 "Homogeneous" Architectures
+---------------------------------------
+
+
+20.6 "Heterogenous" Architectures
+---------------------------------------
+
+
+
+20.7 Quiz: Homogeneous Design Quiz
+---------------------------------------
+add more workers (processes)
+add more workbenches (servers)
+add more tools, parts (storage)
+
+
+20.8 Quiz: Heterogenous Design Quiz
+---------------------------------------
+profile what kinds of toys are in demand
+profile what kinds of resources & expertise those require
+add more of the appropriate type of workers workbenches and parts
+
+
+20.9 Quiz: Scale Out Limitations Quiz
+---------------------------------------
+cannot manage all of the resources
+max capacity reach
+outsource
+
+
+20.10 Cloud Computing Poster Child: Animoto
+---------------------------------------
+
+
+20.11 Cloud Computing Requirements
+---------------------------------------
+
+
+20.12 Cloud Computing Overview
+---------------------------------------
+
+
+20.13 Why Does Cloud Computing Work
+---------------------------------------
+
+
+20.14 Cloud Computing Vision
+---------------------------------------
+
+
+20.15 Quiz: Cloud Computing Definitions Quiz
+---------------------------------------
+rapidly provisioned,on-demand network access,shared pool of
+
+-
+
+minimal management
+
+ubiquitous
+
+
+20.16 Cloud Deployment Models
+---------------------------------------
+
+
+20.17 Cloud Service Models
+---------------------------------------
+
+
+20.18 Requirements for the Cloud
+---------------------------------------
+
+
+20.19 Quiz: Cloud Failure Probability Quiz
+---------------------------------------
+26
+95
+
+20.20 Cloud Enabling Technologies
+---------------------------------------
+
+
+20.21 The Cloud as a Big Data Engine
+---------------------------------------
+
+
+20.22 Example Big Data Stacks
+---------------------------------------
+
+
+20.23 Lesson Summary
+---------------------------------------
+
+
+20.24 Quiz: Lesson Review
+---------------------------------------
+
+
