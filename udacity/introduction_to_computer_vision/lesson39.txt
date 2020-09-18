@@ -1,0 +1,42 @@
+date start : 18 september 2020
+
+
+39.1 Intro
+---------------------------------------
+
+
+39.2 Solving the Aperture Problem
+---------------------------------------
+
+
+
+39.3 Combining Local Constraints
+---------------------------------------
+
+
+39.4 Quiz: Interpreting the Eigenvalues Quiz
+---------------------------------------
+answer: 4
+
+
+39.5 RGB Version
+---------------------------------------
+
+
+39.6 Errors in Lucas Kanade
+---------------------------------------
+
+
+39.7 Optical Flow Iterative Estimation
+---------------------------------------
+
+
+39.8 Implementation Issues
+---------------------------------------
+
+
+39.9 End
+---------------------------------------
+
+
+
