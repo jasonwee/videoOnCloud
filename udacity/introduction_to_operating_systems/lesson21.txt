@@ -1,0 +1,148 @@
+date start : 18 september 2020
+
+
+
+
+21.0 Disclaimer**
+---------------------------------------
+
+
+
+21.1 Timeslices  
+---------------------------------------
+CPU utilization
+
+((10 * 1ms) + 1 * 20ms) / ((10 * 1ms) + 1 * 20ms + 11 * 0.1ms )  = 30 / 31.1 = 97%
+
+
+I/O utilization
+the first I/O request is issued at 1 ms time
+
+the last I/O request is issued at (1 ms + 9 * 1ms + 9 * 0.1) = 10.9 ms, and it will take 10 ms to complete, so it will complete at 20.9 ms
+
+total time there are I/O requests being processed is 20.9 - 1 = 19.9 ms
+
+the CPU bound task will complete at time 31.1 ms (which is also the total time for the set of tasks)
+
+19.9 / 31.1 = 64%
+
+
+
+
+21.2 Linux O(1) Scheduler
+---------------------------------------
+t1 (in O(1) lower priority => greater numerical value; so t1 has higher priority)
+
+t1 (in O(1) lower priority tasks => smaller time quantum; so t1 will have longer time quantum)
+
+increase (since it used up all of its quantum without blocking, it means that it’s CPU bound, so it’s priority level should be lowered, which means the numerical value of its priority should be increased)
+
+decrease (since it blocked, it’s more I/O intensive, will get a boost in priority, which means that the numerical value will be decreased)
+
+
+
+
+21.3 Hardware Counters 
+---------------------------------------
+instructions per cycle
+
+cycles per instruction
+
+4 (best case scenario: if all cores execute CPU-bound instructions, 4 instructions can be completed in a single cycle)
+
+16 (worst case scenario: if all cores issue a memory instruction at the same time, the instructions will contend on the shared bus and the shared memory controller. so one of them can take up to 4 * 4 cycles = 16 cycles to complete)
+
+
+
+
+
+21.4 Synchronization
+---------------------------------------
+If owner of mutex is running on a another CPU -> spin; otherwise block
+
+Owner may release mutex quickly; may be faster to wait for owner to complete than to pay overhead for context switching twice.
+
+On uniprocessor, always block, there is no way for owner to be running at the same time, since there is only CPU. 
+
+
+
+
+
+21.5 Spinlocks
+---------------------------------------
+same. if you look at the pseudocode for the two algorithms, if the lock is free then exactly the same operations will be executed in both cases.
+
+worse. because of the delay, the lock may be released while delaying, so the overall time that it will take to acquired a freed lock will be potentially longer
+
+better. in the delayed algorithm, some of the invalidations are not observed because of the wait, so those will not trigger additional memory accesses, therefore overall memory bus/interconnect contention is improved.
+
+
+
+21.6 Page Table Size
+---------------------------------------
+regular 4kB pages: 32 - 12 bits = 20bits => need 2^20 entries for each virtual page
+
+large 2MB pages: 32 - 21bits = 11 bits => need 2^11 entries for each virtual page
+
+
+
+21.7 PIO
+---------------------------------------
+programmed I/O
+
+write ‘command’ to the device to send a packet of appropriate size; copy the header and data in a contiguous memory location; copy data to NIC / device data transfer registers; read status register to confirm that copied data was successfully transmitted; repeat last two steps as many times as needed to transmit the full packet, until end-of-packet is reached.
+
+
+
+21.8 Inode Structure
+---------------------------------------
+Solution
+For 4KB = 4kB / 4 = 1k elements: (12 * 4kB) + (1k * 4kB) + (1k^2 * 4kB) + (1k^3 * 4kB) = … 
+
+
+Approx (using last term only) =  (2^10)^3 * (2^2)*(2^10) = 2^(30+2+10) = 4TB
+
+
+
+
+21.9 RPC Data Types
+---------------------------------------
+The return value will be an array of N integers. Since it’s not specified what is the value of N, the type of the return argument in XDR will be defined as a variable length array of integers: 
+
+int data<>
+
+
+When compiled with rpcgen, this data type will correspond to a data structure in C with two elements, an integer—len—that correspond to the value of N, and a pointer to an integer— val—which will correspond to the pointer to the integer array. 
+
+int len  (or length)
+
+int * val (or value… ) 
+
+
+
+21.10 DFS Semantics
+---------------------------------------
+
+UNIX: ab (all updates are instantaneously visible)
+
+NSF: a (session semantics, + period updates, but for files that’s 3sec, so the write at t=2s would not propagate)
+
+Sprite: ab (server will check with current writer P1 what’s the most recent value before returning to reader P2)
+
+
+
+21.11 Consistency Models
+---------------------------------------
+P1 and P2 only. 
+
+No. W_m1(3)@P1 and W_m1(2)@ P2 are causally related (via R_m1(2) @P1), so these two writes cannot be seen in reverse order, as currently seen by P3. P3 doesn’t observe causally consistent reads.
+
+
+21.12 Distributed Applications
+---------------------------------------
+Partitioning. Current data set is ~30 PB, so cannot store it on one machine
+
+10% since requests are evenly distributed. 
+
+
+
