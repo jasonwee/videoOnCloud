@@ -1,0 +1,108 @@
+date start : 25 september 2020
+
+
+22.1 Introduction
+---------------------------------------
+
+
+
+22.2 Lesson Objectives
+---------------------------------------
+
+
+
+22.3 Corner Detection Mathematics
+---------------------------------------
+
+
+22.4 M Matrix
+---------------------------------------
+
+
+
+22.5 Recall Harris Corner Response Function
+---------------------------------------
+
+
+22.6 Harris Detector Step by Step
+---------------------------------------
+
+
+22.7 Harris Detector Workflow
+---------------------------------------
+
+
+
+22.8 Harris Detector Algorithm
+---------------------------------------
+
+
+
+22.9 Quiz: Harris Detector Quiz
+---------------------------------------
+(img_gray, 4, 5, 0.04)
+
+
+22.10 Harris Detector Some Properties 1
+---------------------------------------
+
+
+
+22.11 Harris Detector Some Properties 2 
+---------------------------------------
+
+
+22.12 Harris Detector Some Properties 3
+---------------------------------------
+
+
+22.13 Harris Detector Some Properties 4 
+---------------------------------------
+
+
+
+22.14 Scale Invariant Detection
+---------------------------------------
+
+
+22.15 Scale Invariant Detection 2
+---------------------------------------
+
+
+22.16 Scale Invariant Detection 3
+---------------------------------------
+
+
+22.17 Scale Invariant Detection 4
+---------------------------------------
+
+
+22.18 Key Point Localization in Space
+---------------------------------------
+
+
+22.19 Scale Space Processed One Octave at a Time
+---------------------------------------
+
+
+22.20 Scale Invariant Detectors
+---------------------------------------
+
+
+22.21 Scale Invariant Detectors 2
+---------------------------------------
+
+
+22.22 SIFT
+---------------------------------------
+
+
+22.23 Feature Matching Demo
+---------------------------------------
+
+
+22.24 Summary
+---------------------------------------
+
+
+
