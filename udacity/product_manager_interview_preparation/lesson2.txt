@@ -1,0 +1,45 @@
+date start : 09 october 2020
+
+
+2.1 Introduction
+---------------------------------------
+
+
+
+2.2 Mock Interview and Debrief
+---------------------------------------
+
+
+
+2.3 Key Takeaways and Quizzes
+---------------------------------------
+Key Takeaways
+Consider the following best practices that Scott discussed in the previous video:
+
+Clearly define the problem and the objectives
+Make sure you understand the problem upfront. Candidates will sometimes latch on to a small part of the prompt that they heard and spend a lot of time going down an obscure path.
+You should restate the problem and your assumptions about that problem in your own words and confirm it with the interviewer.
+
+
+Communicate your approach and provide some structure
+Think and communicate how you are going to structure the problem before diving into it. The primary goal of case questions is to evaluate your problem solving process and abilities, not to evaluate whether you got to the correct answer. In many cases, there is no single correct answer.
+Creating some structure around the problem is not only a good way to demonstrate that this is how you approach problems, but it is also a helpful interview tool. If you start by outlining your approach, you are less likely to forget to cover a certain aspect.
+
+
+At each part of the problem, start broad and then narrow in
+At each part of the process that you’ve structured, start by brainstorming several different options, and then use some stated criteria to prioritize and narrow in.
+You want to make sure you consider a wide range of options and show that you can think creatively, but also that you know when to focus on the most promising option. Both are critical parts of the product management process.
+
+
+
+answer: 2
+
+answer: 4
+
+
+2.4 Practice Questions
+---------------------------------------
+
+
+
+
