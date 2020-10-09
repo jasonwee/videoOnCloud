@@ -1,0 +1,509 @@
+date start : 09 october 2020
+
+
+9.1 Overloading
+---------------------------------------
+Function Overloading will allow us to use the same function name for different functions. As long as the argument list is different, the compiler will be able to choose the correct definition.
+
+/*Goal: look at a program, and see if we can make it more versatile*/
+
+#include<iostream>
+
+//C++ allows us to 'overload' the same function name as long as
+//the variable types in the function inputs are different.
+int findSmaller(int input1, int input2);
+float findSmaller(float input1, float input2);
+char findSmaller(char input1, char input2);
+
+int main()
+{
+    int a = 5; 
+    int b = 4;
+    float f1 = 5.43;
+    float f2 = 6.32;
+    char c1 = 'c';
+    char c2 = 'z';
+    std::cout<<findSmaller(a,b)<<" is the smaller of "<<a<<" and "<<b<<"\n";
+    std::cout<<findSmaller(f1,f2)<<" is the smaller of "<<f1<<" and "<<f2<<"\n";
+    std::cout<<findSmaller(c1,c2)<<" is the smaller of "<<c1<<" and "<<c2<<"\n";
+    
+    return 0;
+}
+
+int findSmaller(int input1, int input2)
+{
+    if(input1<input2)
+        return input1;
+    return input2;
+}
+float findSmaller(float input1, float input2)
+{
+    if(input1<input2)
+        return input1;
+    return input2;
+}
+
+char findSmaller(char input1, char input2)
+{
+    if(input1<input2)
+        return input1;
+    return input2;
+}
+
+
+
+9.2 Overloading in a Class
+---------------------------------------
+
+main.cpp
+
+/*Goal: look at a program, and see if we can make it more versatile*/
+
+#include "main.hpp"
+
+
+int main()
+{
+    Compare c;
+    int a = 5; 
+    int b = 4;
+    float f1 = 5.43;
+    float f2 = 6.32;
+    char c1 = 'c';
+    char c2 = 'z';
+    std::cout<<c.findSmaller(a,b)<<" is the smaller of "<<a<<" and "<<b<<"\n";
+    std::cout<<c.findSmaller(f1,f2)<<" is the smaller of "<<f1<<" and "<<f2<<"\n";
+    std::cout<<c.findSmaller(c1,c2)<<" is the smaller of "<<c1<<" and "<<c2<<"\n";
+    
+    return 0;
+}
+
+
+
+
+
+main.hpp
+
+#include<iostream>
+
+class Compare
+{
+public:
+    int findSmaller(int input1, int input2);
+    float findSmaller(float input1, float input2);
+    char findSmaller(char input1, char input2);
+};
+
+int Compare::findSmaller(int input1, int input2)
+{
+    if(input1<input2)
+        return input1;
+    return input2;
+}
+float Compare::findSmaller(float input1, float input2)
+{
+    if(input1<input2)
+        return input1;
+    return input2;
+}
+
+char Compare::findSmaller(char input1, char input2)
+{
+    if(input1<input2)
+        return input1;
+    return input2;
+}
+
+
+
+
+9.3 Overloading Prog. Quiz
+---------------------------------------
+main.cpp
+
+/*Goal: look at a program, and see if we can make it more versatile
+**Modify the compare class in main.hpp to include the 
+**additional function members.*/
+#include "main.hpp"
+
+int main()
+{
+    Compare c;
+    int a = 18; 
+    int b = 14;
+    int d = 6;
+    float f1 = 5.43;
+    float f2 = 6.32;
+    float f3 = 99.43;
+    char c1 = 'c';
+    char c2 = 'z';
+    char c3 = 'm';
+    int arrayInt[5] = {65,43,2,898,678};
+    float arrayInF[4] = {4.5,4.9,4.3,6.5};
+    char arrayInC[6] = {'w','z','t','h','e','c'};
+    std::cout<<c.findSmaller(a,b)<<" is the smaller of "<<a<<" and "<<b<<"\n";
+    std::cout<<c.findSmaller(f1,f2)<<" is the smaller of "<<f1<<" and "<<f2<<"\n";
+    std::cout<<c.findSmaller(c1,c2)<<" is the smaller of "<<c1<<" and "<<c2<<"\n\n";
+    
+    std::cout<<c.findSmaller(a,b,d)<<" is the smallest of "<<a<<", "<<b<<", "<<d<<"\n";
+    std::cout<<c.findSmaller(f1,f3,f3)<<" is the smallest of "<<f1<<", "<<f2<<", "<<f3<<"\n";
+    std::cout<<c.findSmaller(c1,c2,c3)<<" is the smallest of "<<c1<<", "<<c2<<", "<<c3<<"\n\n";
+
+    std::cout<<c.findSmaller(arrayInt, 5)<<" is the smallest of the input array\n";
+    std::cout<<c.findSmaller(arrayInF, 4)<<" is the smallest of the input array\n";
+    std::cout<<c.findSmaller(arrayInC, 6)<<" is the smallest of the input array\n";
+    return 0;
+}
+
+
+
+main.hpp
+
+#include<iostream>
+
+//C++ allows us to 'overload' the same function name as long as
+//the variable types in the function inputs are different.
+
+class Compare
+{
+public:
+    int findSmaller(int input1, int input2);
+    int findSmaller(int input1, int input2, int input3);
+    float findSmaller(float input1, float input2);
+    float findSmaller(float input1, float input2, float input3);
+    char findSmaller(char input1, char input2);
+    char findSmaller(char input1, char input2, char input3);
+    int findSmaller(int arrayIn[], int size);
+    float findSmaller(float arrayIn[], int size);
+    char findSmaller(char arrayIn[], int size);
+};
+
+int Compare::findSmaller(int input1, int input2)
+{
+    if(input1<input2)
+        return input1;
+    return input2;
+}
+int Compare::findSmaller(int input1, int input2, int input3)
+{
+    if(input1 < input2)
+    {
+        if(input1 < input3)
+            return input1;
+        else
+            return input3;
+    }
+    else
+    {
+        if(input2 < input3)
+            return input2;
+        else
+            return input3;
+    }
+}
+
+float Compare::findSmaller(float input1, float input2)
+{
+    if(input1<input2)
+        return input1;
+    return input2;
+}
+float Compare::findSmaller(float input1, float input2, float input3)
+{
+    if(input1 < input2)
+    {
+        if(input1 < input3)
+            return input1;
+        else
+            return input3;
+    }
+    else
+    {
+        if(input2 < input3)
+            return input2;
+        else
+            return input3;
+    }
+}
+
+char Compare::findSmaller(char input1, char input2)
+{
+    if(input1<input2)
+        return input1;
+    return input2;
+}
+
+char Compare::findSmaller(char input1, char input2, char input3)
+{
+    if(input1 < input2)
+    {
+        if(input1 < input3)
+            return input1;
+        else
+            return input3;
+    }
+    else
+    {
+        if(input2 < input3)
+            return input2;
+        else
+            return input3;
+    }
+}
+
+int Compare::findSmaller(int arrayIn[], int size)
+{
+    {
+    for (int i = 0; i < size; ++i)
+        for (int j = 0; j < size - i - 1; ++j)
+         if (arrayIn[j] > arrayIn[j + 1])
+        {
+          int temp = arrayIn[j];
+          arrayIn[j] = arrayIn[j + 1];
+          arrayIn[j + 1] = temp;
+        }
+  }        
+    return arrayIn[0];
+}
+
+float Compare::findSmaller(float arrayIn[], int size)
+{
+    {
+    for (int i = 0; i < size; ++i)
+        for (int j = 0; j < size - i - 1; ++j)
+         if (arrayIn[j] > arrayIn[j + 1])
+        {
+          float temp = arrayIn[j];
+          arrayIn[j] = arrayIn[j + 1];
+          arrayIn[j + 1] = temp;
+        }
+  }        
+    return arrayIn[0];
+}
+
+char Compare::findSmaller(char arrayIn[], int size)
+{
+    {
+    for (int i = 0; i < size; ++i)
+        for (int j = 0; j < size - i - 1; ++j)
+         if (arrayIn[j] > arrayIn[j + 1])
+        {
+          int temp = arrayIn[j];
+          arrayIn[j] = arrayIn[j + 1];
+          arrayIn[j + 1] = temp;
+        }
+  }        
+    return arrayIn[0];
+}  
+
+
+
+9.4 Overloading Prog. Ans
+---------------------------------------
+
+
+
+9.5 Overloading Constructors
+---------------------------------------
+main.cpp
+
+/*Goal: learn about overloading constructors*/
+
+#include "main.hpp"
+
+int main()
+{
+    Square s1;
+    Square s2(4,3);
+    cout<<"s1 dimensions are: "<<s1.getWidth()<<","<<s1.getLength();
+    cout<<"\ns2 dimensions are: "<<s2.getWidth()<<","<<s2.getLength();
+    return 0;
+}
+
+
+main.hpp
+
+//header file for main.hpp
+
+#include<iostream>
+#include<string>
+using namespace std;
+
+class Square
+{
+    private:
+        int length;
+        int width;
+    public:
+        Square();
+        Square(int lenIn, int widIn);
+        int getLength();
+        int getWidth();
+};
+
+Square::Square()
+{
+    length = 0;
+    width = 0;
+}
+
+Square::Square(int lenIn, int widIn)
+{
+    length = lenIn;
+    width = widIn;
+}
+
+int Square::getLength()
+{
+    return length;
+}
+
+int Square::getWidth()
+{
+    return width;
+}
+
+
+
+
+
+9.6 Overloading Const. Prog
+---------------------------------------
+
+
+/*Create a class that has four constructors:
+* one that accepts no input parameters
+* one that accepts name
+* one that accepts license number
+* one that accepts name and license number
+* The default values are:
+name = NA
+license = 0
+*/
+
+#include<iostream>
+#include<string>
+using namespace std;
+
+class Dog
+{
+    private:
+        string name;
+        int license;
+    public:
+        Dog();
+        Dog(string nameIn);
+        Dog(int licenseIn);
+        Dog(string nameIn, int licenseIn);
+        string getName();
+        int getLicense();
+};
+
+Dog::Dog()
+{
+    name = "NA";
+    license = 0;
+}
+
+Dog::Dog(string nameIn)
+{
+    name = nameIn;
+    license = 0;
+}
+
+Dog::Dog(int licenseIn)
+{
+    name = "NA";
+    license = licenseIn;
+}
+
+Dog::Dog(string nameIn, int licenseIn)
+{
+    name = nameIn;
+    license = licenseIn;
+}
+
+string Dog::getName()
+{
+    return name;
+}
+
+int Dog::getLicense()
+{
+    return license;
+}
+
+
+
+
+9.7 Overloading Const. Ans
+---------------------------------------
+
+
+9.8 Overloading Operators
+---------------------------------------
+#include <iostream>
+ 
+using namespace std;
+
+class Shape 
+{
+    private:
+      int length;     // Length of a box
+      int width;
+      
+    public:
+      // Constructor definition
+      Shape(int l = 2, int w = 2) 
+      {
+         length = l;
+         width = w;
+      }
+		
+      double Area() 
+      {
+         return length * width;
+      }
+      
+      int operator + (Shape shapeIn)
+      {
+          return Area() + shapeIn.Area();
+      }
+};
+
+int main(void) 
+{
+   Shape sh1(4, 4);    // Declare shape1
+   Shape sh2(2, 6);    // Declare shape2
+   
+   int total = sh1 + sh2;
+   cout << "\nsh1.Area() = " << sh1.Area();
+   cout << "\nsh2.Area() = " << sh2.Area();
+   cout << "\nTotal = "<<total;
+   return 0;
+}
+
+
+
+9.9 Overloading Op. Prog. Quiz
+---------------------------------------
+      int operator + (Shape shapeIn)
+      {   
+          return (length + shapeIn.length) * (width + shapeIn.width);
+      }
+
+
+9.10 Overloading Ops. Prog. Ans
+---------------------------------------
+
+
+9.11 Quiz: Student Playground
+---------------------------------------
+
+
+9.12 More on Overloading
+---------------------------------------
+
+
+
+
