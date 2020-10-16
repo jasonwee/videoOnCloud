@@ -1,0 +1,93 @@
+date start : 16 october 2020
+
+
+3.1 Introduction
+---------------------------------------
+
+
+
+3.2 Mock Interview #1 & Debrief
+---------------------------------------
+
+
+
+3.3 Key Takeaways and Quizzes #1
+---------------------------------------
+Always restate the question
+Make sure you are answering the right question by saying in your own words what is being asked.
+
+Ask additional clarifying questions
+State any key assumptions you are making and ask follow up questions to clarify.
+
+Have a clear methodology
+There are many prioritization models out there (e.g. the RICE model). Find one or two that resonate with you and be prepared to use them, since prioritization questions are quite common in Product Manager interviews.
+
+State your approach at the outset
+Structure is critical - provide some outline upfront for how you plan to attack the problem.
+
+
+
+
+
+. Some common ones includes: 1) Engineering Effort 2) Revenue Impact 3) Customer Satisfaction 4) Competitive Advantage 5) Mission Alignment
+
+2,4
+
+new payment options
+add seler features
+incentivize reviews
+
+3.4 Mock Interview #2 & Debrief
+---------------------------------------
+
+
+
+3.5 Key Takeaways and Quizzes #2
+---------------------------------------
+
+Key Takeaways
+Consider the following best practices that Nargis discussed in the previous video:
+
+Start with user needs
+No matter the type of problem, keep the needs of your users first.
+
+Structure your approach
+This is applicable to every type of problem. Providing structure upfront in the problem demonstrates organized thinking and is important to keeping your answer focused.
+
+Gain familiarity of common technical solutions
+It’s valuable to have a basic architectural understanding of some well known products -- for example Google Search and Facebook Newsfeed.
+
+Understand the differences between mobile and desktop applications
+In preparation for your interview, review the key differences and considerations when building an application for mobile vs desktop. This is particularly important if the company you are interviewing with has a mobile product.
+
+Study the technology of the company you are interviewing with.
+Prior to the interview, gain a basic familiarity with the company’s key technology. This preparation will not only help you answer questions you are asked, but can also inspire questions for you to ask the interviewer.
+
+
+
+
+
+
+
+cursor/name visibility for collaboration
+support for two users editing content at the same time
+maintaining the document formatting
+quick page load times
+
+
+
+2,4
+
+
+1
+
+
+
+
+
+
+3.6 Practice Questions
+---------------------------------------
+
+
+
