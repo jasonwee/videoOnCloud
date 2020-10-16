@@ -1,0 +1,448 @@
+date start : 16 october 2020
+
+
+10.1 Generic Programming
+---------------------------------------
+
+
+10.2 Templates Example
+---------------------------------------
+#include<iostream>
+
+using namespace std;
+
+//Our generic function
+template <typename T>  //tell the compiler we are using a template
+T findSmaller(T input1,T  input2); 
+
+int main()
+{
+    int a = 54; 
+    int b = 89;
+    float f1 = 7.8;
+    float f2 = 9.1;
+    char c1 = 'f';
+    char c2 = 'h';
+    string s1 = "Hello";
+    string s2 = "Bots are fun";
+    
+    //Wow! We can use one function for different variable types
+    cout<<"\nIntegers compared: "<<findSmaller(a,b);
+    cout<<"\nFloats compared: "<<findSmaller(f1,f2);
+    cout<<"\nChars compared: "<<findSmaller(c1,c2);
+    cout<<"\nStrings compared: "<<findSmaller(s1,s2);   
+    return 0;
+}
+
+template <typename T>
+T findSmaller(T  input1,T  input2)
+{
+    if(input1 < input2)
+        return input1;
+    else
+        return input2;
+}
+
+
+
+10.3 Function Templates Prog. Quiz
+---------------------------------------
+
+
+The function declaration:
+
+template <typename T>  //tell the compiler we are using a template
+
+//T represents the variable type. Since we want it to be for any type, we 
+//use T
+T  functionName (T parameter1,T parameter2, ...); 
+
+
+
+
+
+
+
+
+
+The function definition:
+
+template <typename T>
+T functionName (T  parameter1,T  parameter2,...)
+{
+    function statements;
+}
+
+
+
+/*Goal: Practice writing generic functions*/
+
+#include "main.hpp"
+
+int main()
+{
+    int a = 90;
+    int b = 1; 
+    std::cout<<a <<" + "<<b<<" = "<< sumTwo(a,b);
+    return 0;
+}
+
+
+
+
+#include<iostream>
+
+using namespace std;
+
+
+template <typename T>
+T sumTwo(T  input1,T  input2)
+{
+    return input1 + input2;
+}
+
+
+
+
+
+10.4 Function Templates Prog. Answer
+---------------------------------------
+
+#include<iostream>
+
+//Our generic function
+template <typename T>  //tell the compiler we are using a template
+//use addresses of the variables in the delcaration of the function
+
+template <typename T>
+T sumTwo(T  a,T  b)
+{
+    //Note  that the sum is a variable type T. This means whatever 
+    //variable type is passed in
+   //will become the variable type for sum.
+    T  sum;
+    sum = a + b;
+    return sum;
+}
+
+
+
+10.5 Func. Templates 2
+---------------------------------------
+template <typename T, typename U, typename V>
+T functionName (U  parameter1, V  parameter2,...)
+{
+    function statements;
+}
+
+
+
+T getBigger(T input1, U input2)
+{
+    if(input1 > input2)
+        return input1;
+    return input2;
+}
+
+
+
+/*Goal: learn to use templates with multiple variable types. 
+*/
+
+#include<iostream>
+using namespace std;
+
+template <typename T, typename U>
+T getBigger(T input1, U input2);
+
+
+int main()
+{
+    int a = 5;
+    float b = 6.334;
+    int bigger;
+    cout<<"Between "<<a<<" and "<<b<<" "<<getBigger(a,b)<<" is bigger.\n";
+
+    cout<<"Between "<<a<<" and "<<b<<" "<<getBigger(b,a)<<" is bigger.\n";    
+    return 0;
+}
+
+template <typename T, typename U>
+T getBigger(T input1, U input2)
+{
+    if(input1 > input2)
+        return input1;
+    return input2;
+}
+
+
+
+
+10.6 Generic Classes
+---------------------------------------
+//tell compiler this class uses a generic value
+template <class T>
+class StudentRecord
+{
+    private:
+        const int size = 5;
+        T grade;
+        int studentId;
+    public:
+       //note: I used a constructor that accepts the grade input
+        StudentRecord(T input);
+        void setId(int idIn);
+        void printGrades();
+};
+
+template<class T>
+StudentRecord<T>::StudentRecord(T input)
+{
+    grade=input;
+}
+
+//Notice I still add the template<class T here, even though this is not a generic //function. It is in a generic class. 
+
+template<class T>
+void StudentRecord<T>::setId(int idIn)
+{
+    studentId = idIn;
+}
+
+template<class T>
+void StudentRecord<T>::printGrades()
+{
+    cout<<"ID# "<<studentId<<": ";
+    cout<<grade<<"\n ";
+    cout<<"\n";
+}
+
+
+
+
+
+
+
+
+
+main.cpp
+
+/*Goal: examine generic classes.
+*/
+
+/*Goal: study generic classes*/
+
+#include "main.hpp"
+
+int main()
+{
+    //StudentRecord is the generic class
+    //The constructor sets the grade value
+    StudentRecord<int> srInt(3);
+    srInt.setId(111111);
+    srInt.printGrades();
+ 
+    StudentRecord<char> srChar('B');
+    srChar.setId(222222);
+    srChar.printGrades();
+
+    StudentRecord<float> srFloat(3.333);
+    srFloat.setId(333333);
+    srFloat.printGrades();
+    
+    StudentRecord<string> srString("B-");
+    srString.setId(4444);
+    srString.printGrades();
+    
+    return 0;
+}
+
+
+
+main.hpp
+
+//header file for main.cpp
+
+#include<iostream>
+
+//The class accepts strings, 
+//so we need to use namespace
+using namespace std;
+
+//tell compiler this class uses a generic value
+template <class T>
+class StudentRecord
+{
+    private:
+        const int size = 5;
+        T grade;
+        int studentId;
+    public:
+        StudentRecord(T input);
+        void setId(int idIn);
+        void printGrades();
+};
+
+template<class T>
+StudentRecord<T>::StudentRecord(T input)
+{
+    grade=input;
+}
+
+template<class T>
+void StudentRecord<T>::setId(int idIn)
+{
+    studentId = idIn;
+}
+
+template<class T>
+void StudentRecord<T>::printGrades()
+{
+    cout<<"ID# "<<studentId<<": ";
+    cout<<grade<<"\n ";
+    cout<<"\n";
+}
+
+10.7 Generic Classes Prog. Quiz
+---------------------------------------
+
+
+10.8 Generic Classes Prog. Ans
+---------------------------------------
+/*header file*/
+
+#include<iostream>
+
+using namespace std;
+
+template <class T>
+class Multiplier
+{
+    T m1, m2;
+    T product;
+public:
+    void printEquation();
+    void setM1(T mIn);
+    void setM2(T mIn);
+    void setProduct();
+    T getProduct();
+    T getM1();
+    T getM2();
+};
+
+template <class T>
+void Multiplier<T>::printEquation()
+{
+    std::cout<<m1<<" * "<<m2<<" = "<<product;
+}
+
+template <class T>
+void Multiplier<T>::setM1(T mIn)
+{
+   m1 = mIn; 
+}
+
+template <class T>
+void Multiplier<T>::setM2(T mIn)
+{
+   m2 = mIn; 
+}
+
+template <class T>
+void Multiplier<T>::setProduct()
+{
+   product = m1 * m2; 
+}
+
+template <class T>
+T Multiplier<T>::getM1()
+{
+   return m1; 
+}
+
+template <class T>
+T Multiplier<T>::getM2()
+{
+   return m2; 
+}
+
+template <class T>
+T Multiplier<T>::getProduct()
+{
+   return product; 
+}
+
+
+10.9 Generic Classes Issues
+---------------------------------------
+
+
+10.10 Generic Classes 2 Prog. Quiz
+---------------------------------------
+
+
+10.11 Generic Classes 2 Prog. Ans
+---------------------------------------
+//header file for main.cpp
+
+#include<iostream>
+
+using namespace std;
+
+const int SIZE = 5;
+template <class T>
+class StudentRecord
+{
+    private:
+        const int size = SIZE;
+        T grades[SIZE];
+        int studentId;
+    public:
+        StudentRecord(T defaultInput);//A default constructor with a default value
+        void setGrades(T* input);
+        void setId(int idIn);
+        void printGrades();
+};
+
+template<class T>
+StudentRecord<T>::StudentRecord(T defaultInput)
+{
+    //we use the default value to allocate the size of the memory
+    //the array will use
+    for(int i=0; i<SIZE; ++i)
+        grades[i] = defaultInput;
+
+}
+
+
+template<class T>
+void StudentRecord<T>::setGrades(T* input)
+{
+    for(int i=0; i<SIZE;++i)
+    {
+        grades[i] = input[i];
+    }
+}
+
+template<class T>
+void StudentRecord<T>::setId(int idIn)
+{
+    studentId = idIn;
+}
+
+template<class T>
+void StudentRecord<T>::printGrades()
+{
+    std::cout<<"ID# "<<studentId<<": ";
+    for(int i=0;i<SIZE;++i)
+        std::cout<<grades[i]<<"\n ";
+    std::cout<<"\n";
+}
+
+
+10.12 Quiz: Student Playground
+---------------------------------------
+
+
+
+
