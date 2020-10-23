@@ -1,0 +1,474 @@
+date start : 23 october 2020
+
+
+11.1 Inheritance Introduction
+---------------------------------------
+
+main.cpp
+#include"main.hpp"
+
+int main()
+{
+    //Create an instance of the derived class, 
+    //GradStudent
+    GradStudent gs1;
+    
+    //Set the id of the grad student
+    //using the function in the base class
+    gs1.setId(123456789);
+    
+    //Set the degree of the grad student
+    //using the function in the derived class
+    gs1.setDegree("BSEE");
+    
+    cout<<gs1.getId()<<" "<<gs1.getDegree();
+    return 0;
+}
+
+
+
+main.hpp
+/*The header file for inheritance.*/
+
+#include<iostream>
+#include<string>
+using namespace std;
+
+//The base class
+class Student
+{
+    private:
+        int id;
+    public:
+        void setId(int idIn);
+        int getId();
+        Student();
+};
+
+Student::Student()
+{
+    id = 000000000;
+}
+
+void Student::setId(int idIn)
+{
+    id = idIn;
+}
+
+int Student::getId()
+{
+    return id;
+}
+
+//The derived class with Student as base class
+class GradStudent : public Student
+{
+    private:
+        string degree;
+    public:
+        GradStudent();
+        void setDegree(string degreeIn);
+        string getDegree();
+};
+
+GradStudent::GradStudent()
+{
+    degree = "undelcared";
+}
+void GradStudent::setDegree(string degreeIn)
+{
+    degree = degreeIn;
+}
+string GradStudent::getDegree()
+{
+    return degree;
+}
+
+
+
+11.2 Inheritance: Access Control
+---------------------------------------
+main.cpp
+
+/*Goal: study a simple example if inheritance. 
+*/
+#include"main.hpp"
+
+int main()
+{
+    //Create an instance of the derived class, 
+    //GradStudent
+    GradStudent gs1;
+    
+    //Set the id of the grad student
+    //using the function in the base class
+    gs1.setStudentId(123456789);
+    
+    //Set the degree of the grad student
+    //using the function in the derived class
+    gs1.setDegree("BSEE");
+    
+    cout<<gs1.getStudentId()<<" "<<gs1.getDegree();
+    return 0;
+}
+
+
+
+main.hpp
+
+/*The header file for inheritance.*/
+
+#include<iostream>
+#include<string>
+using namespace std;
+
+//The base class
+class Student
+{
+    private:
+        int id;
+    public:
+        void setId(int idIn);
+        int getId();
+        Student();
+        void setId();
+};
+
+Student::Student()
+{
+    id = 000000000;
+}
+
+void Student::setId(int idIn)
+{
+    
+    id = idIn;
+}
+
+int Student::getId()
+{
+    return id;
+}
+
+//The derived class with Student as base class
+class GradStudent : private Student
+{
+    private:
+        string degree;
+    public:
+        GradStudent();
+        void setDegree(string degreeIn);
+        string getDegree();
+        void setStudentId(int idIn);
+        int getStudentId();
+};
+
+GradStudent::GradStudent()
+{
+    degree = "undelcared";
+}
+
+int GradStudent::getStudentId()
+{
+    return Student::getId();
+}
+void GradStudent::setStudentId(int idIn)
+{
+    Student::setId(idIn);
+}
+void GradStudent::setDegree(string degreeIn)
+{
+    degree = degreeIn;
+}
+string GradStudent::getDegree()
+{
+    return degree;
+}
+
+
+
+11.3 Inheritance Prog. Quiz
+---------------------------------------
+
+
+#include <iostream>
+#include <string>
+using namespace std;
+
+class Flower
+{
+    private:
+        string bloomTime;
+    public:
+        Flower();
+        void setBloomTime(string bloomIn);
+        string getBloomTime();
+};
+Flower::Flower()
+{
+    bloomTime = "";
+}
+
+void Flower::setBloomTime(string bloomIn)
+{
+    bloomTime = bloomIn;
+}
+
+string Flower::getBloomTime()
+{
+    return bloomTime;
+}
+
+
+class Rose : private Flower
+{
+    private:
+        string fragrance;
+    public:
+        Rose();
+        void setFragrance(string fragIn);
+        string getFragrance();
+        void setBloomTime(string bloomIn);
+        string getBloomTime();
+};
+
+Rose::Rose()
+{
+    fragrance = "";
+}
+
+void Rose::setFragrance(string fragIn)
+{
+    fragrance = fragIn;
+}
+
+string Rose::getFragrance()
+{
+    return fragrance;
+}
+
+string Rose::getBloomTime()
+{
+    return Flower::getBloomTime();
+}
+void Rose::setBloomTime(string bloomIn)
+{
+    Flower::setBloomTime(bloomIn);
+}
+
+
+
+11.4 Inheritance Prog. Answer
+---------------------------------------
+
+
+
+11.5 Multiple Inheritance
+---------------------------------------
+C++ classes can inherit from more than one class. This is known as "Multiple Inheritance".
+
+
+class DerivedClass : access BaseClass1, ... ,access BaseClassN
+
+
+class TeachingAssociate: public Staff, public GradStudent
+
+
+main.cpp
+/*Goal: understand multiple inheritance*/
+
+#include "main.hpp"
+
+int main()
+{
+    TA t1;
+    t1.setSupervisor("Dr. Caohuu");
+    t1.setId(55555);
+    t1.setTitle("Adjunct Prof.");
+    cout<<t1.getSupervisor()<<" "<<t1.getId()<<" "<<t1.getTitle();
+    return 0;
+}
+
+
+main.hpp
+//header file for main.cpp
+#include<iostream>
+#include<string>
+using namespace std;
+
+class Staff
+{
+    private:
+        string title;
+    public:
+        Staff();
+        void setTitle(string input);
+        string getTitle();
+};
+
+Staff::Staff()
+{
+    title = "NA";
+}
+
+void Staff::setTitle(string input)
+{
+    title = input;
+}
+
+string Staff::getTitle()
+{
+    return title;
+}
+
+class GradStudent
+{
+    private: 
+        int studentId;
+    public:
+        GradStudent();
+        void setId(int input);
+        int getId();
+    
+};
+
+GradStudent::GradStudent()
+{
+    studentId = 000000;
+}
+
+void GradStudent::setId(int input)
+{
+    studentId = input;
+}
+
+int GradStudent::getId()
+{
+    return studentId;
+}
+
+class TA: public Staff, public GradStudent
+{
+    private:
+        string supervisor;
+    public:
+        TA();
+        void setSupervisor(string input);
+        string getSupervisor();
+};
+
+TA::TA()
+{
+    supervisor = "NA";
+}
+
+void TA::setSupervisor(string input)
+{
+    supervisor = input;
+}
+
+string TA::getSupervisor()
+{
+    return supervisor;
+}
+
+
+11.6 Multiple Inheritance Prog. Quiz
+---------------------------------------
+//header file for main.cpp
+/*TODO: 
+*-  create a class called Pet
+*- it inherits from both the class Patient 
+*- and the class Dog
+*- Pet has one private member: name
+*- Pet has public getName and setName functions.
+*/
+#include<iostream>
+#include<string>
+
+using namespace std;
+
+
+class Patient
+{
+    private:
+        int idNumber;
+    public:
+        Patient();
+        void setIdNumber(int idIn);
+        int getIdNumber();
+};
+
+Patient::Patient() 
+{
+    idNumber = 0;
+}
+
+void Patient::setIdNumber(int idIn)
+{
+    idNumber = idIn;
+}
+
+int Patient::getIdNumber()
+{
+    return idNumber;
+}
+
+class Dog
+{
+    private:
+        string breed;
+    public:
+        Dog();
+        void setBreed(string breedIn);
+        string getBreed();
+};
+
+Dog::Dog()
+{
+    breed = "";
+}
+
+
+void Dog::setBreed(string breedIn)
+{
+    breed = breedIn;
+}
+
+string Dog::getBreed()
+{
+    return breed;
+}
+
+class Pet: public Patient, public Dog
+{
+  private:
+     string name;
+  public:
+     Pet();
+     void setName(string nameIn);
+     string getName();
+     
+};
+
+Pet::Pet()
+{
+    name = "";
+}
+
+void Pet::setName(string nameIn)
+{
+    name = nameIn;
+}
+
+string Pet::getName()
+{
+    return name;
+}
+
+
+11.7 Student Playground
+---------------------------------------
+
+
+
