@@ -1,0 +1,569 @@
+date start : 30 october 2020
+
+
+10.1 Inheritance Issue
+---------------------------------------
+main.cpp
+
+
+#include "main.hpp"
+
+int main()
+{
+    Employee e1;
+    e1.setPayRate(10.00);
+    Manager m1;
+    m1.setPayRate(12000.00);
+    cout<<"e1 pay: $"<<e1.calcWeeklyPay();
+    cout<<"\nm1 pay: $"<<m1.calcWeeklyPay();
+
+    return 0;
+}
+
+
+main.hpp
+
+/* header file for main.cpp
+*/ 
+
+#include<iostream>
+#include<string>
+using namespace std;
+
+//Employee is a class for calculating the
+//pay for an hourly employee. 
+class Employee
+{
+    private:
+        float payRate;
+        string name;
+        int employeeNumber;
+    public:
+        void setPayRate(float rateIn);
+        float getPayRate();
+        float calcWeeklyPay();
+};
+void Employee::setPayRate(float rateIn)
+{
+    payRate = rateIn;
+}
+float Employee::getPayRate()
+{
+    return payRate;
+}
+float Employee::calcWeeklyPay()
+{
+    return 40 * payRate;
+}
+
+//The class manager inherits from Employee
+//The only difference... managers are salary
+//employees. So the pay is calculated differently.
+class Manager : public Employee
+{
+    public:
+        float calcWeeklyPay();
+};
+
+float Manager::calcWeeklyPay()
+{
+    //weekly pay is based on the yearly salary
+    //divided by 52 weeks
+    return Employee::getPayRate() /52;
+}
+
+
+
+
+
+main.cpp
+
+#include "main.hpp"
+
+int main()
+{
+    const string status = "salary";
+    string level;
+    level = "salary";
+    
+    if(status != level)
+    {
+        Employee e1;
+        e1.setPayRate(10.00);
+        cout<<"e1 pay: $"<<e1.calcWeeklyPay();
+    }
+    else
+    {
+        Manager e1;
+        e1.setPayRate(12000.00);
+        cout<<"e1 pay: $"<<e1.calcWeeklyPay();
+    }    
+
+
+    return 0;
+}
+
+
+
+
+main.hpp
+
+/* header file for main.cpp
+*/ 
+
+#include<iostream>
+#include<string>
+using namespace std;
+
+//Employee is a class for calculating the
+//pay for an hourly employee. 
+class Employee
+{
+    private:
+        float payRate;
+        string name;
+        int employeeNumber;
+    public:
+        void setPayRate(float rateIn);
+        float getPayRate();
+        float calcWeeklyPay();
+};
+void Employee::setPayRate(float rateIn)
+{
+    payRate = rateIn;
+}
+float Employee::getPayRate()
+{
+    return payRate;
+}
+float Employee::calcWeeklyPay()
+{
+    return 40 * payRate;
+}
+
+//The class manager inherits from Employee
+//The only difference... managers are salary
+//employees. So the pay is calculated differently.
+class Manager : public Employee
+{
+    public:
+        float calcWeeklyPay();
+};
+
+float Manager::calcWeeklyPay()
+{
+    //weekly pay is based on the yearly salary
+    //divided by 52 weeks
+    return Employee::getPayRate() /52;
+}
+
+
+
+
+
+main.cpp
+
+/*We created a pointer to 
+*an employee object. 
+* Now we only have to define which
+*type of employee. 
+*Then we can use the same code for all 
+*employees. 
+*
+*The question is .... does it work?
+*/
+#include "main.hpp"
+
+int main()
+{
+    const string status = "salary"; //options: hourly or salary
+    string level;
+    level = "hourly";
+    Employee *e1; //e1 is now a pointer to Employee object
+    
+    if(status != level)
+    {
+        e1 = new Employee(); //we define an hourly employee
+    }
+    else
+    {
+        e1 = new Manager(); //we define a salaried employee
+    }  
+    
+    e1->setPayRate(12000.00);
+    cout<<"This doesn't work. We get the wrong pay.\n";
+    cout<<"e1 pay: $"<<e1->calcWeeklyPay();
+    cout<<"\nThe pay is calculated as an hourly employee.";
+    delete e1; //every 'new' must have a delete
+    return 0;
+}
+
+
+
+main.hpp
+
+/* header file for main.cpp
+*/ 
+
+#include<iostream>
+#include<string>
+using namespace std;
+
+//Employee is a class for calculating the
+//pay for an hourly employee. 
+class Employee
+{
+    private:
+        float payRate;
+        string name;
+        int employeeNumber;
+    public:
+        void setPayRate(float rateIn);
+        float getPayRate();
+        float calcWeeklyPay();
+};
+void Employee::setPayRate(float rateIn)
+{
+    payRate = rateIn;
+}
+float Employee::getPayRate()
+{
+    return payRate;
+}
+float Employee::calcWeeklyPay()
+{
+    return 40 * payRate;
+}
+
+//The class manager inherits from Employee
+//The only difference... managers are salary
+//employees. So the pay is calculated differently.
+class Manager : public Employee
+{
+    public:
+        float calcWeeklyPay();
+};
+
+float Manager::calcWeeklyPay()
+{
+    //weekly pay is based on the yearly salary
+    //divided by 52 weeks
+    return Employee::getPayRate() /52;
+}
+
+
+10.2 Virtual Functions
+---------------------------------------
+A virtual function is a member function that you expect to be redefined in derived classes. When you refer to a derived class object using a pointer or a reference to the base class, you can call a virtual function for that object and execute the derived class's version of the function.
+
+
+main.cpp
+
+/* header file for main.cpp
+*/ 
+
+#include<iostream>
+#include<string>
+using namespace std;
+
+//Employee is a class for calculating the
+//pay for an hourly employee. 
+class Employee
+{
+    private:
+        float payRate;
+        string name;
+        int employeeNumber;
+    public:
+        void setPayRate(float rateIn);
+        float getPayRate();
+        //This is now a virtual function
+        virtual float calcWeeklyPay(); 
+};
+void Employee::setPayRate(float rateIn)
+{
+    payRate = rateIn;
+}
+float Employee::getPayRate()
+{
+    return payRate;
+}
+float Employee::calcWeeklyPay()
+{
+    return 40 * payRate;
+}
+
+//The class manager inherits from Employee
+//The only difference... managers are salary
+//employees. So the pay is calculated differently.
+class Manager : public Employee
+{
+    public:
+        float calcWeeklyPay();
+};
+
+float Manager::calcWeeklyPay()
+{
+    //weekly pay is based on the yearly salary
+    //divided by 52 weeks
+    return Employee::getPayRate() /52;
+}
+
+
+
+main.hpp
+/* header file for main.cpp
+*/ 
+
+#include<iostream>
+#include<string>
+using namespace std;
+
+//Employee is a class for calculating the
+//pay for an hourly employee. 
+class Employee
+{
+    private:
+        float payRate;
+        string name;
+        int employeeNumber;
+    public:
+        void setPayRate(float rateIn);
+        float getPayRate();
+        //This is now a virtual function
+        virtual float calcWeeklyPay(); 
+};
+void Employee::setPayRate(float rateIn)
+{
+    payRate = rateIn;
+}
+float Employee::getPayRate()
+{
+    return payRate;
+}
+float Employee::calcWeeklyPay()
+{
+    return 40 * payRate;
+}
+
+//The class manager inherits from Employee
+//The only difference... managers are salary
+//employees. So the pay is calculated differently.
+class Manager : public Employee
+{
+    public:
+        float calcWeeklyPay();
+};
+
+float Manager::calcWeeklyPay()
+{
+    //weekly pay is based on the yearly salary
+    //divided by 52 weeks
+    return Employee::getPayRate() /52;
+}
+
+
+
+10.3 Virtual Functions 2
+---------------------------------------
+main.cpp
+
+/*
+*/
+#include "main.hpp"
+
+int main()
+{
+    const string status = "salary"; //options: hourly or salary
+    string level;
+    
+    //assign an manager to e1
+    level = "salary";
+    Employee *e1; //e1 is now a pointer to Employee object
+    
+    if(status != level)
+    {
+        e1 = new Employee(); //we define an hourly employee
+    }
+    else
+    {
+        e1 = new Manager(); //we define a salaried employee
+    }  
+    
+    e1->setPayRate(12000.00);
+
+    cout<<"e1 pay: $"<<e1->calcWeeklyPay();
+    
+    //assign an employee to e2
+    level = "hourly";
+    Employee *e2; //e1 is now a pointer to Employee object
+    
+    if(status != level)
+    {
+        e2 = new Employee(); //we define an hourly employee
+    }
+    else
+    {
+        e2 = new Manager(); //we define a salaried employee
+    }  
+    
+    e2->setPayRate(10.00);
+    cout<<"\ne2 pay: $"<<e2->calcWeeklyPay();
+    
+    return 0;
+}
+
+
+
+main.hpp
+
+/* header file for main.cpp
+*/ 
+
+#include<iostream>
+#include<string>
+using namespace std;
+
+//Employee is a class for calculating the
+//pay for an hourly employee. 
+class Employee
+{
+    private:
+        float payRate;
+        string name;
+        int employeeNumber;
+    public:
+        void setPayRate(float rateIn);
+        float getPayRate();
+        //This is now a virtual function
+        virtual float calcWeeklyPay(); 
+};
+void Employee::setPayRate(float rateIn)
+{
+    payRate = rateIn;
+}
+float Employee::getPayRate()
+{
+    return payRate;
+}
+float Employee::calcWeeklyPay()
+{
+    return 40 * payRate;
+}
+
+//The class manager inherits from Employee
+//The only difference... managers are salary
+//employees. So the pay is calculated differently.
+class Manager : public Employee
+{
+    public:
+        float calcWeeklyPay();
+};
+
+float Manager::calcWeeklyPay()
+{
+    //weekly pay is based on the yearly salary
+    //divided by 52 weeks
+    return Employee::getPayRate() /52;
+}
+
+
+10.4 Pure Virtual Functions
+---------------------------------------
+
+main.cpp
+/*Goal:
+*/
+
+#include "main.hpp"
+
+int main()
+{
+    Cat c1("polly", 20.0, "cat");
+    Dog d1("spot", 30.0, "dog");
+    
+    cout<<"\nPolly Rate: $"<<c1.calcDailyRate();
+     cout<<"\nSpot Rate: $"<<d1.calcDailyRate();
+   
+    return 0;
+}
+
+
+
+main.hpp
+//header file for main.cpp
+
+#include<iostream>
+#include<string>
+using namespace std;
+
+class Animal 
+{
+    private:
+        string name;
+        float baseRate;
+        string type;
+    public:
+        Animal(string nameIn, float baseRateIn, string typeIn);
+        //this is our virtual function
+        virtual float calcDailyRate();
+        float getBaseRate();
+};
+
+Animal::Animal(string nameIn, float baseRateIn, string typeIn)
+{
+    name = nameIn;
+    baseRate = baseRateIn;
+    type = typeIn;
+}
+
+//we would never actual calcualte a daily rate for 
+//an "animal" so we don't really need this function. 
+float Animal::calcDailyRate()
+{
+    return baseRate * 1.0;
+}
+
+float Animal::getBaseRate()
+{
+   return baseRate; 
+}
+
+class Cat: public Animal
+{
+        public:
+        Cat(string nameIn, float baseRateIn, string typeIn);
+        float calcDailyRate();
+};
+
+Cat::Cat(string nameIn, float baseRateIn, string typeIn)
+        :Animal(nameIn, baseRateIn, typeIn)
+        {
+            cout<<"\nin cat constructor";
+        }
+
+float Cat::calcDailyRate()
+{
+    return Animal::getBaseRate() * 1.5;
+}
+
+//=============
+class Dog: public Animal
+{
+        public:
+        Dog(string nameIn, float baseRateIn, string typeIn);
+        float calcDailyRate();
+};
+
+Dog::Dog(string nameIn, float baseRateIn, string typeIn)
+        :Animal(nameIn, baseRateIn, typeIn)
+        {
+            cout<<"\nin dog constructor";
+        }
+
+float Dog::calcDailyRate()
+{
+    return Animal::getBaseRate() * 2.0;
+}
+
+
