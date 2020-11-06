@@ -1,0 +1,41 @@
+ud090
+
+date start : 06 november 2020
+
+
+1.1 Welcome to Udacity
+---------------------------------------
+
+
+
+1.2 Welcome to the AWS Machine Learning Scholarship Program
+---------------------------------------
+
+
+
+1.3 Meet Your Instructors
+---------------------------------------
+
+
+1.4 What You Will Learn
+---------------------------------------
+
+
+
+1.5 Interview with a ML Engineer
+---------------------------------------
+
+
+1.6 Pre-requisites
+---------------------------------------
+
+
+1.7 How to Succeed
+---------------------------------------
+
+
+
+
+
+
+
