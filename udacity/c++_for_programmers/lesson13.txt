@@ -1,0 +1,529 @@
+date start : 06 november 2020
+
+
+13.1 Vectors Introduction
+---------------------------------------
+// constructing vectors
+#include <iostream>
+#include <vector>  //Need to include the vector library!
+
+
+int main ()
+{
+  //creating a vector of integers
+  std::vector<int> vectorInts;  
+  std::cout<<"vectorInts has "<<vectorInts.size()<<" elements\n";
+  
+  //Changing the size of vectorInts to 6
+  vectorInts.resize(6);
+  std::cout<<"\n\nvectorInts now has "<<vectorInts.size()<<" elements\n";
+ 
+  return 0;
+}
+
+
+
+
+
+13.2 Vector Prog. Quiz
+---------------------------------------
+/*Create a vector of floats called vFloat. 
+* vFloat should have an iterator. 
+*/
+
+//TODO: include the necessary libraries
+#include <vector>
+#include <iostream>
+
+int main ()
+{
+  //TODO: instantiate vFloat vector
+  std::vector<float> vFloat;
+  std::cout<<"vFloat has "<<vFloat.size()<<" elements\n";
+  
+  //Changing the size of vectorInts to 6
+  //TODO: Change the size of vFloat to 10 elements
+  vFloat.resize(10);
+  std::cout<<"\n\n vFloat now has "<<vFloat.size()<<" elements\n";
+ 
+  return 0;
+}
+
+
+
+
+
+13.3 Vector Prog. Quiz Ans.
+---------------------------------------
+
+
+
+13.4 Vectors and Iterators
+---------------------------------------
+// constructing vectors
+// constructing vectors
+#include <iostream>
+#include <vector>
+
+
+int main ()
+{
+  //creating a vector of integers
+  std::vector<int> vectorInts;  
+  //creating an iterator for the vector
+  std::vector<int>::iterator it;
+  
+  std::cout<<"vectorInts has "<<vectorInts.size()<<" elements\n";
+  
+  std::cout<<"\n\nAdding four elements to the vector\n";
+  //assigning the value 3 to 4 elements of the vector
+  vectorInts.assign(4,3);
+  std::cout<<"vectorInts has "<<vectorInts.size()<<" elements\n";
+  
+  //printing the contents of vectorInts
+  std::cout<<"VectorInts has these elements:\n";
+  for (it = vectorInts.begin(); it != vectorInts.end(); ++it)
+    std::cout<<*it<<" ";
+
+  return 0;
+}
+
+
+
+
+
+13.5 Vector and It. Prog. Quiz
+---------------------------------------
+main.cpp
+
+// Goal: pracitce constructing vectors
+// and their iterators
+// Call the vector vFloat
+// Call the iterator it
+
+//TODO: Add the necessary libraries
+#include "main.hpp"
+#include <vector>
+#include <iostream>
+
+int main ()
+{
+  //TODO: create a vector of floats
+  std::vector<float> vFloat;
+  
+  std::cout<<"vFloat has "<<vFloat.size()<<" elements\n";
+  
+  std::cout<<"\n\nAdding 10 elements to the vector\n";
+  
+  //TODO: assign the value 8.8 to 10 elements of the vector
+  vFloat.assign(10,8.8);
+   
+  std::cout<<"vFloat has "<<vFloat.size()<<" elements\n"; 
+
+
+  //TODO: Complete the Print function in main.hpp 
+  // Call the function here to print out each element of vFloat
+  printVector(vFloat);
+
+  return 0;
+}
+
+
+main.hpp
+
+// constructing vectors
+// constructing vectors
+#include <iostream>
+#include <vector>
+
+using namespace std;
+
+void printVector(vector<float> vIn);
+
+ void printVector(vector<float> vIn)
+ {//printing the contents of vIns
+    //TODO: Complete the function 
+    std::vector<float>::iterator it; 
+    for (it = vIn.begin(); it != vIn.end(); ++it)
+       std::cout<<*it<<" ";
+ }
+ 
+
+13.6 Vectors and Its Prog Ans
+---------------------------------------
+
+
+13.7 assign Elements
+---------------------------------------
+// constructing vectors
+// constructing vectors
+#include <iostream>
+#include <vector>
+
+
+int main ()
+{
+  //creating a vector of integers
+  std::vector<int> vectorInts;  
+  //creating an iterator for the vector
+  std::vector<int>::iterator it;
+  
+  std::cout<<"vectorInts has "<<vectorInts.size()<<" elements\n";
+  
+  std::cout<<"Adding 23 to the vector\n";
+  vectorInts.assign(1,23);
+  for (it = vectorInts.begin(); it != vectorInts.end(); ++it)
+    std::cout<<*it<<" ";
+  
+  std::cout<<"\n\nAdding four elements to the vector\n";
+  //assigning the value 3 to 4 elements of the vector
+  vectorInts.assign(4,3);
+  std::cout<<"vectorInts has "<<vectorInts.size()<<" elements\n";
+  
+  //printing the contents of vectorInts
+  std::cout<<"VectorInts has these elements:\n";
+  for (it = vectorInts.begin(); it != vectorInts.end(); ++it)
+    std::cout<<*it<<" ";
+ 
+  return 0;
+}
+
+
+
+
+
+13.8 push_back Elements
+---------------------------------------
+// constructing vectors
+// constructing vectors
+#include <iostream>
+#include <vector>
+
+
+int main ()
+{
+  //creating a vector of integers
+  std::vector<int> vectorInts;  
+  //creating an iterator for the vector
+  std::vector<int>::iterator it;
+  
+  std::cout<<"vectorInts has "<<vectorInts.size()<<" elements\n";
+  
+  std::cout<<"Adding 23 to the vector\n";
+  vectorInts.assign(1,23);
+  for (it = vectorInts.begin(); it != vectorInts.end(); ++it)
+    std::cout<<*it<<" ";
+  
+
+  std::cout<<"\n\nAdding four elements to the vector\n";
+  //assigning the value 3 to 4 elements of the vector
+  vectorInts.push_back(24);
+  vectorInts.push_back(25);
+  vectorInts.push_back(26);
+  vectorInts.push_back(27);
+  std::cout<<"vectorInts has "<<vectorInts.size()<<" elements\n";
+  
+  //printing the contents of vectorInts
+  std::cout<<"VectorInts has these elements:\n";
+  for (it = vectorInts.begin(); it != vectorInts.end(); ++it)
+    std::cout<<*it<<" ";
+ 
+  return 0;
+}
+
+
+
+
+13.9 Insert elements
+---------------------------------------
+// constructing vectors
+// constructing vectors
+#include <iostream>
+#include <vector>
+
+
+int main ()
+{
+  //creating a vector of integers
+  std::vector<int> vectorInts;  
+  //creating an iterator for the vector
+  std::vector<int>::iterator it;
+
+  vectorInts.push_back(0);
+  vectorInts.push_back(1);
+  vectorInts.push_back(2);
+  vectorInts.push_back(3);
+  vectorInts.push_back(4);
+  vectorInts.push_back(5);
+  vectorInts.push_back(6);
+  vectorInts.push_back(7);
+  
+  std::cout<<"vectorInts has "<<vectorInts.size()<<" elements\n";
+  
+  //printing the contents of vectorInts
+  std::cout<<"VectorInts has these elements:\n";
+  for (it = vectorInts.begin(); it != vectorInts.end(); ++it)
+    std::cout<<*it<<" ";
+ 
+  //insert an element after the first element
+  it  = vectorInts.begin() + 1;
+  vectorInts.insert(it, -1);
+  std::cout<<"\n\nAfter the insert\n";
+for (it = vectorInts.begin(); it != vectorInts.end(); ++it)
+    std::cout<<*it<<" ";
+    
+  //insert an element after the third element
+  it  = vectorInts.begin();
+  vectorInts.insert(it + 3, -2);
+  std::cout<<"\n\nAfter the insert\n";
+for (it = vectorInts.begin(); it != vectorInts.end(); ++it)
+    std::cout<<*it<<" ";
+
+  //insert an element after the third element
+  it  = vectorInts.begin();
+  vectorInts.insert(it + 5, -3);
+  std::cout<<"\n\nAfter the insert\n";
+for (it = vectorInts.begin(); it != vectorInts.end(); ++it)
+    std::cout<<*it<<" ";
+    
+  return 0;
+}
+
+
+
+13.10 emplace Elements
+---------------------------------------
+// constructing vectors
+// constructing vectors
+#include <iostream>
+#include <vector>
+
+
+int main ()
+{
+  //creating a vector of integers
+  std::vector<int> vectorInts;  
+  //creating an iterator for the vector
+  std::vector<int>::iterator it;
+
+  vectorInts.push_back(0);
+  vectorInts.push_back(1);
+  vectorInts.push_back(2);
+  vectorInts.push_back(3);
+  vectorInts.push_back(4);
+  vectorInts.push_back(5);
+  vectorInts.push_back(6);
+  vectorInts.push_back(7);
+  
+  std::cout<<"vectorInts has "<<vectorInts.size()<<" elements\n";
+  
+  //printing the contents of vectorInts
+  std::cout<<"VectorInts has these elements:\n";
+  for (it = vectorInts.begin(); it != vectorInts.end(); ++it)
+    std::cout<<*it<<" ";
+ 
+  //insert an element after the first element
+  it  = vectorInts.begin() + 1;
+  vectorInts.emplace(it, -1);
+  std::cout<<"\n\nAfter the insert\n";
+for (it = vectorInts.begin(); it != vectorInts.end(); ++it)
+    std::cout<<*it<<" ";
+    
+  //insert an element after the third element
+  it  = vectorInts.begin();
+  vectorInts.emplace(it + 3, -2);
+  std::cout<<"\n\nAfter the insert\n";
+for (it = vectorInts.begin(); it != vectorInts.end(); ++it)
+    std::cout<<*it<<" ";
+
+  //insert an element after the third element
+  it  = vectorInts.begin();
+  vectorInts.emplace(it + 5, -3);
+  std::cout<<"\n\nAfter the insert\n";
+for (it = vectorInts.begin(); it != vectorInts.end(); ++it)
+    std::cout<<*it<<" ";
+    
+  return 0;
+}
+
+13.11 Add Elements Prog. Quiz
+---------------------------------------
+// constructing vectors
+// constructing vectors
+#include <iostream>
+#include <vector>
+
+using namespace std;
+
+  void printVector(vector<int> vIn);
+  void assignFunction(vector<int> vInts, int in);
+  void pushBackFunction(vector<int> vInts, int in);
+  void emplaceFunction(vector<int> vInts, int loc, int in);
+  
+ void printVector(vector<int> vIn)
+ {
+     std::vector<int>::iterator it;
+     for (it = vIn.begin(); it != vIn.end(); ++it)
+         std::cout<<*it<<" ";
+ }
+ 
+  void assignFunction(vector<int> vInts, int in)
+  {
+      cout<<"\nassigning "<<in<<" and printing the vector\n";
+      //TODO: Finish the function
+      vInts.assign(1,in);
+      printVector(vInts);
+  }
+  void pushBackFunction(vector<int> vInts, int in)
+  {
+      cout<<"\npush back "<<in<<" and printing the vector\n";
+      //TODO: Finish the function
+      vInts.push_back(in);
+      printVector(vInts);
+  }
+  void emplaceFunction(vector<int> vInts,  int loc, int in)
+  {
+      vector<int>::iterator it;
+      cout<<"\nemplacing "<<in<<" and printing the vector\n";
+      //TODO: Finish the function
+      it = vInts.begin() + loc;
+      vInts.emplace(it, in);
+      printVector(vInts);
+  }
+
+
+13.12 Add Elements Prog. Quiz Ans
+---------------------------------------
+
+
+13.13 clear Vector
+---------------------------------------
+// constructing vectors
+// constructing vectors
+#include <iostream>
+#include <vector>
+
+
+int main ()
+{
+  //creating a vector of integers
+  std::vector<int> vectorInts;  
+  //creating an iterator for the vector
+  std::vector<int>::iterator it;
+
+  vectorInts.push_back(0);
+  vectorInts.push_back(1);
+  vectorInts.push_back(2);
+  vectorInts.push_back(3);
+  vectorInts.push_back(4);
+  vectorInts.push_back(5);
+  vectorInts.push_back(6);
+  vectorInts.push_back(7);
+  
+  std::cout<<"vectorInts has "<<vectorInts.size()<<" elements\n";
+  
+  //printing the contents of vectorInts
+  std::cout<<"VectorInts has these elements:\n";
+  for (it = vectorInts.begin(); it != vectorInts.end(); ++it)
+    std::cout<<*it<<" ";
+ 
+  //clear the vector
+  vectorInts.clear();
+  std::cout<<"\nAfter clear, the vector has these elements:\n";
+  for (it = vectorInts.begin(); it != vectorInts.end(); ++it)
+    std::cout<<*it<<" ";
+
+  return 0;
+}
+
+
+
+
+13.14 erase Vector
+---------------------------------------
+// constructing vectors
+// constructing vectors
+#include <iostream>
+#include <vector>
+
+
+int main ()
+{
+  //creating a vector of integers
+  std::vector<int> vectorInts;  
+  //creating an iterator for the vector
+  std::vector<int>::iterator it;
+
+  vectorInts.push_back(0);
+  vectorInts.push_back(1);
+  vectorInts.push_back(2);
+  vectorInts.push_back(3);
+  vectorInts.push_back(4);
+  vectorInts.push_back(5);
+  vectorInts.push_back(6);
+  vectorInts.push_back(7);
+  
+  std::cout<<"vectorInts has "<<vectorInts.size()<<" elements\n";
+  
+  //printing the contents of vectorInts
+  std::cout<<"VectorInts has these elements:\n";
+  for (it = vectorInts.begin(); it != vectorInts.end(); ++it)
+    std::cout<<*it<<" ";
+ 
+  //clear the vector
+  vectorInts.erase(it + 3);
+  std::cout<<"\nAfter clear, the vector has these elements:\n";
+  for (it = vectorInts.begin(); it != vectorInts.end(); ++it)
+    std::cout<<*it<<" ";
+
+  return 0;
+}
+
+
+
+13.15 pop_back
+---------------------------------------
+// constructing vectors
+// constructing vectors
+#include <iostream>
+#include <vector>
+
+
+int main ()
+{
+  //creating a vector of integers
+  std::vector<int> vectorInts;  
+  //creating an iterator for the vector
+  std::vector<int>::iterator it;
+
+  vectorInts.push_back(0);
+  vectorInts.push_back(1);
+  vectorInts.push_back(2);
+  vectorInts.push_back(3);
+  vectorInts.push_back(4);
+  vectorInts.push_back(5);
+  vectorInts.push_back(6);
+  vectorInts.push_back(7);
+  
+  std::cout<<"vectorInts has "<<vectorInts.size()<<" elements\n";
+  
+  //printing the contents of vectorInts
+  std::cout<<"VectorInts has these elements:\n";
+  for (it = vectorInts.begin(); it != vectorInts.end(); ++it)
+    std::cout<<*it<<" ";
+ 
+  //pop the last element off the vector
+  vectorInts.pop_back();
+  std::cout<<"\n\nAfter pop_back(), the vector has these elements:\n";
+  for (it = vectorInts.begin(); it != vectorInts.end(); ++it)
+    std::cout<<*it<<" ";
+
+  //pop_back does not return the element that was removed. 
+  //For example, the line of code below will return an error. 
+  int a; 
+  //a = vectorInts.pop_back(); //this line does not compile
+  return 0;
+}
+
+
+
