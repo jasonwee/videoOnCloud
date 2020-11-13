@@ -1,0 +1,47 @@
+date start : 13 november 2020
+
+
+3.1 Origins of PyTorch
+---------------------------------------
+
+
+
+3.2 Debugging and Designing PyTorch
+---------------------------------------
+
+
+3.3 From Research to Production
+---------------------------------------
+
+
+3.4 Hybrid Frontend
+---------------------------------------
+
+
+
+3.5 Cutting-edge Applications in PyTorch
+---------------------------------------
+
+
+3.6 User Needs and Adding Features
+---------------------------------------
+
+
+3.7 PyTorch and the Facebook Product
+---------------------------------------
+
+
+
+3.8 The Future of PyTorch
+---------------------------------------
+
+
+
+
+3.9 Learning More in AI
+---------------------------------------
+
+
+
+
+

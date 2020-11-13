@@ -1,0 +1,262 @@
+ud188
+
+date start : 06 november 2020
+
+
+2.1 Introduction
+---------------------------------------
+
+
+
+2.2 Classificaiton Problems 1
+---------------------------------------
+yes
+
+
+2.3 Classificaiton Problems 2 
+---------------------------------------
+2
+
+3rd
+
+2.4 Linear Boundaries
+---------------------------------------
+
+
+
+2.5 Higher Dimensions
+---------------------------------------
+
+
+2.6 Perceptrons
+---------------------------------------
+rejected
+
+
+2.7 Why "Neural Networks"?
+---------------------------------------
+
+
+
+2.8 Perceptrons as Logical Operators
+---------------------------------------
+weight1 = 1
+weight2 = 16
+bias = -16.5
+
+increase the weight 
+decrease the magnitude of the bias
+
+
+weight1 = 1.0
+weight2 = -10.0
+bias = 2.0
+
+
+and
+or
+not
+
+
+2.9 Perceptron Trick
+---------------------------------------
+closer
+
+
+10
+
+
+
+2.10 Perceptron Algorithm
+---------------------------------------
+
+
+2.11 Non-Linear Regions
+---------------------------------------
+
+
+
+2.12 Error Functions
+---------------------------------------
+
+
+
+2.13 Log-loss Error Function
+---------------------------------------
+3,5
+
+
+2.14 Discrete vs Continous
+---------------------------------------
+1,4
+
+
+2.15 Softmax
+---------------------------------------
+exp
+
+
+2.16 One-Hot Encoding
+---------------------------------------
+
+
+2.17 Maximum Likelihood
+---------------------------------------
+3
+
+
+
+2.18 Maximizing Probabilities
+---------------------------------------
+log
+
+
+2.19 Cross-Entropy 1
+---------------------------------------
+
+
+2.20 Cross-Entropy 2
+---------------------------------------
+
+
+2.21 Multi-Class Cross Entropy
+---------------------------------------
+1
+
+
+2.22 Logistic Regression
+---------------------------------------
+
+
+2.23 Gradient Descent
+---------------------------------------
+2,3
+
+
+
+2.24 Logistics Regression Algorithm
+---------------------------------------
+
+
+2.25 Pre-Notebook: Gradient Descent
+---------------------------------------
+
+
+2.26 Notebook: Gradient Descent
+---------------------------------------
+
+
+2.27 Preceptron vs GRadient Descent
+---------------------------------------
+
+
+2.28 Continous Perceptrons
+---------------------------------------
+
+
+2.29 Non-linear Data
+---------------------------------------
+
+
+2.30 Non-Linear Models
+---------------------------------------
+
+
+2.31 Neural Network Architecture
+---------------------------------------
+26
+
+
+2.32 Feedforward
+---------------------------------------
+Feedforward
+Feedforward is the process neural networks use to turn the input into an output. 
+
+
+2.33 Backprogation
+---------------------------------------
+Backpropagation
+Now, we're ready to get our hands into training a neural network. For this, we'll use the method known as backpropagation. In a nutshell, backpropagation will consist of:
+
+Doing a feedforward operation.
+Comparing the output of the model with the desired output.
+Calculating the error.
+Running the feedforward operation backwards (backpropagation) to spread the error to each of the weights.
+Use this to update the weights, and get a better model.
+Continue this until we have a model that is good.
+
+
+
+
+
+2.34 Pre-Notebook: Analyzing Student Data
+---------------------------------------
+
+
+2.35 Notebook: Analyzing Student Data
+---------------------------------------
+
+
+2.36 Training Optimization
+---------------------------------------
+
+
+2.37 Testing
+---------------------------------------
+
+
+2.38 Overfitting and Underfitting
+---------------------------------------
+
+
+2.39 Early Stopping
+---------------------------------------
+
+
+2.40 Regularization
+---------------------------------------
+2
+
+
+2.41 Regularization 2
+---------------------------------------
+
+
+2.42 Dropout
+---------------------------------------
+
+
+2.43 Local Minima
+---------------------------------------
+
+
+2.44 Random Restart
+---------------------------------------
+
+
+2.45 Vanshing Gradient
+---------------------------------------
+
+
+2.46 Other Activation Functions
+---------------------------------------
+
+
+2.47 Batch vs Stochastic Gradient Descent
+---------------------------------------
+
+
+2.48 Learning Rate Decay
+---------------------------------------
+
+
+2.49 Momentum
+---------------------------------------
+
+
+2.50 Error Functions Around the World
+---------------------------------------
+
+
+
+
