@@ -1,0 +1,113 @@
+date start : 13 november 2020
+
+
+14.1 Interview Questions 1
+---------------------------------------
+Object Oriented Programming. It is a programming language model organized around objects rather than actions and data rather than logic.
+
+A class is a user-defined data type that we can use in our program, and it works as an object constructor, or a "blueprint" for creating objects.
+
+An Object is an instance of a Class.
+
+Single Inheritance.
+Multiple Inheritance.
+Hierarchical Inheritance.
+Multilevel Inheritance.
+Hybrid Inheritance (also known as Virtual Inheritance)
+
+
+public
+private
+protected
+
+
+Encapsulation is an Object Oriented Programming concept that binds together the data and functions that manipulate the data, and that keeps both safe from outside interference and misuse.
+
+Data abstraction refers to providing only essential information to the outside world and hiding their background details, i.e., to represent the needed information in program without presenting the details.
+
+Inheritance allows us to define a class in terms of another class, which makes it easier to create and maintain an application. 
+
+
+
+improve execution time
+
+
+A class is made abstract by declaring at least one of its functions as pure virtual function. 
+
+
+
+
+14.2 Quiz:  Interview Questions 2 
+---------------------------------------
+
+i = 11, j = 10
+
+
+
+
+
+
+14.3  Interview Questions 3
+---------------------------------------
+
+infinite
+
+14.4  Interview Questions 4
+---------------------------------------
+from A
+from A
+from Base
+
+
+
+14.5  Interview Questions 5
+---------------------------------------
+Virtual function is a function in the base class with keyword virtual declared, and the goal is to let the user know that this function is meant to be overridden (or redefined) by the derived class.
+
+
+
+14.6  Interview Questions 6
+---------------------------------------
+i = 1
+i = 2
+i = 3
+
+
+Static variables when used inside function are initialized only once, and then
+they hold there value even through function calls.
+
+
+14.7  Interview Questions 7
+---------------------------------------
+A static member is shared by all objects of the class.
+
+
+
+14.8  Interview Questions 8
+---------------------------------------
+
+#include<iostream>
+using namespace std;
+
+void swap(int *xp, int *yp)
+{
+     if(xp == yp)
+         return;
+     *xp = *xp + *yp;
+     cout<<"\n1. During swap x = "<<*xp<<" y = "<<*yp;
+     *yp = *xp - *yp;
+     cout<<"\n2. During swap x = "<<*xp<<" y = "<<*yp;
+     *xp = *xp - *yp;
+     cout<<"\n3. During swap x = "<<*xp<<" y = "<<*yp;
+}
+
+int main()
+{
+     int x = 10;
+     int y = 33;
+     cout<<"\nBefore swap x = "<<x<<" y = "<<y;
+     swap(&x,&y);
+     cout<<"\nAfter swap x = "<<x<<" y = "<<y;
+     return 0;
+}
+
