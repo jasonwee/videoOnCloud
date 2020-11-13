@@ -1,0 +1,127 @@
+ud090
+
+date start : 13 november 2020
+
+
+2.1 Introduction
+---------------------------------------
+
+
+
+2.2 Clean and Modular Code
+---------------------------------------
+simple
+readable
+concise
+
+
+reuse
+less
+read
+collaaborate
+
+
+2.3 Refactoring Code
+---------------------------------------
+
+
+2.4 Writing Clean Code
+---------------------------------------
+
+
+
+2.5 Quiz: Clean Code
+---------------------------------------
+all rename
+
+
+choice C
+
+2.6 Writing Modular Code
+---------------------------------------
+
+
+2.7 Quiz: Refactoring - Wine Quality
+---------------------------------------
+
+
+2.8 Solution: Refactoring - Wine Quality
+---------------------------------------
+
+
+2.9 Efficient Code
+---------------------------------------
+
+
+2.10 Optimizing - Common Books
+---------------------------------------
+
+
+2.11 Quiz: Optimizing - Common Books
+---------------------------------------
+np.intersect1d(recent_books, coding_books)
+set(recent_books).intersection(coding_books)
+
+2.12 Solution: Optimizing - Common Books
+---------------------------------------
+
+
+2.13 Quiz: Optimizing - Holiday Gifts
+---------------------------------------
+
+
+2.14 Solution: Optimizing - Holiday Gifts
+---------------------------------------
+
+
+2.15 Documentation
+---------------------------------------
+
+
+2.16 In-line Comments
+---------------------------------------
+
+
+2.17 Docstrings
+---------------------------------------
+
+
+2.18 Project Documentation
+---------------------------------------
+
+
+2.19 Quiz: Documentation
+---------------------------------------
+1,4
+
+2,4
+
+
+2.20 Version Control in Data Science
+---------------------------------------
+
+
+2.21 Scenario #1
+---------------------------------------
+
+
+2.22 Scenario #2
+---------------------------------------
+
+
+
+2.23 Scenario #3
+---------------------------------------
+
+
+2.24 Model Versioning
+---------------------------------------
+
+
+2.25 Conclusion
+---------------------------------------
+
+
+
+
+
