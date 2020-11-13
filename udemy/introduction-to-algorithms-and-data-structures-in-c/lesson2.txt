@@ -1,0 +1,14 @@
+date start : 13 november 2020
+
+
+2.3 installing ide: codeblocks
+---------------------------------------
+
+
+
+2.4 creating a project
+---------------------------------------
+
+
+
+
