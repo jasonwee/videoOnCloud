@@ -1,0 +1,47 @@
+date start : 13 november 2020
+
+
+47.1 Intro
+---------------------------------------
+
+
+47.2 Proximity Sensor Model
+---------------------------------------
+
+
+
+47.3 Sample Based Localization
+---------------------------------------
+
+
+47.4 Smitsonian Museum of American History Example
+---------------------------------------
+
+
+47.5 Using Ceiling Maps for Localization
+---------------------------------------
+
+
+47.6 Quiz: Puzzled Ant Quiz
+---------------------------------------
+
+
+
+47.7 Resampling Method can Matter
+---------------------------------------
+
+
+47.8 Systematic Resampling Algorithm
+---------------------------------------
+
+
+47.9 Particle Filters Practical Considerations
+---------------------------------------
+
+
+47.10 End
+---------------------------------------
+
+
+
+
