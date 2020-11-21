@@ -1,0 +1,130 @@
+date start : 20 november 2020
+
+
+15.1 High Performance Computing
+---------------------------------------
+
+
+
+15.2 [Optional] Beta Test our Upcoming C++ Course
+---------------------------------------
+
+
+
+
+15.3 Challenge 1
+---------------------------------------
+#include <iostream>
+
+int main() {
+  // write your code here!
+  // print "no more steering wheels" to stdout
+  std::cout<<"no more steering wheels";
+  return 0;
+}
+
+
+
+15.4 Challenge 1 Solution
+---------------------------------------
+
+
+
+15.5 Challenge 2
+---------------------------------------
+#include "PrintString.h"
+
+#include <iostream>
+#include <string>
+
+void PrintString(std::string str, int n) {
+  // your code goes here! print str n times. Follow each str with a newline,
+  // eg. std::cout << str << std::endl;
+  for (int i = 0; i < n; i++) {
+      std::cout<<str<<std::endl;
+  }
+}
+
+
+15.6 Challenge 2 Solution
+---------------------------------------
+
+
+15.7 Challenge 3
+---------------------------------------
+#include "Factorial.h"
+
+// Your code goes here! 
+// See Factorial.h for your method's signature (eg, its args and return value).
+
+int Factorial(int n) {
+    int result = 1;
+    for (int i = n; i >= 1; i--) {
+        result *= i;
+    }
+    return result;
+}
+
+15.8 Challenge 3 Solution
+---------------------------------------
+
+
+15.9 Challenge 4
+---------------------------------------
+class Car 
+{
+    private:
+       bool in_working_condition_;
+    
+    public: 
+       void wearAndTear();
+       bool drive();
+       void fix();
+       Car();
+};
+
+
+
+
+15.10 Challenge 4 Solution
+---------------------------------------
+
+
+15.11 Challenge 5
+---------------------------------------
+/** 
+ * You'll need to finish the Doubler function here AND fix the parameters 
+ *   of its signature in Doubler.h.
+ */
+
+#include "Doubler.h"
+
+// TODO: Add the relevant arguments into the function below
+void Doubler(int &n) {
+  // TODO: your code for Doubler here!
+  n += n;
+}
+
+
+
+
+
+#ifndef DOUBLER_H
+#define DOUBLER_H
+
+// TODO: put the right arguments here too!
+void Doubler(int &n);
+
+#endif  // DOUBLER_H
+
+
+
+15.12 Challenge 5 Solution
+---------------------------------------
+
+
+15.13 Outro and Advice
+---------------------------------------
+
+
+
