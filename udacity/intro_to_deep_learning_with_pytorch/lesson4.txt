@@ -1,0 +1,111 @@
+date start : 20 november 2020
+
+
+4.1 Welcome!
+---------------------------------------
+I'll first give you a basic introduction to PyTorch, where we'll cover tensors - the main data structure of PyTorch. I'll show you how to create tensors, how to do simple operations, and how tensors interact with NumPy.
+
+Then you'll learn about a module called autograd that PyTorch uses to calculate gradients for training neural networks. Autograd, in my opinion, is amazing. It does all the work of backpropagation for you by calculating the gradients at each operation in the network which you can then use to update the network weights.
+
+Next you'll use PyTorch to build a network and run data forward through it. After that, you'll define a loss and an optimization method to train the neural network on a dataset of handwritten digits. You'll also learn how to test that your network is able to generalize through validation.
+
+However, you'll find that your network doesn't work too well with more complex images. You'll learn how to use pre-trained networks to improve the performance of your classifier, a technique known as transfer learning.
+
+
+
+
+
+4.2 Single layer neural networks
+---------------------------------------
+
+
+4.3 Single layer neural networks solution
+---------------------------------------
+
+
+4.4 networks using matrix multiplication
+---------------------------------------
+
+
+
+4.5 multilayer networks solution
+---------------------------------------
+
+
+4.6 neural networks in pytorch
+---------------------------------------
+
+
+4.7 neural networks solution
+---------------------------------------
+
+
+
+4.8 implementing softmax solution
+---------------------------------------
+
+
+
+
+4.9 network architectures in pytorch
+---------------------------------------
+
+
+
+
+4.10 network archtectures solution
+---------------------------------------
+
+
+4.11 Training a Network Solution
+---------------------------------------
+
+
+
+4.12 Classifying Fashion-MNIST
+---------------------------------------
+
+
+
+4.13 Fashion-MNIST Solution
+---------------------------------------
+
+
+4.14 Inference and Validation
+---------------------------------------
+
+
+4.15 Validation Solution
+---------------------------------------
+
+
+4.16 Dropout Solution
+---------------------------------------
+
+
+4.17 Saving and Loading Models
+---------------------------------------
+
+
+
+4.18 Loading Image Data
+---------------------------------------
+
+
+4.19 Loadng Image Data Solution
+---------------------------------------
+
+
+4.20 Transfer Learning II
+---------------------------------------
+
+
+4.21 Transfer Learning Solution
+---------------------------------------
+
+
+4.22 Tips, Tricks, and Other Notes
+---------------------------------------
+
+
+
