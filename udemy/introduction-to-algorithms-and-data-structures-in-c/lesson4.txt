@@ -1,0 +1,21 @@
+date start : 27 november 2020
+
+
+4.34 Fibonacci sequence
+---------------------------------------
+
+
+
+4.35 Dynamic programming
+---------------------------------------
+
+
+4.36 How to spot recurrence relations?
+---------------------------------------
+
+
+4.37 0/1 Knapsack problem
+---------------------------------------
+
+
+
