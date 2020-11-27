@@ -1,0 +1,134 @@
+date start : 27 november 2020
+
+
+4.1 introduction
+---------------------------------------
+
+
+
+4.2 procedural vs object-oriented programming
+---------------------------------------
+height, color width, species
+
+to turn on, to turn off, to erase
+
+
+4.3 class, object, method and attribute
+---------------------------------------
+stephen hawking, angela merkel, brad pitt
+scientist, chancellor, actor
+color,size shape
+to rain, to ring, to ripen
+gray large, round
+
+
+4.4 oop syntax
+---------------------------------------
+
+
+
+4.5 exercise: oop syntax practice - part 1
+---------------------------------------
+
+
+4.6 a couple of notes about oop
+---------------------------------------
+
+
+4.7 exercise: oops syntax practice - part 2
+---------------------------------------
+
+
+4.8 commenting object-oriented code
+---------------------------------------
+
+
+4.9 a gaussian class
+---------------------------------------
+0
+0.19
+0.12
+
+
+4.10 how the gaussian class works
+---------------------------------------
+
+
+4.11 Exercise: Code the Gaussian Class
+---------------------------------------
+
+
+4.12 Magic Methods
+---------------------------------------
+
+
+
+4.13 Exercise: Code Magic Methods
+---------------------------------------
+
+
+4.14 Inheritance
+---------------------------------------
+1,3,4
+
+
+4.15 Exercise: Inheritance with Clothing
+---------------------------------------
+
+
+4.16 Inheritance: Probability Distribution
+---------------------------------------
+
+
+
+4.17 Demo: Inheritance Probability Distributions
+---------------------------------------
+
+
+4.18 Advanced OOP Topics
+---------------------------------------
+
+
+4.19 Organizing into modules
+---------------------------------------
+
+
+4.20 Demo: Modularized Code
+---------------------------------------
+
+
+4.21 Making a Package
+---------------------------------------
+
+
+
+4.22 Virtual Environments
+---------------------------------------
+
+
+4.23 Exercise: Making a Package and Pip Installing
+---------------------------------------
+
+
+4.24 Binomial Class
+---------------------------------------
+
+
+4.25 Exercise: Binomial Class
+---------------------------------------
+
+
+
+4.26 Scikit-learn Source Code
+---------------------------------------
+
+
+4.27 Putting Code on PyPi
+---------------------------------------
+
+
+4.28 Exercise: Upload to PyPi
+---------------------------------------
+
+
+
