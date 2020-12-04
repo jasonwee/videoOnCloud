@@ -1,0 +1,13 @@
+date start : 04 december 2020
+
+
+5.38 Finding the ideal complexity
+---------------------------------------
+
+
+
+5.39 PRACTICAL EXERCISE: Finding a sum
+---------------------------------------
+
+
+
