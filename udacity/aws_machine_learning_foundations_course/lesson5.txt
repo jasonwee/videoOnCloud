@@ -1,0 +1,126 @@
+date start : 04 december 2020
+
+
+5.1 Introduction
+---------------------------------------
+
+
+
+5.2 AWS Account Requirements
+---------------------------------------
+
+
+
+5.3 Why Machine Leanring on AWS?
+---------------------------------------
+2
+
+
+amazon personalize     : ai service
+amazon sagemaker       : ml service
+tensorflow             : ml framework 
+sagemaker ground truth : ml service
+pytorch                : ml framework
+amazon rekognition img : ai service
+keras                  : ml interface
+
+5.4 ml techniques and generative ai
+---------------------------------------
+Machine Learning Techniques
+Supervised Learning: Models are presented wit input data and the desired results. The model will then attempt to learn rules that map the input data to the desired results.
+Unsupervised Learning: Models are presented with datasets that have no labels or predefined patterns, and the model will attempt to infer the underlying structures from the dataset. Generative AI is a type of unsupervised learning.
+Reinforcement learning: The model or agent will interact with a dynamic world to achieve a certain goal. The dynamic world will reward or punish the agent based on its actions. Overtime, the agent will learn to navigate the dynamic world and accomplish its goal(s) based on the rewards and punishments that it has received.
+
+
+Unsupervised learning
+
+
+
+
+5.5 AWS DeepComposer
+---------------------------------------
+jazzz
+pop
+rock
+symphony
+
+
+discriminator
+generator
+discriminator
+
+
+5.6 Demo: Compose Music with DeepComposer
+---------------------------------------
+
+
+5.7 Exercise: Generate an Interface
+---------------------------------------
+
+
+5.8 How DeepComposer Works
+---------------------------------------
+true
+
+function value stable over many epochs
+
+5.9 Training Architecture
+---------------------------------------
+false
+
+
+
+5.10 Generative AI Overview
+---------------------------------------
+2,4
+
+
+
+5.11 Introduction to U-Net Architecture
+---------------------------------------
+3
+
+
+5.12 Model Architecture
+---------------------------------------
+critic
+
+reality
+
+consistently similar output
+
+
+input
+encoder
+latent space
+decoder
+output
+
+5.13 Training Methodology
+---------------------------------------
+
+parameter value before training begins
+
+
+5.14 Evaluation
+---------------------------------------
+
+
+5.15 Inference
+---------------------------------------
+
+
+5.16 Build a custom GAN Part 1: Notebooks and Data Preparation
+---------------------------------------
+
+
+
+5.17 Build a Custom GAN Part 2: Training and Evaluation
+---------------------------------------
+
+
+5.18 Lesson Recap
+---------------------------------------
+
+
+
