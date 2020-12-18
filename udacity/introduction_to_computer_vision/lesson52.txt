@@ -1,0 +1,83 @@
+date start : 18 december 2020
+
+
+50.1 Intro
+---------------------------------------
+
+
+50.2 Principal Components
+---------------------------------------
+
+
+
+50.3 2D Example Fitting a Line
+---------------------------------------
+
+
+50.4 Algebraic Interpretation
+---------------------------------------
+
+
+50.5 Yet Another Algebraic Interpretation
+---------------------------------------
+
+
+50.6 Eigenvectors
+---------------------------------------
+
+
+
+50.7 Dimensionality Reduction
+---------------------------------------
+
+
+50.8 Quiz: Guess Principle Components Quiz
+---------------------------------------
+1
+2
+
+50.9 The Space of All Face Images
+---------------------------------------
+
+
+50.10 Principal Component Analysis Part 1
+---------------------------------------
+
+
+50.11 Principal Component Analysis Part 2
+---------------------------------------
+
+
+50.12 The Dimensionality Trick
+---------------------------------------
+
+
+50.13 How Many Eigenvectors Are There
+---------------------------------------
+
+
+50.14 Eigenfaces
+---------------------------------------
+
+
+50.15 Eigenfaces Example
+---------------------------------------
+
+
+50.16 Recognition with Eigenfaces
+---------------------------------------
+
+
+50.17 An Old Cast of Characters
+---------------------------------------
+
+
+50.18 Limitations
+---------------------------------------
+
+
+50.19 End
+---------------------------------------
+
+
+
