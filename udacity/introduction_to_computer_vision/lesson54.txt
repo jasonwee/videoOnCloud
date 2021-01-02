@@ -1,0 +1,46 @@
+date start : 01 january 2021
+
+
+54.1 Intro
+---------------------------------------
+
+
+54.2 Generative Classification and Minimal Risk
+---------------------------------------
+
+
+
+54.3 Some Challenges for Generative Models
+---------------------------------------
+
+
+54.4 Discriminative Classification Assumptions
+---------------------------------------
+
+
+54.5 Basic Framework
+---------------------------------------
+
+
+54.6 Window Based Models
+---------------------------------------
+
+
+
+54.7 Discriminative Classfier Construction
+---------------------------------------
+
+
+54.8 Window Based Object Detection
+---------------------------------------
+
+
+54.9 Nearest Neighbor
+---------------------------------------
+
+
+54.10 End
+---------------------------------------
+
+
+
