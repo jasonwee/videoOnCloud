@@ -1,0 +1,166 @@
+date start : 08 january 2021
+
+
+2.1 Introducing Control Flow
+---------------------------------------
+
+
+2.2 Quiz: Decision Making
+---------------------------------------
+if it is cheap and i require it
+
+
+2.3 if Statement
+---------------------------------------
+
+
+
+2.4 Self-Driving Car
+---------------------------------------
+
+
+2.5 Recognize Traffic Lights
+---------------------------------------
+
+
+
+2.6 Quiz: Windshield Wipers
+---------------------------------------
+
+
+2.7 Variable Scope
+---------------------------------------
+
+
+
+2.8 Quiz: What's the Scope?
+---------------------------------------
+c
+
+
+2.9 else Statemnt
+---------------------------------------
+
+
+
+2.10 else-if
+---------------------------------------
+
+
+
+2.11 Quiz: Multiple else-if's
+---------------------------------------
+A birth certificate is a valid ID.
+
+
+
+2.12 Boolean Expressions
+---------------------------------------
+
+
+2.13 Quiz: Evaluate these Expressions
+---------------------------------------
+true
+false
+true
+true
+
+
+
+2.14 The Art Museum
+---------------------------------------
+
+
+2.15 Tickets to the Museum
+---------------------------------------
+
+
+
+2.16 Quiz: Complete Museum Code
+---------------------------------------
+
+
+2.17 Logical Operators
+---------------------------------------
+
+
+
+2.18 Order of Operations for Logical Operators
+---------------------------------------
+
+
+2.19 Logical Operators Practice
+---------------------------------------
+
+
+
+2.20 Quiz: true or false?
+---------------------------------------
+true
+false
+true
+false
+
+2.21 Nested if Statements
+---------------------------------------
+
+
+
+2.22 Quiz: Restaurant Rating
+---------------------------------------
+Thank you for your feedback.
+
+
+2.23 switch Statement
+---------------------------------------
+
+
+
+2.24 Quiz: switch(month)
+---------------------------------------
+//Complete this switch statement by 1) writing the last case (case 12), so that it prints out "December"
+// and 2) writing a default case that for any month number not between 1 and 12, will print out "Invalid month"
+
+int month; // should be a number 1-12
+String monthString;
+
+switch(month) {
+    case 1: monthString = "January";
+        break;
+    case 2: monthString = "February";
+        break;
+    case 3: monthString = "March";
+        break;
+    case 4: monthString = "April";
+        break;
+    case 5: monthString = "May";
+        break;
+    case 6: monthString = "June";
+        break;
+    case 7: monthString = "July";
+        break;
+    case 8: monthString = "August";
+        break;
+    case 9: monthString = "September";
+        break;
+    case 10: monthString = "October";
+        break;
+    case 11: monthString = "November";
+        break;
+    case 12: monthString = "December";
+        break;
+    default:
+        monthString = "Invalid month";
+    // write case 12 and a default case below
+}
+System.out.println(monthString);
+
+2.25 conclusion
+---------------------------------------
+
+
+2.26 lesson 2 problem set
+---------------------------------------
+
+
+
