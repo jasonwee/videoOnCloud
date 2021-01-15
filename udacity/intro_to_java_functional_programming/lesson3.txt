@@ -1,0 +1,192 @@
+date start : 15 january 2021
+
+
+3.1 Introducing Functions 1
+---------------------------------------
+
+
+3.2 Introducing Functions 2
+---------------------------------------
+
+
+
+3.3 What is a Function?
+---------------------------------------
+
+
+
+3.4 Quiz: Importance of Functions
+---------------------------------------
+all
+
+
+3.5 Function Definition
+---------------------------------------
+
+
+
+3.6 Quiz: Practice with Syntax
+---------------------------------------
+C B A
+
+
+3.7 Calling Chorus
+---------------------------------------
+
+
+
+3.8 Quiz: Play Music
+---------------------------------------
+boolean playButton; // true or false
+
+// Define a function playMusic() below.
+// This should print out: "Music is playing" when playButton is true
+// and "Music is paused" when playButton is false.
+
+
+public void playMusic() {
+    if (playButton) {
+        System.out.println("Music is playing");
+    } else {
+        System.out.println("Music is paused");
+    }
+    
+}
+
+3.9 Parameters and Arguments
+---------------------------------------
+
+
+
+3.10 Quiz: Weather Arguments
+---------------------------------------
+Brr, consider wearing a jacket.
+It's hot outside!
+
+
+3.11 Variable Temperature
+---------------------------------------
+
+
+
+3.12 Quiz: Rollercoaster Parameters
+---------------------------------------
+double height
+
+
+3.13 Multiple Parameters Intro
+---------------------------------------
+
+
+
+3.14 Multiple Parameters
+---------------------------------------
+
+
+3.15 Argument Order
+---------------------------------------
+
+
+
+3.16 Quiz: Liking Photos
+---------------------------------------
+likePhoto(0, "jason", true);
+
+
+
+3.17 Return Values
+---------------------------------------
+
+
+
+3.18 Popular Photos
+---------------------------------------
+
+
+3.19 Return Photo Likes
+---------------------------------------
+
+
+
+3.20 Quiz: What's Missing?
+---------------------------------------
+wrong return type
+
+
+3.21 Quiz: Making Change
+---------------------------------------
+public double makeChange(double itemCost, double dollarsProvided) {
+    double change = dollarsProvided - itemCost;
+    return change;
+}
+
+
+3.22 Random Numbers
+---------------------------------------
+
+
+3.23 Rolling Dice
+---------------------------------------
+
+
+
+3.24 Consider All Sides
+---------------------------------------
+
+
+3.25 Quiz: Improved Dice Roll
+---------------------------------------
+public int rollDice(int sides){
+        // random num between 0 and (almost) 1
+        double randomNumber=Math.random();
+
+        // change range to 0 to (almost) 6
+        randomNumber=randomNumber*sides;
+
+        // shift range up one
+        randomNumber=randomNumber+1;
+
+        // cast to integer (ignore decimal part)
+        // ex. 6.998 becomes 6
+        int randomInt=(int)randomNumber;
+
+        // return statement
+        return randomInt;
+        }
+
+
+3.26 Power of Functions
+---------------------------------------
+
+
+3.27 Java Documentation
+---------------------------------------
+
+
+3.28 Quiz: Read this Doc
+---------------------------------------
+int 20
+
+
+3.29 Importance of Documentation
+---------------------------------------
+
+
+3.30 Java Documentation Comments
+---------------------------------------
+
+
+3.31 quiz: Complete this Doc
+---------------------------------------
+1
+
+
+3.32 Conclusion
+---------------------------------------
+
+
+3.33 Lesson 3 Problem Set
+---------------------------------------
+
+
+
