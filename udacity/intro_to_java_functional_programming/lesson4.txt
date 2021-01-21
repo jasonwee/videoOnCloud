@@ -1,0 +1,228 @@
+date start : 22 january 2021
+
+
+4.1 Alarm
+---------------------------------------
+
+
+4.2 Quiz: How Many Repeats?
+---------------------------------------
+can't tell
+
+
+4.3 While Loops
+---------------------------------------
+
+
+
+4.4 Quiz: Googol
+---------------------------------------
+len < 101
+
+
+4.5 Yahtzee
+---------------------------------------
+
+
+
+4.6 It's a Match
+---------------------------------------
+
+
+4.7 Quiz: Three Dice
+---------------------------------------
+2
+
+
+
+4.8 Quiz: roll a Yahtzee
+---------------------------------------
+public int keepRolling() {
+    int dice1 = rollDice();
+    int dice2 = rollDice();
+    int dice3 = rollDice();
+    int dice4 = rollDice();
+    int dice5 = rollDice();
+    int count = 1;
+    while (!(dice1 == dice2 && dice2 == dice3 && dice3 == dice4 && dice4 == dice5)) {
+        //we need to re-roll
+        dice1 = rollDice();
+        dice2 = rollDice();
+        dice3 = rollDice();
+        dice4 = rollDice();
+        dice5 = rollDice();
+        count = count + 1;
+    }
+    return count;
+}
+
+
+
+4.9 Warning Alert
+---------------------------------------
+
+
+
+4.10 For Loops
+---------------------------------------
+
+
+4.11 Loop Counters
+---------------------------------------
+
+
+
+4.12 Quiz: Count the Blocks
+---------------------------------------
+public int countBlocks(int levels){
+    int sum = 0;
+    for (int i = 1; i <= levels; i++) {
+        sum += i*i;
+    }
+
+    return sum;
+}
+
+
+4.13 Not Just Increment
+---------------------------------------
+
+
+
+4.14 Quiz: Counting Down
+---------------------------------------
+i >= 1
+
+
+4.15 Step Faster
+---------------------------------------
+
+
+
+4.16 Break
+---------------------------------------
+
+
+4.17 Know When to Quit Intro
+---------------------------------------
+
+
+
+4.18 Know When to Quit Quiz
+---------------------------------------
+public int martingale() {
+ int money = 1000;
+ int target = 1200;
+ int bet = 10;
+ while (money > bet) {
+  boolean win = play();
+  if (money >= target) {
+      break;
+  }
+  if (win) {
+   money += bet;
+   bet = 10;
+  } else {
+   money -= bet;
+   bet *= 2;
+  }
+
+ }
+ return money;
+}
+
+
+4.19 Know When to Quit Solution
+---------------------------------------
+
+
+
+4.20 Press Conference
+---------------------------------------
+
+
+4.21 Arrays
+---------------------------------------
+
+
+
+4.22 Array Index Intro
+---------------------------------------
+
+
+4.23 Array Index Quiz
+---------------------------------------
+9.1
+
+
+4.24 Press Conference Part 2
+---------------------------------------
+
+
+4.25 Arrays and Loops
+---------------------------------------
+
+
+4.26 Rubik's Cube Championship
+---------------------------------------
+
+
+4.27 Quiz: Find the Longest Name
+---------------------------------------
+public String findLongestName(String [] names){
+    String longestName = names[0];
+    
+    for (int i =0; i < names.length; i++) {
+        if (names[i].length() > longestName.length()) {
+           longestName = names[i]; 
+        }
+    }
+
+
+    return longestName;
+}
+
+
+
+
+4.28 Quiz: What if There's a Tie?
+---------------------------------------
+Kimberli
+
+
+
+4.29 2D Arrays
+---------------------------------------
+
+
+4.30 Quiz: Sandra's Grade
+---------------------------------------
+2
+
+
+4.31 Iterating Over 2D Arrays
+---------------------------------------
+
+
+4.32 Nested Loops
+---------------------------------------
+
+
+4.33 Quiz: Inside a Nested Loop
+---------------------------------------
+9
+
+
+4.34 How Nested Loops Work
+---------------------------------------
+
+
+4.35 Summary
+---------------------------------------
+
+
+4.36 Lesson 4 Problem Set
+---------------------------------------
+
+
+
