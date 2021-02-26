@@ -1,0 +1,164 @@
+date start : 26 february 2021
+
+
+4.1 Quiz: Where Students Are From
+---------------------------------------
+china
+
+
+4.2 Quiz: Frequency
+---------------------------------------
+2
+12
+2
+3
+8
+8
+3
+1
+1
+10
+
+
+4.3 Quiz: US, Chian, Pakistan
+---------------------------------------
+10
+23
+pakistan  sweden
+
+
+4.4 Quiz: Relative Frequency
+---------------------------------------
+0.24
+0.06
+0.16
+
+
+
+
+4.5 Quiz: Range of Proportions
+---------------------------------------
+0
+1
+
+
+
+4.6 Quiz: Sum Relative Frequencies
+---------------------------------------
+1
+
+
+
+4.7 Quiz: Proportion from Countries
+---------------------------------------
+0.20
+0.16
+asia
+
+
+4.8 Quiz: Convert to Percentage
+---------------------------------------
+24%
+6%
+16%
+
+
+4.9 Quiz: Range Percentages
+---------------------------------------
+0
+100
+
+
+4.10 Quiz: Continents
+---------------------------------------
+15  30
+29  58
+6  12
+
+
+4.11 Quiz: Number of Rows
+---------------------------------------
+depend
+
+
+4.12 Quiz: Bin Size
+---------------------------------------
+21
+
+
+4.13 Visualizing Data
+---------------------------------------
+
+
+
+4.14 Quiz: Histogram
+---------------------------------------
+
+
+
+4.15 Different Bin Sizes
+---------------------------------------
+
+
+
+4.16 Quiz: Smaller Bin
+---------------------------------------
+1
+
+
+4.17 Quiz: Find Bin Size
+---------------------------------------
+5
+
+
+4.18 Quiz: Most Frequent Age
+---------------------------------------
+18
+
+
+4.19 Quiz: Proportion over 60
+---------------------------------------
+0.1
+
+
+4.20 Quiz: Percentage Under 60
+---------------------------------------
+90%
+
+
+4.21 Quiz: Younger than 20
+---------------------------------------
+no
+
+
+4.22 Quiz: Continent Graph
+---------------------------------------
+
+
+
+4.23 Quiz: Difference Between Graphs
+---------------------------------------
+left graph x axis is age whilst right graph is x axis is continent, they are projecting different statistics
+
+
+4.24 Quiz: Biased Graphs
+---------------------------------------
+can't tell
+
+
+4.25 Changing Bin Size
+---------------------------------------
+
+
+
+4.26 Quiz: Intrepret Histogram
+---------------------------------------
+1,2,4,5,7
+
+
+4.27 Quiz: Skewed Distribution
+---------------------------------------
+2,3
+
+
+
