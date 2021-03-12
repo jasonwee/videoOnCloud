@@ -1,0 +1,79 @@
+date start : 12 march 2021
+
+
+6.1 Programming
+---------------------------------------
+
+
+6.2 How To Plot
+---------------------------------------
+
+
+6.3 Quiz: Plot Height
+---------------------------------------
+histplot(Height)
+
+6.4 Quiz: Most Common Height
+---------------------------------------
+3
+
+
+6.5 Quiz: Plot Weight
+---------------------------------------
+histplot(Weight)
+
+
+6.6 Quiz: Most Common Weight
+---------------------------------------
+3
+
+
+6.7 Quiz: Scatterplot
+---------------------------------------
+scatterplot(Height, Weight)
+
+
+6.8 Quiz: Height Vs Weight
+---------------------------------------
+2
+
+
+6.9 Quiz: Barchart
+---------------------------------------
+barchart(Height, Weight)
+
+
+6.10 Quiz: Wages
+---------------------------------------
+scatterplot(Age, Wage)
+
+
+6.11 Quiz: High Earner
+---------------------------------------
+30
+
+
+6.12 Quiz: Wage Barchart
+---------------------------------------
+barchart(Age, Wage)
+
+
+6.13 Quiz: Wage Vs Age
+---------------------------------------
+2
+
+
+6.14 Quiz: Most Common Age
+---------------------------------------
+histplot(Age)
+
+
+6.15 Quiz: Most Common Age 2
+---------------------------------------
+5
+
+6.16 Conclusion
+---------------------------------------
+
+
+
