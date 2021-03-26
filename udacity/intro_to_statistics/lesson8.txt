@@ -1,0 +1,41 @@
+date start : 26 march 2021
+
+
+8.1 Quiz: GPA Scatter Plot
+---------------------------------------
+linear 
+
+
+
+8.2 Quiz: Scatter Plot Regions
+---------------------------------------
+on
+
+
+8.3 Quiz: Scatter Plot Regions 2
+---------------------------------------
+below
+
+
+8.4 Quiz: Page Load Scatter Plot
+---------------------------------------
+related
+negative
+
+
+8.5 Quiz: Bar Chart To Scatter Plot
+---------------------------------------
+4
+
+
+8.6 Quiz: Pie Chart To Histogram
+---------------------------------------
+3
+
+
+8.7 Quiz: Histogram To Pie Chart
+---------------------------------------
+4
+
+
+
