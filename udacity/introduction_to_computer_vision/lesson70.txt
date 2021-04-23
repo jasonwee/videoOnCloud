@@ -1,0 +1,35 @@
+date start : 23 april 2021
+
+
+70.1 Sandbox
+---------------------------------------
+
+
+70.2 Quiz: OpenCV
+---------------------------------------
+# OpenCV sandbox
+
+import numpy as np  # NumPy: for direct image (matrix) manipulation
+import cv2  # OpenCV 2.x.x: for more advanced functions, utilities
+
+# Load and display an image
+img = cv2.imread('dolphin.png');
+cv2.imshow('Image', img);
+
+
+
+
+70.3 Quiz: Octave
+---------------------------------------
+
+% Octave sandbox
+
+% Load and display an image
+img = imread('dolphin.png');
+imshow(img);
+
+%pkg load image;  % image package: for most image manipulation functions
+
+
+
+
