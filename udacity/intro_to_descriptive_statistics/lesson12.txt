@@ -1,0 +1,71 @@
+date start : 23 april 2021
+
+
+12.1 Quiz: Udacian's Facebook Friends (Mean)
+---------------------------------------
+584.74
+
+
+12.2 Quiz: Udacian's Facebook Friends (Avg. Dev)
+---------------------------------------
+0
+
+
+12.3 Quiz: Udacian's Facebook Friends (
+---------------------------------------
+4978411.185
+
+
+12.4 Quiz: Udacian's Facebook Friends (
+---------------------------------------
+184385.5995
+
+
+12.5 Quiz: Udacian's Facebook Friends (
+---------------------------------------
+429.40
+
+
+12.6 Quiz: Udacian's Facebook Friends (
+---------------------------------------
+1014
+155
+
+12.7 Quiz: Udacian's Facebook Friends (
+---------------------------------------
+0.6
+
+
+12.8 Quiz: Udacian's Facebook Friends (
+---------------------------------------
+437.5812533
+
+
+12.9 Quiz: Class Exam
+---------------------------------------
+yes
+
+
+12.10 Quiz: Where's Your Score?(sd = 5)
+---------------------------------------
+4
+
+12.11 Quiz: Where's Your Score?(sd = 2.5)
+---------------------------------------
+5
+
+
+12.12 Quiz: Where's Your Score?(sd = 10)
+---------------------------------------
+2
+
+12.13 Quiz: BBC Samples Scores (Std. Dev.)
+---------------------------------------
+22.61
+12.80
+
+12.14 Quiz: BBC Samples Scores (Variability)
+---------------------------------------
+1
+
+
