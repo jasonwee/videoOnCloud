@@ -1,0 +1,85 @@
+date start : 23 april 2021
+
+
+12.1 Quiz: Printing Number
+---------------------------------------
+
+
+12.2 Quiz: Functions
+---------------------------------------
+def f(p):
+    #Insert your code here
+    return p
+
+
+12.3 Quiz: Complement
+---------------------------------------
+def f(p):
+#Insert your code here
+    return 1-p
+
+
+12.4 Quiz: Two Flips
+---------------------------------------
+def f(p):
+#Insert your code here
+    return p * p
+
+
+12.5 Quiz: Three Flips
+---------------------------------------
+def f(p):
+#Insert your code here
+    return 3 * p * (1-p) * (1-p)
+
+
+12.6 Quiz: Flip Two Coins
+---------------------------------------
+def f(p1,p2):
+#Insert your code here
+    return p1 * p2
+
+
+12.7 Quiz: Flip One Of Two
+---------------------------------------
+0.78
+
+
+12.8 Quiz: Program Flipping
+---------------------------------------
+def f(p0,p1,p2):
+#Insert your code here
+    return (p0 * p1) + ((1-p0) * p2
+
+
+12.9 Quiz: Cancer Example 1
+---------------------------------------
+0.27
+
+
+12.10 Quiz: Calculate Total
+---------------------------------------
+p0 * p1 + (1-p0) * (1-p2)
+
+
+12.11 Quiz: Cancer Example 2
+---------------------------------------
+0.333
+
+
+12.12 Quiz: Program Bayes Rule
+---------------------------------------
+def f(p0,p1,p2):
+#Insert your code here
+    return p0 * p1 / ((p0 * p1) + ((1-p0) * (1-p2)))
+
+
+12.13 Quiz: Program Bayes Rule 2
+---------------------------------------
+return p0 * (1-p1) / (p0 * (1-p1) + (1-p0) * p2) 
+
+12.14 Quiz: Conclusion
+---------------------------------------
+
+
+
