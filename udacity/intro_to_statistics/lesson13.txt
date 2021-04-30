@@ -1,0 +1,80 @@
+date start : 30 april 2021
+
+
+13.1 Quiz: Landing Probability
+---------------------------------------
+0
+
+
+13.2 Quiz: Spinning Probability
+---------------------------------------
+0
+
+13.3 Quiz: Stops Nowhere
+---------------------------------------
+no
+
+
+13.4 Quiz: Range Probability
+---------------------------------------
+0.5
+
+
+13.5 Quiz: Range Probability 2
+---------------------------------------
+0.083
+
+
+13.6 Quiz: Range Probability 3
+---------------------------------------
+0.002
+
+13.7 Quiz: Density
+---------------------------------------
+What Is A Density Function?
+For a continuous probability distribution, the y-axis represents a probability density function.
+
+A density function is just an equation to mathematically represent a continuous distribution. If you're familiar with calculus, the integral of the probability density function is the probability. If you're not familiar with calculus, not to worry! You do not need calculus for this section. Taking the integral is the same as calculating the area under the curve.
+
+It's relatively easy to calculate the area underneath a uniform continuous probability distribution. These distributions look like rectangles, so the area is the base of the rectangle times the height of the rectangle.
+
+
+0.002
+
+
+13.8 Quiz: Birth Time Density
+---------------------------------------
+0
+0.0166
+
+
+13.9 Quiz: Changing Density
+---------------------------------------
+2
+
+13.10 Quiz: Changing Density 2
+---------------------------------------
+0.0555
+0.0277
+
+
+13.11 Quiz: Check Density
+---------------------------------------
+1
+
+
+13.12 Quiz: Calculate Density
+---------------------------------------
+2
+
+
+13.13 Quiz: Density Properties
+---------------------------------------
+2
+
+
+13.14 Summary
+---------------------------------------
+
+
+
