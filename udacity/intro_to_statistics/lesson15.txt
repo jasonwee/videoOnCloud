@@ -1,0 +1,59 @@
+date start : 14 may 2021
+
+
+15.1 Relative Probabilities 1
+---------------------------------------
+4
+
+
+15.2 Relative Probabilities 2
+---------------------------------------
+0.5
+
+
+15.3 Same Coin
+---------------------------------------
+0.5 x 0.5 x 0.5 = .125
+0.1 x 0.9 x 0.9 = .081
+
+0.125 x 0.5
+--------------------- = 0.6068
+0.5 (0.125 + 0.081)
+
+0.6068^2 + (1-0.6068)^2 = 0.0523
+
+0.523
+
+
+15.4 Many Flips
+---------------------------------------
+1,2,3,5
+
+15.5 Is it Fair 1
+---------------------------------------
+none
+
+15.6 Is it Fair 2
+---------------------------------------
+1,2,3
+
+
+15.7 Programming Challenge 
+---------------------------------------
+
+
+from __future__ import division
+class FlipPredictor(object):
+    def __init__(self,coins):
+        self.coins=coins
+        n=len(coins)
+        self.probs=[1/n]*n
+    def pheads(self):
+        return sum(pcoin*p for pcoin,p in zip(self.coins,self.probs))    
+
+    def update(self,result):
+        pheads=self.pheads()
+        if result=='H':
+            self.probs=[pcoin*p/pheads for pcoin,p in zip(self.coins,self.probs)]
+        else:
+            self.probs=[(1-pcoin)*p/(1-pheads) for pcoin,p in zip(self.coins,self.probs)]
