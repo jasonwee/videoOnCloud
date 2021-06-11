@@ -1,0 +1,31 @@
+nd064-1
+
+date start : 11 june 2021
+
+
+1.1 Welcome and Congratulations!
+---------------------------------------
+
+
+1.2 Welcome to Udacity
+---------------------------------------
+
+
+1.3 Student Expectations
+---------------------------------------
+
+
+1.4 Join the Scholarship Slack Community
+---------------------------------------
+https://sites.google.com/udacity.com/suse-cloud-native-foundations/home
+
+
+1.5 The Path to Success
+---------------------------------------
+
+
+1.6 Timeline
+---------------------------------------
+
+
+
