@@ -1,0 +1,155 @@
+date start : 13 june 2021
+
+
+2.1 Introduction
+---------------------------------------
+
+
+2.2 Design Considerations for Cloud-Native Applications
+---------------------------------------
+1st stage
+Stakeholders
+Functionalities
+End users
+Input and output process
+Engineering teams
+
+
+2nd stage
+Engineering resources
+Financial resources
+Timeframes
+Internal knowledge
+
+
+2.3 Monoliths and Microservices
+---------------------------------------
+
+
+2.4 Quizzes: Monoliths and Microservices
+---------------------------------------
+microservice arch
+
+stackholders
+handling of input data
+
+
+mobile app
+function retrieve
+function store 
+
+
+
+2.5 Trade-offs for Monoliths and Microservices
+---------------------------------------
+Monoliths - one programming language; one repository; enables sequential development
+Microservice - multiple programming languages; multiple repositories; enables concurrent development
+
+Monoliths - replication of the entire stack; hence it's heavy on resource consumption
+Microservice - replication of a single unit, providing on-demand consumption of resources
+
+
+Monoliths - one delivery pipeline that deploys the entire stack; more risk with each deployment leading to a lower velocity rate
+Microservice - multiple delivery pipelines that deploy separate units; less risk with each deployment leading to a higher feature development rate
+
+
+Monoliths - low rate, since the entire application stack might need restructuring to incorporate new functionalities
+Microservice - high rate, since changing an independent unit is straightforward
+
+Monoliths - low initial cost, since one code base and one pipeline should be managed. However, the cost increases exponentially when the application needs to operate at scale.
+Microservice - high initial cost, since multiple repositories and pipelines require management. However, at scale, the cost remains proportional to the consumed resources at that point in time.
+
+
+Monoliths - in a failure scenario, the entire stack needs to be recovered. Also, the visibility into each functionality is low, since all the logs and metrics are aggregated together.
+Microservice - in a failure scenario, only the failed unit needs to be recovered. Also, there is high visibility into the logs and metrics for each unit.
+
+
+
+
+2.6 Quizzes: Trade-offs for Monoliths and Microservices
+---------------------------------------
+continous project maintenance based on user feedback
+scale the applicatin down
+pipeline to ensure susccesful
+adopt new functionalities
+resources necessary throughout the project
+respond effectively to failure based on metrics and logs
+
+
+
+flexibility
+
+
+1,4
+
+2.7 Exercise: Trade-offs for Monoliths and Microservices
+---------------------------------------
+i would choose microservice arch given such scenario. 
+
+for front end (UI), receive different payment requests from different airline.. 
+
+for business logic, orientate based on different airline requirements and should the trafffic increase, replicate that single unit only.
+
+for backend storage, can store different type of data based on different airline data modelling.
+
+
+2.8 Solution: Monoliths and Microservices
+---------------------------------------
+
+
+2.9 Best Practices For Application Deployment
+---------------------------------------
+https://microservices.io/patterns/observability/health-check-api.html
+https://prometheus.io/docs/instrumenting/writing_exporters/#metrics
+https://logz.io/blog/logging-best-practices/
+https://containerjournal.com/topics/container-ecosystems/enabling-distributed-tracing-for-microservices-with-jaeger-in-kubernetes/
+
+
+
+
+2.10 Quizzes: Best Practices For Application Deployment
+---------------------------------------
+tracing
+
+
+msg
+full journey
+/status
+totalREquests: 5001
+cpu: 0.5
+
+
+all 4
+
+
+health checks
+
+
+2.11 Exercise: Endpoints for Application Status
+---------------------------------------
+
+
+2.12 Solution: Endpoints for Application Status
+---------------------------------------
+
+
+2.13 Exercise: Application Logging
+---------------------------------------
+
+
+2.14 Solution : Applicaiton Logging
+---------------------------------------
+Cost, Development Complexity, Scalability and Flexibility are the core considerations. As given limited time, these are core considerations before any other considerations can be consider in the future time. It is imperative to get start a project, a minimal and viable product/service. 
+
+
+
+
+2.15 Edge Case: Amorphous Applications
+---------------------------------------
+
+
+2.16 Lesson Conclusion
+---------------------------------------
+
+
+
