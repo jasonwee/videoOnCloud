@@ -1,0 +1,346 @@
+date start : 18 june 2021
+
+
+3.1 Introduction
+---------------------------------------
+
+
+3.2 Transitions from VMs to Containers
+---------------------------------------
+
+
+3.3 Docker for Application Packaging
+---------------------------------------
+
+
+3.4 Docker Walkthrough
+---------------------------------------
+
+
+3.5 Useful Docker Commands
+---------------------------------------
+
+
+3.6 Quizzes: Docker for Application Packaging
+---------------------------------------
+set of instructions
+read-only template
+runnable instance
+tool used to store
+
+
+2,3
+
+
+build
+run
+tag
+push
+login
+
+3.7 Exercise: Docker for Application Packaging
+---------------------------------------
+
+
+3.8 Solution: Docker for Application Packaging
+---------------------------------------
+
+
+3.9 Kubernetes - The Container Orchestrator Framework
+---------------------------------------
+A Kubernetes cluster is composed of a collection of distributed physical or virtual servers. These are called nodes. Nodes are categorized into 2 main types: master and worker nodes. The components installed on a node, determine the functionality of a node, and identifies it as a master or worker node.
+
+The suite of master nodes, represents the control plane, while the collection of worker nodes constructs the data plane.
+
+
+kube-apiserver - the nucleus of the cluster that exposes the Kubernetes API, and handles and triggers any operations within the cluster
+kube-scheduler - the mechanism that places the new workloads on a node with sufficient satisfactory resource requirements
+kube-controller-manager - the component that handles controller processes. It ensures that the desired configuration is propagated to resources
+etcd - the key-value store, used for backs-up and keeping manifests for the entire cluster
+
+kubelet - the agent that runs on every node and notifies the kube-apiserver that this node is part of the cluster
+kube-proxy - a network proxy that ensures the reachability and accessibility of workloads places on this specific node
+
+https://kubernetes.io/docs/concepts/services-networking/dns-pod-service/
+https://kubernetes.io/docs/concepts/extend-kubernetes/api-extension/custom-resources/
+https://kubernetes.io/blog/2016/07/autoscaling-in-kubernetes/
+https://kubernetes.io/docs/concepts/overview/components/
+
+
+3.10 Quizzes: Kubernetes - The Container Orchestrator Framework
+---------------------------------------
+api-server
+etcd
+kubelet
+kube-proxy
+controller-manager
+scheduler
+
+
+kube-proxy
+kubelet
+
+
+
+3.11 Deploy Your First Kubernetes Cluster
+---------------------------------------
+
+As a result, multiple tools emerged to handle the bootstrapping of a cluster automatically. For example:
+
+Production-grade clusters
+* kubeadm
+* Kubespray
+* Kops
+* K3s
+Development-grade clusters
+* kind
+* minikube
+* k3d
+
+
+
+
+3.12 Kubeconfig
+---------------------------------------
+A Kubeconfig file has 3 main distinct sections:
+
+Cluster - encapsulates the metadata for a cluster, such as the name of the cluster, API server endpoint, and certificate authority used to check the identity of the user.
+User - contains the user details that want access to the cluster, including the user name, and any authentication metadata, such as username, password, token or client, and key certificates.
+Context - links a user to a cluster. If the user credentials are valid and the cluster is up, access to resources is granted. Also, a current-context can be specified, which instructs which context (cluster and user) should be used to query the cluster.
+
+$ ./kind create cluster --name demo
+Creating cluster "demo" ...
+ ✓ Ensuring node image (kindest/node:v1.21.1) 🖼 
+ ✓ Preparing nodes 📦  
+ ✓ Writing configuration 📜 
+ ✓ Starting control-plane 🕹️ 
+ ✓ Installing CNI 🔌 
+ ✓ Installing StorageClass 💾 
+Set kubectl context to "kind-demo"
+You can now use your cluster with:
+
+kubectl cluster-info --context kind-demo
+
+Have a nice day! 👋
+
+
+
+3.13 Quizzes: Deploy Your First Kubernetes Cluster
+---------------------------------------
+kops
+kubeadm
+kubespray
+k3s
+
+contexts
+users
+clusters
+
+3.14 Exercise: Deploy Your First Kubernetes Cluster
+---------------------------------------
+127.0.0.1 6443 username (admin) and password
+
+Kubernetes master is running at https://127.0.0.1:6443
+CoreDNS is running at https://127.0.0.1:6443/api/v1/namespaces/kube-system/services/kube-dns:dns/proxy
+Metrics-server is running at https://127.0.0.1:6443/api/v1/namespaces/kube-system/services/https:metrics-server:/proxy
+1
+10.0.2.15
+10.42.0.0/24
+
+3.15 Solution: Deploy Your First Kubernetes Cluster 
+---------------------------------------
+
+
+3.16 Kubernetes Resources Part 1
+---------------------------------------
+Kubernetes provides a rich collection of resources that are used to deploy, configure, and manage an application. Some of the widely used resources are:
+
+Pods - the atomic element within a cluster to manage an application
+Deployments & ReplicaSets - oversees a set of pods for the same application
+Services & Ingress - ensures connectivity and reachability to pods
+Configmaps & Secrets - pass configuration to pods
+Namespaces - provides a logical separation between multiple applications and their resources
+Custom Resource Definition (CRD) - extends Kubernetes API to support custom resources
+
+
+
+A pod is the anatomic element within a cluster that provides the execution environment for an application. Pods are the smallest manageable units in a Kubernetes cluster. Every pod has a container within it, that executes an application from a Docker image (or any OCI-compliant image). There are use cases where 2-3 containers run within the same pod, however, it is highly recommended to keep the 1:1 ratio between your pods and containers.
+
+Pod - smallest manageable unit within a cluster that provides the execution environment for an application
+ReplicaSet - a mechanism to ensure a number of pod replicas are up and running at all times
+Deployment - describe the desired state of the application to be deployed
+
+
+
+3.17 Kubernetes Resources Part 2
+---------------------------------------
+Service - an abstraction layer over a collection of pods running an application
+Ingress - a mechanism to manage the access from external users and workloads to the services within the cluster
+
+
+3.18 Kubernetes Resources Part 3
+---------------------------------------
+Configmap - a resource to store non-confidential data in key-value pairs.
+Secret - a resource to store confidential data in key-value pairs. These are base64 encoded.
+Namespace - a logical separation between multiple applications and associated resources.
+
+
+
+3.19 Useful Kubectl Commands
+---------------------------------------
+RESOURCE is the Kubernetes resource type
+NAME sets the name of the resource
+FLAGS are used to provide extra configuration
+PARAMS are used to provide the required configuration to the resource
+
+
+kubectl create RESOURCE NAME [FLAGS]
+kubectl describe RESOURCE NAME 
+kubectl get RESOURCE NAME [-o yaml]
+kubectl edit RESOURCE NAME [-o yaml]
+kubectl label RESOURCE NAME [PARAMS]
+kubectl port-forward RESOURCE/NAME [PARAMS]
+kubectl logs RESOURCE/NAME [FLAGS]
+kubectl delete RESOURCE NAME
+
+
+3.20 Quizzes: Kubernetes Resources
+---------------------------------------
+application managmenet : deployments, replicasets, and pods
+application reachability : services and ingress
+application configuration : secrets and configmaps
+application context : namespaces
+
+
+
+
+What Kubernetes resources should be used to direct the external traffic to services within the cluster?
+Ingress
+
+
+
+
+Expose the backend deployment using a service on port 7633
+kubectl expose deploy backend --port=7633
+
+Create a busybox deployment with 10 replicas, exposed on port 9090
+kubectl create deploy busybox --image=busybox -r=10 --port=9090
+
+Label a configmap with the tier=networking key-value pair
+kubectl label configmap app-cm tier=networking
+
+Delete the sandbox namespace
+kubectl delete ns sandbox
+
+describe the secret with the name team-token
+kubectl describe secret team-token
+
+
+
+
+3.21 Exercise: Kubernetes Resources
+---------------------------------------
+
+
+3.22 Solution: Kubernetes Resources
+---------------------------------------
+# create the namespace 
+# note: label option is not available with `kubectl create`
+kubectl create ns demo
+
+# label the namespace
+kubectl label ns demo tier=test
+
+# create the nginx-alpine deployment 
+kubectl create deploy nginx-alpine --image=nginx:alpine  --replicas=3 --namespace demo
+
+# label the deployment
+kubectl label deploy nginx-alpine app=nginx tag=alpine --namespace demo
+
+# expose the nginx-alpine deployment, which will create a service
+kubectl expose deployment nginx-alpine --port=8111 --namespace demo
+
+# create a config map
+kubectl create configmap nginx-version --from-literal=version=alpine --namespace demo
+
+
+3.23 Declarative Kubernetes Manifests
+---------------------------------------
+YAML Manifest structure
+A YAML manifest consists of 4 obligatory sections:
+
+apiversion - API version used to create a Kubernetes object
+kind - object type to be created or configured
+metadata - stores data that makes the object identifiable, such as its name, namespace, and labels
+spec - defines the desired configuration state of the resource
+
+
+Imperative configuration - resource management technique, that operates and interacts directly with the live objects within the cluster.
+Declarative configuration - resource management technique, that operates and manages resources using YAML manifests stored locally.
+
+
+
+3.24 Quizzes: Declarative Kubernetes Manifests
+---------------------------------------
+What resource would be created with the following declarative manifest?
+Secret
+
+What properties are set in the following manifest for a pod?
+1,3,4
+
+
+
+3.25 Exercise: Declarative Kubernetes Manifests
+---------------------------------------
+
+
+3.26 Solution: Declarative Kubernetes Manifests
+---------------------------------------
+kubectl apply -f exercises/manifests/
+
+kubectl get all -n demo
+
+NAME                                READY   STATUS    RESTARTS   AGE
+pod/nginx-alpine-798fb5b8bb-8rzq9   1/1     Running   0          12s
+pod/nginx-alpine-798fb5b8bb-ms28l   1/1     Running   0          12s
+pod/nginx-alpine-798fb5b8bb-qgqb2   1/1     Running   0          12s
+
+NAME                   TYPE        CLUSTER-IP       EXTERNAL-IP   PORT(S)    AGE
+service/nginx-alpine   ClusterIP   10.109.197.180   <none>        8111/TCP   18s
+
+NAME                           READY   UP-TO-DATE   AVAILABLE   AGE
+deployment.apps/nginx-alpine   3/3     3            3           12s
+
+NAME                                      DESIRED   CURRENT   READY   AGE
+replicaset.apps/nginx-alpine-798fb5b8bb   3         3         3       12s
+
+
+3.27 Edge Case: Failing Control Plane for Kubernetes
+---------------------------------------
+
+
+3.28 Lesson Review
+---------------------------------------
+Dockerfile - set of instructions used to create a Docker image
+Docker image - a read-only template used to spin up a runnable instance of an application
+Docker registry - a central mechanism to store and distribute Docker images
+CRD - Custom Resource Definition provides the ability to extend Kubernetes API and create new resources
+Node - a physical or virtual server
+Cluster - a collection of distributed nodes that are used to manage and host workloads
+Master node - a node from the Kubernetes control plane, that has installed components to make global, cluster-level decisions
+Worker node - a node from the Kubernetes data plane, that has installed components to host workloads
+Bootstrap - the process of provisioning a Kubernetes cluster, by ensuring that each node has the necessary components to be fully operational
+Kubeconfig - a metadata file that grants a user access to a Kubernetes cluster
+Pod - smallest manageable uint within a cluster that provides the execution environment for an application
+ReplicaSet - a mechanism to ensure a number of pod replicas are up and running at all times
+Deployment - describe the desired state of the application to be deployed
+Service - an abstraction layer over a collection of pods running an application
+Ingress - a mechanism to manage the access from external users and workloads to the services within the cluster
+Configmap - a resource to store non-confidential data in key-value pairs.
+Secret - a resource to store confidential data in key-value pairs. These are base64 encoded.
+Namespace - a logical separation between multiple applications and associated resources.
+Imperative configuration - resource management technique, that operates and interacts directly with the live objects within the cluster.
+Declarative configuration - resource management technique, that operates and manages resources using YAML manifests stored locally.
+
+https://kubernetes.io/docs/reference/kubectl/cheatsheet/
+
