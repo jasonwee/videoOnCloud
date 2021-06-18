@@ -1,0 +1,84 @@
+date start : 11 june 2021
+
+
+19.1 Mean
+---------------------------------------
+#Complete the mean function to make it return the mean of a list of numbers
+
+data1=[49., 66, 24, 98, 37, 64, 98, 27, 56, 93, 68, 78, 22, 25, 11]
+
+def mean(data):
+    #Insert your code here
+    return sum(data) / len(data)
+
+print(mean(data1))
+
+
+
+19.2 Median
+---------------------------------------
+#Complete the median function to make it return the median of a list of numbers
+data1=[1,2,5,10,-20]
+def median(data):
+    d = sorted(data)
+    return d[len(d)/2]
+    #Insert your code here
+
+print(median(data1))
+
+
+19.3 Mode
+---------------------------------------
+#Complete the mode function to make it return the mode of a list of numbers
+data1=[1,2,5,10,-20,5,5]
+def mode(data):
+    if data==[]:
+        return None
+    else:
+        return max(set(data), key=data.count)
+
+
+print(mode(data1))
+
+
+19.4 Variance
+---------------------------------------
+#Complete the variance function to make it return the variance of a list of numbers
+data3=[13.04, 1.32, 22.65, 17.44, 29.54, 23.22, 17.65, 10.12, 26.73, 16.43]
+def mean(data):
+    return sum(data)/len(data)
+def variance(data):
+    average = sum(data) / len(data)
+    varience = sum((average - value) ** 2 for value in data) / len(data)
+    return varience
+
+print(variance(data3))
+
+
+
+19.5 Standard Deviation
+---------------------------------------
+#Complete the stddev function to make it return the standard deviation 
+#of a list of numbers
+from math import sqrt
+
+data3=[13.04, 1.32, 22.65, 17.44, 29.54, 23.22, 17.65, 10.12, 26.73, 16.43]
+
+
+def mean(data):
+    return sum(data)/len(data)
+def variance(data):
+    mu=mean(data)
+    return mean([(x-mu)**2 for x in data])
+def stddev(data):
+    #Insert your code here
+    return sqrt(variance(data))
+    
+
+
+
+19.6 Congratulation
+---------------------------------------
+
+
+
