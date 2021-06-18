@@ -1,0 +1,103 @@
+date start : 19 june 2021
+
+
+4.1 Introduction
+---------------------------------------
+
+
+4.2 Cluster Management
+---------------------------------------
+
+
+4.3 PaaS Mechanisms
+---------------------------------------
+On-premise - where an engineering team has full control over the platform, including the physical servers
+IaaS or Infrastructure as a Service - where a team consumes compute, network, and storage resources from a vendor
+PaaS or Platform as a Service - where the infrastructure is fully managed by a provider, and the team is focused on application deployment
+
+Networking - establish communication between internal and external systems, such as internet connection, firewalls, routers, and cables
+Storage- collect and store digital data, such as files, blocks, or objects
+Servers - physical machines that provide compute services for a platform
+Virtualization - abstracts physical servers, storage, and networking. For example, we have learned that hypervisors are used to virtualize servers.
+O/S - operating systems that connect the software to physical resources (e.g. Linux, Ubuntu, Windows, etc)
+Middleware - help the developers to build an application by making it easy to consume platform capabilities (e.g. messaging, API, data management)
+Runtime - execution context for an application. For example, using JVM (or Java Virtual Machine) as a Java runtime
+Data - tools for collection and storage of data that is required by an application during execution(e.g. MySQL, MongoDB, or CockroachDB)
+Applications - the business logic for a product
+
+
+
+4.4 Quizzes: PaaS Mechanisms
+---------------------------------------
+all
+
+middleware, data, applications
+
+application , data
+
+on premises
+
+paas
+
+iaas
+
+4.5 Exercise: PaaS Mechanisms
+---------------------------------------
+PaaS is suitable for such use case because for a small team, we dont have the capacity, time and monatary resources to managed so many different areas. It is better to managed and focus application well and do it good. While leaving the rest of the components such as database, networking, o/s security and storage to the expert.
+
+4.6 Solution: PaaS Mechanisms 
+---------------------------------------
+
+
+
+4.7 Cloud Foundry
+---------------------------------------
+This demo showcases the main capabilities of the Stratos console and Cloud Foundry.
+
+Some of the noteworthy sections are:
+
+Marketplace and Services - research the service catalog and explore any integrated services
+Organizations - used to manage multi-tenancy, quotas, and access to applications
+Routes - list all available endpoints used to access deployed applications
+Build Packs - explore available buildpacks packages used to build an application
+Security groups - configure the endpoints that the application can communicate with
+
+
+
+
+
+4.8 Quizzes: Cloud Foundry
+---------------------------------------
+
+
+4.9 Exercise: Cloud Foundry
+---------------------------------------
+
+
+
+4.10 Solution: Cloud Foundry
+---------------------------------------
+
+
+
+4.11 Edge Case: Function as a Service
+---------------------------------------
+
+
+
+
+4.12 Exercise: Function as a Service 
+---------------------------------------
+
+
+
+4.13 Solution: Function as a Service
+---------------------------------------
+
+
+
+4.14 Lesson Conclusion
+---------------------------------------
+
+
+
