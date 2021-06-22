@@ -68,32 +68,61 @@ Security groups - configure the endpoints that the application can communicate w
 
 4.8 Quizzes: Cloud Foundry
 ---------------------------------------
+1,4
+
+1,3
+
+all
+
+true
 
 
 4.9 Exercise: Cloud Foundry
 ---------------------------------------
+install docker, k3s, build image with your app, deploy to kubernetes cluster
 
+pick the images, select the resources, and then deploy
+
+one is cli vs one is gui
 
 
 4.10 Solution: Cloud Foundry
 ---------------------------------------
-
+Kubernetes
+create an OCI (Open Container Initiative) compliant image, usually created by using Docker
+deploy a Kubernetes cluster with a valid ingress controller for the routing of requests
+deploy an observability stack, including logs and metrics
+create the YAML manifests for the application deployment
+create a CI/CD pipeline to push the Kubernetes resources to the cluster
+Cloud Foundry
+write a manifest file to provide main application deployment parameters
+deploy Cloud Foundry or use Cloud Foundry PaaS solutions from 3rd part vendors
+deploy the application to Cloud Foundry (via CLI or UI)
+Note: Cloud Foundry will create the OCI compliant image by default, and it will provide the routing capacities as well.
+Cloud Foundry provides a better developer experience for application deployment, as it offers a greater level of component abstraction (no need to manage the underlying infrastructure). However, a PaaS solution locks-in the customer to a specific vendor. On the other side, Kubernetes offers full control over the container orchestration, providing more flexible management of the application.
 
 
 4.11 Edge Case: Function as a Service
 ---------------------------------------
+FaaS or Function as a Service - event-driven cloud-computing service that requires only the application code to execute successfully.
 
-
+Popular FaaS solutions are AWS Lambda, Azure Functions, Cloud Functions from GCP, and many more.
 
 
 4.12 Exercise: Function as a Service 
 ---------------------------------------
+faas.
 
+because user creation and deletion not happening every seconds.. like once in a while, so best suited for faas. hence, cost can be reduce.
 
 
 4.13 Solution: Function as a Service
 ---------------------------------------
+For this particular exercise, choosing either a PaaS or FaaS would reach the end goal: making the service available to customers.
 
+In most cases, in a newspaper context, the readers are more focused on the news content rather than managing their accounts. Also, the number of requests to get an article can be a thousandfold higher than the number of requests to create or delete an account. As such, you can assume that the microservice should not be running at all times consuming available resources, and instead invoke it on demand-only.
+
+Conclusively, a FaaS solution would be more suitable for the management of customer account microservice.
 
 
 4.14 Lesson Conclusion
