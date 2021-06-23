@@ -107,27 +107,100 @@ jobs:
           push: true
           tags: {{ YOUR_DOCKERHUB_REPOSITORY }}/python-helloworld:latest
 
-5.9
+5.9 The CD Fundamentals
+---------------------------------------
+## API endpoint used to create the Application resource
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+## Set the name of the resource and namespace where it should be deployed.
+## In this case the Application resource name is set to  `python-helloworld `
+## and it is deployed in the `argocd` namespace
+metadata:
+  name: python-helloworld 
+  namespace: argocd
+spec:
+  ## Set the target cluster and namespace to deploy the Python hello-world application.
+  ## For example, the Python hello-world application is deployed in the `default` namespace
+  ## within the local cluster or `https://kubernetes.default.svc`
+  destination:
+    namespace: default
+    server: https://kubernetes.default.svc
+  ## Set the project the application belongs to.
+  ## In this case the `default` project is used.
+  project: default
+  ## Define the source of the Python hello-world application manifests.
+  ## In this example, the manifests are stored in the `argocd-demo` repository
+  ## under the `python-manifests` folder. Additionally, the latest commit within
+  ## the repository is targeted or `HEAD`.
+  source:
+    path: python-manifests
+    repoURL:
+    https://github.com/kgamanji/argocd-demo
+    targetRevision: HEAD
+  # # Set the sync policy. 
+  ## If left empty, the sync policy will default to manual.
+  syncPolicy: {}
+
+
+
+CRDs (Custom Resource Definitions) 
+
+
+5.10 ArgoCD Walkthrough
 ---------------------------------------
 
 
 
-5.10
+5.11 Quizzes: The CD Fundamentals
+---------------------------------------
+3,4
+
+
+kubectl apply
+kubectl create
+
+
+2,3
+
+
+5.12 Exercise: The CD Fundamentals
 ---------------------------------------
 
 
-
-5.11
+5.13 Solution: The CD Fundamentals Exercise
 ---------------------------------------
+# deploy ArgoCD
+kubectl create namespace argocd
+kubectl apply -n argocd -f https://raw.githubusercontent.com/argoproj/argo-cd/stable/manifests/install.yaml
 
 
-5.12
----------------------------------------
-
-
-5.13
----------------------------------------
-
+# Create the NodePort service for ArgoCD server by using the 
+# `kubectl apply -f argocd-server-nodeport.yaml` command
+apiVersion: v1
+kind: Service
+metadata:
+  annotations:
+  labels:
+    app.kubernetes.io/component: server
+    app.kubernetes.io/name: argocd-server
+    app.kubernetes.io/part-of: argocd
+  name: argocd-server-nodeport
+  namespace: argocd
+spec:
+  ports:
+  - name: http
+    port: 80
+    protocol: TCP
+    targetPort: 8080
+    nodePort: 30007
+  - name: https
+    port: 443
+    protocol: TCP
+    targetPort: 8080
+    nodePort: 30008
+  selector:
+    app.kubernetes.io/name: argocd-server
+  type: NodePort
 
 5.14
 ---------------------------------------
