@@ -202,25 +202,153 @@ spec:
     app.kubernetes.io/name: argocd-server
   type: NodePort
 
-5.14
+
+
+5.14 Configuration Managers
 ---------------------------------------
 
 
-5.15
+Helm - package manager that templates exiting manifests, and uses input files to tailor configuration for each environment
+Kustomize - a template-free mechanism that uses a base and multiple overlays, to manage the configuration for each environment
+Jsonnet - a programming language, that enables the templating of manifests as JSON files, that can be easily consumed by Kubernetes
+
+
+
+Helm is a package manager, that manages Kubernetes manifests through charts. A Helm chart is a collection of YAML files that describe the state of multiple Kubernetes resources. These files can be parametrized using Go template.
+
+A Helm chart is composed of the following files:
+
+Chart.yaml - expose chart details, such as description, version, and dependencies
+templates/ folder - contains templates YAML manifests for Kubernetes resources
+values.yaml - default input configuration file for the chart. If no other values file is supplied, the parameters in this file will be used.
+
+
+
+## The chart API version
+apiVersion: v1
+## The name of the chart. 
+## In this case,  the chart name is`python-helloworld `.
+name: python-helloworld 
+## A single-sentence description of this project
+description: Install Python HelloWorld
+## A list of keywords about this project to quickly identify the chart's capabilities.
+keywords:
+- python
+- helloworld 
+## The chart version, here set to `3.7.0`
+version: 3.7.0
+## List of maintainers, their names, and method of contact
+maintainers:
+- name: kgamanji 
+  email: kgamanji@xyz.com
+
+
+
+
+
+5.15 Helm Walkthrough
 ---------------------------------------
 
 
-5.16
+5.16 Quizzes: configuration Managers
+---------------------------------------
+template manifests as json files
+base and multiple overlays
+package manager go template
+
+
+1,3,4
+
+4
+
+
+5.17 Exercise: Configuration Managers
 ---------------------------------------
 
 
-5.17
+5.18 Solution: Configuration Managers 
 ---------------------------------------
+The Helm chart is defined in the Chart.yaml file, which contains the API version, name and version of the chart:
+
+apiVersion: v1
+name: nginx-deployment
+description: Install Nginx deployment manifests 
+keywords:
+- nginx 
+version: 1.0.0
+maintainers:
+- name: kgamanji 
 
 
-5.18
----------------------------------------
+An example of the values.yaml file can be found below:
 
+namespace:
+  name: demo
+
+service:
+  port: 8111
+  type: ClusterIP
+
+image:
+  repository: nginx 
+  tag: alpine
+  pullPolicy: IfNotPresent
+
+replicaCount: 3
+
+resources:
+  requests:
+    cpu: 50m
+    memory: 256Mi
+
+configmap:
+  data: "version: alpine"
+
+
+Below is an example of the values-prod.yaml file, which will override the default parameters:
+
+namespace:
+  name: prod 
+
+service:
+  port: 80
+  type: ClusterIP
+
+image:
+  repository: nginx 
+  tag: 1.17.0
+  pullPolicy: IfNotPresent
+
+replicaCount: 2
+
+resources:
+  requests:
+    cpu: 70m
+    memory: 256Mi
+
+configmap:
+  data: "version: 1.17.0"
+
+
+And finally, here is ArgoCD application CRD for the nginx-prod deployment:
+
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: nginx-prod
+  namespace: argocd
+spec:
+  destination:
+    namespace: default
+    server: https://kubernetes.default.svc
+  project: default
+  source:
+    helm:
+      valueFiles:
+      - values-prod.yaml
+    path: helm
+    repoURL: https://github.com/kgamanji/argocd-demo
+    targetRevision: HEAD
 
 5.19
 ---------------------------------------
