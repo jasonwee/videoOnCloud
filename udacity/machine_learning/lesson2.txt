@@ -1,0 +1,112 @@
+date start : 25 june 2021
+
+
+2.1 Difference between Classification and Regression
+---------------------------------------
+
+
+2.2 Quiz: Classification or Regression
+---------------------------------------
+c
+c
+r
+
+2.3 Classification Learning One
+---------------------------------------
+
+
+
+2.4 Classification Learning Two
+---------------------------------------
+
+
+2.5 Classification Learning Three
+---------------------------------------
+
+
+
+2.6 Example 1: Dating
+---------------------------------------
+
+
+2.7 Representation
+---------------------------------------
+
+
+2.8 Quiz: Representation Quiz
+---------------------------------------
+nogo
+nogo
+go
+nogo
+go
+
+2.9 Example 2: 20 Questions
+---------------------------------------
+
+
+2.10 Decision Trees Learning
+---------------------------------------
+
+
+2.11 Quiz: Best Attribute Quiz
+---------------------------------------
+2 3 1
+
+
+2.12 Decision Trees Expressiveness AND
+---------------------------------------
+
+
+2.13 Decision Trees Expressiveness OR
+---------------------------------------
+
+
+2.14 Decision Trees Expressiveness XOR
+---------------------------------------
+
+
+2.15 Decision Trees Expressiveness 
+---------------------------------------
+
+
+2.16 Quiz: Decision Trees Expressiveness Quiz
+---------------------------------------
+2^n
+
+
+2.17 Quiz: Decision Trees Expressiveness Quiz 2
+---------------------------------------
+2^2^n
+
+
+2.18 ID3
+---------------------------------------
+
+
+2.19 ID3 Bias
+---------------------------------------
+
+
+2.20 Decision Trees Continous Attributes
+---------------------------------------
+
+
+2.21 Quiz: Decision Trees Other Considerations Quiz
+---------------------------------------
+true
+
+
+2.22 Decision Trees Other Considerations
+---------------------------------------
+
+
+2.23 Decision Trees Other Considerations Regression
+---------------------------------------
+
+
+2.24 Decision Trees Wrap up
+---------------------------------------
+
+
+
