@@ -350,16 +350,23 @@ spec:
     repoURL: https://github.com/kgamanji/argocd-demo
     targetRevision: HEAD
 
-5.19
+5.19 Edge Case: Push and Pull methodologies for CI/CD
 ---------------------------------------
 
 
 
-5.20
+5.20 Lesson Conclusion
 ---------------------------------------
+New Terms
+Continuous Integration - a mechanism that produces the package of an application that can be deployed.
+Continuous Delivery - a mechanism to push the packaged application through multiple environments, including production.
+Continuous Deployment - a procedure that contains the Continuous Integration and Continuous Delivery of a product.
+GitOps - an operating model that refers to the Git repositories as the source of truth for declarative infrastructure and applications.
+Helm - package manager tool used to template a suite of Kubernetes manifests.
+Helm chart - a collection of configuration, input, and templated YAML files used to deploy Kubernetes resources.
 
 
-5.21
+5.21 Course Recap
 ---------------------------------------
 
 
