@@ -1,0 +1,64 @@
+nd065
+
+date start : 30 june 2021
+
+
+1.1 Welcome and Congratulations!
+---------------------------------------
+
+
+1.2 Welcome to Udacity
+---------------------------------------
+
+
+1.3 Student Expectations
+---------------------------------------
+You must fulfill both of these requirements to be eligible for the Nanodegree program scholarship:
+You are required to complete all the lessons and go through all the concepts in this program.
+You are required to take an assessment from which top performers will be selected for one of 425 full scholarships for the AWS Machine Learning Engineer Nanodegree program. More details will be provided via email closer to the Challenge phase end.
+
+
+
+1.4 Join the Slack community
+---------------------------------------
+
+
+1.5 The Path to Success
+---------------------------------------
+
+
+1.6 Timeline
+---------------------------------------
+The Challenge Phase will end on October 11, 2021, for every learner.
+Winners of the full Nanodegree program scholarship seats will be announced on October 21, 2021.
+
+
+1.7 Career chat with yoru instructors
+---------------------------------------
+
+
+1.8 How to Succeed
+---------------------------------------
+
+
+1.9 Prerequisites
+---------------------------------------
+
+
+1.10 Welcome to the AWS Machine Learning Scholarship Program!
+---------------------------------------
+Course Overview
+Lesson 2: Introduction to Machine Learning – In this lesson, you will learn the fundamentals of supervised and unsupervised machine learning, including the process steps of solving machine learning problems, and explore several examples.
+Lesson 3: Machine Learning with AWS – In this lesson, you will learn about advanced machine learning techniques such as generative AI, reinforcement learning, and computer vision. You will also learn how to train these models with AWS AI/ML services.
+Lesson 4: Software Engineering Practices, part 1 – In this lesson, you will learn how to write well-documented, modularized code.
+Lesson 5: Software Engineering Practices, part 2 – In this lesson, you will learn how to test your code and log best practices.
+Lesson 6: Object-Oriented Programming – In this lesson, you will learn about this programming style and prepare to write your own Python package.
+
+By the end of the course, you will be able to...
+Explain machine learning and the types of questions machine learning can help to solve.
+Explain what machine learning solutions AWS offers and how AWS AI devices put machine learning in the hands of every developer.
+Apply software engineering principles of modular code, code efficiency, refactoring, documentation, and version control to data science.
+Apply software engineering principles of testing code, logging, and conducting code reviews to data science.
+Implement the basic principles of object-oriented programming to build a Python package.
+
+
