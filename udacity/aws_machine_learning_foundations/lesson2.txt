@@ -1,0 +1,109 @@
+date start : 01 july 2021
+
+
+2.1 Lesson Outline
+---------------------------------------
+It is the engine behind the recent advancements in industries such as autonomous vehicles.
+It allows for more accurate and rapid translation of the text into hundreds of languages.
+It powers the AI assistants you might find in your home.
+It can help improve worker safety.
+It can speed up drug design.
+
+
+Differentiate between supervised learning and unsupervised learning.
+identify problems that can be solved with machine learning.
+describe commonly used algorithms including linear regression, logistic
+regression, and k-means
+describe how model training and testing works.
+evaluate the performance of a machine learning model using metrics.
+
+
+2.2 What is Machine Learning?
+---------------------------------------
+What is Machine Learning?
+Machine learning (ML) is a modern software development technique and a type of artificial intelligence (AI) that enables computers to solve problems by using examples of real-world data. It allows computers to automatically learn and improve from experience without being explicitly programmed to do so.
+
+In supervised learning, every training sample from the dataset has a corresponding label or output value associated with it. As a result, the algorithm learns to predict labels or output values. We will explore this in-depth in this lesson.
+In unsupervised learning, there are no labels for the training data. A machine learning algorithm tries to learn the underlying patterns or distributions that govern the data. We will explore this in-depth in this lesson.
+In reinforcement learning, the algorithm figures out which actions to take in a situation to maximize a reward (in the form of a number) on the way to reaching a specific goal. This is a completely different approach than supervised and unsupervised learning. We will dive deep into this in the next lesson.
+
+Machine learning, or ML, is a modern software development technique that enables computers to solve problems by using examples of real-world data.
+
+In supervised learning, every training sample from the dataset has a corresponding label or output value associated with it. As a result, the algorithm learns to predict labels or output values.
+
+In reinforcement learning, the algorithm figures out which actions to take in a situation to maximize a reward (in the form of a number) on the way to reaching a specific goal.
+
+In unsupervised learning, there are no labels for the training data. A machine learning algorithm tries to learn the underlying patterns or distributions that govern the data.
+
+
+
+2.3 
+---------------------------------------
+
+
+2.4 
+---------------------------------------
+
+
+2.5
+---------------------------------------
+
+
+2.6
+---------------------------------------
+
+
+2.7
+---------------------------------------
+
+
+2.8
+---------------------------------------
+
+
+2.9
+---------------------------------------
+
+
+
+2.10
+---------------------------------------
+
+
+2.11
+---------------------------------------
+
+
+2.12 
+---------------------------------------
+
+
+2.13 
+---------------------------------------
+
+
+2.14 
+---------------------------------------
+
+
+2.15
+---------------------------------------
+
+
+2.16
+---------------------------------------
+
+
+2.17
+---------------------------------------
+
+
+2.18
+---------------------------------------
+
+
+2.19
+---------------------------------------
+
+
+
