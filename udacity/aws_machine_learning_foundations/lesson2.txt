@@ -37,20 +37,72 @@ In unsupervised learning, there are no labels for the training data. A machine l
 
 
 
-2.3 
+2.3 components of machine learning
 ---------------------------------------
+Nearly all tasks solved with machine learning involve three primary components:
+
+A machine learning model
+A model training algorithm
+A model inference algorithm
+
+A model is an extremely generic program(or block of code), made specific by the data used to train it. It is used to solve different problems.
+
+Which of the following are the primary components used in machine learning?
+A machine learning model
+A model training algorithm
+A model inference algorithm
+
+￼
+
+A model is an extremely generic program, made specific by the data used to train it.
+
+Model training algorithms work through an interactive process where the current model iteration is analyzed to determine what changes can be made to get closer to the goal. Those changes are made and the iteration continues until the model is evaluated to meet the goals.
+
+Model inference is when the trained model is used to generate predictions.
 
 
-2.4 
+2.4 Quiz: What is Machine Learning?
 ---------------------------------------
+false
 
 
-2.5
+
+2.5 Introduction to Machine Learning Steps
 ---------------------------------------
+step one   : define the problem
+step two   : build the dataset
+step three : train the model
+step four  : evaluate the model
+step five  : inference (use the model)
 
 
-2.6
+2.6 Define the problem
 ---------------------------------------
+A task is supervised if you are using labeled data. We use the term labeled to refer to data that already contains the solutions, called labels.
+
+A task is considered to be unsupervised if you are using unlabeled data. This means you don't need to provide the model with any kind of label or solution while the model is being trained.
+
+
+
+
+In supervised learning, there are two main identifiers you will see in machine learning:
+
+A categorical label has a discrete set of possible values. In a machine learning problem in which you want to identify the type of flower based on a picture, you would train your model using images that have been labeled with the categories of flower you would want to identify. Furthermore, when you work with categorical labels, you often carry out classification tasks*, which are part of the supervised learning family.
+A continuous (regression) label does not have a discrete set of possible values, which often means you are working with numerical data. In the snow cone sales example, we are trying to predict the number* of snow cones sold. Here, our label is a number that could, in theory, be any value.
+
+
+answer:
+supervised Learning
+unsupervised learning
+
+
+Terminology
+Clustering. Unsupervised learning task that helps to determine if there are any naturally occurring groupings in the data.
+A categorical label has a discrete set of possible values, such as "is a cat" and "is not a cat."
+A continuous (regression) label does not have a discrete set of possible values, which means possibly an unlimited number of possibilities.
+Discrete: A term taken from statistics referring to an outcome taking on only a finite number of values (such as days of the week).
+A label refers to data that already contains the solution.
+Using unlabeled data means you don't need to provide the model with any kind of label or solution while the model is being trained.
 
 
 2.7
