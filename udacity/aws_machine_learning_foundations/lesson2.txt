@@ -105,8 +105,20 @@ A label refers to data that already contains the solution.
 Using unlabeled data means you don't need to provide the model with any kind of label or solution while the model is being trained.
 
 
-2.7
+2.7 Quiz: Define the Problem
 ---------------------------------------
+2,4
+
+Correct! Both answers chosen here involve trying to predict some unknown continuous attribute about your data.
+
+Remember: Classification tasks involve predicting some unknown categorical attribute about your data.
+
+Regression tasks involve predicting some unknown continuous attribute about your data.
+
+Clustering tasks involve exploring how your data might be grouped together
+
+
+all 3
 
 
 2.8
