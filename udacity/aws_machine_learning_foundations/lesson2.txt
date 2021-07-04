@@ -121,13 +121,33 @@ Clustering tasks involve exploring how your data might be grouped together
 all 3
 
 
-2.8
+2.8 Build a Dataset
 ---------------------------------------
 
+Summary statistics
+Models can assume how your data is structured.
 
-2.9
+Now that you have some data in hand it is a good best practice to check that your data is in line with the underlying assumptions of your chosen machine learning model.
+
+With many statistical tools, you can calculate things like the mean, inner-quartile range (IQR), and standard deviation. These tools can give you insight into the scope, scale, and shape of the dataset.
+
+
+Terminology
+Impute is a common term referring to different statistical tools which can be used to calculate missing values from your dataset.
+Outliers are data points that are significantly different from others in the same sample.
+
+
+2.9 Quiz: Build a Dataset
 ---------------------------------------
+false : Nicely done! A supervised learning problem uses labeled data, and an unsupervised learning problem uses unlabeled data.
 
+false : Correct! Because models are made specific by the data required to train them, the quality of the data is very important to the overall success of your project.
+
+true : True or false: Data needs to be formatted so that is compatible with the model and model training algorithm you plan to use.
+
+false : Correct! Tools from the statistics can also be used to check for outliers.
+
+false : Correct. You should periodically review the data coming into the model. When reviewing, you should check for the same things when you built your dataset.
 
 
 2.10
