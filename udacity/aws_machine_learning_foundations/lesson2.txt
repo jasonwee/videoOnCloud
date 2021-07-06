@@ -208,8 +208,15 @@ Test dataset: The data withheld from the model during training, which is used to
 
 Model parameters are settings or configurations the training algorithm can update to change how the model behaves.
 
-2.11
+
+2.11 Quiz Model Training
 ---------------------------------------
+True  :  The loss function measures how far the model is from its goal.
+
+if you use all the data you have collected during training, you won't have any with which to test the model during the model evaluation phase.
+
+hyperparameters are not updated during model training.
+hyperparameters are set manually.
 
 
 2.12 
