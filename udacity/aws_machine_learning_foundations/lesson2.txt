@@ -219,11 +219,21 @@ hyperparameters are not updated during model training.
 hyperparameters are set manually.
 
 
-2.12 
+2.12 Model Evaluation
 ---------------------------------------
+Model accuracy is a fairly common evaluation metric. Accuracy is the fraction of predictions a model gets right.
+
+Using Log Loss
+Log loss seeks to calculate how uncertain your model is about the predictions it is generating. In this context, uncertainty refers to how likely a model thinks the predictions being generated are to be correct.
 
 
-2.13 
+Log loss seeks to calculate how uncertain your model is about the predictions it is generating.
+
+Model Accuracy is the fraction of predictions a model gets right.
+
+
+
+2.13 Quiz: Model Evaluation 
 ---------------------------------------
 
 
