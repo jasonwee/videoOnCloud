@@ -235,7 +235,25 @@ Model Accuracy is the fraction of predictions a model gets right.
 
 2.13 Quiz: Model Evaluation 
 ---------------------------------------
+false : Correct! Model evaluation tools are often tailored to a specific use case.
 
+R Square/Adjusted R Square.
+Mean Square Error(MSE)/Root Mean Square Error(RMSE)
+Mean Absolute Error(MAE)
+
+The mean absolute error of a model with respect to a test set is the mean of the absolute values of the individual prediction errors on over all instances in the test set.
+
+
+
+correct answers:
+
+There are many different tools that can be used to evaluate a linear regression model. Here are a few examples:
+
+Mean absolute error (MAE): This is measured by taking the average of the absolute difference between the actual values and the predictions. Ideally, this difference is minimal.
+
+Root mean square error (RMSE): This is similar MAE, but takes a slightly modified approach so values with large error receive a higher penalty. RMSE takes the square root of the average squared difference between the prediction and the actual value.
+
+Coefficient of determination or R-squared (R^2): This measures how well-observed outcomes are actually predicted by the model, based on the proportion of total variation of outcomes.
 
 2.14 
 ---------------------------------------
