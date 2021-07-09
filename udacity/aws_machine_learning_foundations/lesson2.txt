@@ -255,9 +255,10 @@ Root mean square error (RMSE): This is similar MAE, but takes a slightly modifie
 
 Coefficient of determination or R-squared (R^2): This measures how well-observed outcomes are actually predicted by the model, based on the proportion of total variation of outcomes.
 
-2.14 
----------------------------------------
 
+2.14 Model Inference
+---------------------------------------
+Once you have trained your model, have evaluated its effectiveness, and are satisfied with the results, you're ready to generate predictions on real-world problems using unseen data in the field. In machine learning, this process is often called inference.
 
 2.15
 ---------------------------------------
