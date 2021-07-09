@@ -1,0 +1,82 @@
+date start : 09 july 2021
+
+
+4.1 Neural Networks
+---------------------------------------
+
+
+4.2 Quiz: Artificial Neural Networks
+---------------------------------------
+0
+
+
+4.3 How Powerful is a Perceptron Unit
+---------------------------------------
+
+
+
+4.4 Quiz: How Powerful is a Perceptron Unit Quiz
+---------------------------------------
+AND
+
+4.5 Quiz:How Powerful is a Perceptron Unit OR Quiz
+---------------------------------------
+1
+1
+1/2
+
+
+4.6 Quiz: How Powerful is a Perceptron Unit NOT Quiz 
+---------------------------------------
+-1
+0
+
+4.7 Quiz: XOR as Perceptron Network
+---------------------------------------
+1
+1
+-2
+1
+
+4.8 Perceptron Training
+---------------------------------------
+
+
+4.9 Gradient Descent
+---------------------------------------
+
+
+4.10 Comparison of Learning Rules
+---------------------------------------
+
+
+4.11 Quiz: Comparison of Learning Rules Quiz
+---------------------------------------
+2
+
+
+4.12 Sigmoid
+---------------------------------------
+
+
+4.13 Neural Network Sketch
+---------------------------------------
+
+
+4.14 Optimizing Weights
+---------------------------------------
+
+
+4.15 Restriction Bias
+---------------------------------------
+
+
+4.16 Preference Bias
+---------------------------------------
+
+
+4.17 Summary
+---------------------------------------
+
+
+
