@@ -47,11 +47,21 @@ PaaS is suitable for such use case because for a small team, we dont have the ca
 
 4.6 Solution: PaaS Mechanisms 
 ---------------------------------------
+By default, the PaaS solutions offer the management of the underlying infrastructure, such as storage, databases, compute, hosting, and many more. Also, the majority of solutions will provide data analytics, security, and advanced scheduling.
 
+As such, the web-store project will benefit from the following PaaS capabilities:
+
+database - for storing the customer details, orders, and products details
+compute - accessible scalability for the application to serve millions of customers
+networking - hosting and serving the requests with no downtime
+analytics - an add-on to collect data and provide metrics and logs about customer interaction with the web-store
 
 
 4.7 Cloud Foundry
 ---------------------------------------
+
+Cloud Foundry is an open-source PaaS, a stand-alone software package that can be installed on any available infrastructure; private, public, or hybrid cloud. Due to its open-source nature, there is no vendor lock-in and the community can contribute to its future releases and definition of the roadmap. As such, Cloud Foundry offers a production-grade release process through a solid developer experience, that enables any application to be deployed with ease.
+
 This demo showcases the main capabilities of the Stratos console and Cloud Foundry.
 
 Some of the noteworthy sections are:
