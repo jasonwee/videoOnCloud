@@ -281,8 +281,12 @@ Deep neural network
 While this type of task is beyond the scope of this lesson, we wanted to show you the power and versatility of modern machine learning. You will see how it can be used to analyze raw images from lab video footage from security cameras, trying to detect chemical spills.
 
 
-2.17
+2.17 Example One: House Price Prediction
 ---------------------------------------
+Continuous: Floating-point values with an infinite range of possible values. The opposite of categorical or discrete values, which take on a limited number of possible values.
+Hyperplane: A mathematical term for a surface that contains more than two planes.
+Plane: A mathematical term for a flat surface (like a piece of paper) on which two points can be joined by a straight line.
+Regression: A common task in supervised machine learning.
 
 
 2.18
