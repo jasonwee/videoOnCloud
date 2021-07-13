@@ -289,8 +289,18 @@ Plane: A mathematical term for a flat surface (like a piece of paper) on which t
 Regression: A common task in supervised machine learning.
 
 
-2.18
+2.18 Quiz: Example One
 ---------------------------------------
+false
+
+throwing a ball for a distance.
+
+
+Linear models typically fail when there is no helpful linear relationship between the input variables and the label.
+
+For example, imagine predicting the height (label) of a thrown projectile over time (input variable). You know the trajectory is not linear; it's curved. Any straight line you try to use to describe this phenomenon would be invalid for a large range of the projectile's trajectory.
+
+Techniques do exist to modify your data so you can still use linear models in these situations. Such methods are out of scope for this course but are called kernel methods.
 
 
 2.19
