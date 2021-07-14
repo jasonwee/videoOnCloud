@@ -303,7 +303,43 @@ For example, imagine predicting the height (label) of a thrown projectile over t
 Techniques do exist to modify your data so you can still use linear models in these situations. Such methods are out of scope for this course but are called kernel methods.
 
 
-2.19
+2.19 Example Two: Book Genre Exploration
+---------------------------------------
+Bag of words: A technique used to extract features from the text. It counts how many times a word appears in a document (corpus), and then transforms that information into a dataset.
+Data vectorization: A process that converts non-numeric data into a numerical format so that it can be used by a machine learning model.
+Silhouette coefficient: A score from -1 to 1 describing the clusters found during modeling. A score near zero indicates overlapping clusters, and scores less than zero indicate data points assigned to incorrect clusters. A score approaching 1 indicates successful identification of discrete non-overlapping clusters.
+Stop words: A list of words removed by natural language processing tools when building your dataset. There is no single universal list of stop words used by all-natural language processing tools.
+
+
+2.20
+---------------------------------------
+
+
+2.21
+---------------------------------------
+
+
+2.22
+---------------------------------------
+
+
+2.23
+---------------------------------------
+
+
+2.24
+---------------------------------------
+
+
+2.25
+---------------------------------------
+
+
+2.26
+---------------------------------------
+
+
+2.2
 ---------------------------------------
 
 
