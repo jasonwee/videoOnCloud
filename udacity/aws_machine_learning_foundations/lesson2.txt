@@ -311,8 +311,16 @@ Silhouette coefficient: A score from -1 to 1 describing the clusters found durin
 Stop words: A list of words removed by natural language processing tools when building your dataset. There is no single universal list of stop words used by all-natural language processing tools.
 
 
-2.20
+2.20 Quiz: Example Two
 ---------------------------------------
+unsupervised learning
+
+The number of clusters the model will try to find during training.
+Correct! Prior to training your model, you can set the value of "k" to equal the number of clusters you want the model to find.
+
+true
+Great job! The number and size of possible clusters are unknown prior to model training, and thus you need to use an unsupervised approach.
+
 
 
 2.21
