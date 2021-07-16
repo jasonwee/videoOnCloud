@@ -1,0 +1,29 @@
+date start : 16 july 2021
+
+
+24.1 Programming Flips
+---------------------------------------
+def flip(N):
+    #Insert your code here
+    random_list = []
+    for i in range(N):
+        value = random.uniform(0, 1)
+        if 0 < value <= 0.5:
+            random_list.append(0)
+        else:
+            random_list.append(1)
+    return random_list
+
+
+
+24.2 Sets Of Flips
+---------------------------------------
+def sample(N):
+    #Insert your code here
+    return [mean (flip(N)) for x in range(N) ]
+
+
+24.3 Bell Curve
+---------------------------------------
+
+
