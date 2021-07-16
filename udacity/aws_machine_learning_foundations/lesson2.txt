@@ -323,8 +323,15 @@ Great job! The number and size of possible clusters are unknown prior to model t
 
 
 
-2.21
+2.21 Example Three: Spill Detection from Video
 ---------------------------------------
+Convolutional neural networks(CNN) are a special type of neural network particularly good at processing images.
+
+Neural networks: a collection of very simple models connected together.
+
+These simple models are called neurons
+the connections between these models are trainable model parameters called weights.
+
 
 
 2.22
@@ -340,14 +347,6 @@ Great job! The number and size of possible clusters are unknown prior to model t
 
 
 2.25
----------------------------------------
-
-
-2.26
----------------------------------------
-
-
-2.2
 ---------------------------------------
 
 
