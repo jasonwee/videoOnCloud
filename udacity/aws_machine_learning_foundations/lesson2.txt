@@ -334,8 +334,21 @@ the connections between these models are trainable model parameters called weigh
 
 
 
-2.22
+2.22 Quiz: Example Three
 ---------------------------------------
+thinking of this problem as a classification tasks.
+
+flipping through photos to ensure the spill is clearly in shot.
+
+identifying a cnn as having a good chance of matching your data and task.
+
+mesuring model accuracy alone wont give u confidence that the trained model is
+perforing as intended
+
+
+deploying the modle to a system capable of processing images in the surveillance
+system.
+
 
 
 2.23
