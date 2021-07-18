@@ -351,8 +351,16 @@ system.
 
 
 
-2.23
+2.23 Final Quiz
 ---------------------------------------
+false
+
+model hyperparameter
+measure how close the model is towards its goal.
+
+true
+
+true
 
 
 2.24
