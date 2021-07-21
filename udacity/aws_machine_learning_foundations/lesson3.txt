@@ -1,0 +1,36 @@
+date start : 21 july 2021
+
+
+3.1 Machine Learning with AWS
+---------------------------------------
+The AWS achine learning mission is to put machine learning in the hands of every developer.
+
+AWS offers the broadest and deepest set of artificial intelligence (AI) and machine learning (ML) services with unmatched flexibility.
+You can accelerate your adoption of machine learning with AWS SageMaker. Models that previously took months to build and required specialized expertise can now be built in weeks or even days.
+AWS offers the most comprehensive cloud offering optimized for machine learning.
+More machine learning happens at AWS than anywhere else.
+
+
+
+
+3.2 
+---------------------------------------
+
+
+3.3 
+---------------------------------------
+
+
+3.4 
+---------------------------------------
+
+
+3.5
+---------------------------------------
+
+
+3.6
+---------------------------------------
+
+
+
