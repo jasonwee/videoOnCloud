@@ -13,7 +13,7 @@ More machine learning happens at AWS than anywhere else.
 
 
 
-3.2 
+3.2 Lesson Overview
 ---------------------------------------
 
 
