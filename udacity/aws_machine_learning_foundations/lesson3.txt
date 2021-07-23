@@ -17,8 +17,28 @@ More machine learning happens at AWS than anywhere else.
 ---------------------------------------
 
 
-3.3 
+3.3 AWS Account Requirements
 ---------------------------------------
+AWS Account Requirements
+An AWS account is required
+To complete the exercises in this course, you need an AWS Account ID.
+
+To set up a new AWS Account ID, follow the directions in How do I create and activate a new Amazon Web Services account?
+
+You are required to provide a payment method when you create the account. To learn about which services are available at no cost, see the AWS Free Tier documentation.
+
+Will these exercises cost anything?
+This lesson contains many demos and exercises. You do not need to purchase any AWS devices to complete the lesson. However, please carefully read the following list of AWS services you may need in order to follow the demos and complete the exercises.
+
+Train your computer vision model with AWS DeepLens (optional)
+To train and deploy custom models to AWS DeepLens, you use Amazon SageMaker. Amazon SageMaker is a separate service and has its own service pricing and billing tier. It's not required to train a model for this course. If you're interested in training a custom model, please note that it incurs a cost. To learn more about SageMaker costs, see the Amazon SageMaker Pricing.
+Train your reinforcement learning model with AWS DeepRacer
+To get started with AWS DeepRacer, you receive 10 free hours to train or evaluate models and 5GB of free storage during your first month. This is enough to train your first time-trial model, evaluate it, tune it, and then enter it into the AWS DeepRacer League. This offer is valid for 30 days after you have used the service for the first time.
+Beyond 10 hours of training and evaluation, you pay for training, evaluating, and storing your machine learning models. Charges are based on the amount of time you train and evaluate a new model and the size of the model stored. To learn more about AWS DeepRacer pricing, see the AWS DeepRacer Pricing
+Generate music using AWS DeepComposer
+To get started, AWS DeepComposer provides a 12-month Free Tier for first-time users. With the Free Tier, you can perform up to 500 inference jobs translating to 500 pieces of music using the AWS DeepComposer Music studio. You can use one of these instances to complete the exercise at no cost. To learn more about AWS DeepComposer costs, see the AWS DeepComposer Pricing.
+Build a custom generative AI model (GAN) using Amazon SageMaker (optional)
+Amazon SageMaker is a separate service and has its own service pricing and billing tier. To train the custom generative AI model, the instructor uses an instance type that is not covered in the Amazon SageMaker free tier. If you want to code along with the instructor and train your own custom model, you may incur a cost. Please note, that creating your own custom model is completely optional. You are not required to do this exercise to complete the course. To learn more about SageMaker costs, see the Amazon SageMaker Pricing.
 
 
 3.4 
