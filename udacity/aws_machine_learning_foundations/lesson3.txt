@@ -41,9 +41,44 @@ Build a custom generative AI model (GAN) using Amazon SageMaker (optional)
 Amazon SageMaker is a separate service and has its own service pricing and billing tier. To train the custom generative AI model, the instructor uses an instance type that is not covered in the Amazon SageMaker free tier. If you want to code along with the instructor and train your own custom model, you may incur a cost. Please note, that creating your own custom model is completely optional. You are not required to do this exercise to complete the course. To learn more about SageMaker costs, see the Amazon SageMaker Pricing.
 
 
-3.4 
+3.4 Computer Vision and Its Applications
 ---------------------------------------
+How computer vision got started
+Early applications of computer vision needed hand-annotated images to successfully train a model.
+These early applications had limited applications because of the human labor required to annotate images.
 
+Three main components of neural networks
+Input Layer: This layer receives data during training and when inference is performed after the model has been trained.
+Hidden Layer: This layer finds important features in the input data that have predictive power based on the labels provided during training.
+Output Layer: This layer generates the output or prediction of your model.
+
+Modern computer vision
+Modern-day applications of computer vision use neural networks call convolutional neural networks or CNNs.
+In these neural networks, the hidden layers are used to extract different information about images. We call this process feature extraction.
+These models can be trained much faster on millions of images and generate a better prediction than earlier models.
+
+How this growth occured
+Since 2010, we have seen a rapid decrease in the computational costs required to train the complex neural networks used in computer vision.
+Larger and larger pre-labeled datasets have become generally available. This has decreased the time required to collect the data needed to train many models.
+
+
+
+Image classification is the most common application of computer vision in use today. Image classification can be used to answer questions like What's in this image? This type of task has applications in text detection or optical character recognition (OCR) and content moderation.
+Object detection is closely related to image classification, but it allows users to gather more granular detail about an image. For example, rather than just knowing whether an object is present in an image, a user might want to know if there are multiple instances of the same object present in an image, or if objects from different classes appear in the same image.
+Semantic segmentation is another common application of computer vision that takes a pixel-by-pixel approach. Instead of just identifying whether an object is present or not, it tries to identify down the pixel level which part of the image is part of the object.
+Activity recognition is an application of computer vision that is based around videos rather than just images. Video has the added dimension of time and, therefore, models are able to detect changes that occur over time
+
+
+New Terms
+Input Layer: The first layer in a neural network. This layer receives all data that passes through the neural network.
+Hidden Layer: A layer that occurs between the output and input layers. Hidden layers are tailored to a specific task.
+Output Layer: The last layer in a neural network. This layer is where the predictions are generated based on the information captured in the hidden layers.
+
+
+https://www.awsdeeplens.recipes/
+https://aws.amazon.com/blogs/machine-learning/
+https://aws.amazon.com/blogs/machine-learning/category/artificial-intelligence/aws-deeplens/
+https://docs.aws.amazon.com/deeplens/latest/dg/deeplens-getting-started.html
 
 3.5
 ---------------------------------------
