@@ -80,9 +80,26 @@ https://aws.amazon.com/blogs/machine-learning/
 https://aws.amazon.com/blogs/machine-learning/category/artificial-intelligence/aws-deeplens/
 https://docs.aws.amazon.com/deeplens/latest/dg/deeplens-getting-started.html
 
+
 3.5
 ---------------------------------------
+AWS DeepLens
+AWS DeepLens allows you to create and deploy end-to-end computer vision–based applications. The following video provides a brief introduction to how AWS DeepLens works and how it uses other AWS services.
 
+AWS DeepLens is a deep learning–enabled camera that allows you to deploy trained models directly to the device. You can either use sample templates and recipes or train your own model.
+
+The AWS DeepLens device
+The AWS DeepLens camera is powered by an Intel® Atom processor, which can process 100 billion floating-point operations per second (GFLOPS). This gives you all the computing power you need to perform inference on your device. The micro HDMI display port, audio out, and USB ports allow you to attach peripherals, so you can get creative with your computer vision applications.
+
+You can use AWS DeepLens as soon as you register it.
+
+How AWS DeepLens works
+AWS DeepLens is integrated with multiple AWS services. You use these services to create, train, and launch your AWS DeepLens project. You can think of an AWS DeepLens project as being divided into two different streams as the image shown above.
+
+First, you use the AWS console to create your project, store your data, and train your model.
+Then, you use your trained model on the AWS DeepLens device. On the device, the video stream from the camera is processed, inference is performed, and the output from inference is passed into two output streams:
+Device stream – The video stream passed through without processing.
+Project stream – The results of the model's processing of the video frames.
 
 3.6
 ---------------------------------------
