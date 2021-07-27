@@ -127,8 +127,21 @@ We deploy our trained model to our AWS DeepLens device, where inference is perfo
 
 
 
-3.
+3.7 Quiz: Computer Vision
 ---------------------------------------
+object deteciton , Great job! Object detection can be used to not only count the number of objects in an image but also to identify different classes present in an image.
+
+image classification
+
+Semantic (instance) segmentation : Nice job! Yes! Semantic segmentation is best used to identify the exact location (pixel) of an object in an image.
+
+instance (semantic) segmentation
+
+object detection
+
+object detection , semantic (instance) segmentation
+
+image classification
 
 
 3.
