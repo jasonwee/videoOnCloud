@@ -144,8 +144,36 @@ object detection , semantic (instance) segmentation
 image classification
 
 
-3.
----------------------------------------
+3.8 Reinforcement Learning and Its Applications
+--------------------------------------
+In reinforcement learning (RL), an agent is trained to achieve a goal based on the feedback it receives as it interacts with an environment. It collects a number as a reward for each action it takes. Actions that help the agent achieve its goal are incentivized with higher numbers. Unhelpful actions result in a low reward or no reward.
+
+With a learning objective of maximizing total cumulative reward, over time, the agent learns, through trial and error, to map gainful actions to situations. The better trained the agent, the more efficiently it chooses actions that accomplish its goal.
+
+Reinforcement learning is used in a variety of fields to solve real-world problems. It’s particularly useful for addressing sequential problems with long-term goals. Let’s take a look at some examples.
+
+RL is great at playing games:
+Go (board game) was mastered by the AlphaGo Zero software.
+Atari classic video games are commonly used as a learning tool for creating and testing RL software.
+StarCraft II, the real-time strategy video game, was mastered by the AlphaStar software.
+RL is used in video game level design:
+Video game level design determines how complex each stage of a game is and directly affects how boring, frustrating, or fun it is to play that game.
+Video game companies create an agent that plays the game over and over again to collect data that can be visualized on graphs.
+This visual data gives designers a quick way to assess how easy or difficult it is for a player to make progress, which enables them to find that “just right” balance between boredom and frustration faster.
+RL is used in wind energy optimization:
+RL models can also be used to power robotics in physical devices.
+When multiple turbines work together in a wind farm, the turbines in the front, which receive the wind first, can cause poor wind conditions for the turbines behind them. This is called wake turbulence and it reduces the amount of energy that is captured and converted into electrical power.
+Wind energy organizations around the world use reinforcement learning to test solutions. Their models respond to changing wind conditions by changing the angle of the turbine blades. When the upstream turbines slow down it helps the downstream turbines capture more energy.
+Other examples of real-world RL include:
+Industrial robotics
+Fraud detection
+Stock trading
+Autonomous driving
+
+Agent: The piece of software you are training is called an agent. It makes decisions in an environment to reach a goal.
+Environment: The environment is the surrounding area with which the agent interacts.
+Reward: Feedback is given to an agent for each action it takes in a given state. This feedback is a numerical reward.
+Action: For every state, an agent needs to take an action toward achieving its goal.
 
 
 3.
