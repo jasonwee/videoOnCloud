@@ -237,8 +237,56 @@ An AWS DeepRacer device is not required to start learning: you can start now in 
 New Terms
 Exploration versus exploitation: An agent should exploit known information from previous experiences to achieve higher cumulative rewards, but it also needs to explore to gain new experiences that can be used in choosing the best actions in the future.
 
+3.10 Demo: Reinforcement Learning with AWS DeepRacer
+---------------------------------------
+To get you started with AWS DeepRacer, you receive 10 free hours to train or evaluate models and 5GB of free storage during your first month. This offer is valid for 30 days after you have used the service for the first time. Beyond 10 hours of training and evaluation, you pay for training, evaluating, and storing your machine learning models. Please read the AWS account requirements page for more information.
+
+This demonstration introduces you to the AWS DeepRacer console and walks you through how to use it to build your first reinforcement learning model. You'll use your knowledge of basic reinforcement learning concepts and terminology to make choices about your model. In addition, you'll learn about the following features of the AWS DeepRacer service:
+
+Pro and Open Leagues
+Digital rewards
+Racer profile
+Garage
+Sensor configuration
+Race types
+Time trial
+Object avoidance
+Head-to-head
+
+This demonstration walks you through the training process in the AWS DeepRacer console. You've learned about:
+
+The reward graph
+The training video
+
+This demonstration walks the evaluation process in the AWS DeepRacer console.
+
+Once you've created a successful model, you'll learn how to enter it into a race for the chance to win awards, prizes, and the opportunity to compete in the worldwide AWS DeepRacer Championship.
+
+
+
 3.
 ---------------------------------------
+
+
+3.
+---------------------------------------
+
+
+3.
+---------------------------------------
+
+
+3.
+---------------------------------------
+
+
+3.
+---------------------------------------
+
+
+
+
+
 
 
 
