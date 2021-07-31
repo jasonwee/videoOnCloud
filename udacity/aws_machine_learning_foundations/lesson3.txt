@@ -264,9 +264,32 @@ Once you've created a successful model, you'll learn how to enter it into a race
 
 
 
-3.
+3.11 Quiz: Reinforcement Learning
 ---------------------------------------
+supervised learning
+Correct! In supervised learning, every data has a corresponding label. Reinforcement learning and unsupervised learning models do not need labeled data.
 
+The piece of software you are training that makes decisions in an environment to
+reach a goal
+
+false
+Correct! This statement is false. "Exploration" is when an agent wanders to discover what actions lead to what feedback in the form of digital rewards. "Exploitation" is using experience to decide.
+
+The more an agent learns about its environment, the more confident it becomes about the actions it chooses.
+If an agent doesn't explore enough, it often sticks to information its already learned even if this knowledge doesn't help the agent achieve its goal.
+The agent can use information from previous experiences to help it make future decisions that enable it to reach its goal.
+
+state: the current position within the environment that is visible, or known, to
+an agent.
+
+action: for every state, an agent needs to do this toward achieving its goal.
+
+episode: represents a period of trial and error when an agent makes decisions
+and gets feedback from its environment.
+
+reward: feedback given to an agent for each action it takes in a given state.
+
+environment: the surrounding area our agent interacts with.
 
 3.
 ---------------------------------------
