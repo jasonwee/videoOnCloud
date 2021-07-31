@@ -240,6 +240,10 @@ kubectl describe secret team-token
 
 3.21 Exercise: Kubernetes Resources
 ---------------------------------------
+kubectl create ns demo
+kubectl label ns demo tier=test
+
+
 
 
 3.22 Solution: Kubernetes Resources
