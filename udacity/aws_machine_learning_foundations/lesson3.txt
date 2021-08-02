@@ -332,8 +332,31 @@ Iteration x-axis
 Review the solution to this exercise for ideas on how to interpret it.
 
 
-3.
+3.13 Exercise Solution: AWS DeepRacer
 ---------------------------------------
+Average reward
+This graph represents the average reward the agent earns during a training iteration. The average is calculated by averaging the reward earned across all episodes in the training iteration. An episode begins at the starting line and ends when the agent completes one loop around the track or at the place the vehicle left the track or collided with an object. Toggle the switch to hide this data.
+
+Average percentage completion (training)
+The training graph represents the average percentage of the track completed by the agent in all training episodes in the current training. It shows the performance of the vehicle while experience is being gathered.
+
+Average percentage completion (evaluation)
+While the model is being updated, the performance of the existing model is evaluated. The evaluation graph line is the average percentage of the track completed by the agent in all episodes run during the evaluation period.
+
+Best model line
+This line allows you to see which of your model iterations had the highest average progress during the evaluation. The checkpoint for this iteration will be stored. A checkpoint is a snapshot of a model that is captured after each training (policy-updating) iteration.
+
+Reward primary y-axis
+This shows the reward earned during a training iteration. To read the exact value of a reward, hover your mouse over the data point on the graph.
+
+Percentage track completion secondary y-axis
+This shows you the percentage of the track the agent completed during a training iteration.
+
+Iteration x-axis
+This shows the number of iterations completed during your training job.
+
+The AWS DeepRacer console's default hyperparameters are quite effective, but occasionally you may consider adjusting the training hyperparameters. The hyperparameters are variables that essentially act as settings for the training algorithm that control the performance of your agent during training. We learned, for example, that the learning rate controls how many new experiences are counted in learning at each step.
+
 
 
 3.
