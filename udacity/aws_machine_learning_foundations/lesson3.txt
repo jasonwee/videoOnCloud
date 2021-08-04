@@ -380,8 +380,19 @@ Transformer-based models are most often used to study data with some sequential 
 We won't cover this approach in this course but you can learn more about transformers and how AWS DeepComposer uses transformers in AWS DeepComposer learning capsules.
 
 
+3.15 Generative AI with AWS DeepComposer
+---------------------------------------
+What is AWS DeepComposer?
+AWS DeepComposer gives you a creative and easy way to get started with machine learning (ML), specifically generative AI. It consists of a USB keyboard that connects to your computer to input melody and the AWS DeepComposer console, which includes AWS DeepComposer Music studio to generate music, learning capsules to dive deep into generative AI models, and AWS DeepComposer Chartbusters challenges to showcase your ML skills.
+
+
+
+
+
 3.
 ---------------------------------------
+
+
 
 
 
