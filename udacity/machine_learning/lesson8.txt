@@ -1,0 +1,116 @@
+date start : 06 august 2021
+
+
+8.1 Quiz: Computational Learning Theory
+---------------------------------------
+decision trees 
+svm
+1-NN
+
+8.2 Learning Theory
+---------------------------------------
+
+
+8.3 Quiz: Resources in Machine Learning
+---------------------------------------
+time
+
+
+8.4 Defining Inductive Learning
+---------------------------------------
+
+
+8.5 Selecting Training Examples
+---------------------------------------
+
+
+
+8.6 Quiz: Teaching Via 20 Questions
+---------------------------------------
+1
+
+
+8.7 Quiz: The Learner
+---------------------------------------
+2
+
+
+8.8 Teacher With Constrained Queries
+---------------------------------------
+
+
+8.9 Quiz: Reconstructing Hypothesis
+---------------------------------------
+  x 
+    x
+  x
+x
+    x
+
+8.10 Learner With Constrained Queries
+---------------------------------------
+
+
+8.11 Learner With Mistake Bounds
+---------------------------------------
+
+
+8.12 Definitions
+---------------------------------------
+
+
+8.13 Version Spaces
+---------------------------------------
+
+
+8.14 Quiz: Terminology
+---------------------------------------
+x1
+or
+xor
+
+
+8.15 Error of h
+---------------------------------------
+
+
+8.16 PAC Learning
+---------------------------------------
+
+
+8.17 PAC Learning Two
+---------------------------------------
+
+
+8.18 Quiz: PAC Learnable
+---------------------------------------
+yes
+
+
+8.19 Epsilon Exhausted
+---------------------------------------
+
+
+8.20 Quiz: Epsilon Exhausted Quiz
+---------------------------------------
+0.5
+
+
+8.21 Hausller Theorem
+---------------------------------------
+
+
+8.22 Haussler Theorem Two
+---------------------------------------
+
+
+8.23 Quiz: PAC Learnable Example
+---------------------------------------
+40
+
+
+8.24 What Have We Learned
+---------------------------------------
+
+
+
