@@ -389,8 +389,29 @@ AWS DeepComposer gives you a creative and easy way to get started with machine l
 
 
 
+3.16 GANs with AWS DeepComposer
+---------------------------------------
+Generator: A neural network that learns to create new data resembling the source data on which it was trained.
+Discriminator: A neural network trained to differentiate between real and synthetic data.
+Generator loss: Measures how far the output data deviates from the real data present in the training dataset.
+Discriminator loss: Evaluates how well the discriminator differentiates between real and fake data.
+
+
 3.
 ---------------------------------------
+
+
+
+
+3.
+---------------------------------------
+
+
+3.
+---------------------------------------
+
+
+
 
 
 
