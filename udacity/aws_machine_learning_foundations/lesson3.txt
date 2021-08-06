@@ -418,9 +418,20 @@ Edit event: When a note is either added or removed from your input track during 
 
 
 
-3.
+3.18 Quiz: Generative AI
 ---------------------------------------
+"Edit event" refers to a note added to the input track during inference.
+Correct! An edit event is when a note is either added or removed from your input track during inference.
 
+The generator learns to produce more realistic data and the discriminator learns to differentiate real data from the newly created data.
+The discriminator learns from both real Bach music and realistic Bach music.
+
+evaluating the output quality  : discriminator
+creating new output            : generator
+providing feedback             : discriminator
+
+true : loss functions help us determine when to stop training a model.
+Correct! When we see the loss function stabilize, we can be confident that training is complete.
 
 3.
 ---------------------------------------
