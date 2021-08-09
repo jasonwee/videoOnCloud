@@ -450,8 +450,28 @@ If you want to enhance your music further with another generative model, you can
 Congratulations on creating your first piece of music using AWS DeepComposer! Now you can download the melody or submit it to a competition. Hope you enjoy the journey of creating music with AWS DeepComposer.
 
 
-3.
+3.20 Exercise: Generate Music with AWS DeepComposer
 ---------------------------------------
+Exercise: Generate music with AWS DeepComposer
+You have seen how the instructor generates a piece of music in AWS DeepComposer. Now, it's your turn to create your very own piece of music. To finish this exercise, you should complete the following steps.
+
+Open the AWS DeepComposer console.
+In the navigation pane, choose Music studio, then choose Start composing.
+On the Input track page, record a melody using the virtual keyboard, import a MIDI file, or choose an input track. On the ML technique page, choose AR-CNN. On the Inference output page, you can do the following:
+Change the AR-CNN parameters, choose Enhance again, and then choose Play to hear how your track has changed. Repeat until you like the outcome.
+Choose Edit melody to modify and change the notes that were added during inference.
+Choose Continue to finish creating your composition.
+
+You can then choose Share composition, Register, or Sign in to Soundcloud and submit to the "Melody-Go-Round" competition. Participation in the competition is optional.
+
+If you get stuck, you can check out the demo videos on Demo: Create Music with AWS DeepComposer page.
+
+
+
+
+3.21 
+---------------------------------------
+
 
 
 
