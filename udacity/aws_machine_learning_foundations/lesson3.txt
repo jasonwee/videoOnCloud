@@ -673,16 +673,29 @@ Recap
 In this demo we learned how to setup a Jupyter notebook in Amazon SageMaker, reviewed a machine learning code, and what data preparation, model training, and model evaluation can look like in a notebook instance. While this was a fun use case for us to explore, the concepts and techniques can be applied to other machine learning projects like an object detector or a sentiment analysis on text.
 
 ￼
-3.23
+
+3.23 Lesson Review
 ---------------------------------------
+The outline of the lesson
+
+In this lesson, we learned many advanced machine learning techniques. Specifically, we learned:
+
+Computer vision and its application
+How to train a computer vision project with AWS DeepLens
+Reinforcement learning and its application
+How to train a reinforcement learning model with AWS DeepRacer
+Generative AI
+How to train a GAN and AR-CNN model with AWS DeepComposer
+Now, you should be able to:
+
+Identify AWS machine learning offerings and how different services are used for different applications
+Explain the fundamentals of computer vision and a couple of popular tasks
+Describe how reinforcement learning works in the context of AWS DeepRacer
+Explain the fundamentals of Generative AI, its applications, and three famous generative AI model in the context of music and AWS DeepComposer
 
 
-
-
-
-
-
-
+3.24
+---------------------------------------
 
 
 
