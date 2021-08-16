@@ -90,12 +90,41 @@ Tip: Try to use fewer than three arguments per function
 Try to use no more than three arguments when possible. This is not a hard rule and there are times when it is more appropriate to use many parameters. But in many cases, it's more effective to use fewer arguments. Remember we are modularizing to simplify our code and make it more efficient. If your function has a lot of parameters, you may want to rethink how you are splitting this up.
 
 
-4.7 
+4.7 Exercise: Refactoring – Wine quality
 ---------------------------------------
+Exercise: Refactoring – Wine quality
+In this exercise, you'll refactor code that analyzes a wine quality dataset taken from the UCI Machine Learning Repository. Each row contains data on a wine sample, including several physicochemical properties gathered from tests, as well as a quality rating evaluated by wine experts.
+
+Download the notebook file refactor_wine_quality.ipynb and the dataset winequality-red.csv. Open the notebook file using the Jupyter Notebook. Follow the instructions in the notebook to complete the exercise.
 
 
-4.8 
+4.8 Solution: Refactoring – Wine quality
 --------------------------------------
+The following code shows the solution code. You can download the solution notebook file that contains the solution code.
+
+import pandas as pd
+df = pd.read_csv('winequality-red.csv', sep=';')
+df.head()
+
+## Renaming Columns
+
+df.columns = [label.replace(' ', '_') for label in df.columns]
+df.head()
+
+## Analyzing Features
+
+def numeric_to_buckets(df, column_name):
+    median = df[column_name].median()
+    for i, val in enumerate(df[column_name]):
+        if val >= median:
+            df.loc[i, column_name] = 'high'
+        else:
+            df.loc[i, column_name] = 'low'
+
+for feature in df.columns[:-1]:
+    numeric_to_buckets(df, feature)
+    print(df.groupby(feature).quality.mean(), '\n')
+
 
 
 4.9 
