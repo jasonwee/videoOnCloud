@@ -142,13 +142,59 @@ The project on which you're working determines which of these is more important 
 
 
 
-4.11 
+4.11 Exercise: Optimizing - Common books
 ---------------------------------------
+Exercise: Optimizing – Common books
+We provide the code your coworker wrote to find the common book IDs in books_published_last_two_years.txt and all_coding_books.txt to obtain a list of recent coding books. Can you optimize it?
+
+Download the notebook file optimizing_code_common_books.ipynb and the text files. Open the notebook file using the Jupyter Notebook. Follow the instructions in the notebook to complete the exercise.
+
+You can also take a look at the example notebook optimizing_code_common_books_example.ipynb to help you finish the exercise.
+
+https://video.udacity-data.com/topher/2021/April/6076219b_all-coding-books/all-coding-books.txt
+https://video.udacity-data.com/topher/2021/April/607621a3_books-published-last-two-years/books-published-last-two-years.txt
+https://video.udacity-data.com/topher/2021/April/607621b0_optimizing-code-common-books/optimizing-code-common-books.ipynb
+https://video.udacity-data.com/topher/2021/April/60762234_optimizing-code-common-books-example/optimizing-code-common-books-example.ipynb
 
 
-4.12 
+4.12 Solution: Optimizing - Common books
 ---------------------------------------
+Solution: Optimizing - Common books
+The following code shows the solution code. You can download the solution notebook file that contains the solution code.
 
+import time
+import pandas as pd
+import numpy as np
+
+with open('books_published_last_two_years.txt') as f:
+    recent_books = f.read().split('\n')
+
+with open('all_coding_books.txt') as f:
+    coding_books = f.read().split('\n')
+
+start = time.time()
+recent_coding_books = []
+
+for book in recent_books:
+    if book in coding_books:
+        recent_coding_books.append(book)
+
+print(len(recent_coding_books))
+print('Duration: {} seconds'.format(time.time() - start))
+
+## Tip #1: Use vector operations over loops when possible
+
+start = time.time()
+recent_coding_books = np.intersect1d(recent_books, coding_books)
+print(len(recent_coding_books))
+print('Duration: {} seconds'.format(time.time() - start))
+
+## Tip #2: Know your data structures and which methods are faster
+
+start = time.time()
+recent_coding_books = set(recent_books).intersection(coding_books)
+print(len(recent_coding_books))
+print('Duration: {} seconds'.format(time.time() - start))
 
 4.13 
 ---------------------------------------
