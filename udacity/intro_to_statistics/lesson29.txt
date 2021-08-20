@@ -1,0 +1,37 @@
+date start : 20 august 2021
+
+
+29.1 Find Weight
+---------------------------------------
+def calculate_weight(data, z):
+    data.sort()
+    lowerq = (len(data)-3) / 4
+    upperq = lowerq * 3 + 3
+    newdata = [data[i] for i in range(lowerq, upperq)]
+
+    mu = mean(newdata)
+    sigma = stddev(newdata)
+   
+    x = mu + z * sigma
+    return x 
+
+29.2 Weight conclusion
+---------------------------------------
+
+
+29.3 Mean MLE
+---------------------------------------
+5 
+6   3
+4
+1
+
+29.4 Variance MLE
+---------------------------------------
+10  4    6
+3   1
+8
+2
+
+
+
