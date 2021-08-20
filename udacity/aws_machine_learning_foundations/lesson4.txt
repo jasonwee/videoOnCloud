@@ -196,13 +196,62 @@ recent_coding_books = set(recent_books).intersection(coding_books)
 print(len(recent_coding_books))
 print('Duration: {} seconds'.format(time.time() - start))
 
-4.13 
+
+4.13 Exercise: Optimizing – holiday Gifts
 ---------------------------------------
+Exercise: Optimizing - Holiday Gifts
+In the last example, you learned that using vectorized operations and more efficient data structures can optimize your code. Let's use these tips for one more exercise.
+
+Your online gift store has one million users that each listed a gift on a wishlist. You have the prices for each of these gifts stored in gift_costs.txt. For the holidays, you're going to give each customer their wishlist gift for free if the cost is under $25. Now, you want to calculate the total cost of all gifts under $25 to see how much you'd spend on free gifts.
+
+Download the notebook file optimizing_code_holiday_gifts.ipynb and the gift_costs.txt file. Open the notebook file using the Jupyter Notebook. Follow the instructions in the notebook to complete the exercise.
+
+Supporting Materials
+Optimizing Code Holiday Gifts
+Gift Costs
+
+https://video.udacity-data.com/topher/2021/April/60762593_optimizing-code-holiday-gifts/optimizing-code-holiday-gifts.ipynb
+https://video.udacity-data.com/topher/2021/April/607625cb_gift-costs/gift-costs.txt
 
 
-
-4.14 
+4.14 Solution: Optimizing – Holiday Gifts
 ---------------------------------------
+Solution: Optimizing – Holiday gifts
+The following code shows the solution code. You can download the solution notebook file that contains the solution code.
+
+import time
+import numpy as np
+
+with open('gift_costs.txt') as f:
+    gift_costs = f.read().split('\n')
+
+gift_costs = np.array(gift_costs).astype(int)  # convert string to int
+
+start = time.time()
+
+total_price = 0
+for cost in gift_costs:
+    if cost < 25:
+        total_price += cost * 1.08  # add cost after tax
+
+print(total_price)
+print('Duration: {} seconds'.format(time.time() - start))
+
+## Refactor Code
+
+start = time.time()
+
+total_price = (gift_costs[gift_costs < 25]).sum() * 1.08
+print(total_price)
+
+print('Duration: {} seconds'.format(time.time() - start))
+
+
+
+Supporting Materials
+Optimizing Code Holiday Gifts Solution
+
+https://video.udacity-data.com/topher/2021/April/607625dd_optimizing-code-holiday-gifts-solution/optimizing-code-holiday-gifts-solution.ipynb
 
 
 4.15 
