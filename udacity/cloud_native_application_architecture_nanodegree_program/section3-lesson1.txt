@@ -1,0 +1,159 @@
+date start : 23 august 2021
+
+
+3.1 Meet Your Instructor
+---------------------------------------
+Welcome to the course, Message Passing! My name is Justin and together, we will be learning about the design considerations and application of connecting services with one another. I have worked in software for many years as an engineer and consultant with small startups, Silicon Valley startups, to Fortune 500 companies. My goal is to teach you concepts in a relatable manner and how they apply in the industry.
+
+
+3.2 Lesson Overview
+---------------------------------------
+In this lesson, we will be going over some of the foundational concepts that will help you with understanding and be successful with the courses. We will cover:
+
+Course Overview
+Course Prerequisites
+What is Message Passing?
+Who uses Message Passing?
+When to use Message Passing?
+History of Message Passing
+Project
+
+
+3.3 Course Overview
+---------------------------------------
+What We'll Cover
+In this course we'll learn about system design, concepts behind popular technologies, and hands-on application of message passing.
+
+By the end of the course you will be able to:
+
+Refactor a service or capability from a monolith to a microservice
+Determine when to apply a communication protocol or technology to a specific use case
+Apply message passing techniques to enable communication between services
+Apply Message passing in production systems.a
+
+
+3.4 Prerequisites
+---------------------------------------
+Technologies You Should Be Comfortable Using:
+Docker - creating images and running containers
+DockerHub - pushing and pulling Docker images
+Kubernetes - creating a cluster and creating pods and services
+HTTP - using HTTP requests, HTTP responses, and HTTP servers
+Basic Python - writing methods and using modules with Python 3
+Command Line Interface - using CLI to install packages and run commands
+GitHub - using git with GitHub to clone repositories, create commits, push changes, pull branches, and create repositories
+We will be running Unix commands in a command line interface. MacOS and Linux support Unix commands natively. Windows users will need to use a tool like Git Bash to run Unix commands.
+
+Concepts You Should Understand
+Abstraction
+An abstraction simplifies a system by only exposing the parts that concern a user.
+
+Toaster Oven Example
+System: an electronic component composed of electrical wiring, a heating element, and a timer.
+Abstraction: a metal body used to heat toast
+The user never needs to concern themselves with the internals of the toaster and how the components that make up the toaster work together.
+
+A user never asks to buy a metal box with a heating element. Instead, they ask to buy a toaster.
+
+Interface
+Areas of interaction in a system.
+
+Toaster Oven Example
+We have defined ways for a user to interact with the toaster using the knobs and a spring-loaded lever.
+
+It's not possible for a user to turn on the heating element of a toaster without using the lever. The only way to turn on the heating element is by using the lever as an interface.
+
+
+New Terms
+Term	Definition
+Abstraction	Simplifying a system by only exposing parts that concern a user
+Interface	Defined areas of interaction to a system
+
+
+
+3.5 Introduction to Message Passing
+---------------------------------------
+
+Monoliths versus Microservices
+Monoliths and microservices are architectural designs on how to structure and deploy applications.
+A monolith is easier to maintain while a microservice offers more options for scalability with regards to business and technical concerns.
+
+Monolith
+A monolith application is one where all of the changes in code are deployed as one unit.
+Simply call the function for behavior that may be in another service or module.
+Application logic is all localized in the same deployment.
+
+Microservice
+A microservice application is one composed of individual services that can be deployed independently of one another.
+May not have the luxury of simply making a function call.
+We will need to rely on message passing to pass data between services.
+
+
+
+q1
+microservice
+
+q2
+microservice
+
+
+
+New Terms
+Term	Definition
+Message Passing	Transfer data between services with a structured object
+Monolith	An application that is deployed as a single unit
+Microservice	An application composed of applications that are deployed independently
+
+
+
+3.6 Message Passing Stackholders
+---------------------------------------
+
+Technical and Business Requirements
+While message passing is a technical concept, there are both technical and business considerations that drive the architectural design behind your applications. Stakeholders not only include the team's developers but also include business leaders and external teams. Engineers design to find a balance between cost, maintainability, efficiency, and reliability to satisfy technical and business requirements.
+
+Technical
+Cost - memory, CPU, and overhead needed to handle messages
+Maintainability - ease of modifications and enhancements
+Efficiency - the amount of time it takes to handle a message or multiple messages
+Reliability - messages being lost or improperly processed
+Business
+Cost - financial impact of paying for infrastructure
+Maintainability - financial impact of developers to upkeep the system; ease of integration for external customers
+Efficiency - productivity and cost-effectiveness of systems
+Reliability - risks for when a system becomes unavailable for the user; reputation of business services
+
+
+
+
+q1
+documentation
+
+3.7 When To Use Message Passing
+---------------------------------------
+
+
+3.8 History of Message Passing
+---------------------------------------
+
+
+3.9 Project: UdaConnect
+---------------------------------------
+
+
+3.10 Lesson Recap
+---------------------------------------
+
+
+
+
+3.11 Let's Get Started!
+---------------------------------------
+
+
+3.12 Lesson Glossary
+---------------------------------------
+
+
+
+
