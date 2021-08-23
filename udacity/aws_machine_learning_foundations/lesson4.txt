@@ -327,12 +327,19 @@ Scikit-learn
 Stack Overflow Blog
 
 
-4.19 
+4.19 Quiz: Documentation
 ---------------------------------------
+q1
+Comments are useful for clarifying complex code.
+Readable code is preferable over having comments to make your code readable.
+
+q2
+Docstrings explain the purpose of a function or module
+You can add whatever details you want in a docstring
 
 
 
-4.20 
+4.20 Version Control in Data Science
 ---------------------------------------
 
 
