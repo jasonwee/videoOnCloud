@@ -340,54 +340,169 @@ Below are two very insightful articles on a different perspective of opting to o
 
 2.13 Quizzes: Migrate from Monolith to Microservice
 ---------------------------------------
+q1
+A developer has been tasked with refactoring part of an application into microservices. Which of the following are appropriate approaches for reducing duplicate code?
+Keep the duplicate code as-is for now and reevaluate once the refactor is completed.
+Gather duplicate code into a common library. Microservices will import the library when needed.
+
+q2
+Code can more easily reference common logic
+Reduce complexity of managing multiple repos for developers working on the project
 
 
 2.14 Exercise: Migrate from Monolith to Microservice
 ---------------------------------------
+Applying Migrate from Monolith to Microservice
+Your task is to use the Strangler Pattern to refactor an application. Your goal is to move the Customers service and Customers route into a microservice for the frontend application. This means that you will strangle the Customers service and Customers Route as an independent API.
+
+The starter code can be found here: Flask Starter Code https://github.com/udacity/nd064-c2-message-passing-exercises/tree/master/lesson-1-refactoring-from-a-monolith/udacredit-monolith-starter
+
+Hint: To make your refactoring work in this exercise easier, you may find it easier to create a copy of API and working backwards to remove code.
+
+You can also use this dependency graph of the starter code:
 
 
 
 2.15 Solution: Migrate from Monolith to Microservice
 ---------------------------------------
 
-
+q1
+1. identify which service. For example service A.
+2. copy the api into another directory with the service name.
+2. start make changes to the codes in the new service directory. example removing all other service other than the service A.
+4. in the original directory, now remove service A off this api.
 
 
 2.16 Refactoring Live Services
 ---------------------------------------
 
+Given a code that is deployed in a live environment, how can we mitigate failures and negative business impact?
+
+Deploying code is not as simple as copy and pasting the latest changes.
+There are circumstances when we will need to perform a migration with minimal downtime.
+
+DNS Cutover
+A DNS cutover refers to how a DNS server points to IP addresses.
+We can change the IP address that a DNS is pointing to to roll out changes.
+For example, if we own www.foo.com that currently points to 192.168.0.0.1, we can possibly run another application on 192.168.0.0.2 and point our DNS to use the newer IP address instead. Then, users who visit www.foo.com will be landing in the newer resource.
+
+Rolling Updates
+Create a new deployment of our application with the latest changes. We now have two states of the application running at the same time: one with our old code and one with our new code.
+Verify that the latest code is working.
+Do a cutover and begin to serve traffic to the resource running the newer code.
+Remove the old resource once it is safe to do so.
+Rolling updates are a core feature of using Kubernetes to manage your containers and can easily help you achieve 0 downtime.
+
+Reverting Changes
+By localizing our changes, we have an easy way to revert any changes that cause unexpected errors.
+We can run new containers running our "strangled" pieces of application logic in tandem with the old application code
+If there's any issues, we can easily revert our changes and troubleshoot accordingly and minimize any additional downtime.
+
+New Terms
+Term	Definition
+DNS Cutover	changing the IP address to which a DNS points to
+Rolling Updates	releasing changes in a safe manner where old resources are removed once the new resources are verified to be healthy
 
 
 
 2.17 Quizzes: Refactoring Live Services
 ---------------------------------------
 
+q1
+Loading separate instances of an application with new code and verifying it works before configuring it to be used.
+Updating a Kubernetes deployment to always pull the latest Docker image in new pods so health checks can be validated.
+
+q2
+DNS Cutover
+Rolling Updates
+Revert
+Downtime
 
 
 2.18 Exercise: Refactoring Live Services
 ---------------------------------------
+if the code release to production does not work as expected to the existing api, then we will have api failure. We want to mitigate such scenario by using technique cutovers, that is , when the new api works as expected, only then we remove the old api.
+
 
 
 2.19 Solution: Refactoring Live Services
 ---------------------------------------
+Bad Practice!
+No accountability - having a record on what changes in code were made is important for troubleshooting
+No reproducibility - ad-hoc changes can make it difficult to reproduce a code in the live environment or in a development environment
+Changes can be lost - updates can be lost as code is merged
+
+Rollback Options
+No straightforward way to rollback failures - undoing code that was applied manually is cumbersome
+External state could have been modified - changes to an application don't always include only changes to code -- database tables may have been updated as well!
+Downtime to restore old code - reverting changes can take time
+
+q1
+if a few persons work on a same project and given standard deployment strategies, we can be sure code that release to production follow the same procedure, everyone will *know* and understand correctly. If a person did manual changes to production code, forget to commit in the repository, then the code might get lost when coworker do his release.
+
 
 
 2.20 When NOT to Refactor
 ---------------------------------------
+q1 
+A customer-facing application that has 75% uptime.
 
+
+q2
+Why should we consider creating our applications as monoliths?
+We may not need to use microservices at all
+
+
+
+Monoliths Aren't Bad!
+Microservices are a great way to approach designing systems but they should not be used without consideration of its tradeoffs!
+
+Don't build an application as microservices simply because it is popular.
+Microservices are intentional design decisions that optimize for your business use cases.
+As engineers, we should put intention behind our designs. We can start off with a monolith and find that we don't even need microservices!
+
+Too Much Abstraction
+Services and modules inside of our microservices should be optimized for business productivity.
+Code that may look elegant today will turn out to be a mess as other developers find it very difficult to work with unnecessarily complicated code.
+
+
+Further Reading
+Read the following to learn more about why monoliths are viable architectural solutions:
+https://robertnorthard.com/devops-days-well-architected-monoliths-are-okay/
+https://www.ben-morris.com/whats-so-bad-about-monoliths-anyway/
 
 
 2.21 Quizzes: When NOT to Refactor
 ---------------------------------------
+q1
+A user-facing application using a library that recently updated to address security vulnerabilities.
 
+q2
+An internal product made by an intern that is being released to users.
 
 
 2.22 Lesson Recap
 ---------------------------------------
 
+In this lesson, we learned how to:
+
+Analyze and understand decomposing a monolith
+How to approach building out a migration strategy with our monolith
+How to systematically approach a refactor using the Strangler Pattern
+How to refactor a live application
+In our next lesson, we'll learn about the concepts and purposes of different ways we can have our services communicate with one another.
+
+
 
 2.23 Glossary
 ---------------------------------------
-
+New Terms In This Lesson
+Term	Definition
+Dependency Graph	        A visual representation of how different components of a system interact with one another
+Distributed System	        Multiple nodes that communicate with one another as part of a system
+DNS Cutover	                Changing the IP address to which a DNS points to
+Do Not Repeat Yourself (DRY)	A principle in software that encourages code reuse and applicable abstractions
+Rolling Updates	                Releasing changes in a safe manner where old resources are removed once the new resources are verified to be healthy
+Strangler Pattern               A strategy for gradually refactoring pieces of a deployed application
 
 
