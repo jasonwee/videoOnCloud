@@ -129,31 +129,141 @@ Reliability - risks for when a system becomes unavailable for the user; reputati
 q1
 documentation
 
+
 3.7 When To Use Message Passing
 ---------------------------------------
+Message passing is not limited to microservices. It is a crucial design consideration that is applicable beyond your application.
+
+In an Application
+Message passing is a critical component of how microservices communicate with one another. One microservice may have logic that requires additional logic to be processed by another.
+
+In an Organization
+In an organization, we may have multiple teams responsible for different applications and services. It's common for different teams to collaborate with one another to solve business problems. As teams may have different technologies and code, it's important to establish a common ground on how services will pass messages to one another.
+
+Exposed Externally
+Beyond an organization, message passing drives SaaS businesses. In the past, a business may have sold CD-ROM's of their software. Today, it's common for businesses to sell you their software with defined ways to pass messages to their products and tools.
+
+q1
+A payments processing startup creates a REST API for its customers to integrate their system.
+
+
+New Terms
+Term	Definition
+SaaS(Software as a Service)	Software is hosted remotely by the vendor and its usage is licensed to users
+
 
 
 3.8 History of Message Passing
 ---------------------------------------
 
+The Problem
+Having two applications communicate with one another is complicated: programming languages have very distinct ways on how it's translated into byte code that executes on the machine.
+Even if two applications are written in the same programming language, it's hard to communicate directly with one another given how a system process is typically isolated from one another.
+
+The Message
+In order to enable synergy between different applications, we agree on a common way for applications to communicate via a language that is mutually understandable. We do this with messages.
+
+Example Context
+Assuming that you are building a web application that interfaces with this school's directory system, we will need to consider the message, message format, and how to pass the messages.
+
+Enrolling a student means that we want to create a record of the student in the system.
+We know that in this school system, we need to capture the student's first name, last name, email address, and date of birth.
+Creating a student in this system is equivalent to the following in human language: I want to create a new student in the system with <first_name>, <last_name>, <email_address>, and <date_of_birth>
+The Message Format
+Translating this into a programmatic payload is not practical -- the format is too loose and will be hard to process.
+To represent this data, we utilize data formats that are a balance between human-readability and machine-readability. Currently, the most popular formats are XML, YAML, and JSON.
+We could represent the message as the following format in XML, YAML, and JSON:
+
+XML
+<student>
+<first_name>John</first_name>
+<last_name>Smith</last_name>
+<email_address>johnsmith@udacity.com</email_address>
+<date_of_birth>01-01-1950</date_of_birth>
+</student>
+YAML
+first_name: John
+last_name: Smith
+email_address: johnsmith@udacity.com
+date_of_birth: 01-01-1950
+
+JSON
+since JSON originates from JavaScript, it's best practice to use camelCase instead of snake_case though it's not wrong to use the other!
+
+{
+"firstName": "John",
+"lastName": "Smith",
+"emailAddress": "johnsmith@udacity.com",
+"dateOfBirth": "01-01-1950"
+}
+
+These formats make it very easy for us to capture data and for our programs to process them. Drawing a comparison in Python, picture how much easier it is to extract values from a dict versus a str.
+
+Passing the Messages
+With our message format defined, we establish how these messages are passed and received. This is one of the core concepts in this course and will be covered in greater detail later in Types of Message Passing.
+
+API
+An Application Programming Interface (API) represents the message format and how we pass the message. It defines how we interact with software through a thoughtfully designed way to pass and receive data.
+To illustrate an API, let's look at how we order a pizza: we are provided a list of available toppings to add to a pizza. We request for the toppings that we want and the kitchen takes care of the rest. We don't necessarily care about how the pizza is made, just that we can go through the menu to get a pizza!
+
+Message passing is typically done through an API to establish a clean and consistent interface. Having a clean and thoughtfully designed API makes it easier for developers to create, maintain, and interact with our systems.
+
+
+q1
+Message formats provide accountability to how we pass our data
+
+
+New Terms
+Term	Definition
+API (Application Program Interface)	Defines how a user interacts with an application
+JSON	A format of human-readable messages that originates from JavaScript
+XML	A format of human-readable messages that uses very expressive tags similar to HTML
+YAML	A format of human-readable messages that is minimalist and less verbose
+
+
+
+
 
 3.9 Project: UdaConnect
 ---------------------------------------
+UdaConnect
+To wrap up the course, we will be working on refactoring an existing project named UdaConnect. UdaConnect is a Python application built using the Flask library. Udaconnect uses location data from participants at trade shows and conferences to recommend professional connections. The application is pretty simple and is built as an MVP. Armed with the knowledge from this course, we will refactor this application to microservices using optimal message passing techniques.
+
 
 
 3.10 Lesson Recap
 ---------------------------------------
+In this lesson, we went over:
 
+Course Overview
+Course Prerequisites
+What is Message Passing?
+Who Uses Message Passing?
+When to Use Message Passing?
+History of Message Passing
+Preview of the Final Project
 
 
 
 3.11 Let's Get Started!
 ---------------------------------------
+We've gone over how business and technical requirements have evolved into a state where message passing is an increasingly critical component of system design. I'm excited for us to become experts at message passing!
+
 
 
 3.12 Lesson Glossary
 ---------------------------------------
-
+New Terms In This Lesson
+Term	Definition
+Abstraction	Simplifying a system by only exposing parts that concern a user
+API (Application Program Interface)	Defines how a user interacts with an application
+JSON	A format of human-readable messages that originates from JavaScript
+Message Passing	Transferring data between services with a structured object
+Microservice	An application composed of applications that are deployed independently
+Monolith	An application that is deployed as one unit
+SaaS (Software as a Service)	Software is hosted remotely by the vendor and its usage is licensed to users
+XML	A format of human-readable messages that uses very expressive tags similar to HTML
+YAML	A format of human-readable messages that is minimalist and less verbose
 
 
 
