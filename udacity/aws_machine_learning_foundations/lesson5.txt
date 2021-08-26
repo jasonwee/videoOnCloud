@@ -1,0 +1,83 @@
+date start : 26 august 2021
+
+
+5.1 Introduction
+---------------------------------------
+Welcome To Software Engineering Practices, Part 2
+In part 2 of software engineering practices, you'll learn about the following practices of software engineering and how they apply in data science.
+
+Testing
+Logging
+Code reviews
+
+
+
+5.2 Testing
+---------------------------------------
+Testing
+Testing your code is essential before deployment. It helps you catch errors and faulty conclusions before they make any major impact. Today, employers are looking for data scientists with the skills to properly prepare their code for an industry setting, which includes testing their code.
+
+
+
+5.3 Testing and Data Science
+---------------------------------------
+Testing And Data Science
+Problems that could occur in data science aren’t always easily detectable; you might have values being encoded incorrectly, features being used inappropriately, or unexpected data breaking assumptions.
+To catch these errors, you have to check for the quality and accuracy of your analysis in addition to the quality of your code. Proper testing is necessary to avoid unexpected surprises and have confidence in your results.
+Test-driven development (TDD): A development process in which you write tests for tasks before you even write the code to implement those tasks.
+Unit test: A type of test that covers a “unit” of code—usually a single function—independently from the rest of the program.
+Resources
+Four Ways Data Science Goes Wrong and How Test-Driven Data Analysis Can Help: Blog Post
+Ned Batchelder: Getting Started Testing: Slide Deck and Presentation Video
+
+
+
+5.4 Unit Tests
+---------------------------------------
+
+
+5.5 Unit Testing Tools
+---------------------------------------
+
+
+5.6 Exercise: Unit tests
+---------------------------------------
+
+
+
+5.7 Test-Drive Development and Data Science
+---------------------------------------
+
+
+5.8 Logging
+--------------------------------------
+
+
+5.9 Log Messages
+---------------------------------------
+
+
+
+5.10 Quiz: Logging
+---------------------------------------
+
+
+
+5.11 Code Reviews
+---------------------------------------
+
+
+5.12 Questions for a Code Review
+---------------------------------------
+
+
+5.13 Tips for Conducting a Code Review 
+---------------------------------------
+
+
+
+5.14 Conclusion
+---------------------------------------
+
+
+
