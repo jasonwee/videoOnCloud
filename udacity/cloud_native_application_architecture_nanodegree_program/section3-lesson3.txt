@@ -1,0 +1,311 @@
+date start : 27 august 2021
+
+
+3.1 Lesson Overview
+---------------------------------------
+
+We have decided what our microservices will look like. Now that we have an idea of how to separate services, we will need to begin looking at how we can connect them.
+
+
+
+3.2 Why Learn About Message Passing Techniques?
+---------------------------------------
+
+One form of message passing less prone to errors than another.
+One form of message passing provides lower latency than another.
+One form of message passing uses less server resources so less hardware can be used.
+One form of message passing is easier to upkeep than another.
+
+
+
+3.3 How Experts Approach Message Passing
+---------------------------------------
+Overview
+Different types of message passing are utilized for different scenarios, and they are an integral part of building microservices.
+
+In Practice
+Design Considerations
+Choosing a message passing technique is a design consideration that weighs technical and business tradeoffs.
+There isn't always a solution that optimizes for every use case.
+Consider how the system will be affected by your design regarding cost, _maintainability, efficiency, and reliability.
+
+Cost
+Be aware of the technical and business implications of our solutions. An experienced engineer can craft solutions that fit within certain constraints.
+
+Maintainability
+Our code doesn't exist in a vacuum.
+Other developers often contribute to our projects.
+We should ensure that our solution is something that someone can reasonably adopt and work with.
+
+Efficiency
+Efficiency often refers to the performance of a system: the time it takes to process something.
+A system with poor performance can greatly impact the user experience or hinder business functionality.
+
+Reliability
+Downtime can be detrimental to our system.
+Solutions should be engineered in a way to mitigate downtime: isolate failures and fail gracefully otherwise.
+
+Perfection is Rare
+Since software is ever-changing, it is impractical to design a bulletproof solution that will withstand the test of time.
+Since we can't predict the future, we should design our system to satisfy our known business requirements. Our code can be engineered in a modular way and enables us to migrate or improve our design.
+
+Example: Cost Tradeoffs
+I was once tasked with designing a system to load and retrieve terabytes of data. I came up with the following solutions:
+
+Fastest Solution - load everything into Redis for $300k a month
+Fast Solution - load everything into a PostgreSQL cluster for ~$50k a month
+Good Solution - use PostgreSQL as a reverse index pointing to data stored in a filesystem ~$9k a month
+
+The cheapest solution was not the most performant but satisfied the business needs with regards to performance and cost. We ended up going with this approach and saved a lot of money!
+
+
+q1
+Adding a cache like Redis to optimize read performance against the database storing the timesheet details
+Setting up an auto-scaling application for the timesheet system in case the application can't handle the timesheets being entered
+Set up a new technology that a company released in a public beta a month ago that can potentially provide a better user experience for the client's users
+
+
+q2
+cost
+maintainability
+efficiency
+reliability
+
+
+3.4 REST Application and Best Practices
+---------------------------------------
+What is REST?
+REST stands for "REpresentational State Transfer" and is a set of guidelines on how to create web APIs. As it is a set of guidelines, it is open-ended and can be implemented in many ways.
+
+The industry has settled on a few ideas on best practices for designing APIs with REST.
+RESTful APIs and REST APIs are very popular terms today that refer to API's built implementing REST.
+RESTful APIs are the most common form of message passing today.
+
+Analogy
+It may seem odd that we have a notion of an "architectural style" that simply provides us guidelines on how to implement software. To draw an analogy, let's compare REST to DOT certification for motorcycle helmets:
+
+DOT-Certified Helmets
+DOT certification for helmets is a series of guidelines to implement a safe helmet to protect a rider during impacts.
+The organization that implemented the DOT certification does not enforce the certification: it's up to individual manufacturers to test their own products.
+
+A manufacturer may decide to use a certain type of foam over a specific type of rubber inside their helmets to absorb shock. One material may absorb more shock over another but cost slightly less. The helmet will still pass the DOT-certification guidelines. We can have many different types of DOT-certified helmets that are optimized for different levels of cost, comfort, safety, and aesthetics.
+
+RESTful API's
+Similarly, REST guidelines involve setting up a stateless, client-server relationship leveraging HTTP. How an API makes itself RESTful is open-ended.
+
+Building a RESTful API is not a plug-and-play solution and involves architectural designs of its own.
+We have many options on how to build a RESTful design. For example, in a RESTful API endpoint, we can choose to potentially add a cache to improve performance at the expense of additional infrastructure, maintenance, and development.
+
+Properties of RESTful APIs
+1. Client-Server
+A client makes a request and receives a response from the server.
+This relationship provides a good notion of isolation between the client and server: the client doesn't necessarily need to know all the details in how the server is implemented.
+
+2. Statelessness
+The server should not be keeping track of the context of client requests.
+Each inbound request should have all the information necessary to process the request. This makes the API easier to implement for the server and more predictable for the client.
+
+3. Cacheability
+Responses can potentially be cached for improved performance.
+This is a server-level detail and abstracted from the client; clients shouldn't care about their responses being cached.
+
+4. Layered System
+The client makes requests against an API endpoint and receives a response. The request may have gone through layers of a system.
+For example, it may have gone through a proxy, load balancer, different services, etc. before being processed into a response. This is a server-level detail and abstracted from the client; clients shouldn't need to care about the layers involved in their requests.
+
+5. Uniform Interface
+The interface should be consistent, and API messages and endpoints should be self-describing.
+
+REST Anatomy
+REST is built on top of HTTP requests and responses.
+
+HTTP Request
+An HTTP request is sent to the server by the client.
+
+Method - the type of action being taken (POST, GET, PUT, PATCH, DELETE)
+Endpoint - URL to send the request
+Header - additional metadata
+Body - content (typically in JSON format)
+HTTP Response
+An HTTP response is returned to the client by the server.
+
+Response Code - status of the HTTP request
+Header - additional metadata
+Body - content (typically in JSON format)
+Methods
+REST utilizies HTTP methods to define the "verb" of the request. While there are a lot of HTTP methods available, REST typically uses:
+
+POST - create
+GET - retrieve
+PUT - replace
+PATCH - update
+DELETE - delete
+While not enforced, it's a convention to not include a request body with GET and DELETE methods.
+
+RESTful API Example
+Imagine that a supply manager uses an API to manage inventory.
+
+Items Message
+The inventory needs to capture information on the unique ID, brand, name, and weight of the inventory item.
+
+We can model this as a JSON object. This captures the data that we need to pass for our system to maintain data on inventory items.
+
+    {
+        "id": <item_id: string>,
+        "brand_name": <string>,
+        "name": <string>,
+        "weight": <float>
+    }
+REST API Interface
+The following is an example of a REST API interface that can add items to a warehouse shipment.
+
+Retrieve Item
+GET /api/items/<item_id>
+
+Request Headers
+Content-Type: application/json
+
+Response Body
+{
+    "id": <item_id: string>,
+    "brand_name": <string>,
+    "name": <string>,
+    "weight": <float>
+}
+Create Item
+POST /api/items/<item_id>
+
+Request Headers
+Content-Type: application/json
+
+Request Body
+{
+    "id": <item_id: string>,
+    "brand_name": <string>,
+    "name": <string>,
+    "weight": <float>
+}
+Response Body
+{
+   "id": <item_id: string>,
+    "brand_name": <string>,
+    "name": <string>,
+    "weight": <float>
+}
+REST API Specification Format
+REST relies heavily on documentation. In general, we will need to include details about our:
+
+URL
+Request Type
+Headers (if applicable)
+Body (if applicable)
+Response Code
+URL
+The URL documents the endpoint as well as path parameters or query parameters.
+
+/api/items/<item_id>?created_by=<user_id>
+
+item_id is a path parameter. It's often used to set the ID of the resource being queried.
+user_id is a query parameter. It's often used to control how the data is returned.
+Request Type
+The Request Type is an HTTP response code. It's often included with the URL.
+
+GET /api/items/<item_id>?created_by=<user_id>
+
+GET indicates that the endpoint supports an HTTP GET request
+Headers
+Headers are key-value pairs of data. They are often represented by a single string separated by a : character.
+
+Content-Type: application/json
+
+Content-Type is the key and application/json is the value
+Body
+The body is most often a JSON object. There are many ways to document JSON objects and I prefer the following syntax.
+
+    {
+        "id": <item_id: string>,
+        "brand_name": <string>,
+        "name": <string>,
+        "weight": <float>
+    }
+id captures the key of what the data represents
+<item_id: string> tells us that the field represents an item_id and that it is a string type.
+<string> tells us that the field is a string type. The field was self-describing enough that we don't have describe what it is representing.
+Response Code
+The response code informs us of the result of the request. It's often captured as a string that returns us the code and its status. 200 OK
+
+200 is the HTTP response code
+OK is the definition of the 200 response. This isn't always needed because HTTP 200 will never mean anything other than an OK so it may be redundant.
+
+
+New Terms
+Term	Definition
+REpresentational State Transfer (REST)	An architectural style used to describe how to create web services
+Statelessness	Context is not tracked between requests
+Cacheability	Ability to store data for efficient retrieval to optimize performance
+Client-Server	Relationship where a server provides data to a client that doesn't necessarily need to know the internals of the server's logic
+Uniform Interface	Different parts of the interfaces should look familiar and be consistent
+
+
+
+3.5 REST APIs In The Real World
+---------------------------------------
+REST API Best Practices
+An elegant RESTful API can become a major selling point for a software company.
+
+Over time, the industry has narrowed in on best practices for building useful RESTful APIs. A great way to learn how to develop a useful API is to review examples from businesses that have been successful partly due to their well-thought-out interfaces.
+
+Example Google Drive API
+The Google Drive API is a great example of how we can design a message and expose it through an API. The concept of a file in a filesystem should be a familiar concept and can help provide more clarity on real-world use cases of REST. The Google Drive API is a concrete example of how to capture this data and its interface with REST.
+
+It shows how a File is captured as a JSON object and how to interact with it.
+
+A Files message is used as an object representing a file in Google Drive.
+The methods define actions one can make to interact with files.
+Learn More About RESTful APIs
+API Documentation
+Below, I've provided a few companies that are well-known for their APIs. Take a look at some similarities and differences in how they have implemented their APIs to fit their business needs. I highly encourage you to browse -- or even play with -- a few of these!
+
+Stripe - Payment processing product
+Twilio - SMS integration product
+Plaid - Bank integration product
+Trello - Project management product
+Digital Ocean - PaaS for hosted infrastructure
+
+
+
+3.6 Quizzes: REST Application and Best Practices
+---------------------------------------
+q1
+statelessness
+cacheability
+layered system
+uniform interface
+
+q2
+request body
+request header
+url parameter
+url path
+
+
+
+3.7 Exercise: Design a RESTful API Interface
+---------------------------------------
+Design a RESTful API Interface
+Before building out an API, it's common to scope out the requirements and model our business requirements into RESTful API interfaces. We will be looking at building a RESTful API endpoint for a hypothetical situation using the concepts we have just learned.
+
+You are part of the IT department for a large national corporation. Every team currently has ad-hoc processes for ordering corporate equipment and the overhead to manage the expenses is becoming unmanageable. The company wants to streamline orders by building a platform to order computer equipment. As part of this initiative, the company wants to build a RESTful API to enable integrations with existing internal portals. Before the development work can begin, you need to design a RESTful API interface for computer orders.
+
+Exercise: Design a RESTful API Interface Task List
+We want to implement the following functionality:
+
+Place an order for a computer
+Get all computer orders
+When a user orders a computer, we want to allow users to specify equipment such as a keyboard or a webcam to include with the order.
+
+An order should contain information on the user who created the order, the status of the order, the time the order was placed, and additional equipment.
+
+
+
+
