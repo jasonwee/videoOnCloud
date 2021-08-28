@@ -308,4 +308,473 @@ An order should contain information on the user who created the order, the statu
 
 
 
+3.8 Solution: Design a RESTful API Interface
+---------------------------------------
+My Solution
+Part 1: Create An Order
+
+There are many solutions we can formulate for this exercise. Here are a few examples and rationale for each approach.
+
+Order a Computer
+POST <BASE_URL>/api/orders/computers
+
+Here, I've set up a dedicated endpoint for computers. The notion of making an order should be the creation of a computer resource.
+For a uniform interface, I would opt to keep all my resources plural. Instead of computer, I use computers. If I were to create another endpoint for chairs, I would name it chairs to maintain a uniform interface.
+
+Request
+Request HeaderContent-Type: application/json
+
+Using application/json is a pretty standard header to inform the server that you intend to pass in a JSON response body.
+
+
+Request Body
+
+{
+    "order_id": <order_id: str>,
+    "created_by": <user_id: str>,
+    "status": <status_enum: str>,
+    "created_at": <isoformat_timestamp: str>,
+    "equipment": [
+        <equipment: str>
+    ]
+}
+
+This syntax is my personal preference for writing quick notes about how a JSON object should look. You'll notice that many fields are strings in JSON even if they are represented as objects when deserialized. For example, created_at would be a DateTime field in Python, but we have it represented as a string.
+Since this is a computers endpoint, we have a field dedicated to specifying the equipment.
+
+Response
+Response Code201 Created
+
+A successful response indicates that the resource has been created as requested.
+
+Response Body
+
+{
+    "computer_orders": [
+        {
+            "order_id": <order_id: str>,
+            "created_by": <user_id: str>,
+            "status": <status_enum: str>,
+            "created_at": <isoformat_timestamp: str>,
+            "equipment": [
+                <equipment: str>
+            ]
+        }
+    ]
+}
+
+It is good practice to set your request and response bodies to be the same to increase the uniformity and portability of the API.
+
+Part II: Retrieve An Order
+
+Get computer orders
+GET <BASE_URL>/api/orders/computers
+
+Instead of asking the server to create computers resources, we request for them
+
+Request
+Request HeaderContent-Type: application/json
+
+Response
+Response Code200 OK
+
+A successful response to inform the client that nothing wrong has happened. Often, the first thing code will check for is a successful response.
+
+Response Body
+
+{
+    "computer_orders": [
+        {
+            "order_id": <order_id: str>,
+            "created_by": <user_id: str>,
+            "status": <status_enum: str>,
+            "created_at": <isoformat_timestamp: str>,
+            "equipment": [
+                <equipment: str>
+            ]
+        }
+    ]
+}
+Again, this is very similar to the API resources from before. We reuse the same structure and essentially define what it means to be a computers API object.
+
+Alternative Solution
+POST <BASE_URL>/api/orders
+
+{
+    “order_id”: <order_id: str>,
+    "created_by": <user_id: str>,
+    "status": <status_enum: str>,
+    "created_at": <isoformat_timestamp: str>,
+    "details": {
+        "type": <type_enum: str>,
+        "equipment": [
+            <equipment: str>
+        ]
+    }
+}
+
+If our options for orders are more diverse, it may not make sense to have every possible order item as an endpoint. If that's the case, we may opt to maintain a uniform API interface and handle all of our order items with the same endpoint. We know that every order will need a created_by, status, created_at fields. We can stick order-specific details into the details field. It really depends on the business use case.
+
+
+q1
+your solution is much more uniform. i don't think the response result to be.
+
+
+
+3.9 Using gRPC
+---------------------------------------
+Introduction to gRPC and Protobuf
+
+What is gRPC?
+A message passing technique developed by Google in 2015.
+gRPC stands for g* Remote Procedure Calls where the g stands for something different in every release of gRPC. For example, the g in gRPC 1.12 stands for glorious.
+Programming-language agnostic
+Seeing greater traction and adoption in the industry.
+Compared to REST, gRPC provides greater performance at the expense of less flexibility.
+Clients that call gRPC can treat it as a method call in their own application by stubbing the gRPC service.
+Does not require an HTTP library to make an API request because the application code can call a method that is "hooked up" to a gRPC service internally.
+gRPC is Fast!
+Leverages HTTP/2 for transporting messages
+Transports binary data
+Uses protocol buffers (protobufs) for efficiently transporting structured data
+HTTP/2
+gRPC takes advantage of the HTTP/2 protocol.
+There are changes introduced in HTTP/2 that improve the overall security and performance of the web.
+We need to acknowledge the fact that by using HTTP/2, gRPC can significantly improve its performance with regards to response sizes and overhead of connections.
+For more details on HTTP/2, I encourage you to visit the Additional Reading section below.
+
+Message Sizes
+Messages are transmitted as binary data.
+This reduces the overall size of the payload and thereby improving the request and response times.
+Connections Overhead
+Traditionally, an HTTP request could end up creating more HTTP requests that are blocking in nature.
+HTTP/2 helps reduce this overhead and make more efficient use of resources by multiplexing its data with a unique connection between the client and server.
+Protocol Buffers
+A Protocol buffer, also known as a protobuf, is another way to serialize messages. We can think of it as an alternative to JSON or YAML with its set of tradeoffs.
+gRPC uses protobufs to pass its messages.
+Protobuf messages are designed to be backward and forwards compatible.
+Clients that are processing a message expecting an older or newer version of the message will simply ignore fields they don't recognize.
+Structured Data
+Using protocol buffers helps us clearly define and lock down our interfaces to provide type safety and less confusion.
+Analogy
+We can think of using a dict versus using a class in Python:
+
+The dict is flexible but doesn't have enforcement on what values go into it. A client reading a dict may run into `KeyErrorException'errors from trying to read bad data.
+A class defines which fields are used and sets up a straightforward interface. dict 's are very flexible and allow us to be more efficient at the expense of safety.
+A dict is similar to using REST while a class is similar to using gRPC.
+
+Binary Data
+Protobufs are designed to be serialized into binary blobs, making it very efficient to transport our data "over the wire" through a network.
+Compared to human-readable formats like JSON: these binary messages can't be read without first being decoded and we can't simply craft a binary message in our text editors.
+Message Size
+Message size matters in response times for APIs.
+A message that's 50 bytes will respond much faster than a message that is 50 Mb in size. In the context of an API that is processing thousands of requests per second, the effects of message size can add up!
+Protobuf messages passed in gRPC are significantly smaller in size than message formats like JSON:
+
+Binary encodings are efficient and have a small footprint.
+JSON has a lot of brackets and syntax that increase the size of the payload.
+Decoding
+Since protobufs are a form of structured data, the binary data can be decoded very quickly. Compare this with a format like JSON, which is simply an unstructured string that needs to be parsed into some data structure before it can be properly consumed.
+Protobuf Messages
+
+When we create a protobuf message, we are defining the format of the message.
+
+Protobuf vs. JSON
+Protobuf messages define what an item must be. JSON defines what an item should be.
+
+Protobuf - breaks if schema is modified and is strictly typed
+JSON - schema can be modified and typing is not enforced
+Protobuf message
+
+message Item {
+  string name = 1;
+  string brand_name = 2;
+  int32 id = 3;
+  float weight = 4;
+}
+The message defines the fields for theItem field.
+
+Each field has a type associated with it.
+The integers at the end of each field are not values but are assignments used to declare field numbers. These are crucial in helping protobuf handle binary blobs of data.
+Note that you may see some examples in other sources use required and optional for the fields in their messages. Those were removed in the proto3 version.
+
+JSON message
+
+{
+ "id": <item_id: string>,
+    "brand_name": <string>,
+    "name": <string>,
+    "weight": <float>,
+}
+Binary Data
+Protobufs are designed to be serialized into binary blobs, making it very efficient to transport our data "over the wire" through a network.
+Compared to human-readable formats like JSON: these binary messages can't be read without first being decoded and we can't simply craft a binary message in our text editors.
+Message Size
+Binary data also helps reduce the size of messages. Data is stored in a way that is efficient for machines to process but unreadable for humans.
+
+Message size matters in response times for APIs.
+A message that's 50 bytes will respond much faster than a message that is 50 Mb in size. In the context of an API that is processing thousands of requests per second, the effects of message size can add up!
+
+Protobuf Service
+Unlike REST, we also define how our API messages are used in gRPC.
+Protobuf services define our input and outputs of our services.
+Service ItemService {
+    rpc Create(ItemMessage) returns (ItemMessage)
+}
+In the example above, we declare that an ItemService has a method that accepts an ItemMessage and returns an ItemMessage
+
+Sets strict interface on how a user is expected to interact with the service.
+No logic needs to be implemented; we simply define how a user will interact with ItemService
+Using gRPC
+
+By using binary data, Protobuf messages passed in gRPC are significantly smaller in size than message formats like JSON:
+
+Binary encodings are efficient and have a small footprint.
+JSON has a lot of brackets and syntax that increase the size of the payload.
+Decoding
+Since protobufs are a form of structured data, the binary data can be decoded very quickly. Compare this with a format like JSON, which is simply an unstructured string that needs to be parsed into some data structure before it can be properly consumed.
+gRPC vs. REST Overview
+REST has wider adoption
+gRPC is more structured
+gRPC is faster out-of-the-box
+In general, gRPC provides more speed and structure at the expense of less flexibility and more overhead of setup.
+
+Use Cases for gRPC
+There are many uses cases for gRPC.
+
+Need for Speed
+gRPC boasts better performance than REST, but this doesn't mean that we should default to using gRPC for everything.
+REST currently has significantly more adoption than gRPC, and REST can be designed to be very performant.
+Microservices
+Microservices communicate with one another via a network and rely on message passing.
+Network calls inherently take more time to process than functionality contained in a single network like most monoliths.
+For internal systems that dictate fast performance, gRPC may be used by modules in a microservice to pass messages with one another.
+Mobile Devices
+Mobile devices can integrate well with gRPC without an intermediary proxy to the backend service.
+Applications can invoke function calls directly as if it were local code. To illustrate with Python, the method can accept objects instead of serializing and deserializing a dict object.
+
+gRPC Protobuf Requirements
+Basics
+These the minimum requirements for a gRPC protobuf message:
+
+Typing - type definition such as if a field is a string, float, etc
+Field Name - the key for the value you are storing data
+Order Number - used by gRPC for managing binary serialization
+Some Other Features
+These are a few features of protobufs that enrich our message definitions:
+
+Enum - denotes what values a string can be
+Nested Type - define a type as a user-defined type such as an enum
+Default Value - set gRPC to set a default value when none is provided
+To learn more about available features, I encourage you to reference the Proto3 Language Guide.
+
+We've gone over how to create protobuf messages. We will learn about how to introduce them into our application code to build clients and servers in the next lesson.
+
+New Terms
+Term	Definition
+gRPC	Programming-agnostic way of passing messages as protocol buffers to enforce a strict interface
+HTTP/2	More secure and performant way of making HTTP requests that is backwards compatible
+Protocol buffers	A way to serialize structured data optimizing simplicity and performance
+Learn More About gRPC
+While we went over some concepts on a higher level, the following are some resources if you would like to dive into more detail about them:
+
+Protobuf
+HTTP/2
+
+
+
+3.10 Quizzes: Using gRPC
+---------------------------------------
+q1
+Protocol Buffers (protobuf)
+http/2
+binary data
+structured data
+
+q2
+gRPC requires fewer developer resources to implement
+gRPC and REST both use JSON to structure messages
+REST is often used over gRPC because it is more performant out-of-the-box
+
+
+
+3.11 Exercise: Planning for gRPC
+---------------------------------------
+Using gRPC
+News of our computer ordering service has made its way to other departments in the organization. After using the service to place multiple orders, some data scientists have decided that they want to perform analysis on the financial department's computer orders! We don't need to understand how their models work, but we need to set up a way to retrieve the data. Their team leverages gRPC for its strong performance and strict data structuring to run their models.
+
+For your reference, the following is the sample protobuf message that was introduced in the lesson:
+
+syntax = "proto3";
+
+
+message Item {
+  string name = 1;
+  string brand_name = 2;
+  int32 id = 3;
+  float weight = 4;
+}
+
+Service ItemService {
+    rpc Create(ItemMessage) returns (ItemMessage)
+}
+
+Exercise: Use Cases of gRPC
+Plan for the gRPC service by creating the protobuf message and computer ordering service.
+
+To customize the computer orders, we want to allow users to specify the equipment that they want on the computer. An order should also include the user who created the order, the status of the order, and the time an order was placed.
+
+Using the proto3 syntax, create the message and services for our computer ordering application. You may find it useful to use your previous JSON solution as a starting point and reference the protobuf documentation.
+
+
+
+3.12 Solution: Planning for gRPC
+---------------------------------------
+Simple Solution
+From our previous exercise, we know that a possible way to structure an Order resource looks like this:
+
+JSON
+{
+    "order_id": <order_id: str>,
+    "created_by": <user_id: str>,
+    "status": <status_enum: str>,
+    "created_at": <isoformat_timestamp: str>,
+    "equipment": [
+        <equipment: str>
+    ]
+}
+
+Protobuf Message - Simple Solution
+message OrderMessage {
+  string order_id = 1;
+  string created_by = 2;
+  string status = 3;
+  string created_at = 4;
+  repeated string equipment = 5;
+}
+We are essentially mapping the JSON message into a Protobuf message. This may seem a little trivial -- the only benefit we get is that the fields have enforced typing of strings.
+
+With JSON, typing isn't enforced and we need application code to validate the type. For example, if we can pass order_id as an int instead of a string in JSON messages but protobuf messages will raise an error.
+
+Service
+Since our OrderMessage is used as both the request and response, our service can be easily defined as:
+
+service OrderService {
+    rpc Create(OrderMessage) returns (OrderMessage);
+}
+Create an Even More Amazing Protobuf Message
+
+Protobuf Message - Better Solution
+Valid Strings in JSON
+When we look at the fields captured in our object, what exactly constitutes a valid status field? When implemented into REST, we often write application code to check this value in the JSON message to ensure that it is one of Queued, Processing, Completed, and Failed.
+
+Valid Strings in Protobuf
+We can leverage protobuf so that our messages have built-in validation and we don't have to write additional code to validate the messages. The following is an example of using enumerated values to build a strict, structured message that makes our messages easy to process.
+
+Protobuf Message Example
+
+message OrderMessage {
+ enum Status {
+    Queued = 0;
+    Processing = 1;
+    Completed = 2;
+    Failed = 3;
+  }
+
+  enum Equipment {
+    Keyboard = 0;
+    Mouse = 1;
+    Webcam = 2;
+    Monitor = 3;
+  }
+
+  string id = 1;
+  string created_by = 2;
+  Status status = 3;
+  string created_at = 4;
+  repeated Equipment equipment = 5;
+}
+
+Instead of passing strings to the status and equipment, we enforce that only one of the Status and Equipment enum's are valid inputs.
+
+Comparisons
+Overall, protobuf messages are more strict and allow you to have built-in validations.
+
+RESTful APIs using JSON are deliberately very flexible, and those who want to add more data validation into their applications rely on 3rd party libraries. For example, Python applications often use tools like marshmallow to validate data by performing validations, such as ensuring that the value in a field is a string.
+
+
+q1
+if you want to quickly prototype , json is very suitable. When speed matter, just use protobuf.
+
+￼
+
+3.13 Using Message Queues
+---------------------------------------
+Why Do We Need Message Queues?
+
+Mailbox Analogy
+Message queues are similar to handling mail delivery
+
+A small business can answer the door to receive every piece of mail as it arrives.
+As the business becomes larger, and mail volume grows, mail delivery becomes disruptive so the business can set up an unattended mailbox where the mail can be dropped off.
+Over time, the business may need to set up multiple mailboxes to handle the volume of mail
+At some point it becomes helpful to set up a Post Office box to receive all of the inbound mail and distribute the accumulated mail to various mailboxes by the company
+Message Queues
+Message queues improve performance, improve reliability, and enable decoupling of our systems
+
+RabbitMQ can be helpful to set up a simple queue.
+A distributed queue like Kafka may be needed for large volumes of data
+When we can't handle the load of messages, or if we want to process our messages in batches instead of on-demand, or avoid losing messages during downtime, a message queue is a great solution.
+
+Performance
+A common source of latency in APIs is waiting for an API response. Queues allow us to do other things instead of idly waiting for a response from the server.
+
+Synchronous Request
+Usually, when we submit an HTTP request, it may take a few seconds for some backend logic to process everything.
+While it's processing, we are idly waiting either for a result or for an HTTP timeout to bail us out of an irregularly long wait time. The property of waiting for a process to complete is synchronous.
+Asynchronous Request
+With an asynchronous request, we can make better use of our time by doing something else instead of waiting for the server to respond.
+In practice, this means that we design an API endpoint that will acknowledge a request immediately but not return any desired data.
+Reliability
+A generic API has a lot of custom business functionality. There are many moving parts and it is designed to address business values.
+A message queue is intentionally designed to do a few things very well: remain available to accept messages.
+Using a queue, we can have our systems available for clients, even if other parts of the service may not be functioning.
+Decoupling
+Designing with queues helps provide us a guideline for how we want to create cleanly decoupled systems. While this is not absolute, if it makes sense to use a queue, there's a good chance that we have identified a part of our service that can be decoupled into its own service. Message queues and microservices go hand-in-hand!
+
+New Terms
+Term	Definition
+Message Queue	Storing messages to set up performance, improve reliability, and enable decoupling of our systems
+Synchronous	A blocking action that will wait for a process to finish before proceeding
+Asynchronous	A non-blocking action that will continue while a process is still ongoing
+Decoupled	Different systems that can be modified without affecting the other
+Kafka	An open-source distributed message broker
+RabbitMQ	An open-source message broker
+Learn More About Message Queues
+The following are some additional resources for learning about 3 types of popular queues: Kafka, RabbitMQ, and AWS SQS.
+
+Kafka Use Cases
+RabbitMQ
+AWS SQS
+
+
+3.14 Quizzes: Message Queues
+---------------------------------------
+q1
+asynchronous
+synchronous
+reliability
+decoupling
+kafka
+
+q2
+A service periodically runs out of memory and fails during business hours with heavy traffic
+A service runs once a night to process batched requests
+A service produces a message that needs to be processed by multiple consumers
+
+
+
+3.
+---------------------------------------
+
 
