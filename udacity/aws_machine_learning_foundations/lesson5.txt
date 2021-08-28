@@ -79,14 +79,45 @@ README
 
 5.7 Test-Drive Development and Data Science
 ---------------------------------------
+Test-driven development and data science
+Test-driven development: Writing tests before you write the code that’s being tested. Your test fails at first, and you know you’ve finished implementing a task when the test passes.
+Tests can check for different scenarios and edge cases before you even start to write your function. When start implementing your function, you can run the test to get immediate feedback on whether it works or not as you tweak your function.
+When refactoring or adding to your code, tests help you rest assured that the rest of your code didn't break while you were making those changes. Tests also helps ensure that your function behavior is repeatable, regardless of external parameters such as hardware and time.
+Test-driven development for data science is relatively new and is experiencing a lot of experimentation and breakthroughs. You can learn more about it by exploring the following resources.
+
+Data Science TDD
+TDD for Data Science
+TDD is Essential for Good Data Science Here's Why
+Testing Your Code (general python TDD)
+
 
 
 5.8 Logging
 --------------------------------------
+Logging
+Logging is valuable for understanding the events that occur while running your program. For example, if you run your model overnight and the results the following morning are not what you expect, log messages can help you understand more about the context in those results occurred. Let's learn about the qualities that make a log message effective.
+
 
 
 5.9 Log Messages
 ---------------------------------------
+Log messages
+Logging is the process of recording messages to describe events that have occurred while running your software. Let's take a look at a few examples, and learn tips for writing good log messages.
+
+Tip: Be professional and clear
+Bad: Hmmm... this isn't working???
+Bad: idk.... :(
+Good: Couldn't parse file.
+Tip: Be concise and use normal capitalization
+Bad: Start Product Recommendation Process
+Bad: We have completed the steps necessary and will now proceed with the recommendation process for the records in our product database.
+Good: Generating product recommendations.
+Tip: Choose the appropriate level for logging
+Debug: Use this level for anything that happens in the program. Error: Use this level to record any error that occurs. Info: Use this level to record all actions that are user driven or system specific, such as regularly scheduled operations.
+
+Tip: Provide any useful information
+Bad: Failed to read location data
+Good: Failed to read location data: store_id 8324971
 
 
 
