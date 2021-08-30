@@ -1,0 +1,63 @@
+date start : 30 august 2021
+
+
+4.1 Lesson Overview
+---------------------------------------
+Implementing Message Passing
+
+So far in our course, we have learned:
+
+How and when it makes sense to take apart a monolith application into microservices
+Different forms of message passing with REST, gRPC, and message queues.
+
+In this lesson, we will be working on applying and implementing message passing techniques. We will learn about how to set up servers and clients for:
+
+REST
+gRPC
+Kafka
+
+Programming Language: Python
+We will use common libraries and tools to implement these technologies.
+
+Once you have a core understanding of how to implement a message passing technique with Python libraries, you should be able to use these technologies in other contexts.
+
+By the end of this lesson you will be able to:
+
+Use REST to implement a RESTful API and consumer
+Use gRPC to implement a gRPC server and client
+Use Kafka to implement a distributed message queue
+
+
+
+4.2 Why Does Implementing Message Passing Matter?
+---------------------------------------
+Why Does Implementing Message Passing Matter?
+
+By implementing well thought-out designs, we can save money in infrastructure costs or we can enable our services to run with minimal downtime to prevent loss of business.
+
+Business Importance
+Message passing today is integral to an industry where businesses can leverage integrations from Software as a Service providers.
+
+Some businesses have thrived partly due to their well-crafted APIs. Their well-crafted APIs and supporting documentation can be a defining factor for adoption.
+
+Freemium Models
+Today, it is common for businesses to offer a freemium model: hobbyists can sign up and use a free service within some usage limits.
+
+Once the users have a good experience using the tools and integrations, it is common for them to gravitate towards using them in their professional roles.
+An API that is unreliable and has a poor user experience would be a great hindrance to the adoption of the business' tools and services.
+
+Technological Importance
+It's important to make decisions on technologies that will satisfy today's business requirements as well as provide a roadmap for future iterations.
+We need to understand the inspirations for certain message passing techniques and how they can be improved if business requirements change.
+It's not a good idea to blindly apply trendy technologies without understanding the impact that it will have.
+Throughout your career, new trends will come and go with different technologies that one can use in their systems.
+You should be able to weigh the tradeoffs of these tools and build maintainable systems that will have a great business impact.
+
+q1
+Create and maintain documentation for developers to understand how to use and implement the API
+Ensure that new changes to the API won't break existing code implemented by users
+Set up a reliable infrastructure to reduce the downtime that services experience
+
+
+
+
