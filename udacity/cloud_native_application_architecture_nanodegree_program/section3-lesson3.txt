@@ -774,7 +774,200 @@ A service produces a message that needs to be processed by multiple consumers
 
 
 
-3.
+3.15 Exercise: Using Message Queues
 ---------------------------------------
+How Can Message Queues Help?
+Your company wants to invest more in the computer ordering service! The tool is very popular and usage is expected to grow. On top of that, they want to build out a tool that enables customers to track the status of the computers as it goes through the fulfillment process. The fulfillment process involves an order being placed, registered, acknowledged, processed, and shipped. The company will be using various sensors to track where the computer order is in the fulfillment process -- you simply need to worry about providing an interface for this data to land.
+
+Leverage message queues to show how they can be used to handle the increasing requests from customers and how the computer order tracking system can be used.
+
+q1
+when api load increase, the processing capacity might not enough or sufficient to process the request in real time. If the thread is waiting for the backend to process, it might hang the application server. Message queue allow the api server request to receive and acknowledge the request and process it later or soonest possible.
+
+
+q2
+if a message broker is down for some reasons, there is redundancy in this case. API serer will still able to access message broker even if one of it is down. So in this case, API request still can be fulfill correctly.
+
+
+
+3.16 Solution: Using Message Queues
+---------------------------------------
+My Solution
+How Can a Message Queue Alleviate the Increased API Load?
+Kafka is very useful for handling large volumes of data -- especially data that comes in as events. We will be expecting a large stream of events as they come in from our service. This will help prevent our server from crashing due to load but our messages will be backlogged as we won’t be able to process them more quickly.
+
+How Can a Distributed Message Broker Help?
+Databases are designed for specific use cases and often not optimized to function as a message broker. Using a queue should require high write performance. MySQL will lock table rows and prevent more than one resource from updating a row at a time. This can cause delays and even issues for data entering our makeshift queue. This implementation will also require a lot of custom logic to reshape the database into a queue.
+
+q1
+Receiving event such as logging data.. Logging data comes with large volume and frequency. By putting such event into message queue, it can be process correctly at the backend whilst response quickly to the caller request.
+
+
+
+3.17 Other Technologies
+---------------------------------------
+Other Technologies
+Prior to REST's takeover as the industry standard, SOAP was a very popular tool used for message passing. Today, it's mostly found in enterprise applications that were written before the advent of REST's popularity.
+
+SOAP required using XML and was rigid in how its messages were defined. Creating a message requires defining a lot of parameters with the following format:
+
+<?xml version = "1.0"?>
+<SOAP-ENV:Envelope xmlns:SOAP-ENV = "http://www.w3.org/2001/12/soap-envelope" 
+   SOAP-ENV:encodingStyle = "http://www.w3.org/2001/12/soap-encoding">
+
+   <SOAP-ENV:Header>
+      # Header data here
+   </SOAP-ENV:Header>
+   <SOAP-ENV:Body>
+      # Body data here
+      <SOAP-ENV:Fault>
+        # Error handling here
+      </SOAP-ENV:Fault>
+   </SOAP-ENV:Body>
+</SOAP_ENV:Envelope>
+
+q1
+REST is open-ended on message formats and enables you to use XML or JSON
+REST is less rigid and enables faster development cycles
+XML is too verbose
+
+
+Mindset
+There are other technologies available to facilitate message passing. In this lesson, we have gone over a few of the major ones.
+
+As technology is continuously evolving, we should be cautiously adopting new industry norms.
+We should utilize best design practices to understand what solution or technology works best to solve your problem!
+Informed Decisions
+As we learn about new technologies and techniques for message passing, we should be keen on avoiding buzzwords and make informed decisions on when to adopt something new.
+
+Technological Benefits
+We should look at how scale, availability, cost, and reliability vs. other solutions.
+
+Example: Comparing gRPC with REST
+To highlight, we can the tradeoffs between gRPC and REST:
+
+gRPC
+Relatively new technology
+Lots of activity
+Lots of usage
+Actively developed
+Backed by Google#### REST
+
+Flexible
+
+Industry standard
+Expected offering with Software as a Service products
+
+
+q2
+Profile the performance of the technology by compiling metrics on its behavior on a small application. Then compare it with your existing technology.
+Understand how much custom code will need to be written to make the existing systems compatible with the code.
+Run the technology in a development environment and observe the types of failures that may occur.
+Go on GitHub and inspect the number of repositories that use the technology.
+
+New Terms
+Term	Definition
+SOAP	A message passing protocol that leverages HTTP and structured data represented with XML
+Learn More About Other Technologies
+The following are some resources that provide some information about industry standards
+
+Stack Overflow 2020 Developer Survey - Stack Overflow has an annual survey that captures industry trends with regards to tools and technologies
+PyPi Package Popularity - Aggregation of the most popular Python packages installed through PyPi
+
+
+
+3.18 Exercise: Trade-offs
+---------------------------------------
+GraphQL vs. REST and gRPC
+GraphQL is an opinionated way to improve the current state of RESTful APIs. It's a popular message passing technique created by Facebook and works very well for specific use cases.
+
+New message passing techniques are being introduced all the time. For GraphQL, we want to understand some of the tradeoffs in implementing it versus using some alternatives that we have learned about.
+
+This exercise replicates a common task for software engineers: researching a new tool or technology and explaining the tradeoffs between it and the currently used tool or technology.
+
+New Terms
+Term	Definition
+GraphQL	API interface that allows data querying with structured data
+
+
+
+3.19 Solutoin: Trade-offs
+---------------------------------------
+When researching new technologies, I like to:
+
+Reference the official documentation
+Gauge the activity on GitHub
+Reference articles and tutorials produced by companies that have a stake in the technology.
+Compared with REST
+When using REST, we have to make multiple requests to retrieve our data.
+
+Pros
+REST
+May over-fetch data where only a few fields of a large request are needed.
+An API client may have to chain multiple REST requests to retrieve all the necessary data.
+GraphQL
+GraphQL reduces this overhead by allowing the client to query for a specific subset of data in one query.
+GraphQL reduces overhead and can provide a more pleasant experience for users.
+Cons
+When we need high throughput in API performance or have a use case that doesn't merit the complexity of GraphQL, REST is a fine solution.
+
+REST
+REST is more straightforward
+GraphQL
+GraphQL makes things more pleasant for users at the expense of more work for the application.
+Compared with gRPC
+Pros
+GraphQL
+Often, GraphQL is optimized for flexible queries that provide a pleasant experience for integrations.
+gRPC
+gRPC is often used in situations where low latency requests are desired, such as between internal systems and streamed data.
+Cons
+GraphQL
+Less robust with schema
+gRPC
+gRPC is optimized for performance and predictability through contracts using protobuf.
+gRPC is more rigid in its schema.
+In general, gRPC also boasts better performance.
+It's useful to perform tests against message passing techniques to profile their performance. Here is a great article detailing the performance of gRPC versus GraphQL: gRPC vs. GraphQL with keep-alive.
+
+q1
+I actually integrate GraphQL to my API and it allow client to use my API which he is already familiar with. So it is easier for him to integrate my API to his system.
+
+
+
+3.20 Lesson Recap
+---------------------------------------
+In this lesson, we have learned about a few of today's popular message passing strategies:
+
+REST, gRPC, and message queues
+Some of the ideas behind why we would choose to use one over another when considering our architecture design
+Why we care about message passing
+How experts approach message passing
+REST application
+Use cases for gRPC
+Use cases for message queues.
+
+
+
+3.21 Glossary
+---------------------------------------
+New Terms In This Lesson
+Term			Definition
+Asynchronous		A non-blocking action that will continue while a process is still ongoing
+Cacheability		Ability to store data for efficient retrieval to optimize performance
+Client-Server		Relationship where a server provides data to a client that doesn't necessarily need to know the internals of the server's logic
+Decoupled		Different systems that can be modified without affecting the other
+GraphQL			API interface that allows data querying with structured data
+gRPC			Programming-agnostic way of passing messages as protocol buffers to enforce a strict interface
+HTTP/2			More secure and performant way of making HTTP requests that is backwards compatible
+Kafka			An open-source distributed message broker
+Message Queue		Storing messages to set up performance, improve reliability, and enable decoupling of our systems
+Protocol buffers	A way to serialize structured data optimizing simplicity and performance
+RabbitMQ		An open-source message broker
+REpresentational State Transfer (REST)	An architectural style used to describe how to create web services
+SOAP			A message passing protocol that leverages HTTP and structured data represented with XML
+Statelessness		Context is not tracked between requests
+Synchronous		A blocking action that will wait for a process to finish before proceeding
+Uniform Interface	Different parts of the interfaces should look familiar and be consistent
 
 
