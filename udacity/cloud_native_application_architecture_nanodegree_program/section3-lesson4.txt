@@ -60,4 +60,156 @@ Set up a reliable infrastructure to reduce the downtime that services experience
 
 
 
+4.3 Who is Our User?
+---------------------------------------
+Internal versus External Usage
+It is often useful to consider whether it is used internally or externally.
+
+Internal refers to applications inside a microservice or other projects that you or your team own.
+External refers to other teams in an organization or customers outside of the organization.
+
+The key concepts are:
+You typically have more control over internal applications and can be relatively reactive and iterative quickly on changes.
+We should be aware of who will be using our APIs, and we should tailor our message passing techniques to optimize for their usability and business needs.
+
+Internal vs External
+It is a little easier to be more open-ended and ambitious with your message passing implementations in internal systems.
+
+External applications should be a bit safer and abide by what is dominant in the industry.
+gRPC
+gRPC is becoming very popular but is still not as widely adopted in the industry.
+You will likely encounter developers who have never worked with or have even heard of gRPC.
+gRPC may be a great way to optimize internal services since knowledge transfer within a team is more fluid and requires less buy-in from stakeholders.
+REST
+REST is very popular, and it is a term that's well-recognized by sales engineers.
+If you are building an external system, REST may be the ideal approach to achieve widespread adoption.
+
+q1
+We can more easily track down where our applications are used by referencing the logs and code repositories in our organization.
+We can often connect directly with the stakeholders and coordinate on the changes.
+Users in the same organization can share more empathy and understand the business decisions that drive necessary but breaking changes.
+
+
+
+4.4 Using REST
+---------------------------------------
+Technologies
+We will build a RESTful API server with a micro-framework called Flask, and a client called requests. These two tools are used very commonly in the industry.
+
+Flask - REST API Server
+A framework helps you write programs more productively by providing you some tools and utilities. Different frameworks have various degrees of how imposing they are in making you write programs that conform to their style. Flask is known as a micro framework and tries to remain more open-ended in letting you decide how to organize and write your code.
+
+Read the official documentation for Flask.
+https://flask.palletsprojects.com/en/1.1.x/
+
+
+Simple Flask App
+
+GET Requests
+With Flask, we can define API routes and how they are handled. For example, a GET request for an API can be defined as follows:
+
+@app.route('/test`, methods=['GET'])
+def test():
+    result = "Hello, world!"
+    return result
+Base Case Flask Application Example
+We can make this request more RESTful by importing the json library to manage JSON responses.
+
+import json
+from flask import Flask, Response
+
+app = Flask(__name__)
+
+@app.route('/health', methods=['GET'])
+def health():
+    result = json.dumps({'result': 'Hello, World!'})
+    header = {'Content-Type': 'application/json'}
+    status_code = 200
+    return Response(result, status_code, header)
+
+Simplified REST API
+The following is a simple Flask REST API application using built-in tooling to reduce boilerplate code:
+
+from flask import Flask, jsonify
+
+app = Flask(__name__)
+
+@app.route('/health', methods=['GET'])
+def health():
+    result = {'result': 'Hello, World!'}
+    return jsonify(result)
+app.route('/health', methods=['GET']) defines that we are exposing an API endpoint atGET /health
+def health() is the method that is invoked when the API is called
+jsonify(result) reduces the boilerplate to turn our Python dictionary into a JSON response with a response code
+
+Flask and the Requests Library
+
+Requests - REST API Client
+Requests is a popular library that makes it easy to make HTTP requests. It makes things easier by providing a straightforward interface to set up your requests and process responses. For more details, see the Requests Quickstart guide.
+
+Request Library Syntax
+# GET Request
+get_result = requests.get(API_URL)
+
+# PUT Request
+put_result = requests.put(API_URL, data={'key': 'value'})
+
+# POST Request
+post_result = requests.post(API_URL, data={'key': 'value'})
+
+# DELETE Request
+delete_result = requests.delete(API_URL)
+
+Simple Requests Application Example
+The following is a simple Requests application:
+
+import requests
+
+r = requests.get(ENDPOINT_URL)
+if r.status_code == 200:
+    print(r.json())
+
+requests.get(ENDPOINT_URL) makes a GET request to the defined URL
+r.status_code provides us the HTTP response code
+r.json() provides us an easy way to retrieve the data as a JSON object
+
+Building A REST Endpoint with Flask
+Follow Along
+You can follow along with the demo by using the code here: Flask REST Demo
+
+Summary
+1. Install Flask
+Flask can be installed with the Python package manager, pip: pip install Flask
+Validate that it was installed with pip list
+2. Create REST Application
+Create a file named app.py for the API server
+Import Flask in the code to make it available
+Set up the Flask application with app = Flask(__name__)
+Create a method named health() that will return a JSON response using jsonify() to format a dictionary
+Add the app.route decorator on the health() method to configure how the code will handle an API request to/health
+3. Run REST Application
+flask run in the same directory as app.py will start the application on localhost:5000
+4. Install Requests
+Requests can be installed with the Python package manager, pip: pip install requests
+Validate that it was installed with pip list
+5. Create REST Client
+Create a file named client.py for the API client
+Import Requests in the cdoe to make it available
+Make a GET request to localhost:5000/health and print the result
+6. Make a REST API Request
+Run client.py to make an API request to the Flask API server
+
+New Terms
+Term	Definition
+Flask	A popular Python framework often used to build APIs
+Requests	A popular Python HTTP library
+Learn More About Frameworks for REST
+Below are some additional libraries and frameworks used for creating HTTP server and HTTP clients:
+
+FastAPI - Newer Python framework for creating APIs
+Django - A very popular Python framework for creating APIs
+urllib3 - Low-level library for Python HTTP requests
+
+
+
 
