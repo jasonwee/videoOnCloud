@@ -1,0 +1,151 @@
+date start : 31 august 2021
+
+
+6.1 Introduction 
+---------------------------------------
+Lesson outline
+Object-oriented programming syntax
+Procedural vs. object-oriented programming
+Classes, objects, methods and attributes
+Coding a class
+Magic methods
+Inheritance
+Using object-oriented programming to make a Python package
+Making a package
+Tour of scikit-learn source code
+Putting your package on PyPi
+
+Why object-oriented programming?
+Object-oriented programming has a few benefits over procedural programming, which is the programming style you most likely first learned. As you'll see in this lesson:
+
+Object-oriented programming allows you to create large, modular programs that can easily expand over time.
+Object-oriented programs hide the implementation from the end user.
+Consider Python packages like Scikit-learn, pandas, and NumPy. These are all Python packages built with object-oriented programming. Scikit-learn, for example, is a relatively large and complex package built with object-oriented programming. This package has expanded over the years with new functionality and new algorithms.
+
+When you train a machine learning algorithm with Scikit-learn, you don't have to know anything about how the algorithms work or how they were coded. You can focus directly on the modeling.
+
+Here's an example taken from the Scikit-learn website:
+
+from sklearn import svm
+X = [[0, 0], [1, 1]]
+y = [0, 1]
+clf = svm.SVC()
+clf.fit(X, y)  
+How does Scikit-learn train the SVM model? You don't need to know because the implementation is hidden with object-oriented programming. If the implementation changes, you (as a user of Scikit-learn) might not ever find out. Whether or not you should understand how SVM works is a different question.
+
+In this lesson, you'll practice the fundamentals of object-oriented programming. By the end of the lesson, you'll have built a Python package using object-oriented programming.
+
+Lesson files
+This lesson uses classroom workspaces that contain all of the files and functionality you need. You can also find the files in the data scientist nanodegree term 2 GitHub repo.
+
+
+
+6.2 Procedural vs. Object-oriented programming
+---------------------------------------
+Characteristics and actions in English grammar
+You can also think about characteristics and actions is in terms of English grammar. A characteristic corresponds to a noun and an action corresponds to a verb.
+
+Let's pick something from the real world: a dog. Some characteristics of the dog include the dog's weight, color, breed, and height. These are all nouns. Some actions a dog can take include to bark, to run, to bite, and to eat. These are all verbs.
+
+
+q1
+height
+color 
+width
+species
+
+q2
+to turn on
+to turn off
+to erase
+
+
+
+6.3 class, object, method, and attribute
+---------------------------------------
+
+Object-oriented programming (OOP) vocabulary
+Class: A blueprint consisting of methods and attributes.
+Object: An instance of a class. It can help to think of objects as something in the real world like a yellow pencil, a small dog, or a blue shirt. However, as you'll see later in the lesson, objects can be more abstract.
+Attribute: A descriptor or characteristic. Examples would be color, length, size, etc. These attributes can take on specific values like blue, 3 inches, large, etc.
+Method: An action that a class or object could take.
+OOP: A commonly used abbreviation for object-oriented programming.
+Encapsulation: One of the fundamental ideas behind object-oriented programming is called encapsulation: you can combine functions and data all into a single entity. In object-oriented programming, this single entity is called a class. Encapsulation allows you to hide implementation details, much like how the scikit-learn package hides the implementation of machine learning algorithms.
+In English, you might hear an attribute described as a property, description, feature, quality, trait, or characteristic. All of these are saying the same thing.
+
+Here is a reminder of how a class, an object, attributes, and methods relate to each other.
+
+q1
+stephen hawking
+scientist
+color
+to rain
+gray
+
+
+6.
+---------------------------------------
+
+
+
+6.
+---------------------------------------
+
+
+
+6.
+---------------------------------------
+
+
+
+6.
+---------------------------------------
+
+
+
+6.
+---------------------------------------
+
+
+
+6.
+---------------------------------------
+
+
+
+6.
+---------------------------------------
+
+
+
+6.
+---------------------------------------
+
+
+
+6.
+---------------------------------------
+
+
+
+6.
+---------------------------------------
+
+
+
+6.
+---------------------------------------
+
+
+
+6.
+---------------------------------------
+
+
+
+6.
+---------------------------------------
+
+
+
+
