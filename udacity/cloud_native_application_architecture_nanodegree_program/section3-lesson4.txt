@@ -212,4 +212,26 @@ urllib3 - Low-level library for Python HTTP requests
 
 
 
+4.5 Using Postman to Test APIs
+---------------------------------------
+Getting Started With Postman
+Postman provides useful tools to make HTTP requests and view the data in the HTTP responses. It can also be used for:
+
+Organizing and sharing HTTP requests as collections
+API documentation
+To get started with Postman, go to: Download Postman.
+
+New Terms
+Term	Definition
+Postman	An application that provides useful tools for testing APIs
+
+
+
+4.6 Quizzes: Using REST
+---------------------------------------
+Postman provides tools to organize API requests.
+Postman is programming-language agnostic
+
+
+
 
