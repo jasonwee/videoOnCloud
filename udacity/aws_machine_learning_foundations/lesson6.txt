@@ -212,17 +212,119 @@ For now, as you get used to OOP syntax, you'll be completing exercises in Jupyte
 
 6.7 Exercise: OOP syntax practice, part 2
 ---------------------------------------
+Exercise: Use the Pants class
+Now that you've had some practice instantiating objects, it's time to write your own class from scratch.
+
+This lesson has two parts.
+
+In the first part, you'll write a Pants class. This class is similar to the Shirt class with a couple of changes. Then you'll practice instantiating Pants objects.
+In the second part, you'll write another class called SalesPerson. You'll also instantiate objects for the SalesPerson.
+This exercise requires two files, which are located on this page in the Supporting Materials section.
+
+exercise.ipynbcontains explanations and instructions.
+answer.py contains solution to the exercise.
+Getting started
+Open the exercise.ipynb notebook file using Jupyter Notebook and follow the instructions in the notebook to complete the exercise.
+
+Supporting Materials
+Exercise
+Answer
 
 
 
 6.8 Commenting object-oriented code
 ---------------------------------------
+Commenting object-oriented code
+Did you notice anything special about the answer key in the previous exercise? The Pants class and the SalesPerson class contained docstrings! A docstring is a type of comment that describes how a Python module, function, class, or method works. Docstrings are not unique to object-oriented programming.
+
+For this section of the course, you just need to remember to use docstrings and to comment your code. It will help you understand and maintain your code and even make you a better job candidate.
+
+From this point on, please always comment your code. Use both inline comments and document-level comments as appropriate.
+
+To learn more about docstrings, see Example Google Style Python Docstrings.
+
+Docstrings and object-oriented code
+The following example shows a class with docstrings. Here are a few things to keep in mind:
+
+Make sure to indent your docstrings correctly or the code will not run. A docstring should be indented one indentation underneath the class or method being described.
+You don't have to define self in your method docstrings. It's understood that any method will have self as the first method input.
+
+class Pants:
+    """The Pants class represents an article of clothing sold in a store
+    """
+
+    def __init__(self, color, waist_size, length, price):
+        """Method for initializing a Pants object
+
+        Args: 
+            color (str)
+            waist_size (int)
+            length (int)
+            price (float)
+
+        Attributes:
+            color (str): color of a pants object
+            waist_size (str): waist size of a pants object
+            length (str): length of a pants object
+            price (float): price of a pants object
+        """
+
+        self.color = color
+        self.waist_size = waist_size
+        self.length = length
+        self.price = price
+
+    def change_price(self, new_price):
+        """The change_price method changes the price attribute of a pants object
+
+        Args: 
+            new_price (float): the new price of the pants object
+
+        Returns: None
+
+        """
+        self.price = new_price
+
+    def discount(self, percentage):
+        """The discount method outputs a discounted price of a pants object
+
+        Args:
+            percentage (float): a decimal representing the amount to discount
+
+        Returns:
+            float: the discounted price
+        """
+        return self.price * (1 - percentage)
 
 
 
 6.9 A Gaussian class
 ---------------------------------------
+Resources for review
+The example in the next part of the lesson assumes you are familiar with Gaussian and binomial distributions.
 
+Here are a few formulas that might be helpful:
+
+Further resources
+If you would like to review the Gaussian (normal) distribution and binomial distribution, here are a few resources:
+
+This free Udacity course, Intro to Statistics, has a lesson on Gaussian distributions as well as the binomial distribution.
+
+This free course, Intro to Descriptive Statistics, also has a Gaussian distributions lesson.
+
+There are also relevant Wikipedia articles:
+
+Gaussian Distributions Wikipedia
+Binomial Distributions Wikipedia
+
+q1
+0
+
+q2
+0.19
+
+q3
+0.12
 
 
 6.10
