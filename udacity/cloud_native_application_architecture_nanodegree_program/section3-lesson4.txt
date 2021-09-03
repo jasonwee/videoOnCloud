@@ -234,4 +234,76 @@ Postman is programming-language agnostic
 
 
 
+4.7 Exercise: Using REST
+---------------------------------------
+Implementing a REST API
+For this exercise, we will be implementing the REST API that you have designed in the previous lesson for placing computer orders. We will be using the boilerplate code provided here to get you started: Using REST Starter.
+
+Since we want to focus on building out the API definitions, feel free to stub out the code's actual logic similar to the boilerplate code. We can assume the computer service returns a hard-coded value. You should focus on understanding the basic Flask features in creating an API and understanding how our definitions translate into code.
+
+References
+Flask Demo
+You may find it useful to reference the demo code: Flask Demo Application
+
+API Definition
+For your reference, below is my solution for the API definition. Feel free to implement either the API that you have designed or use mine as the starting point:
+
+# URL Path
+POST <BASE_URL>/api/orders/computers
+
+# Request Header
+Content-Type: application/json
+
+# Request Body
+{
+    "created_by": <user_id: str>,
+    "status": <status_enum: str>, // QUEUED, PROCESSING, COMPLETED, FAILED, CANCELLED
+    "created_at": <isoformat_timestamp: str>,
+    "equipment": [
+        <equipment: str>
+    ]
+}
+# Response Body
+{
+    "order_id": <order_id: str>,
+    "created_by": <user_id: str>,
+    "status": <status_enum: str>, // QUEUED, PROCESSING, COMPLETED, FAILED, CANCELLED
+    "created_at": <isoformat_timestamp: str>,
+    "equipment": [
+        <equipment: str>
+    ]
+}
+
+# URL Path
+GET <BASE_URL>/api/orders/computers
+
+# Request Header
+`Content-Type: application/json`
+
+# Response Code
+`200 OK`
+
+# Response Body
+
+"computer_orders": [
+    {
+        "order_id": <order_id: str>,
+        "created_by": <user_id: str>,
+        "status": <status_enum: str>,
+        "created_at": <isoformat_timestamp: str>,
+        "equipment": [
+            <equipment: str>
+        ]
+    }
+]
+
+
+
+4.8 Solution: Using REST
+---------------------------------------
+
+q1
+yes. For large application, things may become complex.
+
+
 
