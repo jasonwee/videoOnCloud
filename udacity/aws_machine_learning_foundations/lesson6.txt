@@ -327,28 +327,60 @@ q3
 0.12
 
 
-6.10
+6.10 How the Gaussian class works
 ---------------------------------------
 
 
 
-6.11
+6.11 Exercise: Code the Gaussian class
+---------------------------------------
+In this exercise, you will use the Gaussian distribution class for calculating and visualizing a Gaussian distribution.
+
+This exercise requires three files, which are located on this page in the Supporting materials section.
+
+Gaussian_code_exercise.ipynb contains explanations and instructions.
+Answer.py contains the solution to the exercise .
+Numbers.txt can be read in by the read_data_file() method.
+Getting started
+Open the Gaussian_code_exercise.ipynb notebook file using Jupyter Notebook and follow the instructions in the notebook to complete the exercise.
+
+Supporting Materials
+Gaussian Code Exercise
+Numbers
+Answer
+
+
+
+6.12 Magic methods
 ---------------------------------------
 
 
 
-6.12
+6.13 Exercise: Code magic methods
 ---------------------------------------
+Exercise: Code magic methods
+Extend the code from the previous exercise by using two new methods, add and repr.
+
+This exercise requires three files, which are located on this page in the Supporting materials section.
+
+Magic_methods.ipynb contains explanations and instructions.
+Answer.py contains the solution to the exercise.
+Numbers.txt can be read in by the read_data_file() method.
+Getting started
+Open the Magic_methods.ipynb notebook file using Jupyter Notebook and follow the instructions in the notebook to complete the exercise.
+
+Supporting Materials
+Magic Methods
+Answer
+Numbers
 
 
-
-6.13
+6.14 Inheritance
 ---------------------------------------
-
-
-
-6.14
----------------------------------------
+q1
+Inheritance helps organize code with a more general version of a class and then specific children.
+Inheritance can make object-oriented programs more efficient to write.
+Updates to a parent class automatically trickle down to its children.
 
 
 
