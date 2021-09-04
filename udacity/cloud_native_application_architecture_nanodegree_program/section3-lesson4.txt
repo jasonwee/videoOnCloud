@@ -306,4 +306,218 @@ q1
 yes. For large application, things may become complex.
 
 
+4.9 Using gRPC
+---------------------------------------
+Using gRPC With Python
+Implementing gRPC with Python involves two libraries:
+
+grpcio to run client and server code
+grpcio-tools to generate definition code.
+
+Creating a gRPC Client and Server
+Define a protobuf request messages, response messages, and service in a .proto file.
+Use grpcio-tools command on the .proto file to generate a pair of Python files representing the messages and the services.
+Import the pair of Python files into your application logic and implement your client/server.
+
+Example
+
+Step 1: Define .proto file
+message Item {
+  string name = 1;
+  string brand_name = 2;
+  int32 id = 3;
+  float weight = 4;
+}
+
+Store this in an item.proto file and declare a service that uses it:
+
+syntax = "proto3";
+
+message ItemMessage {
+  string name = 1;
+  string brand_name = 2;
+  int32 id = 3;
+  float weight = 4;
+}
+
+service ItemService {
+    rpc Create(ItemMessage) returns (ItemMessage);
+}
+
+Remember: item-proto is used only to generate the Python files.
+
+Step 2: Generate gRPC Files
+Using grpcio-tools, generate a pair of files that can be directly imported into our Python code:
+
+grpc_tools.protoc -I./ --python_out=./ --grpc_python_out=./ item.proto
+The path ./, can be replaced with another path or an absolute path to your .proto file.
+
+The files item_pb2.py and item_pb2_grpc.py should have been generated.
+
+Step 3: Import gRPC Files
+Import the files to your application to use class definitions.
+
+import item_pb2
+import item_pb2_grpc
+Creating a message with data would look like the following:
+
+item = item_pb2.ItemMessage(
+               name="Hair Dryer",
+               brand_name="Dry King",
+               id=34,
+               weight=1.2
+           )
+
+Follow Along
+To follow along with the demo, you can use the starter code here: gRPC Demo Source Code
+
+Summary
+Create Protobuf File
+Create item.proto file
+Specify proto3 syntax
+Define an ItemMessage
+Define ItemService with a Create method using ItemMessage
+Generate gRPC Files
+Install grpc-io with pip install grpcio-tools
+Verify installation with pip list
+Run the grpc-io command in the same directory as item.proto. The command can be hard to remember so it's useful to save it in a README
+item_pb2.py and item_pb2_grpc.py should have been created
+
+nstall gRPC for Python
+Install grpcio with pip install grpcio
+This may have already been installed when grpcio-tools was installed
+Generated Files
+item_pb2_grpc.py and item_pb2.py should not be edited. The files even have lines that explicitly state DO NOT EDIT!.
+
+Summary
+gRPC Server
+gRPC server logic is implemented in main.py
+grpc is imported to use gRPC in Python code
+item_pb2 and item_pb2_grpc is imported to handle the ItemMessage and ItemService that was defined in the .proto file
+ItemServicer is the implementation of the ItemService protobuf stub
+Create in ItemServicer defines our custom logic. It is set up in a simple manner where a Python dict is printed and returned as an item_pb2.ItemMessage object instead of an unstructured dict
+The file handles a lot of boilerplate for setting up a gRPC server since we aren't using a framework like Flask that can reduce boilerplate
+
+Running the gRPC Server
+python main.py will serve the gRPC server on localhost:5005 import gprc to use gRPC
+
+Summary
+Create gRPC Client
+gRPC client logic is implemented in writer.py
+grpc is imported to use gRPC in Python code
+item_pb2 and item_pb2_grpc is imported to handle the ItemMessage and ItemService that was defined in the .proto file. These files don't need to be regenerated.
+Client is configured to send messages to localhost:5005 where the gRPC server is running.
+iteM_pb2.ItemMessage object is created with expected fields and values.
+
+Running the gRPC Client
+python writer.py will run the gRPC client
+Changing tabs to where the gRPC server is running, it prints the payload that was passed by the gRPC client
+
+Showcasing Type Checking
+Change the value of brand_name from a string to an integer in writer.py
+python writer.py to run the gRPC client will return an error that brand_name should be a string.
+New Terms
+
+Term		Definition
+grpcio		A Python library used to run gRPC client and gRPC server code
+grpcio-tools	Python library of tools that help generate definition code used by gRPC
+
+
+
+4.10 Quizzes: Using gRPC
+---------------------------------------
+Ensures that grpcio-tools is parsing the expected syntax
+
+
+
+4.11 Exercise: Using gRPC
+---------------------------------------
+Applying Using gRPC
+Using the following proto file that defines computer orders, set up a gRPC server that accepts OrderMessage's:
+
+syntax = "proto3";
+
+message OrderMessage {
+ enum Status {
+   QUEUED = 0;
+   PROCESSING = 1;
+   COMPLETED = 2;
+   FAILED = 3;
+ }
+
+ enum Equipment {
+   KEYBOARD = 0;
+   MOUSE = 1;
+   WEBCAM = 2;
+   MONITOR = 3;
+ }
+
+ string id = 1;
+ string created_by = 2;
+ Status status = 3;
+ string created_at = 4;
+ repeated Equipment equipment = 5;
+}
+
+message Empty {
+
+}
+
+message OrderMessageList {
+ repeated OrderMessage orders = 1;
+}
+
+
+
+4.12 Solution: Using gRPC
+---------------------------------------
+The code to the solution can be found here: Using gRPC Solution.
+
+Summary
+Protobuf File
+proto3 is specified as the syntax
+OrderMessage uses enums Status and Equipment to add string validation
+Empty message is defined to help handle null values where an empty argument is passed to the service
+OrderMessageList helps capture multiple OrderMessage's
+OrderService defines Create and Get stubs
+OrderService.Get has no argument so it uses the Empty message as its input
+
+Generating gRPC Files
+We should have run the following command (or similar) to set up the gRPC files for Python:
+
+grpc_tools.protoc -I./ --python_out=./ --grpc_python_out=./ computer_orders.proto
+
+The resulting computer_orders_pb2_grpc.py and computer_orders_pb2.py files can be imported into Python and leveraged with the grpc package.
+
+Summary
+Server Code
+Server code is defined in main.py using mostly boilerplate code to set up a gRPC server
+OrderServicer.Get returns hardcoded data by creating two order_pb2.OrderMessage objects and returning them in the OrderMessageList
+OrderServicer.Create returns the same data that was passed in
+
+Running the gRPC Server
+python main.py will run the gRPC server and print its outputs
+
+Create gRPC Client
+Writer
+Writer is used to demonstrate how OrderServicer.Create is called
+Defined in writer.py
+Creates an OrderMessage and passes it to OrderServicer.Create
+
+Getter
+Getter is used to demonstrate how OrderServicer.Get is called
+Defined in getter.py
+Creates an Empty message and passes it to OrderServicer.Get
+
+Running gRPC Clients
+python getter.py returns a hard-coded OrderMessageList
+python writer.py returns the data that we passed in
+gRPC server behavior can be validated as it prints the output
+
+
+q1
+yes, you need to go through a predefined "compilation" in order to use the gRPC feature.
+
+
+
 
