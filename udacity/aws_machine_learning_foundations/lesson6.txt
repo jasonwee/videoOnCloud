@@ -510,38 +510,284 @@ Object-oriented programs obscure functionality from the user. Consider scipy pac
 
 
 
-6.22
+6.22 Virtual environments
+---------------------------------------
+Python environments
+In the next part of the lesson, you'll be given a workspace where you can upload files into a Python package and pip install the package. If you decide to install your package on your local computer, you'll want to create a virtual environment. A virtual environment is a silo-ed Python installation apart from your main Python installation. That way you can install packages and delete the virtual environment without affecting your main Python installation.
+
+Let's talk about two different Python environment managers: conda and venv. You can create virtual environments with either one. The following sections describe each of these environment managers, including some advantages and disadvantages. If you've taken other data science, machine learning, or artificial intelligence courses at Udacity, you're probably already familiar with conda.
+
+Conda
+Conda does two things: manages packages and manages environments.
+
+As a package manager, conda makes it easy to install Python packages, especially for data science. For instance, typing conda install numpy installs the numpy package.
+
+As an environment manager, conda allows you to create silo-ed Python installations. With an environment manager, you can install packages on your computer without affecting your main Python installation.
+
+The command line code looks something like the following:
+
+conda create --name environmentname
+source activate environmentname
+conda install numpy
+
+pip and Venv
+There are other environmental managers and package managers besides conda. For example, venv is an environment manager that comes preinstalled with Python 3. pip is a package manager.
+
+pip can only manage Python packages, whereas conda is a language agnostic package manager. In fact, conda was invented because pip could not handle data science packages that depended on libraries outside of Python. If you look at the history of conda, you'll find that the software engineers behind conda needed a way to manage data science packages (such as NumPy and Matplotlib) that relied on libraries outside of Python.
+
+conda manages environments and packages. pip only manages packages.
+
+To use venv and pip, the commands look something like the following:
+
+python3 -m venv environmentname
+source environmentname/bin/activate
+pip install numpy
+
+Which to choose
+Whether you choose to create environments with venv or conda will depend on your use case. conda is very helpful for data science projects, but conda can make generic Python software development a bit more confusing; that's the case for this project.
+
+If you create a conda environment, activate the environment, and then pip install the distributions package, you'll find that the system installs your package globally rather than in your local conda environment. However, if you create the conda environment and install pip simultaneously, you'll find that pip behaves as expected when installing packages into your local environment:
+
+conda create --name environmentname pip
+
+On the other hand, using pip with venv works as expected. pip and venv tend to be used for generic software development projects including web development. For this lesson on creating packages, you can use conda or venv if you want to develop locally on your computer and install your package.
+
+The following video shows how to use venv, which is what we recommend for this project.
+
+Instructions for venv
+For instructions about how to set up virtual environments on a macOS, Linux, or Windows machine using the terminal, see Installing packages using pip and virtual environments.
+
+Refer to the following notes for understanding the tutorial:
+
+If you are using Python 2.7.9 or later (including Python 3), the Python installation should already come with the Python package manager called pip. There is no need to install it.
+env is the name of the environment you want to create. You can call env anything you want.
+Python 3 comes with a virtual environment package preinstalled. Instead of typing python3 -m virtualenv env, you can type python3 -m venv env to create a virtual environment.
+Once you've activated a virtual environment, you can then use terminal commands to go into the directory where your Python library is stored. Then, you can run pip install.
+
+In the next section, you can practice pip installing and creating virtual environments in the classroom workspace. You'll see that creating a virtual environment actually creates a new folder containing a Python installation. Deleting this folder removes the virtual environment.
+
+If you install packages on the workspace and run into issues, you can always reset the workspace; however, you will lose all of your work. Be sure to download any files you want to keep before resetting a workspace.
+
+
+
+6.23 Exercise: Making a package and pip installing
+---------------------------------------
+xercise: Making a package and pip installing
+In this exercise, you will convert modularized code into a Python package.
+
+This exercise requires three files, which are located on this page in the Supporting materials section.
+
+Gaussiandistribution.py
+Generaldistribution.py
+3b_answer_python_package.zip contains the solution to the exercise.
+Instructions
+Following the instructions from the previous video, convert the modularized code into a Python package.
+
+On your local computer, you need to create a folder called 3a_python_package. Inside this folder, you need to create a few folders and files:
+
+A setup.py file, which is required in order to use pip install.
+A subfolder called distributions, which is the name of the Python package.
+Inside the distributions folder, you need:
+The Gaussiandistribution.py file (provided).
+The Generaldistribution.py file (provided).
+The __init__.py file (you need to create this file).
+Once everything is set up, in order to actually create the package, use your terminal window to navigate into the 3a_python_package folder.
+
+Enter the following:
+
+
+cd 3a_python_package
+
+pip install 
+
+If everything is set up correctly, pip installs the distributions package into the workspace. You can then start the Python interpreter from the terminal by entering:
+
+
+python
+
+Then, within the Python interpreter, you can use the distributions package by entering the following:
+
+
+from distributions import Gaussian
+
+gaussian_one = Gaussian(25, 2)
+
+gaussian_one.mean
+
+gaussian_one + gaussian_one
+
+In other words, you can import and use the Gaussian class because the distributions package is now officially installed as part of your Python installation.
+
+If you get stuck, there's a solution provided in the Supporting materials section called 3b_answer_python_package .
+
+If you want to install the Python package locally on your computer, you might want to set up a virtual environment first. A virtual environment is a silo-ed Python installation apart from your main Python installation. That way you can easily delete the virtual environment without affecting your Python installation.
+
+If you want to try using virtual environments in this workspace first, follow these instructions:
+
+There is an issue with the Ubuntu operating system and Python3, in which the venv package isn't installed correctly. In the workspace, one way to fix this is by running this command in the workspace terminal: conda update python. For more information, see venv doesn't create activate script python3. Then, enter y when prompted. It might take a few minutes for the workspace to update. If you are not using Anaconda on your local computer, you can skip this first step.
+Enter the following command to create a virtual environment: python -m venv venv_name where venv_name is the name you want to give to your virtual environment. You'll see a new folder appear with the Python installation named venv_name.
+In the terminal, enter source venv_name/bin/activate. You'll notice that the command line now shows (venv_name)at the beginning of the line to indicate you are using the venv_name virtual environment.
+Enter pip install python_package/. That should install your distributions Python package.
+Try using the package in a program to see if everything works!
+Supporting Materials
+Generaldistribution
+Gaussiandistribution
+3b Answer Python Package
+
+
+
+6.24 Binomial class
 ---------------------------------------
 
 
-6.23
+6.25 Exercise: Binomial class
 ---------------------------------------
+Exercise: Binomial class
+In this exercise, you'll extend the distributions package with a new class called Binomial.
+
+In the Supporting materials section of this page, there is a .zip file called called 4a_binomial_package.zip. Download and unzip this file.
+
+Inside the folder called 4a_binomial_package, there is another folder and these files:
+
+distributions, which contains the code for the distributions package including Gaussiandistribution.py and Generaldistribution.py code.
+setup.py, a file needed for building Python packages with pip.
+test.py unit tests to help you debug your code.
+numbers.txt and numbers_binomial.txt, which are data files used as part of the unit tests.
+Binomialdistribution.py and Binomialdistribution_challenge.py. Choose one of these files for completing the exercise. Binomialdistribution.py includes more of the code already set up for you. In Binomialdistribution_challenge.py, you'll have to write all of the code from scratch. Both files contain instructions with TODOS to fill out.
+In these files, you only need to change the following:
+
+__init__.py, inside the distributions folder. You need to import the binomial package.
+Either Binomialdistribution.py or Binomialdistribution_challenge.py You also need to put your Binomialdistribution.py file into the distributions folder.
+When you're ready to test out your code, follow these steps:
+
+pip** install your distributions package**. In the terminal, make sure you are in the 4a_binomial_package directory. If not, navigate there by entering the following at the command line:
+
+cd 4a_binomial_package
+pip install 
+Run the unit tests. Enter the following.
+
+python -m unittest test
+
+Modify the Binomialdistribution.py code until all the unit tests pass.
+
+If you change the code in the distributions folder after pip installing the package, Python will not know about the changes.
+
+When you make changes to the package files, you'll need to run the following:
+
+
+pip install --upgrade 
+
+In the Supporting materials section of this page, there is also a solution in the 4b_answer_binomial_package. Try not to look at the solution until your code passes all of the unit tests.
+
+Supporting Materials
+4a Binomial Package
+4b Answer Binomial Package
 
 
 
-6.24
+6.26 Scikit-learn source code
 ---------------------------------------
+Contributing to a GitHub project
+Use the following resources to learn how to contribute to a GitHub project:
+
+Beginner's Guide to Contributing to a Github Project
+Contributing to a Github Project
+Advanced Python OOP topics
+Use the following resouces to learn about more advanced OOP topics that appear in the scikit-learn package:
+
+Decorators
+Mixins
 
 
-6.25
+
+6.27 Putting code on PyPi
 ---------------------------------------
+PyPi vs. test PyPi
+Note that pypi.org and test.pypy.org are two different websites. You'll need to register separately at each website. If you only register at pypi.org, you will not be able to upload to the test.pypy.org repository.
+
+Remember that your package name must be unique. If you use a package name that is already taken, you will get an error when trying to upload the package.
+
+Summary of the terminal commands used in the video
+cd binomial_package_files
+python setup.py sdist
+pip install twine
+
+# commands to upload to the pypi test repository
+twine upload --repository-url https://test.pypi.org/legacy/ dist/*
+pip install --index-url https://test.pypi.org/simple/ dsnd-probability
+
+# command to upload to the pypi repository
+twine upload dist/*
+pip install dsnd-probability
+
+More PyPi resources
+This tutorial explains how to distribute Python packages, including more configuration options for your setup.py file. You'll notice that the Python command to run the setup.py is slightly different, as shown in the following example:
+
+python3 setup.py sdist bdist_wheel
+This command still outputs a folder called dist. The difference is that you will get both a .tar.gz file and a .whl file. The .tar.gz file is called a source archive, whereas the .whl file is a built distribution. The .whl file is a newer type of installation file for Python packages. When you pip install a package, pip firsts look for a .whl file (wheel file); if there isn't one, it looks for the .tar.gz file.
+
+A .tar.gz file (an sdist) contains the files needed to compile and install a Python package. A .whl file (a built distribution) only needs to be copied to the proper place for installation. Behind the scenes, pipinstalling a .whl file has fewer steps than installing a .tar.gz file.
+
+Other than this command, the rest of the steps for uploading to PyPi are the same.
+
+Other Links
+To learn more about PyPi, see the following resources:
+
+Overview of PyPi
+MIT License
 
 
 
-6.26
+6.28 Exercise: Upload to PyPi
 ---------------------------------------
+Exercise: Upload to PyPi
+In this part of the lesson, you'll practice uploading a package to PyPi.
+
+In the Supporting materials section of this page, there is a zip file called 5_exercise_upload_to_pypi.zip . Download and unzip this file.
+
+The Python package is located in the folder 5_exercise_upload_to_pypi.
+
+You need to create three files:
+
+setup.cfg
+README.md
+license.txt
+You also need to create accounts for the pypi test repository and pypi repository.
+
+Don't forget to keep your passwords; you'll need to type them into the command line.
+
+Once you have all the files set up correctly, you can use the following commands on the command line. You need to make the name of the package unique, so change the name of the package from distributions to something else. That means changing the information in setup.py and the folder name.
+
+In the terminal, make sure you are in the 5_exercise_upload_to_pypi directory. If not, navigate there by entering the following at the command line:
 
 
-6.27
----------------------------------------
+cd 5_exercise_upload_to_pypi
+
+python setup.py sdist
+
+pip install twine
+
+Commands to upload to the PyPi test repository
+
+twine upload --repository-url https://test.pypi.org/legacy/ dist/*
+
+pip install --index-url https://test.pypi.org/simple/ distributions
+
+
+Command to upload to the PyPi repository
+
+twine upload dist/*
+
+pip install distributions
+
+If you get stuck, rewatch the previous video showing how to upload a package to PyPi.
+
+Supporting Materials
+5 Exercise Upload To Pypi
 
 
 
-6.28
----------------------------------------
-
-
-6.29
+6.29 Lesson summary
 ---------------------------------------
 
 
