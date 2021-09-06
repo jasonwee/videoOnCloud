@@ -33,7 +33,7 @@ The Challenge Phase will end on October 11, 2021, for every learner.
 Winners of the full Nanodegree program scholarship seats will be announced on October 21, 2021.
 
 
-1.7 Career chat with yoru instructors
+1.7 Career chat with your instructors
 ---------------------------------------
 
 
@@ -43,6 +43,17 @@ Winners of the full Nanodegree program scholarship seats will be announced on Oc
 
 1.9 Prerequisites
 ---------------------------------------
+Prerequisites
+Everyone is welcome!
+All learners are welcome to take the foundations course, but familiarity with basic mathematical concepts such as calculation, average, variance, and beginning level programming (preferably Python) is recommended to fully engage in all of the coursework. If you want to brush up on your Python skills, we encourage you to review our free Introduction to Python course.
+
+Learn More About Machine Learning
+We encourage you to dive deeper in to machine learning with our Intro to Machine Learning and Intro to Deep Learning with PyTorch courses.
+
+Both courses are FREE and will help you be even better prepared to take the end-of-course assessment.
+
+You may also find our Version Control with Git course helpful. It is also offered for FREE.
+
 
 
 1.10 Welcome to the AWS Machine Learning Scholarship Program!
@@ -61,4 +72,3 @@ Apply software engineering principles of modular code, code efficiency, refactor
 Apply software engineering principles of testing code, logging, and conducting code reviews to data science.
 Implement the basic principles of object-oriented programming to build a Python package.
 
-test
