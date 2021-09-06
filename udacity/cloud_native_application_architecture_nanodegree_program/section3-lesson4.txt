@@ -520,4 +520,111 @@ yes, you need to go through a predefined "compilation" in order to use the gRPC 
 
 
 
+4.13 Using Kafka
+---------------------------------------
+Kafka
+Use Cases
+Kafka is a special type of message queue that is often used to handle large volumes of data generated continuously as events.
+Some examples include application logs and user activity — things that represent that "something has happened."
+
+Architecture Overview
+Kafka is a distributed system, which means that it is an application that is powered by multiple nodes.
+When a producer writes data to Kafka, it stores the data inside of topics.
+
+Topics
+Topics are abstractions of Kafka where messages can be stored and referenced.
+Internally, topics are distributed as partitions in different nodes and allow parallelized operations.
+
+In practice, this may mean that a producer has a topic named "Click" that captures a user's click events on a web page
+
+Distributed Data
+Performance
+A single server may be limited by its ability to handle requests
+Using two servers can potentially improve a system's ability to handle requests by 2x
+Since data for a topic is stored in multiple servers, multiple requests can be made in parallel for higher throughput.
+
+Durability
+A single server may have data loss when an error occurs
+Storing data in multiple servers can help prevent data loss when one of the servers go down
+Kafka handles the replication of data so that if a Kafka node goes down, the data is backed up and not lost.
+
+Every time a message is written to "Click" by a producer, it is stored in a different part of Kafka.
+Since they are stored in different parts of storage internally, producers and consumers can write and read different parts of a topic simultaneously.
+
+
+Setup
+Kafka setup is straightforward. The best way to get started with Kafka is to follow the official Apache Kafka Quickstart.
+
+Starting Kafka Summary
+Download Kafka and as a compressed .tgz file. (If you're presented with options to download the Source Download or Binary Download, choose the Source Download)
+Start the Zookeeper service in the command line
+Start the Kafka broker in the command line
+
+Using Kafka Summary
+Create a Kafka Topic named items using the bin/kafka-topics.sh script
+Read events from the Kafka Topic items using the bin/kafka-console-consumer.sh script
+Write events to the Kafka Topic items using the bin/kafka-console-producer.sh script
+Write messages to Kafka using the input script
+The terminal reading from Kafka will print the input that we have passed into the topic
+
+Kafka Python
+Kafka Python is a library that can be used to set up Kafka Producers or Kafka Consumers. The library is simply a client and you will need to run the Kafka broker separately.
+
+Producers
+Once a producer is configured, we can send a message with the .send() method.
+
+The .flush() method is used to write a message immediately.
+
+It's useful for a demo to view the results immediately.
+In practice, flush() helps with performance by sending a batch of messages instead of a request for every message that is sent.
+
+Demo Code
+producer.py
+from kafka import KafkaProducer
+
+
+TOPIC_NAME = 'items'
+KAFKA_SERVER = 'localhost:9092'
+
+producer = KafkaProducer(bootstrap_servers=KAFKA_SERVER)
+
+producer.send(TOPIC_NAME, b'Test Message!!!')
+producer.flush()
+
+consumer.py
+from kafka import KafkaConsumer
+
+
+TOPIC_NAME = 'items'
+
+consumer = KafkaConsumer(TOPIC_NAME)
+for message in consumer:
+    print (message)
+
+New Terms
+Term	Definition
+Topic	Kafka's abstraction of messages stored internally as distributed partitions
+Producer	Generates messages to a message broker
+Consumer	Receives messages from a message broker
+
+
+
+4.14 Quizzes: Kafka
+---------------------------------------
+Tracking user click activity on a website
+Post-processing user "likes" on a social media platform
+
+
+
+4.15 Exercise: Setting Up and Using Kafka
+---------------------------------------
+Applying Kafka
+We want to set up a Kafka broker on our system to handle computer orders. We will then interact with it by sending it messages.
+
+For up-to-date instructions on installing and running Kafka, please refer to the Kafka Quickstart guide on Kafka's official website.
+
+
+
+
+
 
