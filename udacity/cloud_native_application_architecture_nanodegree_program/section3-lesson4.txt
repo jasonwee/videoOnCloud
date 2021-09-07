@@ -627,4 +627,35 @@ For up-to-date instructions on installing and running Kafka, please refer to the
 
 
 
+4.16 Solution: Setting Up and Using Kafka
+---------------------------------------
+Download Kafka
+Downloading the latest Kafka release following the instructions Get Kafka. This gives us a kafka_*.tgz file. Once we decompress this file, we have a directory containing a handful of files that can be used with Kafka.
+
+Running Kafka
+Run the Kafka broker following the instructions Start the Kafka Environment
+
+
+Create a Topic
+
+bin/kafka-topics.sh --create --topic orders --bootstrap-server localhost:9092
+
+
+Load a Consumer
+
+bin/kafka-console-consumer.sh --topic orders --from-beginning --bootstrap-server localhost:9092
+
+Write a Message
+This will load a client where you can submit messages with every newline.
+
+bin/kafka-console-producer.sh --topic orders --bootstrap-server localhost:9092
+
+
+q1
+it takes a few steps to setup and run Kafka. In term of behavior, they are the same. but python application allow more flexibility.
+
+A Python application runs inside of a controlled environment with Python code. Running the Kafka broker involves system-level dependencies and is run as a system process.
+
+
+
 
