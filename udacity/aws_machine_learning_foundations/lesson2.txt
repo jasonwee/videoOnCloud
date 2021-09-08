@@ -3,11 +3,26 @@ date start : 01 july 2021
 
 2.1 Lesson Outline
 ---------------------------------------
+Welcome to the introduction to machine learning lesson!
+
+Machine learning is creating rapid and exciting changes across all levels of society.
+
 It is the engine behind the recent advancements in industries such as autonomous vehicles.
 It allows for more accurate and rapid translation of the text into hundreds of languages.
 It powers the AI assistants you might find in your home.
 It can help improve worker safety.
 It can speed up drug design.
+
+Machine learning is a complex subject area. Our goal in this lesson is to introduce you to some of the most common terms and ideas used in machine learning. I will then walk you through the different steps involved in machine learning and finish with a series of examples that use machine learning to solve real-world situations.
+
+Let's look at how the lesson outline.
+
+Lesson Outline
+This lesson is divided into the following sections:
+
+First, we'll discuss what machine learning is, common terminology, and common components involved in creating a machine learning project.
+Next, we'll step into the shoes of a machine learning practitioner. Machine learning involves using trained models to generate predictions and detect patterns from data. To understand the process, we'll break down the different steps involved and examine a common process that applies to the majority of machine learning projects.
+Finally, we'll take you through three examples using the steps we described to solve real-life scenarios that might be faced by machine learning practitioners.
 
 
 Differentiate between supervised learning and unsupervised learning.
@@ -23,9 +38,28 @@ evaluate the performance of a machine learning model using metrics.
 What is Machine Learning?
 Machine learning (ML) is a modern software development technique and a type of artificial intelligence (AI) that enables computers to solve problems by using examples of real-world data. It allows computers to automatically learn and improve from experience without being explicitly programmed to do so.
 
+Summary
+Machine learning is part of the broader field of artificial intelligence. This field is concerned with the capability of machines to perform activities using human-like intelligence. Within machine learning there are several different kinds of tasks or techniques:
+
 In supervised learning, every training sample from the dataset has a corresponding label or output value associated with it. As a result, the algorithm learns to predict labels or output values. We will explore this in-depth in this lesson.
+
 In unsupervised learning, there are no labels for the training data. A machine learning algorithm tries to learn the underlying patterns or distributions that govern the data. We will explore this in-depth in this lesson.
+
+
 In reinforcement learning, the algorithm figures out which actions to take in a situation to maximize a reward (in the form of a number) on the way to reaching a specific goal. This is a completely different approach than supervised and unsupervised learning. We will dive deep into this in the next lesson.
+
+In traditional problem-solving with software, a person analyzes a problem and engineers a solution in code to solve that problem. For many real-world problems, this process can be laborious (or even impossible) because a correct solution would need to consider a vast number of edge cases.
+
+Imagine, for example, the challenging task of writing a program that can detect if a cat is present in an image. Solving this in the traditional way would require careful attention to details like varying lighting conditions, different types of cats, and various poses a cat might be in.
+
+In machine learning, the problem solver abstracts away part of their solution as a flexible component called a model, and uses a special program called a model training algorithm to adjust that model to real-world data. The result is a trained model which can be used to predict outcomes that are not part of the data set used to train it.
+
+In a way, machine learning automates some of the statistical reasoning and pattern-matching the problem solver would traditionally do.
+
+The overall goal is to use a model created by a model training algorithm to generate predictions or find patterns in data that can be used to solve a problem.
+
+Machine learning is a new field created at the intersection of statistics, applied math, and computer science. Because of the rapid and recent growth of machine learning, each of these fields might use slightly different formal definitions of the same terms.
+
 
 Machine learning, or ML, is a modern software development technique that enables computers to solve problems by using examples of real-world data.
 
@@ -45,8 +79,63 @@ A machine learning model
 A model training algorithm
 A model inference algorithm
 
+Clay Analogy for Machine Learning
+You can understand the relationships between these components by imagining the stages of crafting a teapot from a lump of clay.
+
+First, you start with a block of raw clay. At this stage, the clay can be molded into many different forms and be used to serve many different purposes. You decide to use this lump of clay to make a teapot.
+So how do you create this teapot? You inspect and analyze the raw clay and decide how to change it to make it look more like the teapot you have in mind.
+Next, you mold the clay to make it look more like the teapot that is your goal.
+Congratulations! You've completed your teapot. You've inspected the materials, evaluated how to change them to reach your goal, and made the changes, and the teapot is now ready for your enjoyment.
+
+What are machine learning models?
+A machine learning model, like a piece of clay, can be molded into many different forms and serve many different purposes. A more technical definition would be that a machine learning model is a block of code or framework that can be modified to solve different but related problems based on the data provided.
+
+Important
+
 A model is an extremely generic program(or block of code), made specific by the data used to train it. It is used to solve different problems.
 
+Two simple examples
+Example 1
+
+Imagine you own a snow cone cart, and you have some data about the average number of snow cones sold per day based on the high temperature. You want to better understand this relationship to make sure you have enough inventory on hand for those high sales days.
+
+In the graph above, you can see one example of a model, a linear regression model (indicated by the solid line). You can see that, based on the data provided, the model predicts that as the high temperate for the day increases so do the average number of snow cones sold. Sweet!
+
+Example 2
+
+Let's look at a different example that uses the same linear regression model, but with different data and to answer completely different questions.
+
+Imagine that you work in higher education and you want to better understand the relationship between the cost of enrollment and the number of students attending college. In this example, our model predicts that as the cost of tuition increases the number of people attending college is likely to decrease.
+
+Using the same linear regression model (indicated by the solid line), you can see that the number of people attending college does go down as the cost increases.
+
+Both examples showcase that a model is a generic program made specific by the data used to train it.
+
+Model Training
+
+How are model training algorithms used to train a model?
+In the preceding section, we talked about two key pieces of information: a model and data. In this section, we show you how those two pieces of information are used to create a trained model. This process is called model training.
+
+Model training algorithms work through an interactive process
+Let's revisit our clay teapot analogy. We've gotten our piece of clay, and now we want to make a teapot. Let's look at the algorithm for molding clay and how it resembles a machine learning algorithm:
+
+Think about the changes that need to be made. The first thing you would do is inspect the raw clay and think about what changes can be made to make it look more like a teapot. Similarly, a model training algorithm uses the model to process data and then compares the results against some end goal, such as our clay teapot.
+Make those changes. Now, you mold the clay to make it look more like a teapot. Similarly, a model training algorithm gently nudges specific parts of the model in a direction that brings the model closer to achieving the goal.
+Repeat. By iterating over these steps over and over, you get closer and closer to what you want until you determine that you’re close enough that you can stop.
+
+Model Inference: Using Your Trained Model
+Now you have our completed teapot. You inspected the clay, evaluated the changes that needed to be made, and made them, and now the teapot is ready for you to use. Enjoy your tea!
+
+So what does this mean from a machine learning perspective? We are ready to use the model inference algorithm to generate predictions using the trained model. This process is often referred to as model inference.
+
+Images
+
+Clay
+Clay hands
+Teapot
+
+
+q1
 Which of the following are the primary components used in machine learning?
 A machine learning model
 A model training algorithm
@@ -63,12 +152,27 @@ Model inference is when the trained model is used to generate predictions.
 
 2.4 Quiz: What is Machine Learning?
 ---------------------------------------
+q1
+Think back to the clay teapot analogy. Is it true or false that you always need to have an idea of what you're making when you're handling your raw block of clay? 
 false
+
+q2
+We introduced three common components of machine learning. Let's review your new knowledge by matching each component to its definition.
+machine learning model      generic program, made specific by data
+
+model training algorithm    an interative process fitting a generic model to specific data
+
+model inference algorithm   process to use a trained model to solve a task
 
 
 
 2.5 Introduction to Machine Learning Steps
 ---------------------------------------
+Major Steps in the Machine Learning Process
+In the preceding diagram, you can see an outline of the major steps of the machine learning process. Regardless of the specific model or training algorithm used, machine learning practitioners practice a common workflow to accomplish machine learning tasks.
+
+These steps are iterative. In practice, that means that at each step along the process, you review how the process is going. Are things operating as you expected? If not, go back and revisit your current step or previous steps to try and identify the breakdown.
+
 step one   : define the problem
 step two   : build the dataset
 step three : train the model
@@ -76,25 +180,72 @@ step four  : evaluate the model
 step five  : inference (use the model)
 
 
+
 2.6 Define the problem
 ---------------------------------------
+How do You Start a Machine Learning Task?
+
+Define a very specific task.
+Think back to the snow cone sales example. Now imagine that you own a frozen treats store and you sell snow cones along with many other products. You wonder, "‘How do I increase sales?" It's a valid question, but it's the opposite of a very specific task. The following examples demonstrate how a machine learning practitioner might attempt to answer that question.
+“Does adding a $1.00 charge for sprinkles on a hot fudge sundae increase the sales of hot fudge sundaes?”
+“Does adding a $0.50 charge for organic flavors in your snow cone increase the sales of snow cones?”
+
+Identify the machine learning task we might use to solve this problem.
+This helps you better understand the data you need for a project.
+
+What is a Machine Learning Task?
+All model training algorithms, and the models themselves, take data as their input. Their outputs can be very different and are classified into a few different groups based on the task they are designed to solve. Often, we use the kind of data required to train a model as part of defining a machine learning task.
+
+In this lesson, we will focus on two common machine learning tasks:
+
+Supervised learning
+Unsupervised learning
+
+Supervised and Unsupervised Learning
+The presence or absence of labeling in your data is often used to identify a machine learning task.
+
+Supervised tasks
 A task is supervised if you are using labeled data. We use the term labeled to refer to data that already contains the solutions, called labels.
 
+For example: Predicting the number of snow cones sold based on the temperatures is an example of supervised learning.
+
+In the preceding graph, the data contains both a temperature and the number of snow cones sold. Both components are used to generate the linear regression shown on the graph. Our goal was to predict the number of snow cones sold, and we feed that value into the model. We are providing the model with labeled data and therefore, we are performing a supervised machine learning task.
+
+Unsupervised tasks
 A task is considered to be unsupervised if you are using unlabeled data. This means you don't need to provide the model with any kind of label or solution while the model is being trained.
 
+Let's take a look at unlabeled data.
 
+Take a look at the preceding picture. Did you notice the tree in the picture? What you just did, when you noticed the object in the picture and identified it as a tree, is called labeling the picture. Unlike you, a computer just sees that image as a matrix of pixels of varying intensity.
+Since this image does not have the labeling in its original data, it is considered unlabeled.
 
+How do we classify tasks when we don't have a label?
+
+Unsupervised learning involves using data that doesn't have a label. One common task is called clustering. Clustering helps to determine if there are any naturally occurring groupings in the data.
+
+Let's look at an example of how clustering in unlabeled data works.
+
+Identifying book micro-genres with unsupervised learning
+
+Imagine that you work for a company that recommends books to readers.
+
+The assumption: You are fairly confident that micro-genres exist, and that there is one called Teen Vampire Romance. Because you don’t know which micro-genres exist, you can't use supervised learning techniques.
+
+This is where the unsupervised learning clustering technique might be able to detect some groupings in the data. The words and phrases used in the book description might provide some guidance on a book's micro-genre.
+
+Further Classifying by using Label Types
+
+Initially, we divided tasks based on the presence or absence of labeled data while training our model. Often, tasks are further defined by the type of label which is present.
 
 In supervised learning, there are two main identifiers you will see in machine learning:
 
 A categorical label has a discrete set of possible values. In a machine learning problem in which you want to identify the type of flower based on a picture, you would train your model using images that have been labeled with the categories of flower you would want to identify. Furthermore, when you work with categorical labels, you often carry out classification tasks*, which are part of the supervised learning family.
 A continuous (regression) label does not have a discrete set of possible values, which often means you are working with numerical data. In the snow cone sales example, we are trying to predict the number* of snow cones sold. Here, our label is a number that could, in theory, be any value.
+In unsupervised learning, clustering is just one example. There are many other options, such as deep learning.
 
-
-answer:
-supervised Learning
-unsupervised learning
-
+q1
+labeled data  : supervised Learning
+unlabeled data: unsupervised learning
 
 Terminology
 Clustering. Unsupervised learning task that helps to determine if there are any naturally occurring groupings in the data.
@@ -104,25 +255,64 @@ Discrete: A term taken from statistics referring to an outcome taking on only a 
 A label refers to data that already contains the solution.
 Using unlabeled data means you don't need to provide the model with any kind of label or solution while the model is being trained.
 
+Additional Reading
+The AWS Machine Learning blog is a great resource for learning more about projects in machine learning.
+You can use Amazon SageMaker to calculate new stats in Major League Baseball.
+You can also find an article on Flagging suspicious healthcare claims with Amazon SageMaker on the AWS Machine Learning blog.
+What kinds of questions and problems are good for machine learning?
+
+
 
 2.7 Quiz: Define the Problem
 ---------------------------------------
-2,4
+QUESTION 1 OF 2
+Which of the following problem statements fit the definition of a regression-based task?
+
+I want to determine the expected reading time for online news articles, so I collect data on my reading time for a week and write a browser plugin to use that data to predict the reading time for new articles.
+I work for a shoe company and want to provide a service to help parents predict their children's shoe size for any particular age. Within this system, I represent shoe size as a continuum of values and then round to the nearest shoe size.
 
 Correct! Both answers chosen here involve trying to predict some unknown continuous attribute about your data.
-
 Remember: Classification tasks involve predicting some unknown categorical attribute about your data.
-
 Regression tasks involve predicting some unknown continuous attribute about your data.
-
 Clustering tasks involve exploring how your data might be grouped together
 
 
-all 3
+QUESTION 2 OF 2
+As a machine learning practitioner, you're working with stakeholders on a music streaming app. Your supervisor asks, "How can we increase the average number of minutes a customer spends listening on our app?"
+This is a broad question(too broad) with many different potential factors affecting how long a customer might spend listening to music.
+How might you change the scope or redefine the question to be better suited, and more concise, for a machine learning task?
+
+yes Will changing the frequency of when we start playing ad affect how long a customer listens to music on our service?
+yes Will creating custom playlists encourage customers to listen to music longer?
+yes Will creating artist interviews about their songs increase how long our customers spend listening to music?
+
 
 
 2.8 Build a Dataset
 ---------------------------------------
+
+Summary
+The next step in the machine learning process is to build a dataset that can be used to solve your machine learning-based problem. Understanding the data needed helps you select better models and algorithms so you can build more effective solutions.
+
+The most important step of the machine learning process
+Working with data is perhaps the most overlooked—yet most important—step of the machine learning process. In 2017, an O’Reilly study showed that machine learning practitioners spend 80% of their time working with their data.
+
+The Four Aspects of Working with Data
+
+You can take an entire class just on working with, understanding, and processing data for machine learning applications. Good, high-quality data is essential for any kind of machine learning project. Let's explore some of the common aspects of working with data.
+
+Data collection
+Data collection can be as straightforward as running the appropriate SQL queries or as complicated as building custom web scraper applications to collect data for your project. You might even have to run a model over your data to generate needed labels. Here is the fundamental question:
+
+Does the data you've collected match the machine learning task and problem you have defined?
+
+
+Data inspection
+The quality of your data will ultimately be the largest factor that affects how well you can expect your model to perform. As you inspect your data, look for:
+
+Outliers
+Missing or incomplete values
+Data that needs to be transformed or preprocessed so it's in the correct format to be used by your model
 
 Summary statistics
 Models can assume how your data is structured.
@@ -131,10 +321,18 @@ Now that you have some data in hand it is a good best practice to check that you
 
 With many statistical tools, you can calculate things like the mean, inner-quartile range (IQR), and standard deviation. These tools can give you insight into the scope, scale, and shape of the dataset.
 
+Data visualization
+You can use data visualization to see outliers and trends in your data and to help stakeholders understand your data.
+
+Look at the following two graphs. In the first graph, some data seems to have clustered into different groups. In the second graph, some data points might be outliers.
+
 
 Terminology
 Impute is a common term referring to different statistical tools which can be used to calculate missing values from your dataset.
 Outliers are data points that are significantly different from others in the same sample.
+
+Additional reading
+In machine learning, you use several statistical-based tools to better understand your data. The sklearn library has many examples and tutorials, such as this example demonstrating outlier detection on a real dataset.
 
 
 2.9 Quiz: Build a Dataset
