@@ -658,4 +658,95 @@ A Python application runs inside of a controlled environment with Python code. R
 
 
 
+4.17 Choosing A Message Passing Technology
+---------------------------------------
+q1
+Is our team using AWS?
+Is Kinesis newer than Kafka?
+Is my team open to using AWS managed services?
+
+
+q2
+The technology is no longer supported as other dependencies are updated.
+The technology is more costly to maintain due to worse performance metrics
+A security vulnerability is not patched
+A strange error can't be diagnosed and solved due to lack of information on the problem
+
+
+Decision-Making
+When we decide which technology to use and how to implement our message-passing techniques, we need to weigh the tradeoffs between them
+
+Sometimes, we may unsure about the best approach for our system design and implementation
+
+Best Practices
+Use the industry standard to ensure the least amount of friction for:
+
+Adoption
+Access to tools and libraries
+Comfort in the tool's stability and technical support
+The Current Industry Standard is REST
+If you are unsure which technology to use after weighing the tradeoffs of different technologies, it may be best to start with REST.
+
+Avoid Over-Engineered Solutions
+If our understanding of a system and business use case is not clear, it is best to stick with the standard solutions that satisfy our business needs.
+
+Additional Reading
+The following are some examples of over-engineered solutions:
+
+Overengineering a Web Application is Easier Than Ever
+Juicero
+
+
+
+4.18 Exercise: Updating the Orders Service
+---------------------------------------
+Updating the Orders Service
+Our computer orders application looks great! Given our success, we want to need to update our application to include some more data. Before we can add this logic, we have to build a list of tasks to present to our team to understand the scope of work to make the changes.
+
+Desired Updates
+A computer order should now have a new field to capture information on the type of computer: a 13-inch laptop, 15-inch laptop, or desktop computer.
+
+Task
+Review the REST, gRPC, and Kafka implementations. What changes do we need to make to update the message structure?
+
+You don't have to implement any code; just write a list of tasks that you will present to your team so you and your team can properly scope out this effort.
+
+q1
+rest
+* sender need to include type field in the json body
+* api endpoint need to process the body that contain the type field
+* method create need to process the type field
+* method retrieve need to process the type field
+
+grpc
+* order.proto should include the type field into OrderMessage
+* regen proto files
+* main.py create and get need to add the field type to the order message.
+
+kafka
+* when sending json message in kafka, just include the type field
+* on receiving end, process the type field
+
+
+
+4.19 Solution: Updating the Orders Service
+---------------------------------------
+My Solution
+The following five items are tasks that I will present to my team:
+
+REST message interface
+gRPC protobuf message
+Flask code to handle new field
+gRPC server code to handle new field
+Update Kafka consumers to expect the new field
+
+Note that there are different solutions to this exercise and that your solution may not look exactly like mine.
+
+q1
+so we can see how many changes are require before actually doing it. it also show what are the risk going to be due to the changes propose.
+
+Proposing a list of tasks gives the team information about how long a task might take, which is important for setting team priorities. If a major change delivers a very low amount of business value, we may want to focus on a task with a higher return.
+
+
+
 
