@@ -335,34 +335,55 @@ Additional reading
 In machine learning, you use several statistical-based tools to better understand your data. The sklearn library has many examples and tutorials, such as this example demonstrating outlier detection on a real dataset.
 
 
+
 2.9 Quiz: Build a Dataset
 ---------------------------------------
+True or false: Your data requirements will not change based on the machine learning task you are using.
 false : Nicely done! A supervised learning problem uses labeled data, and an unsupervised learning problem uses unlabeled data.
 
+True or false: Models are universal, so the data is not relevant.
 false : Correct! Because models are made specific by the data required to train them, the quality of the data is very important to the overall success of your project.
 
+True or false: Data needs to be formatted so that is compatible with the model and model training algorithm you plan to use.
 true : True or false: Data needs to be formatted so that is compatible with the model and model training algorithm you plan to use.
 
+True or false: Data visualizations are the only way to identify outliers in your data.
 false : Correct! Tools from the statistics can also be used to check for outliers.
 
+True or false: After you start using your model (performing inference), you don't need to check the new data that it receives.
 false : Correct. You should periodically review the data coming into the model. When reviewing, you should check for the same things when you built your dataset.
+
 
 
 2.10 Model Training
 ---------------------------------------
+
+You're ready to start training your first model.
+
+Splitting your Dataset
+The first step in model training is to randomly split the dataset. This allows you to keep some data hidden during training, so that data can be used to evaluate your model before you put it into production. Specifically, you do this to test against the bias-variance trade-off. If you're interested in learning more, see the Further learning and reading section.
+
+Splitting your dataset gives you two sets of data:
+
 Training dataset: The data on which the model will be trained. Most of your data will be here. Many developers estimate about 80%.
 Test dataset: The data withheld from the model during training, which is used to test how well your model will generalize to new data.
 
+Model Training Terminology
+The model training algorithm iteratively updates a model's parameters to minimize some loss function.
+
+Let's define those two terms:
 Model parameters: Model parameters are settings or configurations the training algorithm can update to change how the model behaves. Depending on the context, you’ll also hear other more specific terms used to describe model parameters such as weights and biases. Weights, which are values that change as the model learns, are more specific to neural networks.
 Loss function: A loss function is used to codify the model’s distance from this goal. For example, if you were trying to predict a number of snow cone sales based on the day’s weather, you would care about making predictions that are as accurate as possible. So you might define a loss function to be “the average distance between your model’s predicted number of snow cone sales and the correct number.” You can see in the snow cone example this is the difference between the two purple dots.
 
+Putting it All Together
 The end-to-end training process is
 
 Feed the training data into the model.
 Compute the loss function on the results.
 Update the model parameters in a direction that reduces loss.
+You continue to cycle through these steps until you reach a predefined stop condition. This might be based on a training time, the number of training cycles, or an even more intelligent or application-aware mechanism.
 
-
+Advice From the Experts
 Remember the following advice when training your model.
 
 Practitioners often use machine learning frameworks that already have working implementations of models and model training algorithms. You could implement these from scratch, but you probably won't need to do so unless you’re developing new models or algorithms.
@@ -370,6 +391,10 @@ Practitioners use a process called model selection to determine which model or m
 Hyperparameters are settings on the model which are not changed during training but can affect how quickly or how reliably the model trains, such as the number of clusters the model should identify.
 Be prepared to iterate.
 
+Pragmatic problem solving with machine learning is rarely an exact science, and you might have assumptions about your data or problem which turn out to be false. Don’t get discouraged. Instead, foster a habit of trying new things, measuring success, and comparing results across iterations.
+
+Extended Learning
+This information hasn't been covered in the above video but is provided for the advanced reader.
 
 Linear models
 One of the most common models covered in introductory coursework, linear models simply describe the relationship between a set of input numbers and a set of output numbers through a linear function (think of y = mx + b or a line on a x vs y chart).
@@ -393,8 +418,11 @@ RNN/LSTM: Recurrent Neural Networks (RNN) and the related Long Short-Term Memory
 
 Transformer: A more modern replacement for RNN/LSTMs, the transformer architecture enables training over larger datasets involving sequences of data.
 
+Machine Learning Using Python Libraries
+For more classical models (linear, tree-based) as well as a set of common ML-related tools, take a look at scikit-learn. The web documentation for this library is also organized for those getting familiar with space and can be a great place to get familiar with some extremely useful tools and techniques.
+For deep learning, mxnet, tensorflow, andpytorch are the three most common libraries. For the purposes of the majority of machine learning needs, each of these is feature-paired and equivalent.
 
-
+Terminology
 
 Hyperparameters are settings on the model which are not changed during training but can affect how quickly or how reliably the model trains, such as the number of clusters the model should identify.
 
@@ -406,33 +434,70 @@ Test dataset: The data withheld from the model during training, which is used to
 
 Model parameters are settings or configurations the training algorithm can update to change how the model behaves.
 
+Additional reading
+The Wikipedia entry on the bias-variance trade-off can help you understand more about this common machine learning concept.
+In this AWS Machine Learning blog post, you can see how to train a machine-learning algorithm to predict the impact of weather on air quality using Amazon SageMaker.
+
+
 
 2.11 Quiz Model Training
 ---------------------------------------
+True or false: The loss function measures how far the model is from its goal.
 True  :  The loss function measures how far the model is from its goal.
 
+Why do you need to split the data into training and test data prior to beginning model training?
 if you use all the data you have collected during training, you won't have any with which to test the model during the model evaluation phase.
 
+What makes hyperparameters different than model parameters? There may be more than one correct answer.
 hyperparameters are not updated during model training.
 hyperparameters are set manually.
 
 
+
 2.12 Model Evaluation
 ---------------------------------------
+After you have collected your data and trained a model, you can start to evaluate how well your model is performing. The metrics used for evaluation are likely to be very specific to the problem you have defined. As you grow in your understanding of machine learning, you will be able to explore a wide variety of metrics that can enable you to evaluate effectively.
+
+Using Model Accuracy
 Model accuracy is a fairly common evaluation metric. Accuracy is the fraction of predictions a model gets right.
+
+Here's an example:
+
+Imagine that you built a model to identify a flower as one of two common species based on measurable details like petal length. You want to know how often your model predicts the correct species. This would require you to look at your model's accuracy.
+
+Extended Learning
+This information hasn't been covered in the above video but is provided for the advanced reader.
 
 Using Log Loss
 Log loss seeks to calculate how uncertain your model is about the predictions it is generating. In this context, uncertainty refers to how likely a model thinks the predictions being generated are to be correct.
 
+For example, let's say you're trying to predict how likely a customer is to buy either a jacket or t-shirt.
 
+Log loss could be used to understand your model's uncertainty about a given prediction. In a single instance, your model could predict with 5% certainty that a customer is going to buy a t-shirt. In another instance, your model could predict with 80% certainty that a customer is going to buy a t-shirt. Log loss enables you to measure how strongly the model believes that its prediction is accurate.
+
+In both cases, the model predicts that a customer will buy a t-shirt, but the model's certainty about that prediction can change.
+
+Remember: This Process is Iterative
+
+Every step we have gone through is highly iterative and can be changed or re-scoped during the course of a project. At each step, you might find that you need to go back and reevaluate some assumptions you had in previous steps. Don't worry! This ambiguity is normal.
+
+Terminology
 Log loss seeks to calculate how uncertain your model is about the predictions it is generating.
 
 Model Accuracy is the fraction of predictions a model gets right.
+
+Additional reading
+The tools used for model evaluation are often tailored to a specific use case, so it's difficult to generalize rules for choosing them. The following articles provide use cases and examples of specific metrics in use.
+
+This healthcare-based example, which automates the prediction of spinal pathology conditions, demonstrates how important it is to avoid false positive and false negative predictions using the tree-based xgboost model.
+The popular open-source library sklearn provides information about common metrics and how to use them.
+This entry from the AWS Machine Learning blog demonstrates the importance of choosing the correct model evaluation metrics for making accurate energy consumption estimates using Amazon Forecast.
 
 
 
 2.13 Quiz: Model Evaluation 
 ---------------------------------------
+True or false: Model evaluation is not very use case–specific.
 false : Correct! Model evaluation tools are often tailored to a specific use case.
 
 R Square/Adjusted R Square.
@@ -454,21 +519,34 @@ Root mean square error (RMSE): This is similar MAE, but takes a slightly modifie
 Coefficient of determination or R-squared (R^2): This measures how well-observed outcomes are actually predicted by the model, based on the proportion of total variation of outcomes.
 
 
+
 2.14 Model Inference
 ---------------------------------------
+Summary
+Congratulations! You're ready to deploy your model.
+
 Once you have trained your model, have evaluated its effectiveness, and are satisfied with the results, you're ready to generate predictions on real-world problems using unseen data in the field. In machine learning, this process is often called inference.
+
+Even after you deploy your model, you're always monitoring to make sure your model is producing the kinds of results that you expect. Tthere may be times where you reinvestigate the data, modify some of the parameters in your model training algorithm, or even change the model type used for training.
+
 
 
 2.15 Quiz: Model Inference
 ---------------------------------------
+Choose the options which correctly complete the following phrase:
+Model inference involves...
+
 generating predictions
 finding patterns in your data.
 using a trained model.
 testing your model on data it has not seen before
 
 
+
 2.16 Introduction to Examples
 ---------------------------------------
+Through the remainder of the lesson, we will be walking through 3 different case study examples of machine learning tasks actually solving problems in the real world.
+
 Supervised learning
 Using machine learning to predict housing prices in a neighborhood based on lot size and number of bedrooms
 
@@ -479,18 +557,75 @@ Deep neural network
 While this type of task is beyond the scope of this lesson, we wanted to show you the power and versatility of modern machine learning. You will see how it can be used to analyze raw images from lab video footage from security cameras, trying to detect chemical spills.
 
 
+
 2.17 Example One: House Price Prediction
 ---------------------------------------
+House price prediction is one of the most common examples used to introduce machine learning.
+
+Traditionally, real estate appraisers use many quantifiable details about a home (such as number of rooms, lot size, and year of construction) to help them estimate the value of a house.
+
+You detect this relationship and believe that you could use machine learning to predict home prices.
+
+Step One: Define the Problem
+Can we estimate the price of a house based on lot size or the number of bedrooms?
+
+You access the sale prices for recently sold homes or have them appraised. Since you have this data, this is a supervised learning task. You want to predict a continuous numeric value, so this task is also a regression task.
+
+Step Two: Building a Dataset
+Data collection: You collect numerous examples of homes sold in your neighborhood within the past year, and pay a real estate appraiser to appraise the homes whose selling price is not known.
+Data exploration: You confirm that all of your data is numerical because most machine learning models operate on sequences of numbers. If there is textual data, you need to transform it into numbers. You'll see this in the next example.
+Data cleaning: Look for things such as missing information or outliers, such as the 10-room mansion. Several techniques can be used to handle outliers, but you can also just remove those from your dataset.
+
+Data visualization: You can plot home values against each of your input variables to look for trends in your data. In the following chart, you see that when lot size increases, the house value increases.
+
+Step Three: Model Training
+Prior to actually training your model, you need to split your data. The standard practice is to put 80% of your dataset into a training dataset and 20% into a test dataset.
+
+Linear model selection
+As you see in the preceding chart, when lot size increases, home values increase too. This relationship is simple enough that a linear model can be used to represent this relationship.
+
+A linear model across a single input variable can be represented as a line. It becomes a plane for two variables, and then a hyperplane for more than two variables. The intuition, as a line with a constant slope, doesn't change.
+
+Using a Python library
+The Python scikit-learn library has tools that can handle the implementation of the model training algorithm for you.
+
+Step Four: Evaluation
+One of the most common evaluation metrics in a regression scenario is called root mean square or RMS. The math is beyond the scope of this lesson, but RMS can be thought of roughly as the "average error” across your test dataset, so you want this value to be low.
+
+In the following chart, you can see where the data points are in relation to the blue line. You want the data points to be as close to the "average" line as possible, which would mean less net error.
+
+You compute the root mean square between your model’s prediction for a data point in your test dataset and the true value from your data. This actual calculation is beyond the scope of this lesson, but it's good to understand the process at a high level.
+
+Interpreting Results
+In general, as your model improves, you see a better RMS result. You may still not be confident about whether the specific value you’ve computed is good or bad.
+
+Many machine learning engineers manually count how many predictions were off by a threshold (for example, $50,000 in this house pricing problem) to help determine and verify the model's accuracy.
+
+Step Five: Inference: Try out your model
+Now you are ready to put your model into action. As you can see in the following image, this means seeing how well it predicts with new data not seen during model training.
+
+Terminology
 Continuous: Floating-point values with an infinite range of possible values. The opposite of categorical or discrete values, which take on a limited number of possible values.
 Hyperplane: A mathematical term for a surface that contains more than two planes.
 Plane: A mathematical term for a flat surface (like a piece of paper) on which two points can be joined by a straight line.
 Regression: A common task in supervised machine learning.
 
+Additional reading
+The Machine Learning Mastery blog is a fantastic resource for learning more about machine learning. The following example blog posts dive deeper into training regression-based machine learning models.
+
+How to Develop Ridge Regression Models in Python offers another approach to solving the problem in the example from this lesson.
+Regression is a popular machine learning task, and you can use several different model evaluation metrics with it.
+
+
 
 2.18 Quiz: Example One
 ---------------------------------------
+True or False: The model used in this example is an unsupervised machine learning task.
 false
 
+In this example, we used a linear model to solve a simple regression supervised learning task. This model type is a great first choice when exploring a machine learning problem because it's very fast and straightforward to train. It typically works well when you have relationships in your data that are linear (when input changes by X, output changes by some fixed multiple of X).
+
+Can you think of an example of a problem that would not be solvable by a linear model?
 throwing a ball for a distance.
 
 
@@ -499,6 +634,7 @@ Linear models typically fail when there is no helpful linear relationship betwee
 For example, imagine predicting the height (label) of a thrown projectile over time (input variable). You know the trajectory is not linear; it's curved. Any straight line you try to use to describe this phenomenon would be invalid for a large range of the projectile's trajectory.
 
 Techniques do exist to modify your data so you can still use linear models in these situations. Such methods are out of scope for this course but are called kernel methods.
+
 
 
 2.19 Example Two: Book Genre Exploration
