@@ -639,19 +639,73 @@ Techniques do exist to modify your data so you can still use linear models in th
 
 2.19 Example Two: Book Genre Exploration
 ---------------------------------------
+In this video, you saw how the machine learning process can be applied to an unsupervised machine learning task that uses book description text to identify different micro-genres.
+
+Step One: Define the Problem
+Find clusters of similar books based on the presence of common words in the book descriptions.
+
+You do editorial work for a book recommendation company, and you want to write an article on the largest book trends of the year. You believe that a trend called "micro-genres" exists, and you have confidence that you can use the book description text to identify these micro-genres.
+
+By using an unsupervised machine learning technique called clustering, you can test your hypothesis that the book description text can be used to identify these "hidden" micro-genres.
+
+Earlier in this lesson, you were introduced to the idea of unsupervised learning. This machine learning task is especially useful when your data is not labeled.
+
+Step Two: Build your Dataset
+To test the hypothesis, you gather book description text for 800 romance books published in the current year.
+
+Data exploration, cleaning and preprocessing
+For this project, you believe capitalization and verb tense will not matter, and therefore you remove capitals and convert all verbs to the same tense using a Python library built for processing human language. You also remove punctuation and words you don’t think have useful meaning, like 'a' and 'the'. The machine learning community refers to these words as stop words.
+
+Before you can train the model, you need to do some data preprocessing, called data vectorization, to convert text into numbers.
+
+You transform this book description text into what is called a bag of wordsrepresentation shown in the following image so that it is understandable by machine learning models.
+
+How the bag of words representation works is beyond the scope of this course. If you are interested in learning more, see the Additional Reading section at the bottom of the page.
+
+Step Three: Train the Model
+Now you are ready to train your model.
+
+You pick a common cluster-finding model called k-means. In this model, you can change a model parameter, k, to be equal to how many clusters the model will try to find in your dataset.
+
+Your data is unlabeled: you don't how many microgenres might exist. So you train your model multiple times using different values for k each time.
+
+What does this even mean? In the following graphs, you can see examples of when k=2 and when k=3.
+
+Step Four: Model Evaluation
+In machine learning, numerous statistical metrics or methods are available to evaluate a model. In this use case, the silhouette coefficient is a good choice. This metric describes how well your data was clustered by the model. To find the optimal number of clusters, you plot the silhouette coefficient as shown in the following image below. You find the optimal value is when k=19.
+
+Often, machine learning practitioners do a manual evaluation of the model's findings.
+
+You find one cluster that contains a large collection of books you can categorize as “paranormal teen romance.” This trend is known in your industry, and therefore you feel somewhat confident in your machine learning approach. You don’t know if every cluster is going to be as cohesive as this, but you decide to use this model to see if you can find anything interesting about which to write an article.
+
+Step Five: Inference (Use the Model)
+As you inspect the different clusters found when k=19, you find a surprisingly large cluster of books. Here's an example from fictionalized cluster #7.
+
+As you inspect the preceding table, you can see that most of these text snippets are indicating that the characters are in some kind of long-distance relationship. You see a few other self-consistent clusters and feel you now have enough useful data to begin writing an article on unexpected modern romance microgenres.
+
+Terminology
 Bag of words: A technique used to extract features from the text. It counts how many times a word appears in a document (corpus), and then transforms that information into a dataset.
 Data vectorization: A process that converts non-numeric data into a numerical format so that it can be used by a machine learning model.
 Silhouette coefficient: A score from -1 to 1 describing the clusters found during modeling. A score near zero indicates overlapping clusters, and scores less than zero indicate data points assigned to incorrect clusters. A score approaching 1 indicates successful identification of discrete non-overlapping clusters.
 Stop words: A list of words removed by natural language processing tools when building your dataset. There is no single universal list of stop words used by all-natural language processing tools.
 
+Additional reading
+Machine Learning Mastery is a great resource for finding examples of machine learning projects.
+
+The How to Develop a Deep Learning Bag-of-Words Model for Sentiment Analysis (Text Classification) blog post provides an example using a bag of words–based approach pair with a deep learning model.
+
+
 
 2.20 Quiz: Example Two
 ---------------------------------------
+What kind of machine learning task was used in the book micro-genre example?
 unsupervised learning
 
+In the k-means model used for this example, what does the value for "k" indicate?
 The number of clusters the model will try to find during training.
 Correct! Prior to training your model, you can set the value of "k" to equal the number of clusters you want the model to find.
 
+True or false: An unsupervised learning approach is the only approach that can be used to solve problems of the kind described in this lesson (book micro-genres).
 true
 Great job! The number and size of possible clusters are unknown prior to model training, and thus you need to use an unsupervised approach.
 
@@ -659,6 +713,71 @@ Great job! The number and size of possible clusters are unknown prior to model t
 
 2.21 Example Three: Spill Detection from Video
 ---------------------------------------
+In the previous two examples, we used classical methods like linear models and k-means to solve machine learning tasks. In this example, we’ll use a more modern model type.
+
+Note: This example uses a neural network. The algorithm for how a neural network works is beyond the scope of this lesson. However, there is still value in seeing how machine learning applies in this case.
+
+Step One: Defining the Problem
+Imagine you run a company that offers specialized on-site janitorial services. A client, an industrial chemical plant, requires a fast response for spills and other health hazards. You realize if you could automatically detect spills using the plant's surveillance system, you could mobilize your janitorial team faster.
+
+Machine learning could be a valuable tool to solve this problem.
+
+Step Two: Model Training (and selection)
+This task is a supervised classification task, as shown in the following image. As shown in the image above, your goal will be to predict if each image belongs to one of the following classes:
+
+Contains spill
+Does not contain spill
+
+Step Two: Building a Dataset
+Collecting
+Using historical data, as well as safely staged spills, you quickly build a collection of images that contain both spills and non-spills in multiple lighting conditions and environments.
+Exploring and cleaning
+You go through all the photos to ensure the spill is clearly in the shot. There are Python tools and other techniques available to improve image quality, which you can use later if you determine a need to iterate.
+Data vectorization (converting to numbers)
+Many models require numerical data, so all your image data needs to be transformed into a numerical format. Python tools can help you do this automatically.
+In the following image, you can see how each pixel in the image on the left can be represented in the image on the right by a number between 0 and 1, with 0 being completely black and 1 being completely white.
+
+Split the data
+
+You split your image data into a training dataset and a test dataset.
+Step Three: Model Training
+Traditionally, solving this problem would require hand-engineering features on top of the underlying pixels (for example, locations of prominent edges and corners in the image), and then training a model on these features.
+
+Today, deep neural networks are the most common tool used for solving this kind of problem. Many deep neural network models are structured to learn the features on top of the underlying pixels so you don’t have to learn them. You’ll have a chance to take a deeper look at this in the next lesson, so we’ll keep things high-level for now.
+
+CNN (convolutional neural network)
+Neural networks are beyond the scope of this lesson, but you can think of them as a collection of very simple models connected together. These simple models are called neurons, and the connections between these models are trainable model parameters called weights.
+
+Convolutional neural networks are a special type of neural network particularly good at processing images.
+
+Step Four: Model Evaluation
+As you saw in the last example, there are many different statistical metrics you can use to evaluate your model. As you gain more experience in machine learning, you will learn how to research which metrics can help you evaluate your model most effectively. Here's a list of common metrics:
+
+Accuracy		False positive rate		Precision
+Confusion matrix	False negative rate		Recall
+F1 Score		Log Loss			ROC curve
+			Negative predictive value	Specificity
+
+In cases such as this, accuracy might not be the best evaluation mechanism.
+
+Why not? You realize the model will see the 'Does not contain spill' class almost all the time, so any model that just predicts “no spill” most of the time will seem pretty accurate.
+
+What you really care about is an evaluation tool that rarely misses a real spill.
+
+After doing some internet sleuthing, you realize this is a common problem and that Precision and Recall will be effective. You can think of precision as answering the question, "Of all predictions of a spill, how many were right?" and recall as answering the question, "Of all actual spills, how many did we detect?"
+
+Manual evaluation plays an important role. You are unsure if your staged spills are sufficiently realistic compared to actual spills. To get a better sense how well your model performs with actual spills, you find additional examples from historical records. This allows you to confirm that your model is performing satisfactorily.
+
+Step Five: Model Inference
+The model can be deployed on a system that enables you to run machine learning workloads such as AWS Panorama.
+
+Thankfully, most of the time, the results will be from the class 'Does not contain spill.'
+
+No spill detected
+
+But, when the class 'Contains spill' is detected, a simple paging system could alert the team to respond.
+
+Terminology
 Convolutional neural networks(CNN) are a special type of neural network particularly good at processing images.
 
 Neural networks: a collection of very simple models connected together.
@@ -666,39 +785,65 @@ Neural networks: a collection of very simple models connected together.
 These simple models are called neurons
 the connections between these models are trainable model parameters called weights.
 
+Additional reading
+As you continue your machine learning journey, you will start to recognize problems that are excellent candidates for machine learning.
+
+The AWS Machine Learning Blog is a great resource for finding more examples of machine learning projects.
+
+In the Protecting people from hazardous areas through virtual boundaries with Computer Vision blog post, you can see a more detailed example of the deep learning process described in this lesson.
+
 
 
 2.22 Quiz: Example Three
 ---------------------------------------
+Now that you've seen a few examples, let's double-check our understanding of the process. Match each step with an action you might take during that step.
+
+define the problem
 thinking of this problem as a classification tasks.
 
+build the dataset
 flipping through photos to ensure the spill is clearly in shot.
 
+train the model
 identifying a cnn as having a good chance of matching your data and task.
 
+evaluate the model
 mesuring model accuracy alone wont give u confidence that the trained model is
 perforing as intended
 
-
-deploying the modle to a system capable of processing images in the surveillance
+use the model
+deploying the model to a system capable of processing images in the surveillance
 system.
 
 
 
 2.23 Final Quiz
 ---------------------------------------
+Only a single metric can be used to evaluate a machine learning model.
 false
 
+A lost function...
 model hyperparameter
 measure how close the model is towards its goal.
 
+The model training algorithm iteratively updates a model’s parameters to minimize some loss function.
 true
 
+Supervised learning uses labeled data while training a model, and unsupervised learning uses unlabeled data while training a model.
 true
+
 
 
 2.24 Lesson Review
 ---------------------------------------
+Congratulations on making it through the lesson. Let's review what you learning
+
+In the first part of the lesson, we talked about what machine learning actually is, introduced you to some of the most common terms and ideas used in machine learning, and identified the common components involved in machine learning projects.
+We learned that machine learning involves using trained models to generate predictions and detect patterns from data. We looked behind the scenes to see what is really happening. We also broke down the different steps or tasks involved in machine learning.
+We looked at three machine learning examples to demonstrate how each works to solve real-world situations.
+A supervised learning task in which you used machine learning to predict housing prices for homes in your neighborhood, based on the lot size and the number of bedrooms.
+An unsupervised learning task in which you used machine learning to find interesting collections of books in a book dataset, based on the descriptive words in the book description text.
+Using a deep neural network to detect chemical spills in a lab from video and images.
 
 
 
