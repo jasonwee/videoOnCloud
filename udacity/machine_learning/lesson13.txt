@@ -1,0 +1,101 @@
+date start : 10 september 2021
+
+
+13.1 Unsupervised Learning
+---------------------------------------
+
+
+13.2 Basic Clustering Problem
+---------------------------------------
+
+
+
+13.3 Quiz: Single Linkage Clustering
+---------------------------------------
+e,f
+
+
+13.4 Single Linkage Clustering Two
+---------------------------------------
+
+
+13.5 Quiz: Running Time of SLC
+---------------------------------------
+3
+
+
+13.6 Quiz: Issues with SLC
+---------------------------------------
+3
+
+13.7 K Means Clustering
+---------------------------------------
+
+
+13.8 K Means in Euclidean Space Part 1
+---------------------------------------
+
+
+13.9 K Means as Optimization
+---------------------------------------
+
+
+13.10 Quiz: K Means as Optimization Quiz
+---------------------------------------
+1
+
+
+13.11 K Means in Euclidean Space Part 2
+---------------------------------------
+
+
+13.12 Quiz: Properies of K Means Clustering Quiz
+---------------------------------------
+a b d
+
+
+13.13 Quiz: Soft Clustering Quiz
+---------------------------------------
+3
+
+
+13.14 Soft Clustering
+---------------------------------------
+
+
+13.15 Maximum Likelihood Gaussian
+---------------------------------------
+
+
+13.16 Expectation Maximization
+---------------------------------------
+
+
+13.17 EM Examples
+---------------------------------------
+
+
+13.18 Properties of EM
+---------------------------------------
+
+
+13.19 Clustering Properties
+---------------------------------------
+
+
+13.20 Quiz: Clustering Properties Quiz
+---------------------------------------
+  x  x
+x    x
+x x
+
+
+13.21 Impossibility Theorem
+---------------------------------------
+
+
+13.22 What Have We Learned?
+---------------------------------------
+
+
+
