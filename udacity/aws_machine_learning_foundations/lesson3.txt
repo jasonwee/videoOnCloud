@@ -10,11 +10,48 @@ You can accelerate your adoption of machine learning with AWS SageMaker. Models 
 AWS offers the most comprehensive cloud offering optimized for machine learning.
 More machine learning happens at AWS than anywhere else.
 
+AWS Machine Learning offerings
+
+AWS AI services
+By using AWS pre-trained AI services, you can apply ready-made intelligence to a wide range of applications such as personalized recommendations, modernizing your contact center, improving safety and security, and increasing customer engagement.
+
+Industry-specific solutions
+With no knowledge in machine learning needed, add intelligence to a wide range of applications in different industries including healthcare and manufacturing.
+
+AWS Machine Learning services
+With AWS, you can build, train, and deploy your models fast. Amazon SageMaker is a fully managed service that removes complexity from ML workflows so every developer and data scientist can deploy machine learning for a wide range of use cases.
+
+ML infrastructure and frameworks
+AWS Workflow services make it easier for you to manage and scale your underlying ML infrastructure.
+
+Getting started
+In addition to educational resources such as AWS Training and Certification, AWS has created a portfolio of educational devices to help put new machine learning techniques into the hands of developers in unique and fun ways, with AWS DeepLens, AWS DeepRacer, and AWS DeepComposer.
+
+AWS DeepLens: A deep learning–enabled video camera
+AWS DeepRacer: An autonomous race car designed to test reinforcement learning models by racing on a physical track
+AWS DeepComposer: A composing device powered by generative AI that creates a melody that transforms into a completely original song
+AWS ML Training and Certification: Curriculum used to train Amazon developers
+
+Additional Reading
+To learn more about AWS AI Services, see Explore AWS AI services.
+To learn more about AWS ML Training and Certification offerings, see Training and Certification.
 
 
 
 3.2 Lesson Overview
 ---------------------------------------
+In this lesson, you'll get an introduction to machine learning (ML) with AWS and AWS AI devices: AWS DeepLens, AWS DeepComposer, and AWS DeepRacer. Learn the basics of computer vision with AWS DeepLens, race around a track and get familiar with reinforcement learning with AWS DeepRacer, and discover the power of generative AI by creating music using AWS DeepComposer.
+
+By the end of the lesson, you will be able to:
+
+Identify AWS machine learning offerings and understand how different services are used for different applications.
+Explain the fundamentals of computer vision and provide examples of popular tasks.
+Describe how reinforcement learning works in the context of AWS DeepRacer.
+Explain the fundamentals of generative AI and its applications, and describe three famous generative AI models in the context of music and AWS DeepComposer.
+We hope this will be an interesting and exciting learning experience for you.
+
+Let's get started!
+
 
 
 3.3 AWS Account Requirements
@@ -43,6 +80,20 @@ Amazon SageMaker is a separate service and has its own service pricing and billi
 
 3.4 Computer Vision and Its Applications
 ---------------------------------------
+Computer Vision and Its Applications
+This section introduces you to common concepts in computer vision (CV), and explains how you can use AWS DeepLens to start learning with computer vision projects. By the end of this section, you will be able to explain how to create, train, deploy, and evaluate a trash-sorting project that uses AWS DeepLens.
+
+Introduction to Computer Vision
+
+Summary
+Computer vision got its start in the 1960s in academia. Since its inception, it has been an interdisciplinary field. Machine learning practitioners use computers to understand and automate tasks associated with the visual word.
+
+Modern-day applications of computer vision use neural networks. These networks can quickly be trained on millions of images and produce highly accurate predictions.
+
+Since 2010, there has been exponential growth in the field of computer vision. You can start with simple tasks like image classification and objection detection and then scale all the way up to the nearly real-time video analysis required for self-driving cars to work at scale.
+
+In the video, you have learned:
+
 How computer vision got started
 Early applications of computer vision needed hand-annotated images to successfully train a model.
 These early applications had limited applications because of the human labor required to annotate images.
@@ -61,7 +112,9 @@ How this growth occured
 Since 2010, we have seen a rapid decrease in the computational costs required to train the complex neural networks used in computer vision.
 Larger and larger pre-labeled datasets have become generally available. This has decreased the time required to collect the data needed to train many models.
 
-
+Computer Vision Applications
+Summary
+Computer vision (CV) has many real-world applications. In this video, we cover examples of image classification, object detection, semantic segmentation, and activity recognition. Here's a brief summary of what you learn about each topic in the video:
 
 Image classification is the most common application of computer vision in use today. Image classification can be used to answer questions like What's in this image? This type of task has applications in text detection or optical character recognition (OCR) and content moderation.
 Object detection is closely related to image classification, but it allows users to gather more granular detail about an image. For example, rather than just knowing whether an object is present in an image, a user might want to know if there are multiple instances of the same object present in an image, or if objects from different classes appear in the same image.
@@ -74,6 +127,10 @@ Input Layer: The first layer in a neural network. This layer receives all data t
 Hidden Layer: A layer that occurs between the output and input layers. Hidden layers are tailored to a specific task.
 Output Layer: The last layer in a neural network. This layer is where the predictions are generated based on the information captured in the hidden layers.
 
+Additional Reading
+You can use the AWS DeepLens Recipes website to find different learning paths based on your level of expertise. For example, you can choose either a student or teacher path. Additionally, you can choose between beginner, intermediate, and advanced projects which have been created and vetted by the AWS DeepLens team.
+You can check out the AWS machine learning blog to learn about recent advancements in machine learning. Additionally, you can use the AWS DeepLens tag to see projects which have been created by the AWS DeepLens team.
+Ready to get started? Check out the Getting started guide in the AWS DeepLens Developer Guide.
 
 https://www.awsdeeplens.recipes/
 https://aws.amazon.com/blogs/machine-learning/
@@ -81,7 +138,8 @@ https://aws.amazon.com/blogs/machine-learning/category/artificial-intelligence/a
 https://docs.aws.amazon.com/deeplens/latest/dg/deeplens-getting-started.html
 
 
-3.5
+
+3.5 Computer Vision with AWS DeepLens
 ---------------------------------------
 AWS DeepLens
 AWS DeepLens allows you to create and deploy end-to-end computer vision–based applications. The following video provides a brief introduction to how AWS DeepLens works and how it uses other AWS services.
@@ -101,9 +159,28 @@ Then, you use your trained model on the AWS DeepLens device. On the device, the 
 Device stream – The video stream passed through without processing.
 Project stream – The results of the model's processing of the video frames.
 
+Additional Reading
+To learn more about the specifics of the AWS DeepLens device, see the AWS DeepLens Hardware Specifications in the AWS DeepLens Developer Guide.
+You can buy an AWS DeepLens device on Amazon.com.
+
+
 
 3.6 A sample project with aws deeplens
 ---------------------------------------
+A Sample Project with AWS DeepLens
+This section provides a hands-on demonstration of a project created as part of an AWS DeepLens sponsored hack-a-thon. In this project, we use an AWS DeepLens device to do an image classification–based task. We train a model to detect if a piece of trash is from three potential classes: landfill, compost, or recycling.
+
+Summary
+AWS DeepLens is integrated with multiple AWS services. You use these services to create, train, and launch your AWS DeepLens project. To create any AWS DeepLens–based project you will need an AWS account.
+
+Four key components are required for an AWS DeepLens–based project.
+
+Collect your data: Collect data and store it in an Amazon S3 bucket.
+Train your model: Use a Jupyter Notebook in Amazon SageMaker to train your model.
+Deploy your model: Use AWS Lambda to deploy the trained model to your AWS DeepLens device.
+View model output: Use Amazon IoT Greenrass to view your model's output after the model is deployed.
+
+
 Machine Learning workflow review
 The machine learning workflow contains several steps first introduced in Lesson 2. Let's briefly review the different steps and how they relate to the AWS DeepLens project.
 
@@ -125,27 +202,74 @@ The loss function improves how well the model detects the different class images
 5. Use the model.
 We deploy our trained model to our AWS DeepLens device, where inference is performed locally.
 
+Demo: Using the AWS console to set up and deploy an AWS DeepLens project
+The following video demonstrates the end-to-end application (trash-sorting project) discussed in the previous video. This video shows you how to complete this project using the AWS console.
+
+Important
+
+Storing data, training a model, and using AWS Lambda to deploy your model incur costs on your AWS account. For more information, see the AWS account requirements page.
+You are not required to follow this demo on the AWS console. However, we recommend you watch it and understand the flow of completing a computer vision project with AWS DeepLens.
+Demo Part 1: Getting Setup and Running the Code
+
+Click here to download the Jupyer notebook the instructor used in the demo.
+
+Summary: demo part 1
+In this demo, you first saw how you can use Amazon S3 to store the image data needed for training your computer vision model. Then, you saw how to use Amazon SageMaker to train your model using a Jupyter Notebook
+
+Demo Part 2: Deployment and Testing
+
+Summary: demo part 2
+Next, you used AWS Lambda to deploy your model onto an AWS DeepLens device. Finally, once your model has been deployed to your device, you can use AWS IoT Greengrass to view the inference output from your model actively running on your AWS DeepLens device.
+
+More Projects on AWS DeepLens and Other AWS Services
+In this blog post on the AWS Machine Learning blog, you learn about how computer vision–based applications can be used to protect workers in workplaces with autonomous robots. The post demonstrates you how you can create a virtual boundary using a computer and AWS DeepLens.
+Using Amazon Rekognition and AWS DeepLens, you can create an application that uses OCR or optical character recognition to recognize a car's license plate, and open a garage door.
+You can use Amazon Alexa and AWS DeepLens to create a Pictionary style game. First, you deploy a trained model to your AWS DeepLens which can recognize sketches drawn on a whiteboard and pair it with an Alexa skill that serves as the official scorekeeper.
+
+Supporting Materials
+Aws-Deeplens-Custom-Trash-Detector
+
 
 
 3.7 Quiz: Computer Vision
 ---------------------------------------
+To detect both the cat and the dog present in this image, what kind of computer vision model would you use?
 object deteciton , Great job! Object detection can be used to not only count the number of objects in an image but also to identify different classes present in an image.
 
+
+Which computer vision–based task would you use to detect that the dog in the image is sleeping?
 image classification
 
+
+Which computer vision–based task would you use to detect the exact location of the cat and dog in the image?
 Semantic (instance) segmentation : Nice job! Yes! Semantic segmentation is best used to identify the exact location (pixel) of an object in an image.
 
+
+In the preceding image, which computer vision–based task would you use to identify where the people and the dog are?
 instance (semantic) segmentation
 
+
+In the preceding image, what kind of computer vision model would you use to count the number of cars?
 object detection
 
+
+Which of the following are computer vision tasks? Select all the answers that apply.
 object detection , semantic (instance) segmentation
 
+
+What type of computer vision task is the trash-sorting project?
 image classification
+
 
 
 3.8 Reinforcement Learning and Its Applications
 --------------------------------------
+Reinforcement Learning and Its Applications
+This section introduces you to a type of machine learning (ML) called reinforcement learning (RL). You'll hear about its real-world applications and learn basic concepts using AWS DeepRacer as an example. By the end of the section, you will be able to create, train, and evaluate a reinforcement learning model in the AWS DeepRacer console.
+
+Introduction to Reinforcement Learning
+
+Summary
 In reinforcement learning (RL), an agent is trained to achieve a goal based on the feedback it receives as it interacts with an environment. It collects a number as a reward for each action it takes. Actions that help the agent achieve its goal are incentivized with higher numbers. Unhelpful actions result in a low reward or no reward.
 
 With a learning objective of maximizing total cumulative reward, over time, the agent learns, through trial and error, to map gainful actions to situations. The better trained the agent, the more efficiently it chooses actions that accomplish its goal.
@@ -174,6 +298,7 @@ Agent: The piece of software you are training is called an agent. It makes decis
 Environment: The environment is the surrounding area with which the agent interacts.
 Reward: Feedback is given to an agent for each action it takes in a given state. This feedback is a numerical reward.
 Action: For every state, an agent needs to take an action toward achieving its goal.
+
 
 
 3.9 Reinforcement Learning with AWS DeepRacer
