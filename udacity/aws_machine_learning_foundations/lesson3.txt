@@ -303,6 +303,12 @@ Action: For every state, an agent needs to take an action toward achieving its g
 
 3.9 Reinforcement Learning with AWS DeepRacer
 ---------------------------------------
+Reinforcement Learning Concepts
+In this section, we’ll learn some basic reinforcement learning terms and concepts using AWS DeepRacer as an example.
+
+Summary
+This section introduces six basic reinforcement learning terms and provides an example for each in the context of AWS DeepRacer.
+
 Agent
 The piece of software you are training is called an agent.
 It makes decisions in an environment to reach a goal.
@@ -330,22 +336,36 @@ Episode
 An episode represents a period of trial and error when an agent makes decisions and gets feedback from its environment.
 For AWS DeepRacer, an episode begins at the initial state, when the car leaves the starting position, and ends at the terminal state, when it finishes a lap, bumps into an obstacle, or drives off the track.
 
+In a reinforcement learning model, an agent learns in an interactive real-time environment by trial and error using feedback from its own actions. Feedback is given in the form of rewards.
 
+Putting Your Spin on AWS DeepRacer: The Practitioner's Role in RL
+
+Summary
+AWS DeepRacer may be autonomous, but you still have an important role to play in the success of your model. In this section, we introduce the training algorithm, action space, hyperparameters, and reward function and discuss how your ideas make a difference.
 
 An algorithm is a set of instructions that tells a computer what to do. ML is special because it enables computers to learn without being explicitly programmed to do so.
-
 The training algorithm defines your model’s learning objective, which is to maximize total cumulative reward. Different algorithms have different strategies for going about this.
 A soft actor critic (SAC) embraces exploration and is data-efficient, but can lack stability.
 A proximal policy optimization (PPO) is stable but data-hungry.
-
 An action space is the set of all valid actions, or choices, available to an agent as it interacts with an environment.
 Discrete action space represents all of an agent's possible actions for each state in a finite set of steering angle and throttle value combinations.
 Continuous action space allows the agent to select an action from a range of values that you define for each sta te.
-
 Hyperparameters are variables that control the performance of your agent during training. There is a variety of different categories with which to experiment. Change the values to increase or decrease the influence of different parts of your model.
 For example, the learning rate is a hyperparameter that controls how many new experiences are counted in learning at each step. A higher learning rate results in faster training but may reduce the model’s quality.
-
 The reward function's purpose is to encourage the agent to reach its goal. Figuring out how to reward which actions is one of your most important jobs.
+Putting Reinforcement Learning into Action with AWS DeepRacer
+
+Summary
+This video put the concepts we've learned into action by imagining the reward function as a grid mapped over the race track in AWS DeepRacer’s training environment, and visualizing it as metrics plotted on a graph. It also introduced the trade-off between exploration and exploitation, an important challenge unique to this type of machine learning.
+
+Each square is a state. The green square is the starting position, or initial state, and the finish line is the goal, or terminal state.
+
+Key points to remember about reward functions:
+
+Each state on the grid is assigned a score by your reward function. You incentivize behavior that supports your car’s goal of completing fast laps by giving the highest numbers to the parts of the track on which you want it to drive.
+The reward function is the actual code you'll write to help your agent determine if the action it just took was good or bad, and how good or bad it was.
+
+The squares containing exes are the track edges and defined as terminal states, which tell your car it has gone off track.
 
 Key points to remember about exploration versus exploitation:
 
@@ -361,6 +381,14 @@ AWS DeepRacer is a combination of a physical car and a virtual simulator in the 
 An AWS DeepRacer device is not required to start learning: you can start now in the AWS console. The 3D simulator in the AWS console is where training and evaluation take place.
 New Terms
 Exploration versus exploitation: An agent should exploit known information from previous experiences to achieve higher cumulative rewards, but it also needs to explore to gain new experiences that can be used in choosing the best actions in the future.
+Additional Reading
+If you are interested in more tips, workshops, classes, and other resources for improving your model, you'll find a wealth of resources on the AWS DeepRacer Pit Stop page.
+For detailed step-by-step instructions and troubleshooting support, see the AWS DeepRacer Developer Documentation.
+If you're interested in reading more posts on a range of DeepRacer topics as well as staying up to date on the newest releases, check out the AWS Discussion Forums.
+If you're interested in connecting with a thriving global community of reinforcement learning racing enthusiasts, join the AWS DeepRacer Slack community.
+If you're interested in tinkering with DeepRacer's open-source device software and collaborating with robotics innovators, check out our AWS DeepRacer GitHub Organization.
+
+
 
 3.10 Demo: Reinforcement Learning with AWS DeepRacer
 ---------------------------------------
@@ -391,18 +419,26 @@ Once you've created a successful model, you'll learn how to enter it into a race
 
 3.11 Quiz: Reinforcement Learning
 ---------------------------------------
+In which type of machine learning are models trained using labeled data?
 supervised learning
 Correct! In supervised learning, every data has a corresponding label. Reinforcement learning and unsupervised learning models do not need labeled data.
 
+
+In reinforcement learning, what is an "agent"?
 The piece of software you are training that makes decisions in an environment to
 reach a goal
 
+
+TRUE or FALSE: In reinforcement learning, "Exploration" is using experience to decide.
 false
 Correct! This statement is false. "Exploration" is when an agent wanders to discover what actions lead to what feedback in the form of digital rewards. "Exploitation" is using experience to decide.
 
+
+How does a balance of "Exploration" and "Exploitation" help a reinforcement learning model?
 The more an agent learns about its environment, the more confident it becomes about the actions it chooses.
 If an agent doesn't explore enough, it often sticks to information its already learned even if this knowledge doesn't help the agent achieve its goal.
 The agent can use information from previous experiences to help it make future decisions that enable it to reach its goal.
+
 
 state: the current position within the environment that is visible, or known, to
 an agent.
@@ -415,6 +451,7 @@ and gets feedback from its environment.
 reward: feedback given to an agent for each action it takes in a given state.
 
 environment: the surrounding area our agent interacts with.
+
 
 
 3.12 AWS DeepRacer Reinforcement Learning Exercise
@@ -457,6 +494,7 @@ Iteration x-axis
 Review the solution to this exercise for ideas on how to interpret it.
 
 
+
 3.13 Exercise Solution: AWS DeepRacer
 ---------------------------------------
 Average reward
@@ -480,15 +518,50 @@ This shows you the percentage of the track the agent completed during a training
 Iteration x-axis
 This shows the number of iterations completed during your training job.
 
+Reward Graph Interpretation
+The following four examples give you a sense of how to interpret the success of your model based on the reward graph. Learning to read these graphs is as much of an art as it is a science and takes time, but reviewing the following four examples will give you a start.
+
+Needs more training
+In the following example, we see there have only been 600 iterations, and the graphs are still going up. We see the evaluation completion percentage has just reached 100%, which is a good sign but isn’t fully consistent yet, and the training completion graph still has a ways to go. This reward function and model are showing promise, but need more training time.
+
+No improvement
+In the next example, we can see that the percentage of track completions haven’t gone above around 15 percent and it's been training for quite some time—probably around 6000 iterations or so. This is not a good sign! Consider throwing this model and reward function away and trying a different strategy.
+
+A well-trained model
+In the following example graph, we see the evaluation percentage completion reached 100% a while ago, and the training percentage reached 100% roughly 100 or so iterations ago. At this point, the model is well trained. Training it further might lead to the model becoming overfit to this track.
+
+
+
+Avoid overfitting
+Overfitting or overtraining is a really important concept in machine learning. With AWS DeepRacer, this can become an issue when a model is trained on a specific track for too long. A good model should be able to make decisions based on the features of the road, such as the sidelines and centerlines, and be able to drive on just about any track.
+
+An overtrained model, on the other hand, learns to navigate using landmarks specific to an individual track. For example, the agent turns a certain direction when it sees uniquely shaped grass in the background or a specific angle the corner of the wall makes. The resulting model will run beautifully on that specific track, but perform badly on a different virtual track, or even on the same track in a physical environment due to slight variations in angles, textures, and lighting.
+
+
+Adjust hyperparameters
+
 The AWS DeepRacer console's default hyperparameters are quite effective, but occasionally you may consider adjusting the training hyperparameters. The hyperparameters are variables that essentially act as settings for the training algorithm that control the performance of your agent during training. We learned, for example, that the learning rate controls how many new experiences are counted in learning at each step.
+
+In this reward graph example, the training completion graph and the reward graph are swinging high and low. This might suggest an inability to converge, which may be helped by adjusting the learning rate. Imagine if the current weight for a given node is .03, and the optimal weight should be .035, but your learning rate was set to .01. The next training iteration would then swing past optimal to .04, and the following iteration would swing under it to .03 again. If you suspect this, you can reduce the learning rate to .001. A lower learning rate makes learning take longer but can help increase the quality of your model.
+
+Good Job and Good Luck!
+Remember: training experience helps both model and reinforcement learning practitioners become a better team. Enter your model in the monthly AWS DeepRacer League races for chances to win prizes and glory while improving your machine learning development skills!
 
 
 
 3.14 Introduction to Generative AI
 ---------------------------------------
+
+Generative AI and Its Applications
 Generative AI is one of the biggest recent advancements in artificial intelligence because of its ability to create new things.
 
 Until recently, the majority of machine learning applications were powered by discriminative models. A discriminative model aims to answer the question, "If I'm looking at some data, how can I best classify this data or predict a value?" For example, we could use discriminative models to detect if a camera was pointed at a cat.
+
+As we train this model over a collection of images (some of which contain cats and others which do not), we expect the model to find patterns in images which help make this prediction.
+
+A generative model aims to answer the question,"Have I seen data like this before?" In our image classification example, we might still use a generative model by framing the problem in terms of whether an image with the label "cat" is more similar to data you’ve seen before than an image with the label "no cat."
+
+However, generative models can be used to support a second use case. The patterns learned in generative models can be used to create brand new examples of data which look similar to the data it seen before.
 
 Generative AI Models
 In this lesson, you will learn how to create three popular types of generative models: generative adversarial networks (GANs), general autoregressive models, and transformer-based models. Each of these is accessible through AWS DeepComposer to give you hands-on experience with using these techniques to generate new examples of music.
@@ -505,21 +578,92 @@ Transformer-based models are most often used to study data with some sequential 
 We won't cover this approach in this course but you can learn more about transformers and how AWS DeepComposer uses transformers in AWS DeepComposer learning capsules.
 
 
+
 3.15 Generative AI with AWS DeepComposer
 ---------------------------------------
 What is AWS DeepComposer?
 AWS DeepComposer gives you a creative and easy way to get started with machine learning (ML), specifically generative AI. It consists of a USB keyboard that connects to your computer to input melody and the AWS DeepComposer console, which includes AWS DeepComposer Music studio to generate music, learning capsules to dive deep into generative AI models, and AWS DeepComposer Chartbusters challenges to showcase your ML skills.
 
+Summary
+AWS DeepComposer keyboard
+You don't need an AWS DeepComposer keyboard to finish this course. You can import your own MIDI file, use one of the provided sample melodies, or use the virtual keyboard in the AWS DeepComposer Music studio.
 
+AWS DeepComposer music studio
+To generate, create, and edit compositions with AWS DeepComposer, you use the AWS DeepComposer Music studio. To get started, you need an input track and a trained model.
+
+For the input track, you can use a sample track, record a custom track, or import a track.
+
+For the ML technique, you can use either a sample model or a custom model.
+
+Each AWS DeepComposer Music studio experience supports three different generative AI techniques: generative adversarial networks (GANs), autoregressive convolutional neural network (AR-CNNs), and transformers.
+
+Use the GAN technique to create accompaniment tracks.
+Use the AR-CNN technique to modify notes in your input track.
+Use the transformers technique to extend your input track by up to 30 seconds.
+
+Summary
+In this demo, you went through the AWS DeepComposer console where you can learn about deep learning, input your music, and train deep learning models to create new music.
+
+AWS DeepComposer learning capsules
+To learn the details behind generative AI and ML techniques used in AWS DeepComposer you can use easy-to-consume, bite-sized learning capsules in the AWS DeepComposer console.
+
+AWS DeepComposer Chartbusters challenges
+Chartbusters is a global challenge where you can use AWS DeepComposer to create original compositions and compete in monthly challenges to showcase your machine learning and generative AI skills.
+
+You don't need to participate in this challenge to finish this course, but the course teaches everything you need to win in both challenges we launched this season. Regardless of your background in music or ML, you can find a competition just right for you.
+
+You can choose between two different challenges this season:
+
+In the Basic challenge, “Melody-Go-Round”, you can use any machine learning technique in the AWS DeepComposer Music studio to create new compositions.
+In the Advanced challenge, “Melody Harvest”, you train a custom generative AI model using Amazon SageMaker.
 
 
 
 3.16 GANs with AWS DeepComposer
 ---------------------------------------
+
+Summary
+We’ll begin our journey of popular generative models in AWS DeepComposer with generative adversarial networks or GANs. Within an AWS DeepComposer GAN, models are used to solve a creative task: adding accompaniments that match the style of an input track you provide. Listen to the input melody and the output composition created by the AWS DeepComposer GAN model:
+
+Input melody
+Output melody
+
+What are GANs?
+A GAN is a type of generative machine learning model which pits two neural networks against each other to generate new content: a generator and a discriminator.
+
+A generator is a neural network that learns to create new data resembling the source data on which it was trained.
+A discriminator is another neural network trained to differentiate between real and synthetic data.
+The generator and the discriminator are trained in alternating cycles. The generator learns to produce more and more realistic data while the discriminator iteratively gets better at learning to differentiate real data from the newly created data.
+
+Collaboration between an orchestra and its conductor
+A simple metaphor of an orchestra and its conductor can be used to understand a GAN. The orchestra trains, practices, and tries to generate polished music, and then the conductor works with them, as both judge and coach. The conductor judges the quality of the output and at the same time provides feedback to achieve a specific style. The more they work together, the better the orchestra can perform.
+
+The GAN models that AWS DeepComposer uses work in a similar fashion. There are two competing networks working together to learn how to generate musical compositions in distinctive styles.
+
+A GAN's generator produces new music as the orchestra does. And the discriminator judges whether the music generator creates is realistic and provides feedback on how to make its data more realistic, just as a conductor provides feedback to make an orchestra sound better.
+
+Training Methodology
+Let’s dig one level deeper by looking at how GANs are trained and used within AWS DeepComposer. During training, the generator and discriminator work in a tight loop as depicted in the following image.
+
+
+Note: While this figure shows the generator taking input on the left, GANs in general can also generate new data without any input.
+
+Generator
+The generator takes in a batch of single-track piano rolls (melody) as the input and generates a batch of multi-track piano rolls as the output by adding accompaniments to each of the input music tracks.
+The discriminator then takes these generated music tracks and predicts how far they deviate from the real data present in the training dataset. This deviation is called the generator loss. This feedback from the discriminator is used by the generator to incrementally get better at creating realistic output.
+Discriminator
+As the generator gets better at creating music accompaniments, it begins fooling the discriminator. So, the discriminator needs to be retrained as well. The discriminator measures the discriminator loss to evaluate how well it is differentiating between real and fake data.
+Beginning with the discriminator on the first iteration, we alternate training these two networks until we reach some stop condition; for example, the algorithm has seen the entire dataset a certain number of times or the generator and discriminator loss reach some plateau (as shown in the following image).
+
 Generator: A neural network that learns to create new data resembling the source data on which it was trained.
 Discriminator: A neural network trained to differentiate between real and synthetic data.
 Generator loss: Measures how far the output data deviates from the real data present in the training dataset.
 Discriminator loss: Evaluates how well the discriminator differentiates between real and fake data.
+
+Supporting Materials
+Input Twinkle Twinkle Input
+Output Twinkle Twinkle Rock
+
 
 
 3.17 AR-CNN with AWS DeepComposer
