@@ -749,4 +749,29 @@ Proposing a list of tasks gives the team information about how long a task might
 
 
 
+4.20 Lesson Recap
+---------------------------------------
+In this lesson, we learned about:
+
+Why we care about message passing
+How experts approach message passing
+How to use REST, gRPC, and Kafka
+You have learned how to refactor the services in a microservice, design the message passing techniques to connect these services and implement these solutions. You are now well-equipped to build microservices!
+
+In the next lesson, we will learn how to implement message passing techniques in production.
+
+
+
+4.21 Glossary
+---------------------------------------
+New Terms In This Lesson
+Term		Definition
+Consumer	Receives messages from a message broker
+Flask		A popular Python framework often used to build APIs
+grpcio		A Python library used to run gRPC client and gRPC server code
+grpcio-tools	Python library of tools that help generate definition code used by gRPC
+Producer	Generates messages to a message broker
+Requests	A popular Python HTTP library
+Topic		Kafka's abstraction of messages stored internally as distributed partitions
+
 
