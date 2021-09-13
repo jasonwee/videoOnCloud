@@ -1,0 +1,61 @@
+date start : 02 september 2021
+
+
+5.1 Lesson Overview
+---------------------------------------
+So far, we've learned about how to design our microservice applications and implement various message-passing techniques that work best for our architecture. Now we want to take a look at message passing in production systems.
+
+Tools and strategies can improve how message passing is used in production systems.
+
+In this lesson, we'll learn how message passing is implemented in production. We'll go over:
+
+Combining Techniques
+Open API Documentation
+Iterating on APIs
+Future-Proofing
+
+
+
+5.2 What is Different About Production?
+---------------------------------------
+As we use microservices, all of our business functionality is communicating with one another through networks. It's important to optimize for business value when we are implementing our services.
+
+Production Systems
+Production systems are exposed to more sources of failure than those running in development environments.
+
+Testing our services locally is only one part of the puzzle: applications don't exist in a vacuum.
+Production systems undergo the stress from active users and can break from unanticipated edge cases.
+Application Lifecycle
+Our applications are rarely a one-and-done ordeal and involves maintenance and additional development as we iterate on features.
+The original developer or team of developers that built the system may no longer be around to support the application.
+
+q1
+Increased user activity
+Large volumes of messages
+Security exploitations
+
+
+
+5.3 How Experts Approach Message Passing in Production
+---------------------------------------
+Not Simply Coding
+Delivering business value is not always about writing code.
+System design plays an integral part in ensuring that our business needs are met.
+We should also be conscious of the maintainability of our applications.
+We should ensure that the team has the right resources to implement new services or features when needed.
+Interfaces in Production
+With software, we can deliver products and then iterate to add more features and solve bugs.
+With hardware, the product must be thoroughly tested and validated before it can be sold to the customers because making changes is difficult.
+It is common to be undisciplined about interfaces because it is so convenient and simple to modify code.
+
+I've encountered a handful of situations where the interface for an API was changed without consideration for its users and ended up causing downtime for its dependents. Once we deliver an API and define its interface, we need to be conscious of breaking changes.
+
+It's important to understand how we can make minor and major changes to an API after it's been delivered and used by users.
+
+q1
+Easier onboarding for new teammates
+Simpler refactoring
+
+
+
+
