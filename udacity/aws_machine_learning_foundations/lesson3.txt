@@ -689,21 +689,33 @@ Edit event: When a note is either added or removed from your input track during 
 
 3.18 Quiz: Generative AI
 ---------------------------------------
+Which is the following statements is false in the context of AR-CNNs?
 "Edit event" refers to a note added to the input track during inference.
 Correct! An edit event is when a note is either added or removed from your input track during inference.
 
+
+Please identify which of the following statements are true about a generative adversarial network (GAN). There may be more than one correct answer.
 The generator learns to produce more realistic data and the discriminator learns to differentiate real data from the newly created data.
 The discriminator learns from both real Bach music and realistic Bach music.
 
+
+Which model is responsible for each of these roles in generative AI?
 evaluating the output quality  : discriminator
 creating new output            : generator
 providing feedback             : discriminator
 
+
+True or false: Loss functions help us determine when to stop training a model.
 true : loss functions help us determine when to stop training a model.
 Correct! When we see the loss function stabilize, we can be confident that training is complete.
 
+
+
 3.19 Demo: Create Music with AWS DeepComposer
 ---------------------------------------
+Demo: Create Music with AWS DeepComposer
+Below you find a video demonstrating how you can use AWS DeepComposer to experiment with GANs and AR-CNN models.
+
 To get you started, AWS DeepComposer provides a 12-month Free Tier for first-time users. With the Free Tier, you can perform up to 500 inference jobs, translating to 500 pieces of music, using the AWS DeepComposer Music studio. You can use one of these instances to complete the exercise at no cost. For more information, please read the AWS account requirements page.
 
 In the demo, you have learned how to create music using AWS Deepcomposer.
@@ -734,7 +746,6 @@ Choose Continue to finish creating your composition.
 You can then choose Share composition, Register, or Sign in to Soundcloud and submit to the "Melody-Go-Round" competition. Participation in the competition is optional.
 
 If you get stuck, you can check out the demo videos on Demo: Create Music with AWS DeepComposer page.
-
 
 
 
@@ -818,7 +829,6 @@ We'll use the dataset object to feed batches of data into our model.
 
 Run the first Load Data cell to set parameters.
 Run the second Load Data cell to prepare the data.
-
 
 
 
@@ -955,8 +965,8 @@ Reinforcement learning and its application
 How to train a reinforcement learning model with AWS DeepRacer
 Generative AI
 How to train a GAN and AR-CNN model with AWS DeepComposer
-Now, you should be able to:
 
+Now, you should be able to:
 Identify AWS machine learning offerings and how different services are used for different applications
 Explain the fundamentals of computer vision and a couple of popular tasks
 Describe how reinforcement learning works in the context of AWS DeepRacer
