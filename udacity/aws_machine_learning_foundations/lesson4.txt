@@ -3,6 +3,20 @@ date start : 14 august 2021
 
 4.1 Introduction
 ---------------------------------------
+Welcome To Software Engineering Practices, Part I
+In this lesson, you'll learn about the following software engineering practices and how they apply in data science.
+
+Writing clean and modular code
+Writing efficient code
+Code refactoring
+Adding meaningful documentation
+Using version control
+In the lesson following this one (part 2), you'll also learn about the following software engineering practices:
+
+Testing
+Logging
+Code reviews
+
 
 
 4.2 Clean and Modular Code
@@ -15,14 +29,21 @@ Modular code: Code that is logically broken up into functions and modules. Modul
 
 Module: A file. Modules allow code to be reused by encapsulating them into files that can be imported into other files.
 
+
+q1
+Which of the following describes code that is clean? Select all the answers that apply.
 simple
 readable
 concise
 
+
+q2
+Making your code modular makes it easier to do which of the following things? There may be more than one correct answer.
 reuse your code
 write lesscode
 read your code
 collaborate on code
+
 
 
 4.3 Recfactoring Code
@@ -32,6 +53,7 @@ Refactoring: Restructuring your code to improve its internal structure without c
 Since it isn't easy to write your best code while you're still trying to just get it working, allocating time to do this is essential to producing high-quality code. Despite the initial time and effort required, this really pays off by speeding up your development time in the long run.
 
 You become a much stronger programmer when you're constantly looking to improve your code. The more you refactor, the easier it will be to structure and write good code the first time.
+
 
 
 4.4 Writing Clean Code
@@ -57,14 +79,56 @@ Organize your code with consistent indentation: the standard is to use four spac
 Separate sections with blank lines to keep your code well organized and readable.
 
 Try to limit your lines to around 79 characters, which is the guideline given in the PEP 8 style guide. In many good text editors, there is a setting to display a subtle line that indicates where the 79 character limit is.
+
 For more guidelines, check out the code layout section of PEP 8 in the following notes.
+
 
 
 4.5 Quiz: Clean Code
 ---------------------------------------
-2,3,4,5
+Imagine you are writing a program that executes a number of tasks and categorizes each task based on its execution time. Below is a small snippet of this program. Which of the following naming changes could make this code cleaner? There may be more than one correct answer.
 
-3
+t = end_time - start  # compute execution time
+c = category(t)  # get category of task
+print('Task Duration: {} seconds, Category: {}'.format(t, c)
+
+Rename the variable start to start_time to make it consistent with end_time.
+Rename the variable t to execution_time to make it more descriptive.
+Rename the function category to categorize_task to match the part of speech.
+Rename the variable c to category to make it more descriptive.
+
+
+
+Quiz: Buying stocks
+Imagine you analyzed several stocks and calculated the ideal price, or limit price, at which you'd want to buy each stock. You write a program to iterate through your stocks and buy it if the current price is below or equal to the limit price you computed. Otherwise, you put it on a watchlist. Below are three ways of writing this code. Which of the following is the most clean?
+
+# Choice A
+stock_limit_prices = {'LUX': 62.48, 'AAPL': 127.67, 'NVDA': 161.24}
+for stock_ticker, stock_limit_price in buy_prices.items():
+    if stock_limit_price <= get_current_stock_price(ticker):
+        buy_stock(ticker)
+    else:
+        watchlist_stock(ticker)
+# Choice B
+prices = {'LUX': 62.48, 'AAPL': 127.67, 'NVDA': 161.24}
+for ticker, price in prices.items():
+    if price <= current_price(ticker):
+        buy(ticker)
+    else:
+        watchlist(ticker)
+# Choice C
+limit_prices = {'LUX': 62.48, 'AAPL': 127.67, 'NVDA': 161.24}
+for ticker, limit in limit_prices.items():
+    if limit <= get_current_price(ticker):
+        buy(ticker)
+    else:
+        watchlist(ticker)
+
+Which code is most clean?
+
+Choice C
+
+
 
 4.6 Writing Modular Code
 ---------------------------------------
@@ -90,12 +154,18 @@ Tip: Try to use fewer than three arguments per function
 Try to use no more than three arguments when possible. This is not a hard rule and there are times when it is more appropriate to use many parameters. But in many cases, it's more effective to use fewer arguments. Remember we are modularizing to simplify our code and make it more efficient. If your function has a lot of parameters, you may want to rethink how you are splitting this up.
 
 
+
 4.7 Exercise: Refactoring – Wine quality
 ---------------------------------------
 Exercise: Refactoring – Wine quality
 In this exercise, you'll refactor code that analyzes a wine quality dataset taken from the UCI Machine Learning Repository. Each row contains data on a wine sample, including several physicochemical properties gathered from tests, as well as a quality rating evaluated by wine experts.
 
 Download the notebook file refactor_wine_quality.ipynb and the dataset winequality-red.csv. Open the notebook file using the Jupyter Notebook. Follow the instructions in the notebook to complete the exercise.
+
+Supporting Materials
+Refactor Wine Quality
+Winequality-Red
+
 
 
 4.8 Solution: Refactoring – Wine quality
