@@ -58,4 +58,35 @@ Simpler refactoring
 
 
 
+5.4 Combining Message Passing Techniques
+---------------------------------------
+Combining Message Passing Techniques
+Message passing techniques do not need to be disjointed from one another. We can use them with one another to make our APIs more performant and robust with tradeoffs regarding latency, cost, and more sources of failure.
+
+Examples
+The following are a few simple examples of how we can combine message passing techniques to improve our applications' designs.
+
+Message Queue and REST
+A queue can be placed in front of a RESTful API.
+
+Allows us to configure asynchronous requests in the REST API
+Makes the REST API requests more durable and less prone to failure from load
+Creating a queue in addition to an existing REST API will need additional resources such as servers and development efforts
+
+Exposing Message Queues
+Message queues can be exposed publicly with a RESTful API.
+
+Queues should be exposed in a controlled manner because Kafka doesn't have enforcement of data that enters the queue
+Creating a REST API in addition to an existing queue will need additional resources such as servers and development efforts
+Adding a REST API introduces more sources of failure in our system as it can break from an abnormally large number of requests
+
+gRPC and REST
+We can expose a service with multiple interfaces.
+
+Expose both gRPC and REST as an interface to satisfy different use cases for different users
+Additional resources needed to create two interfaces
+Additional resources needed to maintain two interfaces: updating two schemas simultaneously can be cumbersome to deploy
+
+
+
 
