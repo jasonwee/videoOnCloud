@@ -89,4 +89,9 @@ Additional resources needed to maintain two interfaces: updating two schemas sim
 
 
 
+5.5 Quiz: Combining Message Passing Techniques
+---------------------------------------
+add structure to the messages ingested into kafka
+
+
 
