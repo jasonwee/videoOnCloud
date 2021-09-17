@@ -94,4 +94,52 @@ Additional resources needed to maintain two interfaces: updating two schemas sim
 add structure to the messages ingested into kafka
 
 
+5.6 Exercise: Combining Message Passing Techniques
+---------------------------------------
+Combining Message Passing Techniques
+Our computer orders API receives a lot of traffic, and teams outside of IT leverage this data for analytics. Management has decided that the data should be written into Kafka for durability and better response times.
+
+You have been provided existing code and tasked with updating the REST API input data into a Kafka queue. You will only need to write data into the queue and won't need to concern yourself with reading the messages.
+
+Task
+Our REST API will now return a 202 Accepted HTTP response with no response body. It will take the input payload and write the dictionary into Kafka. We don't need to concern ourselves with reading the data off of Kafka to process it.
+
+
+
+5.7 Solution: Combining Message Passing Techniques
+---------------------------------------
+
+Summary
+You have been tasked with writing data into a Kafka queue
+
+Write the Computer orders JSON data into Kafka
+You don't have to concern yourself with how the Kafka data is consumed
+The API response should now be 202 Accepted with no response body
+
+Tasks
+Set up a Kafka broker with a topic for computers
+Set up a Kafka producer in the Flask application
+Write the computer orders creation data from the REST API into the Kafka queue
+
+Starter Code
+app.py imports KafkaProducer
+g is a Flask object used to store the Kafka connection so we can use it in other parts of the application
+Response is a Flask object used to format API responses with more flexibility. We can declare Response(status=202) whereas jsonify is more rigid and configured to return a 200.
+app.before_request runs a method to set up a Kafka connection before an API request
+create_order() method has sample code on how to write a Kafka producer
+
+My Process
+Run the Kafka broker
+Update services.py to write create_order data into Kafka
+Update app.py to return an empty 202 response.
+
+
+q1
+it is very structure to fit all the pieces in a systematically steps. when we have more requests coming in, we can add more front end (rest endpoint) to increase the capacity to satisfy the incoming traffics.
+
+
+Using a Kafka queue with a Flask REST API introduces more complexity to an application. We have additional overhead, such as maintaining a connection to the Kafka broker.
+
+
+
 
