@@ -142,4 +142,201 @@ Using a Kafka queue with a Flask REST API introduces more complexity to an appli
 
 
 
+5.8 Using OpenAPI
+---------------------------------------
+OpenAPI is a specification that provides us with a framework for documenting our RESTful APIs.
+
+The Problem
+REST Relies on Documentation
+RESTful APIs are highly reliant on their documentation.
+REST has little built-in enforcement for message structure and can be changed very easily.
+
+Different developers also use different sets of best practices and may implement their APIs differently from one another. I have worked with non-documented or poorly-documented REST APIs in the past: it's not fun to have to dig through and read source code to figure out how to structure a simple GET request.
+
+Documentation Can Be Formatted Differently
+Documentation is very open-ended and can use different types of formatting and notation.
+
+OpenAPI
+The OpenAPI specification provides us with a uniform way to detail our API resources and query for them
+OpenAPI includes a wide range of optional fields that enrich our documentation
+OpenAPI can be loaded into a tool called Swagger, a user-friendly, interactive API documentation accessible through a web page
+
+OpenAPI Overview I
+components.schemas help define reusable components so we can standardize an API interface
+paths defines the API endpoints
+description enriches documentation by allowing us to explain the API details
+path.<method_type>.parameters define API arguments
+path.<method_type>responses define what the API will return
+InventoryItem is defined in components.schemas.InventoryItem for reusability
+
+paths./items/{itemId}.get defines GET items/<item_id>
+
+OpenAPI Overview
+Below is a sample of documentation for a REST API used to manage inventory items.
+
+openapi: 3.0.0
+info:
+  description: Manage the items in a stockroom.
+  version: "1.0.0"
+  title: Simple Inventory API
+paths:
+  /items/{itemId}:
+    get:
+      summary: Retrieve an item from the inventory
+      operationId: getInventory
+      description: By passing in an item_id you can retrieve the items information
+      parameters:
+        - in: path
+          name: itemId
+          schema:
+            type: string
+          required: true
+          description: ID of the item to get
+      responses:
+        '200':
+          description: Successfully retrieved an item
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/InventoryItem'
+        '404':
+          description: Requested item ID was not found
+  /items:
+    post:
+      summary: Creates an item in the inventory
+      operationId: addItem
+      description: Adds an item to the Inventory
+      responses:
+        '201':
+          description: Item created
+        '400':
+          description: Invalid input, object invalid
+        '409':
+          description: An existing item already exists
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/InventoryItem'
+        description: Inventory item to add
+components:
+  schemas:
+    InventoryItem:
+      type: object
+      required:
+        - id
+        - name
+        - brand_name
+        - weight
+      properties:
+        id:
+          type: string
+          example: 1
+        name:
+          type: string
+          example: Egg Pan
+        brandName:
+          type: string
+          example: "Acme"
+        weight:
+         type: number
+         example: 2.1
+
+Using OpenAPI Part II
+
+OpenAPI Overview II
+responses can define different responses depending on the response type
+Passing in a reference to a component with $ref helps standardize the API interface
+Defining $ref: '#/components/schemas/InventoryItem' is used to standardize the API while reducing code repeat
+Navigation Bar
+The navigation bar in the left provides an interface to view the documentation in an organized way
+Live Preview
+SwaggerHub generates the documentation so that we can preview how the OpenAPI spec will be generated
+Swagger documentation provides a standardized interface for API documentation
+Options For Maintaining API Documentation With Swagger
+
+Options for Maintaining Documentation With Swagger
+Manually update OpenAPI specifications file
+Use a library to maintain OpenAPI specificatoins with inline comments
+Use a library to auto-generate OpenAPI Specifications
+Creating Swagger Documentation
+Swagger is an interactive tool that accepts OpenAPI documentation as input and provides a user interface for API documentation.
+Swagger libraries are available for most programming languages and provide various ways to populate our API documentation.
+SwaggerHub is a hosted version of Swagger that provides live previews and an interactive editor to check your OpenAPI syntax.
+Maintaining Documentation
+Writing and maintaining documentation is often tedious. When we make a few changes to our code, we need to revisit our API documentation and reflect the latest changes.
+API documentation often drifts and becomes cumbersome to maintain.
+Rather than writing separate documentation for the work that we do, we can use integration tools to make our upkeep of documentation more manageable.
+Options for OpenAPI
+Manually update and maintain an OpenAPI specification file
+This is the traditional way in how we have separate sets of documentation for our APIs.
+
+Example
+
+paths:
+  /items/{itemId}:
+     get:
+      description: Retrieve the item with itemId
+      parameters:
+        - in: path
+          name: itemId
+          schema:
+            type: string
+          required: true
+          description: ID of the item to get
+
+Write our API specification as comments, and our libraries translate this into OpenAPI specifications
+This makes it easier to upkeep our documentation by keeping the documentation in the same area as our application code. This way, our code and documentation live in the same file, so there is more accountability to keep them consistent.
+
+Example
+
+
+"""
+@oas [get] /items/{itemId}
+description: "By passing in an itemId you can retrieve the items information"
+parameters:
+- (path) category=all* {String} Item itemId
+"""
+def retrieve_items(item_id):
+    # Route logic here
+    pass
+
+Use tightly-integrated libraries that will automatically detect how our code is structured and generate OpenAPI specifications for us
+Some libraries will allow us to auto-generate documentation. This is the easiest to maintain and provides us little overhead on managing our documentation at the expense of flexibility. When it works, this is a powerful way to optimize productivity.
+
+Example
+
+
+@api.route("items/<item_id>")
+@api.param("item_id", "Unique Item ID", _in="query")
+class ItemResource(Resource):
+    @responds(schema=ItemSchema)
+    def get(self, item_id) -> Item:
+        # API Logic
+        pass
+
+When OpenAPI Doesn't Work...
+I worked on a project where I tried to use auto-generating documentation and found that since my API design did not conform to OpenAPI specification best practices, my documentation couldn't be auto-generated.
+
+New Terms
+Term	Definition
+OpenAPI	Provides a uniform way to detail and query API resources. It includes a wide range of optional fields that enrich our documentation
+Swagger	A tool used to render OpenAPI specifications into an interactive web page
+SwaggerHub	A tool that provides utilities to write OpenAPI specifications more easily as well as live previews of the corresponding Swagger documentation
+
+Further Reading
+The following are additional resources to learn about Swagger and its usefulness in applications:
+
+Interactive Swagger Editor
+Why API Documentation Matters
+
+
+
+5.9 Quiz: Using OpenAPI
+---------------------------------------
+Updating code will update documentation automatically
+Reduce time to release a production application
+
+
+
 
