@@ -110,6 +110,7 @@ https://docs.python-guide.org/writing/tests/
 5.8 Logging
 --------------------------------------
 Logging
+
 Logging is valuable for understanding the events that occur while running your program. For example, if you run your model overnight and the results the following morning are not what you expect, log messages can help you understand more about the context in those results occurred. Let's learn about the qualities that make a log message effective.
 
 
@@ -123,10 +124,12 @@ Tip: Be professional and clear
 Bad: Hmmm... this isn't working???
 Bad: idk.... :(
 Good: Couldn't parse file.
+
 Tip: Be concise and use normal capitalization
 Bad: Start Product Recommendation Process
 Bad: We have completed the steps necessary and will now proceed with the recommendation process for the records in our product database.
 Good: Generating product recommendations.
+
 Tip: Choose the appropriate level for logging
 Debug: Use this level for anything that happens in the program. Error: Use this level to record any error that occurs. Info: Use this level to record all actions that are user driven or system specific, such as regularly scheduled operations.
 
@@ -138,13 +141,30 @@ Good: Failed to read location data: store_id 8324971
 
 5.10 Quiz: Logging
 ---------------------------------------
-Add more details about this error, such as what step or product the program was on when this occurred
-Remove the second sentence
+What are some ways this log message could be improved? There may be more than one correct answer.
+
+ERROR - Failed to compute product similarity. I made sure to fix the error from October so not sure why this would occur again. 
+￼
+
+* Add more details about this error, such as what step or product the program was on when this occurred
+* Remove the second sentence
+
+
+Great job! ERROR is the appropriate level for this error message, though more information on where, when, and how this occurred would be useful for debugging. It's best practice to use concise and clear language that is professional and uses normal capitalization. This way, the message is efficient and easily understandable. The second sentence seems quite unclear and personal, so we should remove that and communicate it elsewhere.
 
 
 
 5.11 Code Reviews
 ---------------------------------------
+Code reviews
+Code reviews benefit everyone in a team to promote best programming practices and prepare code for production. Let's go over what to look for in a code review and some tips on how to conduct one.
+
+Code reviews
+Code review best practices
+
+https://github.com/lyst/MakingLyst/tree/master/code-reviews
+https://www.kevinlondon.com/2015/05/05/code-review-best-practices.html
+
 
 
 5.12 Questions for a Code Review
@@ -182,6 +202,7 @@ Is the logging effective?
 Are log messages clear, concise, and professional?
 Do they include all relevant and useful information?
 Do they use the appropriate logging level?
+
 
 
 5.13 Tips for Conducting a Code Review 
