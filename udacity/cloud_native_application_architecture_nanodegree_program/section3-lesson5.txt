@@ -339,4 +339,110 @@ Reduce time to release a production application
 
 
 
+5.10 Exercise: Applying Open API
+---------------------------------------
+Applying OpenAPI
+Create an OpenAPI specification for our computer orders REST API. We want to make sure that users of the API know how to set up their integrations to retrieve all orders and create a new order.
+
+
+
+
+5.11 Solution: Applying OpenAPI
+---------------------------------------
+OpenAPI Specification
+The following is an OpenAPI specification for a computer orders API. It details the ComputerOrder schema as well as the path /orders/computers to create and retrieve computer orders.
+
+openapi: 3.0.0
+info:
+  description: API for ordering computers from IT
+  version: "1.0.0"
+  title: Computer Orders API
+paths:
+  /orders/computers:
+    get:
+      summary: Retrieves all computer orders
+      operationId: getComputerOrders
+      description: Retrieves all the computer orders that have been created.
+      responses:
+        '200':
+          description: All computer orders
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/ComputerOrder'
+        '400':
+          description: Bad input parameter
+    post:
+      summary: Adds a computer order
+      operationId: addInventory
+      description: Creates a computer order by setting an order in the QUEUED state.
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ComputerOrder'
+        description: Computer order that was created
+      responses:
+        '201':
+          description: Computer order created successfully
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ComputerOrder'
+        '400':
+          description: 'Invalid input, object invalid'
+components:
+  schemas:
+    ComputerOrder:
+      type: object
+      required:
+        - id
+        - status
+        - created_by
+        - created_at
+        - equipment
+      properties:
+        id:
+          type: string
+          example: '1'
+        status:
+          $ref: '#/components/schemas/Status'
+        created_by:
+          type: string
+          example: 'USER1'
+        created_at:
+          type: string
+          format: date-time
+          example: '2016-08-29T09:12:33.001Z'
+        equipment:
+          type: array
+          items:
+            $ref: '#/components/schemas/Equipment'
+    Equipment:
+      type: string
+      enum:
+        - KEYBOARD
+        - MOUSE
+        - WEBCAM
+        - MONITOR
+    Status:
+      type: string
+      enum:
+        - QUEUED
+        - PROCESSING
+        - COMPLETED
+        - FAILED
+
+
+
+q1
+well, u can test your api by using openapi in the interface. if the request and response data is not structure, then in this case, does not make sense to use OpenAPI.
+
+
+OpenAPI is a useful tool but, it isn't always necessary to apply to our applications. It can add more complexity to documentation management when it's not warranted.
+
+
+
 
