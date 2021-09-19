@@ -4,12 +4,14 @@ date start : 31 august 2021
 6.1 Introduction 
 ---------------------------------------
 Lesson outline
+
 Object-oriented programming syntax
 Procedural vs. object-oriented programming
 Classes, objects, methods and attributes
 Coding a class
 Magic methods
 Inheritance
+
 Using object-oriented programming to make a Python package
 Making a package
 Tour of scikit-learn source code
@@ -18,8 +20,9 @@ Putting your package on PyPi
 Why object-oriented programming?
 Object-oriented programming has a few benefits over procedural programming, which is the programming style you most likely first learned. As you'll see in this lesson:
 
-Object-oriented programming allows you to create large, modular programs that can easily expand over time.
-Object-oriented programs hide the implementation from the end user.
+* Object-oriented programming allows you to create large, modular programs that can easily expand over time.
+* Object-oriented programs hide the implementation from the end user.
+
 Consider Python packages like Scikit-learn, pandas, and NumPy. These are all Python packages built with object-oriented programming. Scikit-learn, for example, is a relatively large and complex package built with object-oriented programming. This package has expanded over the years with new functionality and new algorithms.
 
 When you train a machine learning algorithm with Scikit-learn, you don't have to know anything about how the algorithms work or how they were coded. You can focus directly on the modeling.
@@ -31,11 +34,13 @@ X = [[0, 0], [1, 1]]
 y = [0, 1]
 clf = svm.SVC()
 clf.fit(X, y)  
+
 How does Scikit-learn train the SVM model? You don't need to know because the implementation is hidden with object-oriented programming. If the implementation changes, you (as a user of Scikit-learn) might not ever find out. Whether or not you should understand how SVM works is a different question.
 
 In this lesson, you'll practice the fundamentals of object-oriented programming. By the end of the lesson, you'll have built a Python package using object-oriented programming.
 
 Lesson files
+
 This lesson uses classroom workspaces that contain all of the files and functionality you need. You can also find the files in the data scientist nanodegree term 2 GitHub repo.
 
 
@@ -43,18 +48,21 @@ This lesson uses classroom workspaces that contain all of the files and function
 6.2 Procedural vs. Object-oriented programming
 ---------------------------------------
 Characteristics and actions in English grammar
+
 You can also think about characteristics and actions is in terms of English grammar. A characteristic corresponds to a noun and an action corresponds to a verb.
 
 Let's pick something from the real world: a dog. Some characteristics of the dog include the dog's weight, color, breed, and height. These are all nouns. Some actions a dog can take include to bark, to run, to bite, and to eat. These are all verbs.
 
 
 q1
+Select the characteristics of a tree object. There may be more than one correct answer.
 height
 color 
 width
 species
 
 q2
+Which of the following would be considered actions for a laptop computer object?
 to turn on
 to turn off
 to erase
@@ -63,29 +71,32 @@ to erase
 
 6.3 class, object, method, and attribute
 ---------------------------------------
-
 Object-oriented programming (OOP) vocabulary
-Class: A blueprint consisting of methods and attributes.
-Object: An instance of a class. It can help to think of objects as something in the real world like a yellow pencil, a small dog, or a blue shirt. However, as you'll see later in the lesson, objects can be more abstract.
-Attribute: A descriptor or characteristic. Examples would be color, length, size, etc. These attributes can take on specific values like blue, 3 inches, large, etc.
-Method: An action that a class or object could take.
-OOP: A commonly used abbreviation for object-oriented programming.
-Encapsulation: One of the fundamental ideas behind object-oriented programming is called encapsulation: you can combine functions and data all into a single entity. In object-oriented programming, this single entity is called a class. Encapsulation allows you to hide implementation details, much like how the scikit-learn package hides the implementation of machine learning algorithms.
+* Class: A blueprint consisting of methods and attributes.
+* Object: An instance of a class. It can help to think of objects as something in the real world like a yellow pencil, a small dog, or a blue shirt. However, as you'll see later in the lesson, objects can be more abstract.
+* Attribute: A descriptor or characteristic. Examples would be color, length, size, etc. These attributes can take on specific values like blue, 3 inches, large, etc.
+* Method: An action that a class or object could take.
+* OOP: A commonly used abbreviation for object-oriented programming.
+* Encapsulation: One of the fundamental ideas behind object-oriented programming is called encapsulation: you can combine functions and data all into a single entity. In object-oriented programming, this single entity is called a class. Encapsulation allows you to hide implementation details, much like how the scikit-learn package hides the implementation of machine learning algorithms.
+
 In English, you might hear an attribute described as a property, description, feature, quality, trait, or characteristic. All of these are saying the same thing.
 
 Here is a reminder of how a class, an object, attributes, and methods relate to each other.
 
 q1
-stephen hawking
-scientist
-color
-to rain
-gray
+Match the vocabulary term on the left with the examples on the right.
+Object     stephen hawking
+Class      scientist
+attribute  color
+method     to rain
+value      gray
+
 
 
 6.4 OOP synatx
 ---------------------------------------
 Object-oriented programming syntax
+
 In this video, you'll see what a class and object look like in Python. In the next section, you'll have the chance to play around with the code. Finally, you'll write your own class.
 
 Function versus method
@@ -98,6 +109,7 @@ If you instantiate two objects, how does Python differentiate between these two 
 
 shirt_one = Shirt('red', 'S', 'short-sleeve', 15)
 shirt_two = Shirt('yellow', 'M', 'long-sleeve', 20)
+
 That's where self comes into play. If you call the change_price method on shirt_one, how does Python know to change the price of shirt_one and not of shirt_two?
 
 shirt_one.change_price(12)
@@ -107,6 +119,7 @@ Behind the scenes, Python is calling the change_price method:
     def change_price(self, new_price):
 
         self.price = new_price
+
 Self tells Python where to look in the computer's memory for the shirt_one object. Then, Python changes the price of the shirt_one object. When you call the change_price method, shirt_one.change_price(12), self is implicitly passed in.
 
 The word self is just a convention. You could actually use any other name as long as you are consisten, but you should use self to avoid confusing people.
@@ -119,17 +132,17 @@ You've seen what a class looks like and how to instantiate an object. Now it's y
 
 You need to download three files for this exercise. These files are located on this page in the Supporting materials section.
 
-Shirt_exercise.ipynb contains explanations and instructions.
-Answer.py containing solution to the exercise.
-Tests.py tests for checking your code: You can run these tests using the last code cell at the bottom of the notebook.
+* Shirt_exercise.ipynb contains explanations and instructions.
+* Answer.py containing solution to the exercise.
+* Tests.py tests for checking your code: You can run these tests using the last code cell at the bottom of the notebook.
 
 Getting started
 Open the Shirt Exercise.ipynb notebook file using Jupyter Notebook and follow the instructions in the notebook to complete the exercise.
 
 Supporting Materials
-Answer
-Tests
-Shirt Exercise
+Answer            https://video.udacity-data.com/topher/2021/April/60775d13_answer/answer.py
+Tests             https://video.udacity-data.com/topher/2021/April/60775d1e_tests/tests.py
+Shirt Exercise    https://video.udacity-data.com/topher/2021/April/607760bb_shirt-exercise/shirt-exercise.ipynb
 
 
 
