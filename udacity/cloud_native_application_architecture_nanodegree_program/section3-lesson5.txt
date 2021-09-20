@@ -445,4 +445,85 @@ OpenAPI is a useful tool but, it isn't always necessary to apply to our applicat
 
 
 
+5.12 Iterating on APIs
+---------------------------------------
+Additive Changes
+One of the safest ways to make modifications to your APIs is to make additive changes.
+
+Introduces new fields rather than renaming or removing old fields
+Parsing mechanisms in REST can ignore unknown fields
+gRPC messages are designed to truncate unknown fields
+
+Business value tradeoffs should drive the decision to maintain backward compatibility
+Backward compatibility makes the API is less concise and increases technical debt
+If the service is used by external clients, the tradeoff may be necessary
+If the service is an internal tool, it may be easier to have consumers of the API to update their clients
+
+Additive API Example
+Before:
+
+{
+    “first_name”: “john”,
+    “last_name”: “smith”
+}
+
+After:
+
+Instead of renaming the last_name field, we introduced surname as a new field.
+
+{
+    “first_name”: “john”,
+    “last_name”: “smith”,
+    “surname”: “smith”,
+    “favorite_color”: “blue”
+}
+
+API Versioning
+Versioning allows us to create a new version of our API when we want to make major changes.
+
+Release another version of the API
+Manage the resources for both the old and new versions of the API
+Deprecate and eventually shut down the old API at a later date
+
+There are two common ways to version our APIs
+
+Using the URL path
+Using HTTP headers
+
+API Versioning Using URL Path
+Create another distinct API and serve it as a new version denoted in the URL.
+
+URL Path Example
+First API release: www.example.com/api/v1/users
+New version: www.example.com/api/v2/users
+
+To set up the new version, we can either:
+
+1. Write New Code in the Same Code Base
+Monolithic approach: all versions of the code are housed in the same application code.
+New code is deployed with the old version
+2. Deploy a Separate Project and Point to the New Application
+New version of the API is treated as a separate application and a separate deployment
+Set up a proxy or DNS rule to point to the new application
+Can optimize costs using our container orchestration tools to allocate resources to different versions as needed
+
+In practice:
+URL paths are mainly used for large releases with breaking changes
+Minor changes use with backward-compatible designs
+Example: When Twitter added authorization via the OAuth security protocol, it was a major change, so they created a new v2URL path for the API update
+
+API Versioning Using Headers
+A less common approach
+Includes version data in the HTTP Header
+Less complicated than setting up a new API URL path
+Helpful when the API change is intended to change the expected payload
+
+
+
+5.13 Quiz: Iterating on APIs
+---------------------------------------
+An application changes its API endpoints and messages with a newly designed format.
+
+
+
 
