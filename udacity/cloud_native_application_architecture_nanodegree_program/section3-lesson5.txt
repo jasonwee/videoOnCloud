@@ -526,4 +526,71 @@ An application changes its API endpoints and messages with a newly designed form
 
 
 
+5.14 Exercise: Iterating on APIs
+---------------------------------------
+Iterating on APIs
+Your team has decided that it's time to create v2 of your computer orders API.
+
+You need to set up a new endpoint for v2 of the API. There are no changes planned at the moment, so you can keep the current API logic. We simply need routes to point to our new version.
+
+Instructions
+Using the starter code, create a duplicate endpoint for creating and getting computer orders.
+
+We want these to be named /api/v2/orders/computers for GET and /api/v2/orders/computers for POST
+
+For this exercise, we only need to update our routes to add these new endpoints. Our existing endpoint for v1 of the API should still work.
+
+
+
+5.15 Solution: Iterating on APIs
+---------------------------------------
+Overview
+The solution involved copying the existing code and setting it to a new API route. We now have more flexibility in the new API route to introduce changes that won't affect the existing route.
+
+Solution Code
+The solution code can be found here: Iterating on APIs Solution
+
+q1
+the method name and it implementation.
+
+Shared code like the services will need to be updated as well to truly make the two versions not affect one another during code changes.
+
+
+
+5.16 Future-Proofing APIs
+---------------------------------------
+q1
+Encourage that documentation is kept up-to-date with auto-generated documentation.
+Implement code review policies so that teammates are accountable for making sure documentation is updated with code
+
+
+
+Mindset
+Throughout this course, we've focused a lot on the concepts behind these tools and technologies. We've discussed the different situations in how they are applicable and why they would be used.
+
+Software is an ever-changing field
+Industry norms change every year
+Just a few years ago, Kubernetes was relatively unknown, and now it is the industry standard for container orchestration
+Be thoughtful when determining if a new technology is a good fit
+DON'T use tooling that is not aligned with current tools
+DON'T force a team to use a tool they don't like
+DO look at new technologies that have established a track record
+
+
+q2
+Share your notes or the conference slides from the talk with your teammates.
+Put together a document of tradeoffs to present to your manager.
+Request time during the workweek to build a proof of concept to present to the team.
+
+
+
+5.17 Exercise: Applying Message Passing Strategies
+---------------------------------------
+Combining message passing techniques
+Iterating on APIs
+
+combining message passing techniques allow different and various incoming data pass in and then process internally to format structurally before storing. if there is a new data source, then using iterating on APIs, we can add more incoming data source without breaking existing data processing pipeline.
+
+
+
 
