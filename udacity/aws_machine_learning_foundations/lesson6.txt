@@ -363,17 +363,17 @@ Now, consider a binomial distribution. Assume that 15% of the population is alle
 In this exercise, you will use the Gaussian distribution class for calculating and visualizing a Gaussian distribution.
 
 This exercise requires three files, which are located on this page in the Supporting materials section.
+* Gaussian_code_exercise.ipynb contains explanations and instructions.
+* Answer.py contains the solution to the exercise .
+* Numbers.txt can be read in by the read_data_file() method.
 
-Gaussian_code_exercise.ipynb contains explanations and instructions.
-Answer.py contains the solution to the exercise .
-Numbers.txt can be read in by the read_data_file() method.
 Getting started
 Open the Gaussian_code_exercise.ipynb notebook file using Jupyter Notebook and follow the instructions in the notebook to complete the exercise.
 
 Supporting Materials
-Gaussian Code Exercise
-Numbers
-Answer
+* Gaussian Code Exercise  https://video.udacity-data.com/topher/2021/April/60784805_gaussian-code-exercise/gaussian-code-exercise.ipynb
+* Numbers                 https://video.udacity-data.com/topher/2021/April/60784812_numbers/numbers.txt
+* Answer                  https://video.udacity-data.com/topher/2021/April/6078481e_answer/answer.py
 
 
 
@@ -388,22 +388,24 @@ Exercise: Code magic methods
 Extend the code from the previous exercise by using two new methods, add and repr.
 
 This exercise requires three files, which are located on this page in the Supporting materials section.
+* Magic_methods.ipynb contains explanations and instructions.
+* Answer.py contains the solution to the exercise.
+* Numbers.txt can be read in by the read_data_file() method.
 
-Magic_methods.ipynb contains explanations and instructions.
-Answer.py contains the solution to the exercise.
-Numbers.txt can be read in by the read_data_file() method.
 Getting started
 Open the Magic_methods.ipynb notebook file using Jupyter Notebook and follow the instructions in the notebook to complete the exercise.
 
 Supporting Materials
-Magic Methods
-Answer
-Numbers
+* Magic Methods https://video.udacity-data.com/topher/2021/April/60784b2e_magic-methods/magic-methods.ipynb
+* Answer        https://video.udacity-data.com/topher/2021/April/60784b3c_answer/answer.py
+* Numbers       https://video.udacity-data.com/topher/2021/April/60784b46_numbers/numbers.txt
+
 
 
 6.14 Inheritance
 ---------------------------------------
 q1
+Check the boxes next to the statements that are true. There may be more than one correct answer.
 Inheritance helps organize code with a more general version of a class and then specific children.
 Inheritance can make object-oriented programs more efficient to write.
 Updates to a parent class automatically trickle down to its children.
@@ -416,15 +418,15 @@ Exercise: Inheritance with clothing
 Using the Clothing parent class and two children classes, Shirt and Pants, you will code a new class called Blouse.
 
 This exercise requires two files, which are located on this page in the Supporting materials section.
+* Inheritance_exercise_clothing.ipynb contains explanations and instructions.
+* Answer.py contains the solution to the exercise.
 
-Inheritance_exercise_clothing.ipynb contains explanations and instructions.
-Answer.py contains the solution to the exercise.
 Getting started
 Open the Inheritance_exercise_clothing.ipynb notebook file using Jupyter Notebook and follow the instructions in the notebook to complete the exercise.
 
 Supporting Materials
-Inheritance Exercise Clothing
-Answer
+* Inheritance Exercise Clothing   https://video.udacity-data.com/topher/2021/April/60784d3e_inheritance-exercise-clothing/inheritance-exercise-clothing.ipynb
+* Answer                          https://video.udacity-data.com/topher/2021/April/60784d49_answer/answer.py
 
 
 
