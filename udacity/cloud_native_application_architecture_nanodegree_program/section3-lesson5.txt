@@ -593,4 +593,33 @@ combining message passing techniques allow different and various incoming data p
 
 
 
+5.18 Solution: Applying Message Passing Strategies
+---------------------------------------
+OpenAPI Documentation
+A project that I worked on used inline comments to document API usage. By separating the documentation, my team was able to be more accountable for updating the documentation. In our GitHub pull requests, we were able to clearly see API changes through the git diff.
+
+Versioning of APIs
+When releasing major changes to an API, the changes looked like they were going to make the application overly complicated. Separating out the versions of the API made the application much easier to maintain and manage. Implementing backwards compatibility didn't make sense in my context as it would have involved a significant amount of custom code that would have made the codebase overly complicated.
+
+
+q1
+if adding documentation would add up complexity, then better dont add in the first place. better yet, comments on code is sufficient and with no other documentation.
+
+Great work. Strategies don't always have to be applied. We should be conscious of when they may or may not be necessary.
+
+
+
+5.19 Lesson Recap
+---------------------------------------
+It's important to see the different ways that the concepts we have learned about are used in the industry. Understanding real-world applications differentiates those who have played around with a technology and those who have true industry experience.
+
+In this lesson we covered:
+
+Combining message passing techniques
+OpenAPI documentation
+Strategies for iterating on APIs
+How to future-proof our message passing
+
+
+
 
