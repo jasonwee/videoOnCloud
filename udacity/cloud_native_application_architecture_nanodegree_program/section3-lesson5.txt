@@ -622,4 +622,31 @@ How to future-proof our message passing
 
 
 
+5.20 Course Recap
+---------------------------------------
+Great work in making it through the course!
+
+We have learned a lot!
+
+How and why we can decompose a monolith into microservices
+Common message passing techniques
+Implementing message passing techniques.
+Using message passing in production systems.
+Now it's time to demonstrate what we have learned in the UdaConnect project!
+
+
+
+5.21 Congratulations
+---------------------------------------
+
+
+
+5.22 Glossary
+---------------------------------------
+New Terms In This Lesson
+Term		Definition
+OpenAPI		Provides a uniform way to detail and query API resources. It includes a wide range of optional fields that enrich our documentation
+Swagger		A tool used to render OpenAPI specifications into an interactive web page
+SwaggerHub	A tool that provides utilities to write OpenAPI specifications more easily as well as live previews of the corresponding Swagger documentation
+
 
