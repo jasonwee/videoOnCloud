@@ -1,0 +1,17 @@
+date start : 24 september 2021
+
+
+34.1 Confidence Intervals
+---------------------------------------
+def conf(l):
+    return factor(l) * sqrt(var(l) / len(l))
+
+
+34.2 Hypothesis Test
+---------------------------------------
+def test(l, h):
+    m = mean(l)
+    c = conf(l)
+    return abs(h-m) <= c
+
+
