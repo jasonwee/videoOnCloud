@@ -1,0 +1,243 @@
+what is the goal of a generative adversarial network (gan) ?
+produce new data which looks like the dataset it was trained on.
+
+
+what are some useful metrics to evaluate a gan's performance
+precision
+recall
+
+
+we have 1000 images of cats and 1000 images of dogs. let's build a "cat-dog detector." which type of machine learning algorithms would you use to solve this problem?
+supervised learning
+
+
+which of the following is a true statement about modules used in your code?
+create more modules does't necessarily result in more effective modularation.
+
+
+in many good text editors, the pep8 style guideline for line character limit is given. what is this guideline?
+79 chracteres
+
+
+identify the correct statements taht describe the key difference(s) between unit and integration tests.
+unit tests examine one unit at a time
+integration tests examines how various parts of the code and different functions interact together. 
+unit tests do not test functionality that spans different implementation units.
+
+
+in the following code, `new_nd = ND('Data','AWS', 'schoalrship', 3)`, what is ND?
+class
+
+
+which of these is a hyperparameter?
+learning rate
+loss
+
+
+in any prediction task, the process of "fitting" a model to the data observed in the training process can be best described as...
+making use of all observations available to create a model, then using distance or other measures to assess how wellt he model characterizes or "fits" its data.
+
+
+"The following descriptions best describe what: 1. Value that has to be assigned manually. 2. The K value in K-nearrest-neighbore is an example of this. 3. Value is set before the training."
+model parameter
+
+
+the acryonym dry stands for 
+dont repeat yourself
+
+
+in a generative adversarial network (gan), which of the following is true?
+the generator creates data. the discriminator classifies data.
+
+
+what are some considerations to keep in mind when doing code review?
+is minimal documentatoin provided for this project?
+can we reduce the number of calculatoins in this step?
+hwo do i reduce the number of iterations in a loop?
+do function use effective docstrings?
+how can i vectorize this loop?
+
+
+which of the following is true about python?
+you can access attributes in python the same way as c++ and java.
+python allows you to access attributses directly
+python was not design to use get and set methods to access attributes
+
+
+which of the following is a technique you can use to make your code easier to maintain?
+give variable meaningful names.
+
+
+which type of deep learning model can be used to create blueprints for buildings into photos of finished buildings?
+generative adverserial networks
+
+
+the following descriptions best describe what:
+1. value outputed from the training process.
+2. value estimated by the model.
+3. value not set by the ml practitioner.
+
+model parameter
+
+
+which of the following describes code that is clean?
+readable
+simple
+concise
+
+
+after a gan is trained, which parts of it are used to generate new outputs from data?
+generator
+
+
+is __init__ a magic method
+true
+
+
+which of the following statements are correct?
+a perceptron is a neural-like element of a neural network which takse an input signal from all percetrons of the prior layer.
+backpropation feeds the signals back through the nework to make adjustments on the weights in each layer based on teh ground truth.
+
+
+check the boxes next to the statements that are true.
+any changes to a parent class maniest in its children.
+inheritance encourages code reusability.
+inheritance can make object-oriented programs more efficient to write.
+
+
+when running a cell on the sagemaker notebook instance, where is the code being executed?
+the UI interface runs on yoru local browser while the actual computation happens on the aws cloud
+
+
+which of the following best characterizes why computer vision is such a sweet spot for deep learning?
+images are easy to label and therefore more data can be procured more quickly.
+the clarify of visual features are excellent inputs to deep learning models.
+the inherent high dimensinality of image data lends itself to the use of neural networks.
+
+
+identify the true statements about gradient descent.
+it is an optimization algorithm
+
+
+finish the following sentence: generally, if there's an "and" in your function name, consider renaming.
+
+
+how do the gans in the aws deepcomposer notebook demo (https://github.com/aws-samples/aws-deepcomposer-samples/tree/master/Lab%202) represent and interpret music?
+music is represented as severla two-dimensional matrics
+
+
+is python a procedural or object oriented programign langauge?
+both
+
+
+what does it mean when a loss function reaches convergence?
+the function value has stablized over many epochs.
+teh value of the function maybe at 0.
+
+
+which of the following are true about the gan structure?
+discrimanitor is a classifier
+the discrimantor trinas on the distinguishing fake data from real data.
+the generator can create fake data
+
+
+what are the best practices for building out good unit tests?
+think about all edge cases before you write the functino.
+have mutlpe asserts statements to test all edge cases.
+write a test function to check for iplemention given all parameters.
+run a test funciton to see if your funciton works in all edge cases.
+
+
+which one of the following statements is incorrect?
+-> when fitting the line, we are tring to maximimize the distance of each poitn to the line.
+
+
+what kind of tasks are the following two cases respectively - regression or classification?
+1. a phamaceutical company wants to predict whether patients have type 2 diabetes or not based on their blood reports using machine learning.
+2. a financial institutoin wants to predict the net revenue of a company based on the slaes in the next five years using machine learning.
+-> 1. cassfification. 2 regression
+
+
+choose all of the following which are benefits of using meaninginfull names in writing clean code.
+-> cleary differentiate names
+-> be descriptive and imply type
+
+
+why is it useful to track loss while the model is being trained?
+-> loss dictates how effective the model is
+-> loss can help understand how much the model is changing per iteration. when it converges, that's an indicator that further training will have little benefit.
+-> loss is only useful as a final metric. it should not be evaluated while the model is being trained.
+
+
+i need to run a python package with the following module in the directory:
+1. genrealdistribution.py
+2. mydata.csv
+my directory is ready to install the package.
+-> false
+
+
+in a piano roll, what value does the y-axis capture?
+-> key
+
+
+in the following code, `new_nd = change_length(2)`, what is change_length?
+-> method
+
+
+making your code modular makes it easier to:
+-> write less code
+-> collaborate on code
+-> reuse your code 
+
+
+what is a machine learning algorithm doing when its training a model?
+-> adjusting model parameters in an attempt to optimize some objective function (ex: minizmie loss).
+-> it is calculating random values until it deices it wants to stop.
+
+
+what service does aws deepcomposer use for hosting machine learning inference?
+-> aws lambda
+-> amazon sagemaker
+
+
+identify the true statements about object-oriented programming.
+-> objects has characteriestics.
+-> objects has methods.
+-> objects have attributes.
+-> objects do actions
+
+
+why might a lower learning rate be superior?
+-> more input data will be seen.
+-> more likely to find the optimal weights within the search space.
+-> explore a wider set of model weights
+
+
+is this a good log message? `2018-08-19|scheudler|error| samplecocom.jobs.scheudledtasks|scheduledjob'id abc23' faield due to binary compatiblities`
+-> false
+
+
+true or false: functions should bring multiple actions together sot hey are more efficeintly run.
+-> false
+
+
+which of the following are reasons for why testing is required for data science coding tasks?
+-> data pipelines may not be working properly.
+-> model features may be used inappropriately.
+-> etl will alwys catch encoding errors.
+-> problems in data science tasks are not easily detectable.
+
+
+which of the following is a type of documentation that you can use to make your code easier to navigate?
+-> in-line comments
+
+
+which of the following best describes deep learning?
+-> deep learning uses the neural network algorithm to backpropogate across its perceptrons
+-> deep learning is a state of the art process for modeling predictive tasks of extraordinary high dimensionality.
+
+
+which of the following is an important reason to refactor your code?
+-> stops you from making additional mistakes in the future
+-> improve internal structure
+
