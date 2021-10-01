@@ -1,3 +1,6 @@
+https://photos.google.com/share/AF1QipMbUO2k_42ua-7vrfthHhEq2_E22VEFZGAdBhOKBG9s_mjjRWSETuEvr4_xzpAROw?pli=1&key=blJFU2VLVG92Tl9LS3B6azhiUlBmejFsWHpub1l3
+
+
 what is the goal of a generative adversarial network (gan) ?
 produce new data which looks like the dataset it was trained on.
 
