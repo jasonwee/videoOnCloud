@@ -68,4 +68,90 @@ At the end of this process, you'll have your own observability dashboard!
 
 
 
+1.4 What is Observabilty and Why Does it Matter?
+---------------------------------------
+Monolithic Applications vs Microservices
+Let's review the distinction between monolithic applications and microservices:
+
+Monolithic applications. Monolithic applications have all the services bundled together. The user interface, business logic and data layer are all stacked on top of each other, such that making changes to one service can cause all the others to have issues as well.
+
+Microservices. In contrast, with microservices, all of the functions are separated into standalone services that work asynchronously and are distributed in nature. If one service has issues, this does not necessarily impact the rest of the application. Also, due to their small size and portability, microservices are great for Cloud Native development.
+
+Black Box Monitoring vs White Box Monitoring
+There has always been a need to monitor application performance, but the approach to monitoring has changed over time.
+
+Black box monitoring. Historically, we have used black box monitoring, which involves getting indirect data about the system (such as disk errors, hypervisor resource alerts, or hardware uptime) from the outside and then using this to attempt to infer the cause of a problem (without being able to view the source of the problem directly).
+White box monitoring. In white box monitoring, we look inside and get direct data on the application (such as user utilization, HTTP status errors, and SQL queries); we can directly observe the root cause of the issue.
+
+Observability
+Without observability, we would often have to search through every single service to identify a problem.
+With observability, we can look inside the application and even trace through the execution of the application to gather detailed performance data on its individual components.
+
+q1
+What is observability?
+It is the ability to measure the internal functions of a system
+
+
+q2
+A modern approach to cloud native architecture typically involves…
+A microservices-based application and white box monitoring, so that we have architecture with observability
+
+
+
+1.5 Business Stakeholders
+---------------------------------------
+In a business we have a number of stakeholders that are involved in observability:
+
+Customers and users should be the most important stakeholders when it comes to observability, since serving them is typically the main point of the product in the first place (and the ultimate source of revenue, if it is a paid product). They are the ones using our app and we want to make sure that they're having the best experience that they possibly can.
+Product managers want to ensure that our customers and users are having the best experience, and that our product is represented properly.
+Engineering managers invest a lot of time developing the application and thus have a vested interest in ensuring the product works as intended.
+Release managers want to simplify the release process. Anytime they can use observability data to catch an error upon deployment, this can make it easier for them to rollback any problems that occur.
+Development teams want feedback so they know what they need to fix and observability teams need the same feedback, so that they know what to change when it comes to system adjustments.
+Partners may have pipelines that are integrated with your apps. It's very important to them that both sides of the application are working to ensure that that the pipeline is functioning correctly.
+Investors want to make sure that the application is healthy so that they have confidence in the reliability and performance of the key product driving the business.
+Executives want to ensure that the application is working correctly, especially if it is an application that the business (and the bottom line) are centered around. Executive know that if the customers are having a reliable, high-performance experience with the app, this will contribute to their satisfaction and have a positive impact on revenue.
+
+As you can see, there is a wide variety of stakeholders who all have an interest in observability data. As an observability expert you'll want to keep all of these stakeholders in mind and ensure they are getting the data they need.
+
+q1
+Why would a release manager care about observability?
+The ability to see if an application failed on deploy.
+
+The overarching goal of observability is to see how the application is working, which includes data about whether an application failed on deploy—something a release manager would be very interested in.
+￼
+
+
+1.6 Monitoring and Observability
+---------------------------------------
+Monitoring and Observability
+Observability has traditionally been broken down into two components: Monitoring and observability. Let's discuss where we would apply each of these approaches and what the distinction is between them.
+
+Monitoring
+In monitoring, we are looking at the system or infrastructure itself. In the context of this course, the system would be a Kubernetes cluster. Monitoring is obviously valuable, but does not tell us what is happening inside of our applications. If an app has performance issues, monitoring will not give us insight on the cause of the issue.
+
+Observability
+In observability, we can directly see the internal workings of our applications, including the performance of individual functions and processes. This helps us track down any problems that may exist within the app, or simply identify areas where there is room for improvement in the app's performance.
+
+Remember, we monitor systems and observe applications.
+
+Use Both!
+Having both of these tools lets us get a full picture of both the application and the system it's running on. Note that although these are distinct concepts, they are so often used together that you'll commonly hear people say "observability" when they mean monitoring and observability.
+
+
+q1
+Which of the following statements are correct?
+Monitoring is used to take a look at the infrastructure
+Observability gives us a view inside the app
+
+
+q2
+Below are a few scenarios. See if you can match them up—which are more closely associated with monitoring and which are more closely associated with observability?
+
+Seeing why a pod failed to start			Monitoring
+Determining the response time of an application		Observability
+Determining an error in Application Execution		Observability
+Determining resource usage				Monitoring
+
+
+
 
