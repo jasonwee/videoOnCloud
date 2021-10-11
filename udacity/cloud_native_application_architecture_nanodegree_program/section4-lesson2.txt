@@ -1,0 +1,109 @@
+date start : 11 october 2021
+
+
+2.1 Lesson Overview
+---------------------------------------
+Lesson Overview
+
+In this lesson, we'll look at the main tools we need for cluster observability. We'll discuss why we need these tools conceptually and then we'll go through the process of installing them.
+
+Lesson Outline
+This lesson will get you set up with the tools you need to start doing observability in your cluster.
+
+Understanding your components. First, we'll look at the big picture. We'll consider three major needs that we will encounter when trying to do observability: System data, application data, and data visualization. Then we'll discuss why the three tools we're going to use—Prometheus, Jaeger, and Grafana—are great choices for addressing each of these needs.
+Installing Prometheus, Grafana, and Jaeger. Next, we'll get into the details of how to install Prometheus, Grafana, and Jaeger, and how to confirm that the installations were successful.
+Edge Case: Using ELK. Although the tools we are using in this course are excellent, industry-standard tools, it's always good to be aware of other options you may run into during your time as an observability expert. So at the end of the lesson, we will briefly consider ELK or Elasticsearch, Logstash, Kibana, which is a stack that serves as a popular alternative to the one we use in this course.
+
+
+
+2.2 Big Picture: Understanding Your Components
+---------------------------------------
+Here are the key points about all three apps, for your reference:
+
+Prometheus
+Created by SoundCloud in 2012
+Belongs to the Cloud Native Computing Foundation (CNCF)
+Collects system information (contrast this with Jaeger, which collects application information)
+Has a time-series database (you can tag with time stamp, making it easier to keep data in chronological order.
+Has its own querying language, called PromQL
+Has built-in alerting tools
+
+Jaeger
+Created by Uber
+Belongs to CNCF
+Collects application information (contrast this with Prometheus, which collections system information)
+Provides a distributed tracing system
+Uses the OpenTracing data model, although it is transitioning to the OpenTelemetry model in future
+Zipkin is very similar and is a popular alternative
+
+Grafana
+Visualization platform that allows you to build open source dashboards
+Supports time-series databases as a backend
+It is often bundled with Prometheus
+Expandable with plugins
+
+
+
+q1
+Below are the three tools we just discussed. Can you can match each of them tools with the most appropriate use case?
+Prometheues  Time Series Database
+Grafana      Data Visualization Platform
+Jaeger       Tracing
+
+
+q2
+Which of the following is a part of OpenTelemetry?
+OpenTracing
+
+
+
+2.3 Installing Prometheus and Grafana
+---------------------------------------
+Installing Prometheus and Grafana
+
+On this page, Jay will show you how to install Prometheus and Grafana. For now, we suggest you just watch the video to make sure you understand key points about the installation process. Then, on the next page, you'll have a chance to install it for yourself.
+
+Get the starter code
+To follow along with the demonstrations and exercises in this course, you'll need some starter files that we've provided in this GitHub repo.
+
+You'll see that this repo contains two main directories:
+
+The Exercise_Starter_Files directory contains the files you'll need for the exercises (like this one) found throughout the course.
+The Project_Starter_Files directory contains the files you'll be using for the project at the end of the course.
+
+
+Installing Helm
+Helm is a popular package manager for Kubernetes. It uses a templating language to make the managing of multiple Kubernetes items in a single application easier to package, install, and update.
+
+Installing Helm is important as this is a common tool used for monitoring and application maintenance. If you get a job as an observability engineer, it is likely you will be asked to install and update applications with Helm. You will also be responsible for patching Prometheus, Grafana and other tools on the cluster so it is good to be familiar with the installation process.
+
+q1
+Why do we use Helm 3 instead of Helm 2?
+It is more secure since removing the Tiller requirement
+
+
+In a real life situation, we would likely be using some kind of ingress to expose the services to the world. There are a variety of them such as Istio, Gloo from Solo.io, NGINX, Contour and many others. Different companies and different teams use different solutions.
+
+For the purposes of this course, we will be using kubectl port-forward. This is a simple way to forward a Kubernetes service's port to a local port on your machine. This is something you would never do in production but would regularly do in testing.
+
+An example would be if you ran this command:
+
+kubectl port-forward service/my-service 7000:80
+
+Here you are forwarding the Kubernetes service called my-service and using local port 7000, forwarding it to service port 80.
+
+For this course, you can simply follow our commands—but we encourage you to check out more details on best practices in the Kubernetes documentation here.
+
+q2
+When Exposing the service with kubectl and portforwarding, what ports will we use?
+80
+3000
+
+Note: When installing via the Prometheus Helm chart, the default Grafana admin password is actually prom-operator, rather than admin.
+
+Additional Resources
+If you would like to learn more about Prometheus and why it is the standard, you can check out CNCF's website here.
+
+
+
+
