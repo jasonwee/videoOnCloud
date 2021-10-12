@@ -106,4 +106,309 @@ If you would like to learn more about Prometheus and why it is the standard, you
 
 
 
+2.4 Exercise: Installing Prometheus and Grafana
+---------------------------------------
+Exercise: Installing Prometheus and Grafana
+Alright, now that you've seen the process, it's time to install Prometheus and Grafana for yourself! The steps are listed below.
+
+Remember, you can get all of the files you'll need for this and the other exercises in this course from this GitHub Repo.
+
+Install Prometheus and Grafana with Helm
+Please Note for this course, you will be running kubectl in the Vagrant VM. If you are familiar with port forwarding and setting up Kubernetes contexts, you can run kubectl on your local machine.
+
+First we will need to install Helm 3. You can do it by running the below commands.
+
+curl https://raw.githubusercontent.com/helm/helm/master/scripts/get-helm-3 | bash
+Next, we want to create the monitoring namespace
+
+kubectl create namespace monitoring
+
+Following along with what you saw in the video, install Prometheus and Grafana with Helm. You may have noticed that I installed some CRDs in the video. In version 0.4.2 of the operator, it was needed. As of this update, we are on version 0.7 which no longer needs those CRDs which is why you won't see the command here any longer.
+
+helm repo add prometheus-community https://prometheus-community.github.io/helm-charts
+# helm repo add stable https://kubernetes-charts.storage.googleapis.com # this is deprecated
+helm repo add stable https://charts.helm.sh/stable
+helm repo update
+helm install prometheus prometheus-community/kube-prometheus-stack --namespace monitoring --kubeconfig /etc/rancher/k3s/k3s.yaml
+
+Verify that it installed
+
+kubectl get pods --namespace=monitoring
+You should see 6 options.
+
+OPTIONAL
+
+You can port-forward this by running the following command
+
+kubectl port-forward prometheus-prometheus-kube-prometheus-prometheus-0 --address 0.0.0.0 3000:80 -n monitoring
+
+
+q1
+Now let's check if the installation ran correctly. Run kubectl get pods -n monitoring in your terminal. Which one of these most closely matches your results?
+prometheus-prometheus-node-exporter-xxxxx
+
+
+user@localhost:~/CNAND_nd064_C4_Observability_Starter_Files/Exercise_Starter_Files$ vagrant up
+Bringing machine 'default' up with 'virtualbox' provider...
+==> default: Box 'opensuse/Leap-15.2.x86_64' could not be found. Attempting to find and install...
+    default: Box Provider: virtualbox
+    default: Box Version: 15.2.31.199
+==> default: Loading metadata for box 'opensuse/Leap-15.2.x86_64'
+    default: URL: https://vagrantcloud.com/opensuse/Leap-15.2.x86_64
+The box you're attempting to add has no available version that
+matches the constraints you requested. Please double-check your
+settings. Also verify that if you specified version constraints,
+that the provider you wish to use is available for these constraints.
+
+Box: opensuse/Leap-15.2.x86_64
+Address: https://vagrantcloud.com/opensuse/Leap-15.2.x86_64
+Constraints: 15.2.31.199
+Available versions: 15.2.31.247, 15.2.31.249, 15.2.31.250, 15.2.31.251, 15.2.31.252, 15.2.31.253, 15.2.31.254, 15.2.31.255, 15.2.31.258, 15.2.31.260, 15.2.31.263, 15.2.31.264, 15.2.31.265, 15.2.31.266, 15.2.31.270, 15.2.31.271, 15.2.31.273, 15.2.31.276, 15.2.31.278, 15.2.31.279, 15.2.31.280, 15.2.31.281, 15.2.31.282, 15.2.31.283, 15.2.31.284, 15.2.31.285, 15.2.31.286, 15.2.31.288, 15.2.31.289, 15.2.31.290, 15.2.31.291, 15.2.31.292, 15.2.31.293, 15.2.31.294, 15.2.31.295, 15.2.31.299, 15.2.31.300, 15.2.31.304, 15.2.31.305, 15.2.31.306, 15.2.31.307, 15.2.31.308, 15.2.31.309, 15.2.31.322, 15.2.31.323, 15.2.31.324, 15.2.31.325, 15.2.31.326, 15.2.31.327, 15.2.31.328, 15.2.31.329, 15.2.31.331, 15.2.31.332, 15.2.31.335, 15.2.31.336, 15.2.31.337, 15.2.31.338, 15.2.31.340, 15.2.31.341, 15.2.31.342, 15.2.31.343, 15.2.31.344, 15.2.31.347, 15.2.31.348, 15.2.31.349, 15.2.31.350, 15.2.31.353, 15.2.31.354, 15.2.31.375, 15.2.31.376, 15.2.31.377, 15.2.31.379, 15.2.31.380, 15.2.31.381, 15.2.31.382, 15.2.31.383, 15.2.31.386, 15.2.31.387, 15.2.31.391, 15.2.31.392, 15.2.31.393, 15.2.31.395, 15.2.31.396, 15.2.31.397, 15.2.31.402, 15.2.31.403, 15.2.31.408, 15.2.31.409, 15.2.31.412, 15.2.31.413, 15.2.31.415, 15.2.31.417, 15.2.31.418, 15.2.31.422, 15.2.31.423, 15.2.31.425, 15.2.31.426, 15.2.31.427, 15.2.31.428, 15.2.31.429, 15.2.31.431, 15.2.31.433, 15.2.31.434, 15.2.31.435, 15.2.31.436, 15.2.31.437, 15.2.31.438, 15.2.31.439, 15.2.31.441, 15.2.31.442, 15.2.31.443, 15.2.31.444, 15.2.31.445, 15.2.31.451, 15.2.31.452, 15.2.31.453, 15.2.31.454, 15.2.31.455, 15.2.31.456, 15.2.31.457, 15.2.31.458, 15.2.31.459, 15.2.31.460, 15.2.31.461, 15.2.31.463, 15.2.31.464, 15.2.31.466, 15.2.31.467, 15.2.31.470, 15.2.31.472, 15.2.31.473, 15.2.31.477, 15.2.31.479, 15.2.31.480, 15.2.31.481, 15.2.31.482, 15.2.31.483, 15.2.31.488, 15.2.31.489, 15.2.31.490, 15.2.31.491, 15.2.31.493, 15.2.31.495, 15.2.31.497, 15.2.31.498, 15.2.31.499, 15.2.31.502, 15.2.31.504, 15.2.31.505, 15.2.31.507, 15.2.31.508, 15.2.31.509, 15.2.31.512, 15.2.31.514, 15.2.31.515, 15.2.31.517, 15.2.31.522, 15.2.31.524, 15.2.31.527, 15.2.31.528, 15.2.31.529, 15.2.31.551, 15.2.31.553, 15.2.31.560
+user@localhost:~/CNAND_nd064_C4_Observability_Starter_Files/Exercise_Starter_Files$ vim Vagrantfile 
+user@localhost:~/CNAND_nd064_C4_Observability_Starter_Files/Exercise_Starter_Files$ 
+user@localhost:~/CNAND_nd064_C4_Observability_Starter_Files/Exercise_Starter_Files$ vagrant up
+Bringing machine 'default' up with 'virtualbox' provider...
+==> default: Importing base box 'opensuse/Leap-15.2.x86_64'...
+==> default: Generating MAC address for NAT networking...
+==> default: Checking if box 'opensuse/Leap-15.2.x86_64' version '15.2.31.527' is up to date...
+==> default: A newer version of the box 'opensuse/Leap-15.2.x86_64' for provider 'virtualbox' is
+==> default: available! You currently have version '15.2.31.527'. The latest is version
+==> default: '15.2.31.560'. Run `vagrant box update` to update.
+==> default: Setting the name of the VM: k3s
+==> default: Clearing any previously set network interfaces...
+==> default: Preparing network interfaces based on configuration...
+    default: Adapter 1: nat
+    default: Adapter 2: hostonly
+==> default: Forwarding ports...
+    default: 8080 (guest) => 8080 (host) (adapter 1)
+    default: 9090 (guest) => 9090 (host) (adapter 1)
+    default: 8888 (guest) => 8888 (host) (adapter 1)
+    default: 3000 (guest) => 3000 (host) (adapter 1)
+    default: 3030 (guest) => 3030 (host) (adapter 1)
+    default: 16686 (guest) => 8088 (host) (adapter 1)
+    default: 8000 (guest) => 8000 (host) (adapter 1)
+    default: 22 (guest) => 2222 (host) (adapter 1)
+==> default: Running 'pre-boot' VM customizations...
+==> default: Booting VM...
+==> default: Waiting for machine to boot. This may take a few minutes...
+    default: SSH address: 127.0.0.1:2222
+    default: SSH username: vagrant
+    default: SSH auth method: private key
+    default: Warning: Connection reset. Retrying...
+    default: Warning: Remote connection disconnect. Retrying...
+    default: Warning: Connection reset. Retrying...
+    default: 
+    default: Vagrant insecure key detected. Vagrant will automatically replace
+    default: this with a newly generated keypair for better security.
+    default: 
+    default: Inserting generated public key within guest...
+    default: Removing insecure key from the guest if it's present...
+    default: Key inserted! Disconnecting and reconnecting using new SSH key...
+==> default: Machine booted and ready!
+==> default: Checking for guest additions in VM...
+==> default: Configuring and enabling network interfaces...
+==> default: Installing rsync to the VM...
+==> default: Rsyncing folder: /home/jason/CNAND_nd064_C4_Observability_Starter_Files/Exercise_Starter_Files/ => /vagrant
+==> default: Running provisioner: k3s shell script (shell)...
+    default: Running: /tmp/vagrant-shell20210917-27758-pd7m6r.sh
+    default: **** Begin installing k3s
+    default: [INFO]  Using v1.19.2+k3s1 as release
+    default: [INFO]  Downloading hash https://github.com/k3s-io/k3s/releases/download/v1.19.2+k3s1/sha256sum-amd64.txt
+    default: [INFO]  Downloading binary https://github.com/k3s-io/k3s/releases/download/v1.19.2+k3s1/k3s
+    default: [INFO]  Verifying binary download
+    default: [INFO]  Installing k3s to /usr/local/bin/k3s
+    default: [INFO]  Creating /usr/local/bin/kubectl symlink to k3s
+    default: [INFO]  Creating /usr/local/bin/crictl symlink to k3s
+    default: [INFO]  Creating /usr/local/bin/ctr symlink to k3s
+    default: [INFO]  Creating killall script /usr/local/bin/k3s-killall.sh
+    default: [INFO]  Creating uninstall script /usr/local/bin/k3s-uninstall.sh
+    default: [INFO]  env: Creating environment file /etc/systemd/system/k3s.service.env
+    default: [INFO]  systemd: Creating service file /etc/systemd/system/k3s.service
+    default: [INFO]  systemd: Enabling k3s unit
+    default: Created symlink /etc/systemd/system/multi-user.target.wants/k3s.service → /etc/systemd/system/k3s.service.
+    default: [INFO]  systemd: Starting k3s
+    default: **** End installing k3s
+user@localhost:~/CNAND_nd064_C4_Observability_Starter_Files/Exercise_Starter_Files$ 
+
+
+$ vagrant ssh
+Have a lot of fun...
+vagrant@localhost:~> kubectl version
+Client Version: version.Info{Major:"1", Minor:"19", GitVersion:"v1.19.2+k3s1", GitCommit:"d38505b124c92bffd45f6e0654adb9371cae9610", GitTreeState:"clean", BuildDate:"2020-09-21T17:00:07Z", GoVersion:"go1.15.2", Compiler:"gc", Platform:"linux/amd64"}
+Server Version: version.Info{Major:"1", Minor:"19", GitVersion:"v1.19.2+k3s1", GitCommit:"d38505b124c92bffd45f6e0654adb9371cae9610", GitTreeState:"clean", BuildDate:"2020-09-21T17:00:07Z", GoVersion:"go1.15.2", Compiler:"gc", Platform:"linux/amd64"}
+vagrant@localhost:~> curl https://raw.githubusercontent.com/helm/helm/master/scripts/get-helm-3 | bash
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+100 11248  100 11248    0     0  19943      0 --:--:-- --:--:-- --:--:-- 19907
+Downloading https://get.helm.sh/helm-v3.7.0-linux-amd64.tar.gz
+Verifying checksum... Done.
+Preparing to install helm into /usr/local/bin
+helm installed into /usr/local/bin/helm
+vagrant@localhost:~> hel
+helm  help  
+vagrant@localhost:~> kubectl create namespace monitoring
+namespace/monitoring created
+vagrant@localhost:~> kubectl get ns
+NAME              STATUS   AGE
+default           Active   11m
+kube-system       Active   11m
+kube-public       Active   11m
+kube-node-lease   Active   11m
+monitoring        Active   8s
+vagrant@localhost:~> helm repo add prometheus-community https://prometheus-community.github.io/helm-charts
+"prometheus-community" has been added to your repositories
+vagrant@localhost:~> # helm repo add stable https://kubernetes-charts.storage.googleapis.com # this is deprecated
+vagrant@localhost:~> helm repo add stable https://charts.helm.sh/stable
+"stable" has been added to your repositories
+vagrant@localhost:~> helm repo update
+Hang tight while we grab the latest from your chart repositories...
+...Successfully got an update from the "stable" chart repository
+...Successfully got an update from the "prometheus-community" chart repository
+Update Complete. ⎈Happy Helming!⎈
+vagrant@localhost:~> helm install prometheus prometheus-community/kube-prometheus-stack --namespace monitoring --kubeconfig /etc/rancher/k3s/k3s.yaml
+WARNING: Kubernetes configuration file is group-readable. This is insecure. Location: /etc/rancher/k3s/k3s.yaml
+WARNING: Kubernetes configuration file is world-readable. This is insecure. Location: /etc/rancher/k3s/k3s.yaml
+NAME: prometheus
+LAST DEPLOYED: Fri Sep 17 03:10:40 2021
+NAMESPACE: monitoring
+STATUS: deployed
+REVISION: 1
+NOTES:
+kube-prometheus-stack has been installed. Check its status by running:
+  kubectl --namespace monitoring get pods -l "release=prometheus"
+
+Visit https://github.com/prometheus-operator/kube-prometheus for instructions on how to create & configure Alertmanager and Prometheus instances using the Operator.
+vagrant@localhost:~> kubectl get pods --namespace=monitoring
+NAME                                                     READY   STATUS    RESTARTS   AGE
+prometheus-kube-state-metrics-696cf79768-nfkzr           1/1     Running   0          3m37s
+prometheus-kube-prometheus-operator-cb55c97b9-jxdhs      1/1     Running   0          3m37s
+prometheus-prometheus-node-exporter-zqspc                1/1     Running   0          3m37s
+alertmanager-prometheus-kube-prometheus-alertmanager-0   2/2     Running   0          3m15s
+prometheus-grafana-79cc57585d-9ppc5                      2/2     Running   0          3m37s
+prometheus-prometheus-kube-prometheus-prometheus-0       2/2     Running   0          3m14s
+vagrant@localhost:~> kubectl port-forward prometheus-prometheus-kube-prometheus-prometheus-0 --address 0.0.0.0 3000:80 -n monitoring
+Forwarding from 0.0.0.0:3000 -> 80
+Handling connection for 3000
+E0917 03:16:19.383044   14695 portforward.go:400] an error occurred forwarding 3000 -> 80: error forwarding port 80 to pod 04fbb7f69798bf9f44363d7f03a8f7d2081bad6572630eb1e12d6cbcd354a158, uid : failed to execute portforward in network namespace "/var/run/netns/cni-5c6149ba-f390-5c7b-8538-4452cd5bf9d6": failed to dial 80: dial tcp4 127.0.0.1:80: connect: connection refused
+Handling connection for 3000
+E0917 03:16:20.424178   14695 portforward.go:400] an error occurred forwarding 3000 -> 80: error forwarding port 80 to pod 04fbb7f69798bf9f44363d7f03a8f7d2081bad6572630eb1e12d6cbcd354a158, uid : failed to execute portforward in network namespace "/var/run/netns/cni-5c6149ba-f390-5c7b-8538-4452cd5bf9d6": failed to dial 80: dial tcp4 127.0.0.1:80: connect: connection refused
+
+
+Handling connection for 3000
+E0917 03:16:36.243979   14695 portforward.go:400] an error occurred forwarding 3000 -> 80: error forwarding port 80 to pod 04fbb7f69798bf9f44363d7f03a8f7d2081bad6572630eb1e12d6cbcd354a158, uid : failed to execute portforward in network namespace "/var/run/netns/cni-5c6149ba-f390-5c7b-8538-4452cd5bf9d6": failed to dial 80: dial tcp4 127.0.0.1:80: connect: connection refused
+Handling connection for 3000
+^Cvagrant@localhost:~> kubectl port-forward prometheus-prometheus-kube-prometheus-prometheus-0 --address 0.0.0.0 3000:80 -n monitoring
+Forwarding from 0.0.0.0:3000 -> 80
+Handling connection for 3000
+E0917 03:17:23.447903   15123 portforward.go:400] an error occurred forwarding 3000 -> 80: error forwarding port 80 to pod 04fbb7f69798bf9f44363d7f03a8f7d2081bad6572630eb1e12d6cbcd354a158, uid : failed to execute portforward in network namespace "/var/run/netns/cni-5c6149ba-f390-5c7b-8538-4452cd5bf9d6": failed to dial 80: dial tcp4 127.0.0.1:80: connect: connection refused
+Handling connection for 3000
+E0917 03:17:24.481824   15123 portforward.go:400] an error occurred forwarding 3000 -> 80: error forwarding port 80 to pod 04fbb7f69798bf9f44363d7f03a8f7d2081bad6572630eb1e12d6cbcd354a158, uid : failed to execute portforward in network namespace "/var/run/netns/cni-5c6149ba-f390-5c7b-8538-4452cd5bf9d6": failed to dial 80: dial tcp4 127.0.0.1:80: connect: connection refused
+Handling connection for 3000
+E0917 03:17:29.534271   15123 portforward.go:400] an error occurred forwarding 3000 -> 80: error forwarding port 80 to pod 04fbb7f69798bf9f44363d7f03a8f7d2081bad6572630eb1e12d6cbcd354a158, uid : failed to execute portforward in network namespace "/var/run/netns/cni-5c6149ba-f390-5c7b-8538-4452cd5bf9d6": failed to dial 80: dial tcp4 127.0.0.1:80: connect: connection refused
+^Cvagrant@localhost:~
+vagrant@localhost:~> 
+vagrant@localhost:~> kubectl patch svc "prometheus-grafana" --namespace "monitoring" -p '{"spec": {"type": "LoadBalancer"}}'
+service/prometheus-grafana patched
+vagrant@localhost:~> kubectl port-forward prometheus-prometheus-kube-prometheus-prometheus-0 --address 0.0.0.0 3000:80 -n monitoring
+Forwarding from 0.0.0.0:3000 -> 80
+Handling connection for 3000
+E0917 03:47:17.503796   27744 portforward.go:400] an error occurred forwarding 3000 -> 80: error forwarding port 80 to pod 04fbb7f69798bf9f44363d7f03a8f7d2081bad6572630eb1e12d6cbcd354a158, uid : failed to execute portforward in network namespace "/var/run/netns/cni-5c6149ba-f390-5c7b-8538-4452cd5bf9d6": failed to dial 80: dial tcp4 127.0.0.1:80: connect: connection refused
+Handling connection for 3000
+E0917 03:47:38.667018   27744 portforward.go:400] an error occurred forwarding 3000 -> 80: error forwarding port 80 to pod 04fbb7f69798bf9f44363d7f03a8f7d2081bad6572630eb1e12d6cbcd354a158, uid : failed to execute portforward in network namespace "/var/run/netns/cni-5c6149ba-f390-5c7b-8538-4452cd5bf9d6": failed to dial 80: dial tcp4 127.0.0.1:80: connect: connection refused
+Handling connection for 3000
+E0917 03:47:39.719178   27744 portforward.go:400] an error occurred forwarding 3000 -> 80: error forwarding port 80 to pod 04fbb7f69798bf9f44363d7f03a8f7d2081bad6572630eb1e12d6cbcd354a158, uid : failed to execute portforward in network namespace "/var/run/netns/cni-5c6149ba-f390-5c7b-8538-4452cd5bf9d6": failed to dial 80: dial tcp4 127.0.0.1:80: connect: connection refused
+^Cvagrant@localhost:~> 
+vagrant@localhost:~> kubectl port-forward svc/prometheus-grafana --address 0.0.0.0 3000:80 -n monitoring
+Forwarding from 0.0.0.0:3000 -> 3000
+Handling connection for 3000
+Handling connection for 3000
+Handling connection for 3000
+Handling connection for 3000
+Handling connection for 3000
+Handling connection for 3000
+
+
+
+2.5 Installing Jaeger
+---------------------------------------
+Installing Jaeger
+In this next video, Jay will walk through the process of installing Jaeger. Again, we recommend that you just watch the process and then install it for yourself on the following page.
+
+While not required, best practices state to install Jaeger in a separate namespace called observability. This makes it easier to secure tracing functions from monitoring functions while also giving them separate spaces to operate.
+
+q1
+What namespace do we want to install Jaeger in?
+observability
+
+q2
+What are the two main purpose of tracing?
+Follow the flow of data in an application
+Test latency in the application
+
+
+The purpose of tracing is to detemine where there may be errors in the application itself. We aren't as concerned about uptime—that's the purpose of monitoring
+
+Additional Resources
+If you would like to learn more about OpenTelemetry and why it is being adopted as a tracing standard, you can check out their website here.
+
+
+2.6 Exercise: Installing Jaeger
+---------------------------------------
+Install Jaeger Operator
+Remember, you can get all of the files you'll need for this and the other exercises in this course from this GitHub Repo.
+
+Install Jaeger
+Next, go ahead and install Jaeger Tracing to your cluster.
+
+We will be using the files hosted in the official Jaeger GitHub Repo. Run the below code to create the observability namespace and install the Jaeger components:
+
+kubectl create namespace observability
+kubectl create -f https://raw.githubusercontent.com/jaegertracing/jaeger-operator/master/deploy/crds/jaegertracing.io_jaegers_crd.yaml
+kubectl create -n observability -f https://raw.githubusercontent.com/jaegertracing/jaeger-operator/master/deploy/service_account.yaml
+kubectl create -n observability -f https://raw.githubusercontent.com/jaegertracing/jaeger-operator/master/deploy/role.yaml
+kubectl create -n observability -f https://raw.githubusercontent.com/jaegertracing/jaeger-operator/master/deploy/role_binding.yaml
+kubectl create -n observability -f https://raw.githubusercontent.com/jaegertracing/jaeger-operator/master/deploy/operator.yaml
+
+q1
+Run kubectl get pods -n observability in your terminal. Which one of these most closely matches your results?
+jaeger-operator
+
+
+$ vagrant ssh
+Last login: Fri Sep 17 03:54:56 2021 from 10.0.2.2
+Have a lot of fun...
+vagrant@localhost:~> kubectl create namespace observability
+namespace/observability created
+vagrant@localhost:~> kubectl get ns
+NAME              STATUS   AGE
+default           Active   90m
+kube-system       Active   90m
+kube-public       Active   90m
+kube-node-lease   Active   90m
+monitoring        Active   79m
+observability     Active   6s
+vagrant@localhost:~> kubectl create -f https://raw.githubusercontent.com/jaegertracing/jaeger-operator/master/deploy/crds/jaegertracing.io_jaegers_crd.yaml
+customresourcedefinition.apiextensions.k8s.io/jaegers.jaegertracing.io created
+vagrant@localhost:~> kubectl create -n observability -f https://raw.githubusercontent.com/jaegertracing/jaeger-operator/master/deploy/service_account.yaml
+serviceaccount/jaeger-operator created
+vagrant@localhost:~> kubectl create -n observability -f https://raw.githubusercontent.com/jaegertracing/jaeger-operator/master/deploy/role.yaml
+role.rbac.authorization.k8s.io/jaeger-operator created
+vagrant@localhost:~> kubectl create -n observability -f https://raw.githubusercontent.com/jaegertracing/jaeger-operator/master/deploy/role_binding.yaml
+rolebinding.rbac.authorization.k8s.io/jaeger-operator created
+vagrant@localhost:~> kubectl create -n observability -f https://raw.githubusercontent.com/jaegertracing/jaeger-operator/master/deploy/operator.yaml
+deployment.apps/jaeger-operator created
+vagrant@localhost:~> 
+vagrant@localhost:~> kubectl get deployment jaeger-operator -n observability
+NAME              READY   UP-TO-DATE   AVAILABLE   AGE
+jaeger-operator   1/1     1            1           77s
+vagrant@localhost:~> kubectl get pods -n observability
+vagrant@localhost:~> kubectl apply -f https://raw.githubusercontent.com/jaegertracing/jaeger-operator/master/deploy/examples/business-application-injected-sidecar.yaml
+error: unable to read URL "https://raw.githubusercontent.com/jaegertracing/jaeger-operator/master/deploy/examples/business-application-injected-sidecar.yaml", server reported 404 Not Found, status code=404
+vagrant@localhost:~> 
+vagrant@localhost:~> kubectl apply -f https://raw.githubusercontent.com/jaegertracing/jaeger-operator/master/examples/business-application-injected-sidecar.yaml
+deployment.apps/myapp created
+vagrant@localhost:~> 
+
+
+
 
