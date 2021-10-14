@@ -1,0 +1,119 @@
+date start : 14 october 2021
+
+
+3.1 Lesson Overview
+---------------------------------------
+Introduction to SLIs, SLOs, and Error Budgets
+
+Lesson Outline
+This lesson is all about reliability metrics. In order to observe performance, we first need to get clear on how we are defining and measuring it, and that's what we'll cover here.
+
+Defining performance. The first thing we need to do is define what we mean by site reliability or performance. We will talk about performance in terms of providing a certain level of service, and we'll go over what are called the four golden signals that are used in site reliability modeling.
+Service-Level Objectives (SLOs). We also need a clear objective or goal, and this is where Service-Level Objectives (or SLOs) come in. We will talk about what SLOs are and what factors to consider when setting them.
+Service-level indicators (SLIs) . Once we have a clear definition and objective for the level of performance we want to deliver, we need to consider how we will actually measure this performance. This is done using Service-Level Indicators or SLIs.
+Error Budgets. Since we cannot guarantee 100% performance, we need to plan for errors. For example, if we are OK with 99% reliability on a metric, that means we have an error budget of 1%. We are deciding that if things get any worse than that 1%, this is a signal to us that an improvement is needed.
+Building SLAs. Finally, we will bring this all together and examine Service-Level Agreements or SLAs. While you personally won’t have to worry about SLAs as an SRE, it is important to understand the context of SLAs as it does play a part in the overall SRE model.
+
+
+
+3.2 Big Picture: Measuring Performance
+---------------------------------------
+Remember, the main value that we as site reliability engineers add, that is not provided by other roles like sysadmins and DevOps engineers, is that we ensure that a deployed application has a good level of performance for the customer. We call this the service level.
+
+The service level is the degree (i.e. level) of performance that an application (or service) provides to the user.
+
+Typically, service is defined in terms of four core properties, called the Four Golden Signals:
+
+Latency — The time taken to serve a request (usually measured in ms).
+Traffic — The amount of stress on a system from demand (such as the number of HTTP requests/second).
+Errors — The number of requests that are failing (such as number of HTTP 500 responses).
+Saturation — The overall capacity of a service (such as the percentage of memory or CPU used).
+These signals are generally considered the pillars of SRE best practices because most issues will fall into one of these four categories. By defining performance in these terms, it’s easier to plan, identify, and execute when we are building our goals for our service level.
+
+
+q1
+Below are the three roles we just discussed. Can you match each with the area they focus on most?
+Performance-focused and customer-centric              site reliability
+Focused more on infrastructure as code                devops
+Provisioning hardware and managing infrastructure     sysadmin
+
+
+q2
+Below are the Four Golden Signals. Can you match each of them with an example of how we would measure that signal?
+Number of milliseconds taken to serve a request   latency
+Percentage of CPU used.                           saturation
+Number of HTTP requests/second.                   traffic
+Number of HTTP 500 responses.                     errors
+
+
+Additional Resources
+If you would like to learn more about Service Level Objects, check out this chapter on SLOs in the Google Site Reliability Engineering book.
+
+
+
+3.3 Service-Level Objectives (SLOs)
+---------------------------------------
+What is an SLO?
+Now that we are clear about the Four Golden Signals, we are ready to set some specific objectives. These are called our Service-Level Objectives.
+
+A Service-Level Objective (SLO) is a measurable goal set by the SRE team to ensure a standard level of performance during a specified period of time.
+
+For example, we might specify an SLO like "99.99% uptime per month". Typically SLOs are measured in terms of latency and uptime, although it is not unusual for SRE teams to add additional goals.
+
+User Journey
+When creating an SLO, it is important to be customer-centric. If we keep user experience and expectations at the center of our planning, we will have a strong SLO strategy. A common way to make sure you are customer-centered in your strategy is to map out a user journey for the application.
+
+Here is a process you can follow to help ensure your SLOs are customer-centric:
+
+Do what a user would do. You will want to stress test the product and use it the same way the user would.
+Map the journey to services. Once you understand the customer journey, you can map out what that journey looks like in terms of what specific services are used.
+Find the metrics. Once you know what services are involved, you can identify the metrics for those services.
+Determine goals. Once we have relevant metrics in mind, it is relatively easy to determine what goals would be reasonable and would tap into these metrics.
+Design formal SLOs. Once you have your goals, it's time to formalize them as SLOs. These SLOs will then appear in your team charter, and you and your team will have a clear objective that you can be accountable for.
+
+Basing your SLOs on a user journey is very important because, at the end of the day, the person who ultimately cares about performance is the user
+
+q1
+A key aspect of an SLO is that they involve measurable objectives. Below are some different metrics we can use when creating SLOs. Can you match each metric with the correct description?
+
+Response time of requests                  latency
+The amount of failures in a unit of time   failure rate
+Average bandwidth                          network capacity
+Time a service is active                   uptime
+
+
+q2
+Which of the following are examples of SLOs?
+99.5% of requests return in 50ms in the past month.
+99.99% of response codes are 200s or 300s per month
+
+
+q3
+Your company is working on modernizing their applications. This decision was triggered by a report that customers feel the application is "too slow". Thus, measuring speed and performance is of great importance.
+
+Use the matching quiz to order the steps you would need to take to help your customers.
+
+first   document user journye by business impact
+second  identify services involved in journey
+third   determine metrics to use to measure customer experience
+fourth  determine goals
+
+
+Additional Resources
+If you would like to learn more about Service Level Objectives, check out this chapter on SLOs in the Google Site Reliability Engineering book.
+
+
+
+3.4 Exercise: SLOs
+---------------------------------------
+helpful to question by clients
+ensure complaints are deal with apropriately
+ensure empty grocery item are refill
+
+latency
+bandwidth
+uptime
+
+
+
+
