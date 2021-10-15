@@ -116,4 +116,132 @@ uptime
 
 
 
+3.5 Service-Level Indicators (SLIs)
+---------------------------------------
+We've just learned what SLOs are and how we can use them to set goals. But how do we know when we’ve reached that goal? This is where Service-Level Indicators come in.
+
+A Service-Level Indicator (SLI) is a specific metric used to measure the performance of a service.
+
+Sometimes the term SLI is used to refer to the general metric—such as uptime or latency. But really what we need in the end is an actual measurement. For example, suppose that your team has the following SLO:
+
+The application will have an uptime of 99.9% during the next year.
+
+In this case, your SLI would be the actual measurement of the uptime. Perhaps during that year, you actually achieved 99.5% uptime or 97.3% uptime. These measurements are your SLIs—they indicate the level of performance your service actually exhibited, and show you whether you achieved your SLO (in this case, the SLIs show that performance fell short of your objective).
+
+Notice that the above example is a ratio. Specifically, it is a ratio of a measurement to a given amount of time (the measured uptime per year). When you think of SLIs, think in terms of ratios like this—a ratio of X / Y, where X is usually a measurement and Y is usually an amount of time.
+
+q1
+The terminology surrounding SLOs, SLIs, and signals can get a little confusing.I t can be a little tricky to see the distinction between them. Below are some examples. Can you identify which is which?
+
+The average time taken to return a request will be less than 200 ms, during the month of May.       SLO
+
+The average time taken to return a request during the month of May was 194 ms.                      SLI
+
+Latency                                                                                             General type of metric used
+
+
+
+Additional Resources
+If you would like to learn more about the distinction between SLOs and SLIs, you may want to check out:
+
+This blog post from Elisa Binette on best practices for setting SLOs and SLIs
+This blog post from Google Cloud Platform on SLIs, SLOs, and SLAs
+
+
+
+3.6 Exercise: SLIs
+---------------------------------------
+q1
+Reflect on SLIs
+Let's get some practice to make sure that we understand SLIs. Like we did with SLOs, let's start with a non-technical, everyday scenario.
+
+Suppose that you are monitoring the performance of services at a fast food restaurant. See if you can describe 3–5 SLIs that you could use to measure performance.
+
+speed of customer order receive until customer order is served. customer waiting line. food replenish rate
+
+Your answers will most likely differ from mine, but here are some reasonable examples that you might have picked:
+
+Number of orders filled/hour.
+Number of 5-star ratings/day.
+Number of returned orders/week.
+Hamburgers sold/month.
+Percentage of late orders (fulfillment time >10 minutes)/hour.
+
+Remember, when you think of SLIs, think in terms of ratios—a number of X / Y, where X is a measurement and Y is (typically) an amount of time.
+
+
+q2
+Suppose you have the following SLO:
+
+HTTP requests will take 10ms or less to complete (on average) each month.
+
+When you look at your SLI, you are finding that in actuality it takes around 20ms. Your team was able to address the issue with a rollback. What next step should be taken?
+
+
+Perform a postmortem to identify the root cause
+
+
+
+3.7 Error Budgets
+---------------------------------------
+No matter how hard we try, inevitably there will be some downtime. For that reason, we give ourselves a buffer or error budget.
+
+An error budget is a buffer in an SLO that allows for a small amount of error.
+
+Error budgets can be visualized with this formula:
+
+Error budget = 100% – SLO
+
+For example, when we state an SLO like:
+
+The application will have 99.9% uptime each month.
+
+We are giving ourselves a buffer of 0.1% of the month to experience downtime—meaning that experiencing a small—perhaps unavoidable—amount of downtime will not indicate we failed to meet the objective.
+
+
+q1
+If we have an SLO that states that we will have an uptime of 99.95%, what is our error budget?
+0.05%
+
+
+q2
+Suppose you find that you are exceeding your error budget. Below are some events that might cause this to happen. For some of them, you should take immediate action or re-evaluate your SRE strategy. For others, you should not take any action.
+
+For which of these should you take action or re-evaluate your strategy?
+
+(Select two correct answers.)
+
+A postmortem reveals an excessively restrictive policy
+A bug in the code
+
+
+You will always want to do a postmortem to figure out what happened. Sometimes you will find instances where an SLO is too restrictive and you may need to re-evaluate your strategy.
+
+And of course, if there is a bug in the code, you should address it, since the service itself shouldn't be causing failures.
+
+
+
+3.8 Exercise: Error Budgets
+---------------------------------------
+q1
+QUESTION 1 OF 2
+Suppose we set the following SLO:
+
+The application will be available 97% of the time during each month.
+
+This past month, you received 10,500,000 HTTP requests. How many requests can be HTTP 500 responses?
+
+315,000
+
+
+q2
+Your error budget is 25 minutes of downtime per month. This past month you had 45 minutes of downtime. It was determined that the issue was related to your database caching maxing out its disk space every other week. You are asked to make some recommendations on how we can address this in the future. Which are the best ideas?
+
+(Select all that apply.)
+
+Determine what occurs every other week
+Find what services are using the cache 
+
+
+
 
