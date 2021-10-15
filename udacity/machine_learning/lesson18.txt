@@ -1,0 +1,80 @@
+date start : 15 october 2021
+
+
+18.1 Reinforcement Learning
+---------------------------------------
+
+
+18.2 Rat Dinosaurs
+---------------------------------------
+
+
+
+18.3 API
+---------------------------------------
+
+
+
+18.4 API Quiz
+---------------------------------------
+reinforcement learning based planner
+
+model based reinforcement learning
+
+18.5 Three Approaches to RL
+---------------------------------------
+
+
+
+18.6 A New Kind of Value Function
+---------------------------------------
+
+
+18.7 Value Function Quiz
+---------------------------------------
+max  Q(s,a)
+a
+
+arg max Q(s,a) 
+     a 
+
+18.8 Q Learning
+---------------------------------------
+4
+
+
+18.9 Estimating Q From Transitions
+---------------------------------------
+
+
+18.10 Learning Incrementally
+---------------------------------------
+1
+
+
+18.11 Estimating Q From Transitions Two
+---------------------------------------
+
+
+18.12 Q Learning Convergence
+---------------------------------------
+
+
+18.13 Choosing Actions
+---------------------------------------
+
+
+18.14 Choosing Actions Two
+---------------------------------------
+
+
+18.15 Greedy Exploration
+---------------------------------------
+
+
+18.16 What Have We Learned
+---------------------------------------
+
+
+
+
