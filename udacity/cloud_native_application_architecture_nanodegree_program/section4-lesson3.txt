@@ -244,4 +244,32 @@ Find what services are using the cache
 
 
 
+3.9 SLAs
+---------------------------------------
+Generally speaking, SLAs are more of a concern for the customers, business development teams, and legal departments than the SRE team.
+
+Although you as an SRE typically won't have to work directly with Service-Level Agreements on a daily basis, it's still good to have an awareness of them.
+
+Service-Level Agreements (SLAs) are legally binding contracts that guarantee a service level to the customer
+
+If the SLA is not met, typically the company will provide some form of compensation to the customer.
+
+q1
+Which one of these would typically be out of scope for an SLA for a Platform as a Service company?
+
+The service that your customer deploys.
+
+
+
+3.10 Lesson Review
+---------------------------------------
+Lesson Outline
+This lesson was all about reliability metrics. In order to observe performance, we first needed to get clear on how we are defining and measuring it, and that's what we covered in this lesson.
+
+Defining performance. The first thing we needed to do was define what we mean by site reliability or performance. We talked about performance in terms of providing a certain level of service, and we went over what are called the four golden signals that are used in site reliability modeling.
+Service-Level Objectives (SLOs). We also needed a clear objective or goal, and this is where Service-Level Objectives (or SLOs) come in. We talked about what Service Level Objectives are and what factors to consider when setting them.
+Service-level indicators (SLIs) . Once we have a clear definition and objective for the level of performance we want to deliver, we need to consider how we will actually measure this performance. This is done using service-level indicators or SLIs.
+Error Budgets. Since we cannot guarantee 100% performance, we need to plan for errors. For example, if we are OK with 99% reliability on a metric, that means we have an error budget of 1%. We are deciding that if things get any worse than that 1%, this is a signal to us that an improvement is needed.
+Building SLAs. Finally, we brought this all together and examined Service-Level Agreements (SLAs). While you personally won’t have to worry about SLAs in your role as an observability engineer, it is important to understand the context of SLAs as it does play a part in the overall SRE model.
+
 
