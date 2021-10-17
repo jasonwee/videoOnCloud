@@ -1,0 +1,72 @@
+date start : 17 october 2021
+
+
+4.1 Lesson Overview
+---------------------------------------
+Lesson Outline
+This lesson is all about tracing. Tracing will allow us to get performance data on our applications, particularly on the latency of the key processes within them.
+
+Big Picture: What is tracing? First we will talk about the underlying concept of tracing and how it is different from logs. In particular, we will consider why tracing is increasingly popular in diagnosing latency issues.
+Distributed Tracing. In order to do tracing on our Kubernetes cluster, we need an approach to tracing that can handle microservices. This is called distributed tracing. We will explain what distributed tracing is in the context of Kubernetes applications and why this is such a useful tool.
+Jaeger. Our tool for distributed tracing is Jaeger. We will discuss the key features of Jaeger as well as the main standards it uses, which are the OpenTracing and OpenTelemetry models.
+Python Application Tracing. With Prometheus and Grafana, once we installed them they were pretty much ready to go. In contrast, in order to do tracing with Jaeger, we have to actually add code into the application itself to run a trace. We will walk through how to do this with Python applications.
+Revisiting Logging. Finally, we will revisit logging. Although tracing is incredibly useful for issues involving latency, this doesn't mean that you should abandon logging. We will look at some use cases when you will want to utilize logs and consider how how logs are still useful in tracing.
+
+
+
+4.2 Big Picture: What is Tracing?
+---------------------------------------
+A trace is a mock request that goes through services and records its performance as it executes.
+
+A trace tells you:
+
+What was executed
+How long it took
+
+q1
+Tracing is different from event logging because…
+It logs low-level information
+
+
+
+4.3 Distributed Tracing
+---------------------------------------
+A key tool we'll want to make use of when monitoring performance on a cluster is distributed tracing. Simply put, distributed tracing is tracing for microservices.
+
+With distributed tracing, we are able follow the execution of a request as it goes through all of the relevant services. In the world of microservices, it is usually the case that a single function such as clicking "Login" will trigger multiple services—and we need to be able to trace the execution through all of these.
+
+Distributed tracing uses a unit of work known as a span. A single trace can be made up of multiple spans that are all linked together.
+
+Spans are the units of work that make up a trace; spans are objects that represent a single part of the process being traced.
+
+Anatomy of a Span Object
+Each span object has the following components:
+
+Tags for labeling – these are key-value pairs that you can use to label your span (e.g., db.instance: "users") to make your traces more human readable.
+Trace ID is the unique identifier of the trace
+Span ID is the unique identifier of the span
+Message is the actual error message
+Span Context is persistent metadata
+Scope is the start and stop
+
+q1
+See if you can match these tracing concepts with their descriptions:
+
+Unit of work that makes up a trace.                     Span
+Formalizes the activation and deactivation of a Span    Scope
+Key-value pairs that enable user-defined annotation     Tags
+The way Jaeger presents execution requests              Trace
+
+
+q2
+Choose two items that you would see in a SpanContext.
+trace_id
+Baggage Items
+
+￼
+Additional Resources
+If you would like to learn more about Jaeger's inner workings, you can check out Jaeger's website here.
+
+
+
+
