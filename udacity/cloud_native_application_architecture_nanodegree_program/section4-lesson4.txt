@@ -69,4 +69,72 @@ If you would like to learn more about Jaeger's inner workings, you can check out
 
 
 
+4.4 Exercise: Distributed Tracing
+---------------------------------------
+On a day-to-day basis, you won't be creating traces—more commonly, you will be analyzing tracing data. Thus, the developer would more commonly be creating the traces.
+
+However, you may be expected to report back when a service isn't meeting an SLO. And this may involve looking at tracing data, so it is important to understand what a trace looks like.
+
+With that in mind, this page will give you some familiarity with the JSON payloads and the components of a standard trace.
+
+q1
+Using the typical "key:value" format that you would see in JSON or a Python dictionary, match tracing tags with the proper value.
+
+http.method              GET
+hostname                 my-sample-app-748f899b57-gzwph
+pod.namespace            default
+container.name           my-sample-app
+
+q2
+Here are some more. Can you match these up as well?
+
+http.url   http://localhost:8888/
+Duration   1.22s
+Span ID    244bdabe60098ac5
+
+q3
+If you saw a span tag called span.kind, which item would not be an accurate value?
+endpoint
+
+
+
+4.5 Jaeger
+---------------------------------------
+Jaeger
+In this course, our key tool for tracing is Jaeger.
+
+Jaeger is an open source distributed tracing system.
+
+OpenTracing and OpenTelemetry
+Jaeger uses the OpenTracing data model:
+
+OpenTracing is the data model used to structure spans and traces.
+OpenTelemetry is the future of OpenTracing. It was created when OpenCensus merged with OpenTracing.
+The OpenTracing model is an industry standard and has native support in many frameworks, including Flask, gRPC, and Rails.
+
+Components of Jaeger
+Client is the code that you install to execute the trace.
+Agent is the daemon that listens to the UDP calls and sends it to collector.
+Collector receives the trace and processes it.
+Note that Jaeger's storage is a pluggable component with Cassandra, ElasticSearch and Kafka. By default, it uses in memory storage but you wouldn’t do that in production as it’s not durable.
+Query allows you to query collected traces.
+UI is the built in Web UI for interacted with Jaeger Query.
+Ingester reads from a Kafka topic and writes to another storage backend. This is only necessary if you are using Kafka topics to store data.
+
+q1
+What is the underlying API for Jaeger's tracing?
+OpenTracing
+
+
+q2
+Besides Elastic Search, which two of the following are supported data backends for Jaeger's collector?
+cassandra
+kafka
+
+
+Additional Resources
+If you'd like to read more about OpenTracing, OpenCensus, and OpenTelemetry, you may want to check out this blog post from New Relic.
+
+
+
 
