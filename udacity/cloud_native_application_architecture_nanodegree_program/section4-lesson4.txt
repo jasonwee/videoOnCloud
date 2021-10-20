@@ -183,4 +183,101 @@ For each page collected, it is creating a span to measure speed.
 
 
 
+4.8 Exercise: Python Application Tracing
+---------------------------------------
+import logging
+from jaeger_client import Config
+from opentracing.ext import tags
+from opentracing.propagation import Format
+import requests
+
+def init_tracer(service):
+    logging.getLogger('').handlers = []
+    logging.basicConfig(format='%(message)s', level=logging.DEBUG)
+    config = Config(
+        config={
+            'sampler': {
+                'type': 'const',
+                'param': 1,
+            },
+            'logging': True,
+        },
+        service_name=service,
+    )
+    # this call also sets opentracing.tracer
+    return config.initialize_tracer()
+
+tracer = init_tracer('first-service')
+
+def test():
+    # Add your test function here
+    with tracer.start_span('TestSpan') as span:
+        req = requests.get('https://udacity.com')
+        span.set_tag('http.method;', req)
+        def format():
+            with tracer.start_span('my-test-span') as span:
+                try:
+                    print("success!")
+                except:
+                    print("try again")
+
+if __name__ == "__main__":
+    test()
+
+
+root@6bc3c1d4828b:/home/workspace# python app.py 
+Initializing Jaeger Tracer with UDP reporter
+Using sampler ConstSampler(True)
+opentracing.tracer initialized to <jaeger_client.tracer.Tracer object at 0x7f4ae76ce588>[app_name=first-service]
+Starting new HTTPS connection (1): udacity.com
+https://udacity.com:443 "GET / HTTP/1.1" 301 0
+Starting new HTTPS connection (1): www.udacity.com
+https://www.udacity.com:443 "GET / HTTP/1.1" 200 48682
+Reporting span 20d747fc4b0deea3:b30f8fed799506db:0:1 first-service.TestSpan
+root@6bc3c1d4828b:/home/workspace# 
+
+
+
+4.9 Challenge: More Application Tracing
+---------------------------------------
+Challenge: More Python Application Tracing
+As mentioned earlier, reliability engineers don't typically work with the production code. They may develop code and additional tooling to make their jobs better, but in terms of what's shipped to the customer, that usually lies squarely with the developers.
+
+For this reason, it will generally be the developers who add tracing components to the code. That being said, maybe you are curious and want to see more about the development side. If so, you can try out this optional challenge exercise.
+
+You will need to have a few things to do this:
+
+Your own container registry (GitHub Repo, DockerHub, etc.).
+Intermediate level knowledge of Python (e.g., you can write the code for a simple Python app).
+Kubernetes Cluster (ideally your K3s cluster on Vagrant).
+Jaeger setup on cluster.
+You can find the necessary files at this GitHub Repo.
+
+
+Now that you have the deployment good to go, it is up to you to find a way to improve the latency of the application. There are many ways to do this and you are welcome to take any approach that achieves the goal of reducing the latency. I've provided one possible approach below, but your solution may be quite different!
+
+When you change the code, be sure to tag it differently from the first docker build. Something like :v2 will do the trick. You will also need to update the deployment.sample.yaml to reflect the new tags.
+
+Sample Solution
+There are a myriad ways you can accomplish this task. One way I did this was to utilize the Flask-OpenTracing library, which simplifies the code that I need to add. This block of code will collect the traces that I need:
+
+config = Config(
+    config={
+        'sampler':
+        {'type': 'const',
+         'param': 1},
+                        'logging': True,
+                        'reporter_batch_size': 1,}, 
+                        service_name="service")
+jaeger_tracer = config.initialize_tracer()
+tracing = FlaskTracing(jaeger_tracer, True, app)
+This acts as more of a "catch-all" for your application, so it won't necessarily create child spans—but it gives us results that we can use.
+
+Using Redis
+Looking at the app.py file, you may have noticed an endpoint named "redis". Redis is a popular memory store database. It uses a simple key-value structure to store data in memory.
+
+in the k8s directory, you will see a subdirectory called redis. You deploy both yaml files into your cluster in order to enable a Redis deployment. Then, if you like, you can create a trace on the redis endpoint and diagnose why the database write is taking so long.
+
+
+
 
