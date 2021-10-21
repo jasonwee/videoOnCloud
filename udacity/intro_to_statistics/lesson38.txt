@@ -1,0 +1,52 @@
+date start : 22 october 2021
+
+
+38.1 Door Chance
+---------------------------------------
+0.667
+0.333
+0
+
+38.2 Switch Doors
+---------------------------------------
+1
+
+38.3 Truth Table 1
+---------------------------------------
+0.33
+0
+0
+
+38.4 Truth Table 2
+---------------------------------------
+0.166
+0
+0.166
+
+38.5 Truth Table 3
+---------------------------------------
+0.667
+0.333
+0
+
+
+38.6 Simulate
+---------------------------------------
+
+def simulate(N):
+    K = 0
+    for i in range(N):
+        truth = randint(1, 3)
+        guess1 = randint(1,3)
+        if truth == guess1:
+            monte = randint(1,3)
+            while monte == truth:
+                monte = randint(1,3)
+        else:
+            monte = 6 - truth - guess1
+        guess2 = 6 - guess1 - monte
+        if guess2 == truth:
+            K = K + 1
+    return float(K) / float(N)
+
+
