@@ -280,4 +280,27 @@ in the k8s directory, you will see a subdirectory called redis. You deploy both 
 
 
 
+4.10 Revisiting Logging
+---------------------------------------
+q1
+If a trace seemed "inconclusive", what step do you think you should take first?
+Check other logs
+
+
+Logging is great when it comes to trying to collect runtime errors. While tracing is great at collecting latency information, you will still benefit from collecting runtime errors such as 500 responses.
+
+The bottom line is that tracing doesn't replace logging—rather, it supplements it.
+
+
+q2
+Your application is showing a 500 error, would you choose to log or to trace?
+log
+
+
+Additional Resources
+When looking at logs, it can be useful to use a log aggregation tool, such as Grafana Loki. If you're curious, you can read more about this in this article from Grafana.
+If you would like to learn more about the differences between tracing and logging, you can check out this article on distributed tracing versus logging.
+
+
+
 
