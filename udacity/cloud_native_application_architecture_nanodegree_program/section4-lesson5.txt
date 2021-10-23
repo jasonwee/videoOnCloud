@@ -1,0 +1,16 @@
+date start : 23 october 2021
+
+
+5.1 Lesson Overview
+---------------------------------------
+Lesson Outline
+Reviewing raw logs would be tedious and time consuming. In this lesson, we'll look at how we can use Grafana to create dashboards that allow us to visualize the data we've been collecting with Prometheus and Jaeger, so that we can see the performance of our system and application at a glance.
+
+Starting with dashboards. First, we'll look at how to set up dashboards with Grafana, and we'll learn the key features of the dashboard UI.
+Panels. Next, we'll create panels. These are essentially containers for charts and graphs within our dashboards.
+Metrics. Then we will discuss how to use the Prometheus Query Language (PromQL) to track metrics on our cluster, and how to use Jaeger to track metrics on our application.
+Edge case: Alternative tools. Finally, we'll look at some alternative tools and learn some of the best practices concerning when we might want to use something other than the Prometheus-Jaeger-Grafana stack for monitoring and observability.
+
+
+
+
