@@ -13,4 +13,34 @@ Edge case: Alternative tools. Finally, we'll look at some alternative tools and 
 
 
 
+5.2 Starting with Dashboards
+---------------------------------------
+Starting with Dashboards.
+Remember, you can get all of the files you'll need for this and the other exercises in this course from this GitHub Repo.
+
+
+When setting up Jaeger, we have to create an application and set our deployment to do sidecar injecting. Then we want to port-forward our Grafana service.
+
+In real life, you would likely use NGINX or Istio as a service to expose the service.
+
+NOTE: Your Vagrant machine may have gotten stale. If so, just run vagrant halt and then vagrant up. If vagrant halt fails, it's likely because it was not running.
+
+
+q1
+What is the default HTTP port used to access a Grafana dashboard?
+3000
+
+
+q2
+A data source for Jaeger was created in the above video. I needed to point to our Jaeger Query instance. What is the HTTP port and what is the Kubernetes namespace?
+
+(Select two options—one for the port and one for the namespace.)
+11686
+default
+
+Additional Resources
+If you would like to learn more about Grafana and why it is the standard, you can check out Grafana's website here.
+
+
+
 
