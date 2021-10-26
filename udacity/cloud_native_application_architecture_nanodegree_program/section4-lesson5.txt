@@ -43,4 +43,33 @@ If you would like to learn more about Grafana and why it is the standard, you ca
 
 
 
+5.3 Exercise: Starting with Dashboards
+---------------------------------------
+Exercise: Starting with Dashboards
+In your career as an observability expert, you will probably more often need to navigate and modify an existing dashboard than create your own dashboard. So let's get a little practice with looking at some existing dashboards.
+
+For the below quizzes, please refer to this public dashboard provided by CNCF.
+
+These dashboards show you data from CNCF's public GitHub repos. This is a great resource for getting familiar with dashboards.
+
+q1
+Locate the dashboard named Companies table. Change the Metric to Commits.
+
+Which company is ranked number one?
+Google
+
+
+q2
+Find the Licenses and programming languages dashboard.
+
+Out of the following options, select the two options that use the languages Nix or SaltStack.
+kubernetes-sigs/cri-o
+kubernetes-retired/kube-mesos-framework
+
+
+Additional Resources
+If you would like to learn more about Grafana JSON templating, you can check out Grafana's website here.
+
+
+
 
