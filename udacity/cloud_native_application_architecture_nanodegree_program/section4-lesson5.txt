@@ -72,4 +72,22 @@ If you would like to learn more about Grafana JSON templating, you can check out
 
 
 
+5.4 Panels
+---------------------------------------
+Grafana offers a wide array of types of graphs and charts that you can visualize. There are also extensions that you can find online to give you other features. I encourage you to play around with everything to familiarize yourself with the usage.
+
+q1
+Which of the following is not a graph type supported natively by Grafana?
+Pie
+
+q2
+If you wanted to plot changes in response time over the course of a month as points on a graph, what panel chart makes the most sense?
+line chart
+
+
+Additional Resources
+If you would like to learn more about Grafana Panels, you can check out Grafana's website here.
+
+
+
 
