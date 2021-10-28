@@ -90,4 +90,31 @@ If you would like to learn more about Grafana Panels, you can check out Grafana'
 
 
 
+5.5 Exercise: Panels
+---------------------------------------
+Exercise: Panels
+These next few questions will be using the official Prometheus dashboard from CNCF.
+
+q1
+Locate the dashboard named PRs Authors Companies Table. You will then see a panel named Prometheus PRs author companies. Edit it to see the query. What data source is being used?
+postgresql
+
+
+q2
+In the same panel as above, what happens if you change Format as from Table to Time Series?
+found no column named time
+
+
+q3
+Look for the dashboard named Users Statistics by Repository Group. Set the following:
+
+Set the Period to Year
+Set Metric to Commits made
+Set Repository group to prometheus/client_python.
+Based on avg, who has the most commits?
+
+brian-brazil
+
+
+
 
