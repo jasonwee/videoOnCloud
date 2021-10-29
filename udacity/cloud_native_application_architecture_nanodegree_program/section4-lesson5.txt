@@ -117,4 +117,48 @@ brian-brazil
 
 
 
+5.6 Metrics
+---------------------------------------
+
+q1
+For each of the metrics below, can you figure out what chart type would best display the data?
+errors     bar graph
+uptime     line graph
+latency    line graph
+saturation bar graph
+
+
+q2
+If you wanted to know which container used the most CPU cores in a given time, which PromQL metric would you use?
+
+(The best way to figure it out is to create a panel, add a metric, and experiment!)
+
+container_cpu_usage_seconds_total
+
+
+
+5.7 Exercise: Metrics
+---------------------------------------
+Exercise: Metrics
+For this exercise, use this Grafana Playground Dashboard.
+
+These dashboards have mock performance data provided by Grafana. I would highly recommend playing with these dashboards on your own time to familiarize yourself with how everything works. The dashboards are ephemeral so don't worry about breaking them.
+
+q1
+Review the panel named Memory usage. Look at the metric with a legend named free. What is the parent metric named?
+node_memory_MemFree_bytes
+
+
+q2
+Locate the panel named Disk I/O utilization and try creating a new metric. Which formula would show you the rate of disk write by node?
+rate(node_disk_writes_completed_total[5m])
+
+
+q3
+In the above screenshot, what is the name of my span?
+jobs
+
+
+
+
 
