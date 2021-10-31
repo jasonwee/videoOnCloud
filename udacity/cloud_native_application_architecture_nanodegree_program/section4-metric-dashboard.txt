@@ -1,0 +1,123 @@
+date start : 05 october 2021
+
+
+5.1 Overview
+---------------------------------------
+Overview: Cloud Native Observability.
+In this project, you will create dashboards that use multiple graphs to monitor our sample application that is deployed on a Kubernetes cluster. You will be using Prometheus, Jaeger, and Grafana in order to monitor, trace and visualize your experience.
+
+Main Steps
+Here are the main steps you'll carry out for this project:
+
+1. Deploy the sample application in your Kubernetes cluster.
+2. Use Prometheus to monitor the various metrics of the application.
+3. Use Jaeger to perform traces on the application.
+4. Use Grafana in order to visualize these metrics in a series of graphs that can be shared with other members on your team.
+5. Document your project in a README.
+The process is summarized in the diagram below.
+
+
+
+5.2 Step 1: Project Setup
+---------------------------------------
+By the end of this task, you should have your dependencies installed and your project set up.
+
+Download starter files.
+We have provided some starter files to help you get started with your project. If you haven't already, you can download the starter files from this GitHub repository.
+
+The files you'll need are located in the Project_Starter_Files directory.
+
+We recommended that you work within the existing directory structure.
+
+
+
+Open the README template
+A major part of showing your work for this project consists of filling out a README file. We've provided a template README with TODOs for you to complete. You will probably want to work on this as you go through the other project steps, so we encourage you to open it now and revisit it as you go through the instructions.
+
+
+Preparing Kubernetes
+Before you start anything, you need to ensure that you have a Kubernetes cluster available. While you can use a myriad of managed Kubernetes providers, we encourage you to use K3s with Vagrant. The good news is that the Vagrantfile calls a k3s.sh to simplify the process. Feel free to look at the file if you want to learn how to stage it manually.
+
+
+
+5.3 Step 2: Setting up Observability
+---------------------------------------
+Step 2: Setting up Observability
+Using Prometheus, Jaeger, and Grafana, you will be able to start monitoring your applications in real time. We need to get these components installed on your cluster before installing the application.
+
+Install Helm
+Helm is a popular package manager for Kubernetes. It is similar to Aptitude for Ubuntu or Homebrew in Mac OS X.
+
+Installing Grafana and Prometheus
+With Helm installed, it is much easier to install Grafana and Prometheus.
+
+These are the lines of code you will want to run
+
+kubectl create namespace monitoring
+helm repo add prometheus-community https://prometheus-community.github.io/helm-charts
+# helm repo add stable https://kubernetes-charts.storage.googleapis.com # this is deprecated
+helm repo add stable https://charts.helm.sh/stable
+helm repo update
+helm install prometheus prometheus-community/kube-prometheus-stack --namespace monitoring --kubeconfig /etc/rancher/k3s/k3s.yaml
+
+Following along with what you saw in the video, install Prometheus and Grafana with Helm. You may have noticed that I installed some CRDs in the video. In version 0.4.2 of the operator, it was needed. As of this update, we are on version 0.7 which no longer needs those CRDs which is why you won't see the command here any longer.
+
+Install Jaeger
+We will now install Jaeger Tracing to our cluster
+
+Run the below code to create the "observability" namespace and install the Jaeger components:
+
+Cluster wide Jaeger
+Because you want to observe other namespaces, you'll need to go ahead and give Jaeger cluster wide visibility. In the real world, you may limit visibility to specific namespaces, but it isn't unheard of to give yourself cluster visibility.
+
+Run the below commands:
+
+
+
+
+5.4 Step 3: Deploying the Application
+---------------------------------------
+Step 3: Deploying the Application
+You need to ensure that you have an application to monitor and observe. We have provided you with one and it is easy to install.
+
+Install the Python application
+We will install a simple Python Application. It will contain three items.
+
+A frontend service that acts as the web page that you will visit with your browser.
+A backend service that will perform simple tasks and return them to the front end.
+A trial service that will have tracing enabled for Jaeger.
+
+Exposing Grafana
+It is important to be able to log into Grafana, so let's look at how we can expose Grafana.
+
+Note: Every time you run kubectl port-forward, it will take control of that terminal session. You will need to open a new session (i.e., a new terminal tab or window) to continue working.
+
+
+Exposing the application
+Similar to Grafana, our frontend needs to be exposed to the internet. Be sure to open a new session in either a new terminal tab or terminal window so you can do another kubectl port-forward.
+
+
+5.5 Step 4: Complete Your README
+---------------------------------------
+Step 4: Complete Your README
+An important part of your project is completing a README file that describes the project, explains how to set up and run the code, and describes your benchmarks and results. We've included a template in the starter files (that you downloaded earlier), with TODOs for each of the things you should include.
+
+
+
+
+5.6 Step 5: Check Your Work
+---------------------------------------
+Step 5: Check Your Work
+Once you submit your project, we'll review your work and give you feedback if there's anything that you need to work on. If you'd like to see the exact points that your reviewer will check for when looking at your work, you can have a look over the project rubric.
+
+
+
+
+
+5.7 Project: Building a Metrics Dashboard
+---------------------------------------
+
+
+
+
+
