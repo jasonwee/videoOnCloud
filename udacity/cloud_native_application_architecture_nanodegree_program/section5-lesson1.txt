@@ -1,0 +1,14 @@
+date start : 01 november 2021
+
+
+1.1 Meet Your Instructor
+---------------------------------------
+Meet Your Instructor
+
+Welcome to Introduction to Microservices Security! Your instructor in this course is Nick Reva. In this next video, you can learn a little about Nick's background
+
+Nick has been working in the security engineering field for nearly 15 years. Over the past 6 years, he has been in technical security leadership at companies like Snapchat and SpaceX. Nick has a master's degree in Security Engineering from DePaul University in Chicago. Outside of security engineering, Nick enjoys tinkering with disruptive security technology, cross-fit, electric vehicles, and of course, spending time with his family.
+
+
+
+
