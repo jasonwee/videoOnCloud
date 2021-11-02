@@ -11,4 +11,50 @@ Nick has been working in the security engineering field for nearly 15 years. Ove
 
 
 
+1.2 Nanadegree Prerequisites
+---------------------------------------
+Before coming into this Nanodegree, you should be comfortable with Linux, CLI (command-line interface), Git commands, and you should have a GitHub account and a Docker Hub account.
+
+Virtual Machine Setup and Demo
+Some of the tools in this course require you to use Linux. If you are running Mac or Linux locally, you do not need to follow this demo at this moment. However, if you are running Windows, make sure you follow the steps below to use the VirtualBox and Vagrant to create a Linux virtual machine.
+
+How to Create a Linux Virtual Machine
+To bring up the Vagrant box, make sure you have cloned the starter code for lesson-1-introduction-to-microservices repo.
+CD to the exercises/starter/ folder containing the Vagrantfile.
+Run vagrant up to provision the VM and then vagrant ssh to log in.
+Once you are done, run vagrant halt to exit the VM.
+
+
+
+1.3 Course Prerequisites
+---------------------------------------
+To succeed in this course, you should be able to:
+
+Use Git for committing and pushing code
+Use Bash and python to script
+Use Docker for creating images and running containers
+Use DockerHub for pushing and pulling Docker images
+Use Kubernetes to create a cluster, pods, and services
+Work within VS Code
+Run and edit Python programs. Make sure you have at least Python 3.7 installed
+Use Lucidchart or Google Draw to create system architecture diagrams to visually describe your systems
+You will use open-source security tools in this course. For example,
+
+Tools like Docker-bench for hardening docker
+Tools like Kube-bench to harden Kubernetes
+Tools like Grype to perform software composition analysis
+
+
+
+1.4 Introduction to Microservices Security
+---------------------------------------
+Why Is Microservices Security Important?
+Microservices are not secure by default. New security issues arise as techniques evolving and new technology coming up.
+
+Just an example, in 2018, Tesla’s Kubernetes cluster was compromised. The attackers kicked off crypto-mining. Luckily, Tesla’s runtime monitoring caught the activity and alerted the Tesla security team.
+
+The moral of the story is that no one is immune to a security incident. The reality of cyber breaches is far worse than the small percentage of security incidents you read about.
+
+
+
 
