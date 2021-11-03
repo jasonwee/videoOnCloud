@@ -57,4 +57,93 @@ The moral of the story is that no one is immune to a security incident. The real
 
 
 
+1.5 Course Overview
+---------------------------------------
+In this course, we will cover 4 large surface areas for microservices security:
+Docker
+Kubernetes
+Application-level security
+Runtime monitoring
+In this course we'll learn:
+Why security is important and stakeholders you will work with in your everyday work
+How to approach security risks systematically and intentionally using threat modeling with STRIDE
+Practical techniques to harden Docker attack surface using Docker-bench
+Practical techniques to harden Kubetnetes attack surface using Kube-bench
+Break down layers of a Docker image to evaluate the security of the libraries, dependencies, and software code using open-source tools
+How to deploy runtime monitoring with Sysdig Falco and Grafana
+Learning Objectives:
+Threat model a microservices environment
+Deploy a hardened Docker image
+Deploy a hardened Kubernetes cluster with run-time monitoring
+Perform software security introspection
+Run a security incident response
+
+
+
+1.6 How Microservices Security Differs from Traditional Infrastructure Security
+---------------------------------------
+There are many differences between microservices security and monolith security.
+
+Microservice uses containerized service, versus monolith service runs on a virtual machine or physical machine.
+Deployments of microservices are short-lived and declarative, so the deployment velocity is much higher. But deployments of the monolith are often long-lived and imperative, which means the deployment velocity is lower.
+Each microservice uses its identity to authenticate, which means there is zero trust, as the services must rely on the identity provided to authenticate. But traditional security is often not certificate-based so it uses hard-coded credentials.
+There are many smaller attack surfaces in microservices security because each container is a security boundary. There is one large attack surface with monolith security because the virtual machine or host is often the security boundary.
+There is an agile security feedback loop with microservices security as services are tested for security during build and deployment. But with monolith security, there is usually a waterfall security feedback loop at the end of the development process or worse yet, no feedback at all.
+
+
+Key Terms
+Here are some key terms that are important to this course:
+
+Software Development Life Cycle (SDLC): The process by which software specs are defined, tested, built, and deployed. Security needs to be a vital component of SDLC.
+Transport layer security (TLS): Protocol to encrypt data in motion.
+Access Control List (ACL): The process by which access is defined into a role or permission.
+Role-Based Access Control (RBAC): The process by which roles are defined into an ACL. We define what ACL each user should have.
+Need to Know: Only providing the required access that is necessary for the job.
+Principle of least privileged: Similar concept to Need to Know. This principle implies that a user of a system should have access that provides minimal privilege for the job.
+
+
+
+1.7 History of Microservices Security
+---------------------------------------
+2013: With the introduction of Docker, microservice started to establish a stake.
+2015: With the open sourcing of Kubernetes by Google, microservice were amplified.
+Around 2017: Microservice scaled with broader adoption of the service mesh, scaled management planes such as Istio and Envoy that made it easier to manage service at scale.
+Present: Microservices are now enjoying mainstream adoption in most younger companies. Enterprises are also getting into the mix.
+
+Additional Resources
+If you want to learn more about the history of Microservices, we recommend you check out this excellent blog post about the history of microservices.
+The book Kubernetes Running Dive Future Infrastructure by Googler Kelsey Hightower is a classic text that you should consider reading if you are serious about becoming a professional in this field.
+
+
+
+1.8 Stakeholders
+---------------------------------------
+There are three types of stakeholders.
+
+Business
+Executive stakeholders are interested in the top-line outcome.
+Line of business stakeholders are interested in their lines of business-specific outcomes.
+Legal and compliance are interested in keeping the company out of legal problems and not violating laws that have consequences.
+
+All business stakeholders have similar needs, which are: moving fast without slowing the production down; security approach/solution is scaled with the business and not be rebuilt frequently or be very expensive; security does not disrupt the business and is resilient.
+
+aTechnical
+IT supports the computing environment but is not responsible for core engineering or research and development (R&D).
+Engineering and R&D develop and build your product or service.
+Security understands IT, engineering, as well as business needs in order to provide protection.
+Technical stakeholders have similar needs: the service can be delivered within the business goals; innovation and iteration; the service is secure and protected.
+
+Attackers
+Governments and state-sponsored criminals: the most well-funded; typically methodical with long-term sustained operations.
+Cybercriminals: organized for monetary value. They usually have fewer capabilities than governments but they can be equally impactful.
+Hacktivists: trying to support a cause or need, and they can be well organized.
+
+The needs of the attackers matter because they are who we are protecting against. Governments and state-sponsored attacks are after your innovation and competitive advantage. Cybercriminals are after money and monetary gains. Hacktivists are after notoriety, fame, and glory for themselves and their cause.
+
+Additional Resources
+If you want to learn more about cyber attacker motivations, we recommend you check out an excellent blog on cybercrime by investigative reporter Brian Krebs.
+The book Spam Nation: The Inside Story of Organized by investigative reporter Brian Krebs is a classic text that you should consider reading if you are serious about becoming a professional in this field.
+
+
+
 
