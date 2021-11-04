@@ -146,4 +146,62 @@ The book Spam Nation: The Inside Story of Organized by investigative reporter Br
 
 
 
+1.9 Course Tools & Environment
+---------------------------------------
+Here are the tools we will use in this course:
 
+Vagrant and VirtualBox
+Docker and Docker Hub
+A Distribution of Kubernetes
+Bash and Python
+VS Code
+Open-source security tools
+
+Additional Resources
+For more information check out the getting started docs for these tools:
+Getting started with Vagrant
+Getting started with Docker
+Getting started with Docker Hub
+Getting started with VS Code
+
+
+
+1.10 What You'll Buid in the Project 
+---------------------------------------
+In the project you will do the following:
+
+Build and harden Docker and Kubernetes
+Deploy a hardened Flask application
+Respond to a security incident
+
+
+
+1.11 Glossary
+---------------------------------------
+Glossary
+Software Development Life Cycle (SDLC): The process by which software specs are defined, tested, built, and deployed. Security needs to be a vital component of SDLC.
+Transport layer security (TLS): Protocol to encrypt data in motion.
+Access Control List (ACL): The process by which access is defined into a role or permission.
+Role-Based Access Control (RBAC): The process by which roles are defined into an ACL. We define what ACL each user should have.
+Need to Know: Only providing the required access that is necessary for the job.
+Principle of least privileged: Similar concept to Need to Know. This principle implies that a user of a system should have access that provides minimal privilege for the job.
+
+
+
+1.12 Lesson Review
+---------------------------------------
+In this lesson, we gave you an introduction to this course. Specifically, we learned:
+
+Prerequisites
+Why Microservices security is important
+Course Overview
+How Microservices security differs from traditional infrastructure security
+History of microservices security
+Stakeholders
+Course tools & environment
+Project overview
+In the next few lessons, you will learn many methodologies and tools to secure microservices. Hope you will enjoy this journey and good luck!
+
+Additional Resources
+If you want to learn more about the history of Microservices, we recommend you check out this excellent blog post about the history of microservices.
+The book Kubernetes Running Dive Future Infrastructure by Kelsey Hightower is a classic text that you should consider reading if you are serious about becoming a professional in this field.   
