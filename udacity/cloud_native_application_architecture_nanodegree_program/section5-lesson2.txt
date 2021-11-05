@@ -1,0 +1,100 @@
+date start : 05 november 2021
+
+
+2.1 Introduction
+---------------------------------------
+The Software Development Life Cycle (SDLC) flows from spec to build, to deploy, from left to right.
+
+In traditional SDLC, security steps are often forgotten about till the very end, when you are ready to deploy. At that point, fixing security flaws will be very expensive, both in terms of absolute effort and cost.
+
+This course is all about baking practical threat modeling and service hardening into your microservices SDLC to ensure security is not forgotten.
+
+Threat modeling is a systemic technique to evaluate security risks and threats that could affect a system.
+
+Important: Threat modeling hypothesizes what could go wrong and forms the basis for reasoning for all the security techniques that you will implement later. Therefore, the threat model needs to be very precise. Later in the course, we will test this hypothesis and confirm which threats actually exist by running scanning tools.
+
+The Shifting-Left Principle and Steps of SDLC
+
+
+The shifting-left principle refers to incorporating threat modeling and security verifications into the early stages of the software development process once the spec is defined. By shifting left, the threat model is defined early, once the spec exists. Here are the steps in the SDLC with shifting-left (also illustrated in the two diagrams below):
+
+The engineering team iterates on the spec. Tools are run to evaluate and identify security threats and flaws.
+The spec is refined and the engineering team proceeds to build.
+During the build, automated security tools should be run to verify and provide the engineering team actionable feedback so they can be remediated or accepted as a reasonable risk.
+Prior to deployment, tools are re-run to verify the deployment for flaws.
+With a running deployment, we should be concerned with all the same steps and ensure we do not forget about security.
+Any significant changes to the service should be threat-modeled and security evaluated.
+Once we re-enter a build phase, automated verifications should be run again.
+The same repeats for the deployment phase. We should verify prior to deployment.
+This cycle should repeat itself perpetually until the service is retired.
+Specifically, what to threat model and why will be covered in this lesson; the how-to will be covered in the upcoming Docker and Kubernetes hardening lessons.
+
+Introducing STRIDE
+In this lesson, we will learn all about STRIDE and apply it to microservices, including Docker and Kubernetes.
+
+STRIDE is a systematic and intentional threat analysis framework using a mnemonic that allows you to consider the primary ways a system can be affected by an attack. It focuses on evaluating threats from an impact perspective.
+
+A Brief History of the STRIDE Framework
+STRIDE was developed at Microsoft in the early 2000s.
+STRIDE was popularized by Microsoft’s trusted computing push and Adam Showstack in mid the 2000s. Nearly 20 years later, other models have been established, yet STRIDE is still the most relevant high-level threat modeling framework.
+New Terms
+Threat modeling is a systemic technique to evaluate security risks and threats that could affect a system.
+The shifting-left principle refers to incorporating threat modeling and security verifications into the early stages of the software development process once the spec is defined.
+STRIDE is a systematic and intentional threat analysis framework using a mnemonic that allows you to consider the primary ways a system can be affected by an attack.
+
+
+
+2.2 Lesson Overview
+---------------------------------------
+We will cover the following topics in this lesson:
+
+We will learn about security and STRIDE fundamentals to establish core terminology
+We will evaluate the Docker high-level system abstraction and apply the STRIDE methodology to Docker’s attack surface
+We will evaluate the Kubernetes high-level system abstraction and apply the STRIDE methodology to Kubernetes’ attack surface
+Lastly, we will evaluate enterprise considerations for how to scale and automate threat modeling as part of an enterprise SDLC
+
+
+
+2.3 STRIDE Fundamentals
+---------------------------------------
+Key Security Concepts
+Let's review the following key security concepts, as they are foundational to understanding the STRIDE framework:
+
+Authenticity: This is affected when a non-genuine user poses as a legitimate user. This can be protected with proper authentication.
+Integrity: This is affected when a user maliciously tampers with data or a system.
+Non-repudiation: This is affected when a change is made that cannot be associated with a known legitimate action. It is the act of denying something happened.
+Confidentiality: This is affected when sensitive data is exposed. Data can be exposed while in motion on the network or at rest due to lack of or poor encryption.
+Availability: This is affected by system uptime. This can happen as a result of resource starvation during a denial of service attack or lack of rate-limiting on an API.
+Authorization: This is affected when the access level (permission) within a system is abused or exceeded.
+
+The STRIDE Framework
+STRIDE is a mnemonic - a systematic and intentional threat analysis framework that helps you reason about what could go wrong.
+
+"S" represents Spoofing: This is the act of posing as someone or something for malicious intent, such as disguising the identity of a system administrator. It affects authenticity.
+"T" represents Tampering: This is modifying a system for malicious intent, such as modifying system files. It affects integrity.
+"R" represents Repudiation: This is the act of denying doing something, such as denying the download of data from a database. It affects non-repudiation.
+"I" represents Information Disclosure: This refers to disclosing private or sensitive information, such as dumping stolen credentials on Pastebin. It affects confidentiality.
+"D" represents Denial of Service: This refers to affecting the availability of a system, such as overwhelming a system with too much traffic that is not rate-limited. It affects availability.
+"E" represents Elevation of Privilege: This refers to escalating your privilege to affect authorization levels.
+
+Summary Table
+Threat	Desired Security Property
+Spoofing	Authenticity
+Tampering	Integrity
+Repudiation	Non-repudiation
+Information disclosure	Confidentiality
+Denial of Service	Availability
+Elevation of Privilege	Authorization
+
+Additional Resources
+For further reading on STRIDE, please consider the following resources:
+
+STRIDE Methodology
+Carnegie Mellon University - Threat Modeling: 12 Available Methods
+Books:
+
+Adam Showstack | Threat Modeling: Designing for Security
+
+
+
+
