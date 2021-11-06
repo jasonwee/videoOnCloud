@@ -97,4 +97,106 @@ Adam Showstack | Threat Modeling: Designing for Security
 
 
 
+2.4 Monolithic vs Microservices Security Boundaries
+---------------------------------------
+Monolithic vs Microservices Security Boundaries
+Before we get deeper into threat modeling, let's discuss security boundaries for monolithic and microservices architectures. As a security-trained professional or security engineer, it's vital to provide accurate representations of the application architecture you are evaluating. This is best done using a design document and diagrams. Technical diagrams are often a required component for an architecture security review and will be requested by other engineers and managers reviewing your application architecture design. Technical diagrams show the system as part of the larger landscape and allow your stakeholders to contextualize the design. As microservices are broken down into many smaller service units, it's vital to understand the relationship between all the services.
+
+Without diagrams, it's difficult to explain and reason about your design, collaborate with your colleagues on a project’s motivation and priorities, and discuss considered alternatives. Most importantly, it's hard for your stakeholders to be on the same page regarding the specific implementation and security risk. It's hard to get credit for your work with code alone, as it requires a narrative to explain what you built. Lastly, design docs shape a narrative that can be referenced for performance evaluation, promotion and openly shared across your organization for other engineers to learn from.
+
+Note: We will not teach design doc practices or culture. There are many great reasons to create design docs. It's an everyday practice at the world's leading software companies and something you should learn to implement if you are not already on-board. Take a look at the additional reading for these topics.
+
+We will discuss two architectural design primitives:
+
+One traditional monolithic three-tier architecture (load balancer, web server, database server) with an external caller (Braintree)
+A containerized microservices architecture (load balancer, Kubernetes cluster running docker containers, a traditional MySQL server) with an external caller (Braintree)
+
+Traditional Monolithic Three-Tier Architecture
+Let's take a look at a traditional monolithic three-tier architecture (load balancer, web server, database server) with an external caller (Braintree).
+
+The system is an e-commerce web application running Nginx to serve traffic over ports 80 and 443.
+User traffic hits a load balancer and is directed to the Nginx webserver.
+Once on the website, the user browses the CrossFit equipment catalog adding a dumbbell, this calls the SQL database which provides all metadata on the product.
+
+User queries are all handled via single Java application runtime with persistent data queries passed to a SQL database.
+
+The user then checks out which then prompts the single Java application runtime to collect all shopping cart artifacts and passes, assembles the checkout order, and passes the payment card data to Braintree for an authorization code.
+
+Once the authorization code is received the user is passed back to the single Java application runtime to enter their phone number to receive a text when their order ships.
+
+The single Java application runtime then sends the customer a text when their order ships.
+
+All client/server interactions are written to a Syslog cluster. However, since all calls are to a single Java application runtime, it's difficult to trace problems.
+
+The application passes payment card data to a third-party gateway provided by Braintree.
+
+Service Boundaries:
+
+Service boundaries are defined as a logical grouping of services where the service API needs to call other services. The service and security boundaries are often the same.
+Security Boundaries:
+
+Security boundaries are defined as the part of the network that has a shared set of controls such as a single subnet that allows communication between all services.
+The load balancer and service boundary are the security boundaries as all services except Braintree are on the same network subnet communicating with each other.
+Services are aware of each other often using hard-coded credentials or service accounts to authenticate. Trust is assumed as services are implicitly aware of each other.
+If we break out the logging and database services to their own subnets, this creates network isolation for those services. From there we can then apply a network access control or firewall rule to restrict traffic between services.
+
+Containerized Microservices Architecture
+Let's take a look at a containerized microservices architecture (API-gateway, Kubernetes cluster running multiple containerized services, and a MySQL server for persistent data) with an external caller (Braintree). The system is an e-commerce web application running an edge-API to serve traffic over ports 80 and 443.
+
+User traffic hits a load balancer acting as an api-gateway to the edge-api microservice service that handles user gRPC requests from clients (users).
+Once on the website, the user browses the CrossFit equipment catalog adding a dumbbell, this calls the content-api microservice which provides all metadata on the product by calling a persistent data store service.
+The user then checks out, which redirects them to the check-out-api microservice, which collects all shopping cart artifacts and passes, assembles the checkout order, and passes the payment card data to Braintree for an authorization code.
+Once the authorization code is received, the user is passed to the shipping-api microservice, which provides them the ability to enter their phone number to receive a text when their order ships.
+The notification-api microservice then sends the customer a text when their order ships.
+All gateway, edge API, and client/microservices interactions are logged to the Grafana cluster running collecting Prometheus to collect Jaeger metrics.
+
+Security Boundaries:
+
+Security trust boundaries are defined into three - gateway boundary, service boundary, cluster boundary
+The gateway boundary acts as a central API for all traffic bound to the cluster, often providing rate limiting and traffic routing as a load balancer would.
+The service boundary isolates persistent, non-immutable services such as logging and storage services into a single network.
+The cluster boundary isolates immutable containerized services running within the cluster.
+Cluster services are not implicitly aware of each other and use mutual Transport Layer Security (mTLS) to authenticate. Trust is not implied but rather proven by the service presenting its certificate to authenticate to other services.
+
+
+The Differences
+Let's now highlight some differences:
+
+As you can see, the microservices design clearly breaks up large services into smaller, focused services.
+With a monolithic application, a single large application runs the application as a lone runtime developed in one language and released as a single binary.
+The security boundaries are redefined with microservices, as each container becomes a security boundary, versus the single webserver as a security boundary.
+With microservices, security becomes focused on individualized container deployments and interaction between services. This is often referred to as east to west traffic (left to right). With monolithic applications, it's mostly about north to south traffic (up to down). We will cover isolation and boundaries in more detail in the course.
+
+Further Reading
+For further reading on monolithic vs microservices architectures, please consider the following resources:
+
+Design doc culture at Google
+Kindness in engineering at Snap
+What’s the Difference Between Monolith and Microservices?
+
+
+
+2.5 Quiz: STRIDE Fundamentals
+---------------------------------------
+spoofing
+tampering
+repudiation
+information disclosure
+escalation of privilege
+denial of service
+
+denying
+modifying
+availability
+
+
+2.6 Exercise: Simple Infrastructure Thread Model with STRIDE
+---------------------------------------
+continuous attack by sending a lot of api requests to the web servers. the idea is to exhaust the web servers resources such that valid api requests no longer able to serve correctly. The goal is to bring down the service by launching this denial of service.
+
+* information disclosure
+* denial of service
+* Elevation of Privilege
+
+
 
