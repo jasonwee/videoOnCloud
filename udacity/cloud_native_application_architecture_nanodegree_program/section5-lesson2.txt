@@ -199,4 +199,167 @@ continuous attack by sending a lot of api requests to the web servers. the idea 
 * Elevation of Privilege
 
 
+2.7 Solution: Simple Infrastructure Thread Model with STRIDE
+---------------------------------------
+Environment Diagram
+Given the provided description, we created a simple diagram describing the application components and boundaries.
+
+
+
+Threat Model Summary
+Given the simple infrastructure threat model, let's evaluate what could go wrong with this infrastructure model based on the provided information.
+
+Simple App Threat Model:
+1.Provide a profile of potential attackers, including their goals and methods
+
+Malicious attackers may be interested in either disrupting the application or financial gain by stealing user data or modifying pricing in their favor.
+2.Given system components and the STRIDE, identify potential threats that may arise.
+
+Here is an example for each aspect of STRIDE.
+
+Spoofing: Single Internet-accessible OpenSUSE leap web server running Nginx to serve traffic over ports 80 (HTTP) and 443 (HTTPS). Traffic is allowed on port 80 (HTTP) is unencrypted. This may allow an attacker to intercept communication between client and server, leading to spoofing of the traffic.
+Tampering: The web server is behind a load balancer. Data is stored in a SQL database. Using a load balancer provides security and scalability benefits. However, the application uses a SQL database, which may allow an attacker to pass URL parameters with a SQL injection, leading to tampering by querying data from the SQL database.
+Repudiation: If the webserver traffic is spoofed, an attacker could gain control of a user session. This could lead to repudiation for user actions on the application and fraudulent transactions.
+Information Disclosure: The application accepts credit cards processed via a third-party gateway provided by Braintree. The application logs all client/server transactions via a Syslog server. While the handling of sensitive payment data occurs by Braintree, the integration may involve log generation and storage that, if miss-configured, may lead to information disclosure of the credit card number. This will provide information to someone not authorized to access it.
+Denial of Service: The application is behind a load balancer, which may provide some denial of service protection. However, that's not the dedicated focus for a load balance. Lack of purpose-built rate-limiting or denial of service protection could result in exhausting resources needed to provide the service and lead to an outage.
+Elevation of Privilege: An attacker may attempt to abuse a regular user's login to escalate privilege to an administrative login such as admin or administrator. This may lead to the elevation of privilege, allowing them to do something they are not authorized to do.
+
+Review
+Through this exercise, we evaluated the threat model for a simple web application. Although all responses will be marked as "correct", I encourage you to compare your response with the solution and think about the differences.
+
+For example, if you had a hard time providing the service and security boundaries in the diagram, that is vital to the threat model. Also, in evaluating this environment against STRIDE, it's important to think about the implications of the provided design. For example, port 80 means traffic is on HTTP, which is non-encrypted and hence subject to man-in-the-middle (spoofing).
+
+While there is no "single right answer", the goal is to understand how to threat model in a systemic and methodical way. It may feel like a big time commitment and slow you down to diagram and evaluate threats before digging into building the system.
+
+Security Engineering is as much a technical discipline as it is a process. The earlier you identify a security problem, the earlier you can understand the practical concerns and define techniques to address them as a functional requirement, just as you would address a spiking P99 page latency for a high traffic e-commerce application.
+
+As we progress through the course and profile attack surfaces for Docker and Kubernetes, our threat models will become far more sophisticated. However, the basic foundation questions will be the same:
+
+What could go wrong?
+What are we going to do about it?
+How do we know our mitigations are good enough?
+Next, we will work to apply the STRIDE methodology to concretely evaluate the Docker primary components.
+
+
+
+2.8 Docker Fundamentals
+---------------------------------------
+
+Docker Recap
+Docker runs on bare-metal infrastructure and on top of the host operating system.
+
+Docker engine consists of Docker daemon and Docker client:
+
+Docker daemon is the engine to manage containers. It runs constantly, listening for calls (instructions from the docker client) to do things.
+Docker client interacts with the docker daemon, sending commands such as docker build or docker deploy.
+3 Boundaries within the Docker System:
+Docker client
+Docker host
+Docker registry
+Here is how these 3 system components interact with each other:
+
+Create a Dockerfile: The Docker client is nearly always where the Dockerfile is created.
+Pull the latest image: You nearly always start with a base image by running docker pull. The Docker client makes a remote procedure call (RPC) to the Docker daemon to carry out the command and pull the latest image from the Docker registry in the Docker Hub image store.
+Build the image layers: When you run a command such as docker build on your client, the client RPCs to the Docker daemon to build the image layers.
+Push the image to the Docker Hub: Once the image is built, you run docker push to commit the image to the Docker Hub image store, again the client RPCs to the Docker daemon to push the image to the Docker Hub.
+What Happens When You Provision a Container on the Host?
+NOTE: We will assume the container image was built with docker build and is ready to deploy to the host.
+
+From the Docker client, when we run docker run [image name], the client RPCs to the Docker daemon via a Linux socket to begin provisioning the Docker image layers (basically readable and writable manifests and tarballs) to provision the docker container runtime.
+
+Why Is Docker Security Important?
+Docker’s inherent system design is not secure by default.
+As the daemon needs to create namespaces for isolation (more on this in the next lesson), docker buildis run with root privileges by design. This design is a significant security risk as the user can run any command and the daemon will process it.
+Docker unprotected ports can and have been attacked in malware campaigns
+As you can see, the client, host, and registry are deeply involved in Docker operations. Due to design decisions, each of these components has attack surfaces that needs to be considered from a security engineering perspective.
+
+New Terms
+Tarball: A tarball or tarfile is the name of a group or archive of files that are bundled together using the tar command. They usually have the .tar file extension. If the tar file is compressed using the gzip command, the tarball will end with .tar. Sometimes ZIP files are also called tarballs.
+Docker daemon is the engine that processes commands from the client to manage Docker containers.
+Docker client is how you interact with the Docker daemon through a command-line interface.
+Docker host is the machine on which docker is installed that hosts the containers.
+Docker Hub registry is where docker images are stored.
+Additional Resources
+For further reading on Docker, please consider the following resources:
+
+Docker Architecture docs
+Dockerfile best practices docs
+Docker command line build docs
+Unprotected open Docker API ports
+Books:
+
+Liz Rice | Container Security: Fundamental Technology Concepts that Protect Containerized Applications
+
+
+
+2.9 Docker Threat Modeling with STRIDE
+---------------------------------------
+What Could Go Wrong?
+Docker Client
+Client compromise: the Docker desktop running on the administrator's machine
+Client authorization abuse: abuse of the client's authorization to make privileged changes
+Dockerfile misconfiguration: how the Dockerfile is built
+Docker Host
+Isolation tampering: we are very concerned with namespace isolation to prevent container escape attacks
+Use of --privilege flag
+Insecure defaults
+Misconfiguration
+Docker Registry - the largest attack surface
+Image security
+Open Source Software (OSS) security
+Docker registry security
+
+Evaluating Docker Client Using STRIDE
+Spoofing - Client traffic from the Docker client to the Docker daemon or registry could be spoofed, or intercepted by a malicious party and replayed. Transport Layer Security (TLS) can be implemented to secure communication affecting the client.
+Tampering - An attacker gets control of the Docker client. This could lead to tampering of the Dockerfile that’s used to build the image affecting Dockerfile.
+Repudiation - Once the client is compromised, the attacker may use it to make changes that are not legitimate, which could impact the Dockerfile.
+Information Disclosure - The client may expose sensitive information such as secrets that are hardcoded in configuration files that could impact the security of the Dockerfile.
+Denial of Service - Excessive traffic from the client could overwhelm the daemon (often on the same machine) and could cause it to crash, leading to a client compromise.
+Elevation of Privilege - when a Dockerfile does not specify a user, it defaults to executing the container using the root user, affecting client authorization and the Dockerfile.
+
+Evaluating Docker Host Using STRIDE
+Spoofing - This can occur when a sidecar container has intentional access to the primary container's namespace and may spoof the namespace used by the primary container, resulting in isolation tampering. You should be careful with using sidecar containers.
+Tampering - Daemon configuration may be tampered with by a compromised client, leading to misconfiguration.
+Repudiation - A user may make changes to the daemon that are not legitimate, leading to misconfiguration.
+Information Disclosure - The Docker host file system may be misconfigured, exposing sensitive information and leading to insecure defaults.
+Denial of Service - Daemon memory for the running container may be over-allocated, leading to a misconfiguration.
+Elevation of Privilege - Daemon privilege may be escalated if a user name is not defined and the container runs as root, which gives access to any other container on the same host, leading to isolation tampering.
+
+Evaluating Docker Registry Using STRIDE
+Spoofing - Authenticity of images is a big concern as we put a lot of trust in them. An image may be spoofed with malicious images or libraries as part of the container layers, which affects image security.
+Tampering - Container image may be tampered with, leading to supply chain injections. This is the biggest risk regarding the supply chain. An attacker may implant a malicious image into the image registry and entice organizations to use it. Alternatively, an attacker may introduce open source libraries in popular hosted repositories and encourage organizations to use them. This can affect both image security and Open Source Software security.
+Repudiation - Malicious images may be committed without authorization by an attacker. This affects image security.
+Information Disclosure - Sensitive data such as secrets may be left in the container image and exposed at runtime affecting image security and potentially much more, depending on the scope of the credentials. This would affect image security.
+Denial of Service - Docker distribution may not properly restrict the amount of content accepted by a user. This allows remote attackers to cause a denial of service. This could affect registry security.
+Elevation of Privilege - Container image permissions may be elevated using the --privilege flag. Image libraries may contain security flaws. This can affect image security.
+
+New Terms
+Sidecar container: A container that runs alongside the primary container in a pod. Sidecars are often used for logging or security use cases.
+Namespace: A Linux native control that isolates or partitions resources such that one set of processes cannot see the resources of another set of processes.
+Isolation: The state of being separated, both in a physical and virtual sense. On the Linux operating system, isolation allows each process to have its own isolated world to run processes.
+
+Additional Resources
+For further reading on Docker, please consider the following resources:
+
+Getting started with STRIDE
+Threat modelng Manifesto
+
+
+
+2.10 Quiz: Threat Model Docker with STRIDE
+---------------------------------------
+q1
+docker client
+docker client
+docker host
+docker host
+docker host
+docker registry
+docker registry
+docker registry
+
+q2
+insecure defaults
+may be misconfigured
+
 
