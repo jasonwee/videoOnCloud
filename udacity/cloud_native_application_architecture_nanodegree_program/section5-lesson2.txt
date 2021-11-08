@@ -362,4 +362,31 @@ q2
 insecure defaults
 may be misconfigured
 
+2.11 Exercise: Threat Model Docker with STRIDE
+---------------------------------------
+q1
+docker client
+docker host
+docker registry
+
+q2
+
+Docker Client
+Client compromise: the Docker desktop running on the administrator's machine
+Client authorization abuse: abuse of the client's authorization to make privileged changes
+Dockerfile misconfiguration: how the Dockerfile is built
+
+Docker Host
+Isolation tampering: we are very concerned with namespace isolation to prevent container escape attacks
+Use of --privilege flag
+Insecure defaults
+Misconfiguration
+
+Docker Registry - the largest attack surface
+Image security
+Open Source Software (OSS) security
+Docker registry security
+
+
+
 
