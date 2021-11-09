@@ -389,4 +389,36 @@ Docker registry security
 
 
 
+2.12 Solution: Threat Model Docker with STRIDE
+---------------------------------------
+Solution: Threat Model Docker with STRIDE
+Docker Threat Model Summary
+Given the four areas most relevant to Docker security, let's evaluate what could go wrong with this docker model based on the provided information. As we learned in the lesson, containers have their own unique attack surface.
+
+1. The three primary Docker components that are most relevant to Docker security
+Docker Client: We are concerned with the compromise of the docker desktop running on the administrator's machine, abuse of the client's authorization to make privileged changes, and how the Dockerfile is built.
+Docker Host: Docker host also has a large attack surface. We are very concerned with namespace isolation to prevent container escape attacks, use of the --privileged flag, insecure defaults, and misconfiguration.
+Docker Registry: Docker Registry is the largest attack surface which has the most external implications. We are concerned with image security, open-source component security, and Docker registry security.
+2. Given Docker's system components and the STRIDE framework, identify potential threats that may arise. I provide an example for three aspects of STRIDE.
+Spoofing of network traffic: Docker supports the addition and removal of capabilities. You should remove all capabilities not required for the correct function of the container. Specifically, in the default capability set provided by Docker, the new_raw capability should be removed if not explicitly required, as it can give an attacker with access to a container the ability to create spoofed network traffic.
+Tampering: Docker provides a TLS CA certificate file to allow secure communication between the Docker server and the client. This file should be protected from any tampering. It is used to authenticate the Docker server based on a given CA certificate. It must therefore be individually owned and group-owned by root to ensure that it cannot be modified by less privileged users to avoid tampering.
+Denial of Service: By default, a container can use all of the memory on the host. You can use memory limit mechanisms to prevent a denial of service from occurring, where one container consumes all of the host’s resources and other containers on the same host are therefore not able to function. Denial of Service protection could result in exhausting resources needed to provide the service and lead to an outage.
+With this more elaborate exercise, we identified 3 concrete threats on Docker using the STRIDE model.
+
+Review
+Through this more complex exercise, we evaluated the threat model for Docker at a high level. Although all responses will be marked as "correct", I encourage you to compare your response with the solution and think about the differences.
+
+When evaluating this environment against STRIDE, it's important to think about the implications of the foundational design. For example, if you are not familiar enough with the core properties of Docker in order to evaluate threats, I would encourage you to rewatch the earlier courses and/or read official docker documentation. If you found this exercise more difficult than expected, I would encourage you to read the Docker CIS Benchmark in the starter exercise repo, as it does a wonderful job outlining the system security weaknesses very thoroughly to get you started.
+
+While there is no "single right answer", the goal is to understand how to threat model in a systemic and methodical way. Before you can objectively evaluate the security properties of a system, you need to understand the system architecture, boundaries, and core entities.
+
+As we progress through the course and go deeper into Docker, our threat models will become even more sophisticated. However, the basic foundation questions will be the same:
+
+What could go wrong?
+What are we going to do about it?
+How do we know our mitigations are good enough?
+Next, we will work to apply the STRIDE methodology to concretely evaluate Kubernetes' primary components.
+
+
+
 
