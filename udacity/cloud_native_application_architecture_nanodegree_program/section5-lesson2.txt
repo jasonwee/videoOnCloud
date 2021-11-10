@@ -421,4 +421,55 @@ Next, we will work to apply the STRIDE methodology to concretely evaluate Kubern
 
 
 
+2.13 Kubernetes Threat Fundamentals
+---------------------------------------
+Kubernetes Recap
+Kubernetes is a distributed orchestrator for Docker containers. Kubernetes is a complicated system. At the highest level, Kubernetes consists of a control plane and a data plane.
+
+Control Plane - the Collection of Master Nodes
+The Control plane contains the following 5 service entities:
+
+kube-apiserver is the primary control plane that exposes the Kubernetes API. The API server is the front end for the Kubernetes control plane.
+etcd is a consistent and highly-available key-value store used as Kubernetes' backing store for all cluster data.
+kube-scheduler is a control plane component that watches for newly created Pods with no assigned node and selects a node for them to run on.
+kube-controller-manager runs the controller processes. Logically, each controller is a separate process, but to reduce complexity, they are all compiled into a single binary and run in a single process.
+cloud-controller-manager is an optional component that exposes the Kube API to cloud providers like AWS and GCP to orchestrate Kubernetes. As it has an attack surface, we are including it in the lesson.
+
+Data Plane - the Collection of Worker Nodes
+The Data plane contains the following 2 service entities:
+
+kubelet is an agent that runs on each node in the cluster. It makes sure that containers are running in a Pod.
+kube-proxy is a network proxy that runs on each node in your cluster, maintaining network rules on nodes. These network rules allow network communication to your Pods from network sessions inside or outside of your cluster.
+Source:
+
+Kubernetes documentation licensed under CC BY 4.0
+OWASP Kubernetes Security Cheat Sheet, licensed under Creative Commons Attribution 3.0 Unported License
+
+Kubernetes Threat Basics - Four Cs
+Let's think about the Kubernetes orchestrator for a single node as a layered threat model with 4 Cs: Code, Container, Cluster, Cloud security layers, from inside out, as illustrated by the diagram below.
+
+Each layer has unique considerations that should be evaluated.
+
+Code
+The application code you write and deploy within your container.
+To harden this, we should avoid system application security flaws and vulnerable libraries in the application code.
+Docker Container
+To harden this, we should protect the Docker client, host, and registry.
+We should also look into container escape vulnerabilities. Left unpatched, it allows hackers to break out of sandboxes and gain root access on the host servers, compromising the entire infrastructure.
+Kubernetes Cluster
+To harden this, we should secure the control and data plane environment using configurable policies and secure the applications that run on the cluster through isolation and hardening.
+Cloud
+Most Kubernetes clusters are hosted on Cloud providers such as AWS or GCP. Even if you host your own cluster, you will ultimately need physical servers to deploy the workload. As the cloud provider has privileged access to the kube-apiserver, it’s vital to limit the attack surface.
+For the purposes of this course and specific cloud provide implementations, we will not cover specific cloud provider security considerations nor in-depth cloud-controller-manager hardening.
+Additional Resources
+For further reading on Kubernetes, please consider the following resources:
+
+Overview of Kubernetes Cloud Native Security
+Books:
+
+Kelsey Hightower | Kubernetes: Up and Running: Dive into the Future of Infrastructure 2nd Edition
+Kaizhe Huang | Learn Kubernetes Security: Securely orchestrate, scale, and manage your microservices in Kubernetes deployments
+
+
+
 
