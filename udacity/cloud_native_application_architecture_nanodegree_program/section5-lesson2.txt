@@ -472,4 +472,37 @@ Kaizhe Huang | Learn Kubernetes Security: Securely orchestrate, scale, and manag
 
 
 
+2.14 Kubernetes Threat Modeling with STRIDE
+---------------------------------------
+What Could Go Wrong?
+Control plane - This is the lifeline of the Kubernetes API running many services. Internet access to both control planes and nodes should not be allowed to ensure your clusters are private.
+Node runtime - This is the node runtime components including kube-proxy and kubelet on the worker node.
+Cloud provider - This allows you to link your cluster into your cloud provider's API, and separates out the components that interact with that cloud platform from components that just interact with your cluster.
+Evaluating Kubernetes Control Plane Using STRIDE
+This surface of Kubernetes is very vital to the system. The most important components are the API server and etcd, which handle all API calls to the server and store configuration values in etcd, the key-value store.
+Spoofing - Calls to the API server could be spoofed by a malicious caller. This can be mitigated by ensuring all calls to the API server are over TLS, ensuring that anonymous and basic authentication is not used.
+Tampering - The configuration of etcd may be tampered with by an attacker, modifying vital system-level configurations such as pod specs. This can be mitigated by restricting permissions on etcd files to 644 or more restrictive and that the pod spec file is set to root ownership.
+Repudiation - Unauthorized changes may be made to the API server. This can be mitigated by making sure only trusted callers can authenticate to the API server by enforcing TLS.
+Information Disclosure - Sensitive information may be exposed via the etcd key-value store. This can be mitigated by encrypting etcd content at rest and using TLS to access etcd only from the kube-apiserver. All other traffic should be rejected.
+Denial of Service - excessive traffic to the API server can overwhelm the endpoint. kube-scheduler can incorrectly schedule the pod.
+Elevation of Privilege - privilege can be abused by using the privileged flag. This should be avoided in all cases. This affects kube-apiserver.
+Evaluating Kubernetes Node Runtime Using STRIDE
+Spoofing - The connection between the API server and kubelet can be spoofed. This can be mitigated by using kubelet uses strong encryption that does not have cryptographic flaws, strong TLS ciphers should be used.
+Tampering - The kubelet configuration can be tampered with. Specifically, the kubelet.conf worker configuration file can be tampered with. Make sure to set the permission to 644 or more restrictive.
+Repudiation - Unauthorized changes can be made to kubelet. To avoid this, kubelet authentication should be TLS and weak/ basic auth should not be allowed.
+Information Disclosure - Kube-proxy can expose sensitive information. To ensure the kube-proxy does not expose information, the --kubeconfig should be set to permissions 644 or less permissive.
+Denial of Service - Kubelet can be subject to denial of service. To protect the kernel from runtime overruns, set the --protect kernel defaults to true.
+Elevation of Privilege - Kubelet can be subject to an elevation of privilege. To ensure privileges cannot be escalated, make sure the authorization mode argument is not set to always allow.
+Note: The Cloud Controller Manager is an optional component. As the cloud provider security is dependent on the implementation of the specific cloud provider, we will not evaluate it with STRIDE.
+
+Additional Resources
+For further reading on Kubernetes, please consider the following resources:
+
+Kubernetes security pills - STRIDE threat modeling
+Books:
+
+Prabath Siriwardena and Nuwan Dias | Microservices Security in Action
+￼
+
+
 
