@@ -505,4 +505,69 @@ Prabath Siriwardena and Nuwan Dias | Microservices Security in Action
 ￼
 
 
+2.15 Quiz: Threat Model Kubernetest with STRIDE
+---------------------------------------
+q1
+control plane
+control plane
+control plane
+worker node runtime
+worker node runtime
+worker node runtime
+
+q2
+tampering
+
+q3
+etcd
+
+q4
+644
+
+q5
+privileged
+
+q6
+main control plane for kubernetes
+
+
+
+2.16 Exercise: Threat Model Kubernetes with STRIDE
+---------------------------------------
+Exercise: Threat Model Kubernetes with STRIDE
+
+
+Building on our simple threat model from the previous lesson and what you learned in the lesson, you will use STRIDE to threat model the primary Kubernetes components.
+
+Kubernetes is a large system with significant complexity both operationally and from a security perspective. There is a lot of surface area to unpack. As an introduction to Kubernetes, in this lesson, we focused on the high-level concepts. As a continuously evolving CNCF project, Kubernetes' security features and capabilities will continue to improve with more focus on secure by default configurations and better documentation.
+
+Focus your attention on these six major areas as discussed in this lesson. Later in the course, we will go into detail on each of the following subdomains:
+
+kube-apiserver
+etcd
+kube-scheduler
+kube-controller-manager
+cloud-controller-manager
+kubelet
+Think about what you learned in the lesson, what could go wrong at a high level? We will go much deeper into the Kubernetes attack surface each in subsequent lessons.
+
+Tasks:
+
+Answer the free form fields below to construct a threat model.
+
+
+q1
+any of the components are subject to be attack.
+etcd store valuable information about cluster.
+kube-proxy are subject for attack due to the fact that communication with kubelet is unsecure
+
+
+q2
+etcd cluster, kube-apiserver, kube-controller-manager, cloud-controller-manager, scheduler.
+
+
+q3
+spoofing, repudiation and dos
+
+
 
