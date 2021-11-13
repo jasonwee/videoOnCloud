@@ -570,4 +570,45 @@ q3
 spoofing, repudiation and dos
 
 
+2.17 Solution: Threat Model Kubernetes with STRIDE
+---------------------------------------
+Kubernetes Threat Model Summary
+1. Provide a summary of what could go wrong
+An attacker may attempt to target any one of the 6 Kubernetes attack surfaces.
+The kube-apiserver is the most powerful Kubernetes component. However, other components such as etcd are also very valuable, as it stores all the configuration data for the cluster.
+The kube-scheduler is very important to ensuring pods-to-nodes scheduling and has an attack surface albeit less material than kube-apiserver and etcd.
+The kubelet and kube-proxy are vital for communication to the kube-apiserver and in a default Kubernetes installation. Kubelet runs unsecured — leaving it vulnerable for an attack. Kubelet has also been shown to be used as a pivot point to attack the kube-apiserver.
+The kube-controller-manager and cloud-controller-manager have a smaller attack surface but can also be abused.
+
+2. Provide a profile of potential attackers, including their goals and methods
+Attackers may be interested in abusing cluster resources to run crypto mining, this is a very common attack that we have seen many times.
+Attackers may be interested in financial, user, or personally identifiable information (PII) data being processed.
+Attackers may be interested in intellectual property, trade secrets, or even critical infrastructure.
+Attackers may be interested in supply chain tampering components that could affect other organizations upstream.
+
+
+3. Given Kubernetes' system components and the STRIDE framework, identify potential threats that may arise.
+I provide an example for only three aspects of STRIDE. Notice how we provide a specific example using the threat fundamentals we learned.
+
+Spoofing: Kubernetes ships with insecure defaults, for example, all pods have CAP_NET_RAW permissions. This allows all pods to open raw sockets and inject malicious packets into the Kubernetes container network, which may lead to spoofing.
+Repudiation: Kubernetes natively doesn't allow certificate revocation, which may lead to repudiation if a certificate cannot be revoked when necessary.
+Denial of Service: Kubernetes ships without an upper limit for setting the memory footprint. This may lead to a denial of service which could result in exhausting resources needed to run the pod.
+
+With this more elaborate exercise, we identified 3 concrete threats on Kubernetes using the STRIDE model.
+
+Review
+Through this more complex exercise, we evaluated the threat model for Kubernetes at a high level. Although all responses will be marked as "correct", I encourage you to compare your response with the solution and think about the differences.
+
+Kubernetes is a large and complex system that is not trivial to threat-model, even for very experienced security architects and senior engineers. Don't worry if it doesn't make sense right away. We will continue to learn and unpack each component throughout the course.
+
+When evaluating this environment against STRIDE it's important to think about the implications of the foundational design. For example, if you are not familiar enough with the core tenets of Kubernetes in order to evaluate threats, I would encourage you to:
+
+Rewatch the earlier courses
+Read official Kubernetes security documentation
+Examine the CIS Kubernetes Benchmark (provided courtesy of the Center for Internet Security) in the starter repo
+If you found this exercise more difficult than expected, I would encourage you to read the CIS Kubernetes benchmarks in the starter exercise repo, as it does a wonderful job outlining the system security weaknesses very thoroughly to get you orientated to evaluating risk on Kubernetes.
+While there is no "single right answer", the goal is to being understanding how to threat model in a systemic and methodical way.
+
+
+
 
