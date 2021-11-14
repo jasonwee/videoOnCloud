@@ -611,4 +611,65 @@ While there is no "single right answer", the goal is to being understanding how 
 
 
 
+2.18 Additional Consideration - Enterprise Considerations
+---------------------------------------
+In an enterprise setting, image scanning and vetting can be achieved at scale. Here are the steps:
+
+Build image: Once an image is built, it’s checked into a version control repository like GitHub.
+Commit image: An incoming webhook captures the commit and redirects it to a scanning service run by a CI/CD like Jenkins.
+CI/CD Verify: Jenkins runs unit tests to determine if the image should continue to deploy.
+Test result: An image that’s OK deploys. An image with a defect gets rejected for deployment and get sent for rework.
+The cycle repeats itself until the image passes the unit tests.
+
+New Terms
+CI/CD stands for Continuous Integration and Continuous Deployment. It is a technique to build and deploy software upon commit to a source control repo.
+Additional Resources
+For further reading on enterprise topics, please consider the following resources:
+
+Adding Image Security Scanning to a CI/CD pipeline
+Books:
+
+Nikhil Pathania | Learning Continuous Integration with Jenkins: A beginner's guide to implementing Continuous Integration and Continuous Delivery using Jenkins
+
+
+
+2.19 Glossary
+---------------------------------------
+Glossary
+Threat modeling is a systemic technique to evaluate security risks and threats that could affect a system.
+The shifting-left principle refers to incorporating threat modeling and security verifications into the early stages of the software development process once the spec is defined.
+STRIDE is a systematic and intentional threat analysis framework using a mnemonic that allows you to consider the primary ways a system can be affected by an attack.
+Spoofing: This is the act of posing as someone or something for malicious intent, such as disguising the identity of a system administrator. It affects authenticity.
+Tampering: This is modifying a system for malicious intent, such as modifying system files. It affects integrity.
+Repudiation: This is the act of denying doing something, such as denying the download of data from a database. It affects non-repudiation.
+Information Disclosure: This refers to disclosing private or sensitive information, such as dumping stolen credentials on Pastebin. It affects confidentiality.
+Denial of Service: This refers to affecting the availability of a system, such as overwhelming a system with too much traffic that is not rate-limited. It affects availability.
+Elevation of Privilege: This refers to escalating your privilege to affect authorization levels.
+Authenticity: This is affected when a non-genuine user poses as a legitimate user. This can be protected with proper authentication.
+Integrity: This is affected when a user maliciously tampers with data or a system.
+Non-repudiation: This is affected when a change is made that cannot be associated with a known legitimate action. It is the act of denying something happened.
+Confidentiality: This is affected when sensitive data is exposed. Data can be exposed while in motion on the network or at rest due to lack of or poor encryption.
+Availability: This is affected by system uptime. This can happen as a result of resource starvation during a denial of service attack or lack of rate-limiting on an API.
+Authorization: This is affected when the access level (permission) within a system is abused or exceeded.
+Tarball: A tarball or tarfile is the name of a group or archive of files that are bundled together using the tar command. They usually have the .tar file extension. If the tar file is compressed using the gzip command, the tarball will end with .tar. Sometimes ZIP files are also called tarballs.
+Docker daemon is the engine that processes commands from the client to manage Docker containers.
+Docker client is how you interact with the Docker daemon through a command-line interface.
+Docker host is the machine on which docker is installed that hosts the containers.
+Docker Hub Registry is where docker images are stored.
+Sidecar container: A container that runs alongside the primary container in a pod. Sidecars are often used for logging or security use cases.
+Namespace: A Linux native control that isolates or partitions resources such that one set of processes cannot see the resources of another set of processes.
+Isolation: The state of being separated, both in a physical and virtual sense. On the Linux operating system, isolation allows each process to have its own isolated world to run processes.
+CI/CD stands for Continuous Integration and Continuous Deployment. It is a technique to build and deploy software upon commit to a source control repo.
+
+
+
+2.20 Lesson Review
+---------------------------------------
+In this lesson, we've covered the following topics:
+
+We learned about security and STRIDE fundamentals to establish core terminology
+We evaluated the Docker high-level system abstraction and apply the STRIDE methodology to Docker’s attack surface
+We evaluated the Kubernetes high-level system abstraction and apply the STRIDE methodology to Kubernetes’ attack surface
+We evaluated enterprise considerations for how to scale and automate threat modeling as part of an enterprise SDLC
+
 
