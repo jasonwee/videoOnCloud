@@ -1,0 +1,23 @@
+date start : 15 november 2021
+
+
+3.1 Introduction
+---------------------------------------
+In this lesson, we will focus on verifying the security of a Docker configuration with an open-source tool called Docker-bench, as you would during the build phase of the SDLC. Once verified, we will deploy the image to Docker Hub.
+
+Note: In this lesson, we will test the list of possible threats we established with STRIDE and confirm which threats actually exist by running Docker-bench.
+
+
+
+3.2 Lesson Overview
+---------------------------------------
+In this lesson, we will cover the following topics:
+
+Refresh on Docker attack surfaces from the previous lesson
+Evaluate Docker process isolation
+Inspect an image with Docker-bench to evaluate attack surface hands-on, identify threats and compare them to our threat model
+Sign the image using Docker content trust and commit the hardened Docker image to Docker Hub
+
+
+
+
