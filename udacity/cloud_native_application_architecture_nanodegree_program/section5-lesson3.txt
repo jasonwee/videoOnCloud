@@ -20,4 +20,19 @@ Sign the image using Docker content trust and commit the hardened Docker image t
 
 
 
+3.3 Docker Attack Surface
+---------------------------------------
+Refresher on Docker Attack Surface
+What can go wrong? Let's examine this question for the three top-level groups - Docker client, Docker host, and Docker registry.
+
+Docker client: We are most concerned with the compromise of the Docker desktop running on the administrator's machine, abuse of the client's authorization to make privileged changes, and how the Dockerfile is built.
+Docker host also has a large attack surface - we are most concerned with namespace isolation to prevent container escape attacks, insecure defaults, and misconfiguration.
+Docker registry likely has the largest attack surface with the most external implications. Here we are concerned with image security, Open-Source Software (OSS) security, and Docker registry security.
+Next, let’s take review each top concern (client compromise, isolation tampering, and image security) in more detail.
+
+Further Reading
+Research findings from Google's Project Zero security research team.
+
+
+
 
