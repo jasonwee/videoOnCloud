@@ -35,4 +35,24 @@ Research findings from Google's Project Zero security research team.
 
 
 
+3.4 Docker Client - Compromise
+---------------------------------------
+Docker client security is vital because the Docker client is how the user interacts with the Docker host.
+
+What Could Happen with Client Compromise
+If the Docker client is compromised, you should assume the attacker has privileged access to the host. At this point, the attacker controls the client and has the ability to control the host using the administrator's privilege access. All the built-in security controls are bypassed.
+
+How the Client Can Be Abused
+The machine running the Docker client is often an engineer's machine which often runs in a privileged context. This machine may be compromised via malware which may allow an attacker to control the machine remotely.
+
+How to Protect against Abuse
+Hardening the machine running the client (macOS, Windows, or Linux) is a good practice. However, that's beyond the scope of this course. The Center for Internet Security (CIS) provides hardening guides for all popular operating systems. You should collect and analyze Docker client logs.
+Run the latest patched version of the Docker client.
+Run anti-virus (AV) and endpoint detection and response (EDR) software to detect malicious processes and respond.
+Avoid using the --privileged flag when running commands, as this flag makes the container privileged, opening the door to container escape.
+New Terms
+Endpoint detection and response (EDR) software: An agent that monitors for and alerts to suspicious processes and file system changes. Commercial examples include Crowdstrike Falcon and Carbon Black Response.
+
+
+
 
