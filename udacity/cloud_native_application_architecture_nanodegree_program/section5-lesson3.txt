@@ -55,4 +55,36 @@ Endpoint detection and response (EDR) software: An agent that monitors for and a
 
 
 
+3.5 Docker HOst - Isolation Tampering
+---------------------------------------
+What Is Isolation?
+Let's cover what isolation is on the Linux system. Isolation is the state of being separated, both in a physical and virtual sense that we can easily apply to Docker. Let's look at a simple analogy.
+
+An apartment building has a shared common hallway, but each apartment has its own isolated door. The shared common areas in the apartment (i.e. the hallway) are like the kernel and each apartment is like a container. The isolation for each container is provided by namespaces, which are like the door to your apartment.
+
+Two key things to keep in mind:
+
+In a container, you rely on the kernel for all runtime operations.
+Isolation allows each process to have its own isolated world to run processes.
+How Namespace Isolation Works in Docker
+Containers use a single shared kernel on the host. Unlike VMs, containers do not have their own kernel. Hence isolation is very vital to limit container processes.
+Namespaces are what allows for isolation of process ID (PID).
+Hence container “udacity” running PID 900 cannot directly see container “student” running PID 1000, or any other PIDs on the host system.
+To allow isolation, namespaces provide doors for each container to communicate to the host.
+Container Breakout
+The term “Container breakout” is used when isolation checks have been bypassed. To prevent this, you can restrict the use of --privileged flags, which increase the risk of container breakout.
+
+How to Protect Docker Host
+Avoid using --privileged flag.
+Give containers individual “capabilities” they need. Reference the Docker documentation for specific capabilities that can be added.
+Use SELinux in enforcing mode.
+New Terms
+Container breakout/escape: A situation where a Docker container has bypassed isolation checks, accessing sensitive information from the host or gaining additional privileges.
+Isolation: The state of being separated, both in a physical and virtual sense. On the Linux operating system, isolation allows each process to have its own isolated world to run processes as enforced by the kernel using namespaces.
+Kernel: The orchestrator for all processes on a computer. The kernel has complete control over everything on the machine. Security and isolation of processes are enforced by the kernel.
+Process ID (PID): An identifier assigned by the kernel to each created process to uniquely identify an active process.
+Namespace: A Linux native control that isolates or partitions resources such that one set of processes cannot see the resources of another set of processes. Namespaces are what allows for isolation of process ID (PID).
+
+
+
 
