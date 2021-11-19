@@ -87,4 +87,30 @@ Namespace: A Linux native control that isolates or partitions resources such tha
 
 
 
+3.6 Docker Registry - Image Security
+---------------------------------------
+A Docker image is a collection of layers of software manifests and tarballs that together form a single container unit. Each layer consists of manifests and libraries that could have vulnerabilities. The image itself must also be trusted, signed, and verified using the Docker content trust (DCT), which we will talk about in-depth later in this lesson.
+
+How Image Security Can Be Abused
+Images may inadvertently contain authentication secrets. If the image is exposed, the system may be compromised.
+An attacker may introduce a spoofed image to the Docker Hub and fool users to use that image. This happens frequently. Usually, the attacker conceals the malicious elements by using common names to trick others to use them.
+Dependencies used by the image may be tampered with or have vulnerabilities.
+How Image Security Can Be Protected
+Image hardening: Be sure to handle secrets properly. Also, minimize the use of third-party software and use verifiable ones to avoid introducing malicious software to the container environment.
+Image signing with Docker content trust
+Verifying public images by comparing the image digest sha256 hash with one provided by the image repository.
+New Terms
+Tarball: A tarball or tarfile is the name of a group or archive of files that are bundled together using the tar command. They usually have the .tar file extension. If the tar file is compressed using the gzip command, the tarball will end with .tar. Sometimes ZIP files are also called tarballs.
+Docker content trust (DCT) gives you the ability to verify the integrity of both the publisher and the images they provide. It allows publishers to digitally sign their collections with a cryptographically designed key, while users get to use the key to verify the integrity of the content they use. DCT serves as an anti-spoofing control.
+Image digest: A cryptographic representation of the Docker image as a string of characters. An image digest or sha256 hash represents the image you are using. Using the digest as the identifier, Docker will not only pull the image with that digest, but also calculate the sha256 hash of what you downloaded, and verify it against what you specified. Using and verifying image digests ensure the integrity of the image you are running. It also mitigates man-in-the-middle attacks.
+Sha256: The algorithm used to generate a cryptographic representation of the Docker image as a string of characters, also known as the image digest.
+Man in the middle: A type of security attack, where an attacker intercepts communication between two parties, for example, intercepting communication between the Docker client/daemon and Docker Hub may allow an attacker to modify the image. Image signing mitigates this risk.
+Further Reading
+How to Man in the Middle Docker Container Traffic
+Books:
+
+Jean-Philippe Aumasson | A Practical Introduction to Modern Encryption
+
+
+
 
