@@ -113,4 +113,424 @@ Jean-Philippe Aumasson | A Practical Introduction to Modern Encryption
 
 
 
+3.7 Quiz: Threat model Docker Properties in-Depth
+---------------------------------------
+q1
+container breakout
+
+
+q2
+kernel
+
+
+q3
+2,3,4
+
+
+q4
+1,3,4
+
+
+q5
+1,2,3
+
+
+q6
+root
+
+
+
+3.8 CIS Docker Benchmark
+---------------------------------------
+The Docker CIS Benchmark establishes an authoritative hardening guide for Docker across the core attack surfaces - Docker client, host, and registry. Changes can be applied to the configuration to harden the attack surface.
+
+CIS Docker Benchmark Defines Three Surfaces to Evaluate
+Docker Daemon
+Docker Host
+Docker Engine Enterprise
+CIS defines two profile levels (1 and 2) for these three surfaces based on the required security. The descriptions of the levels in the video are directly cited from the CIS Docker benchmark document, provided courtesy of the Center for Internet Security.
+
+Things to Note:
+The CIS standard is really large (nearly 300 pages) and can be difficult to approach. Very few companies implement every single control to the standard.
+You should use a tool like Docker-bench to audit which controls are failing, then evaluate and prioritize which controls matter most from your threat model based on STRIDE. This should not be prescriptive.
+New Terms
+CIS Profile: A pre-defined set of security checks for security controls associated with a profile level. CIS stands for Center for Internet Security, a non-profit organization that focuses on the creation of security standards.
+Security Control: A technical or process mechanism to affect the security of a system. Hardening access to the Docker client is an example of security control.
+Further Reading
+For further reading on Docker CIS Benchmark, please consider the following resources:
+
+Docker CIS Benchmark: Best Practices in Brief
+
+
+
+3.9 Evaluating Docker with CIS Benchmark and Docer-bench
+---------------------------------------
+During the Build phase of the software development life cycle (shown in the image above), as you work to develop an image in your Docker container, you need to test, verify and harden it. This is where Docker-bench comes in.
+
+What Is Docker-bench?
+Docker-bench is a Go application that checks whether Docker is deployed securely by running the checks documented in the CIS Docker Benchmark.
+
+Docker-bench is a detection tool, not an enforcement tool. Docker-bench itself provides only feedback on whether the controls are in place. All hardening needs to be done manually.
+
+Tests are configured with YAML files, making this tool easy to update as test specifications evolve.
+
+Note: Docker daemon is meant to run on Linux, hence some of the Docker-bench audit checks won't work properly unless you are running it on a Linux operating system. Refer to the Nanodegree Prerequisites page in the Introduction lesson for how to set up a Linux VM.
+
+Docker-bench Schema
+- id: < test id>
+  description: < what to test>
+  audit: < command to test>
+  tests:
+     test_items: <what to test for>
+     - flag:
+       set: <true | false>
+  remediation: <how to fix>
+  scored: <true | false>
+
+New Terms
+Docker-bench: A Go application that checks whether Docker is deployed securely by running the checks documented in the CIS Docker Benchmark. (Source: Docker-bench README.md licensed under Apache License Version 2.0)
+Demo Part 1 - Setting up and Building OpenSUSE Docker Image
+
+
+In this demo, we will set up and build an OpenSUSE Docker Image.
+
+Important Steps to Follow:
+Make sure that GO runtime is properly installed. Check the GO installation with go env
+Pull in the latest Docker OpenSUSE leap image with the following code:
+docker pull opensuse/leap:latest
+Check and make sure that you have the Docker image locally:
+docker images | grep opensuse
+Pull in the exercise starter repository from GitHub:
+git clone git@github.com:udacity/nd064-c3-microservices-security-exercises.git
+
+Navigate to the exercises directory for this lesson:
+cd nd064-c3-microservices-security-exercises/lesson-3-docker-attack-surface-analysis-and-hardening/exercises/starter
+To access all the help commands for docker build and review the security-relevant flags, you can use
+docker build --help
+Here are some flags that are worth highlighting:
+--no-cache: Whenever you build an image, you should run no-cache to make sure you fetch. all the latest dependencies from Docker Hub and other locations, and not using anything local. This is important from a security perspective, because the cache may contain a legacy code or library that may be vulnerable.
+
+-m or --memory megabytes: these flags allow us to set a memory limit for the image. When we hardcode a memory amount, that amount cannot be exceeded. This helps prevent the memory amount from being abused by an attacker.
+
+Next, we will build the OpenSUSE image with a memory amount set to 256 megabytes with the no-cache option:
+docker build . -t opensuse/leap:latest -m 256mb --no-cache=true
+
+Demo Part 2 - Evaluating Docker with Docker-bench
+
+In this demo, we utilize Docker-bench to evaluate the Docker installation and local environment.
+
+Important Steps to Follow:
+Clone the Docker-bench repository from GitHub:
+git clone git@github.com:aquasecurity/docker-bench.git
+Because this is a GO application, we need to build this application in order to run it to check our Docker environment. To do so, we first need to cd into the docker-bench repo, then compile this GO application using make and build docker-bench:
+cd  /docker-bench 
+go build -o docker-bench 
+Next, we will run Docker-bench for the first time and look at some of the help files:
+./docker-bench --help 
+Here let's pay attention to some of the flags:
+--benchmark string: This is the flag we need to specify a particular version of the CIS Benchmark. You can set the string to, for example, CIS 1.2 or 1.1 if you need to access an earlier version of the benchmark.
+
+--version string: This flag specifies a specific version of Docker. This application automatically picks up the latest version of Docker. But if you want to run Docker-bench against an earlier version of Docker, you can specify this string accordingly.
+
+Next, we will run Docker-bench against our Docker environment and output the text to a file. Running Docker-bench to a file makes it easier to review the result afterward.
+./docker-bench --include-test-output >docker-bench.txt 
+Concatenate the docker-bench.txt file and look for the lines where there is a failure:
+cat docker-bench.txt | grep FAIL
+This command returns the checks that failed. In the next demo, we will look at these checks more closely, pick one of the failed checks, harden that check, then rerun Docker-bench to show that the failed check has been fixed.
+
+Note: The total number of failed findings you get after running Docker-bench may be different from the number shown in the demo, due to the specific setup of your local environment.
+
+
+
+3.10 Quiz: Running Docker-bench to Harden Docker
+---------------------------------------
+q1
+1,2,3
+
+q2
+1,2,3
+
+q3
+build
+
+
+
+3.11 Exercise: Running Docker-bench to Evaluate Docker Installation
+---------------------------------------
+Exercise: Running Docker-bench to Evaluate Docker Installation
+
+
+Building on our previous lesson where we examined the Docker threat model, in this exercise, you will use Docker-bench to evaluate the actual attack surface hands-on!
+
+Exercise Prerequisites:
+Clone the exercises starter repo
+You will use the provided Vagrant machine to set up your environment
+You will use the provided Dockerfile in the lesson three exercise starter code as a template You will update, build, scan and harden the image in the exercise
+You must have GO lang installed on your docker host machine. Install GO, then clone this repository as follows. Make sure your $GOPATH is set
+You must have docker installed on your host machine. Install Docker
+Clone repo git@github.com:aquasecurity/docker-bench.git
+
+Exercise Steps:
+Navigate to the lesson 3 starter code and open the Dockerfile in a code editor. Inspect the content. It should be as follows:
+
+# syntax=docker/Dockerfile:1.0-experimental
+
+#define base image; replace with your image location once hardened
+FROM opensuse/leap:latest
+
+#define maintainer 
+LABEL maintainer="nick.reva@snap.com"
+
+#define version
+LABEL version="V1"
+
+# create a directory to work in
+RUN mkdir udacity \
+    && cd udacity
+
+#install zypper 
+RUN zypper refs && zypper refresh
+
+#add local user
+USER $SEC_USER
+
+From the lesson 3 directory, open the CIS_Docker_Benchmark_v1.2.0.pdf from the exercise repo. Leave it open as you will likely reference it in the exercise.
+Fetch the latest OpenSUSE leap image and ensure it's in your local docker repo.
+Build the Docker image as opensuse/hardened-v1.0 without cache. We will later evaluate the image.
+Startup a machine via Vagrant via vagrant up. SSH into the vagrant machine via vagrant ssh .
+Install Docker client and daemon by running the shell script installdocker.sh.
+From the Vagrant machine, clone the official Docker-bench repo:
+Navigate to the /docker-bench folder and run a docker-bench check for the first time
+You can see all supported options ./docker-bench --help
+Run all checks ./docker-bench
+Run checks for specified Docker version ./docker-bench --version 18.09
+Run checks for specified CIS Benchmark ./docker-bench --benchmark cis-1.2
+
+Inspect the failed Docker-bench findings only.
+Think about the Docker threat modeling exercise in the previous lesson on STRIDE. You should prioritize which findings matter most to you based on the threat model. In the real world, this is not prescriptive. Review the Docker-bench findings to identify and document in the fields below three weaknesses you would like to remediate.
+Tip: If you get stuck, reference the demos on the Evaluating Docker with CIS Benchmark and Docker-bench page, official Docker documentation, or the Docker CIS Benchmark PDF in the exercise repo.
+
+
+q1
+file ownership
+file permission
+ensure limit for hardware resources are set.
+
+
+
+3.12 Solution: Running Docker-bench to Evaluate Docker Installation
+---------------------------------------
+Solution: Running Docker-bench to Harden Docker
+
+
+Building on our previous lesson where we examined the Docker threat model, in this exercise, you will use Docker-bench to evaluate the actual attack surface hands-on!
+
+Exercise Tasks:
+
+Navigate to the lesson 3 starter code and open the Dockerfile in a code editor.
+From the lesson 3 directory, open the CIS_Docker_Benchmark_v1.2.0.pdf from the exercise repo. Leave it open as you will likely reference it in the exercise.
+Run docker pull opensuse/leap:latest to fetch the latest OpenSUSE leap image and ensures it's in your local docker repo via docker images | grep opensuse.
+
+nick.reva@nreva-mbp starter % docker pull opensuse/leap:latest
+latest: Pulling from opensuse/leap
+Digest: sha256:b41ade84e893461b2fdd1ae631bfe39d95f4cdcaa0b6d43ba56608d200d22446
+Status: Image is up to date for opensuse/leap:latest
+docker.io/opensuse/leap:latest
+nick.reva@nreva-mbp starter % docker images | grep opensuse
+opensuse/hardened-v1.0            latest              65f78964649e   13 hours ago    183MB
+opensuse/leap                     latest              9eb32c8d07b4   2 days ago      106MB
+opensuse/leap                     <none>              963be48f5f20   5 weeks ago     106MB<pre><code>
+
+Build the Docker image as opensuse/hardened-v1.0 without cache. Later we will evaluate the image.
+docker build -t opensuse/hardened-v1.0 . --no-cache=true
+CD to the folder and startup a machine via Vagrant via vagrant up. SSH into the Vagrant machine via vagrant ssh
+Install Docker client and daemon by running the shell script ./installdocker.sh
+From the Vagrant machine, clone the official Docker-bench repo
+Inspect the Docker-bench findings
+
+% docker-bench % ./docker-bench --version 18.09
+
+== Summary ==
+19 checks PASS
+51 checks FAIL
+43 checks WARN
+10 checks INFO
+
+grep for FAIL to inspect failed only.
+
+% ./docker-bench --version 18.09 | grep FAIL
+[FAIL] 1.2.1 Ensure a separate partition for containers has been created (Scored)
+[FAIL] 1.2.3 Ensure auditing is configured for the docker daemon (Scored)
+[FAIL] 1.2.4 Ensure auditing is configured for Docker files and directories - /var/lib/docker (Scored)
+[FAIL] 1.2.5 Ensure auditing is configured for Docker files and directories - /etc/docker (Scored)
+[FAIL] 1.2.6 Ensure auditing is configured for Docker files and directories - docker.service (Scored)
+[FAIL] 1.2.7 Ensure auditing is configured for Docker files and directories - docker.socket (Scored)
+[FAIL] 1.2.8 Ensure auditing is configured for Docker files and directories - /etc/default/docker (Scored)
+[FAIL] 1.2.9 Ensure auditing is configured for Docker files and directories - /etc/sysconfig/docker (Scored)
+[FAIL] 1.2.10 Ensure auditing is configured for Docker files and directories - /etc/docker/daemon.json (Scored)
+[FAIL] 1.2.11 Ensure auditing is configured for Docker files and directories - /usr/bin/docker-containerd (Scored)
+[FAIL] 1.2.12 Ensure auditing is configured for Docker files and directories - /usr/sbin/runc (Scored)
+[FAIL] 2.1 Ensure network traffic is restricted between containers on the default bridge (Scored)
+[FAIL] 2.2.b Ensure the logging level is set to 'info' (Scored)
+[FAIL] 2.6.a Ensure TLS authentication for Docker daemon is configured (Scored)
+[FAIL] 2.6.b Ensure TLS authentication for Docker daemon is configured (Scored)
+[FAIL] 2.8 Enable user namespace support (Scored)
+[FAIL] 2.11.a Ensure that authorization for Docker client commands is enabled (Scored)
+[FAIL] 2.12 Ensure centralized and remote logging is configured (Scored)
+[FAIL] 2.13.a Ensure live restore is Enabled (Scored)
+[FAIL] 2.13.b Ensure live restore is Enabled (Scored)
+[FAIL] 2.14.a Ensure Userland Proxy is Disabled (Scored)
+[FAIL] 2.14.b Disable Userland Proxy (Scored)
+[FAIL] 2.17.a Ensure containers are restricted from acquiring new privileges (Scored)
+[FAIL] 2.17.b Ensure containers are restricted from acquiring new privileges (Scored)
+[FAIL] 3.1 Ensure that docker.service file ownership is set to root:root (Scored)
+[FAIL] 3.2 Ensure that docker.service file permissions are appropriately set (Scored)
+[FAIL] 3.3 Ensure that docker.socket file ownership is set to root:root (Scored)
+[FAIL] 3.4 Ensure that docker.socket file permissions are set to 644 or more restrictive (Scored)
+[FAIL] 3.5 Ensure that /etc/docker directory ownership is set to root:root (Scored)
+[FAIL] 3.6 Ensure that /etc/docker directory permissions are set to 755 or more restrictive (Scored)
+[FAIL] 3.7 Ensure that registry certificate file ownership is set to root:root (Scored)
+[FAIL] 3.8 Ensure that registry certificate file permissions are set to 444 or more restrictive (Scored)
+[FAIL] 3.15 Ensure that Docker socket file ownership is set to root:docker (Scored)
+[FAIL] 3.16 Ensure that Docker socket file permissions are set to 660 or more restrictive (Scored)
+[FAIL] 3.17 Ensure that daemon.json file ownership is set to root:root (Scored)
+[FAIL] 3.18 Ensure that daemon.json file permissions are set to 644 or more restrictive (Scored)
+[FAIL] 3.19 Ensure that /etc/default/docker file ownership is set to root:root (Scored)
+[FAIL] 3.20 Ensure that the /etc/sysconfig/docker file ownership is set to root:root (Scored)
+[FAIL] 3.21 Ensure that /etc/sysconfig/docker file permissions are set to 644 or more restrictive (Scored)
+[FAIL] 3.22 Ensure that /etc/default/docker file permissions are set to 644 or more restrictive (Scored)
+[FAIL] 4.1 Ensure that a user for the container has been created (Scored)
+[FAIL] 4.5 Ensure Content trust for Docker is Enabled (Scored)
+[FAIL] 5.4 Ensure that privileged containers are not used (Scored)
+[FAIL] 5.10 Ensure that the memory usage for container is limited (Scored)
+[FAIL] 5.11 Ensure that CPU priority is set appropriately on container (Scored)
+[FAIL] 5.12 Ensure that the container's root filesystem is mounted as read only (Scored)
+[FAIL] 5.14 Ensure that the 'on-failure' container restart policy is set to '5' (Scored)
+[FAIL] 5.22 Ensure that docker exec commands are not used with the privileged option (Scored)
+[FAIL] 5.23 Ensure that docker exec commands are not used with the user=root option (Not Scored)
+[FAIL] 5.25 Ensure that the container is restricted from acquiring additional privileges (Scored)
+[FAIL] 5.28 Ensure that the PIDs cgroup limit is used (Scored)
+51 checks FAIL
+
+Review the Docker-bench findings to identify and document in the fields below three weaknesses you would like to remediate.
+I have chosen three findings to evaluate and remediate. Let's take a closer look at these three.
+
+[FAIL] 5.10 Ensure that the memory usage for container is limited (Scored)
+[FAIL] 5.14 Ensure that the 'on-failure' container restart policy is set to '5' (Scored)
+[FAIL] 5.22 Ensure that docker exec commands are not used with the privileged option (Scored)
+
+9.a [FAIL] 5.10 Ensure that the memory usage for container is limited (Scored)
+
+According to the CIS Docker Benchmark (provided courtesy of the Center for Internet Security),
+
+By default, a container can use all of the memory on the host. You can use memory limit mechanisms to prevent a denial of service, i.e. one container consumes all of the host’s resources and the other containers on the same host are therefore not able to function. Having no limit on memory usage can lead to issues where one container can easily make the whole system unstable and as a result unusable.
+
+Setting a memory limit prevents a container escape and protects the Docker daemon. A container escape is a situation where a Docker container has bypassed isolation checks, accessing sensitive information from the host or gaining additional privileges.
+
+9.b [FAIL] 5.14 Ensure that the 'on-failure' container restart policy is set to '5' (Scored)
+
+According to the CIS Docker Benchmark (provided courtesy of the Center for Internet Security),
+
+If you indefinitely keep trying to start the container, it could possibly lead to a denial of service on the host. It could be an easy way to do a distributed denial of service attack especially if you have many containers on the same host. Additionally, ignoring the exit status of the container and always attempting to restart the container can lead to non-investigation of the root cause behind containers getting terminated. If a container gets terminated, you should investigate the reason behind it instead of just attempting to restart it indefinitely. You should use the on-failure restart policy to limit the number of container restarts to a maximum of 5 attempts.
+
+Setting a restart policy limits protects the host from resource starvation. This protects the Docker daemon.
+
+9.c [FAIL] 5.22 Ensure that docker exec commands are not used with the privileged option (Scored)
+
+According to the CIS Docker Benchmark (provided courtesy of the Center for Internet Security),
+
+Using the --privileged option in docker exec commands gives extended Linux capabilities to the command. This could potentially be an insecure practice, particularly when you are running containers with reduced capabilities or with enhanced restrictions.
+
+Disallowing the usage of the privileged command is a very strong control that reduces the risk of a container escape and protects the Docker daemon.
+
+With this hands-on exercise, we identified 3 concrete threats with Docker-bench. In the next exercise, you will harden the Docker image and commit it to a private registry! Later, you will use this image to deploy your own hardened Kubernetes cluster.
+
+The material will continue to get more difficult, hang in there and keep going! If you get stuck on anything, consider coming back to the lesson, checking out the official Docker security documentation and Sean Kane's book Docker: Up and Running.
+
+New Terms
+Container breakout/escape: A situation where a Docker container has bypassed isolation checks, accessing sensitive information from the host or gaining additional privileges.
+
+
+
+3.13 Harden Docker via Docker-bench
+---------------------------------------
+Building on our previous exercise where we ran Docker-bench and investigated the findings, let’s harden the attack surface.
+
+The actual hardening steps will vary depending on the specific attack surface you choose to harden, let’s go through one example below.
+
+Demo: Remediating Findings from Docker-bench
+
+In this demo, we will remediate one sample failed finding identified by Docker-bench and re-run Docker-bench to confirm remediation.
+
+Important Steps to Follow:
+Concatenate the docker-bench.txt file and look at all the failed findings based on the previous evaluation we performed:
+
+cat docker-bench.txt | grep FAIL
+There are quite a lot of failed findings, and we cannot harden all of them. The one we pick is related to Docker Content Trust (DCT), something we will implement later in this lesson. This is finding 4.5.
+Let's examine this finding in the Docker CIS Benchmark PDF. Reading about finding 4.5, you will see that in order to digitally sign the image, we have to have DCT enabled. Later in this lesson, we will implement the full setup for that.
+According to the Audit section of finding 4.5, we can execute the following command in the terminal to check the DCT setting:
+
+echo $DOCKER_CONTENT_TRUST
+In the terminal, this command returns nothing, meaning DCT is not enabled. So we'll look at the PDF again. The Remediation section tells us to execute the following command to enable DCT:
+
+export DOCKER_CONTENT_TRUST=1
+Now when we run echo $DOCKER_CONTENT_TRUST in the terminal again, it should return 1.
+Next, we will rerun Docker-bench to verify that this weakness has been hardened. Just for this retest, we will call the .txt file docker-bench2. Let's run Docker-bench again with this command:
+
+./docker-bench --include-test-output >docker_bench2.txt
+
+Finally, we will concatenate the docker-bench2.txt to see the updated list of failed findings:
+
+cat docker-bench2.txt | grep FAIL
+We should see that we should have one finding less than before, and finding 4.5 related to DCT should not be in the failed results anymore.
+
+Note: The total number of failed findings you get after running Docker-bench may be different from the number shown in the demo, due to the specific setup of your local environment.
+
+
+
+3.14 Quiz: Hardening Docker with Docker-bench
+---------------------------------------
+q1
+
+
+q2
+Docker content trust provides the ability to use digital signatures for data sent to and received from remote Docker registries.
+
+
+
+3.15 Commit Image to Docker Hub
+---------------------------------------
+In the deployment phase of the software development life cycle (SDLC), we verify the hardened image with Docker-bench and commit the image to Docker Hub.
+
+In this demo, we will tag the OpenSUSE leap image that we worked on, build it to test it, then push the hardened image to the Docker Hub. Lastly, we will compare the sha256 hash of the local image with that of the image pushed to the Docker Hub to ensure they are the same.
+
+Important Steps to Follow:
+Create a Docker Hub account if you don't have one already.
+Create a private Docker Hub repo if you don't have one already and name it <your_username>/udacitysecurity. Make note of the password you created for the registry. You will need it in the DCT demo.
+Log in to Docker Hub with docker login -u <your_username> for the first time using your username for the Docker Hub website. It will prompt you to enter your password for the Docker Hub website. Note that this is only required once, as the password will be cached. In further logins, you can just use docker login.
+Tag the latest OpenSUSE leap image with the special label hardened-v1.0. You will use your Docker Hub username in this command:
+
+docker tag opensuse/leap:latest <your_username>/udacitysecurity:hardened-v1.0
+
+Next, you will build this Docker image to test that there is no issue with it. You should always build the image before pushing it to Docker Hub. You should also run no-cache to ensure that every dependency that we pull in is the latest and set a memory size to limit blast radius in the event of a container breakout.
+docker build . -t opensuse/leap:latest -m 256mb --no-cache=true
+
+Then you will test your Docker image locally and make sure it works properly prior to pushing it:
+docker run opensuse/leap:latest
+Next, push your Docker image to Docker Hub, replacing <your_username> with your actual username in the following command:
+
+docker push <your_username>/udacitysecurity:hardened-v1.0 
+Verify the sha256 digest for both the local image and the one on Docker Hub to ensure that the image you pushed is the same as the one on Docker Hub. The sha256 is the image digest. Use this command to pull up the sha256 digest for your local image:
+docker images --digests | grep <your_username>/udacitysecurity:hardened-v1.0 
+
+Take note of the first few characters of this string in the terminal.
+
+Next, go to the Docker Hub website. Under the Tags section, find the truncated digest, which shows the first 12 characters of the sha256 of the image you pushed to Docker Hub. You can click on this truncated digest to see the full digest and copy/paste this full digest into the terminal to compare the sha256 strings. This should help you confirm that the strings are exactly the same, meaning that the image you pushed from your computer to Docker Hub is the same image and has not been tampered with.
+New Terms
+Sha256: The algorithm used to generate a cryptographic representation of the Docker image as a string of characters, also known as the image digest.
+Additional Resources
+Consult this quick start guide on how to set up a Docker Hub private repo.
+
+
+
 
