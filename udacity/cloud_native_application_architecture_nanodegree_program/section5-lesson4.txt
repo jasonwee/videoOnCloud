@@ -1,0 +1,122 @@
+date start : 21 november 2021
+
+
+4.1 Introduction
+---------------------------------------
+In the previous lesson, we learned how to harden Docker. In this lesson, we will learn how to harden Kubernetes.
+
+Let's quickly recap the 4 components in the multi-layered model we covered in the STRIDE lesson. The code is running on the Docker container. The Docker container is being orchestrated and managed by the Kubernetes cluster. And if applicable, the cloud provider helps manage parts of the Kubernetes cluster.
+
+In this lesson, we will focus on verifying the security of Kubernetes cluster components, as you would during the build phase of the SDLC. Once verified, we will use a hardened Docker image and Kubernetes environment to deploy a cluster.
+
+Note: In this lesson, we will test the list of possible threats we established with STRIDE and confirm which threats actually exist by running Kube-bench.
+
+
+
+4.2 Lesson Overview
+---------------------------------------
+In this lesson, we will learn about the following topics:
+
+Recap Kubernetes attack surface(s)
+Evaluate Kubernetes attack surface
+Inspect a cluster with Kube-bench to evaluate attack surface hands-on
+Harden attack surface and re-run evaluation with Kube-bench
+Deploy a hardened Kubernetes cluster
+These skills will help you evaluate and harden Kubernetes attack surfaces.
+
+
+
+4.3 Refresh on Kubernetes Security Properties in-Depth
+---------------------------------------
+Why Is Kubernetes Security Important?
+Kubernetes is not secure out of the box. Kubernetes is moving fast, with high complexity.
+
+40,000 Kubernetes clusters were found to be exposed to the Internet due to misconfiguration of the Kubernetes panel.
+Notable companies have suffered legit attacks against their clusters, e.g. a "crypto-jacking" attack.
+What Could Go Wrong with Kubernetes?
+Kubernetes has a deep and diverse attack surface, including the control plane, worker node runtime, and the cloud provider.
+
+Architectural Relationship between Kube-apiserver and Kubelet Workers
+The image below describes what happens to the interaction of a user typing a command in their local kubectl client and that command being routed to the kube-apiserver and traversing to the kubelet.
+
+Bootstrap Relationship of Kubernetes Component Interactions
+The image below describes what happens when a DaemonSet is created and processed through each of the core Kubernetes components.
+
+
+
+4.4 Hardening Kubernetes Control Plane Components
+---------------------------------------
+Given the criticality of the kube-apiserver, you should always run the latest version of Kubernetes binary whenever possible. Kubernetes has had zero-day vulnerabilities, such as the widely publicized man-in-the-middle attack in 2020.
+
+Let's look at how to harden each of the five Kubernetes Control Plane Components.
+
+How to Harden Kube-apiserver?
+Remove Internet access to the master; disable basic authentication and anonymous access to the console.
+Ensure HTTPS is enabled for communication with the console.
+Ensure communication to etcd is only over transport layer security (TLS). This ensures that the connection cannot be intercepted by the man-in-the-middle attack.
+Enable auditing and logs and send those to an external log aggregator.
+Ensure role-based access control (RBAC) is utilized to define need-to-know access control lists. Even in large organizations, few users should have full administrative privileges to the API server control plane.
+
+How to Harden Kube-controller-manager?
+Use service account credentials with RBAC to minimally scope the account permissions to the kube-controller-manager.
+Monitor metrics, e.g. high volume of API requests to the kube-controller-manager and high work queue, for resource starvation.
+
+How to Harden Kube-scheduler?
+Kube-scheduler should only be concerned with scheduling pods and assigning them to nodes and communicating with the API server primarily. So we should disable external connections that are not needed.
+Disable profiling and only turn it on if necessary, as profiling can leak system details that can be exploited by an attacker.
+Consider using AppArmor to apply a kernel module to restrict programs' capabilities. Make sure to consult its documentation and test it as there may be stability implications.
+
+How to Harden Etcd?
+Etcd stores all the configurations of Kubernetes as a key-value store.
+
+Consider enforcing IPtables firewalls to disallow traffic from all nodes except kube-apiserver.
+Ensure self-signed certs are not allowed and only certificate authority issued certs can be used
+Encrypt data at rest, as theft of the disk may lead to all secrets being leaked.
+Follow best practices to ensure etcd availability. For durability and high availability, etcd should be run as a multi-node cluster in production and backed-up.
+
+How to Harden Cloud-ctrl-mgr?
+Cloud-ctrl-mgr is an optional API that's only used when you use a third-party cloud provider to manage part of your Kubernetes environment. We should ensure that any permissions these cloud providers have to your Kubernetes cluster are restricted based on the principle of least privileged.
+
+New Terms
+Zero-day vulnerabilities: Zero-day means that the vulnerability is so severe and critical that developers need to fix it in “zero days”.
+Transport Layer Security (TLS): Protocol to encrypt data in motion.
+Role-Based Access Control (RBAC): The process by which roles are defined into an ACL. We define what ACL each user should have.
+Need to Know: Only providing the required access that is necessary for the job.
+Profiling: A troubleshooting feature to identify performance bottlenecks.
+Key–value store: A key–value store, or key–value database, is a data storage paradigm designed for storing, retrieving, and managing associative arrays, and a data structure more commonly known today as a dictionary or hash table. (Source: Key-value database under the Creative Commons Attribution-ShareAlike License)
+Principle of least privileged: This principle implies that a user of a system should have access that provides minimal privilege for the job.
+
+
+
+4.5 hardening Kubelet and Kube-proxy
+---------------------------------------
+Hardening Kubelet
+Kubelet is the primary node agent running on each node and is used to register the nodes in the Kubernetes cluster through the API server.
+
+In a default Kubernetes installation, the kubelet runs unsecured, without authorization or authentication. That’s a scary reality for such a vital component.
+
+To harden kubelet, you should do the following:
+
+Disable anonymous authentication and read-only ports
+Require explicit authorization using Role-Based Access Control
+Disable access to kubelet except for the API server and the containers; no other service should interact with kubelet
+Enable X509 certificate-based authentication to kubelet issued by a certificate authority
+Rotate certificates periodically via the RotateKubletServerCertificate setting
+Enable node-restriction admission controller to vet all incoming requests and only allow those coming from registered nodes.
+
+Hardening Kube-proxy
+The Kubernetes network proxy runs as a daemon on each node. This daemon proxies UDP, TCP, and SCTP network traffic using a built-in load balancer. (Definitions of UDP, TCP, and SCTP are from Wikipedia, licensed under the Creative Commons Attribution-ShareAlike License).
+
+Kube-proxy can run in two modes: IPtables and IPVS (IP virtual server).
+
+IPtables is the preferred kube-proxy control. IPtables are battle-proven and ubiquitous. However, the management of the rules can be tricky at scale.
+IPVS is preferred if you have a very large cluster with over 1000 nodes. IPVS uses a similar schema to IPtables but is more performant and can handle very large traffic volumes.
+
+New Terms
+Admission controller: A watchdog that intercepts and determines how the kube-apiserver processes requests. Admission controllers improve security by mandating a security baseline across an entire namespace on a cluster. The PodSecurityPolicy admission controller is the best example. It can be used to prevent containers from running as root or make sure the container’s root filesystem is always mounted read-only without exception.
+IPtables: A Linux firewall that enables system administrators to manage incoming and outgoing traffic via a set of configurable rules in a simple table.
+IPVS (IP Virtual Server): A Linux daemon that implements packet filter via net filer, an underlying layer 4 packet filtering technology.
+
+
+
+
