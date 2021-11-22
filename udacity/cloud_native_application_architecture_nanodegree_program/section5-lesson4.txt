@@ -119,4 +119,24 @@ IPVS (IP Virtual Server): A Linux daemon that implements packet filter via net f
 
 
 
+4.6 Quiz: Threat Model Kubernetes Properties in-Depth
+---------------------------------------
+q1
+console
+
+
+q2
+harden kube-apiserver
+harden kube-apiserver
+harden kube-apiserver
+harden kube-apiserver
+harden kube-apiserver
+harden kube-controller-manager
+harden kube-controller-manager
+harden kube-scheduler
+harden kube-scheduler
+harden kube-scheduler
+
+
+
 
