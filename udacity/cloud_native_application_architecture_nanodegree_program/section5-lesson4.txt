@@ -139,4 +139,711 @@ harden kube-scheduler
 
 
 
+4.7 Setting up and Bringing up the RKE Cluster
+---------------------------------------
+Setting up and Bringing up the RKE Cluster
+
+In this lesson, we will use Rancher Kubernetes Engine (RKE), a Kubernetes distribution developed by Rancher that runs within Docker containers and orchestrates containers.
+
+In this demo, we will set up and bring up an RKE cluster. If you run into issues, consult the Rancher requirements and additional troubleshooting tips in the text below the video.
+
+Overview
+In this demo, we will set up the RKE cluster. You need to be in the exercise starter repo for this lesson. We will bring up a 2-node cluster. The first node is a control plane and etcd node. The second node is a worker.
+
+The first node has two roles:
+
+Control plane: With this role, the stateless components are used to deploy Kubernetes will run on these nodes. These components are used to run the API server, scheduler, and controller roles that are often separate roles in mainline Kubernetes. In RKE these have been packaged into the control plane role with RKE.
+Etcd: With this role, the etcd container will be run on these nodes. Etcd keeps the state of your cluster and is one of the most important components and a single source of truth for your cluster.
+The second node is intentionally a simple worker:
+
+With this role, any workloads or pods that are deployed will land on this node.
+For more details on the nodes, consult Rancher's documentation on nodes.
+
+RKE Cluster Setup Prerequisites:
+You need to download the RKE binary and add it to our home path directory in order to bring up the cluster. Below you will find the instructions on how to download and check the RKE binary.
+
+Make sure you have Vagrant or higher installed
+Make sure you have VirtualBox installed
+Install the RKE binary
+
+NOTE: This section is very important! Follow the steps very closely. Otherwise, you won't be able to bring up the RKE cluster.
+
+It's very important that you download the correct RKE binary for your system from this page.
+Check your path via echo $path and pick one path directory to move the binary into, e.g. /usr/local/bin /usr/bin
+Rename and move the binary into your chosen path via mv rke_darwin-amd64 /usr/local/bin/rke. This assumes the downloaded rke_darwin-amd64 binary is in the current directory.
+Note: The binary must be renamed rke (lowercase) precisely. You will not be able to call the binary if the name is not rke.
+
+Mac and Linux: Make sure the binary is executable via $ chmod +x rke
+Windows: The file is already executable.
+Confirm that RKE is now executable by running the following command: rke --version. If it does not return something similar to rke version v1.2.6, you don't have RKE defined correctly in your $path. Go back and review the instructions.
+Note: On macOS, the RKE binary may not be trusted when running for the first time. You need to go to "Security and Privacy Settings" and confirm "Allow Anyway". You will be hard blocked unless you verify and allow the binary.
+
+Finish the setup by installing kubectl and cloning the exercise starter repo.
+
+Make sure you have kubectl binary installed
+Clone the exercise starter repo and cd to the exercises/starter directory
+
+Provision an RKE Cluster
+
+
+1.Create Vagrant Boxes
+
+On your local machine, cd to the exercises/starter/ folder.
+
+Your directory should look like this:
+
+nick.reva@C02YR2A1LVCH starter % ls -ll
+total 32
+-rw-r--r--  1 nick.reva  staff   981 Apr 11 08:38 Vagrantfile
+-rw-r--r--   1 nick.reva  staff  609 Apr 28 08:20 bootstrap.sh
+-rw-r-----  1 nick.reva  staff  5657 Apr 12 09:10 cluster.yml
+-rwxr-xr-x  1 nick.reva  staff   264 Apr 11 07:27 docker-clean.sh
+drwxr-xr-x  4 nick.reva  staff   128 Apr 10 09:41 docs
+Run vagrant up to create Vagrant boxes.
+
+This command creates two Vagrant boxes using the provided Vagrantfile, with the following specifications:
+
+>CPU - 2
+>Memory - 4096 MB
+>OS - OpenSUSE Leap
+>IPs - 192.168.50.101 and 192.168.50.102
+>Docker installed
+>Root access enabled with password `vagrant` (required for RKE setup)
+
+Note: Keep the Vagrantfile and the bootstrap.sh in the same directory.
+
+When bringing up the environment, it's recommended not to use the root user to install Docker and not to have firewall and apparmor enabled. Therefore, the bootstrap.sh script takes care of the following tasks when you run vagrant up: install Docker, disable firewalld, disable apparmor, set up rke user, and copy auth_keys for rke user.
+
+Note for troubleshooting:
+
+It will take around 5-20 mins, depending on how performant your host machine is. If your host machine starts to hang, close unnecessary programs. If it still doesn't work, edit the Vagrantfile to reduce the VM memory to 2048 MB. If it still hangs try 1024 MB, this is the lower limit.
+
+2.Check SSH Key Pair
+
+Verify if ~/.ssh/id_rsa and ~/.ssh/id_rsa.pubfiles exist by running cat ~/.ssh/id_rsa and cat ~/.ssh/id_rsa.pub.
+
+If these are not available, create a new SSH key pair using the following command and press ENTER for each prompt:
+
+ssh-keygen -t rsa -b 2048
+
+This adds a new key pair to your ~/.ssh/id_rsa and ~/.ssh/id_rsa.pub file or create a new file if it doesn't exist.
+
+Copy the SSH key for each Vagrant box. This allows root access to the boxes without you having to type the password every time. These keys allow RKE to be deployed to the nodes when you run rke up.
+
+sudo ssh-copy-id -i ~/.ssh/id_rsa root@192.168.50.101
+sudo ssh-copy-id -i ~/.ssh/id_rsa root@192.168.50.102
+
+Agree to the prompts. The first password is your sudo machine password. The second password is for the key - vagrant. Provide them when prompted.
+
+nick.reva@C02YR2A1LVCH starter % sudo ssh-copy-id  -i ~/.ssh/id_rsa root@192.168.50.102
+Password: `your local machine sudo password`
+/usr/bin/ssh-copy-id: INFO: Source of key(s) to be installed: "/Users/nick.reva/.ssh/id_rsa.pub"
+The authenticity of host '192.168.50.102 (192.168.50.102)' can't be established.
+ECDSA key fingerprint is SHA256:4TQa9lyjZz9UtbEB3MWMgBDe7RB4Fmf0yraNsNRyTKo.
+Are you sure you want to continue connecting (yes/no/[fingerprint])? y   
+Please type 'yes', 'no' or the fingerprint: yes
+/usr/bin/ssh-copy-id: INFO: attempting to log in with the new key(s), to filter out any that are already installed
+/usr/bin/ssh-copy-id: INFO: 1 key(s) remain to be installed -- if you are prompted now it is to install the new keys
+Password: `key  password - vagrant`
+
+Number of key(s) added:        1
+
+Now try logging into the machine, with:   "ssh 'root@192.168.50.102'"
+and check to make sure that only the key(s) you wanted were added.
+
+Very Important:
+
+Make sure you specify the exact key file (e.g. ~/.ssh/id_rsa) via the -i switch you will use in the copy command. If you do not specify the key file to copy from, you may copy the wrong key and be hard blocked on bringing up the RKE cluster. If you get stuck, troubleshoot as follows:
+
+Run ls -la ~/.ssh/id_rsa from your host machine to ensure it shows an accessible SSH key file.
+cat ssh-keygen -y -f ~/.ssh/id_rsa should output the same exact public key that is installed on the nodes. Check by running cat ~.ssh/authorized_keys on each node by ssh'ing locally via ssh root@192.168.50.101 / ssh root@192.168.50.102. Password is vagrant .
+The key must match verbatim, no exceptions. If it does not, regenerate the key with the ssh command above and make sure you defined the key file when copying.
+
+You may need to delete your old ssh known hosts. Otherwise, they will conflict with your current known_hosts file when you try to connect to the recreated nodes. You can do so by running nick.reva@C02YR2A1LVCH starter % vim /Users/nick.reva/.ssh/known_hosts and removing the offending lines in vim with dd and :wq to save.
+
+This is the warning you get when there is a conflict in current known_hosts file.
+
+nick.reva@C02YR2A1LVCH starter % ssh root@192.168.50.102 
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@    WARNING: REMOTE HOST IDENTIFICATION HAS CHANGED!     @
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+IT IS POSSIBLE THAT SOMEONE IS DOING SOMETHING NASTY!
+Someone could be eavesdropping on you right now (man-in-the-middle attack)!
+It is also possible that a host key has just been changed.
+The fingerprint for the ECDSA key sent by the remote host is
+SHA256:4TQa9lyjZz9UtbEB3MWMgBDe7RB4Fmf0yraNsNRyTKo.
+Please contact your system administrator.
+Add correct host key in /Users/nick.reva/.ssh/known_hosts to get rid of this message.
+Offending ECDSA key in /Users/nick.reva/.ssh/known_hosts:5
+ECDSA host key for 192.168.50.102 has changed and you have requested strict checking.
+Host key verification failed.
+
+In the example above, Offending ECDSA key in /Users/nick.reva/.ssh/known_hosts:5tells us that there is a conflict in the 5th line of the known_hosts file. You need to remove this offending line using vim with dd and write, quit with :wq.
+
+If this doesn't work, try to remove the known hosts file via rm -r /Users/nick.reva/.ssh/known_hosts
+
+3.[Optional] Make Sure You Can Access Each Node
+
+You can now ssh into each node via
+
+ssh root@192.168.50.101
+
+ssh root@192.168.50.102
+
+4.Create an RKE Cluster
+
+Once the Vagrant boxes are up and running and the root SSH access is configured, we are ready to call the RKE binary to bootstrap the Kubernetes cluster.
+
+The cluster.yml file contains an RKE configuration that will create a 2-node Kubernetes cluster. The first node is a control plane and etcd node. The second node is a worker.
+
+Once you have all these prerequisites in place, use the following command to bootstrap the Kubernetes cluster:rke up.
+
+Note for troubleshooting:
+
+It will take around 10-20 mins to deploy RKE, depending on how performant your host machine is. If your host machine starts to hang, close unnecessary programs. If it still doesn't work, edit the Vagrantfile to reduce the VM memory to 2048 MB. If it still hangs try 1024 MB, this is the lower limit. If the RKE setup fails, try Step 3 and see if you can ssh into each node, as shown in the demo. If not, try to run rke remove. Also, try the latest RKE release that may have bug fixes. If the cluster doesn't succeed, try to isolate the failing component(s). Lastly, if you are hard blocked, we provided a docker-clean.sh script in the exercise repo. After running rke remove, scp it from your host to each node and run ./docker-clean.sh.
+
+5.Check RKE Cluster Health
+
+Once the installation is complete, a new kube_config_cluster.ymlwill be created in your exercises/starter/ directory. You can now check the health of the Kubernetes cluster from your local host using the kube_config_cluster.yml kubeconfig file:
+
+kubectl --kubeconfig kube_config_cluster.yml get nodes
+
+A healthy example output looks like this:
+
+nick.reva@C02YR2A1LVCH `rke-cluster % kubectl --kubeconfig kube_config_cluster.yml get nodes
+NAME    STATUS   ROLES               AGE     VERSION
+node1   Ready    controlplane,etcd   4m45s   v1.20.4
+node2   Ready    worker              4m45s   v1.20.4
+
+Note for troubleshooting:
+
+If your RKE cluster does not come up as ready, you may be unable to access the cluster, check the health of the pods that RKE deploys for each of the core services (CNI, DNS, Metrics).
+
+A healthy example output looks like this:
+
+nick.reva@C02YR2A1LVCH starter % kubectl --kubeconfig kube_config_cluster.yml get pods -A
+NAMESPACE       NAME                                     READY   STATUS      RESTARTS   AGE
+ingress-nginx   default-http-backend-65dd5949d9-ntn2k    1/1     Running     0          24h
+ingress-nginx   nginx-ingress-controller-klz4p           1/1     Running     0          24h
+kube-system     calico-kube-controllers-84847864d4-k4zrv 1/1     Running     0          24h
+kube-system     calico-node-82whz                        1/1     Running     0          24h
+kube-system     coredns-669b8675c5-5t7kk                 1/1     Running     0          24h
+kube-system     coredns-autoscaler-79599b9dc6-5h46k      1/1     Running     0          24h
+kube-system     metrics-server-6cc9c79d8c-dqh94          1/1     Running     0          24h
+kube-system     rke-coredns-addon-deploy-job-zmcpj       0/1     Completed   0          24h
+kube-system     rke-ingress-controller-deploy-job-4kz6l  0/1     Completed   0          24h
+kube-system     rke-metrics-addon-deploy-job-829xj       0/1     Completed   0          24h
+kube-system     rke-network-plugin-deploy-job-np455      0/1     Completed   0          24h
+
+If some of the pods are not running, you could try running rke up again.
+
+If it still does not work, you will likely need to recreate the cluster and troubleshoot cluster creation.
+
+Follow these steps:
+
+Stop your Vagrant box with vagrant halt node1 and vagrant halt node2
+Check your Vagrant box status via vagrant global-status
+
+nick.reva@C02YR2A1LVCH starter % vagrant global-status
+id       name   provider   state    directory                                                                                                                             
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+9518d7a  node1  virtualbox poweroff /Users/nick.reva/udacity/rke-cluster                                                                                                  
+f425838  node2  virtualbox poweroff /Users/nick.reva/udacity/rke-cluster    
+
+Destroy your problematic Vagrant nodes via vagrant destory <id>
+Recreate the cluster following the provided instructions by Rancher
+You may need to delete your old ssh known hosts (see above)
+
+New Terms
+Rancher Kubernetes Engine (RKE): A Kubernetes distribution developed by Rancher that runs within Docker containers and orchestrates containers.
+Further Reading
+For more information on RKE, consult the Rancher's page on RKE.
+
+
+
+4.8 RKE Kubernetes CIS Benchmark
+---------------------------------------
+The Rancher Benchmark Assessment is a specific implementation of the Kubernetes CIS benchmark for RKE. This benchmark establishes an authoritative hardening guide for Kubernetes across the core attack surfaces. Changes can be applied to the configuration to harden the attack surface.
+
+The Rancher Benchmark Assessment defines five surfaces to evaluate:
+
+Master
+Control plane
+Node
+Etcd
+Policies
+
+The Rancher Benchmark Assessment defines two profile levels:
+
+Permissive: This profile is a flexible level that allows some controls to be skipped or omitted. This level is good for an environment where flexibility is more important than utmost security. It has a set of tests that have been will be skipped as these tests will fail on a default RKE Kubernetes cluster.
+Hardened: This profile is a hardened level and a higher level of security. This profile will not skip any tests, except for the non-applicable tests.
+
+Things to Note:
+
+The CIS Kubernetes Benchmark (provided courtesy of the Center for Internet Security) contains more than 300 pages. Kubernetes is a very complex system to harden. Hence, very few companies implement every single control to the standard.
+Rancher has hardened RKE out-of-the-box and has simplified the CIS benchmark. The Rancher Benchmark Assessment implements the CIS Kubernetes Benchmark as closely as possible.
+Rancher maintains hardening updates in Rancher V.2.5.4 that map to Kubernetes V.1.18.
+At the time of writing, there isn't a one-to-one mapping between the latest release of Kubernetes (V.1.21) and the CIS benchmark (only supported up-to Kubernetes V.1.18). For more details on the Rancher mapping, read here.
+Tools like Kube-bench audit which controls are failing. Then you should evaluate and prioritize which controls matter most from your threat model based on STRIDE. This should not be prescriptive.
+
+Note: In the five surfaces to evaluate, the master is combined with the control plane in RKE. This is an architetural decision made by Rancher.
+
+Kube-bench Overview
+
+What Is Kube-bench?
+Similar to Docker-bench, Kube-bench is a detection tool, not an enforcement tool. It’s designed nearly the same way as Docker-bench.
+
+Kube-bench is a Go application that checks whether Kubernetes is deployed securely by running the checks documented in the CIS Kubernetes Benchmark. In the RKE implementation, Rancher has mapped all the CIS controls against their implementation of Kubernetes to define a special Rancher hardening guide and distribute Kube-bench with a wrapper layer that maps regular CIS to Ranchers implementation. More on that later.
+
+Tests are configured with 5 YAML files, one for each surface. There are YAML files for both the permissive and hardened tests.
+
+Kube-bench itself provides only feedback on whether the controls are in place. All hardening needs to be done manually.
+
+Note: Kube-bench is meant to run on a Linux host operating system. It will be run as a container on the RKE cluster.
+
+During the Build phase of the software development life cycle (shown in the image above), you will build the Kubernetes environment. You need to verify the cluster configuration with a tool called Kube-bench, which allows us to run checks against the Kubernetes deployment and identify checks that are failing. We should then review and remediate those failed checks before we head to the deployment phase.
+
+RKE Kube-bench Schema
+RKE Kube-bench provides a schema that is defined in the YAML configuration file. Here is the structure of the schema:
+
+- id: < test id>
+  text: < what to test>
+  audit: < command to test>
+  tests:
+     test_items: <what to test for>
+     - flag:
+        set: <true | false>
+  remediation: <how to fix>
+  scored: <true | false>
+
+RKE implements the CIS Kubernetes Benchmark as closely as possible. A very detailed control-by-control implementation mapping to RKE Kubernetes is provided via the Rancher Kubernetes Benchmark.
+
+Kube-bench provides five hardening surfaces, one for each primary component.
+
+On node1 we will evaluate it for master, controlplane, etcd, policies
+On node2 we will evaluate it for node only.
+
+New Terms
+Kube-bench: A Go containerized application that runs checks documented in the CIS Kubernetes Benchmark against a Kubernetes cluster and determines if the cluster is deployed securely. With RKE Kubernetes, you use a special mapping of CIS Kubernetes Benchmark to Rancher Kubernetes Benchmark and a special security scan container provided by Rancher.
+
+
+Further Reading
+For details on how Rancher approached CIS Benchmark implementation on RKE, check out the Rancher docs on CIS Scans in Rancher v2.5.
+Consult the Kube-bench README section on how to run Kube-bench in other popular Kubernetes hosted environments (e.g. Azure Kubernetes Service, Elastic Kubernetes Service, Google Kubernetes Engine).
+
+
+
+4.9 Quiz: RKE Kubernetes CIS Benchmark
+---------------------------------------
+q1
+rke-cis-1.6-hardened
+rke-cis-1.5-hardened
+
+q2
+Runs checks using the RKE Kubernetes Benchmark
+Tests are configured with YAML files
+Provides feedback on control gaps
+
+q3
+what to test for
+
+
+
+4.10 Running Kube-bench to Evaluate Rancher RKE Master Node
+---------------------------------------
+Hardening Kubernetes with CIS RKE Benchmark fits into the "build and verify" phase of the software development lifecycle. In the demos below, we will harden one attack surface for etcd hands-on, then re-run Kube-bench to verify that the previously failing control is now passing.
+
+With the findings from our Kube-bench run, we also define a methodology for how to harden Kubernetes with the CIS Benchmark in the real world.
+
+Closely review Kube-bench findings and threat model any implications. Use the Rancher Benchmark Assessment PDF and think back to your threat model to reason through the finding. Pay special attention to how the risk can be realized versus just trying to address findings.
+Create a plan on how to test the change. Really think through the implications of the change. Often this needs to be closely coordinated with other teams and tested in a non-production environment.
+Test the hardening on a non-production or staging cluster. Create a non-production cluster representative of your production. Sometimes problems due to hardening steps do not materialize unless there is a load on the system or traffic. One technique is canary testing, where we split some production traffic to the staging environment and test there. How to canary test is outside of the scope of the course. While testing in the non-production or staging cluster, we should also closely monitor metrics for regressions, i.e. undesired changes or consequences from hardening.
+Deploy the change to the production cluster, again closely monitoring for regressions to ensure the stability of the cluster.
+The CIS Benchmarks logo used in the video comes from the CIS Kubernetes Benchmark page, with the permission of the Center for Internet Security,
+
+Lets now inspect one failed finding:
+
+1.1.12 Ensure that the etcd data directory ownership is set to etcd:etcd (Automated)
+
+The way RKE implements etcd is specific to Rancher. In this case, you need to add an etcd user and an etcd group. You have to change the permissions of the etcd directory to that user-group combination. We will demonstrate how to do that later on.
+
+Let's revisit the threat model for etcd. Etcd is a highly available key-value store. This is a data directory that should be protected from any unauthorized reads or writes. To avoid any tampering of etcd, we should change the permission of etcd from root. We should change the permissions to etcd:etcd.
+
+If you were to harden failed findings in the real world, you would follow the suggestions in the "remediation" section and plan revisions to the etcd data directory ownership. However, modifying permissions for etcd could be dangerous and should only be done once a plan is defined collaboratively with other teams at your company. A bad change could take down etcd, which would prevent all impacted clusters from running.
+
+Demos: Run Kube-bench on Master Node
+Run Kube-bench on Master Node using Hardened Profile
+
+In this demo, we will use Kube-bench to evaluate the actual attack surface hands-on.
+
+From the exercise repo, open the Rancher_Benchmark_Assessment.pdf. Leave it open as you will likely reference it in the demo.
+SSH into node1 via `root@192.168.50.101. The password isvagrant`.
+Run zypper in docker to ensure the latest Docker is installed.
+Execute the Docker container on the cluster nodes:docker run --pid=host -v /etc:/node/etc:ro -v /var:/node/var:ro -ti rancher/security-scan:v0.2.2 bash
+rancher/security-scan:v0.2.2 bash is a Docker container that we will start up. This will then run a security scan against this cluster and give us the results. Once you run this command, the context changes (you will be within the container context), and you can see the container id.
+
+Within the container context, run Kube-bench scan against node1 all components using the rke-cis-1.6-hardenedbenchmark profile via kube-bench run --targets etcd,master,controlplane,policies --scored --config-dir=/etc/kube-bench/cfg --benchmark rke-cis-1.6-hardened
+For the --targets, in Rancher's context, master is part of the controlplane, but you need to separately define it for the Kube-bench targets. There are different benchmark files within the local directory and container. In this case, we are running the benchmark profile rke-cis-1.6-hardened. Once you run this command, you will see 4 sets of failures, one for each of the 4 surfaces.
+
+Filter for failures only and investigate the failures closely: kube-bench run --targets etcd,master,controlplane,policies --scored --config-dir=/etc/kube-bench/cfg --benchmark rke-cis-1.6-hardened | grep FAIL
+Run Kube-bench on Master Node using Permissive Profile
+
+In this demo, we will run the same type of scan using the permissive profile, which is a lower security profile that has fewer checks.
+
+Within the container context, run the Kube-bench scan against node1 all components using the rke-cis-1.6-permissive benchmark profile via kube-bench run --targets etcd,master,controlplane,policies --scored --config-dir=/etc/kube-bench/cfg --benchmark rke-cis-1.6-permissive
+Notice how only 2 failed checks with the permissive profile vs 11 with the hardened profile. This is because the permissive profile makes far fewer checks. Unless we run the hardened profile, we will not see all the attack surfaces. For this reason, we will focus on and use the hardened profile.
+
+Investigate Kube-bench Hardened Profile Findings on the Master Node
+
+In this demo, we take an investigative step on the failed checks before actually hardening them.
+
+SSH back into the node1 via ssh root@192.168.50.101. The password is vagrant.
+From the container context, run the Kube-bench scan against node1 all components using the rke-cis-1.6-permissive benchmark profile:
+
+docker run --pid=host -v /etc:/node/etc:ro -v /var:/node/var:ro -ti rancher/security-scan:v0.2.2 bash
+kube-bench run --targets etcd,master,controlplane,policies --scored --config-dir=/etc/kube-bench/cfg --benchmark rke-cis-1.6-hardened | grep FAIL
+
+The check 1.1.12 Ensure that etcd data directory ownership is set to etcd:etcd (scored) fails because we have yet to apply the baseline RKE hardening steps, where we would set up the etcd user and etcd group, and set the etcd data directory ownership to etcd:etcd in the configuration steps. This was done intentionally to show that this check won't pass until the baseline RKE hardening steps are applied. We will do so in the demo on the Harden Rancher RKE via Baseline Hardening page.
+New Terms
+Canary test: A testing technique where we split some production traffic to staging and test there. This is a reference to older times when coal miners were creating a mine, they would use a yellow bird (canary) to test the safety of any toxic gases before proceeding.
+Regressions: Undesired changes or consequences due to security hardening.
+Further Reading
+Refer to Kubernetes documentation on how to canary test.
+
+
+
+4.11 Quiz: Running Kube-bench to Evaluate Rancher RKE Master Node
+---------------------------------------
+q1
+false
+
+q2
+1,2,3
+
+q3
+etcd
+
+
+
+4.12 Running Kube-bench to Evaluate Rancher RKE Worker Node
+---------------------------------------
+In the previous demo we ran Kube-bench on node1, an RKE etcd,master,controlplane,policies node. In this demo, we will run Kube-bench on node2, a worker node.
+
+Run Kube-bench on Worker Node Using Permissive and Hardened Profile
+Bring up the worker node2 via ssh root@192.168.50.102. The password is vagrant.
+Start up the rancher/security-scan:v0.2.2 container via docker run --pid=host -v /etc:/node/etc:ro -v /var:/node/var:ro -ti rancher/security-scan:v0.2.2 bash
+Within the container context, run the Kube-bench scan against node2 all components using the rke-cis-1.6-permissivebenchmark profile via kube-bench run --targets node --scored --config-dir=/etc/kube-bench/cfg --benchmark rke-cis-1.6-permissive
+Now try the rke-cis-1.6-hardened benchmark profile via kube-bench run --targets node --scored --config-dir=/etc/kube-bench/cfg --benchmark rke-cis-1.6-hardened
+Notice how only 0 checks FAIL with either hardened or permissive profile. This is because the Rancher team has gone to great lengths to harden the worker node.
+
+
+
+4.13 Exercise: Running Kube-bench to Evaluate Rancher RKE Cluster
+---------------------------------------
+In this exercise, you will use Kube-bench to evaluate the actual attack surface hands-on. This will be a complex and longer exercise, so please take your time. If you get stuck, pause and make sure you didn't skip any steps.
+
+To recap, the Rancher Benchmark Assessment establishes an authoritative hardening guide for Kubernetes across the core attack surfaces. Changes can be applied to the configuration to harden the attack surface.
+
+Rancher Benchmark Assessment implements the CIS Kubernetes Benchmark as closely as possible, defining two profiles (permissive and hardened).
+
+Kube-bench provides five hardening evaluations, once for each primary component - master, controlplane, node, etcd, policies.
+
+Node configuration:
+
+On node1 we will evaluate it for the master, controlplane, etcd, policiescomponents.
+On node2 we will evaluate it for the node component only.
+
+Exercise Prerequisites:
+RKE Cluster Prerequisites:
+
+Make sure you have Vagrant installed
+Make sure you have VirtualBox installed
+Install the RKE binary to your path
+Install kubectl to your host machine
+Clone the exercise starter repo and cd to the exercises/starter directory
+
+Once you complete the steps, begin to think about the Kubernetes threat model from previous exercises and how you will harden these weaknesses. We will do so hands-on in a future exercise.
+
+
+
+4.14 Solution: Running Kube-bench to Evaluate Rancher RKE Cluster
+---------------------------------------
+Solution: Running Kube-bench to Evaluate Rancher RKE Cluster
+Consult the Setting up and Bringing up the RKE Cluster page for how to complete the pre-requisites.
+
+Exercise Tasks:
+From the exercises/starter, provision two Vagrant nodes by running vagrant up
+Create and copy ssh keys to both nodes
+Verify if ~/.ssh/id_rsa and ~/.ssh/id_rsa.pubfiles exist by running cat ~/.ssh/id_rsa and cat ~/.ssh/id_rsa.pub.
+
+If these are not available, create a new SSH key pair using the following command and press ENTER for each prompt:
+
+ssh-keygen -t rsa -b 2048
+
+This adds a new key pair to your ~/.ssh/id_rsa and ~/.ssh/id_rsa.pub file or create a new file if it doesn't exist.
+
+Copy the SSH key for each Vagrant node. This allows root access to the boxes without you having to type the password every time. These keys allow RKE to be deployed to the nodes when you run rke up.
+
+sudo ssh-copy-id -i ~/.ssh/id_rsa root@192.168.50.101
+sudo ssh-copy-id  -i ~/.ssh/id_rsa root@192.168.50.102
+Agree to the prompts. The first password is your sudo machine password. The second password is for the key - vagrant. Provide them when prompted.
+
+nick.reva@C02YR2A1LVCH starter % sudo ssh-copy-id  -i ~/.ssh/id_rsa root@192.168.50.102
+Password: `your local machine sudo password`
+/usr/bin/ssh-copy-id: INFO: Source of key(s) to be installed: "/Users/nick.reva/.ssh/id_rsa.pub"
+The authenticity of host '192.168.50.102 (192.168.50.102)' can't be established.
+ECDSA key fingerprint is SHA256:4TQa9lyjZz9UtbEB3MWMgBDe7RB4Fmf0yraNsNRyTKo.
+Are you sure you want to continue connecting (yes/no/[fingerprint])? y   
+Please type 'yes', 'no' or the fingerprint: yes
+/usr/bin/ssh-copy-id: INFO: attempting to log in with the new key(s), to filter out any that are already installed
+/usr/bin/ssh-copy-id: INFO: 1 key(s) remain to be installed -- if you are prompted now it is to install the new keys
+Password: `key  password - vagrant`
+
+Number of key(s) added:        1
+
+Now try logging into the machine, with:   "ssh 'root@192.168.50.102'"
+and check to make sure that only the key(s) you wanted were added.
+
+Very Important:
+
+Make sure you specify the exact key file (e.g. ~/.ssh/id_rsa) via the -i switch you will use in the copy command. If you do not specify the key file to copy from, you may copy the wrong key and be hard blocked on bringing up the RKE cluster. If you get stuck, troubleshoot as follows:
+
+Run ls -la ~/.ssh/id_rsa from your host machine to ensure it shows an accessible SSH key file.
+cat ssh-keygen -y -f ~/.ssh/id_rsa should output the same exact public key that is installed on the nodes. Check by running cat ~.ssh/authorized_keys on each node by ssh'ing locally via ssh root@192.168.50.101 / ssh root@192.168.50.102. Password is vagrant .
+The key must match verbatim, no exceptions. If it does not, regenerate the key with the ssh command above and make sure you defined the key file when copying.
+
+Start up the RKE cluster by running rke up.
+Check cluster health by running kubectl --kubeconfig kube_config_cluster.yml get no.
+An example output looks like this:
+
+nick.reva@C02YR2A1LVCH `rke-cluster % kubectl --kubeconfig kube_config_cluster.yml get no
+NAME    STATUS   ROLES               AGE     VERSION
+node1   Ready    controlplane,etcd   4m45s   v1.20.4
+node2   Ready    worker              4m45s   v1.20.4
+
+If you run into any issues, consult the Setting up and Bringing up the RKE Cluster page for troubleshooting tips.
+
+Run Kube-bench to evaluate node1:
+SSH into node1 via ssh root@192.168.50.101
+
+Execute the Docker container on node1
+docker run --pid=host -v /etc:/node/etc:ro -v /var:/node/var:ro -ti rancher/security-scan:v0.2.2 bash
+
+From within the container context, run Kube-bench scan against node1 all components using the hardened benchmark profile by running 
+kube-bench run --targets etcd,master,controlplane,policies --scored --config-dir=/etc/kube-bench/cfg --benchmark rke-cis-1.6-hardened
+
+Grep for failures only: 
+kube-bench run --targets etcd,master,controlplane,policies --scored --config-dir=/etc/kube-bench/cfg --benchmark rke-cis-1.6-hardened | grep FAIL
+
+Run Kube-bench to evaluate node2:
+SSH into node2 via ssh root@192.168.50.102
+
+Execute the Docker container on node2 
+docker run --pid=host -v /etc:/node/etc:ro -v /var:/node/var:ro -ti rancher/security-scan:v0.2.2 bash
+
+From within the container context, run Kube-bench scan against node2 using the node surface and the hardened benchmark profile by running 
+kube-bench run --targets node --scored --config-dir=/etc/kube-bench/cfg --benchmark rke-cis-1.6-hardened
+
+Grep for failures only: 
+kube-bench run --targets node --scored --config-dir=/etc/kube-bench/cfg --benchmark rke-cis-1.6-hardened | grep FAIL
+
+
+
+4.15 Exercise: Define Operational Test Plan for Hardening
+---------------------------------------
+Exercise Tasks
+Define an operational test plan for hardening the weakness on node1, focusing on the stability of the cluster. Try to write 1-2 sentences in response to each of these questions:
+
+In what environment(s) will the change be tested?
+Can the change be canary tested with some traffic directed to simulate load?
+Does the environment mimic production?
+Can the change be rolled out incrementally?
+Can the change be safely rolled back?
+
+
+
+4.16 Solution: Define Operational Test Plan for Hardening
+---------------------------------------
+A test plan should generally include an analysis of the following. The intent is to be diligent and disciplined to avoid outages. The test plan is all about testing changes to a system in a non-production system that mimics production. The primary goal is to avoid an outage and undesired consequences.
+
+How will you test the changes? The change will be tested in a non-production environment such as a test cluster.
+What is the environment? The environment is a non-production cluster.
+How will you ensure the changes don't negatively affect your cluster? The change should be tested in a non-production cluster. Once the change is applied, you should monitor metrics using your observability and monitoring techniques like Prometheus and Grafana.
+Can the change be canary tested with some traffic directed to simulate load on the system? In our classroom demo, it's not possible to simulate directing traffic easily to a non-production cluster. In the real world, you can really direct some traffic to a test environment via load balancer configuration or if you are running a service mesh (go to this Wikipedia page to learn more), you can do so via the mesh-like Istio or Envoy. There are also microservices-minded proxies like Traefik that provide ways to load balance Microservices.
+Does the environment mimic production? If not how can we mimic production? Our environment mimics production as it's a verbatim configuration.
+Can the change be rolled out incrementally to a percentage of traffic? In the real world, cluster-bound incoming traffic is often split at the load balancer or if you are running a service mesh, you can do so via the mesh-like Istio or Envoy. As the cluster needs to be restarted, the change will take time to roll back.
+Can the change be safely rolled back? Editing the cluster.yaml should be version-controlled with Git so the change can be rolled back. However, as a reboot is required, it's not trivial to do quickly. Hence you should be very careful with testing the change.
+
+
+
+4.17 Harden Rancher RKE via Baseline Hardening
+---------------------------------------
+Given the failed findings, we need to apply baseline RKE hardening.
+
+On this page, we will cover these three topics on baseline RKE hardening:
+
+Configure the etcd user and group in a video
+Cover the steps to follow to configure kernel runtime parameters in the text
+Cover the steps to follow to update your current cluster.yml with hardening steps in the text
+It is best practice to re-run Kube-bench to verify hardening after each step is done and create a test plan.
+
+A test plan should generally include an analysis of the following. The intent is to be diligent and disciplined to avoid outages.
+
+In what environment(s) (e.g. dev, staging, prod) will the change be tested?
+Can the change be canary tested with some traffic directed to simulate load?
+Does the environment mimic production?
+Can the change be rolled out incrementally?
+Can the change be safely rolled back?
+
+When setting up an RKE cluster that you intend to harden, you have to create an etcd user and etcd group and change the permission of the etcd data directory to etcd:etcd in the configuration steps. These are part of the baseline RKE hardening steps.
+
+In the last demo on the Running Kube-bench to Evaluate Rancher RKE Master Node page, we saw that the check 1.1.12 Ensure that etcd data directory ownership is set to etcd:etcd (scored)fails because we have yet to apply the baseline RKE hardening steps.
+
+In this demo, we will configure etcd user and group hands-on. Here is Rancher's documentation on how to do so.
+
+The trick is that we will harden the host on which the cluster is running. So we need to create a group called etcd on the host. /var/lib/etcd is the direction that we are going to change the permissions on. To add the etcd group, we run
+
+groupadd --gid 52034 etcd
+Then to add the etcd group, we run
+
+useradd --comment "etcd service account" --uid 52034 --gid 52034 etcd
+We then change the permission from what it is currently to etcd:etcd by running
+
+chown etcd:etcd /var/lib/etcd
+Re-run the Docker container that runs Rancher's security scan via
+
+docker run --pid=host -v /etc/passwd:/etc/passwd -v /etc/group:/etc/group -v /etc:/node/etc:ro -v /var:/node/var:ro -ti rancher/security-scan:v0.2.2 bash
+Now that the container has started, we re-run the scan on etcd and check if 1.1.12 still fails by running
+
+kube-bench run --targets etcd --scored --config-dir=/etc/kube-bench/cfg --benchmark rke-cis-1.6-hardened | grep FAIL
+We should see that 1.1.12 now passes and we have completed the hardening for etcd.
+
+Configure Kernel Runtime Parameters
+Note: Follow the RKE docs closely to apply baseline RKE hardening. While we did not demo all these steps, make sure you set the following:
+
+cd /etc/sysctl.d
+vim 90-kubelet.conf 
+If 90-kubelet.confdoes not exist, then run touch 90-kubelet.conf to create the file.
+
+Set kernel configuration:
+
+vm.overcommit_memory=1
+vm.panic_on_oom=0
+kernel.panic=10
+kernel.panic_on_oops=1
+kernel.keys.root_maxbytes=25000000
+Run sysctl -p /etc/sysctl.d/90-kubelet.conf to apply the configuration.
+
+Now, let's re-run Kube-bench to verify that the hardening has been successful.
+
+Rerun the container:
+
+docker run --pid=host -v /etc/passwd:/etc/passwd -v /etc/group:/etc/group -v /etc:/node/etc:ro -v /var:/node/var:ro -ti rancher/security-scan:v0.2.2 bash
+Rerun the scan for etcd only:
+
+kube-bench run --targets etcd --scored --config-dir=/etc/kube-bench/cfg --benchmark rke-cis-1.6-hardened | grep FAIL
+Update Current cluster.yml with Hardening Steps
+
+Note: Follow the RKE docs closely to apply baseline RKE hardening. While we did not demo all these steps, make sure you set the following:
+
+It is very important to update your current cluster.yml with hardening steps per Rancher's reference hardened cluster.yml. This is a must-do because the out-of-the-box cluster.yml does not contain hardening configurations.
+
+Updating cluster.yml can be done by hand; however, it's best to use Sublime to diff (i.e. find the difference between two files) the non-hardened cluster.yml and hardened cluster.yml.
+Warning: Make sure you closely compare the provided cluster.yml in the starer code with the provided reference_hardened_cluster.yml. Closely differentiate the files using Sublime and carefully edit the cluster.yml. Use great care to make sure it's correctly edited. If you incorrectly edit the cluster.yml the cluster may not successfully come up and you will be hard blocked. Precision and patience is key here.
+
+From exercises/starter/directory, open the refernence_hardened_cluster.yml and the non-hardened cluster.ymlyou ran locally to start up the cluster.
+From your local machine download and run Sublime text to diff the two files as follows:
+Open both files with Sublime
+Tools > Command Palette, click on "Install Package Control"
+Search for and install "Compare Side-By-Side"
+Double-check via Preferences > Browse Packages, you should see "Files for Package Control" and "Compare Side-By-Side"
+Exit Sublime and relaunch
+Right-click the refernence_hardened_cluster.ymlyou should have the option to "compare with", select cluster.yml
+Make changes to cluster.ymlto reflect the differences in the refernence_hardened_cluster.yml
+Do NOT update these fields in the cluster.yml
+nodes:
+any IP addresses
+plugin: calico
+any tolerations
+authentication: strategy
+images
+mode:rbac
+kubernetes_version:
+cluster_name:
+Make sure you save the hardenedcluster.yml locally and rerun rke up to re-provision with the hardened settings.
+Rerun the container: docker run --pid=host -v /etc/passwd:/etc/passwd -v /etc/group:/etc/group -v /etc:/node/etc:ro -v /var:/node/var:ro -ti rancher/security-scan:v0.2.2 bash
+Note: We need to specify these added host directories-v /etc/passwd:/etc/passwd -v /etc/group:/etc/group for the container to mount and for Kube-bench to check.
+
+Rerun the scan for etcd only: kube-bench run --targets etcd --scored --config-dir=/etc/kube-bench/cfg --benchmark rke-cis-1.6-hardened | grep FAIL
+No checks for etcd should fail ;)
+Further Reading
+For details on how to apply baseline hardening of CIS 1.6 on RKE, take a look at the Rancher docs.
+
+
+
+4.18 Exercise: Harden Rancher RKE via Baseline Hardening
+---------------------------------------
+Exercise: Harden Rancher RKE via Baseline Hardening
+Implement the Rancher RKE Baseline to harden the RKE cluster per instructions provided by Rancher.
+
+Configure Kernel Runtime Parameters
+Configure etcd user and group
+Update the cluster.yml with hardening steps by comparing with the refernence_hardened_cluster.yml
+Warning: Make sure you closely compare the provided cluster.yml in the starer code with the provided reference_hardened_cluster.yml. Closely differentiate the files using Sublime and carefully edit the cluster.yml. Use great care to make sure it's correctly edited. If you incorrectly edit the cluster.yml the cluster may not successfully come up and you will be hard blocked. Precision and patience is key here.
+
+Re-provision the cluster
+Check cluster health
+Re-run Kube-bench to verify the baseline hardening is effective
+
+
+
+4.19 Solution: Harden Rancher RKE via Baseline Hardening
+---------------------------------------
+Refer to Harden Rancher RKE via Baseline Hardening page for steps to
+
+Configure Kernel Runtime Parameters
+Configure etcd user and group
+Update the cluster.yml with hardening steps
+Re-run Kube-bench to verify the baseline hardening is effective:
+
+If you turned off node1 (controlplane and etcd ) bring it back up with vagrant up and rke up. SSH back into the node1 via ssh root@192.168.50.101.
+Execute the Docker container on node1:
+docker run --pid=host -v /etc/passwd:/etc/passwd -v /etc/group:/etc/group -v /etc:/node/etc:ro -v /var:/node/var:ro -ti rancher/security-scan:v0.2.2 bash
+Within the container context, run a Kube-bench scan against the etcd, master, controlplane, policies targets with the hardened profile. Investigate to filter for failures only:
+kube-bench run --targets etcd,master,controlplane,policies --scored --config-dir=/etc/kube-bench/cfg --benchmark rke-cis-1.6-hardened | grep FAIL
+
+
+
+4.20 Glossary
+---------------------------------------
+Glossary
+Zero-day vulnerabilities: Zero-day means that the vulnerability is so severe and critical that developers need to fix it in “zero days”.
+Transport Layer Security (TLS): Protocol to encrypt data in motion.
+Role-Based Access Control (RBAC): The process by which roles are defined into an ACL. We define what ACL each user should have.
+Need to Know: Only providing the required access that is necessary for the job.
+Profiling: A troubleshooting feature to identify performance bottlenecks.
+Key–value store: A key–value store, or key–value database, is a data storage paradigm designed for storing, retrieving, and managing associative arrays, and a data structure more commonly known today as a dictionary or hash table. (Source: Key-value database under the Creative Commons Attribution-ShareAlike License)
+Principle of least privileged: This principle implies that a user of a system should have access that provides minimal privilege for the job.
+Admission controller: A watchdog that intercepts and determines how the kube-apiserver processes requests. Admission controllers improve security by mandating a security baseline across an entire namespace on a cluster. The PodSecurityPolicy admission controller is the best example. It can be used to prevent containers from running as root or make sure the container’s root filesystem is always mounted read-only without exception.
+IPtables: A Linux firewall that enables system administrators to manage incoming and outgoing traffic via a set of configurable rules in a simple table.
+IPVS (IP Virtual Server): A Linux daemon that implements packet filter via net filer, an underlying layer 4 packet filtering technology.
+Rancher Kubernetes Engine (RKE): A Kubernetes distribution developed by Rancher that runs within Docker containers and orchestrates containers.
+Kube-bench: A Go containerized application that runs checks documented in the CIS Kubernetes Benchmark against a Kubernetes cluster and determines if the cluster is deployed securely. With RKE Kubernetes, you use a special mapping of CIS Kubernetes Benchmark to Rancher Kubernetes Benchmark and a special security scan container provided by Rancher.
+Canary test: A testing technique where we split some production traffic to staging and test there. This is a reference to older times when coal miners were creating a mine, they would use a yellow bird (canary) to test the safety of any toxic gases before proceeding.
+Regressions: Undesired changes or consequences due to security hardening.
+
+
+
+4.21 Lesson Review
+---------------------------------------
+Lesson Review
+Let’s summarize what we learned in this lesson:
+
+Recapped Kubernetes attack surface(s) from the STRIDE lesson
+Evaluated RKE Kubernetes attack surfaces on a two-node RKE cluster
+Inspected cluster nodes in-depth with Kube-bench to evaluate attack surface hands-on
+Defined an operational test plan for hardening
+Applied the Rancher RKE Baseline hardening to the cluster
+Retested the hardened RKE cluster with Kube-bench
+
 
