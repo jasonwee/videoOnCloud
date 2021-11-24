@@ -1,0 +1,714 @@
+date start : 24 november 2021
+
+
+5.1 Introduction
+---------------------------------------
+Now that we have covered STRIDE, Docker, and Kubernetes hardening, In this lesson, we will cover the last verification steps prior to deployment. We will evaluate and verify application security by understanding the makeup of our deployment.
+
+This is done as a pre-deployment step using a technique known as software composition analysis (SCA) to deeply evaluate both image layers components and software code via static analysis techniques.
+
+We will focus on decomposing a Docker image to analyze each layer and an application to investigate open-source dependency security.
+
+New Terms
+Static analysis: An automated process that inspects the code without requiring the application to be compiled and built. Static analysis can be performed in the developer IDE, terminal, or via the repo upon commit.
+Software Composition Analysis (SCA): A security testing method that helps development and security teams to successfully manage and mitigate open-source software dependency and source code risks.
+
+
+
+5.2 Lesson Overview
+---------------------------------------
+In this lesson, we will focus on software composition analysis and learn how to:
+Examine software composition analysis (SCA) properties and types
+Unpack open-source software (OSS) Security
+Evaluate source code flaws
+Perform image layer analysis
+Analyze image layer composition with open source security tools
+Discuss enterprise considerations for scaling SCA
+All these areas will allow you to reason about software composition analysis as you decompose your microservice deployments into understandable components.
+
+
+
+5.3 Software Composition Analysis Overview
+---------------------------------------
+Why Is Software Composition Analysis (SCA) Important?
+Microservices heavily rely on many small, iterative deployments of software with many open source libraries glued together with original source code. As the deployment velocity of microservices is very high, this can quickly lead to many vulnerabilities.
+In order to quickly identify which vulnerable libraries and components are running in the thousands of microservices at scale, we need to perform a software composition analysis. This helps us define the makeup of deployment as a bill of materials, like the components you use in a factory to build a widget).
+What Is Software Composition Analysis?
+In the context of microservices, SCA is a security testing method that helps development and security teams to successfully manage and mitigate open-source software (OSS) dependency and source code risks.
+In this lesson, we will focus on the security of a Docker image, identifying and enumerating the libraries and dependencies running in a given image. We will also cover some considerations at a high level for the source code flaws inside the Docker container.
+New Terms
+Software bill of materials: The makeup of an image or binary, broken down into individual packages.
+
+
+
+5.4 Quiz: Software Composition Analysis Overview
+---------------------------------------
+q1
+dependencies
+
+q2
+OSS component risk
+Source code risk
+￼
+
+
+5.5 Open-Source Software (OSS) Security Overview
+---------------------------------------
+Open-Source Software (OSS) Security History
+OSS started to ramp up in the early 2010s.
+By 2015, OSS was amplified with the growing popularity of Docker and Kubernetes.
+In 2018, ESLint supply chain vulnerability occurred.
+In 2020, Eastern European hackers compromised SolarWinds through supply chain tempering and created a back door into a release that was downloaded by 18K companies.
+In 2021, dependency typosquatting attacks spread.
+OSS Security Characteristics
+It's important to note that with OSS, trust is not provided inherently, it needs to be validated. Let's think of how OSS is provided and what its characteristics are.
+
+All open-source software comes from multiple third parties. Any company could develop and contribute to OSS via GitHub.
+Engineering teams often grab the libraries or images they need and move on to the next task, like a drive-through. Given this type of "grab-and-go" culture, it's difficult to determine the pedigree, i.e. the origin, of the open-source software.
+The complexity of managing many decentralized library management methods also makes it hard to determine where the OSS comes from.
+With microservices, libraries are fanned out across each instance of the microservices, leading to an occurrence of each vulnerability per service. This makes it very difficult to find where the vulnerabilities are.
+In conclusion, if the biggest tech companies fell for it, you can too. It’s extremely tricky to get this right, so please start small and pay attention to your OSS package sources.
+
+New Terms
+Dependency typosquatting: An attack situation where attackers create and upload vulnerable libraries to popular distribution hubs of libraries and images, like NPM and Docker Hub, tricking developers to use those libraries.
+Fan out: A phenomenon where software components are provided and assembled from many different software providers.
+Supply chain tempering: Maliciously modifying centralized software components which are used by many other parties with the intent of affecting organizations using this software users through the distribution supply chain.
+
+
+
+5.6 Quiz: Open-Source Software (OSS) Security Overview
+---------------------------------------
+q1
+fan in across services
+
+q2
+All dependencies can have vulnerabilities.
+
+
+
+5.7 Source Code Flaw Overview 
+---------------------------------------
+Source Code Flaws
+Another area to consider is source code flaws. While this course will not go in-depth on source code security as its discreet discipline, let's cover the basics.
+
+The speed of microservices deployments makes it very hard to catch security flaws in source code unless you perform automated analysis as part of the SDLC. This can be done via
+
+Static analysis on your code in the developer IDE, or
+Dynamic analysis at build time via a Continuous Integration/Continuous Deployment (CI/CD) pipeline, where the binary is built and the compiled applications are dynamically reviewed.
+Ideally, when a vulnerability is introduced, the developer receives very obvious feedback in the IDE, or the build is blocked via CI/CD.
+
+The intent is to check for code flaws against good practice and guidance frameworks, such as the Open Web Application Security Project (OWASP-10). Both static and dynamic analysis tools can be configured to run checks against OWASP. Once the flaws are found, they should be prioritized and remediated.
+
+New Terms
+Dynamic analysis: A scheduled or at-build process that builds the binary from the repo and programmatically reviews the compiled applications for source code flaws. The code is investigated as a compiled binary.
+Open Web Application Security Project (OWASP-10): A standard for web application security that provides authoritative standards.
+
+
+
+5.8 OWASP Top10 Overview
+---------------------------------------
+OWASP Top-10 is the most established and well-known standard for application security. OWASP Top-10 provides specific technical guidance on how to avoid and prevent the top 10 application code flaws, as follows:
+
+Injection. Injection flaws, such as SQL, NoSQL, OS, and LDAP injection, occur when untrusted data is sent to an interpreter as part of a command or query. The attacker’s hostile data can trick the interpreter into executing unintended commands or accessing data without proper authorization.
+Broken Authentication. Application functions related to authentication and session management are often implemented incorrectly, allowing attackers to compromise passwords, keys, or session tokens, or to exploit other implementation flaws to assume other users’ identities temporarily or permanently.
+Sensitive Data Exposure. Many web applications and APIs do not properly protect sensitive data, such as financial, healthcare, and PII. Attackers may steal or modify such weakly protected data to conduct credit card fraud, identity theft, or other crimes. Sensitive data may be compromised without extra protection, such as encryption at rest or in transit, and requires special precautions when exchanged with the browser.
+XML External Entities (XXE). Many older or poorly configured XML processors evaluate external entity references within XML documents. External entities can be used to disclose internal files using the file URI handler, internal file shares, internal port scanning, remote code execution, and denial of service attacks.
+Broken Access Control. Restrictions on what authenticated users are allowed to do are often not properly enforced. Attackers can exploit these flaws to access unauthorized functionality and/or data, such as access other users’ accounts, view sensitive files, modify other users’ data, change access rights, etc.
+Security Misconfiguration. Security misconfiguration is the most commonly seen issue. This is commonly a result of insecure default configurations, incomplete or ad hoc configurations, open cloud storage, misconfigured HTTP headers, and verbose error messages containing sensitive information. Not only must all operating systems, frameworks, libraries, and applications be securely configured, but they must be patched/upgraded in a timely fashion.
+Cross-Site Scripting (XSS). XSS flaws occur whenever an application includes untrusted data in a new web page without proper validation or escaping, or updates an existing web page with user-supplied data using a browser API that can create HTML or JavaScript. XSS allows attackers to execute scripts in the victim’s browser which can hijack user sessions, deface websites, or redirect the user to malicious sites.
+Insecure Deserialization. Insecure deserialization often leads to remote code execution. Even if deserialization flaws do not result in remote code execution, they can be used to perform attacks, including replay attacks, injection attacks, and privilege escalation attacks.
+Using Components with Known Vulnerabilities. Components, such as libraries, frameworks, and other software modules, run with the same privileges as the application. If a vulnerable component is exploited, such an attack can facilitate serious data loss or server takeover. Applications and APIs using components with known vulnerabilities may undermine application defenses and enable various attacks and impacts.
+Insufficient Logging & Monitoring. Insufficient logging and monitoring, coupled with missing or ineffective integration with incident response, allows attackers to further attack systems, maintain persistence, pivot to more systems, and tamper, extract, or destroy data. Most breach studies show time to detect a breach is over 200 days, typically detected by external parties rather than internal processes or monitoring.
+Source: OWASP Top Ten licensed under Creative Commons Attribution-ShareAlike v4.0.
+
+Further Reading
+Consult this page to learn more about OWASP Top 10 Most Critical Web Application Security Risks.
+
+
+
+5.9 Quiz: Source Code Flaw Overview
+---------------------------------------
+q1
+1,3,4
+
+
+q2
+building
+
+
+q3
+3
+
+
+
+5.10 Image Layer Analysis
+---------------------------------------
+3 Types of Docker Images
+Verified: A very small fraction are verified and official. Verified images are the least risky, high-quality Docker content from verified publishers. Their security is vetted by the Docker content team, who cryptographically signs the images upon completion of an image check.
+Official: A curated set of Docker open-source and "drop-in" solution repositories. They are assembled from good, known repositories, but these images are not security vetted, so you should still watch out for vulnerable libraries and perform SCA on them.
+Public: The vast majority of the Docker images are public. Public images are sourced from the public developers and hence are the riskiest. You should not fear public image as they are a big part of the Docker community. However, you need to be extra careful.
+How to Trust a Docker Image?
+Let’s now look at Open Source Software (OSS) problem more closely and focus on just images. An image purely consists of layers that include manifests, libraries, and dependencies. As we learned in the Docker hardening lesson, we can harden our own image, sign our image and verify public image using the Docker content trust. However, none of these processes actually inspects the content of the images.
+
+To establish trust, we need to either use images that are vetted by a trusted party or inspect the images ourselves, breaking down the images into their discreet layers and inspecting each of those layers in detail. Let's see how this is done.
+
+Image Layer Analysis
+A Docker image layer consists of a software bill of materials (BOM), which is a list of all the components (e.g. packages and libraries) that make up the image. As we break down the layers in detail, our goal is to find vulnerable packages and libraries in the bill of materials.
+
+Security CVEs
+This is done by taking the BOM and comparing it against a common vulnerability and exposures (CVE) database like the National Vulnerability Database (NVD) to identify the bad packages and libraries.
+
+According to the NVD's definition of a CVE, a CVE is defined as a security flaw "found in software and hardware components that, when exploited, results in a negative impact on confidentiality, integrity, or availability. Mitigation of the vulnerabilities in this context typically involves coding changes, but could also include specification changes or even specification deprecations (e.g., removal of affected protocols or functionality in their entirety)."
+
+Risk is calculated using the Common Vulnerability Scoring System (CVSS), which is defined by the NVD as "a method used to supply a qualitative measure of severity." CVEs are ranked into four risk levels: Low, Medium, High, and Critical.
+
+CVEs are managed and aggregated via organizations like MITRE and the National Institute of Standards and Technology (NIST). MITRE started to aggregate security vulnerabilities in 1999 with their CVE list. NIST created the NVD in 2005 as a program focused on defining a central database for vulnerabilities. While other sources for CVE data exist, given MITRE and NIST have focused on CVE management for over 20 years, they are considered the most prominent sources for CVE data in the world.
+
+What Goes into a BOM?
+Modern software comprises many third-party and open source components. They are assembled together in complex and bespoke ways and integrated with original code to achieve the desired functionality.
+
+An accurate inventory of all components enables you to have transparency on your software composition and identify risks with vulnerable components.
+
+In the Docker image context, there are broadly two types of components that make up the BOM:
+
+Library bill of materials for all the libraries used directly in the deployment.
+Dependency bill of materials for all other software used indirectly by the library.
+We need to enumerate a complete list of all libraries and dependencies to understand the BOM.
+
+In the demo below, we will look at one Docker image in-depth. We will break down the composition of an image into its BOM and scan them for vulnerabilities.
+
+Demo: Software Library BOM (Bill of Materials)
+
+In this demo, we will look at the software library bill of materials to investigate the image layers for an OpenSUSE leap image and the notary server using a tool called Syft by Anchore. We will run Syft to break down the image layers to generate a detailed BOM. From there we will run two other tools, Trivy and Grype, to investigate potential vulnerabilities.
+
+NOTE: Like most cloud native security tools , Syft only runs on macOS or Linux. If you are using Windows, you need to run a virtual machine to run this tool. Refer to the Nanodegree Prerequisites page in the Introduction lesson for how to set up a Linux VM.
+
+To install Syft on macOS, use this command: For Linux, follow the Syft install instructions.
+brew install syft
+Then we use Syft to examine the latest OpenSUSE leap image. The command below will look at all layers of the image and show us the composition of the image and all its packages. It will not do any vulnerability matching.
+syft opensuse/leap:latest --scope all-layers
+We can also run this command to examine the Docker notary server image from the Docker lesson, replacing the image name from opensuse/leap:latest to notary_server:latest.
+syft notary_server:latest --scope all-layers
+The notary server image has far more packages than the OpenSUSE leap image. Each of these packages can have a vulnerability.
+
+Next, we will look at the packages from a vulnerability perspective and use another tool to match package versions to known vulnerabilities.
+
+New Terms
+Common Vulnerability and Exposures (CVE): A database and formula to calculate risk and impact for vulnerabilities. Risk is ranked into four levels: Low, Medium, High, and Critical. It helps us identify, define, and catalog publicly disclosed cybersecurity vulnerabilities.
+Image Layer Analysis: The process in which we break down images into their discreet layers, or a bill of materials, and inspect each of those layers in detail.
+Software bill of materials: The makeup of an image or binary broken down into individual packages and libraries.
+Syft: An open-source tool developed by Anchore that breaks down the image layers to create a detailed bill of materials.
+Further Reading
+Introducing Syft for a CLI tool for generating a Software Bill of Materials from container images and filesystems.
+Great Medium article on using Software Bill-of-Materials (BOM) to drive change and reduce risk using another initiative called CycloneDX.
+A brief summary of the NIST NVD process since formation in 2005 and MITRE CVE since formation in 1999.
+
+
+
+5.11 Quiz: Image Layer Analysis
+---------------------------------------
+q1
+1,3,4
+
+q2
+Packages and libraries
+
+q3
+2,4
+
+
+5.12 Exercise: Image Layer Analysis with Syft
+---------------------------------------
+Prerequisite Tasks:
+Make sure you have installed Syft as we described in the demo on the Image Layer Analysis page.
+Exercise Steps:
+Analyze the opensuse/leap:latestimage for all layers with Syft
+Identify the number of packages in the opensuse/leap:latest image
+Analyze the notary_server:latestimage for all layers with Syft
+Identify the number of packages in the notary_server:latest image
+
+
+
+5.13 Solution: Image Layer Analysis with Syft
+---------------------------------------
+Solution: Image Layer Analysis with Syft
+Install Syft:
+brew install syft
+Analyze the opensuse/leap:latest image for all layers with Syft:
+syft opensuse/leap:latest --scope all-layers
+There should be ~127 packages in the opensuse/leap:latest image. It may have changed since the demo was recorded.
+Analyze the notary_server:latestimage for all layers with Syft:
+syft notary_server:latest --scope all-layers
+There should be ~337 packages in the notary_server:latest image. It may have changed since the demo was recorded.
+Next, we will look at the packages from a vulnerability perspective and use other tools to match package versions to known vulnerabilities.
+
+
+
+5.14 Inspecting and Patching Image Components with Grype and Trivy
+---------------------------------------
+In this demo, we inspect the BOM of a single image for vulnerabilities with two open-source tools: Grype and Trivy.
+
+We are using two tools because open-source security tools may have gaps in coverage and may miss findings. In this type of analysis, it's a good practice to use multiple tools to compare the output. It’s not to say one tool is better than another; for completeness, it’s good to perform this analysis using both tools.
+
+Important Steps to Take:
+CD into the starter repo. Use vim Dockerfile to take a closer look at the Dockerfile.
+We then build this image without cache. This is very important because it will force the download of all the components that are required for that image.
+docker build . -t opensuse/leap:latest -m 256 mb --no-cache=true
+Then we need to define which repo to use with the following command (more on this command on the Grype Overview page):
+brew tap anchore/grype
+Let's make sure that we have Grype installed with the following command:
+brew install grype
+
+We will then run Grype to evaluate the latest OpenSUSE leap image:
+grype opensuse/leap:latest --scope all-layers
+We see the same number of packages as we saw before with Syft, and Grype returns 0 vulnerabilities. Now let's use the second tool Trivy to see if it gives us any different findings.
+
+Let's define which Trivy repo to use and install Trivy:
+brew tap aquasecurity/trivy
+brew install trivy
+Next, we will run Trivy against the latest OpenSUSE leap image that we have:
+trivy image opensuse/leap:latest
+Trivy finds two vulnerabilities in the OpenSUSE leap image: a Glibc vulnerability and a libnghttp2 vulnerability. These are presented with the corresponding CVE risk levels. This is a good example of how open-source tools can complement each other, and in this case, we see this edge case with Grype.
+
+Let's now look at the Docker file with vim Dockerfile and try to understand where these two vulnerabilities come from.
+Under refresh zypper and install updates, we can see that the run zypper refresh command does not actually install updates. Zypper is the package manager for SUSE. So you need to also run the zypper up command, which updates the OpenSUSE base image. The -y is to agree to the update for the non-interactive run, like typing yes on the terminal.
+RUN zypper ref && zypper up -y
+Note: This is intentionally set up to show you what will happen if you don't run the update command in the Docker image.
+
+Now let's build this Dockerfile again with the updates implied.
+docker build . -t opensuse/leap:latest -m 256 mb --no-cache=true
+As you can see, it found and deployed two packages that are required. The Glibc is a very common package for the Linux kernel. And libnghttp2 is the http2 framing library.
+
+Now that we have built the image with these two packages, we will rerun Trivy and see if it still identifies the vulnerabilities.
+trivy image opensuse/leap:latest
+Now we see no vulnerabilities as we've patched the image and added the correct command zypper up -y and we have a secure image now!
+
+New Terms
+Grype: A GO application for Software Composition Analysis. Grype decomposes an image, binary, or code paths into image layers or components, compares them against a vulnerability database, and provides feedback.
+Trivy: A competing GO application to Grype for Software Composition Analysis. Trivy decomposes an image, binary, or code paths into image layers or components, compares them against a vulnerability database, and provides feedback.
+
+
+
+5.15 Grype Overview
+---------------------------------------
+In the previous demo, we used Grype to identify vulnerabilities in our Docker image. Now let's look at the components of Grype.
+
+Grype is a GO application for Software Composition Analysis (SCA). Grype consists of three parts: Grype Engine, vulnerability database, and client.
+
+Grype engine scans image layers, binaries, or code paths, and references CVEs. Grype can be run isolated on the terminal or integrated into Visual Studio Code IDE to run as you work. Grype decomposes an image or binary into image layers or components (similar to Syft), compares them against a CVE vulnerability database, and provides feedback.
+
+Grype can cover all major operating system packages and language-specific packages.
+
+Demo on How to Set up Grype in Terminal
+Now, let's look at how to set up Grype. For this demo, we are using macOS. If you are using Linux, follow the Grype install instructions. For Windows, you need to refer to the Nanodegree Prerequisites page in the Introduction lesson for how to set up a Linux Virtual Machine.
+
+As mentioned in the last demo, in the terminal, we'll use the brew tap command to define which repo to use. tap is the command to add in a repository for the publisher. In this case, Anchore is the name of the publisher and Grype is the name of the tool.
+brew tap anchore/grype
+Then we will go ahead and install Grype:
+brew install grype
+[Optional] Demo on How to Set up Grype in Visual Studio Code
+Visual Studio Code is a very popular IDE among developers. Grype provides an extension that allows you to run Grype natively in the Visual Studio IDE without having to run it in the terminal. So let's take a look at how to set that up.
+
+From Code > Preferences > Extensions, we get to the Extensions menu, where we can search for Grype. Once Grype is found, go ahead and install it.
+
+Grype scans your local repository, and you can pick which specific repository you want it to scan under the "Details" section. There is also a Grype demo video within VS Code showing that based on the workspace that's chosen, Grype will scan for vulnerabilities, just like it does in the terminal. The benefit of this is you get feedback directly as you develop an image or application in Visual Studio Code.
+
+
+
+5.16 Quiz: Grype Overview
+---------------------------------------
+q1
+1,2,3
+
+
+q2
+3
+
+
+q3
+true
+
+
+q4
+cve
+
+
+
+5.17 Exercise: Software Composition Analysis with Grype and Trivy
+---------------------------------------
+Exercise: Software Composition Analysis with Grype and Trivy
+
+
+Building on what we learned about software composition analysis in this lesson, let's evaluate a containerized microservices application in the OpenSUSE leap 15.x base image located in the exercise starter repo.
+
+Focus your attention on these two areas that are most relevant to application security vulnerabilities in a Microservices architecture:
+
+Layers of the Docker image as defined in the Dockerfile
+Operating system packages used in the Docker image
+
+Exercise tasks:
+Answer these questions in the free-response fields below:
+Why is it important to analyze the Dockerfile and operating system packages used in the Docker image from a security perspective? What could go wrong in those two areas?
+
+Run Grype and Trivy to inspect the layers of the Docker image as defined in the Dockerfile.
+
+q1
+check if any commands pull in malicious application
+
+q2
+ensure o/s is not tampered or altered so it is safe for usage.
+
+
+
+5.18 Solution: Software Composition Analysis with Grype and Trivy
+---------------------------------------
+Question 1: Why is analyzing Dockerfile important from a security perspective?
+
+Answer: The Dockerfile defines how the image is constructed and bootstrapped. It defines exactly what goes into the container. As a result, it's important to ensure all software versions in the Dockerfile are up-to-date and secure from a starting point. We need to examine the image using both Grype and Trivy.
+
+Question 2: Why is it important to evaluate operating system packages used in the Docker image?
+
+Answer: As the Dockerfile pulls in the operating system image which itself may have security vulnerabilities, it's important to evaluate the entire image, including the operating system packages, from a security perspective. As a general best practice, you should use the latest OpenSUSE leap image from a public repo or a hardened image from your private repo.
+
+Run Grype and Trivy to inspect the layers of the Docker image as defined in the Dockerfile:
+
+Run Grype with the following command:
+grype opensuse/leap:latest --scope all-layers
+
+Run Trivy with the following command:
+trivy image opensuse/leap:latest
+
+
+
+5.19 Grype in-depth
+---------------------------------------
+Let's now look at Grype more in-depth and understand how it works.
+
+Generally, Grype works in three steps:
+
+You select an image or binary, and that allows Grype to break down, index, and inventory the image or binary into a standardized list of components, or a bill of materials.
+Then Grype inspects those components to build a detailed library and dependency BOM.
+Grype compares each component in the detailed BOM against a vulnerability database using publicly available vulnerability data.
+Now let's run Grype against the notary server image with the verbose flag to closely inspect all the specifics that Grype provides. The command we use is
+
+grype notary_server:latest --scope all-layers -vv
+Again, the scope is all-layers. We are using two verbose flags, -vv, which give lots of additional information.
+
+We can see that Grype is using a toolbox URL hosted by Anchore, the maker of Grype. This contains the important database that provides the definition of all the vulnerabilities using CVE, and this is what performs the matching.
+
+Next, we can see that Grype identifies that we are using a Docker daemon. If we look at the output logs, we can see all the layers of the Docker image that are defined. Each layer is decomposed and indexed.
+
+Grype found one vulnerable package called musl, which is a package that provides consistent quality and implementation behavior for tiny embedded systems. Version 1.1.24-r2 has a vulnerability. The fixed version has not yet been provided, which suggests that there may not be a fix yet. You can see the CVE prefix CVE-2020-28928. 2020 is the year it was found, and 28928 is a numerical string that's always provided for CVEs. The severity level is medium.
+
+
+In this demo, we examine the Grype database hands-on to look at the CVE database. This is what makes Grype powerful.
+
+Here are the important steps to take:
+
+Make sure we are in the right Grype directory locally. If you haven't cloned Grype locally, you will need to do so for this portion of the demo to get the source downloaded. The command is
+git clone https://github.com/anchore/grype.git
+Run this command to check the status of the Grype database:
+go run main.go db status
+Now we will take a closer look at the grype SQLite database using the sqlite3 command, which is a library that allows you to inspect the content of an SQLite database using Mac or Linux. If you are using Windows, refer to the Nanodegree Prerequisites page in the Introduction lesson for how to set up a Linux Virtual Machine.
+sqlite3 /Users/nick.reva/Library/Caches/grype/db/vulnerability.db
+Once in the SQLite context, turn on column and header mode to easily view the column contents:
+.mode columns
+.headers on
+Run the following command to see the vulnerabilities in this database:
+select * from vulnerability where (namespace = "nvd" and package name="glibc") order by id DESC limit 5;
+In the command above, * means everything. vulnerability is the name of the database. In namespace="nvd", nvd is a type of CVE provider. The package name is "glibc", which is one of the packages that had a vulnerability when we scanned the OpenSUSE image. We will order by descending, which will show the newest vulnerability first. We will set a limit of 5, so we don't get too many rows.
+
+In summary, Grype contains a vulnerability database of all these vulnerabilities. When we run Grype, the tool matches the vulnerabilities against the vulnerability database and shows us the known vulnerabilities of the image in a standardized way.
+
+
+
+5.20 Examine Vulnerable Python App Part 1
+---------------------------------------
+Grype for Binary / Code Path Scanning
+The Grype engine can scan image layers, binaries, and code paths. In this example, we will review a containerized Python application. Python is an interpreted language, not a compiled language. We will scan each of the code paths that make up the Python application to identify where vulnerabilities exist. In later demos, we will remediate those vulnerabilities and rescan with Grype.
+
+Let's revisit how to find software flaws in source code. Finding source code flaws is best done by running a check prior to deployment, through either static or dynamic analysis.
+
+With static analysis, we look for security flaws in the code at rest in your IDE or development environment while the code not running.
+
+Another technique is dynamic analysis, where you build the binary and dynamically review the compiled applications with dynamic analysis tools. We will not demonstrate dynamic analysis in this lesson.
+
+The intent is to check for code flaws against vulnerabilities and good practice and guidance frameworks, such as the Open Web Application Security Project (OWASP-10). Both static and dynamic analysis tools can be configured to run check against OWASP.
+
+We will demonstrate how to prioritize and remediate flaws. We will investigate the flaws manually, identify and remediate vulnerable files, and then check the application by re-testing to ensure that the vulnerabilities are remediated.
+
+In this demo, we will inspect the Python app directory using the tree tool.
+
+You are provided with a vulnerable app called vuln_app in the exercise starter repo of this lesson. This app was forked from the DVPWA project. Go ahead and clone the repository if you haven't already done so.
+
+First, make sure that you have tree installed. You can install it by running brew install tree on macOS or apt-get install tree on Linux. If you are on Windows, you can find the equivalent command in the Further Reading section below.
+
+Now, let's take a look at the makeup of this application directory using the tree command:
+
+tree -f -L 1 <app_location>
+
+For example, the command used in the demo is tree -f -L 1 /Users/nick.reva/udacity/vuln_app.
+
+This shows us the files located in vuln_app.
+
+Dockerfile.app defines that this is a dockerized application.
+Dockerfile.db indicates that there is a dockerized database.
+LICENSE defines a license from the developer ofdvpwa.
+README.rstcontains an application startup readme.
+config contains configurations to startup the application.
+docker-compose.yml: We will run this to bring up the application in a future demo.
+migrations folder contains migration scripts.
+recreate.sh allows us to recreate the database.
+requirements.txt: This defines all the libraries required to run this application.
+run.py: The primary Python app startup directory.
+sqli is the configuration directory for the SQLite database that's run as part of the application.
+In the next demo, we will use Grype to scan this directory for vulnerabilities.
+
+New Terms
+Static analysis: An automated process that inspects the code without requiring the application to be compiled and built. Static analysis can be performed in the developer IDE, terminal, or via the repo upon commit.
+Dynamic analysis: A scheduled or at-build process that builds the binary from the repo and programmatically reviews the compiled applications for source code flaws. The code is investigated as a compiled binary.
+Further Reading
+Read more about a dynamic analysis tool, ZAP.
+For more information on check out the the OWASP Top 10
+To learn from Google security engineers about application security check out Learning Application Security With Google Engineers
+For instructions on how to use the tree command on Windows Tree Command on Windows
+To learn more about SQL injection attacks, consult the SQL Injection OWASP cheat sheet.
+Books
+Christoph Kern | Anita Kesavan | Neil Daswani | Foundations of Security: What Every Programmer Needs to Know
+
+
+
+5.21 Examine Vulnerable Python App Part 2
+---------------------------------------
+n this demo, we run a Grype scan on the application directory vuln_app, which consists of the files we looked at in the previous demo. As mentioned earlier, Grype can be run against images, application directories consisting of application source code, entire binaries like JAR or GO files.
+
+For this demo, make sure you have Grype properly set up and configured. If you need to, go back to the Grype Overview page for the setup instructions.
+
+We will run this command, replacing <directory_of_the_application> with your local application directory that will be scanned:
+
+grype dir:<directory_of_the_application>
+Grype checks to see if there are any updates available from the database. It cataloged the image and also scanned the image. It found that there are a number of vulnerable packages. In the requirements.txt file, we actually have these packages defined. Let's look into them with the following commands:
+
+ls -ll
+cat requirements.txt
+
+We can see that the requirements defined in this file are the same vulnerabilities that we are seeing on the list. For example, we have the aiohttp2 library version 3.5.3 and the jinja2 library version 2.10, along with the corresponding CVEs. jinja2 has a critical vulnerability. In the requirements file, we see jinja2==2.10, which is the exact version that we are using.
+
+In a future demo, we will show you how to update the requirements.txt file to the latest non-vulnerable version, then we will restart the app and re-scan it with Grype to show that the vulnerabilities have been remediated.
+
+Next, let's take a look at the vuln_app itself and demonstrate some application security vulnerabilities in the running application.
+
+In this demo, we bring up the containerized vulnerable application and demonstrate the Cross-Site Scripting (XSS) vulnerability.
+
+To bring up the Python app, we will use docker-compose up. This will bring up the environment as defined by the Dockerfile. This should take around 5 minutes. Once docker-compose is complete, you will get a prompt saying it's completed, and you'll be able to access the application on the localhost port 8080 (http://localhost:8080). From there you will be able to log into the app.
+
+In the browser, we can see the mock "Students and Courses" application where students take courses on different topics. It is pre-loaded with examples of common application security vulnerabilities. Both the username and password are set to superadmin, really secure!
+
+As we peruse this app, we will encounter some vulnerabilities. Commonly, you will be able to use a static analysis tool to find these vulnerabilities. However, Grype doesn't actually discover application security vulnerabilities. You can consider using tools such as LGTM for this purpose.
+
+For this demo, we will just show the vulnerability as it exists and then demonstrate how to fix the vulnerability in a future demo.
+
+Now, let's open http://localhost:8080/courses/1/review.
+
+This is the Course 1 Review page, where you can leave a review for this mock-up math course. If you are a malicious attacker, you could also leave a script behind in the web form. When the next reviewer loads this page, this page will upload a script, which does something bad such as display their cookie. If the attacker is listening for traffic they could then steal the session cookie.
+
+Try putting the following script into the review content box and save:
+
+<script>
+  alert('I am a stored XSS. Your cookies are: ' + document.cookie);
+</script>
+This is a very classic Cross-Site Scripting (XSS) attack. Because this application's web server that's running locally on our machine does not validate input provided by the user (in this case, us) or by the browser, we are able to leave a script locally on the webpage and the script will persist. When the next student comes along to leave a review, it will load the script and the script will steal the session cookies for other students.
+
+If you click on "Courses" on top and go back to the "math" course, you'll see the pop-up message displaying the session cookie. This should not happen and is something undesirable.
+
+In a future demo, we will show how to fix this vulnerability.
+
+New Terms
+Cross-Site Scripting (XSS) attack: Cross-Site Scripting (XSS) attacks are a type of injection, in which malicious scripts are injected into otherwise benign and trusted websites. XSS attacks occur when an attacker uses a web application to send malicious code, generally in the form of a browser-side script, to a different end user. Flaws that allow these attacks to succeed are quite widespread and occur anywhere a web application uses input from a user within the output it generates without validating or encoding it. Source: Cross Site Scripting (XSS) licensed under Creative Commons Attribution-ShareAlike v4.0.
+
+Further Reading
+For more details on different types of cross-site scripting, refer to the Cross-Site Scripting (XSS) OWASP cheat sheet.
+For more details on how to prevent cross-site scripting, refer to this OWASP cheat sheet.
+
+Books
+
+Christoph Kern | Anita Kesavan | Neil Daswani | Foundations of Security: What Every Programmer Needs to Know
+
+
+
+5.22 Examine Vulnerable Python App Part 3
+---------------------------------------
+In Demo 2, we ran a Grype scan on the application directory vuln_app and found a number of vulnerabilities. Let's now see how we can fix these vulnerabilities:
+
+nick.reva@C02YR2A1LVCH grype % grype dir:/Users/nick.reva/udacity/vuln_app
+ ✔ Vulnerability DB     [no update available]
+New version of grype is available: 0.8.0
+ ✔ Cataloged image      [18 packages]
+ ✔ Scanned image        [8 vulnerabilities]
+NAME     INSTALLED  FIXED-IN  VULNERABILITY        SEVERITY 
+aiohttp  3.5.3      3.7.4     GHSA-v6wp-4m6f-gcjg  Low       
+aiohttp  3.5.3                CVE-2018-1000519     Medium    
+aiohttp  3.5.3                CVE-2021-21330       Medium    
+hiredis  0.3.1                CVE-2020-7105        High      
+jinja2   2.10                 CVE-2019-8341        Critical  
+pyyaml   3.13       4.2b1     GHSA-rprw-h62v-c2w7  High      
+pyyaml   3.13                 CVE-2017-18342       Critical  
+pyyaml   3.13                 CVE-2020-14343       Critical
+
+These Python packages are maintained by pypi.org, a non-profit organization that maintains Python packages from the Internet. As you can see, the vulnerable 3.5.3 version of the aiohttppackage is very old, and there's a newer version of the package that is not vulnerable. There is also the jinja2 package that is also vulnerable.
+
+Important Note: Security CVEs for these libraries are maintained by NIST NVD. If you search on the NVD website for the CVE-2018-1000519, you will find significant details about the vulnerability, including the GitHub issue and directions on how to resolve it. Remediating vulnerabilities at scale can be very labor-intensive and requires careful research and testing. There are commercial tools like synk and fossa that make this easier; however, that is beyond the scope of this course.
+
+To remediate this example, we will vim the requirements.txt file, which defines the libraries that are used for the application and updates the vulnerable package version to the latest version that we found on pypi.org. You can run the following command in the terminal:
+
+ls -ll
+vim requirements.txt
+
+Note: In the demo video, the requirements.txt file was edited before the demo was filmed. You will need to update the file with the latest non-vulnerable library versions before proceeding to rescanning the app with Grype.
+
+Then we will run grype dir again and point to the directory that contains the application:
+
+grype dir:<directory_of_the_application>
+
+Grype will re-scan all the files in the directory and check them for vulnerabilities. Now we should have 0 vulnerabilities. So we have fixed the vulnerabilities by editing the requirements.txt file with the updated, non-vulnerable library versions that we found on pypi.org.
+
+Reminder: Now that you've patched the vulnerable libraries in the requirements.txt file, you should redeploy the application by cleanly shutting down the container via docker-compose down and bringing it back up via docker-compose up. The patched libraries won't be running until you redeploy the application.
+
+Demo 5: Fix Python App Source Code Vulnerability
+
+
+Let's now look at how to fix the Cross-Site Scripting (XSS) vulnerability in the Python source code from Demo 3.
+
+First, let's talk about why this vulnerability exists. Template engines that this app uses are subject to Cross-Site Scripting (XSS) vulnerabilities, where the content provided to the web server is not validated by the web server. Hence, the web server just accepts any type of content, including scripts, such as the one we saw.
+
+To remediate this we need to disable autoescaping, which forces the template variable to verify all the content provided to the application. This can be done via a simple parameter change. This will successfully mitigate XSS requests because it won't allow the web server to accept a script as part of a field that an attacker passes.
+
+Here are the steps to follow:
+
+Let's look at the files in this directory with ls -ll.
+We are looking for the sqli directory: cd sqli.
+Inside sqli, we can ls -ll to find the app.py file. This is the Python app file, where we define how the template engine works. The template engine is what handles all requests from a browser, and we need to make sure that the template engine is not allowing scripts to be posted to the application.
+Open up the app.py file with Sublime or any text editor: subl app.py.
+In setup_jinja, we can see that the field autoescape is set to true. This field was previously set to be false, and this change is the fix. Autoescape means that it will remove any content that's posted to the web server and that's not expected content.
+Make sure to run docker-compose down to cleanly shut down the container, then bring it back up by docker-compose up.
+Take a look at the application at http://localhost:8080/courses/1/review and see if this vulnerability is still there. The pop-up message does show when we save the script for the first time, but when we refresh the page and go back to the review page again, the pop-up message does not show up anymore. This is because the script is not persisting on the server because we set autoescape=true in the app.py file.
+
+We knew how to remediate this as part of prior knowledge. In the real world, unless you are specially trained in performing code reviews for application security flaws, you would normally use a static analysis tool to identify flaws and then manually remediate them.
+
+There are not many very good open-source static analysis tools that scan for and fix these types of vulnerabilities, given their complexity. One standout is a tool called LGTM by Semmle (acquired by GitHub in 2019) that performs deep semantic code scanning. There are also many paid, commercial tools that you can use in the industry in a real-world scenario.
+
+New Terms
+Autoescaping: A technique to mitigate stored Cross-Site Scripting (XSS). With autoescaping, user input is automatically escaped. This prevents any unexpected scripts in templating engine from being executed.
+Template engine allows web developers and designers to use templates to generate custom web pages automatically.
+Template variable: A variable for the template engine. This is where we would set disable autoescaping, which forces the template variable to verify that all the content provided to the application is from the user.
+
+Further Reading
+Consult this OWASP page on Cross-Site Scripting (XSS) attacks to learn more about different types of XSS attacks.
+OWASP provides a comprehensive list of common Source Code Analysis Tools.
+
+Books
+
+Christoph Kern | Anita Kesavan | Neil Daswani | Foundations of Security: What Every Programmer Needs to Know
+
+
+
+5.23 Exercise: Evaluate a Vulnerable Flask App with Grype
+---------------------------------------
+
+
+task 2
+https://nvd.nist.gov/vuln/detail/CVE-2021-21330
+
+task 3
+update the version in requirement file, rerun grype
+
+
+
+5.24 Solution: Evaluate a Vulnerable Flask App with Grype
+---------------------------------------
+Exercise Tasks:
+1.Ensure Grype is installed and configured on your machine.
+
+brew tap anchore/grype
+brew install grype
+2.Use lesson starter code to download and scan the vuln_app with Grype.
+
+grype dir:<directory_of_the_application>
+3.Research the security implication of at least 3 vulnerable libraries on the NVD website:
+
+.a. The vulnerable library aiohttp2 3.5.3 in the image is affected by CVE-2018-1000519, a medium severity vulnerability. According to the NIST National Vulnerability Database (NVD),
+
+aiohttp2 3.5.3 library contains a Session Fixation vulnerability in the load_sessionfunction for RedisStorage that can result in Session Hijacking. This attack appear to be exploitable via any method that allows setting session cookies ?session=<> or meta tags or script tags with Set-Cookie.
+
+3.b. The vulnerable library jinja2 2.10 in the image is affected by CVE-2019-8341, a critical vulnerability. According to the NIST NVD,
+
+The from_string function is prone to Server-Side Template Injection (SSTI), where it takes the "source" parameter as a template object, renders it, and then returns it. The attacker can exploit it with {{INJECTION COMMANDS}}in a URI.
+
+3.c. A vulnerable library of your choice (research the vulnerability CVE and impact in a similar style).
+
+4.Remediate the vulnerable libraries and rescan with Grype.
+
+The vulnerable image libraries were fixed by updating to the latest, non-vulnerable library versions in the requirements.txt file and redeploying the application with docker-compose down and docker-compose up.
+
+
+
+5.25 Enterprise Considerations
+---------------------------------------
+In an enterprise setting, all the techniques we taught (image scanning, software composition analysis, and static analysis) on the developer machine are hard to scale, as many developers are developing concurrently and may have different tests or even forget to test.
+
+Here are some high-level strategies to achieve image scanning, software composition analysis, and static analysis at scale:
+
+Image Scanning and Software Composition Analysis
+As an image is built, it’s checked into a version control repository like GitHub, an incoming webhook captures the commit and redirects it to a scanning service run by a CI/CD like Jenkins to execute the Syft, Trivy, or Grype checks.
+Jenkins runs unit tests to determine if the image should continue to deploy. For example, you can deploy only images that have no vulnerabilities or no vulnerabilities higher than medium; it's up to you. An image that’s OK will proceed to deployment.
+An image with a defect gets rejected for deployment and sent back to the engineering team for rework.
+GitHub can be configured to re-open the pull request (PR) for the security violation so that the engineer can inspect the failure.
+The cycle repeats itself until the image passes the unit tests.
+
+Static Analysis
+Static analysis tools like Grype or LGTM can be configured to run within the developer IDE or centrally on a build machine-like Jenkins that can be configured to execute jobs.
+New Terms
+CI/CD: Continuous Integration and Continuous Deployment. It is a technique to build and deploy software upon commit to a source control repo.
+Jenkins: A very popular CI/CD tool.
+PR: Pull request. When you attempt to merge your code branch, you create a pull request for your colleague to review. Security controls such as image scanning can be automated on PRs using webhooks.
+Webhook allows you to build or set up integrations on GitHub (or any other supporting system) with other systems such as Jenkins.
+
+
+
+5.26 Glossary
+---------------------------------------
+Glossary
+Static analysis: An automated process that inspects the code without requiring the application to be compiled and built. Static analysis can be performed in the developer IDE, terminal, or via the repo upon commit.
+Software Composition Analysis (SCA): A security testing method that helps development and security teams to successfully manage and mitigate open-source software dependency and source code risks.
+Software bill of materials: The makeup of an image or binary, broken down into individual packages.
+Dependency typosquatting: An attack situation where attackers create and upload vulnerable libraries to popular distribution hubs of libraries and images, like NPM and Docker Hub, tricking developers to use those libraries.
+Fan out: A phenomenon where software components are provided and assembled from many different software providers.
+Supply chain tempering: Maliciously modifying centralized software components which are used by many other parties with the intent of affecting organizations using this software users through the distribution supply chain.
+Dynamic analysis: A scheduled or at-build process that builds the binary from the repo and programmatically reviews the compiled applications for source code flaws. The code is investigated as a compiled binary.
+Open Web Application Security Project (OWASP-10): A standard for web application security that provides authoritative standards
+Common Vulnerability and Exposures (CVE): A database and formula to calculate risk and impact for vulnerabilities. Risk is ranked into four levels: Low, Medium, High, and Critical. It helps us identify, define, and catalog publicly disclosed cybersecurity vulnerabilities.
+Image Layer Analysis: The process in which we break down images into their discreet layers, or a bill of materials, and inspect each of those layers in detail
+Syft: An open-source tool developed by Anchore that breaks down the image layers to create a detailed bill of materials.
+Grype: A GO application for Software Composition Analysis. Grype decomposes an image, binary, or code paths into image layers or components, compares them against a vulnerability database, and provides feedback.
+Trivy: A competing GO application to Grype for Software Composition Analysis. Trivy decomposes an image, binary, or code paths into image layers or components, compares them against a vulnerability database, and provides feedback.
+Cross-Site Scripting (XSS) attack: Cross-Site Scripting (XSS) attacks are a type of injection, in which malicious scripts are injected into otherwise benign and trusted websites. XSS attacks occur when an attacker uses a web application to send malicious code, generally in the form of a browser-side script, to a different end user. Flaws that allow these attacks to succeed are quite widespread and occur anywhere a web application uses input from a user within the output it generates without validating or encoding it. (Source: Cross Site Scripting (XSS) licensed under Creative Commons Attribution-ShareAlike v4.0.)
+Autoescaping: A technique to mitigate stored Cross-Site Scripting (XSS). With autoescaping, user input is automatically escaped. This prevents any unexpected scripts in templating engine from being executed.
+Template engine allows web developers and designers to use templates to generate custom web pages automatically.
+Template variable: A variable for the template engine. This is where we would set disable autoescaping, which forces the template variable to verify that all the content provided to the application is from the user.
+CI/CD: Continuous Integration and Continuous Deployment. It is a technique to build and deploy software upon commit to a source control repo.
+Jenkins: A very popular CI/CD tool.
+PR: Pull request. When you attempt to merge your code branch, you create a pull request for your colleague to review. Security controls such as image scanning can be automated on PRs using webhooks.
+Webhook allows you to build or set up integrations on GitHub (or any other supporting system) with other systems such as Jenkins.
+
+
+
+5.27 Lesson Review
+---------------------------------------
+In this lesson, we learned about software composition analysis.
+
+We examined software composition analysis (SCA) to identify bill of materials (BOM) with Syft
+We reviewed and remediated open-source software (OSS) Security, performing image analysis with Trivy and Grype to identify vulnerable libraries in the image.
+We reviewed and remediated source code flaws with a vulnerable python application.
+We covered enterprise considerations for automating image scanning and static code analysis.
+
+
