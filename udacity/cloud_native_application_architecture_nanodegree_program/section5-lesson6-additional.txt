@@ -1,0 +1,25 @@
+2021-11-21 07:12:51 exit
+2021-11-21 07:27:15 zypper in docker
+2021-11-21 07:34:49 docker run --pid=host -v /etc/:/node/etc:ro -v /var:/node/var:ro -ti rancher/security-scan:v0.2.2 bash
+2021-11-21 07:49:11 exit
+2021-11-21 07:58:36 cd /var/lib/etcd/
+2021-11-21 07:58:36 ls
+2021-11-21 07:58:50 groupadd --gid 52034 etcd
+2021-11-21 07:59:08 useradd --comment "etcd service account" --uid 52034 --gid 52034 etcd
+2021-11-21 07:59:30 vim /etc/group
+2021-11-21 07:59:35 vim /etc/passwd
+2021-11-21 07:59:47 ls
+2021-11-21 07:59:56 ls -ld /var/lib/etcd
+2021-11-21 08:00:04 chown etcd:etcd /var/lib/etcd
+2021-11-21 08:00:05 ls -ld /var/lib/etcd
+2021-11-21 08:01:09 docker run --pid=host -v /etc/passwd:/etc/passwd -v /etc/group:/etc/group -v /etc:/node/etc:ro -v /var:/node/var:ro -ti rancher/security-scan:v0.2.2 bash
+2021-11-21 08:11:10 exit
+2021-11-22 16:53:49 docker run --pid=host -v /etc/passwd:/etc/passwd -v /etc/group:/etc/group -v /etc:/node/etc:ro -v /var:/node/var:ro -ti rancher/security-scan:v0.2.2 bash
+2021-11-22 16:53:57 history
+
+
+2021-11-21 07:01:08 uptime
+2021-11-21 07:01:09 exit
+2021-11-21 07:42:48 docker run --pid=host -v /etc:/node/etc:ro -v /var:/node/var:ro -ti rancher/security-scan:v0.2.2 bash
+2021-11-21 07:47:56 exit
+2021-11-22 16:54:18 history
