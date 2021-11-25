@@ -1,0 +1,810 @@
+date start : 25 november 2021
+
+
+6.1 Introduction
+---------------------------------------
+Throughout this course, we learned how to threat model and how to harden Docker, Kubernetes, and a Python application. Now, with the application deployed and running, we need to runtime monitor the deployment.
+
+All the security controls we worked on so far are pre-deployment focused, which's unfortunately not sufficient to identify security issues with running processes.
+
+
+
+6.2 Lesson Overview
+---------------------------------------
+In this lesson, we will learn the following topics:
+
+Examine runtime monitoring
+Examine how Sysdig Falco works for run-time monitoring
+Implement Sysdig Falco to perform run-time monitoring
+Export logs and visualize security events with Grafana
+Build a security response playbook to respond to a security incident
+
+
+
+6.3 Examine Security Considerations for Ongoing Runtime Monitoring
+---------------------------------------
+Why Should We Monitor Container at Runtime?
+All the security controls we worked with so far are pre-deployment focused, which is unfortunately not sufficient to identify issues with running microservices. With what we deployed so far, you would not be able to detect a service compromise within your environment.
+
+Process monitoring at runtime is vital to detect suspicious processes running on your pod within your Kubernetes cluster. Processes are dynamic and time-bound. Runtime monitoring allows for real-time threat detection. This is the only legitimate way to detect a service compromise within a running containerized production environment. With this, we will be able to respond to security events more quickly. Reducing time to respond is critical.
+
+Regardless of our pre-deployment, preventative control efforts, attacks will happen. The best thing we can do is to have the tooling and processes to respond to the inevitable security incidents.
+
+Runtime monitoring is the last line of defense to detect an attack. The focus is on very quickly getting context for a suspicious event and taking action before it's too late.
+
+What Is Container Runtime Monitoring?
+Container runtime monitoring allows you to see every request or interaction that the kernel handles. We then inspect these interactions by running rules over them to detect events that may be suspicious.
+
+From there, suspicious events should be investigated to determine if they are harmless or potentially dangerous, which may require further investigation or even the creation of a security incident.
+
+New Terms
+Container Runtime Monitoring: A process in which every request or interaction that the kernel handles gets monitored and inspected to detect events that may be suspicious.
+Security event: When a suspicious event is detected that warrants investigation.
+Security incident: When a security event has been investigated and confirmed to have some impact on the security of a system.
+
+
+
+6.4 Quiz: Examine Security Considerations for Ongoing Runtime Monitoring
+---------------------------------------
+q1
+2
+
+q2
+1,3
+
+
+
+6.5 How Runtime Monitoring Works
+---------------------------------------
+Runtime monitoring works by using system calls. Let’s take a closer look at how the syscalls work.
+
+Let's revisit our "udacity" and "student" containers from the Docker lesson. Whenever you open a file, establish a network connection, or start a process, the container makes a system call using the isolated namespace to the kernel. All of these events are security-relevant, and they should be monitored at run-time.
+
+How does Falco Monitor Syscalls at Runtime?
+Inspecting system calls can be done via the kernel module, which listens for system call events.
+
+In order to gain context to what is going on between pods and nodes, we also need to collect Kubernetes audit events. E.g. when Kubernetes creates or destroys pods, services, or deployments, and when Kubernetes creates, updates, and removes ConfigMaps or secrets. A web server can listen to and inventory Kubernetes audit events.
+
+The kernel module and web server send these events to the policy engine. The policy engine does matching against pre-defined rules to generate a security event that may require further investigation. This is exactly what Sysdig Falco does for us. The diagram below shows how these components work together to generate security events:
+
+
+Sysdig Falco
+Falco can alert us on a lot of security events, for example:
+
+Privilege escalation using privileged containers
+Namespace changes using tools like set namespace
+Detect read/writes to well-known directories to establish persistence on the host
+Detect when processes are spawned and sensitive utilities are run
+Falco comes with 100+ out-of-the-box rules and the ability to write rules easily. Let's review the Falco rule schema. This schema defines the rules that Falco uses to inspects syscalls.
+
+Falco rule schema is defined in the falco_rules.yaml file in the falcosecurity repo. The list defines the name of the section and the items define the rule, which is what we care about and what Falco actually checks for.
+
+falco/blob/master/rules/falco_rules.yaml
+
+# what is this section about
+- list: <section name>
+  items: [
+    <what do we care about>
+    ]
+
+There is also a falco_rules.local.yaml file that provides a template for writing your own rules, if you are interested in writing your own custom rules.
+
+Falco also audits Kubernetes audit events. There is a k8s_audit_rules.yamlfile that defines the Kubernetes audit events which Falco inspects.
+
+New Terms
+System calls (syscalls) are the requests that applications and processes make to interact with the kernel to request resources on a Linux operating system.
+Kernel module: An extension running on the kernel that allows you to extend the functionality of the kernel. Kernel module allows tools like Falco to interact with the kernel.
+Kubernetes audit events are audit events generated documenting the sequence of actions in a cluster. The cluster audits the activities generated by users and by the control plane itself, as well as applications that use the Kubernetes API.
+Policy/Rule engine: The rules provided by Falco that can be configured to identify security-relevant events.
+Sysdig Falco: A Cloud Native Computing Foundation (CNCF) project that provides a runtime security monitoring daemon, Falco. Sysdig is the name of the company that developed the tool, Falco.
+Falco rule schema: A schema used by Falco to define the rule syntax used by the rule engine.
+Spawning process: A phenomenon where an event propagates itself by loading child processes from a primary event.
+
+
+
+6.6 Quiz: How Runtime Monitoring Works
+---------------------------------------
+q1
+system
+
+
+q2
+1,3
+
+
+q3
+1,2,3
+
+
+q4
+kernel
+
+
+
+6.7 Implement Sysdig Falco for Runtime Monitoring Part 1
+---------------------------------------
+Two Ways to Install Falco
+The best way is to install Falco to each master natively using Helm, the Kubernetes package manager, and deploy Falco as a daemon set. For the purposes of this lesson, we will install Falco to the Kubernetes master.
+
+Falco can also be installed natively on worker nodes using an OS-specific binary. However, that adds more complexity, as each node is running Falco and you have more nodes to manage.
+
+Runtime Monitoring with Falco
+Once Falco is deployed, it will generate security events that need to be reviewed. In order to review and aggregate Falco events, we need to export Falco logs via falco-exporter.
+
+To visualize Falco logs in Grafana, you need to configure a Grafana panel. You can use your existing Grafana installation from the Observability course.
+
+Bringing up a One-Node RKE Environment
+
+
+For this lesson, we created a one-node RKE cluster using the provided Vagrantfile in the exercise starter repo.
+
+Warning: You need to turn off the two-node RKE cluster from the Kubernetes lesson before bringing up this one-node cluster to avoid over-saturating your host.
+
+Shut down the two-node RKE cluster from the starter repo for the Kubernetes lesson. Bring up the one-node RKE cluster in the starter directory for this lesson. The cluster.yml is the master configuration file for the cluster, and we have a separate cluster.yml for each cluster.
+
+Follow the steps in the Provision an RKE Cluster section on the Setting up and Bringing up the RKE Cluster page to bring up the cluster.
+
+Because this is a one-node cluster, you only need to copy the SSH key for the first node using the command sudo ssh-copy-id -i ~/.ssh/id_rsa root@192.168.50.101.
+
+Demo 1: Prepare for Falco Install: Install Helm and Falco Drivers
+Note: The video did not mention rebooting the node once the Falco driver installation is complete. It is important to reboot the node immediately after completing the Falco driver and kernel header installation on it.
+
+In this demo, we will prepare to install Falco as a DaemonSet on our RKE cluster. DaemonSets are useful for deploying ongoing background tasks, which need to run on all or certain nodes but do not require user intervention. The DaemonSet-style deployment is suitable for Falco, as Falco runs silently on all the nodes in the cluster without user intervention. Falco only needs intervention by the security engineer or administrator.
+
+We will first need to install Helm, which is what we use to install and deploy Falco. If you don't have Helm installed on your machine, follow Steps 1-3 to install it.
+
+From your local machine or the virtual machine, if you are using Windows, you need to curl the following URL to download the get_helm script:
+
+curl -fsSL -o get_helm.sh https://raw.githubusercontent.com/helm/helm/master/scripts/get-helm-3
+
+Change the permissions in order to execute the script we downloaded:
+chmod 700 get_helm.sh
+Run the script to install Helm:
+./get_helm.sh 
+
+Check Helm version via helm version. At the time of writing, the latest version is v3.5.4:
+version.BuildInfo{Version:"v3.5.4", GitCommit:"1b5edb69df3d3a08df77c9902dc17af864ff05d1", GitTreeState:"clean", GoVersion:"go1.15.11"}
+Note: You should install the latest version of Helm. Refer to this page for the latest version.
+
+Next, we need to add the falcosecurity repo using a Helm chart. Helm charts are ways to package applications for Kubernetes native environments. We add the falcosecurity repo in order to stage it locally:
+
+helm repo add falcosecurity https://falcosecurity.github.io/charts
+We then need to install special Falco drivers and kernel headers before installing Falco itself. Falco uses either a kernel module driver (also known as kmod) or an extended Berkeley Packet Filter (eBPF) driver in order to intercept syscalls and process them from a security perspective. We need to make sure the drivers are in place so that Falco can intercept syscalls to the kernel. Here are the steps to install Falco drivers and kernel headers:
+
+SSH into node1 and install the driver. Password is vagrant.
+
+ssh root@192.168.50.101
+Download the falcosecurity-3672BA8F.asc file, which is a checksum for the drivers. Trust the falcosecurity GPG (GNU Privacy Guard) key:
+rpm --import https://falco.org/repo/falcosecurity-3672BA8F.asc
+Next, we will curl and configure the zypper repository that contains the drivers:
+curl -s -o /etc/zypp/repos.d/falcosecurity.repo https://falco.org/repo/falcosecurity-rpm.repo
+Note: /etc/zypp/repos.d/falcosecurity.repo is the name of the repo. https://falco.org/repo/falcosecurity-rpm.repo is the location of the repo.
+
+Install the kernel headers. This is a key step, where we will apply the SUSE-specific kernel headers prepared by the Falco team in order to intercept syscalls on the SUSE operating system.
+zypper -n install kernel-default-devel 
+Note: The installation will take about 5 minutes. The version should be something close to 5.3.18, specifically for the x86 64-bit operating system that SUSE runs.
+
+It is important to reboot node1 once the installation is complete.
+
+New Terms
+DaemonSet: A type of Kubernetes deployment technique that ensures all nodes run a copy of the pod. This is great for background services like Falco that need to scale across all nodes in the cluster.
+Falco-exporter: Special Falco metrics collector that scrapes Falco metrics and makes them available to Prometheus.
+
+
+
+6.8 Implement Sysdig Falco for Runtime Monitoring Part 2
+---------------------------------------
+In this demo, we will install Falco as a DaemonSet with specific configurations.
+
+Add the Falco repo via
+helm repo add falcosecurity https://falcosecurity.github.io/charts
+Update the Helm repo to get the latest charts:
+helm repo update
+Install Falco using the provided Helm chart:
+helm install --kubeconfig kube_config_cluster.yml falco falcosecurity/falco \
+  --set falco.grpc.enabled=true \
+  --set falco.grpcOutput.enabled=true \
+Note: In this command, we are setting important parameters. falco.grpc.enabled=true and falco.grpcOutput.enabled=true ensure that Falco outputs logs using the gRPC protocol. This will then allow the falco-exporter to collect those logs, stage them, and later be scrapped by Prometheus.
+
+Run kubectl --kubeconfig kube_config_cluster.yml get pod to check Falco pod health. If the pod is still being created, the status of the Falco pod will say ContainerCreating. After a minute or two, the Falco pod status should change to Running:
+
+kubectl --kubeconfig kube_config_cluster.yml get pod
+NAME          READY   STATUS    RESTARTS   AGE
+falco-tvl6j   1/1     Running   0          20s
+Run kubectl --kubeconfig kube_config_cluster.yml get dsto make sure that Falco is deployed as a DaemonSet:
+kubectl --kubeconfig kube_config_cluster.yml get ds
+NAME    DESIRED   CURRENT   READY   UP-TO-DATE   AVAILABLE   NODE SELECTOR   AGE
+falco   1         1         1       1            1           <none>          41s
+
+Note: You should see a Falco DaemonSet, a falco-exporter DaemonSet, and a DaemonSet for the Prometheus node exporter.
+
+Lastly, run the following command to make sure that the Falco service account has been created. The service account is necessary for Falco to operate.
+
+kubectl --kubeconfig kube_config_cluster.yml get ds falco -o yaml | grep serviceAcc
+
+You should see the following output, which confirms that a service account of falco have been created:
+
+f:serviceAccount: {}
+f:serviceAccountName: {}
+serviceAccount: falco
+serviceAccountName: falco
+
+Now that we have Falco running, we will intentionally create some test security events to see if Falco is generating alerts properly. Here are the steps to follow:
+
+Fetch the Falco pod name via kubectl --kubeconfig kube_config_cluster.yml get pods. You should see the Falco pod name in the output:
+
+kubectl --kubeconfig kube_config_cluster.yml get pods                       
+NAME          READY   STATUS    RESTARTS   AGE
+falco-vwsd4   1/1     Running   0          7m40s
+
+Note: Your Falco pod name will be something different, as these are unique strings. Take note of this pod name. We will need to reference it in the next command.
+
+Next, we will create a security event on the container by spawning a shell into the Falco pod and running some legit commands in it, as an attacker might. Then we will check the Falco logs to see if Falco registers those commands as security events. Make sure to replace falco-vwsd4with your actual pod name.
+
+kubectl --kubeconfig kube_config_cluster.yml exec -it falco-vwsd4 /bin/bash
+
+Note: After running this command, the context changes from our local machine to within the container. We are now root on the falco-vwsd4 container. You should see your unique Falco container name.
+
+You may also have noticed the warning message that thekubectl exec [POD] [COMMAND]is DEPRECATED and will be removed in a future version. Use kubectl exec [POD]--[COMMAND]instead. You should use -- between the pod name and the command (e.g. falco-vwsd4 -- /bin/bash.
+
+From node1 run a few fun commands! Imagine the attacker has taken over this container. They now want to create an account for themselves to maintain persistence on the container. Let's say the attacker wants to add a user named best_hacker.
+
+adduser best_hacker
+
+Set the password as hacker. Follow the prompts in the terminal to add user information.
+
+Now our "best hacker" may be interested in taking a look at the password hashes for other users on the container. To do that, they might look at the /etc/shadow password directory. So we will cat the etc/shadow file and send it out to /dev/null because we don't actually want to expose the content of it on screen, as it is sensitive information.
+
+cat /etc/shadow > /dev/null
+
+Lastly, imagine the hacker wants to establish a listener and they want to use Netcat, which is a common utility that's installed on every Linux system. The attacker can start a Netcat listener on port 8080 by running the following command and later connect to this listener to establish a reverse shell:
+
+nc -l 8080
+
+It will not return anything immediately. It will just run and attempt to create the listener until it is canceled. Out intention is to have this command registered in the Falco logs as a malicious activity. So we will cancel the listener and check the logs closely for those 3 commands in Steps 3-5.
+
+Exit the container and check logs for the Falco container ID [falco-vwsd4] to check the logs:
+
+kubectl --kubeconfig kube_config_cluster.yml logs -f falco-vwsd4 | grep adduser 
+kubectl --kubeconfig kube_config_cluster.yml logs -f falco-vwsd4 | grep /etc/shadow
+kubectl --kubeconfig kube_config_cluster.yml logs -f falco-vwsd4 | grep nc
+
+You should see warning messages regarding the corresponding Falco security events in the logs for each of the commands.
+
+Comments on how these apply in real-world scenarios:
+
+In the real world, it is unusual to have a user added locally on the container. However, if this indeed happens, the security event will be output as an alert to a visualization tool like Grafana, ELK, Splunk, and sent to a security monitoring or engineering team via email or slack alert.
+
+A centralized security operations or security engineering team would get notified and they will further investigate the security event. In smaller organizations without a dedicated security team, a devops or infrastructure team often performs this role.
+
+In the real world, the attacker might look into the /etc/shadow password directory to obtain the hash and attempt to crack the hash to obtain the actual password. Falco registered a warning for our attempt to cat the etc/shadow file, which Falco sees as a sensitive event.
+
+Lastly, creating a Netcat is a technique attackers often use to then connect to the container using a reverse shell. In the Falco logs, you can see that a shell was spawned on the container, which is not expected. Falco also noticed that a network tool netcat was spawned within the container. It is good that Falco is catching both events. These will be output as alerts to a visualization tool for further investigation.
+
+Falco does not enable the Falco gRPC server and the Falco gRPC Outputs APIs by default. This is mandatory to consume logs from the gRPC server and send logs to falco-exporter that is then scraped by Prometheus and sent to Grafana.
+
+In the previous demos, we deployed Falco as a DaemonSet to the cluster. We passed a switch to setfalco.grpc.enabled=true when we installed Falco. In this demo, we can actually check to see if the Falco configuration has been deployed with the gRPC output set to true. This is required for us to forward logs from Falco to Grafana.
+
+Here are the steps to follow:
+
+Check the name of the pod that's running:
+kubectl --kubeconfig kube_config_cluster.yml get pods
+Note: The pod name on screen changed because we had to redeploy it between demos. Take note of your unique pod name which is different from the one on screen.
+
+We then need to exec into the Falco pod via
+kubectl --kubeconfig kube_config_cluster.yml exec -it falco-x7gbb /bin/bash
+Note: You may have noticed the warning message that thekubectl exec [POD] [COMMAND]is DEPRECATED and will be removed in a future version. Use kubectl exec [POD]--[COMMAND]instead. You should use -- between the pod name and the command (e.g. falco-x7gbb -- /bin/bash).
+
+Now we are in the pod context. The context changed to root@falco-x7gbb. Change to the Falco directory that contains the Falco configuration files:
+cd /etc/falco
+cat the falco.yaml file to look at its content and check if the gRPC flags were set correctly:
+cat falco.yaml
+Both grpc.enabled and grpcOutput.enabled should be set to true:
+grpc:
+  enabled: true
+
+grpc_output:
+  enabled: true
+If both lines are not set to true, you need to uninstall Falco using the helm uninstall command and reinstall Falco ensuring you use the right switch at installation. The reason for this is that containers are immutable, i.e. the file system is read-only. We cannot edit this file on Falco locally. So we will have to set the flags correctly at installation and re-deploy Falco with the correct configurations.
+
+New Terms
+Netcat: A popular network utility reading and writing data across network connections.
+
+
+
+6.9 Quiz: Implement Sysdig Falco for Runtime Monitoring
+---------------------------------------
+q1
+2,3
+
+q2
+1
+
+q3
+1
+
+
+
+6.10 Exercise: Implement Sysdig Falco on Kubernetes Cluster
+---------------------------------------
+Here we will focus on deploying Falco run-time monitoring with the default ruleset on the cluster:
+
+Shut down the two-node RKE cluster from the starter repo for the Kubernetes lesson. Bring up the one-node RKE cluster in the starter directory for this lesson.
+Install Falco node1 using helm. Ensure you trust the falcosecurity GPG key and install kernel headers.
+Once Falco is running, check for Falco pod health and DaemonSet and verify that the service account was created.
+In a second terminal tab, simulate an attack tactic and test if Falco generates log entries regarding the tactic.
+Investigate Falco rules located at /etc/falco/falco_rules.yaml. Pick 5 rules that you find interesting and document what threat they will identify in the free-response fields below.
+
+
+Netcat Remote Code Execution in Container
+
+Threat: Attackers may use a Netcat listener to connect to spawn a bind or reverse shell.
+
+
+List sensitive directory names such as etc/shadow, /etc/sudoers, /etc/pam.conf, /etc/security/pwquality.conf
+
+These directories often contain sensitive authentication information. An attacker may try to obtain password hashes to crack offline.
+
+Use of shadowutils_binaries such as chage, gpasswd, lastlog, newgrp, sg, adduser, deluser, chpasswd, groupadd, groupdel, addgroup, delgroup, groupmems, groupmod, grpck, grpconv, grpunconv, newusers, pwck, pwconv, pwunconv, useradd, userdel, usermod, vigr, vipw, unix_chkpwd
+
+These binaries allow users to be added, deleted, and modified, which may be used by an attacker to establish persistence (e.g create user best_hacker).
+
+https_miner_domains such as ca.minexmr.com are used for nodes to connect to control planes
+
+ Attackers often compromise clusters to run crypto mining and abuse computing resources.
+
+
+Launch Package Management Process in Container such as apt-get.
+
+Containers are supposed to be immutable. Package management should be done when building the image. Adding packages to running containers may be a sign of an attacker trying to establish persistence.
+
+
+
+6.11 Solution: Implement Sysdig Falco on Kubernetes Cluster
+---------------------------------------
+Follow the steps in Demo 1 and Demo 2 on the Implement Sysdig Falco for Runtime Monitoring Part 1 and Part 2 pages to bringing up the one-node RKE cluster and install Falco node1 using helm. Ensure you trust the falcosecurity GPG key and install kernel headers.
+Once Falco is running, follow the steps in Demo 2 on the Implement Sysdig Falco for Runtime Monitoring Part 2 page to check Falco pod health and DaemonSet and verify that the service account was created. Here are the important commands:
+
+kubectl --kubeconfig kube_config_cluster.yml get pod
+kubectl --kubeconfig kube_config_cluster.yml get ds
+kubectl --kubeconfig kube_config_cluster.yml get ds falco -o yaml | grep serviceAcc
+In a second terminal tab, follow the steps in Demo 3 to simulate an attack tactic and test if Falco generates log entries regarding the tactic. Here are the important commands:
+
+kubectl --kubeconfig kube_config_cluster.yml get pods                       
+kubectl --kubeconfig kube_config_cluster.yml exec -it falco-[pod_ID] /bin/bash
+adduser best_hacker
+cat /etc/shadow > /dev/null
+nc -l 8080
+
+Exit the container and check logs for the Falco container with the following commands:
+
+kubectl --kubeconfig kube_config_cluster.yml logs -f falco-[pod_ID] | grep adduser 
+kubectl --kubeconfig kube_config_cluster.yml logs -f falco-[pod_ID] | grep /etc/shadow
+kubectl --kubeconfig kube_config_cluster.yml logs -f falco-[pod_ID] | grep nc
+
+You should see Falco security events in the logs for each of the commands.
+Investigate Falco rules located at /etc/falco/falco_rules.yaml. Pick 5 rules that you find interesting and document what threat they will identify.
+
+Rule 1: Netcat Remote Code Execution in Container
+Threat: Attackers may use a Netcat listener to connect to spawn a bind or reverse shell.
+Rule 2: List sensitive directory names such as etc/shadow, /etc/sudoers, /etc/pam.conf, /etc/security/pwquality.conf
+Threat: These directories often contain sensitive authentication information. An attacker may try to obtain password hashes to crack offline.
+Rule 3: Use of shadowutils_binaries such as chage, gpasswd, lastlog, newgrp, sg, adduser, deluser, chpasswd, groupadd, groupdel, addgroup, delgroup, groupmems, groupmod, grpck, grpconv, grpunconv, newusers, pwck, pwconv, pwunconv, useradd, userdel, usermod, vigr, vipw, unix_chkpwd
+Threat: These binaries allow users to be added, deleted, and modified, which may be used by an attacker to establish persistence (e.g create user best_hacker).
+Rule 4: https_miner_domains such as ca.minexmr.com are used for nodes to connect to control planes
+Threat: Attackers often compromise clusters to run crypto mining and abuse computing resources.
+Rule 5: Launch Package Management Process in Container such as apt-get.
+Threat: Containers are supposed to be immutable. Package management should be done when building the image. Adding packages to running containers may be a sign of an attacker trying to establish persistence.
+
+
+
+6.12 Configure Falco to Send Alert Output to Grafana
+---------------------------------------
+Implement Falco Exporter
+
+As mentioned earlier, Falco exporter allows us to export the logs from the Falco running on the master and centralize them in toa Grafana panel for visualization and investigation.
+
+Here we will implement Falco exporter. Falco exporter ships and transforms logs into a consistent format that Prometheus uses. Prometheus is the metrics engine that Grafana can ingest.
+
+Exporting logs from Falco and sending them to Grafana to visualize metrics is key to security investigations. It also allows us to set log retention, which may be important for compliance or security requirements.
+
+Implement Falco Grafana Panel
+
+Visualizing investigations in Grafana will allow you to easily sort and click through ongoing logs. When a security incident happens, you can create further automation to prioritize alerting to your on-call team member. This can be done using an integration between Grafana and Slack which is beyond the scope of this course; however, it can be implemented via Falcosidekick.
+
+In order to have the context for a security event, results in Grafana can be aggregated or combined into a single event index for easier searching and sorting.
+
+Lastly, with logs flowing from Falco to Grafana, we are now prepared to respond to a security incident.
+
+Remember, very very few events will result in an incident. It's our goal with this monitoring to have the capability to detect the needles in the haystack and take action on security events that may be the beginning of a security incident.
+
+Demos
+In the following 4 demos, we will demonstrate how to complete the configuration setup so that Falco can send logs to Grafana. You will practice doing so in the exercise.
+
+Deploy Prometheus Operator
+Implement falco-xporter
+Create ServiceMonitor file
+Import Falco Grafana Panel and Monitor Metrics
+
+Deploy Prometheus Operator Stack
+
+In this demo, we will deploy the Prometheus Operator, which is a piece of software that ingests logs from Falco exporter. To recap, Falco generates security events. Falco exporter consumes and stages those in a format that Prometheus can consume. Then we configure the Prometheus Operator, which includes several different pods to ingest those logs. From there we configure Grafana to visualize and display those logs. Take the following steps to deploy the Prometheus Operator:
+
+Add the corresponding repo:
+
+helm repo add stable https://charts.helm.sh/stable
+
+Helm install Prometheus Operator:
+
+helm install --kubeconfig kube_config_cluster.yml stable/prometheus-operator --generate-name
+
+Note: You can ignore the deprecation warnings. It should take a couple of minutes for all pods to come up.
+
+Once the installation is complete, we will run the following command to check the status of the Prometheus release to make sure the prometheus-operator stack can come up. Remember to add the --kubeconfig file path to this command. Note that your release tag in release=prometheus-operator-1619828194 will be different:
+
+kubectl --kubeconfig kube_config_cluster.yml --namespace default get pods -l "release=prometheus-operator-1619828194"
+
+Let's also run a get pods command to see how many pods we are running. You can optionally grep for Prometheus-related pods only:
+
+kubectl --kubeconfig kube_config_cluster.yml --namespace default get pods | grep prometheus
+
+Note: You should have 6 Prometheus-related pods up. Don't proceed until all are running.
+
+Next, we port forward our primary Prometheus Operator, the prometheus-prometheus-operator-[ ]-prometheus-0 pod to port 9090. Insert your unique pod ID. Make sure your pod name ends in -0 and remember to forward it to 9090. Once you run the command, you should have port forwarding started.
+
+kubectl --kubeconfig kube_config_cluster.yml --namespace default port-forward prometheus-prometheus-operator-[   ]-prometheus-0 9090
+Forwarding from 127.0.0.1:9090 -> 9090
+Forwarding from [::1]:9090 -> 9090
+Handling connection for 9090
+
+Visit 127.0.0.1:9090 from the web browser to check port forwarding and make sure that Prometheus came up. Under "Targets", you should see Prometheus-related service monitors and they are refreshing. These monitor the default Kubernetes services.
+If Prometheus doesn't come up as expected, you need to run the following command to kill any existing port forwarding:
+
+lsof -ti:9090 | xargs kill -9
+
+Implement Falco-Exporter as a Pod
+
+In this demo, we will deploy falco-exporter, which allows us to scrape logs from Falco and stage them in a format that Prometheus can then ingest via a custom scraper configuration. Here are the steps to follow:
+
+Run the following Helm install command to install falco-exporter:
+helm install --kubeconfig kube_config_cluster.yml falco-exporter \
+ --set serviceMonitor.enabled=true \
+falcosecurity/falco-exporter
+Note: With --set serviceMonitor.enabled=true, we are setting a special switch to install a service monitor, which is a configuration that Prometheus uses to discover falco-exporter, then scrape metrics from it and import them into Prometheus. Here's the output you should see:
+
+NAME: falco-exporter
+LAST DEPLOYED: Tue Apr 20 18:07:48 2021
+NAMESPACE: default
+STATUS: deployed
+REVISION: 1
+NOTES:
+Get the falco-exporter metrics URL by running these commands:
+export POD_NAME=$(
+kubectl get pods --namespace default -l "app.kubernetes.io/name=falco-exporter,app.kubernetes.io/instance=falco-exporter" -o jsonpath="{.items[0].metadata.name}")
+Run the following command to get the name of the release or the pod name. Remember to add the --kubeconfig file path to this command. You should see the pod name in the output:
+kubectl --kubeconfig kube_config_cluster.yml get pods --namespace default -l "app.kubernetes.io/name=falco-exporter,app.kubernetes.io/instance=falco-exporter" -o jsonpath="{.items[0].metadata.name}"
+falco-exporter-f4z44
+"Visit http://127.0.0.1:9376/metrics to use your application"
+Port forward the pod name above to port 9376 via the following command. Your pod name will include your unique pod ID, instead of f4z44:
+kubectl --kubeconfig kube_config_cluster.yml port-forward --namespace default falco-exporter-[   ] 9376
+You should have port forwarding started:
+
+Forwarding from 127.0.0.1:9376 -> 9376
+Forwarding from [::1]:9376 -> 9376
+Handling connection for 9376
+You should now be able to visit 127.0.0.1:9376/metrics from a web browser locally and see Falco event logs:
+# HELP falco_events 
+# TYPE falco_events counter
+falco_events{hostname="falco-tvl6j",k8s_ns_name="<NA>",k8s_pod_name="<NA>",priority="3",rule="Write below etc",source="SYSCALL"} 13
+falco_events{hostname="falco-tvl6j",k8s_ns_name="<NA>",k8s_pod_name="<NA>",priority="4",rule="Mount Launched in Privileged Container",source="SYSCALL"} 4
+falco_events{hostname="falco-tvl6j",k8s_ns_name="<NA>",k8s_pod_name="<NA>",priority="5",rule="Launch Privileged Container",source="SYSCALL"} 3
+falco_events{hostname="falco-tvl6j",k8s_ns_name="<NA>",k8s_pod_name="<NA>",priority="5",rule="Launch Sensitive Mount Container",source="SYSCALL"} 5
+falco_events{hostname="falco-tvl6j",k8s_ns_name="<NA>",k8s_pod_name="<NA>",priority="5",rule="Launch Suspicious Network Tool in Container",source="SYSCALL"} 25
+falco_events{hostname="falco-tvl6j",k8s_ns_name="default",k8s_pod_name="prometheus-grafana-66c946f558-lfsrw",priority="5",rule="Contact K8S API Server From Container",source="SYSCALL"} 16
+falco_events{hostname="falco-tvl6j",k8s_ns_name="default",k8s_pod_name="prometheus-prometheus-node-exporter-9fbb8",priority="5",rule="Launch Sensitive Mount Container",source="SYSCALL"} 1
+# HELP go_gc_duration_seconds A summary of the pause duration of garbage collection cycles.
+# TYPE go_gc_duration_seconds summary
+
+In this demo, we will create and apply a custom ServiceMonitor file in order for Prometheus to scrape logs from falco-exporter. We will provide you with the content of this yaml file, and you will need to replace the release label with one that's specific to your environment.
+
+Here are the steps to follow:
+
+Create a file named falco_service_monitor.yaml. This file can actually be called anything, but let's pick a declarative name.
+touch falco_service_monitor.yaml
+Open this yaml file and add the following content. Be extra careful to make sure the spacing is correct.
+apiVersion: monitoring.coreos.com/v1
+kind: ServiceMonitor
+metadata:
+  labels:
+    release: prometheus-operator-1619828194
+  name: falco-exporter-servicemonitor
+  namespace: default
+spec:
+  endpoints:
+  - bearerTokenFile: /var/run/secrets/kubernetes.io/serviceaccount/token
+  - port: metrics 
+    interval: 5s
+  namespaceSelector:
+    matchNames:
+    - default
+  selector:
+    matchLabels:
+      app.kubernetes.io/instance: falco-exporter
+      app.kubernetes.io/name: falco-exporter
+Looking at this file, you will notice that we are using a Monitoring Core OS API. This file tells Prometheus to apply the ServiceMonitor kind and look for the falco-exportername.
+
+Now, you will need to replace the prometheus-operator-1619828194 release label with one that's specific to the installation of prometheus-operator in your local environment. The string of numbers will be different in your environment. To get the release tag, follow these steps:
+
+Check Prometheus release:
+kubectl --kubeconfig kube_config_cluster.yml get prometheus
+Edit the configuration for Prometheus to find the Prometheus release label. Be sure to add the Prometheus name from the output of Step 3.
+kubectl --kubeconfig kube_config_cluster.yml edit prometheus prometheus-operator-161982-prometheus
+Note: The output of Step 4 is lengthy. Look extra carefully for the release label under the matchLabels section. This needs to match the release label in the falco_service_monitor.yamlfile.
+
+Modify the release label in the falco_service_monitor.yaml file accordingly (e.g. release: prometheus-operator-1619828194) .
+Apply the updated yaml file via the following command. The falco_service_monitor.yaml file will be applied to the configuration for the ServiceMonitor. This will then allow Prometheus to discover the falco-exporter pod and scrape logs from it.
+kubectl --kubeconfig kube_config_cluster.yml apply -f falco_service_monitor.yaml
+Lastly, we need to visit 127.0.0.1:9376/metrics from the web browser and check the Prometheus pane. Under targets, we need to make sure that the falco-exporter ServiceMonitor has been discovered. You should see 1 active target under "Service Discovery" for default/falco-exporter-servicemonitor listed underneath.
+
+In this demo, we will set up the Falco Grafana panel. Specifically, we will port forward Grafana pod, log into Grafana for the first time, configure the Falco Grafana panel to see metrics within Grafana from Falco. Here are the steps to follow:
+
+Run the following command to check the name of the Grafana pod.
+kubectl --kubeconfig kube_config_cluster.yml get pod
+Note: Take note of the pod containing the Grafana name. This is the pod running Grafana. Your pod name will contain your unique prometheus-operator release tag and an unique string associated with your Grafana pod.
+
+NAME                                                     READY   STATUS    RESTARTS   AGE
+prometheus-operator-1619828194-grafana-79668b6f49-j964r           0/2     Completed   0          2d3h
+Next, we will port forward the Grafana pod on port 3000, which is the port that Grafana uses. Be sure to replace prometheus-operator-1619828194-grafana-79668b6f49-j964r with your own Grafana pod name:
+kubectl --kubeconfig kube_config_cluster.yml --namespace default port-forward prometheus-operator-1619828194-grafana-79668b6f49-j964r 3000
+You should have port forwarding started:
+
+Forwarding from 127.0.0.1:3000 -> 3000
+Forwarding from [::1]:3000 -> 3000
+Handling connection for 3000
+Browse http://127.0.0.1:3000/ from your web browser and login using the following information:
+Username: admin
+Password: prom-operator
+From Grafana, click on the + icon on the left-hand-side panel, select "Import". We will import the Falco dashboard from the Falco Dashboard page. Copy the panel ID 11914 from this page, apply it to the Grafana Import page and name it Falco Dashboard Udacity. Select the Prometheus data source, which should be automatically discovered.
+Ensure Falco metrics are being generated in the Grafana panel. On the top-right corner, select "Last 5 minutes" and refresh. You should be able to see events from Falco.
+
+
+
+6.13 Quiz: Configure Falco to Send Alert Output to Grafana
+---------------------------------------
+q1
+true
+
+q2
+falco
+falco-exporter
+grafana
+falco
+falco
+
+
+
+6.14 Exercise: Configuring Falco to 
+---------------------------------------
+Exercise: Configure Falco to Send Logs to Grafana
+
+
+In this exercise, you configure Falco to send logs to Grafana for visualization.
+
+Exercise Prerequisites:
+Complete the previous exercise to make sure that Falco is successfully running on the cluster and generating log entries on security events
+Exercise Steps:
+Deploy Prometheus Operator and port forward on the appropriate port
+Deploy falco-exporter and port forward on the appropriate port
+Create and apply the custom ServiceMonitor Prometheus configuration
+Port forward Grafana on the appropriate port, import Falco panel, and monitor metrics
+
+
+
+6.15 Solution: Configuring Falco to Send Alert Output to Grafana
+---------------------------------------
+Exercise Steps:
+Follow the Deploy Prometheus Operator Stack demo on the Configure Falco to Send Alert Output to Grafana page to deploy Prometheus Operator and port forward on the appropriate port. Important commands include:
+
+helm install --kubeconfig kube_config_cluster.yml stable/prometheus-operator --generate-name
+kubectl --kubeconfig kube_config_cluster.yml get pods
+kubectl --kubeconfig kube_config_cluster.yml --namespace default port-forward prometheus-prometheus-operator-[   ]-prometheus-0 9090 9090
+
+Follow the Implement Falco-Exporter as a Pod demo on the Configure Falco to Send Alert Output to Grafana page to deploy falco-exporter and port forward on the appropriate port. Important commands include:
+
+helm install --kubeconfig kube_config_cluster.yml falco-exporter \
+ --set serviceMonitor.enabled=true \
+falcosecurity/falco-exporter
+
+kubectl --kubeconfig kube_config_cluster.yml get pods --namespace default -l "app.kubernetes.io/name=falco-exporter,app.kubernetes.io/instance=falco-exporter" -o jsonpath="{.items[0].metadata.name}"
+
+kubectl --kubeconfig kube_config_cluster.yml port-forward --namespace default falco-exporter-[   ] 9376
+
+Follow the Create ServiceMonitor File demo on the Configure Falco to Send Alert Output to Grafana page to create and apply the custom ServiceMonitor Prometheus configuration. Important commands include:
+
+touch falco_service_monitor.yaml
+kubectl --kubeconfig kube_config_cluster.yml apply -f falco_service_monitor.yaml
+
+Follow the Demo 8Import Falco Grafana Panel and Monitor Metrics demo on the Configure Falco to Send Alert Output to Grafana page to port forward Grafana on the appropriate port, import Falco panel, and monitor metrics. Important commands include:
+
+kubectl --kubeconfig kube_config_cluster.yml get pod
+kubectl --kubeconfig kube_config_cluster.yml --namespace default port-forward prometheus-operator-[      ]-grafana-[      ]-[  ] 3000
+
+
+
+6.16 Security Incident Response Playbook
+---------------------------------------
+Why Is a Security Response Playbook Vital?
+Only a small percentage of security events result in an incident. Here, we will discuss how to prepare yourself for a security incident.
+
+In order to prioritize security events, you need automation, context, and a streamlined process to raise the most critical security events to humans to take action.
+
+In the industry, when there are too many events to review and not enough context, we call this alert fatigue. Unless you tune, filter, and prioritize, the event stream may be too noisy.
+
+As a result, you should start small with Falco rules and scale up only once you can categorize the events and make sure that the rules do not have a material performance impact on the cluster.
+
+How to Respond to an Incident?
+In order to respond to an incident, you need to have a clear process.
+
+The first step is to have a clear process and ownership for security incidents. The process needs to be formalized and aligned with stakeholders.
+
+The next step is to have a way to assess and triage what happened, so you can direct resources to the event. This is often done by assigning an incident commander to control and direct the incident and an incident engineer to investigate the technical aspects such as reviewing logs.
+
+Lastly, timeliness is really vital, as the clock is ticking once an incident is detected.
+
+How to Create a Playbook?
+In order to be prepared for a security incident, you need to build a playbook that provides a framework for responding to an incident.
+
+The first step is to document what happened and make sure it's clear what the implications are.
+
+Next, it's vital to understand what’s impacted. Is the security event scoped to many clusters or a single cluster?
+
+Lastly, you need to focus your attention on what to remediate and how to remediate it. At this point, the focus is on damage control.
+
+Respond to a Security Incident
+
+In this demo, we demonstrate what happens when an attacker runs a payload on the cluster. You will try this in the exercise later. A payload is a script or file that delivers a malicious action such as running malware.
+
+Imagine you are an attacker and obtained access to an administrative terminal, where you have access to execute privileged kubectl commands. Then you can execute thepayload.sh script from the exercise starter repo.
+
+Execute the script using ./payload.sh. Then pivot to Grafana and observe what happens. Grafana shows a huge spike of events, all appear to be about crypto-mining.
+
+Let's then take a look in the terminal and see what happens. We first run the get pod command:
+
+kubectl --kubeconfig kube_config_cluster.yml get pod
+We can see that there are pods named minergate, moneropool, and xmrpooldotnet.
+
+What containers are running on these pods? Run this command to investigate:
+
+kubectl --kubeconfig kube_config_cluster.yml get pods --all-namespaces -o=jsonpath='{range .items[]}{"\n"}{.metadata.name}{":\t"}{range .spec.containers[]}{.image}{", "}{end}{end}' |\ sort
+The container images all seem to be crypto-mining-related.
+
+With this information, let's answer the following questions:
+
+What happened to the system?
+Three pods running three different crypto miners were launched.
+What was the payload?
+Monero crypto-mining containers, specifically minergate, moneropool, and xmrpooldotnet .
+The attacker was able to get control of the cluster and run these containers on the cluster. Attackers are after compute resources to abuse for crypto-mining.
+How was this identified?
+Through Falco
+Click on the magnifying glass icon on the left-side panel. Search for "Falco" to bring up the "Falco Dashboard Udacity"
+What is the impact on a system level?
+The attacker managed to run crypto miners on our system, which is undesirable. Usually, crypto-mining consumes a lot of CPU. Let's pivot to the Kubernetes/compute resources dashboard to observe the CPU utilization:
+Click on the magnifying glass icon on the left-side panel. Search for "Kubernetes/Compute Resources"
+We can see that in the last few minutes there is a significant spike in the CPU utilization for both Kubernetes and the default. This is related to the crypto miners being started.
+What is the probable root cause?
+The attacker was able to execute the pods with kubectl, which means they have access to an administrative terminal and the kubeconfig file. Or maybe they have taken over the UI and were able to run this from the UI.
+What steps were taken to remediate the system?
+The administrator can run the following command to evict the pods:
+kubectl --kubeconfig kube_config_cluster.yml delete pod <pod_name> --grace-period=0 --force>Now that the pods are evicted, check the Grafana dashboard again for CPU utilization. The CPU utilization shall start to fall as the crypto mining pods are evicted.
+The Falco Dashboard Udacity also begins to show a flat line for crypto-mining-related alerts, as the crypto mining pods are evicted.
+What steps will you take to prevent this payload from running?
+It's possible to use admission controllers to allow only certain images to be imported and started within the pods.
+It is also good to have monitoring like the dashboards we use. It would be helpful to have alerts from Falco in Grafana for events like this.
+In the falco-exporter metrics pane (visit 127.0.0.1:9376/metrics from a web browser), we can see that the priority for these events is pretty high. You can update the priority level and make it higher by editing the rules.
+New Terms
+Security Response Playbook: A clearly articulated document that defines a set of steps a team or individual takes to respond to a security incident.
+Alert fatigue: When a team or individual stops paying attention to security alerts as they are too frequent and lack context.
+Payload: A script or file that delivers a malicious action such as running malware.
+￼
+
+
+6.17 Quiz: Incident Response
+---------------------------------------
+q1
+2,3,4
+
+q2
+1,2,4
+
+
+
+6.18 Exercise: Create a Basic Incident Response Playbook
+---------------------------------------
+Execute the payload.sh script in the exercise starter repo and observe pod creation
+Pivot to Grafana and observe the Falco security events and CPU utilization via corresponding panels
+Write an incident response report answering the following questions:
+What happened to the system?
+What was the payload?
+How was this identified?
+What is the probable root cause?
+What is the impact to the system?
+What steps were taken to remediate the system?
+What steps will you take to prevent this payload from running?
+
+
+
+6.19 Solution: Create a Basic Incident Response Playbook
+---------------------------------------
+Solution: Create a Basic Incident Response Playbook
+
+
+Refer to the Respond to a Security Incident demo on the Security Response Playbook page to complete this exercise.
+
+Run the script via ./payload.shand observe pod creation via kubectl --kubeconfig kube_config_cluster.yml get pod. This script runs three pods with three different crypto miners:
+servethehome/monero_cpu_moneropool 
+servethehome/monero_cpu_minergate
+servethehome/monero_cpu_xmrpooldotnet
+Pivot to Grafana and observe the Falco security events and CPU utilization via corresponding panels. Check out the following:
+Falco generates many crypto mining events such as "Detect crypto miners using the Stratum protocol" based on crypto rules.
+CPU spikes on the cluster significantly as the crypto pods being to consume resources, as shown on the Kubernetes/Compute Resources panel.
+Write an incident response report answering the following questions:
+What happened to the system?
+Three pods running three different crypto miners were launched.
+What was the payload?
+Monero crypto miners.
+How was this identified?
+Through the Falco runtime monitoring daemon.
+What is the probable root cause?
+An attacker was able to create new pods with kubectl which means they have access to an administrative terminal with the kubeconfig file or through the UI.
+What is the impact on the system?
+CPU utilization jumped.
+What steps were taken to remediate the system?
+The administrator noticed the event through Grafana monitoring and evicted the pods.
+What steps will you take to prevent this payload from running?
+We should review access to the Kubernetes API server from administrative terminals and the Grafana dashboards. Admission controllers can also be configured to disallow unknown images to be used to create containers.
+
+
+
+6.20 Glossary
+---------------------------------------
+Glossary
+Container Runtime Monitoring: A process in which every request or interaction that the kernel handles gets monitored and inspected to detect events that may be suspicious.
+Security event: When a suspicious event is detected that warrants investigation.
+Security incident: When a security event has been investigated and confirmed to have some impact on the security of a system.
+System calls (syscalls) are the requests that applications and processes make to interact with the kernel to request resources on a Linux operating system.
+Kernel module: An extension running on the kernel that allows you to extend the functionality of the kernel. Kernel module allows tools like Falco to interact with the kernel.
+Kubernetes audit events are audit events generated documenting the sequence of actions in a cluster. The cluster audits the activities generated by users and by the control plane itself, as well as applications that use the Kubernetes API.
+Policy/Rule engine: The rules provided by Falco that can be configured to identify security-relevant events.
+Sysdig Falco: A Cloud Native Computing Foundation (CNCF) project that provides a runtime security monitoring daemon, Falco. Sysdig is the name of the company that developed the tool, Falco.
+Falco rule schema: A schema used by Falco to define the rule syntax used by the rule engine.
+Spawning process: A phenomenon where an event propagates itself by loading child processes from a primary event.
+DaemonSet: A type of Kubernetes deployment technique that ensures all nodes run a copy of the pod. This is great for background services like Falco that need to scale across all nodes in the cluster.
+Falco-exporter: Special Falco metrics collector that scrapes Falco metrics and makes them available to Prometheus.
+Netcat: A popular network utility reading and writing data across network connections.
+Security Response Playbook: A clearly articulated document that defines a set of steps a team or individual takes to respond to a security incident.
+Alert fatigue: When a team or individual stops paying attention to security alerts as they are too frequent and lack context.
+Payload: A script or file that delivers a malicious action such as running malware.
+
+
+
+6.21 Lesson Review
+---------------------------------------
+In this lesson, we examined runtime monitoring. We reviewed Sysdig Falco and implemented Sysdig Falco for run-time monitoring. Then we exported logs using Falco exporter and visualized them with Grafana. Lastly, we built a security response playbook to prepare ourselves for the inevitable security incident.
+
+
+6.22 Course Recap
+---------------------------------------
+Congratulations!
+You have now completed the course and the Nanodegree. We've covered a lot of content in these 6 lessons. Let's summarize!
+
+Welcome lesson: Why security is important and stakeholders you will work with in your everyday work
+Threat Modeling with STRIDE: Use STRIDE to systematically and intentionally evaluate security risks in a microservices environment
+Docker Attack Surface Analysis and Hardening: Evaluate Docker container attack surfaces and learn practical techniques to harden Docker attack surfaces using Docker-bench
+Kubernetes Attack Surface Analysis and Hardening: Evaluate Kubernetes container attack surfaces and learn practical techniques to harden Kubernetes attack surfaces using Kube-bench
+Software Composition Analysis: Break down layers of a Docker image to evaluate the security of the libraries, dependencies, and software code using open-source tools such as Trivy and Grype
+Runtime Monitoring and Incident Response: Deploy runtime monitoring with Sysdig Falco and Grafana for visualization and respond to a simulated security incident
+Lastly, you will put everything together into the project, a hands-on real-world scenario, for securing a microservices deployment using all the techniques and tools you've learned in this course.
+
+You are now equipped with the knowledge to pursue this high-demand, high-velocity field!
+
