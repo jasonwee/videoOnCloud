@@ -1,0 +1,274 @@
+date start : 26 november 2021
+
+
+7.1 Project Overview
+---------------------------------------
+Project Overview
+Background
+Security is a highly dynamic topic with ever-changing threats and priorities. Newsworthy topics ranging from Fortune 500 companies like Garmin paying $10 million in ransom for ransomware attacks to supply chain attacks such as Solarwinds are ever-present. The Synopsis 2020 Open Source Security Risk Analysis Report revealed that 99% of audited codebases contained open source, and within those codebases 75% of open source vulnerabilities were left unpatched, creating risk.
+
+Your company's CTO is worried about what the engineering team is doing to harden and monitor the company's new microservice application against malicious threat actors and payloads. You’ve completed the course and have a baseline understanding of how to approach this.
+
+In response to the CTO's concerns, you will threat-model and harden a microservices environment based on what you have learned from this course.
+
+Goal
+You will be presented with the challenge to build a secure Microservice environment, threat modeling the container image, run-time environment, and the application itself. For the purpose of the project, you will be provided with instructions to build, harden and provision an environment analogous to the company's new microservice application. It is a simplified Python Flask application.
+
+Once the Microservice environment is hardened and provisioned, we will configure Sysdig Falco to perform run-time monitoring on the node, sending logs to a Grafana node for visualization. To demonstrate to the CTO that the company can respond to a real cyber threat, you will then simulate a tabletop cyber exercise by running a script to introduce an unknown binary from the starter code that will disrupt the environment!
+
+No stress, you have the tools and security incident response knowledge to respond ;) Your goal will be to use Grafana to determine what the unknown binary is, contain and remediate the environment, write an incident response report and present it to the CTO. There will be a few hidden easter eggs, see if you can find them for extra credit.
+
+Project Steps Overview
+Architect, diagram, and threat model the Docker image, Kubernetes infrastructure, and Flask application environment.
+Create a hardened Docker environment with Docker-bench using the provided hardened OpenSUSE leap image.
+Create an RKE cluster and walk through a testing methodology for how to harden a Kubernetes cluster.
+Configure and run Grype and Trivy to identify software composition vulnerabilities, remediate and deploy the app.
+Implement Falco and Grafana for run-time monitoring.
+Run a script to introduce an unknown payload intentionally.
+Identify the unknown binary and take steps to remediate it.
+
+
+
+7.2 Getting Started
+---------------------------------------
+Getting Started
+The starter files for the project can be found in the project repository.
+
+The /starter directory contains everything except the vuln_appwhich is the root.
+
+├── Dockerfile
+├── LICENSE
+├── Vagrantfile
+├── cluster.yml
+├── reference_hardened_cluster.yml
+├── docs
+│   ├── CIS_Docker_Benchmark_v1.2.0.pdf
+│   ├── CIS_Kubernetes_Benchmark_v1.6.0.pdf
+│   └── Rancher_Benchmark_Assessment.pdf
+├── incident_response
+│   └── incident_response.txt
+├── scripts
+│   └── payload.sh
+├── security_architecture
+└── threat_modeling
+    └── threat_modeling_template.txt
+
+Where:
+
+Dockerfile to provision a container image using an OpenSUSE image.
+LICENSE is a license for the course content.
+Vagrantfile to configure a Vagrant box. It will be used to create a Vagrant box locally.
+cluster.yml to provision a Rancher RKE 1-node cluster.
+reference_hardened_cluster.ymlis a reference hardened cluster.yml to guide you. You cannot use the reference_hardened_cluster.yml file as-is to startup the cluster.
+docs contains reference PDFs.
+incident_response directory contains a incident_response.txttemplate responding to an incident. You will use it later ;)
+scripts directory contains a payload.sh that will be used later in the project. Keep an eye on it!
+security_architecture directory contains example security architecture diagrams.
+threat_modeling directory contains a threat_modeling_template.txt template for STRIDE threat modeling.
+
+The vuln_app is contained in the repo root as a submodule linked from the source repo:
+└── vuln_app
+    ├── Dockerfile.app
+    ├── Dockerfile.db
+    ├── LICENSE
+    ├── README.rst
+    ├── config
+    ├── docker-compose.yml
+    ├── migrations
+    ├── recreate.sh
+    ├── requirements.txt
+    ├── run.py
+    └── sqli
+
+Where:
+
+Dockerfile.app defines that this is a dockerized application.
+Dockerfile.db indicates that there is a Dockerized database.
+LICENSE defines a license from the developer of dvpwa.
+README.rstcontains an application startup readme.
+config contains configurations to startup the application.
+docker-compose.yml: Run this to bring up the application.
+migrations folder contains migration scripts.
+recreate.sh allows us to recreate the database.
+requirements.txt file defines all the libraries required to run this application.
+run.py the primary Python app startup directory.
+sqli is the configuration directory for the SQLite database that's run as part of the application.
+
+To run this vuln_app follow these steps:
+
+Run the Flask program by using the docker-compose up command.
+The application should be running on port 8000. You can access it by querying the http://localhost:8080endpoint.
+
+A Note about Virtual Machines
+Nearly all of the tools in this project require you to use Linux or macOS. If you are running Linux or macOS for your host machine, you are all set. However, if you are running Windows, make sure you refer to the Nanodegree Prerequisites page in the Introduction lesson for how to set up a Linux Virtual Machine.
+
+Project Submission
+Upon completing the project, you will submit a well-structured zip file or a GitHub repo that contains your work.
+
+
+
+7.3 Step 1: Threat Model the Microservices Environment
+---------------------------------------
+Threat Model the Microservices Environment
+In this first step, you will apply what you learned about STRIDE threat modeling in the lessons to document and threat model your microservices environment. You will define a security architecture for your environment and identify attack surfaces. The environment consists of the following:
+
+Single OpenSUSE Linux virtual machine (host)
+An RKE cluster deploy to the Linux virtual machine node cluster (cluster)
+The cluster runs a vulnerable python application (service)
+Docker is running on the host node to manage containers (container daemon)
+Your goal is to think like an attacker and reason about security weaknesses that could be attacked. The intent is to mimic what you should do in the real world, whereby you should perform threat modeling and a security architecture review at the onset of your microservices project.
+
+Instructions
+Using lucid chart free version or Google docs, create a diagram of the environment you are about to implement.
+Your diagram should minimally abstract the openSUSE host, RKE cluster, Python service, and Docker container daemon you will deploy.
+You should identify service and security boundaries with lines and data flow with arrows. Reference the example in the classroom.
+Save the file as security_architecture_design.png in the /submissions directory of the project repo.
+Using the STRIDE threat modeling methodology and the threat_modeling_template.txt in the /starter/threat_modeling directory of the project repo, document 5 concrete attack surface areas for the Docker environment and 5 concrete attack surface areas for the Kubernetes control plane, etcd, and worker.
+In your explanation, associate each attack surface area to at least one pillar of the STRIDE model, which includes Spoofing, Tampering, Repudiation, Information Disclosure, Denial of Service, and Elevation of Privilege. There can be multiple attack surface areas associated with one pillar, but the attack surface areas have to be distinct.
+Save the threat_modeling_template.txt document in the /submissions directory of the project repo.
+You can reference the following documents if you need a reminder of the attack surfaces:
+CIS_Docker_Benchmark_v1.2.0.pdf (provided courtesy of the Center for Internet Security)
+Rancher_Benchmark_Assessment.pdf
+Rancher Hardening Guide with CIS 1.6 Benchmark
+Think like an attacker and reason from there.
+
+Tip: For threat modeling, think about what you learned in the course; don't just select the first five that come to mind. Really think about the components of Docker and Kubernetes you believe represent the most significant attack surface.
+
+As you recall, threat modeling hypothesizes what could go wrong and forms the basis for reasoning for all the security techniques that you will implement later. Therefore, the threat model needs to be very precise. Once you have the initial threat model, you will then test your hypothesis and confirm which threats actually exist by running scanning tools like Docker-bench and Kube-bench.
+
+You should have 10 total observations.
+
+
+
+7.4 Step 2: Harden the Microservices Environment
+---------------------------------------
+Here you will focus on hardening the Docker environment by using Docker-bench. Once the hardened container image is committed to a provider registry, you will use it to create an RKE cluster. You will then harden the RKE cluster. By the end of this step, you should have a hardened Docker host running on a hardened RKE cluster.
+
+
+
+Create a Hardened Docker Environment
+Identify weaknesses
+Using the starter Dockerfile in the starter repo and an openSUSE base image, create a hardened Docker environment with Docker-bench.
+
+Run Docker-bench for the first time. Take screenshots of the result summary and all failed findings, and name the screenshots as suse_docker_environment_out_of_box.png or something similar in the /submissions directory of the project repo.
+Using the CIS_Docker_Benchmark_v1.2.0.pdf from the starter repo, review the findings from running the docker-bench.
+From the failed findings, select and document 3 failed findings from the Docker-bench results that you want to harden. These 3 findings should confirm 3 out of the 5 attack surface areas you identified for Docker in Step 1. At least 1 of the 3 findings should be different from the ones mentioned in the exercise (i.e. 5.10, 5.14, and 5.22).
+Document each of the 3 findings you want to harden to the existing threat_modeling_template.txt file and save the file in the/submissionsdirectory of the project repo.
+
+Tip:
+
+Depending your prior knowledge, you may or may not see a direct connection between the hypothesis in your threat model and the actual failed findings. This is common in the industry.
+
+One threat that you hypothesized in your threat model may be reflected by and related to multiple failed findings.
+
+In the real world, it is almost impossible or impractical to resolve and remediate all the weaknesses that are threat-modeled and reflected in the failed findings.
+
+There is not necessarily a right or wrong answer as long as you explain the reasoning using STRIDE.
+
+Harden Weaknesses
+Harden the three Docker weaknesses you identified.
+Tip: You may need to reference the CIS_Docker_Benchmark_v1.2.0.pdf and Docker security documentation. If you get stuck and can’t figure out how to make the change, either pick a different attack surface to harden or try to get help through online research.
+
+Re-run Docker-bench to verify that the weaknesses you hardened have been addressed. Take screenshots of the result summary and all failed findings, and name the screenshots as suse_docker_environment_hardened.png or something similar in the /submissions directory of the project repo.
+
+Create a Hardened Kubernetes Environment
+
+
+Deploy an RKE cluster using the Vagrantfile.
+Run Kube-bench for the first time. Take screenshots of the result summary and all failed findings, and name the screenshots as kube_cluster_out_of_box.png or something similar in the /submissions directory of the project repo.
+Apply baseline hardening steps to the cluster.
+Re-run Kube-bench to verify the cluster has been hardened via baseline hardening. Take screenshots of the result summary and all failed findings, and name the screenshots as kube_cluster_hardened.png or something similar in the /submissions directory of the project repo.
+The most important aspect of hardening is making sure the hardening does not negatively affect system stability. The last thing you want is for your hardening to lead to an outage of the cluster.
+
+Write at least 200 words describing a Kubernetes-specific test plan based on what you learned from the course. The test plan does not need to address specific hardening steps. Answer these two questions in your test plan:
+How will you test the changes?
+How will you ensure the changes don't negatively affect your cluster?
+Save the test plan as kube_hardening_test_plan.txt in the /submissions directory of the project repo.
+
+
+
+
+7.5 Step 3: Harden and Deploy the Flask App
+---------------------------------------
+Harden and Deploy the Flask App
+Here we will focus on hardening and deploying the Flask app by performing software introspection to identify and remediate vulnerable libraries and code.
+
+The application has intentional security flaws in the code that you need to identify and remediate using your knowledge. There are four documented vulnerabilities. You will need to minimally remediate the Cross-Site Scripting vulnerability in the code and redeploy the app.
+Fix the Cross-Site Scripting vulnerability in the app.py file located in dvpwa/sqli/app.py. Save the remediated app.py file in the /submissionsdirectory of the project repo.
+You will get extra points if you can research and remediate any other vulnerabilities in the code. Call out which line(s) of code you've changed in the app.py file or any other relevant file to remediate the vulnerabilities.
+Configure and run Grype to identify vulnerabilities in the libraries and remediate them.
+Run a Grype scan in the terminal for the first time. Take a screenshot of all Grype findings and save the screenshot as grype_app_out_of_box.png in the /submissionsdirectory of the project repo.
+Research vulnerable libraries on the NVD website and remediate them.
+Re-run Grype until all vulnerable libraries are remediated. Take a screenshot of the Grype output showing 0 findings and save the screenshot as grype_app_hardended.png in the /submissionsdirectory of the project repo.
+With the Flask app hardened, redeploy the app by using docker compose up and access the application on the localhost port 8080 (127.0.0.1:8080).
+
+
+
+7.6 Step 4: Implement Runtime Monitoring and Grafana
+---------------------------------------
+Here we will focus on implementing Grafana to visualize run-time security alerts via Sysdig Falco.
+
+Deploy Falco drivers, Falco, and falco-exporter.
+Take a screenshot of the Falco and falco-exporter pods running. Save the screenshot as kube_pods_screenshot.png in the /submissions directory of the project repo.
+Prove that Falco is generating security events by reading the content of a sensitive file. Take a screenshot of the warning message(s) from Falco pod logs or from the falco-exporter metrics page and save it as falco_alert_screenshot.png in the /submissionsdirectory of the project repo.
+
+Next, configure Falco to send security events to Grafana:
+
+Configure the Prometheus Operator and Grafana.
+Import the Falco panel for Grafana. At this point, you should have Grafana running with Falco logs flowing. If the Falco events are not showing up on Grafana, you can repeat Step 3 above to generate Falco events.
+Take a screenshot of the Falco Grafana panel showing the Falco security event. Save the screenshot as falco_grafana_screenshot.png in the /submissions directory of the project repo.
+
+Optional Challenge:
+Falco also allows custom rules to be defined. Following the syntax in /etc/falco/falco_rules.yaml, create at least one new rule in the local rule base located at /etc/falco/falco_rules.local.yaml.
+Take a screenshot of the custom rule. Save the screenshot as falco_custom_rule.png in the /submissions directory of the project repo.
+
+
+
+7.7 Step 5: Incident Response
+---------------------------------------
+Incident Response
+Lastly, we will focus on introducing a suspicious command onto the Kubernetes cluster simulating a security incident. A payload is a script or file that delivers a malicious action such as running malware.
+
+From the starter repo, run the payload.sh to introduce a suspicious command intentionally.
+Using the template in the repo, write an incident response report to the CTO to describe what happened. Make sure to be thoughtful and precise as you are writing to an executive. Write at least two sentences for each of the questions in Questions 2-6. Save the incident_response_report.txt in the /submissions directory of the project repo.
+
+
+
+7.8 Standout Suggestions
+---------------------------------------
+Standout Suggestions (Optional)
+Want to make your project stand out? Try the following three challenges:
+
+Research and remediate any vulnerabilities other than XSS in the code of vuln_app. There are 3 others documented, you will need to research how to remediate one or more of them. Call out which line(s) of code you've changed in the app.py file or any other relevant file to remediate the vulnerabilities.
+
+
+Create at least one new Falco rule in the local rule base located at /etc/falco/falco_rules.local.yaml. Take a screenshot of the custom rule. Save the screenshot as falco_custom_rule.png in the /submissions folder of the project repo.
+
+
+Test the rule you created in Step 2 by creating a payload to trigger the rule. Take a screenshot of the triggered rule in Grafana. Save the screenshot as grafana_custom_rule.png in the /submissions folder of the project repo.
+
+
+
+7.9 Project Project: Hardenes Microservices Environment
+---------------------------------------
+Submission Requirements
+This project should be submitted as either a zipped folder or a GitHub repo. Before submitting, please check the project requirements to confirm that you have met all specifications.
+
+Your Zipped Folder or the/submissions Directory of the Project Repo Should Include:
+Security architecture diagram saved as security_architecture_design.png.
+Threat model saved asthreat_modeling_template.txt, including 5 Docker attack surfaces and 5 Kubernetes attack surfaces from STRIDE, 3 Docker findings you want to harden.
+Screenshots of Docker-bench run for the first time saved as suse_docker_environment_out_of_box.png.
+Screenshots of Docker-bench re-run after hardening the weaknesses saved as suse_docker_environment_hardened.png.
+Screenshots of Kube-bench run for the first time saved as kube_cluster_out_of_box.png.
+Screenshots of Kube-bench re-run after hardening the weaknesses saved as kube_cluster_hardened.png.
+Kubernetes-specific test plan saved as kube_hardening_test_plan.txt.
+Theapp.pyfile for the vulnerable Python app.
+Screenshot of all Grype findings saved as grype_app_out_of_box.png.
+Screenshot of Grype re-run after all vulnerable libraries are remediated, saved as grype_app_hardended.png.
+Screenshot of the Falco and falco-exporter pods running saved as kube_pods_screenshot.png.
+Screenshot of Falco generating security events saved as falco_alert_screenshot.png.
+Screenshot of the Falco Grafana panel with Falco security events running saved as falco_grafana_screenshot.png.
+Incident response report saved as incident_response_report.txt.
+
+
+
