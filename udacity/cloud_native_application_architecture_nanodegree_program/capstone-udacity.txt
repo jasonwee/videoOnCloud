@@ -1,0 +1,282 @@
+date start : 28 november 2021
+
+
+1.1 Project Overview
+---------------------------------------
+Project Overview
+Uda'CityShop is an e-commerce online shop, where customers can browse the products in the catalog and read more details about the available items. In addition, the user will be able to evaluate the costs of products in different currencies, such as USD, GBP, EUR, JYP, CAD and TRY. The shop has an ad feature, which recommends products with variate discount rates.
+
+Envision the following scenario: the e-commerce department has decided to renovate some of Uda'CityShop components, including the existing mechanism to release features to production. Along with your colleague, you have moved to this department as DevOps engineers. Your main goal is to deploy the application to Kubernetes using a CI/CD pipeline, observe, analyze and implement changes that would optimize the existing components.
+
+The Uda'CityShop is a web application composed of multiple microservices written in different programming languages. Below you can examine the architecture of the Uda'CityShop components:
+
+Frontend Service - is written in GO and represents the UI of the application, by exposing an HTTP server.
+Product Catalog Service - is written in GO and provides the product inventory for the online shop.
+Currency Service - is written in Node.js and provides the conversion of the product price to different currencies.
+Ad Service - is written in Java and delivers the text-based ads of existing products in the catalog.
+
+All of the microservices are communicating with each other using gRPC.
+
+Additionally, the sitemap of the web shop can be found below:
+
+Where:
+
+Index page - contains the content of the main page, with a list of all available products, their prices, and an ad banner.
+Product page - provides a detailed view of a product, including description, price, and the ad banner.
+Error page- renders when a non-existing page is accessed.
+
+In regards to the existing deployment mechanism, the team uses Dockerfiles to package and build each microservice. Also, the team has explored Kubernetes to host the application, but only for the dev environment.
+
+Overall, the e-commerce department requires your expertise to create an automated CI/CD pipeline, to deploy Uda'CityShop to Kubernetes. You also require to provide them with an observability stack, that would enable the team to observe and measure the performance of the existing components. And lastly, the team requires your suggestions and experience of refactoring any existing microservice to enhance resource consumption and release time.
+
+Project Steps Overview
+Use GitHub Actions to automate the build and push of the Docker images to DockerHub, for all Uda'CityShop microservices.
+Construct declarative Kubernetes manifest to deploy the Uda'CityShop to multiple environments.
+Deploy the Uda'CityShop microservices using ArgoCD to the Kubernetes cluster, including dev and production namespaces.
+Apply best security practices and include a short SHA to the new Docker tags. This removes the need to use the latest tag and transitions to a more secure, pinned tag system.
+Use Grafana and Prometheus to construct a dashboard and monitor the Uda'CityShop microservices.
+Rewrite the Ad Service using Python and apply the best gRPC practices.
+Construct a Dockerfile for the refactored Ad service and use GitHub Actions and ArgoCD to deploy the application to a Kubernetes cluster. Use Grafana dashboards to observe the resource consumption post-refactoring of the Ad service.
+Project Submission
+Upon completing the project, you will submit a well-structured zip file that contains your work. Therefore, make sure your work is properly structured and saved in your GitHub account.
+
+
+
+1.2 Getting Started
+---------------------------------------
+Getting Started
+The starter files for the Uda'CityShop application can be found in the capstone project repository.
+
+https://github.com/udacity/nd064_capstone_starter
+
+The repository file structure can be found below:
+
+.
+├── README.md                   # README file with the project description 
+├── Vagrantfile                 # Vagrantfile to create a vagrant box
+├── .github                   
+│   └── workflows               # GitHub Actions workflows configuration
+├── argocd                      # ArgoCD Application manifests
+├── grafana                     # Grafana configuration
+├── kubernetes-manifests        
+│   ├── dev                     # Kubernetes manifests for `dev` environment 
+│   ├── dev-v2                  # Kubernetes manifests for `dev-v2` environment 
+│   └── prod                    # Kubernetes manifests for `prod` environment 
+├── pb                          # Protocol Buffers Descriptions
+├── screenshots                 # Screenshots folder
+└── src
+    ├── adservice               # Ad service written in Java
+    ├── adservice-v2            # Starter files for Ad-v2 service written in Python
+    ├── currencyservice         # Currency service written in Node.js
+    ├── frontend                # Frontend service written in Go
+    └── productcatalogservice   # Product Catalog Service written in Go
+
+To execute this application within a Kubernetes cluster use the following command:
+
+kubectl apply -f kubernetes-manifests/dev/
+
+Note: The manifests should be updated to reference existing Docker images for each microservice.
+
+Make sure you have the following dependencies installed:
+
+Fork the capstone project repository containing the Uda'CityShop application
+Install Python using the instructions provided in the official Python documentation
+Install Git using the instructions provided in the official Git documentation
+Install Vagrant using the instructions provided in the official Vagrant documentation
+Install VirtualBox using the instructions provided in the official VirtualBox documenrtation. Ensure you have VirtualBox 6.1.16 or higher installed.
+
+
+
+1.3 Step 1: GitHub Actions for Docker Image Distribution
+---------------------------------------
+GitHub Actions for Docker Image Distribution
+This step aims to use GitHub Actions to build, tag, and distribute the Docker images for each Uda'CityShop microservice to DockerHub. As a result, you should have a functional GitHub Actions workflow that will construct and push new images for each service, when a new commit is available.
+
+GitHub Actions
+Create a GitHub Actions workflow that will package Docker images for each Uda'CityShop microservice and distribute them to DockerHub. The workflow configuration file should be named udacityshop-docker.yml and stored in the .github/workflows/ directory.
+
+The workflow should be constructed using the Build and Push Docker images upstream GitHub Action. The following action uses DockerHub Tokens and encrypted GitHub secrets to login into DockerHub and to push new images. To set up these credentials refer to the following resources:
+
+Create DockerHub Tokens
+Create GitHub encrypted secrets
+Build a GitHub Action, that would package and push each Uda'CityShop microservice with the following requirements:
+
+Name of the workflow - Uda'CityShop [latest tag] - Package with Docker
+Trigger on every push to the main or master branch
+Run the tasks on the ubuntu-latest operating system
+The Docker build and push step should be implemented for each microservice, such that:
+Context should be set to the microservice folder containing the source code, e.g. the context for product catalog service is src/productcatalogservice
+Reference the Dockerfile path for the specific microservice e.g src/productcatalogservice/Dockerfile
+Push the image to DockerHub with the tag latest e.g. productcatalogservice:latest
+After creating the GitHub Actions workflow, ensure it executes successfully when a new commit is pushed to the main or master branch. As a result, in your DockerHub account the following Uda'CityShop images should be found:
+
+frontend:latest
+productcatalogservice:latest
+currencyservice:latest
+adservice:latest
+Note: Take a screenshot of a successful build of the GitHub Actions workflow and place it in the screenshots folder with the name ci-latest-tag.
+
+Make sure to complete the following actions:
+
+create the .github/workflows/udacityshop-docker.yml GitHub Actions workflow.
+
+The Github Action workflow should build Docker iamges for each microservice and distribute them via DockerHub, resulting with frontend:latest, productcatalogservice:latest, currencyservice: latest, and adservice:latest images.
+submit a screenshot of a successful build of the GitHub Action in the screenshots folder with the name ci-latest-tag.
+
+
+
+1.4 Step 2: Kubernetes Declarative Manifests
+---------------------------------------
+Kubernetes Declarative Manifests
+Throughout this step, you will modify Kubernetes declarative manifests to reference the Docker images for each microservice. By the end of this step, you should have a valid suite of manifests to release the Uda'CityShop application to the dev and prod environments.
+
+From previous evaluations, the team has already a collection of declarative manifests to deploy the Uda'CityShop application. Create a set of manifests to deploy the application to dev and prod environments:
+
+dev
+Create a YAML manifest to deploy the dev namespace and store it in the dev manifests folder with the name ns-dev.yaml.
+Modify the existing YAML manifests, so that these are deployed to the dev namespace.
+Update the manifests to reference the DockerHub images for each microservice with the tag latest.
+prod
+Create the YAML manifest to deploy a prod namespace and store it in the prod manifests folder with the name ns-prod.yaml.
+In the prod manifests folder create the adservice.yaml, currencyservice.yaml, frontend.yaml, and productcatalogservice.yaml manifests that would deploy the Uda'CityShop microservices to the prod namespace.
+Ensure the manifests reference the DockerHub images for each microservice with the tag latest.
+Note: Place the Kubernetes manifests in the kubernetes-manifests folder for each environment within the capstone project repository.
+
+Make sure to complete the following actions:
+
+Create the dev and prod namespaces and place them in the relevant kubernetest manifests folder.
+create/update the yaml manifests to deploy the udacityshop application to dev and prod environments.
+
+
+
+1.5 Step 3: ArgoCD for Deployment to Kubernetes
+---------------------------------------
+ArgoCD for Deployment to Kubernetes
+In this step, you will use ArgoCD to deploy the Uda'CityShop application to a Kubernetes cluster. You will use ArgoCD Application manifests to release the application to dev and prod environments. By the end of this step, you should be able to access and visualize the Uda'CityShop application in different environments.
+
+Install ArgoCD
+The Vagrantfile given in the capstone project repository, provisions a vagrant box with a k3s cluster and Helm binary installed. As a result, you should already have an up and running cluster once the vagrant box is started.
+
+To create a vagrant box and ssh into it, use the following commands:
+
+# create a vagrant box using the Vagrantfile in the current directory
+# Note: This will create a Kubernetes cluster using k3s and install Helm binaries
+vagrant up
+
+# SSH into the vagrant box
+# Note: this command uses the .vagrant folder to identify the details of the vagrant box
+vagrant ssh
+
+Given the k3s cluster, install ArgoCD and access it through the browser. Make sure to reference the instructions below:
+
+Official install guide for ArgoCD
+The YAML manifest for the NodePort service can be found under the argocd-server-nodeport.yaml file in the course repository
+Access the ArgoCD UI by going to https://192.168.50.4:30008 or http://192.168.50.4:30007
+Login credentials can be retrieved using the steps in the credentials guide
+Note: Take a screenshot of the ArgoCD view once logged in, including the navigation bar, and place it in the screenshot folder with the name argocd-ui.
+
+ArgoCD Applications
+Construct ArgoCD Applications resources to release the Uda'CityShop application to development and production environments. In the argocd folder create the following ArgoCD Application manifests:
+
+udacityshop-dev.yaml
+name: udacityshop-dev
+reference the manifests in the kubernetes-manifests/dev folder
+set the sync policy to automated
+udacityshop-prod.yaml
+name: udacityshop-prod
+reference the manifests in the kubernetes-manifests/prod folder
+set the sync policy to manual
+Note: Place the ArgoCD manifests in the argocd folder within the capstone project repository.
+
+Deploy Uda'CityShop using ArgoCD
+Using kubectl commands apply the ArgoCD Applications manifests. The rollout of resources to the dev environment should be automated. Once you verify that the application is up and running, synchronize the resource in the prod environment.
+
+As a result, you should have the Uda'CityShop application running, in the dev and prod namespaces, a deployment for each service, and a service exposing the application on specific ports.
+
+Note: Take the following screenshots and place them in the screenshots folder:
+
+A screenshot of the udacityshop-dev ArgoCD application, with synchronized resources (all should be up and running), and store it with the argocd-udacityshop-dev name.
+A screenshot of the udacityshop-prod ArgoCD application, with synchronized resources (all should be up and running), and store it with the argocd-udacityshop-prod name.
+
+Access the Uda'CityShop Application
+Once the Uda'CityShop resources are up and running in the production environment, the next step is to access the application through the browser. To access the application, a NodePort service is required to expose a vagrant box port to the local machine. Build and store the YAML manifest for the NodePort service in argocd/udacityshop-prod-nodeport.yaml file, with the following configuration:
+
+Service name frontend-nodeport
+The NodePort service resource should forward traffic to frontend pods
+The service should expose port 30040 on the vagrant box
+Deploy the udacityshop-prod-nodeport.yaml manifest using kubectl commands and access the Uda'CityShop application by navigating to https://192.168.50.4:30040 endpoint.
+
+Note: Take a screenshot of the Uda'CityShop view, including the navigation bar and ad banner, and place it in the screenshot folder with the name udacityshop-ui-v1.
+
+Make sure to complete the following actions:
+
+Deploy ArgoCD and access it through the local browser using https://192.168.50.4:30008 or http://192.168.50.4:30007 endpoints.
+take a screenshot of the argocd view once logged in, including the navigation bar, and place it in the screenshot folder with the name argocd-ui.
+create argocd applications to deploy the uda'cityshop application to dev and prod environments. place the argocd manifests in the argocd folder with the names udacityshop-dev.yaml and udacityshop-prod.yaml.
+once the resources are up and running, take screenshots of the deployed resources for argocd-udacityshop-dev and argocd-udacityshop-prod argocd applications, and place it in the screenshot folder.
+create the frontend-nodeport service and access the udacityshop applicatoin using the udacityshop application usin the htts://192.168.50.4:30040 endpoint.
+take a screenshot of the udacityshop view, including the navigation bar and the ad banner, and place it in the screenshot folder with the name udacityshop-ui-v1.
+
+
+
+1.6 Step 4: Best Security Practices Using Pinned Versions
+---------------------------------------
+Best Security Practices Using Pinned Versions
+This step aims to apply the best security practices while referencing Docker images within a production environment. To ensure the stability of the environment and the application's features, it is highly recommended to use pinned tags rather than the latest tag. Additionally, using a pinned tag system enables better version control, as the developers can be certain of what is the expected behavior of a specific release.
+
+Throughout this step, you will modify the GitHub Actions workflow to build and push images using a short SHA of the commit, instead of using a hardcoded latest tag. By the end of this stage, you should use pinned tags in the production environment to ensure its stability.
+
+Extend the GitHub Actions workflow
+Further extend the existing GitHub Actions workflow to push a custom tag for the Uda'CityShop application with each new commit. Create the udacityshop-docker-sha-tag.yml file within the .github/workflows/ folder, and copy the existing configuration from the udacityshop-docker.yml workflow. Modify the tasks such that the tags for each microservice are dynamically created with every commit, e.g. the tag name should include a short SHA of the commit.
+
+Customize the udacityshop-docker-sha-tag.yml GitHub Actions applying the following requirements:
+
+Name of the workflow - Uda'CityShop [sha tag] - Package with Docker
+Trigger on every push to the main or master branch
+Run the action on the ubuntu-latest operating system
+The Docker build and push step should be implemented for each microservice, such that:
+Context should be set to the microservice folder containing the source code, e.g. the context for product catalog service is src/productcatalogservice
+Reference the Dockerfile path for the specific microservice e.g src/productcatalogservice/Dockerfile
+Push the image to DockerHub with a dynamically build custom tag to include the short SHA of the commit e.g. productcatalogservice:sha-d122271
+To implement this functionality, refer to the GitHub Actions official documentation on how to automatically handle Docker tags and lables.
+
+After extending the GitHub Actions, ensure it executes successfully when a new commit is pushed to the main or master branch. As a result, in your DockerHub account, Uda'CityShop images should be pushed with a custom tag.
+
+Note: Take a screenshot of a successful build of the GitHub Actions and place it in the screenshots folder with the name ci-sha-tag.
+
+Use pinned tags in the Production environment
+On the successful execution of the GitHub Actions, the Docker image for each microservice should have a custom tag based on the SHA of the commit. Update the YAML manifests in the prod namespace to reference the new tags.
+
+Ensure that the Kubernetes resources are updated using ArgoCD synchronization. Access the application through the local browser and ensure all the functionalities are up and running.
+
+Make sure to complete the following actions:
+
+Create the .github/workflows/udacityshop-docker-sha-tag.yml GitHub Actions to push images with dynamically build tags based on the short SHA of the commit.
+Submit a screenshot of a successful build of the GitHub Actions in the screenshots folder with the name ci-sha-tag.
+Update the Kubernetes manifests in the prod environment to reference the images with a pinned version for each microservice.
+Ensure the Uda'CityShop application is up and running after reference the pinned tags for Docker images.
+
+
+
+1.7 Step 5: Observability with Grafana and Prometheus
+---------------------------------------
+
+
+
+1.8 Step 6: gRPC Microservices Refactoring
+---------------------------------------
+
+
+1.9 Step 7: Deploy the Refactored Microservice
+---------------------------------------
+
+
+1.10 Standout Suggestions (Optional)
+---------------------------------------
+
+
+1.11 Project: Project: Uda'CityShop
+---------------------------------------
+
+
+
