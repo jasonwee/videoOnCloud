@@ -260,23 +260,238 @@ Ensure the Uda'CityShop application is up and running after reference the pinned
 
 1.7 Step 5: Observability with Grafana and Prometheus
 ---------------------------------------
+Observability with Grafana and Prometheus
+Throughout this step, you will install the observability stack using Grafana and Prometheus. You will create Grafana dashboards and monitor the resource consumption of Uda'CityShop components. By the end of this step, you should be able to observe the overall state of the application and identify the microservice that is intense on CPU and memory utilization.
+
+Install Grafana and Prometheus
+There are multiple methods to install Grafana and Prometheus, however, for this step, you will refer to the Helm installation process. When the vantage box was provisioned, it installed the Helm binaries, hence you should proceed with the instructions below:
+
+# create the monitoring namespace
+kubectl create namespace monitoring
+
+# add the Helm repositories
+helm repo add prometheus-community https://prometheus-community.github.io/helm-charts
+helm repo update
+
+# install Grafana and Prometheus 
+helm install prometheus prometheus-community/kube-prometheus-stack --namespace monitoring  --kubeconfig /etc/rancher/k3s/k3s.yaml
+
+Ensure that all the resources in the monitoring namespace are up and running.
+
+Access Grafana UI
+To access the Grafana UI it is necessary to create a NodePort service that will expose a port from the vagrant box to the local machine. Consequently, create a grafana-nodeport.yaml file in the grafana repository to store the NodePort service with the following specifications:
+
+Service name grafana-nodeport
+The NodePort service resource should forward traffic to grafana pods
+The service should expose port 30030 on the vagrant box
+
+Deploy the grafana-nodeport.yaml manifest using kubectl commands and access the Grafana UI using the https://192.168.50.4:30030 endpoint. Use the following creadentils to log in:
+
+username: admin
+password: prom-operator
+Note: Take a screenshot of the Grafana UI once logged in, including the navigation bar, and place it in the screenshot folder with the name grafana-ui.
+
+Create Uda'CityShop Dashboard
+Build a Uda'CityShop dashboard to monitor the CPU and memory consumption of the deployed microservices. Before creating the panels, it is essential to define the variables that will be used to template the dashboard view e.g. examine the pods in the dev namespace only. To filter based on namespaces, it is required to firstly define a datasource and the cluster to gather namespace information. As such, create a new Grafana dashboard with the following requirements:
+
+Dashboard title: Uda'CityShop Dashboard
+Variables:
+Prometheus datasource:
+name: datasource
+type: Datasource
+data source options type: Prometheus
+Cluster variable:
+name: cluster
+type: Query
+data source: $datasource
+refresh: On Dashboard Load
+query: label_values(kube_pod_info, cluster)
+Namespace variable:
+name: namespace
+type: Query
+data source: $datasource
+refresh: On Dashboard Load
+query: label_values(kube_pod_info{cluster="$cluster"}, namespace)
+Once the variables are defines, you can proceed to the creation of the panels with the following specifications:
+
+CPU usage panel
+title: CPU Usage
+metric: container_cpu_usage_seconds_total filtered on the selected cluster and namespace variables
+aggregate by pod
+legend: list of aggregated pods
+Memory usage panel
+title: Memory Usage
+metric: container_memory_working_set_bytes filtered on the selected cluster and namespace variables
+aggregate by pod
+legend: list of aggregated pods
+Note: If you find this task challenging, examine the upstream Kubernetes dashboards such as Kubernetes / Compute Resources / Namespace (Pods)
+
+Once you have created the Uda'Cityshop dashboard with the 2 required panels, export the configuration in a JSON file and place it in the dashboard.json file in the grafana directory. Refer to the official documentation on how to export a Grafana dashboards.
+
+Note: Take a screenshot of the Uda'CityShop dashboard and place it in the screenshot folder with the name grafana-udacityshop.
+
+Make sure to complete the following actions:
+
+Install Grafana and create the grafana-nodeport service to access the Grafana UI using the https://192.168.50.4:30030 endpoint.
+
+take a screenshot of the grafana ui once logged in, including the navigation bar, and place it in the screenshot folder with the name grafana-ui.
+
+create the udacityshop dashboard with the cpu and memory usage panels.
+
+export the udacityshop dashboard configuration in a json file with the name dashboard.json file in the grafana directory.
+
+take a screenshot of the udacityshop dashboard and pace it in the screenshot fodler with the name grafana-udacityshop.
 
 
 
 1.8 Step 6: gRPC Microservices Refactoring
 ---------------------------------------
+gRPC Microservice Refactoring
+This step aims to refactor the Ad microservice and rewrite it using Python. From the previous steps, using the Grafana dashboard, you might have noticed that the Ad microservice is consuming the most CPU and memory resources. This is due to the fact that a Java program requires more resources to execute successfully. The functionalities of the Ad service are straightforward, which means these can be easily implemented using a different programming language, such as Python. By the end of this step, you should have a lightweight version of the Ad service implemented using Python.
+
+Refactor the Ad service
+The Ad microservice is written in Java and provides advertisement based on context keys. If no context keys are provided then it returns random ads. The service is already using gRPC to communicate with other microservice. The aim of this step is to implement similar Ad functionalities using Python. The adservice-v2 contains the following starter files:
+
+src/adservice-v2/
+├── Dockerfile                # Starter file for Dockerfile instructions
+├── adservice-v2_server.py    # AdV2 service server configuration 
+├── client.py                 # AdV2 service client configuration 
+├── genproto.sh               # Script to generate the gRPC files
+├── logger.py                 # Define the logging format
+├── requirements.in           # List of dependencies for AdV2 service  
+└── requirements.txt          # List of dependencies to be installed for AdV2
+
+Rewrite the Ad service using Python:
+
+Add the definition of the AdServiceV2 service in the protocol buffers directory
+The client should send a single request to the server: AdRequest which takes context_keys as an input parameter
+The client should get a single response back: AdResponse which returns a product ID and short text to display (in the Ad link)
+
+Regenerate the gRPC files for the frontend service using the genproto script
+Generate the gRPC files for the adservice-v2 using the grpc_tools.protoc module. This should create the demo_pb2.py and demo_pb2_grpc.py files. Place the command to generate the gRPC files in the src/adservice-v2/genproto.sh.
+In the adservice-v2_server.py implement the functionalities of AdServiceV2. Make sure to import gRPC files and initialize the server.
+A minimal version of The AdServiceV2 should return a random product ID from the ProductCatalogService and the text to be displayed should be hardcoded to "AdV2 - Items with 25% discount!"
+In the client.py set up server stub and make a call to the AdServiceV2 server. The server should listen on localhost on port 9556.
+Update the Frontend service to use the AdServiceV2 in the RPC file
+
 
 
 1.9 Step 7: Deploy the Refactored Microservice
 ---------------------------------------
+Deploy the Refactored Microservice
+In this final step, you will deploy the refactored Ad service and integrate it with the existing Uda'CityShop microservices. You will package the Ad service and deploy it in the production environment. By the end of this step, you should be able to observe the difference in resource consumption between the 2 versions of the Ad service.
+
+Dockerfile
+Modify the existing Dockerfile in the adservice-v2 folder so that it packages and starts the Python version of the Ad service. The Dockerfile should contain the following steps:
+
+Expose the application port 9556
+Install packages defined in the requirements.txt file
+The application should execute the Ad service server at the container start
+
+GitHub Actions
+Once the Dockerfile is completed, modify the udacityshop-docker-sha-tag.yml GitHub Actions workflow to build and distribute the Python version of the Ad service. Follow the instructions below:
+
+The images should be pushed in the adservice-v2 Docker repository
+The image should be pushed using dynamically created tags based on the short SHA of the commit
+
+Execute the GitHub Actions and ensure that on successful execution an adservice-v2 Docker image is pushed to DockerHub.
+
+Kubernetes manifests
+Before propagating the Python version of the Ad service to production, it is essential to test its integration in the dev environment. As such, create the following resources in the dev-v2 Kubernetes manifests folder:
+
+A dev-v2 namespace
+The currencyservice.yaml, frontend.yaml, and productcatalogservice.yaml manifests that would deploy the Uda'CityShop microservices to the dev-v2 namespace.
+The adservice.yaml manifest should reference the adservice-v2 Docker image
+All deployments should use the tag including the short SHA of the commit
+
+ArgoCD Applications
+Construct ArgoCD Applications resources to release the Uda'CityShop application to the dev-v2 namespace. In the argocd folder create the following ArgoCD Application manifest:
+
+udacityshop-dev-v2.yaml
+name: udacityshop-dev-v2
+reference the manifests in the kubernetes-manifests/dev-v2 folder
+set the sync policy to automated
+
+Using kubectl commands apply the udacityshop-dev-v2.yaml ArgoCD Application manifest. The rollout of resources to the dev-v2 environment should be automated. Once you verify that the application is up and running, update the Kubernetes prod manifests to reference the Docker images with the tested tags in the dev-v2 namespace. Synchronize the resource in the prod environment and access the application via the local browser on the https://192.168.50.4:30040 endpoint.
+
+Note: Take a screenshot of the Uda'CityShop view, including the navigation bar and ad banner, and place it in the screenshot folder with the name udacityshop-ui-v2.
+
+Grafana
+Using the Uda'CityShop Dashboard observe the CPU and memory consumption difference between the 2 versions of the Ad service. For the Java and Python Ad service, capture and place the CPU and memory values in the observations.txt file in the grafana folder.
+
+Note: Take a screenshot of the Grafana Uda'CityShop Dashboard in the prod environments (including the deployment of the new Ad service), and place it in the screenshot folder with the name grafana-ad-v2.
+
+Make sure to complete the following actions:
+
+create a Dockerfile to package the Python version of the Ad service.
+Update the github actions to push the adservice-v2 Docker image with tags including the short SHA of the commit.
+create the dev-v2 namespace and deploy the udacityshop components, including the python version of the ad service.
+create argocd application to deploy the udacityshop applicaiton to dev-v2 environment. place the argocd manifests in the argocd folder with the names udacityshop-dev-v2.yaml
+update the production manifests to deploy the udacityshop referencing the docker images with the tags including the python version of the ad service.
+take a screenshot of the udacityshop view, including the navigation bar and ad banner, and place it in the screenshot folder with the name udacityshop-ui-v2.
+for the java and python ad service, capture and place the cpu and memory values in the observations.txt file in the grafana folder.
+take a screenshot of the grafana udacityshop dashbaord in the prod environment (includign the deployment of the new ad service), and place it in the screenshot folder with the name grafana-ad-v2.
+
 
 
 1.10 Standout Suggestions (Optional)
 ---------------------------------------
+Standout Suggestions (Optional)
+Want to make your project stand out? Try the following three challenges.
+
+Standout Suggestion 1: Tracing with Jaeger
+To extend the observability stack, it is extremely beneficial to add tracing capabilities to the Uda'CityShop application. Distributed tracing is designed to follow the execution of a request through multiple microservices, and these capabilities are delivered by Jaeger. Install Jaeger and create different spans to capture the main events within the Uda'CityShop application.
+
+To install Jaeger, use the following instructions:
+
+create -f https://raw.githubusercontent.com/jaegertracing/jaeger-operator/master/deploy/crds/jaegertracing.io_jaegers_crd.yaml
+kubectl create -n observability -f https://raw.githubusercontent.com/jaegertracing/jaeger-operator/master/deploy/service_account.yaml
+kubectl create -n observability -f https://raw.githubusercontent.com/jaegertracing/jaeger-operator/master/deploy/role.yaml
+kubectl create -n observability -f https://raw.githubusercontent.com/jaegertracing/jaeger-operator/master/deploy/role_binding.yaml
+kubectl create -n observability -f https://raw.githubusercontent.com/jaegertracing/jaeger-operator/master/deploy/operator.yaml
+
+Once Jaeger is installed, expose and access the UI using a NodePort service on port 30090 e.g. https://192.168.50.4:30090.
+
+Thereafter, modify the Python version of the Ad service to include the following tracing functionalities:
+
+Configure and initialize the tracer
+Create a trace with the name Ad-V2-service
+Create spans when functions in the AdServiceV2 class are invoked e.g. returning a random product ID, returning the AdResponse response, etc.
+Execute the application and analyze the Ad-V2-service trace and included spans using the Jaeger UI.
+
+Standout Suggestion 2: OpenAPI Specifications
+OpenAPI is used to describe RESTful APIs while providing a uniform structure definition for the API schemas. As such, create the OpenAPI specification for the Ad objects, including:
+
+OpenAPI version
+API information, such as title, description, and version
+Path for getting the Ad, with the schemas for the requestBody and responses e.g. Ad, AdResponse and AdRequest
+Extra kudos if you can create the OpenAPI spec for the product catalog, currency, and frontend services.
+
+Standout Suggestion 3: Templating with Helm Charts
+So far, you had to operate 3 sets of Kubernetes manifests, one for each environment: dev, dev-v2, and prod. It is quite tedious to manage these manifests separately, especially if the same resources are deployed to each environment. Create a Helm chart to template the Uda'CityShop Kubernetes resources, including:
+
+A Chart.yaml file containing the definition of chart
+Templated manifests for product catalog, currency, frontend, and ad resources e.g. deployments and services
+Input values files for each environment, parametrizing the deployment image, namespace, resource name, and ports for each service
+Once, the Helm chart is available, update the ArgoCD Applications to use the Helm chart to release the Kubernetes resources to different environments.
+
 
 
 1.11 Project: Project: Uda'CityShop
 ---------------------------------------
+Project Overview
+Uda'CityShop is an e-commerce online shop, where customers can browse the available products and read more details about the available items. In addition, the user will be able to evaluate the costs of products in different currencies. The shop has an ad feature, which recommends browsing products with variate discount rates. In this project, you are taking the role of a DevOps engineer with the main role to deploy the application to Kubernetes, observe, analyze and implement changes that would optimize the existing components. Throughout this project, you have used GitHub Actions and ArgoCD to package, build and deploy the application to a Kubernetes cluster. In terms of the observability stack, you have used Grafana dashboards to monitor the resource consumption for each microservice. And lastly, for the optimization piece, you have refactored the Ad service using Python and gRPC.
 
+Submission Instructions
+Please download the Project folder in your Github repo and zip it. This zip file must include everything asked from the instruction steps except the standout suggestions. And it should contain the following folders:
+
+.github - folder containing the configuration for GitHub Actions workflows
+argocd - folder containing ArgoCD Application manifests
+grafana - folder containing Grafana configuration
+kubernetes-manifests - folder containing Kubernetes manifests for dev, dev-v2, and prod environments
+pb - folder containing protocol buffers descriptions
+screenshots- folder containing the screenshots
+src - folder containing the source code for Ad, Ad-v2, Currency, Frontend, and Product Catalog services
+Please check the Project Rubric to confirm that you have met all specifications.
 
 
