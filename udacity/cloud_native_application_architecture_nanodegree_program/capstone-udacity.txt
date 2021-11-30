@@ -98,23 +98,26 @@ Create a GitHub Actions workflow that will package Docker images for each Uda'Ci
 
 The workflow should be constructed using the Build and Push Docker images upstream GitHub Action. The following action uses DockerHub Tokens and encrypted GitHub secrets to login into DockerHub and to push new images. To set up these credentials refer to the following resources:
 
-Create DockerHub Tokens
-Create GitHub encrypted secrets
+* Create DockerHub Tokens
+* Create GitHub encrypted secrets
+
 Build a GitHub Action, that would package and push each Uda'CityShop microservice with the following requirements:
 
-Name of the workflow - Uda'CityShop [latest tag] - Package with Docker
-Trigger on every push to the main or master branch
-Run the tasks on the ubuntu-latest operating system
-The Docker build and push step should be implemented for each microservice, such that:
-Context should be set to the microservice folder containing the source code, e.g. the context for product catalog service is src/productcatalogservice
-Reference the Dockerfile path for the specific microservice e.g src/productcatalogservice/Dockerfile
-Push the image to DockerHub with the tag latest e.g. productcatalogservice:latest
+* Name of the workflow - Uda'CityShop [latest tag] - Package with Docker
+* Trigger on every push to the main or master branch
+* Run the tasks on the ubuntu-latest operating system
+* The Docker build and push step should be implemented for each microservice, such that:
+ * Context should be set to the microservice folder containing the source code, e.g. the context for product catalog service is src/productcatalogservice
+ * Reference the Dockerfile path for the specific microservice e.g src/productcatalogservice/Dockerfile
+ * Push the image to DockerHub with the tag latest e.g. productcatalogservice:latest
+
 After creating the GitHub Actions workflow, ensure it executes successfully when a new commit is pushed to the main or master branch. As a result, in your DockerHub account the following Uda'CityShop images should be found:
 
-frontend:latest
-productcatalogservice:latest
-currencyservice:latest
-adservice:latest
+* frontend:latest
+* productcatalogservice:latest
+* currencyservice:latest
+* adservice:latest
+
 Note: Take a screenshot of a successful build of the GitHub Actions workflow and place it in the screenshots folder with the name ci-latest-tag.
 
 Make sure to complete the following actions:
@@ -122,6 +125,7 @@ Make sure to complete the following actions:
 create the .github/workflows/udacityshop-docker.yml GitHub Actions workflow.
 
 The Github Action workflow should build Docker iamges for each microservice and distribute them via DockerHub, resulting with frontend:latest, productcatalogservice:latest, currencyservice: latest, and adservice:latest images.
+
 submit a screenshot of a successful build of the GitHub Action in the screenshots folder with the name ci-latest-tag.
 
 
