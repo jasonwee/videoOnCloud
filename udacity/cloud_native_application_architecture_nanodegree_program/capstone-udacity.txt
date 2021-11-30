@@ -10,10 +10,10 @@ Envision the following scenario: the e-commerce department has decided to renova
 
 The Uda'CityShop is a web application composed of multiple microservices written in different programming languages. Below you can examine the architecture of the Uda'CityShop components:
 
-Frontend Service - is written in GO and represents the UI of the application, by exposing an HTTP server.
-Product Catalog Service - is written in GO and provides the product inventory for the online shop.
-Currency Service - is written in Node.js and provides the conversion of the product price to different currencies.
-Ad Service - is written in Java and delivers the text-based ads of existing products in the catalog.
+* Frontend Service - is written in GO and represents the UI of the application, by exposing an HTTP server.
+* Product Catalog Service - is written in GO and provides the product inventory for the online shop.
+* Currency Service - is written in Node.js and provides the conversion of the product price to different currencies.
+* Ad Service - is written in Java and delivers the text-based ads of existing products in the catalog.
 
 All of the microservices are communicating with each other using gRPC.
 
@@ -21,22 +21,23 @@ Additionally, the sitemap of the web shop can be found below:
 
 Where:
 
-Index page - contains the content of the main page, with a list of all available products, their prices, and an ad banner.
-Product page - provides a detailed view of a product, including description, price, and the ad banner.
-Error page- renders when a non-existing page is accessed.
+* Index page - contains the content of the main page, with a list of all available products, their prices, and an ad banner.
+* Product page - provides a detailed view of a product, including description, price, and the ad banner.
+* Error page- renders when a non-existing page is accessed.
 
 In regards to the existing deployment mechanism, the team uses Dockerfiles to package and build each microservice. Also, the team has explored Kubernetes to host the application, but only for the dev environment.
 
 Overall, the e-commerce department requires your expertise to create an automated CI/CD pipeline, to deploy Uda'CityShop to Kubernetes. You also require to provide them with an observability stack, that would enable the team to observe and measure the performance of the existing components. And lastly, the team requires your suggestions and experience of refactoring any existing microservice to enhance resource consumption and release time.
 
 Project Steps Overview
-Use GitHub Actions to automate the build and push of the Docker images to DockerHub, for all Uda'CityShop microservices.
-Construct declarative Kubernetes manifest to deploy the Uda'CityShop to multiple environments.
-Deploy the Uda'CityShop microservices using ArgoCD to the Kubernetes cluster, including dev and production namespaces.
-Apply best security practices and include a short SHA to the new Docker tags. This removes the need to use the latest tag and transitions to a more secure, pinned tag system.
-Use Grafana and Prometheus to construct a dashboard and monitor the Uda'CityShop microservices.
-Rewrite the Ad Service using Python and apply the best gRPC practices.
-Construct a Dockerfile for the refactored Ad service and use GitHub Actions and ArgoCD to deploy the application to a Kubernetes cluster. Use Grafana dashboards to observe the resource consumption post-refactoring of the Ad service.
+1. Use GitHub Actions to automate the build and push of the Docker images to DockerHub, for all Uda'CityShop microservices.
+2. Construct declarative Kubernetes manifest to deploy the Uda'CityShop to multiple environments.
+3. Deploy the Uda'CityShop microservices using ArgoCD to the Kubernetes cluster, including dev and production namespaces.
+4. Apply best security practices and include a short SHA to the new Docker tags. This removes the need to use the latest tag and transitions to a more secure, pinned tag system.
+5. Use Grafana and Prometheus to construct a dashboard and monitor the Uda'CityShop microservices.
+6. Rewrite the Ad Service using Python and apply the best gRPC practices.
+7. Construct a Dockerfile for the refactored Ad service and use GitHub Actions and ArgoCD to deploy the application to a Kubernetes cluster. Use Grafana dashboards to observe the resource consumption post-refactoring of the Ad service.
+
 Project Submission
 Upon completing the project, you will submit a well-structured zip file that contains your work. Therefore, make sure your work is properly structured and saved in your GitHub account.
 
