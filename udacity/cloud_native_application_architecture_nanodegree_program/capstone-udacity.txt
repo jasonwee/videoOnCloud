@@ -137,19 +137,22 @@ Throughout this step, you will modify Kubernetes declarative manifests to refere
 
 From previous evaluations, the team has already a collection of declarative manifests to deploy the Uda'CityShop application. Create a set of manifests to deploy the application to dev and prod environments:
 
-dev
-Create a YAML manifest to deploy the dev namespace and store it in the dev manifests folder with the name ns-dev.yaml.
-Modify the existing YAML manifests, so that these are deployed to the dev namespace.
-Update the manifests to reference the DockerHub images for each microservice with the tag latest.
-prod
-Create the YAML manifest to deploy a prod namespace and store it in the prod manifests folder with the name ns-prod.yaml.
-In the prod manifests folder create the adservice.yaml, currencyservice.yaml, frontend.yaml, and productcatalogservice.yaml manifests that would deploy the Uda'CityShop microservices to the prod namespace.
-Ensure the manifests reference the DockerHub images for each microservice with the tag latest.
+* dev
+ * Create a YAML manifest to deploy the dev namespace and store it in the dev manifests folder with the name ns-dev.yaml.
+ * Modify the existing YAML manifests, so that these are deployed to the dev namespace.
+ * Update the manifests to reference the DockerHub images for each microservice with the tag latest.
+
+* prod
+ * Create the YAML manifest to deploy a prod namespace and store it in the prod manifests folder with the name ns-prod.yaml.
+ * In the prod manifests folder create the adservice.yaml, currencyservice.yaml, frontend.yaml, and productcatalogservice.yaml manifests that would deploy the Uda'CityShop microservices to the prod namespace.
+ * Ensure the manifests reference the DockerHub images for each microservice with the tag latest.
+
 Note: Place the Kubernetes manifests in the kubernetes-manifests folder for each environment within the capstone project repository.
 
 Make sure to complete the following actions:
 
 Create the dev and prod namespaces and place them in the relevant kubernetest manifests folder.
+
 create/update the yaml manifests to deploy the udacityshop application to dev and prod environments.
 
 
