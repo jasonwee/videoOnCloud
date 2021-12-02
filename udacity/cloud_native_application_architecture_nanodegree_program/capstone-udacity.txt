@@ -242,13 +242,14 @@ Further extend the existing GitHub Actions workflow to push a custom tag for the
 
 Customize the udacityshop-docker-sha-tag.yml GitHub Actions applying the following requirements:
 
-Name of the workflow - Uda'CityShop [sha tag] - Package with Docker
-Trigger on every push to the main or master branch
-Run the action on the ubuntu-latest operating system
-The Docker build and push step should be implemented for each microservice, such that:
-Context should be set to the microservice folder containing the source code, e.g. the context for product catalog service is src/productcatalogservice
-Reference the Dockerfile path for the specific microservice e.g src/productcatalogservice/Dockerfile
-Push the image to DockerHub with a dynamically build custom tag to include the short SHA of the commit e.g. productcatalogservice:sha-d122271
+* Name of the workflow - Uda'CityShop [sha tag] - Package with Docker
+* Trigger on every push to the main or master branch
+* Run the action on the ubuntu-latest operating system
+* The Docker build and push step should be implemented for each microservice, such that:
+ * Context should be set to the microservice folder containing the source code, e.g. the context for product catalog service is src/productcatalogservice
+ * Reference the Dockerfile path for the specific microservice e.g src/productcatalogservice/Dockerfile
+ * Push the image to DockerHub with a dynamically build custom tag to include the short SHA of the commit e.g. productcatalogservice:sha-d122271
+
 To implement this functionality, refer to the GitHub Actions official documentation on how to automatically handle Docker tags and lables.
 
 After extending the GitHub Actions, ensure it executes successfully when a new commit is pushed to the main or master branch. As a result, in your DockerHub account, Uda'CityShop images should be pushed with a custom tag.
@@ -262,10 +263,10 @@ Ensure that the Kubernetes resources are updated using ArgoCD synchronization. A
 
 Make sure to complete the following actions:
 
-Create the .github/workflows/udacityshop-docker-sha-tag.yml GitHub Actions to push images with dynamically build tags based on the short SHA of the commit.
-Submit a screenshot of a successful build of the GitHub Actions in the screenshots folder with the name ci-sha-tag.
-Update the Kubernetes manifests in the prod environment to reference the images with a pinned version for each microservice.
-Ensure the Uda'CityShop application is up and running after reference the pinned tags for Docker images.
+* Create the .github/workflows/udacityshop-docker-sha-tag.yml GitHub Actions to push images with dynamically build tags based on the short SHA of the commit.
+* Submit a screenshot of a successful build of the GitHub Actions in the screenshots folder with the name ci-sha-tag.
+* Update the Kubernetes manifests in the prod environment to reference the images with a pinned version for each microservice.
+* Ensure the Uda'CityShop application is up and running after reference the pinned tags for Docker images.
 
 
 
