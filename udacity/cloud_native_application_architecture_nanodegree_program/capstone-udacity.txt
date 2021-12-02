@@ -177,23 +177,25 @@ vagrant ssh
 
 Given the k3s cluster, install ArgoCD and access it through the browser. Make sure to reference the instructions below:
 
-Official install guide for ArgoCD
-The YAML manifest for the NodePort service can be found under the argocd-server-nodeport.yaml file in the course repository
-Access the ArgoCD UI by going to https://192.168.50.4:30008 or http://192.168.50.4:30007
-Login credentials can be retrieved using the steps in the credentials guide
+* Official install guide for ArgoCD
+* The YAML manifest for the NodePort service can be found under the argocd-server-nodeport.yaml file in the course repository
+* Access the ArgoCD UI by going to https://192.168.50.4:30008 or http://192.168.50.4:30007
+* Login credentials can be retrieved using the steps in the credentials guide
+
 Note: Take a screenshot of the ArgoCD view once logged in, including the navigation bar, and place it in the screenshot folder with the name argocd-ui.
 
 ArgoCD Applications
 Construct ArgoCD Applications resources to release the Uda'CityShop application to development and production environments. In the argocd folder create the following ArgoCD Application manifests:
 
-udacityshop-dev.yaml
-name: udacityshop-dev
-reference the manifests in the kubernetes-manifests/dev folder
-set the sync policy to automated
-udacityshop-prod.yaml
-name: udacityshop-prod
-reference the manifests in the kubernetes-manifests/prod folder
-set the sync policy to manual
+* udacityshop-dev.yaml
+ * name: udacityshop-dev
+ * reference the manifests in the kubernetes-manifests/dev folder
+ * set the sync policy to automated
+* udacityshop-prod.yaml
+ * name: udacityshop-prod
+ * reference the manifests in the kubernetes-manifests/prod folder
+ * set the sync policy to manual
+
 Note: Place the ArgoCD manifests in the argocd folder within the capstone project repository.
 
 Deploy Uda'CityShop using ArgoCD
@@ -203,27 +205,28 @@ As a result, you should have the Uda'CityShop application running, in the dev an
 
 Note: Take the following screenshots and place them in the screenshots folder:
 
-A screenshot of the udacityshop-dev ArgoCD application, with synchronized resources (all should be up and running), and store it with the argocd-udacityshop-dev name.
-A screenshot of the udacityshop-prod ArgoCD application, with synchronized resources (all should be up and running), and store it with the argocd-udacityshop-prod name.
+1. A screenshot of the udacityshop-dev ArgoCD application, with synchronized resources (all should be up and running), and store it with the argocd-udacityshop-dev name.
+2. A screenshot of the udacityshop-prod ArgoCD application, with synchronized resources (all should be up and running), and store it with the argocd-udacityshop-prod name.
 
 Access the Uda'CityShop Application
 Once the Uda'CityShop resources are up and running in the production environment, the next step is to access the application through the browser. To access the application, a NodePort service is required to expose a vagrant box port to the local machine. Build and store the YAML manifest for the NodePort service in argocd/udacityshop-prod-nodeport.yaml file, with the following configuration:
 
-Service name frontend-nodeport
-The NodePort service resource should forward traffic to frontend pods
-The service should expose port 30040 on the vagrant box
+* Service name frontend-nodeport
+* The NodePort service resource should forward traffic to frontend pods
+* The service should expose port 30040 on the vagrant box
+
 Deploy the udacityshop-prod-nodeport.yaml manifest using kubectl commands and access the Uda'CityShop application by navigating to https://192.168.50.4:30040 endpoint.
 
 Note: Take a screenshot of the Uda'CityShop view, including the navigation bar and ad banner, and place it in the screenshot folder with the name udacityshop-ui-v1.
 
 Make sure to complete the following actions:
 
-Deploy ArgoCD and access it through the local browser using https://192.168.50.4:30008 or http://192.168.50.4:30007 endpoints.
-take a screenshot of the argocd view once logged in, including the navigation bar, and place it in the screenshot folder with the name argocd-ui.
-create argocd applications to deploy the uda'cityshop application to dev and prod environments. place the argocd manifests in the argocd folder with the names udacityshop-dev.yaml and udacityshop-prod.yaml.
-once the resources are up and running, take screenshots of the deployed resources for argocd-udacityshop-dev and argocd-udacityshop-prod argocd applications, and place it in the screenshot folder.
-create the frontend-nodeport service and access the udacityshop applicatoin using the udacityshop application usin the htts://192.168.50.4:30040 endpoint.
-take a screenshot of the udacityshop view, including the navigation bar and the ad banner, and place it in the screenshot folder with the name udacityshop-ui-v1.
+* Deploy ArgoCD and access it through the local browser using https://192.168.50.4:30008 or http://192.168.50.4:30007 endpoints.
+* Take a screenshot of the argocd view once logged in, including the navigation bar, and place it in the screenshot folder with the name argocd-ui.
+* Create argocd applications to deploy the uda'cityshop application to dev and prod environments. place the argocd manifests in the argocd folder with the names udacityshop-dev.yaml and udacityshop-prod.yaml.
+* Once the resources are up and running, take screenshots of the deployed resources for argocd-udacityshop-dev and argocd-udacityshop-prod argocd applications, and place it in the screenshot folder.
+* Create the frontend-nodeport service and access the udacityshop applicatoin using the udacityshop application usin the htts://192.168.50.4:30040 endpoint.
+* Take a screenshot of the udacityshop view, including the navigation bar and the ad banner, and place it in the screenshot folder with the name udacityshop-ui-v1.
 
 
 
