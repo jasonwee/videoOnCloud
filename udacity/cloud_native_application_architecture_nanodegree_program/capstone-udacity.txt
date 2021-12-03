@@ -366,6 +366,7 @@ This step aims to refactor the Ad microservice and rewrite it using Python. From
 Refactor the Ad service
 The Ad microservice is written in Java and provides advertisement based on context keys. If no context keys are provided then it returns random ads. The service is already using gRPC to communicate with other microservice. The aim of this step is to implement similar Ad functionalities using Python. The adservice-v2 contains the following starter files:
 
+```
 src/adservice-v2/
 ├── Dockerfile                # Starter file for Dockerfile instructions
 ├── adservice-v2_server.py    # AdV2 service server configuration 
@@ -374,19 +375,28 @@ src/adservice-v2/
 ├── logger.py                 # Define the logging format
 ├── requirements.in           # List of dependencies for AdV2 service  
 └── requirements.txt          # List of dependencies to be installed for AdV2
+```
 
 Rewrite the Ad service using Python:
 
-Add the definition of the AdServiceV2 service in the protocol buffers directory
-The client should send a single request to the server: AdRequest which takes context_keys as an input parameter
-The client should get a single response back: AdResponse which returns a product ID and short text to display (in the Ad link)
+1. Add the definition of the AdServiceV2 service in the protocol buffers directory
+ * The client should send a single request to the server: AdRequest which takes context_keys as an input parameter
+ * The client should get a single response back: AdResponse which returns a product ID and short text to display (in the Ad link)
 
-Regenerate the gRPC files for the frontend service using the genproto script
-Generate the gRPC files for the adservice-v2 using the grpc_tools.protoc module. This should create the demo_pb2.py and demo_pb2_grpc.py files. Place the command to generate the gRPC files in the src/adservice-v2/genproto.sh.
-In the adservice-v2_server.py implement the functionalities of AdServiceV2. Make sure to import gRPC files and initialize the server.
-A minimal version of The AdServiceV2 should return a random product ID from the ProductCatalogService and the text to be displayed should be hardcoded to "AdV2 - Items with 25% discount!"
-In the client.py set up server stub and make a call to the AdServiceV2 server. The server should listen on localhost on port 9556.
-Update the Frontend service to use the AdServiceV2 in the RPC file
+2. Regenerate the gRPC files for the frontend service using the genproto script
+3. Generate the gRPC files for the adservice-v2 using the grpc_tools.protoc module. This should create the demo_pb2.py and demo_pb2_grpc.py files. Place the command to generate the gRPC files in the src/adservice-v2/genproto.sh.
+4. In the adservice-v2_server.py implement the functionalities of AdServiceV2. Make sure to import gRPC files and initialize the server.
+ * A minimal version of The AdServiceV2 should return a random product ID from the ProductCatalogService and the text to be displayed should be hardcoded to "AdV2 - Items with 25% discount!"
+5. In the client.py set up server stub and make a call to the AdServiceV2 server. The server should listen on localhost on port 9556.
+6. Update the Frontend service to use the AdServiceV2 in the RPC file
+
+Make sure to complete the following actions:
+* Add the definition of the AdServiceV2 service in the protocol buffers directory
+* Regenerate the gRPC files for the frontend service using the genproto script
+* Generate the gRPC files for the adservice-v2 and palce the command in the src/adservice-v2/genproto.sh file
+* Implement the AdServiceV2 functionalities, by returning a random product ID and the hardecoded text "AdV2 - Items with 25% discount!" to be displayed
+* Set up the server stub and to listen on localhost on port 9556
+* Update the FrontEnd service to use the AdServiceV2
 
 
 
