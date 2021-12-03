@@ -278,6 +278,7 @@ Throughout this step, you will install the observability stack using Grafana and
 Install Grafana and Prometheus
 There are multiple methods to install Grafana and Prometheus, however, for this step, you will refer to the Helm installation process. When the vantage box was provisioned, it installed the Helm binaries, hence you should proceed with the instructions below:
 
+```
 # create the monitoring namespace
 kubectl create namespace monitoring
 
@@ -287,55 +288,60 @@ helm repo update
 
 # install Grafana and Prometheus 
 helm install prometheus prometheus-community/kube-prometheus-stack --namespace monitoring  --kubeconfig /etc/rancher/k3s/k3s.yaml
+```
 
 Ensure that all the resources in the monitoring namespace are up and running.
+
 
 Access Grafana UI
 To access the Grafana UI it is necessary to create a NodePort service that will expose a port from the vagrant box to the local machine. Consequently, create a grafana-nodeport.yaml file in the grafana repository to store the NodePort service with the following specifications:
 
-Service name grafana-nodeport
-The NodePort service resource should forward traffic to grafana pods
-The service should expose port 30030 on the vagrant box
+* Service name grafana-nodeport
+* The NodePort service resource should forward traffic to grafana pods
+* The service should expose port 30030 on the vagrant box
 
 Deploy the grafana-nodeport.yaml manifest using kubectl commands and access the Grafana UI using the https://192.168.50.4:30030 endpoint. Use the following creadentils to log in:
 
-username: admin
-password: prom-operator
+* username: admin
+* password: prom-operator
+
 Note: Take a screenshot of the Grafana UI once logged in, including the navigation bar, and place it in the screenshot folder with the name grafana-ui.
 
 Create Uda'CityShop Dashboard
 Build a Uda'CityShop dashboard to monitor the CPU and memory consumption of the deployed microservices. Before creating the panels, it is essential to define the variables that will be used to template the dashboard view e.g. examine the pods in the dev namespace only. To filter based on namespaces, it is required to firstly define a datasource and the cluster to gather namespace information. As such, create a new Grafana dashboard with the following requirements:
 
-Dashboard title: Uda'CityShop Dashboard
-Variables:
-Prometheus datasource:
-name: datasource
-type: Datasource
-data source options type: Prometheus
-Cluster variable:
-name: cluster
-type: Query
-data source: $datasource
-refresh: On Dashboard Load
-query: label_values(kube_pod_info, cluster)
-Namespace variable:
-name: namespace
-type: Query
-data source: $datasource
-refresh: On Dashboard Load
-query: label_values(kube_pod_info{cluster="$cluster"}, namespace)
+* Dashboard title: Uda'CityShop Dashboard
+* Variables:
+ * Prometheus datasource:
+  * name: datasource
+  * type: Datasource
+  * data source options type: Prometheus
+ * Cluster variable:
+  * name: cluster
+  * type: Query
+  * data source: $datasource
+  * refresh: On Dashboard Load
+  * query: label_values(kube_pod_info, cluster)
+ * Namespace variable:
+  * name: namespace
+  * type: Query
+  * data source: $datasource
+  * refresh: On Dashboard Load
+  * query: label_values(kube_pod_info{cluster="$cluster"}, namespace)
+
 Once the variables are defines, you can proceed to the creation of the panels with the following specifications:
 
-CPU usage panel
-title: CPU Usage
-metric: container_cpu_usage_seconds_total filtered on the selected cluster and namespace variables
-aggregate by pod
-legend: list of aggregated pods
-Memory usage panel
-title: Memory Usage
-metric: container_memory_working_set_bytes filtered on the selected cluster and namespace variables
-aggregate by pod
-legend: list of aggregated pods
+* CPU usage panel
+ * title: CPU Usage
+ * metric: container_cpu_usage_seconds_total filtered on the selected cluster and namespace variables
+ * aggregate by pod
+ * legend: list of aggregated pods
+* Memory usage panel
+ * title: Memory Usage
+ * metric: container_memory_working_set_bytes filtered on the selected cluster and namespace variables
+ * aggregate by pod
+ * legend: list of aggregated pods
+
 Note: If you find this task challenging, examine the upstream Kubernetes dashboards such as Kubernetes / Compute Resources / Namespace (Pods)
 
 Once you have created the Uda'Cityshop dashboard with the 2 required panels, export the configuration in a JSON file and place it in the dashboard.json file in the grafana directory. Refer to the official documentation on how to export a Grafana dashboards.
@@ -344,15 +350,11 @@ Note: Take a screenshot of the Uda'CityShop dashboard and place it in the screen
 
 Make sure to complete the following actions:
 
-Install Grafana and create the grafana-nodeport service to access the Grafana UI using the https://192.168.50.4:30030 endpoint.
-
-take a screenshot of the grafana ui once logged in, including the navigation bar, and place it in the screenshot folder with the name grafana-ui.
-
-create the udacityshop dashboard with the cpu and memory usage panels.
-
-export the udacityshop dashboard configuration in a json file with the name dashboard.json file in the grafana directory.
-
-take a screenshot of the udacityshop dashboard and pace it in the screenshot fodler with the name grafana-udacityshop.
+* Install Grafana and create the grafana-nodeport service to access the Grafana UI using the https://192.168.50.4:30030 endpoint.
+* Take a screenshot of the grafana ui once logged in, including the navigation bar, and place it in the screenshot folder with the name grafana-ui.
+* Create the udacityshop dashboard with the cpu and memory usage panels.
+* Export the udacityshop dashboard configuration in a json file with the name dashboard.json file in the grafana directory.
+* Take a screenshot of the udacityshop dashboard and pace it in the screenshot fodler with the name grafana-udacityshop.
 
 
 
