@@ -408,33 +408,33 @@ In this final step, you will deploy the refactored Ad service and integrate it w
 Dockerfile
 Modify the existing Dockerfile in the adservice-v2 folder so that it packages and starts the Python version of the Ad service. The Dockerfile should contain the following steps:
 
-Expose the application port 9556
-Install packages defined in the requirements.txt file
-The application should execute the Ad service server at the container start
+* Expose the application port 9556
+* Install packages defined in the requirements.txt file
+* The application should execute the Ad service server at the container start
 
 GitHub Actions
 Once the Dockerfile is completed, modify the udacityshop-docker-sha-tag.yml GitHub Actions workflow to build and distribute the Python version of the Ad service. Follow the instructions below:
 
-The images should be pushed in the adservice-v2 Docker repository
-The image should be pushed using dynamically created tags based on the short SHA of the commit
+* The images should be pushed in the adservice-v2 Docker repository
+* The image should be pushed using dynamically created tags based on the short SHA of the commit
 
 Execute the GitHub Actions and ensure that on successful execution an adservice-v2 Docker image is pushed to DockerHub.
 
 Kubernetes manifests
 Before propagating the Python version of the Ad service to production, it is essential to test its integration in the dev environment. As such, create the following resources in the dev-v2 Kubernetes manifests folder:
 
-A dev-v2 namespace
-The currencyservice.yaml, frontend.yaml, and productcatalogservice.yaml manifests that would deploy the Uda'CityShop microservices to the dev-v2 namespace.
-The adservice.yaml manifest should reference the adservice-v2 Docker image
-All deployments should use the tag including the short SHA of the commit
+* A dev-v2 namespace
+* The currencyservice.yaml, frontend.yaml, and productcatalogservice.yaml manifests that would deploy the Uda'CityShop microservices to the dev-v2 namespace.
+* The adservice.yaml manifest should reference the adservice-v2 Docker image
+* All deployments should use the tag including the short SHA of the commit
 
 ArgoCD Applications
 Construct ArgoCD Applications resources to release the Uda'CityShop application to the dev-v2 namespace. In the argocd folder create the following ArgoCD Application manifest:
 
-udacityshop-dev-v2.yaml
-name: udacityshop-dev-v2
-reference the manifests in the kubernetes-manifests/dev-v2 folder
-set the sync policy to automated
+* udacityshop-dev-v2.yaml
+ * name: udacityshop-dev-v2
+ * reference the manifests in the kubernetes-manifests/dev-v2 folder
+ * set the sync policy to automated
 
 Using kubectl commands apply the udacityshop-dev-v2.yaml ArgoCD Application manifest. The rollout of resources to the dev-v2 environment should be automated. Once you verify that the application is up and running, update the Kubernetes prod manifests to reference the Docker images with the tested tags in the dev-v2 namespace. Synchronize the resource in the prod environment and access the application via the local browser on the https://192.168.50.4:30040 endpoint.
 
@@ -447,14 +447,14 @@ Note: Take a screenshot of the Grafana Uda'CityShop Dashboard in the prod enviro
 
 Make sure to complete the following actions:
 
-create a Dockerfile to package the Python version of the Ad service.
-Update the github actions to push the adservice-v2 Docker image with tags including the short SHA of the commit.
-create the dev-v2 namespace and deploy the udacityshop components, including the python version of the ad service.
-create argocd application to deploy the udacityshop applicaiton to dev-v2 environment. place the argocd manifests in the argocd folder with the names udacityshop-dev-v2.yaml
-update the production manifests to deploy the udacityshop referencing the docker images with the tags including the python version of the ad service.
-take a screenshot of the udacityshop view, including the navigation bar and ad banner, and place it in the screenshot folder with the name udacityshop-ui-v2.
-for the java and python ad service, capture and place the cpu and memory values in the observations.txt file in the grafana folder.
-take a screenshot of the grafana udacityshop dashbaord in the prod environment (includign the deployment of the new ad service), and place it in the screenshot folder with the name grafana-ad-v2.
+* Create a Dockerfile to package the Python version of the Ad service.
+* Update the github actions to push the adservice-v2 Docker image with tags including the short SHA of the commit.
+* Create the dev-v2 namespace and deploy the udacityshop components, including the python version of the ad service.
+* Create argocd application to deploy the udacityshop applicaiton to dev-v2 environment. place the argocd manifests in the argocd folder with the names udacityshop-dev-v2.yaml
+* Update the production manifests to deploy the udacityshop referencing the docker images with the tags including the python version of the ad service.
+* Take a screenshot of the udacityshop view, including the navigation bar and ad banner, and place it in the screenshot folder with the name udacityshop-ui-v2.
+* For the java and python ad service, capture and place the cpu and memory values in the observations.txt file in the grafana folder.
+* Take a screenshot of the grafana udacityshop dashbaord in the prod environment (includign the deployment of the new ad service), and place it in the screenshot folder with the name grafana-ad-v2.
 
 
 
