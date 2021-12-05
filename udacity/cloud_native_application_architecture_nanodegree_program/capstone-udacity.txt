@@ -468,35 +468,40 @@ To extend the observability stack, it is extremely beneficial to add tracing cap
 
 To install Jaeger, use the following instructions:
 
+```
 create -f https://raw.githubusercontent.com/jaegertracing/jaeger-operator/master/deploy/crds/jaegertracing.io_jaegers_crd.yaml
 kubectl create -n observability -f https://raw.githubusercontent.com/jaegertracing/jaeger-operator/master/deploy/service_account.yaml
 kubectl create -n observability -f https://raw.githubusercontent.com/jaegertracing/jaeger-operator/master/deploy/role.yaml
 kubectl create -n observability -f https://raw.githubusercontent.com/jaegertracing/jaeger-operator/master/deploy/role_binding.yaml
 kubectl create -n observability -f https://raw.githubusercontent.com/jaegertracing/jaeger-operator/master/deploy/operator.yaml
+```
 
 Once Jaeger is installed, expose and access the UI using a NodePort service on port 30090 e.g. https://192.168.50.4:30090.
 
 Thereafter, modify the Python version of the Ad service to include the following tracing functionalities:
 
-Configure and initialize the tracer
-Create a trace with the name Ad-V2-service
-Create spans when functions in the AdServiceV2 class are invoked e.g. returning a random product ID, returning the AdResponse response, etc.
+* Configure and initialize the tracer
+* Create a trace with the name Ad-V2-service
+* Create spans when functions in the AdServiceV2 class are invoked e.g. returning a random product ID, returning the AdResponse response, etc.
+
 Execute the application and analyze the Ad-V2-service trace and included spans using the Jaeger UI.
 
 Standout Suggestion 2: OpenAPI Specifications
 OpenAPI is used to describe RESTful APIs while providing a uniform structure definition for the API schemas. As such, create the OpenAPI specification for the Ad objects, including:
 
-OpenAPI version
-API information, such as title, description, and version
-Path for getting the Ad, with the schemas for the requestBody and responses e.g. Ad, AdResponse and AdRequest
+* OpenAPI version
+* API information, such as title, description, and version
+* Path for getting the Ad, with the schemas for the requestBody and responses e.g. Ad, AdResponse and AdRequest
+
 Extra kudos if you can create the OpenAPI spec for the product catalog, currency, and frontend services.
 
 Standout Suggestion 3: Templating with Helm Charts
 So far, you had to operate 3 sets of Kubernetes manifests, one for each environment: dev, dev-v2, and prod. It is quite tedious to manage these manifests separately, especially if the same resources are deployed to each environment. Create a Helm chart to template the Uda'CityShop Kubernetes resources, including:
 
-A Chart.yaml file containing the definition of chart
-Templated manifests for product catalog, currency, frontend, and ad resources e.g. deployments and services
-Input values files for each environment, parametrizing the deployment image, namespace, resource name, and ports for each service
+* A Chart.yaml file containing the definition of chart
+* Templated manifests for product catalog, currency, frontend, and ad resources e.g. deployments and services
+* Input values files for each environment, parametrizing the deployment image, namespace, resource name, and ports for each service
+
 Once, the Helm chart is available, update the ArgoCD Applications to use the Helm chart to release the Kubernetes resources to different environments.
 
 
@@ -509,13 +514,14 @@ Uda'CityShop is an e-commerce online shop, where customers can browse the availa
 Submission Instructions
 Please download the Project folder in your Github repo and zip it. This zip file must include everything asked from the instruction steps except the standout suggestions. And it should contain the following folders:
 
-.github - folder containing the configuration for GitHub Actions workflows
-argocd - folder containing ArgoCD Application manifests
-grafana - folder containing Grafana configuration
-kubernetes-manifests - folder containing Kubernetes manifests for dev, dev-v2, and prod environments
-pb - folder containing protocol buffers descriptions
-screenshots- folder containing the screenshots
-src - folder containing the source code for Ad, Ad-v2, Currency, Frontend, and Product Catalog services
+1. .github - folder containing the configuration for GitHub Actions workflows
+2. argocd - folder containing ArgoCD Application manifests
+3. grafana - folder containing Grafana configuration
+4. kubernetes-manifests - folder containing Kubernetes manifests for dev, dev-v2, and prod environments
+5. pb - folder containing protocol buffers descriptions
+6. screenshots- folder containing the screenshots
+7. src - folder containing the source code for Ad, Ad-v2, Currency, Frontend, and Product Catalog services
+
 Please check the Project Rubric to confirm that you have met all specifications.
 
 
