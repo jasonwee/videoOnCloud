@@ -5,6 +5,13 @@ date start : 16 august 2021
 
 1.1 Welcome to Udacity
 ---------------------------------------
+Welcome to Udacity!
+I am Sebastian, the founder of Udacity.
+
+Our mission is to power careers through tech education. We’re honored that you’ve chosen us to help in your career journey. Whether embarking on a new path. Curious about a new field. Or advancing in your own field. I want you to know, you’re in the right place. We are here to help you accomplish your goals.
+
+I can’t wait to see where this journey takes you!
+
 
 
 1.2 The Udacity Experience
