@@ -3,36 +3,191 @@ date start : 17 august 2021
 
 2.1 What It Takes
 ---------------------------------------
+What it Takes
+Completing a Udacity program takes perseverance and dedication, but the rewards outweigh the challenges. Throughout your program, you will develop and demonstrate specific skills that will serve you for a lifetime. Congratulations on taking the first step towards developing the skills you need to power your career through tech education!
+
+The videos, text lessons, and quizzes you encounter in the classroom are optional but recommended. The project at the end of this course will test your ability to apply the skills and strategies you have learned in the classroom to real-world problems. It will also provide tangible outputs you can use to demonstrate your skills for current and future employers.
+
+The project is designed to be challenging. Many students initially struggle, but with a little grit, they are able to learn from their mistakes and build their skills. Data from nearly 100,000 Udacity graduates show that commitment and persistence are the highest predictors of whether or not a student will graduate.
+
+At some point, nearly every student will get stuck on a new concept or skill, and doubt may set in. Don’t panic. Don’t quit. Be patient, and work through the problem. Remember that you are not alone and the problem that you are encountering is likely one that many others have experienced as well. Whether you are stuck or simply looking for encouragement, you’ll find Udacity Mentors and students there to help.
+
 
 
 2.2 Getting Help
 ---------------------------------------
+Getting Help
+As questions come up during this course, click on the Help button on the left sidebar of your classroom. You’ll see four options, each for a separate type of support:
+
+Technical Mentor Help: is available on Knowledge, our expert Q&A platform, by clicking on "Mentor Help". You can search for answers to questions similar to yours or post new questions related to your project or lessons. Udacity’s expert technical mentors answer all new questions.
+Udacity Support Community: Receive peer support and find answers to your non-technical questions quickly through Udacity Support Community. Receive peer support from our global community of lifelong learners that help each other succeed by sharing their experience and expertise. Start a discussion here.
+General Account Help: This is where you can get details on non-technical issues such as 3rd party tools, billing, deadlines, and more. You can even find additional help here via. live chat. Simply click on Account Help or visit our Help Center to find answers. .
+
 
 
 2.3 Mentor Help
 ---------------------------------------
+Mentor Help
+Technical Mentor Support: is provided through Knowledge, our expert Q&A platform. You can search for answers to questions similar to yours or post new questions related to your project or lessons. Udacity’s expert technical mentors answer all-new questions.
+
+How to Use Knowledge
+To ensure you’re getting the quality and prompt support you need, it’s helpful to follow these best practices and guidelines for Knowledge.
+
+Search for Similar Existing Questions: with tens of thousands of students enrolled in our programs, many of your questions may have already been asked and answered. To look for existing answers to similar questions that may provide the immediate support you need, use the filter on the left side of your screen to select your course and related project or write in the key terms related to your question in the search bar at the top of the page.
+
+Ask a New Question: if you want to ask a new question, select “Ask a Mentor” at the top of the page. Kindly remember that Knowledge is for technical questions only; for other types of support and feedback, please write to support at support@udacity.com.
+
+When you ask a new question, the platform immediately assigns it to one of our expert mentors spread across the globe to ensure prompt replies. Of note, when a mentor answers your question, you will see “Mentor” next to their name to differentiate their support from comments your fellow learners may also provide.
+
+If you don't see your question, simply create a new post. You are likely to get an answer within 24 hours and you'll be helping future students who may encounter the same problem.
+
+How to Ask a Good Question?
+Students that follow these tips typically receive the strongest initial support and avoid back-and-forth with mentors:
+
+Ask Specific Questions: if you have closely related questions that form part of a general theme, it’s okay to ask them all together. But consider using bullet points to separately list each of the questions in your post. Keeping your questions organized helps ensure mentors provide clear answers to each specific question. If your questions are less closely connected, it’s best to submit new, separate questions for each one.
+
+Provide Details and Links: explaining what (if anything) you’ve already attempted to solve the problem helps mentors know where to start when answering your question. Likewise, if your question is not related specifically to a project, but rather to an exercise, quiz, or lesson, it’s helpful to include information such as lesson or quiz name, screenshots, and classroom links.
+
+Overall the key to asking a good question is to imagine yourself trying to answer your own question. Imagine you were coming to it without any prior knowledge. Does the question make complete sense? Or are there gaps around the context?
+
+Start with a Clear Question Title: attempt to summarize your entire question in one sentence. You may even write the title at the end, just before posting the question. This will help you summarize the issue before you include details in the question itself.
+
+Share Code Correctly: by using the “Code Block” option to properly format your code. If your question concerns a piece of external code, include a link to the file on Github.
+
+In fact, Github lets you create a link to a specific line in a file. To do so, just click to the left of the line number, and then select copy permalink in the ellipsis that appears in the margin. Paste the permalink right into the Github box on your question submission form.
+
+Figuring out Errors: if your question is about an error message or stack trace, include the entire error message, by either formatting the error message using the “Code Block” option or creating a Gist or a Paste on Pastebin, and including a link to it in the description.
+
+Avoid Screenshots of Code or Error Messages: do not use screenshots of code or error messages. They are hard to read and the text cannot be copied to debug it.
+
+If you receive a helpful answer, kindly select it as the “accepted answer.” For questions from other students, if you see other helpful answers kindly select the “upvote” option. Conversely, if you don’t think an answer strongly answers a question, select the “downvote” option.
+
+Getting Additional Support
+At times, students want support from a different mentor. As everyone learns differently, we want to make this a simple process for learners like you.
+
+If you receive an answer that you are not satisfied with and want a different mentor to chime in, kindly select the option at the top of the page in Knowledge. If you reply directly in the comments section, without clicking on the link at the top of the page, your question will not be answered by another mentor.
+
 
 
 2.4 Submitting Classroom Feedback
 ---------------------------------------
+If you would like to share feedback on your learning experience or need to report any errors in the classroom content, click the ‘Submit Feedback’ button on the upper-right corner of the classroom. This feature is available in all of your lessons and allows you to provide comments on specific sections of the lesson you’re on.
+
+NOTE: When you report feedback through the classroom, you won’t receive a direct response, but don’t worry! Your feedback will be documented and shared with the appropriate team for review. We strive to create the best learning experience for each unique individual and we’ll take your feedback into account as we continue to improve the program!
+
+How Classroom Feedback Works
+
+Click the ‘Submit Feedback’ button on the upper-right corner of the classroom:
+
+This will highlight different sections on the current concept that you’re in. Click ‘Select’ on the section you would like to provide feedback on:
+
+Once you select a section, you will see a feedback box appear on the bottom-right corner of the classroom where you can fill in additional information that you would like to share with us. Once you click ‘Send,’ you will see a confirmation message that your feedback has been sent and received.
+
+And that’s it! As a reminder, you won’t receive a direct response for classroom feedback submission, but please know that your comments have been shared with the appropriate team for review.
+
 
 
 2.5 Help Center
 ---------------------------------------
+Get help with your account, browse categories of FAQs, and more!
+
+Get Account help
+
+Read detailed help articles on account-related topics like billing, third-party tools, project deadlines, graduation, and more.
+
+Choose the type of help you require
+
+For your specific questions, look through categories of Frequently Asked Questions and find answers quickly.
+
+Get in touch with us
+
+Reach out to our Support team directly via Live Chat. Click on Account Help in the Classroom or visit our Help Center to get started.
+
 
 
 2.6 Udacity Support Community
 ---------------------------------------
+Welcome to Udacity’s Support Community!
+
+Become a part of our global community of lifelong learners that help each other succeed by sharing their experience and expertise. Receive peer support and find answers to your non-technical questions quickly through Udacity Support Community.
+
+Find answers to your questions
+
+Search Udacity Support Community for answers to commonly asked questions.
+
+Receive peer support
+
+Ask the community by posting a question and following discussions.
+
+Share your expertise
+
+Get recognized for sharing your insights, experiences, and tips with fellow learners.
+
+Checkout status of your Support tickets
+
+Manage and streamline your view of the support tickets, community conversations, and people you follow in the 'My Profile' section.
+
+Solved, helpful, and recommended posts
+
+Let other learners know which posts solved your problem, highlight helpful responses, and get the answers you want faster with recommended posts.
+
+Build your reputation in the community
+
+Explore and participate in Support Community programs to earn points, levels, and badges. Have fun and unlock rewards along the way.
+
+Join the Support Community now
+
 
 
 2.7 Plagiarism
 ---------------------------------------
+Plagiarism and Academic Dishonesty
+Overview of Plagiarism at Udacity
+Defining Plagiarism
+Any act claiming or implying another person’s work as your own.
+
+Examples:
+
+Submitting a project you didn’t create to copying code into a program without citation.
+Any action in which you misleadingly claim an idea or piece of work as your own, when it is not.
+Copying and Combining Code
+Using another person’s work in your own work
+
+Examples:
+
+Following a guide that someone may have created for completing a Udacity project, whether from a video or website.
+Taking a part of someone else's project and changing some variable and function names, - regardless of whether you give the source credit or not.
+If you have not done the work yourself and attempt to mask it.
+Using Someone Else’s Code to Inform your Solution
+You should never knowingly view someone else’s work until you have completed the project yourself - nor should you share your project with someone who has not yet completed theirs. However, once you have completed your project, you are encouraged to see how other people have approached the same challenge in a different way. This allows you to compare your different strategies and ways of thinking.
+
+Submitting Identical Works Post Collaboration
+If you decide to work together with another student on a project, you are then expected to write your code separately. Submitting identical projects or submissions with identical portions is considered plagiarism as described in the Udacity Honor Code.
+
+Seeking Help without violating the Honor Code
+To be clear, you are encouraged to seek help by talking to Mentors on Knowledge, other students, and alumni. You’re also welcome to use frameworks and libraries to assist you, as long as they aren't removing important goals from the project that you should know how to do yourself.
+
+If you are struggling and need help, we encourage you to ask technical questions on Knowledge to explore why your approach is not the correct approach. Mentors typically provide answers within an hour of questions being posted, so you can expect quick guidance on your question.
+
+If you’re ever in doubt as to whether or not something would be considered plagiarism, ask a Mentor on Knowledge. Our goal is for every student to graduate armed with a toolbox of skills that they can apply across a variety of concepts and problems. The best way to achieve this is to ensure every student does their own work and is able to demonstrate their skills in each project submission.
+
 
 
 2.8 Quiz: Plagiarism at Udacity
 ---------------------------------------
+QUESTION 1 OF 2
+Select the statements that should be classified as plagiarism:
+
 1,4
 
+Two or more students work on a project together and end up with the identical code submission, or significant portions of their submissions show duplicated code.
+Using or adapting a code from someone else’s project and then properly attributing the source code.
+
+QUESTION 2 OF 2
+Select the statements that represent the correct choice when you need help on your projects:
+
 1
+Seek help from mentors by asking queries on knowledge
+
 
 
