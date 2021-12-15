@@ -13,8 +13,17 @@ I have been working as a cloud platform engineer for many years. In these roles,
 In my current role, I am working for CNCF ( Cloud Native Computing Foundation) as Ecosystem Advocate, representing and growing the End User Community. Also, I am a member of the advisory board for Keptn, which currently is a sandbox CNCF project.
 
 
-2.2 
+2.2 Prerequisites
 ---------------------------------------
+Summary
+For this course, students should be comfortable with:
+
+web application development with Python
+using the CLI or command-line interface
+using git commands
+creating a DockerHub account
+These pre-requisites will be used throughout the course. Make sure you have them installed to closely follow the demos and exercise solutions.
+
 
 
 2.3 
