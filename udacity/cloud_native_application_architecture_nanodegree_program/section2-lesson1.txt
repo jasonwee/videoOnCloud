@@ -26,56 +26,70 @@ These pre-requisites will be used throughout the course. Make sure you have them
 
 
 
-2.3 
+2.3 Course Outline
 ---------------------------------------
+Summary
+Throughout the course, we will walk through a realistic example of applying good development practices and containerizing an application, before it's released to a Kubernetes cluster using an automated CI/CD pipeline.
+
+This course has the following lessons:
+
+Welcome
+Architecture Considerations
+Container Orchestration
+Open Source PaaS
+Cloud Native CI/CD
+In the first lesson, we will cover:
+
+Introduction to Cloud Native
+CNCF and Cloud Native tooling
+Stakeholders
+Tools, Environment & Dependencies
 
 
-2.4 Prerequisites
----------------------------------------
-
-
-
-
-2.5 Introduction to Message Passing
----------------------------------------
-
-
-
-
-
-2.6 Message Passing Stackholders
----------------------------------------
-
-
-
-
-2.7 When To Use Message Passing
----------------------------------------
-
-
-
-2.8 History of Message Passing
+2.4 
 ---------------------------------------
 
 
 
 
-
-
-2.9 Project: UdaConnect
----------------------------------------
-
-
-2.10 Lesson Recap
+2.5 
 ---------------------------------------
 
 
 
-2.11 Let's Get Started!
+
+
+2.6 
 ---------------------------------------
 
 
-2.12 Lesson Glossary
+
+
+2.7 
+---------------------------------------
+
+
+
+2.8 
+---------------------------------------
+
+
+
+
+2.9 
+---------------------------------------
+
+
+2.10 
+---------------------------------------
+
+
+
+2.11 
+---------------------------------------
+
+
+2.12 
 ---------------------------------------
 
 
