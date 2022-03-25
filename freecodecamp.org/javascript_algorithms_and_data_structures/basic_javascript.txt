@@ -5,4 +5,7 @@ world
 */
 
 
+var myName;
+
+
 
