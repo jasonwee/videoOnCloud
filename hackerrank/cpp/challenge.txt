@@ -140,3 +140,61 @@ int main() {
     }
     return 0;
 }
+
+
+#include <iostream>
+#include <cstdio>
+#include <vector>
+#include <algorithm>
+using namespace std;
+
+/*
+Add `int max_of_four(int a, int b, int c, int d)` here.
+*/
+int max_of_four(int a, int b, int c, int d) {
+    vector<int> vec;
+    
+    vec.push_back(a);
+    vec.push_back(b);
+    vec.push_back(c);
+    vec.push_back(d);
+    
+    sort( vec.begin(), vec.end() );
+    return vec[3];
+}
+
+int main() {
+    int a, b, c, d;
+    scanf("%d %d %d %d", &a, &b, &c, &d);
+    int ans = max_of_four(a, b, c, d);
+    printf("%d", ans);
+    
+    return 0;
+}
+
+
+
+
+
+#include <stdio.h>
+#include <cmath>
+using namespace std;
+
+void update(int *a,int *b) {
+    // Complete this function
+    int c = *a + *b;
+    int d = abs(*a - *b);
+    *a = c;
+    *b = d;
+}
+
+int main() {
+    int a, b;
+    int *pa = &a, *pb = &b;
+    
+    scanf("%d %d", &a, &b);
+    update(pa, pb);
+    printf("%d\n%d", a, b);
+
+    return 0;
+}
