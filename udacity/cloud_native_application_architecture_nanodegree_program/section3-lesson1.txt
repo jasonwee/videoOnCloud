@@ -3,6 +3,8 @@ date start : 23 august 2021
 
 3.1 Meet Your Instructor
 ---------------------------------------
+Welcome!
+
 Welcome to the course, Message Passing! My name is Justin and together, we will be learning about the design considerations and application of connecting services with one another. I have worked in software for many years as an engineer and consultant with small startups, Silicon Valley startups, to Fortune 500 companies. My goal is to teach you concepts in a relatable manner and how they apply in the industry.
 
 
@@ -10,13 +12,13 @@ Welcome to the course, Message Passing! My name is Justin and together, we will 
 ---------------------------------------
 In this lesson, we will be going over some of the foundational concepts that will help you with understanding and be successful with the courses. We will cover:
 
-Course Overview
-Course Prerequisites
-What is Message Passing?
-Who uses Message Passing?
-When to use Message Passing?
-History of Message Passing
-Project
+* Course Overview
+* Course Prerequisites
+* What is Message Passing?
+* Who uses Message Passing?
+* When to use Message Passing?
+* History of Message Passing
+* Project
 
 
 3.3 Course Overview
@@ -26,31 +28,34 @@ In this course we'll learn about system design, concepts behind popular technolo
 
 By the end of the course you will be able to:
 
-Refactor a service or capability from a monolith to a microservice
-Determine when to apply a communication protocol or technology to a specific use case
-Apply message passing techniques to enable communication between services
-Apply Message passing in production systems.a
+* Refactor a service or capability from a monolith to a microservice
+* Determine when to apply a communication protocol or technology to a specific use case
+* Apply message passing techniques to enable communication between services
+* Apply Message passing in production systems.
 
 
 3.4 Prerequisites
 ---------------------------------------
 Technologies You Should Be Comfortable Using:
-Docker - creating images and running containers
-DockerHub - pushing and pulling Docker images
-Kubernetes - creating a cluster and creating pods and services
-HTTP - using HTTP requests, HTTP responses, and HTTP servers
-Basic Python - writing methods and using modules with Python 3
-Command Line Interface - using CLI to install packages and run commands
-GitHub - using git with GitHub to clone repositories, create commits, push changes, pull branches, and create repositories
+* Docker - creating images and running containers
+* DockerHub - pushing and pulling Docker images
+* Kubernetes - creating a cluster and creating pods and services
+* HTTP - using HTTP requests, HTTP responses, and HTTP servers
+* Basic Python - writing methods and using modules with Python 3
+* Command Line Interface - using CLI to install packages and run commands
+* GitHub - using git with GitHub to clone repositories, create commits, push changes, pull branches, and create repositories
+
 We will be running Unix commands in a command line interface. MacOS and Linux support Unix commands natively. Windows users will need to use a tool like Git Bash to run Unix commands.
 
 Concepts You Should Understand
+
 Abstraction
 An abstraction simplifies a system by only exposing the parts that concern a user.
 
 Toaster Oven Example
-System: an electronic component composed of electrical wiring, a heating element, and a timer.
-Abstraction: a metal body used to heat toast
+* System: an electronic component composed of electrical wiring, a heating element, and a timer.
+* Abstraction: a metal body used to heat toast
+
 The user never needs to concern themselves with the internals of the toaster and how the components that make up the toaster work together.
 
 A user never asks to buy a metal box with a heating element. Instead, they ask to buy a toaster.
@@ -65,9 +70,17 @@ It's not possible for a user to turn on the heating element of a toaster without
 
 
 New Terms
-Term	Definition
-Abstraction	Simplifying a system by only exposing parts that concern a user
-Interface	Defined areas of interaction to a system
+Term	         Definition
+Abstraction	   Simplifying a system by only exposing parts that concern a user
+Interface	   Defined areas of interaction to a system
+
+Resources To Prepare You For The Course
+If you are unsure about any of the prerequisites you can use these resources to help you brush up before you get started:
+
+* Version Control with Git https://www.udacity.com/course/version-control-with-git--ud123
+* Shell Workshop           https://www.udacity.com/course/shell-workshop--ud206
+* Python for Beginners     https://www.python.org/about/gettingstarted/
+* Docker 101               https://www.docker.com/101-tutorial/
 
 
 
@@ -75,34 +88,40 @@ Interface	Defined areas of interaction to a system
 ---------------------------------------
 
 Monoliths versus Microservices
-Monoliths and microservices are architectural designs on how to structure and deploy applications.
-A monolith is easier to maintain while a microservice offers more options for scalability with regards to business and technical concerns.
+* Monoliths and microservices are architectural designs on how to structure and deploy applications.
+* A monolith is easier to maintain while a microservice offers more options for scalability with regards to business and technical concerns.
 
 Monolith
-A monolith application is one where all of the changes in code are deployed as one unit.
-Simply call the function for behavior that may be in another service or module.
-Application logic is all localized in the same deployment.
+* A monolith application is one where all of the changes in code are deployed as one unit.
+* Simply call the function for behavior that may be in another service or module.
+* Application logic is all localized in the same deployment.
 
 Microservice
-A microservice application is one composed of individual services that can be deployed independently of one another.
-May not have the luxury of simply making a function call.
-We will need to rely on message passing to pass data between services.
+* A microservice application is one composed of individual services that can be deployed independently of one another.
+* May not have the luxury of simply making a function call.
+* We will need to rely on message passing to pass data between services.
 
 
 
 q1
+> A codebase contains application logic organized as modules. Each module has its own deployment workflow to release its own changes. If no changes are made to a given module, it will not need to release any updates.
+> 
+> Is this an example of a monolith or a microservice?
 microservice
 
 q2
+> A codebase contains application logic organized as modules. One deployment workflow is used to release changes in any of the modules by updating the one server that hosts the application.
+> 
+> Is this an example of a monolith or a microservice?
 microservice
 
 
 
 New Terms
-Term	Definition
+Term	            Definition
 Message Passing	Transfer data between services with a structured object
-Monolith	An application that is deployed as a single unit
-Microservice	An application composed of applications that are deployed independently
+Monolith	         An application that is deployed as a single unit
+Microservice	   An application composed of applications that are deployed independently
 
 
 
@@ -113,21 +132,23 @@ Technical and Business Requirements
 While message passing is a technical concept, there are both technical and business considerations that drive the architectural design behind your applications. Stakeholders not only include the team's developers but also include business leaders and external teams. Engineers design to find a balance between cost, maintainability, efficiency, and reliability to satisfy technical and business requirements.
 
 Technical
-Cost - memory, CPU, and overhead needed to handle messages
-Maintainability - ease of modifications and enhancements
-Efficiency - the amount of time it takes to handle a message or multiple messages
-Reliability - messages being lost or improperly processed
-Business
-Cost - financial impact of paying for infrastructure
-Maintainability - financial impact of developers to upkeep the system; ease of integration for external customers
-Efficiency - productivity and cost-effectiveness of systems
-Reliability - risks for when a system becomes unavailable for the user; reputation of business services
+* Cost - memory, CPU, and overhead needed to handle messages
+* Maintainability - ease of modifications and enhancements
+* Efficiency - the amount of time it takes to handle a message or multiple messages
+* Reliability - messages being lost or improperly processed
 
+Business
+* Cost - financial impact of paying for infrastructure
+* Maintainability - financial impact of developers to upkeep the system; ease of integration for external customers
+* Efficiency - productivity and cost-effectiveness of systems
+* Reliability - risks for when a system becomes unavailable for the user; reputation of business services
 
 
 
 q1
+> What should developers pay attention to for improving maintainability?
 documentation
+
 
 
 3.7 When To Use Message Passing
@@ -144,12 +165,18 @@ Exposed Externally
 Beyond an organization, message passing drives SaaS businesses. In the past, a business may have sold CD-ROM's of their software. Today, it's common for businesses to sell you their software with defined ways to pass messages to their products and tools.
 
 q1
+> Which of the following is an example of message passing used in a SaaS application?
 A payments processing startup creates a REST API for its customers to integrate their system.
 
 
 New Terms
-Term	Definition
+Term	                        Definition
 SaaS(Software as a Service)	Software is hosted remotely by the vendor and its usage is licensed to users
+
+Further Reading
+The following is more information about Software as a Service (SaaS):
+
+* Software as a Service (SaaS) https://en.wikipedia.org/wiki/Software_as_a_service
 
 
 
@@ -157,8 +184,8 @@ SaaS(Software as a Service)	Software is hosted remotely by the vendor and its us
 ---------------------------------------
 
 The Problem
-Having two applications communicate with one another is complicated: programming languages have very distinct ways on how it's translated into byte code that executes on the machine.
-Even if two applications are written in the same programming language, it's hard to communicate directly with one another given how a system process is typically isolated from one another.
+* Having two applications communicate with one another is complicated: programming languages have very distinct ways on how it's translated into byte code that executes on the machine.
+* Even if two applications are written in the same programming language, it's hard to communicate directly with one another given how a system process is typically isolated from one another.
 
 The Message
 In order to enable synergy between different applications, we agree on a common way for applications to communicate via a language that is mutually understandable. We do this with messages.
@@ -166,13 +193,15 @@ In order to enable synergy between different applications, we agree on a common 
 Example Context
 Assuming that you are building a web application that interfaces with this school's directory system, we will need to consider the message, message format, and how to pass the messages.
 
-Enrolling a student means that we want to create a record of the student in the system.
-We know that in this school system, we need to capture the student's first name, last name, email address, and date of birth.
-Creating a student in this system is equivalent to the following in human language: I want to create a new student in the system with <first_name>, <last_name>, <email_address>, and <date_of_birth>
+* Enrolling a student means that we want to create a record of the student in the system.
+* We know that in this school system, we need to capture the student's first name, last name, email address, and date of birth.
+* Creating a student in this system is equivalent to the following in human language: 
+  I want to create a new student in the system with <first_name>, <last_name>, <email_address>, and <date_of_birth>
+
 The Message Format
-Translating this into a programmatic payload is not practical -- the format is too loose and will be hard to process.
-To represent this data, we utilize data formats that are a balance between human-readability and machine-readability. Currently, the most popular formats are XML, YAML, and JSON.
-We could represent the message as the following format in XML, YAML, and JSON:
+* Translating this into a programmatic payload is not practical -- the format is too loose and will be hard to process.
+* To represent this data, we utilize data formats that are a balance between human-readability and machine-readability. Currently, the most popular formats are XML, YAML, and JSON.
+* We could represent the message as the following format in XML, YAML, and JSON:
 
 XML
 <student>
@@ -181,6 +210,7 @@ XML
 <email_address>johnsmith@udacity.com</email_address>
 <date_of_birth>01-01-1950</date_of_birth>
 </student>
+
 YAML
 first_name: John
 last_name: Smith
@@ -203,24 +233,31 @@ Passing the Messages
 With our message format defined, we establish how these messages are passed and received. This is one of the core concepts in this course and will be covered in greater detail later in Types of Message Passing.
 
 API
-An Application Programming Interface (API) represents the message format and how we pass the message. It defines how we interact with software through a thoughtfully designed way to pass and receive data.
-To illustrate an API, let's look at how we order a pizza: we are provided a list of available toppings to add to a pizza. We request for the toppings that we want and the kitchen takes care of the rest. We don't necessarily care about how the pizza is made, just that we can go through the menu to get a pizza!
+* An Application Programming Interface (API) represents the message format and how we pass the message. It defines how we interact with software through a thoughtfully designed way to pass and receive data.
+* To illustrate an API, let's look at how we order a pizza: we are provided a list of available toppings to add to a pizza. We request for the toppings that we want and the kitchen takes care of the rest. We don't necessarily care about how the pizza is made, just that we can go through the menu to get a pizza!
 
 Message passing is typically done through an API to establish a clean and consistent interface. Having a clean and thoughtfully designed API makes it easier for developers to create, maintain, and interact with our systems.
 
 
 q1
+> Why do we use message formats to structure our data?
 Message formats provide accountability to how we pass our data
 
 
 New Terms
-Term	Definition
+Term	                              Definition
 API (Application Program Interface)	Defines how a user interacts with an application
-JSON	A format of human-readable messages that originates from JavaScript
-XML	A format of human-readable messages that uses very expressive tags similar to HTML
-YAML	A format of human-readable messages that is minimalist and less verbose
+JSON	                              A format of human-readable messages that originates from JavaScript
+XML                                 A format of human-readable messages that uses very expressive tags similar to HTML
+YAML                                A format of human-readable messages that is minimalist and less verbose
 
+Further Reading
+Learn more about message formats and how messages are passed between systems:
 
+Application Programming Interface   https://en.wikipedia.org/wiki/API
+JSON                                https://en.wikipedia.org/wiki/JSON
+XML                                 https://en.wikipedia.org/wiki/XML
+YAML                                https://en.wikipedia.org/wiki/YAML
 
 
 
@@ -235,13 +272,13 @@ To wrap up the course, we will be working on refactoring an existing project nam
 ---------------------------------------
 In this lesson, we went over:
 
-Course Overview
-Course Prerequisites
-What is Message Passing?
-Who Uses Message Passing?
-When to Use Message Passing?
-History of Message Passing
-Preview of the Final Project
+1. Course Overview
+2. Course Prerequisites
+3. What is Message Passing?
+4. Who Uses Message Passing?
+5. When to Use Message Passing?
+6. History of Message Passing
+7. Preview of the Final Project
 
 
 
@@ -254,16 +291,16 @@ We've gone over how business and technical requirements have evolved into a stat
 3.12 Lesson Glossary
 ---------------------------------------
 New Terms In This Lesson
-Term	Definition
-Abstraction	Simplifying a system by only exposing parts that concern a user
+Term                       Definition
+Abstraction	               Simplifying a system by only exposing parts that concern a user
 API (Application Program Interface)	Defines how a user interacts with an application
-JSON	A format of human-readable messages that originates from JavaScript
-Message Passing	Transferring data between services with a structured object
-Microservice	An application composed of applications that are deployed independently
-Monolith	An application that is deployed as one unit
-SaaS (Software as a Service)	Software is hosted remotely by the vendor and its usage is licensed to users
-XML	A format of human-readable messages that uses very expressive tags similar to HTML
-YAML	A format of human-readable messages that is minimalist and less verbose
+JSON	                     A format of human-readable messages that originates from JavaScript
+Message Passing	         Transferring data between services with a structured object
+Microservice               An application composed of applications that are deployed independently
+Monolith                   An application that is deployed as one unit
+SaaS (Software as a Service)	      Software is hosted remotely by the vendor and its usage is licensed to users
+XML                        A format of human-readable messages that uses very expressive tags similar to HTML
+YAML                       A format of human-readable messages that is minimalist and less verbose
 
 
 
