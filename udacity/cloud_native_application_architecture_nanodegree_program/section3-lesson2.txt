@@ -7,9 +7,10 @@ In this lesson, we will look at how we can strategically approach refactoring a 
 
 By the end of this lesson you will be able to:
 
-Create a dependency map to prioritize refactoring a service based on business logic
-Develop an appropriate migration strategy for a specific use case
-Apply the strangler pattern to migrate a service from a monolith into its own microservice
+* Create a dependency map to prioritize refactoring a service based on business logic
+* Develop an appropriate migration strategy for a specific use case
+* Apply the strangler pattern to migrate a service from a monolith into its own microservice
+
 
 
 2.2 Why Do Microservices Matter?
@@ -19,60 +20,66 @@ Monoliths and microservices are two architectural design patterns in how our app
 
 What is a Monolith Architecture?
 Self-contained application that is deployed as one unit
+ * Monoliths are applications that are deployed as one unit: rolling out changes to code means replacing an entire system with one release.
 
-Monoliths are applications that are deployed as one unit: rolling out changes to code means replacing an entire system with one release.
 What is a Microservice Architecture?
 Independently-deployed applications that communicate through networks
 
-Microservices are independent services that communicate with one another and are deployed separately.
-Rolling out changes to code in one service should have minimal impact on other services as they are relatively isolated.
+* Microservices are independent services that communicate with one another and are deployed separately.
+* Rolling out changes to code in one service should have minimal impact on other services as they are relatively isolated.
+
 Monoliths Aren't Bad!
 Despite the enthusiasm today with building applications as microservices, monoliths aren't necessarily bad. The decision to build an application as a monolith or microservice is a design decision weighing tradeoffs:
 
-Monoliths are easier to develop and have less overhead for infrastructure.
-Microservices are more scalable and enable parallel development as multiple developers can easily work simultaneously on different parts of the application.
-Refactoring each microservice to make small changes can become frustrating and overwhelming
+* Monoliths are easier to develop and have less overhead for infrastructure.
+* Microservices are more scalable and enable parallel development as multiple developers can easily work simultaneously on different parts of the application.
+* Refactoring each microservice to make small changes can become frustrating and overwhelming
 
 
 
 q1
+> Which of the following differences between monoliths and microservices are true?
 Monoliths can be deployed as a single unit, whereas microservices have multiple deployments
 Monoliths are easier to set up than microservices
+
 
 
 2.3 How Experts Approach Refactoring
 ---------------------------------------
 It's Safer to Start with a Monolith
-Software that we build is often changing as business requirements evolve
-When in doubt, it's safer to start as a monolith
-Refactoring a monolith to microservice is easier than microservice to monolith
+* Software that we build is often changing as business requirements evolve
+* When in doubt, it's safer to start as a monolith
+* Refactoring a monolith to microservice is easier than microservice to monolith
 
 Microservice Complexity
-Microservices are inherently more complex than monoliths.
-Microservices have more moving pieces: services are individually deployed and communicate through a network.
-Microservices are a distributed system. Distributed systems come with new properties that inherently make it more complex than a single-node system like a monolith. All distributed systems are inevitably at risk for network failures and need additional overhead to manage the inherent risk.
+* Microservices are inherently more complex than monoliths.
+* Microservices have more moving pieces: services are individually deployed and communicate through a network.
+* Microservices are a distributed system. Distributed systems come with new properties that inherently make it more complex than a single-node system like a monolith. All distributed systems are inevitably at risk for network failures and need additional overhead to manage the inherent risk.
 
 Working with Microservices
-Without the support of a good developer toolchain, Microservices are more cumbersome to work with. A good overview of the different types of developer tools supporting can be found in this article.
-More overhead to manage when we need to make major changes that affect the whole system
-It's often easier to migrate an application from a monolith to microservice architecture than a microservice to monolith architecture.
+* Without the support of a good developer toolchain, Microservices are more cumbersome to work with. A good overview of the different types of developer tools supporting can be found in this article.
+* More overhead to manage when we need to make major changes that affect the whole system
+* It's often easier to migrate an application from a monolith to microservice architecture than a microservice to monolith architecture.
 
 Case Study
 I once worked at a fast-paced startup where we would pivot or change our applications to meet new business needs. When we were informed of these changes, we were able to work quickly to make changes and push out new features and deprecate obsolete code. Thankfully, our applications at the time were built as monoliths, and it was easy to address these changes since they were typically localized in only a few areas. Imagine having spent so much effort to build your application as elegant microservices -- only to find out that half of your business logic is now obsolete. It would be frustrating and not productive to have to rework and redeploy code across multiple deployments.
 
 q1
+> If you are working on a lightweight, simple application that is beginning to run out of CPU and memory in processing increasing requests, which of the following is the best approach for refactoring?
 Scale vertically by increasing the hardware.
 
 q2
+> Assume that you are working at a lean startup and you are responsible for a large legacy application that is stable and requires bug fixes and security patches once a quarter. Which of the following is the best approach for refactoring?
 Keep the application as is.
 
 q3
+> Select the scenarios where it may be more beneficial to use a microservice architecture instead of a monolith architecture.
 An enterprise application that needs to have downtime scheduled every night for any code changes
 A company that wants two established teams that use different programming languages and frameworks to collaborate
 
 
 New Terms
-Term	Definition
+Term	               Definition
 Distributed System	Multiple nodes that communicate with one another as part of a system
 
 
@@ -80,35 +87,37 @@ Distributed System	Multiple nodes that communicate with one another as part of a
 2.4 Preparing to Refactor a Monolith
 ---------------------------------------
 Approaching Refactoring a Monolith
-A skilled developer would not blindly design and build everything as microservices!
-Look at the system from a bird's eye view to understand the relationships between services with a dependency graph.
+* A skilled developer would not blindly design and build everything as microservices!
+* Look at the system from a bird's eye view to understand the relationships between services with a dependency graph.
 
 Dependency Graphs
-A dependency graph is a way to visualize how pieces of a system relate to one another.
-Dependency graphs capture the modules and their dependencies as a directed graph.
-Helps us understand the downstream impact of the changes made in one module.
-Establishes an understanding of the system to see business risks associated with modifying one part of the system over another.
+* A dependency graph is a way to visualize how pieces of a system relate to one another.
+* Dependency graphs capture the modules and their dependencies as a directed graph.
+* Helps us understand the downstream impact of the changes made in one module.
+* Establishes an understanding of the system to see business risks associated with modifying one part of the system over another.
 
 How to Get Started Creating a Dependency Graph
-Review source code
-Review existing documentation
-Understand external use cases
+* Review source code
+* Review existing documentation
+* Understand external use cases
 
 Details in Graphs
 Dependency graphs involve nodes and arrows that capture the relationship between the modules that are linked.
 
 Nodes
-Nodes represent a resource: these can be distinct servers, systems, or subcomponents of your application
-The level of detail to provide in a node depends on what type of information you are trying to capture with the dependency graph
+* Nodes represent a resource: these can be distinct servers, systems, or subcomponents of your application
+* The level of detail to provide in a node depends on what type of information you are trying to capture with the dependency graph
 
 Arrows
-Arrows capture the relationship between resources that are linked
-The direction of arrows can differ depending on what type of information you are capturing
-A diagram should not have different conventions for how arrows are directed as it makes the diagram confusing to understand
+* Arrows capture the relationship between resources that are linked
+* The direction of arrows can differ depending on what type of information you are capturing
+* A diagram should not have different conventions for how arrows are directed as it makes the diagram confusing to understand
+
 Because I often work with systems that transport data, I personally like my arrows to help represent how data is flows through my system.
 
 REST API Endpoint
 
+```
 from services.orders import get_order_data
 from services.customers import get_customer_data
 
@@ -122,26 +131,30 @@ def get_order(order_id=0):
    'purchase_price': order_data['purchase_price'],
    'customer_data': customer_data
  }
+```
+
 
 New Terms
-Term	Definition
+Term	            Definition
 Dependency Graph	A visual representation of how different components of a system interact with one another
 
 Learn More About Preparing to Refactor a Monolith
 Read the following to learn how dependency graphs are used and why distributed systems are more difficult to manage:
 
-Dependency Graphs in Webpack
-SJSU Dependency Graphs
-CAP Theorem
+* Dependency Graphs in Webpack https://webpack.js.org/concepts/dependency-graph/
+* SJSU Dependency Graphs       http://www.cs.sjsu.edu/faculty/pearce/modules/lectures/ood/metrics/Dependency.htm
+* CAP Theorem                  https://en.wikipedia.org/wiki/CAP_theorem
 ￼
 
 
 2.5 Quizzes: Dependency Graphs
 ---------------------------------------
 q1
+> Use the dependency graph above for the quiz. Assuming all of the nodes are of equal importance, which of the following nodes poses the most risk when it fails?
 C
 
 q2
+> A dependency graph be helpful for … (Select all that apply)
 Understanding how shutting down one service will affect another
 Capturing an overview of a complicated system to understand security vulnerabilities
 Creating a playbook for redeploying services in the event of a major failure
@@ -150,6 +163,11 @@ Creating a playbook for redeploying services in the event of a major failure
 
 2.6 Exercise: Build a Dependency Graph
 ---------------------------------------
+Build a Dependency Graph for a Flask Application
+
+Your team needs to refactor an existing Flask application. Your task is to create a dependency graph for the team to review as they plan the migration strategy.
+
+https://github.com/udacity/nd064-c2-message-passing-exercises/tree/master/lesson-1-refactoring-from-a-monolith/udacredit-monolith
 
 user@localhost:~$ sudo curl -L "https://github.com/docker/compose/releases/download/1.29.2/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
   % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
@@ -174,7 +192,26 @@ user@localhost:~$
 2.7 Solution: Build a Dependency Graph 
 ---------------------------------------
 
+My Solution
+
+My Process
+1. Walk through client/src/index.js to understand the Frontend Client’s dependencies:
+* Frontend Client is dependent on Customers Route and Employees Route
+
+2. Walk through api/app.py to understand the dependencies for the routes
+* Customers Route is dependent on Customers Service
+* Employees Route is dependent on Employees Service
+* Notifications Route is dependent on Employees Service and Notifications Service
+
+3. Walk through files api/services/ to understand dependencies for the services
+* All of the services have no dependencies
+
+
+> Thinking Like A Cloud Native Developer
+> Reflect on a situation in the past where you had to read through existing code. How would a dependency graph have helped you develop a better understanding of the code?
 dependency graph give an quick overview how the code depend on each others...it give an initial idea where are the pieces related. This overview actually help during going through the code..
+
+
 
 2.8 Migration Strategy
 ---------------------------------------
@@ -182,39 +219,52 @@ dependency graph give an quick overview how the code depend on each others...it 
 Migration Options
 On a high level, we have three options for migrating an existing monolith application to microservices. There's no right or wrong approach -- it depends on which strategy best fits your business requirements.
 
-Rewrite the application
-Refactor the existing application
-Migrate the existing application in pieces
+1. Rewrite the application
+2. Refactor the existing application
+3. Migrate the existing application in pieces
 
 Rewrite the Application
-An effort to refactor can be a good opportunity to rewrite an outdated application.
-Be mindful that it's not always a good idea to rewrite everything, and it's easy to lose track of the scope of rewrites.
+* An effort to refactor can be a good opportunity to rewrite an outdated application.
+* Be mindful that it's not always a good idea to rewrite everything, and it's easy to lose track of the scope of rewrites.
 
 Refactor the Existing Application
-Break apart the application into individual microservices and redeploy the finished refactor at once.
-We will need to make sure that our refactored application does not fall behind on features.
+* Break apart the application into individual microservices and redeploy the finished refactor at once.
+* We will need to make sure that our refactored application does not fall behind on features.
 
 Migrate the Existing Application Incrementally
-An application can be refactored incrementally while it's live.
-We don't need to deploy a copy of the application and work on two simultaneous projects.
-Refactor in small increments so that we have time to ensure our application behaves as expected.
-Gradual refactoring is known as the Strangler Pattern.
+* An application can be refactored incrementally while it's live.
+* We don't need to deploy a copy of the application and work on two simultaneous projects.
+* Refactor in small increments so that we have time to ensure our application behaves as expected.
+* Gradual refactoring is known as the Strangler Pattern.
 
 The Strangler Pattern
 The Strangler Pattern is a common way to migrate legacy applications. Rather than replacing your code with a new version, you can gradually replace components of your application.
 
 New Terms
-Term	Definition
+Term              Definition
 Strangler Pattern	A strategy for gradually refactoring pieces of a deployed application
+
+Learn More About Migration Strategies
+Below are a few resources to learn more about the Strangler Pattern:
+
+* Strangler Pattern   https://docs.microsoft.com/en-us/azure/architecture/patterns/strangler-fig
+* Martin Fowler's Origin of Strangler Pattern   https://martinfowler.com/bliki/StranglerFigApplication.html
+
+The following are additional resources about refactoring applications:
+
+* Martin Fowler's Definition of Refactoring   https://martinfowler.com/bliki/DefinitionOfRefactoring.html
+* Refactoring for the Cloud   https://aws.amazon.com/blogs/enterprise-strategy/the-great-cloud-refactoring-debate/
 
 
 
 2.9 Quizzes: Migration Strategy
 ---------------------------------------
 q1
+> Why would you use the Strangler Pattern to refactor a service?
 To reduce the risks that might arise from changing too many pieces of an application at the same time
 
 q2
+> What are some ways the Strangler Pattern can be useful?
 To reduce risk and make debugging more straightforward by localizing all the changes to one part of the application.
 
 
@@ -225,12 +275,21 @@ Applying The Strangler Pattern
 You are tasked with refactoring the UdaCredit Union monolith application. Review the dependency graph below and decide which service to refactor first using the Strangler Pattern. Your goal is to determine which service would have the least amount of risk. Keep in mind there can be more than one right answer -- your solution needs to include your rationale for your decision!
 
 Review the dependency graph and determine which part of the application is the least risky to refactor.
-Analyze the dependency graph.
-Determine which part of the application makes the most sense to begin refactoring using the Strangler pattern.
-Write 2-3 sentences justifying your decision.
+1. Analyze the dependency graph.
+2. Determine which part of the application makes the most sense to begin refactoring using the Strangler pattern.
+3. Write 2-3 sentences justifying your decision.
+
+Exercise: Apply The Strangler Pattern
+Review the dependency graph and determine which part of the application is the least risky to refactor.
+
+* Analyze the dependency graph.
+* Determine which part of the application makes the most sense to begin refactoring using the Strangler pattern.
+* Write 2-3 sentences justifying your decision.
 
 
 q1
+> Strangler Pattern Response
+> Explain which part of the application you would refactor first and the reasoning behind your decision
 I would pick customers route and customers service because these are the least components (2) to begin refactoring. Frontend client require customers route and customers route require customers service. So if these two get refactors, it will work for the Frontend Client.
 
 
@@ -254,7 +313,8 @@ We can consider business context for each of the potential refactor candidates.
 
 At the same time, Customers Service has logic that is much less tied to other parts of the API monolith. It may make sense to work with Customers Route and Customers Service.
 
-q1
+> q1
+Now that you've seen my response, has your opinion about which part to refactor first changed? Why?
 sure, because refactoring decision will need to include business criteria too. It could also include like the application context.
 
 
@@ -265,14 +325,14 @@ Using the Strangler Pattern
 The Strangler Pattern provides a systematic approach to approaching our refactor. We want to look at how we can take these concepts and actually begin the work to refactor a monolith to individual microservices.
 
 Refactoring with Kubernetes
-With Kubernetes, we can break apart our services into distinct Kubernetes services.
-We can begin to represent our application as multiple Docker images that are run as pods in multiple services.
-Kubernetes uses message passing to communicate between pods and services.
+* With Kubernetes, we can break apart our services into distinct Kubernetes services.
+* We can begin to represent our application as multiple Docker images that are run as pods in multiple services.
+* Kubernetes uses message passing to communicate between pods and services.
 
 Premature Abstractions
 Developers looking to reduce duplicate code may force non-ideal abstractions in their code. These types of abstractions are deceiving because they remove duplicate code and make the codebase seem more streamlined. However, the bad abstraction makes the code too rigid for changes.
 
-Don't force an abstraction to reduce code. You may find yourself with messy code that you need to accommodate; your abstraction should accommodate your code!
+* Don't force an abstraction to reduce code. You may find yourself with messy code that you need to accommodate; your abstraction should accommodate your code!
 
 Example
 Starting Point
@@ -280,45 +340,52 @@ Given that we have a store selling basketball and baseball equipment with the fo
 
 Basketball
 
-name: basketball
-ball size: large
-players: 10
+* name: basketball
+* ball size: large
+* players: 10
+
 Baseball
 
-name: baseball
-ball size: small
-players: 9
+* name: baseball
+* ball size: small
+* players: 9
+
 Forced Abstraction
 We may see that there are common fields and decide to refactor our code to enforce that all of our sports follow this schema:
 
 AbstractSport
 
-name:
-ball size:
-players:
+* name:
+* ball size:
+* players:
+
 Effect
 When another sport is introduced, we may find that the abstraction had been too rigid. If the store begins to sell ice skating equipment, the abstraction starts to break apart:
 
 Ice Skating
 
-name: skating
-ball size: ?
-players: 1
+* name: skating
+* ball size: ?
+* players: 1
+
 We can combat this by setting ball size as an optional/nullable field but this is a band-aid fix. As we accumulate more of these nullable fields to accommodate for our abstraction, we accrue more and more technical debt.
 
+Addressing Duplicate Code
+
 It's Fine To Have Duplicate Code
-It's a common misconception that code duplication is wrong in software. Production code is a living thing that evolves as business requirements change.
-The Do Not Repeat Yourself (DRY) principle is sometimes overly applied to every situation that makes our application too rigid.
-Some developers will force themselves to find a way to write abstractions for code that may not be prime candidates for abstractions.
+* It's a common misconception that code duplication is wrong in software. Production code is a living thing that evolves as business requirements change.
+* The Do Not Repeat Yourself (DRY) principle is sometimes overly applied to every situation that makes our application too rigid.
+* Some developers will force themselves to find a way to write abstractions for code that may not be prime candidates for abstractions.
+
 It will be inevitable that you will have duplicate code. At the end of the day, it's fine to have code duplication.
 
 Minimizing Duplicate Code
 Common Libraries
-Common code can be abstracted into a library that is imported across our application.
-If we find that we have a lot of common utility functions, it's possible to publish this common code as its own library that we import to our other services.
+* Common code can be abstracted into a library that is imported across our application.
+* If we find that we have a lot of common utility functions, it's possible to publish this common code as its own library that we import to our other services.
 
 Shared Common Code
-It's a common approach to have our microservices organized as submodules in one project. * We can possibly organize our project such that it references the same code.
+* It's a common approach to have our microservices organized as submodules in one project. * We can possibly organize our project such that it references the same code.
 This may look like this:
 
 modules/service_one.py
@@ -326,15 +393,19 @@ modules/service_two.py
 common/utils.py
 
 Keep Duplicate Code
-My recommendation: focus on refactoring your application to microservices.
-Once you are done, you will have a better understanding of the shared components in your code.
-You can follow up with abstraction techniques to remove duplicate code if it makes sense to do so.
+* My recommendation: focus on refactoring your application to microservices.
+* Once you are done, you will have a better understanding of the shared components in your code.
+* You can follow up with abstraction techniques to remove duplicate code if it makes sense to do so.
 
 New Terms
-Term	Definition
+Term                          Definition
 Do Not Repeat Yourself (DRY)	A principle in software that encourages code reuse and applicable abstractions
+
 Learn More About Migrating From Monolith to Microservices
 Below are two very insightful articles on a different perspective of opting to overcomplicate abstractions instead of simply having duplicate code:
+* Goodbye Clean Code      https://overreacted.io/goodbye-clean-code/
+* The Wrong Abstraction   https://sandimetz.com/blog/2016/1/20/the-wrong-abstraction?duplication
+* Examples of Hosting Python Packages Internally   https://sandimetz.com/blog/2016/1/20/the-wrong-abstraction?duplication
 
 
 
