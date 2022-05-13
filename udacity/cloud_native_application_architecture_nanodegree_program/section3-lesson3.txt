@@ -3,14 +3,54 @@ date start : 27 august 2021
 
 3.1 Lesson Overview
 ---------------------------------------
-
 We have decided what our microservices will look like. Now that we have an idea of how to separate services, we will need to begin looking at how we can connect them.
+
+By the end of this lesson you will be able to:
+
+* Identify use cases and implement best practices of REST
+* Identify use cases of gRPC
+* Identify use cases and implement best practices of message queues
 
 
 
 3.2 Why Learn About Message Passing Techniques?
 ---------------------------------------
 
+Using different message passing techniques is similar to choosing different commute options.
+
+Analogy: Commuting
+To understand why communication with different message passing techniques matter, let's look at the some options available for commuting in the Bay Area: driving, BART, and electric scooter rentals.
+
+1. Driving
+* A driver can take different routes to the same destination
+* A driver can drive a more cost-efficient vehicle
+* A driver can drive at different speeds
+* Carpooling is slightly less efficient at the expense of saving costs
+
+2. BART
+The BART is a rail-based public transportation system that loads and transports passengers in trains.
+
+* Passengers pay their fares via a proprietary payment card
+* Passengers wait in various stations for their trains to arrive
+* There's an overhead for the system to manage the stations and passengers and passengers often need to wait for their trains.
+
+3. Electric Scooter Rentals
+A few companies offer electric scooter rentals in various cities in the Silicon Valley.
+
+* Users have to use the companies' proprietary apps
+* Users have to follow guidelines such as wearing helmets and using bike lanes
+* It's not feasible to travel long distances on electric scooters
+* Traveling locally can be very efficient.
+
+Overview
+There are many benefits and downsides to using one form of transportation over the other. The maintainers and users of the systems need to consider tradeoffs between cost, time, and reliability. Now, much like our transportation options, different forms of message passing techniques exist for engineers to design and implement in order to find the right balance between:
+
+1. Cost
+2. Maintainability
+3. Efficiency
+4. Reliability
+
+> Why would we choose to use one form of message passing over another?
 One form of message passing less prone to errors than another.
 One form of message passing provides lower latency than another.
 One form of message passing uses less server resources so less hardware can be used.
@@ -25,51 +65,62 @@ Different types of message passing are utilized for different scenarios, and the
 
 In Practice
 Design Considerations
-Choosing a message passing technique is a design consideration that weighs technical and business tradeoffs.
-There isn't always a solution that optimizes for every use case.
-Consider how the system will be affected by your design regarding cost, _maintainability, efficiency, and reliability.
+* Choosing a message passing technique is a design consideration that weighs technical and business tradeoffs.
+* There isn't always a solution that optimizes for every use case.
+* Consider how the system will be affected by your design regarding cost, _maintainability, efficiency, and reliability.
 
 Cost
-Be aware of the technical and business implications of our solutions. An experienced engineer can craft solutions that fit within certain constraints.
+* Be aware of the technical and business implications of our solutions. An experienced engineer can craft solutions that fit within certain constraints.
 
 Maintainability
-Our code doesn't exist in a vacuum.
-Other developers often contribute to our projects.
-We should ensure that our solution is something that someone can reasonably adopt and work with.
+* Our code doesn't exist in a vacuum.
+* Other developers often contribute to our projects.
+* We should ensure that our solution is something that someone can reasonably adopt and work with.
 
 Efficiency
-Efficiency often refers to the performance of a system: the time it takes to process something.
-A system with poor performance can greatly impact the user experience or hinder business functionality.
+* Efficiency often refers to the performance of a system: the time it takes to process something.
+* A system with poor performance can greatly impact the user experience or hinder business functionality.
 
 Reliability
-Downtime can be detrimental to our system.
-Solutions should be engineered in a way to mitigate downtime: isolate failures and fail gracefully otherwise.
+* Downtime can be detrimental to our system.
+* Solutions should be engineered in a way to mitigate downtime: isolate failures and fail gracefully otherwise.
 
 Perfection is Rare
-Since software is ever-changing, it is impractical to design a bulletproof solution that will withstand the test of time.
-Since we can't predict the future, we should design our system to satisfy our known business requirements. Our code can be engineered in a modular way and enables us to migrate or improve our design.
+* Since software is ever-changing, it is impractical to design a bulletproof solution that will withstand the test of time.
+* Since we can't predict the future, we should design our system to satisfy our known business requirements. Our code can be engineered in a modular way and enables us to migrate or improve our design.
 
 Example: Cost Tradeoffs
 I was once tasked with designing a system to load and retrieve terabytes of data. I came up with the following solutions:
 
-Fastest Solution - load everything into Redis for $300k a month
-Fast Solution - load everything into a PostgreSQL cluster for ~$50k a month
-Good Solution - use PostgreSQL as a reverse index pointing to data stored in a filesystem ~$9k a month
+1. Fastest Solution - load everything into Redis for $300k a month
+2. Fast Solution - load everything into a PostgreSQL cluster for ~$50k a month
+3. Good Solution - use PostgreSQL as a reverse index pointing to data stored in a filesystem ~$9k a month
 
 The cheapest solution was not the most performant but satisfied the business needs with regards to performance and cost. We ended up going with this approach and saved a lot of money!
 
 
 q1
+> Your client has requested a new application to handle timesheet entry for 50 employees with a very limited budget. Which of the following features should you recommend not implementing because they add unnecessary complexity?
 Adding a cache like Redis to optimize read performance against the database storing the timesheet details
 Setting up an auto-scaling application for the timesheet system in case the application can't handle the timesheets being entered
 Set up a new technology that a company released in a public beta a month ago that can potentially provide a better user experience for the client's users
 
 
 q2
+> Match the factors that drive the choices below
+Opting to build an application with open source tools rather than using well-equipped vendor software.
 cost
+
+Using technologies commonplace in the industry such that another teammate can leverage online resources to troubleshoot issues.
 maintainability
+
+Opting to build a complex system that provides performance improvements and a better customer experience.
 efficiency
+
+
+Setting up an application with Kubernetes such that when a health check on a pod fails, another healthy pod is created to replace it
 reliability
+
 
 
 3.4 REST Application and Best Practices
