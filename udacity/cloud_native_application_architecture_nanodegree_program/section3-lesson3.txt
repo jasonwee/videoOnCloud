@@ -128,44 +128,45 @@ reliability
 What is REST?
 REST stands for "REpresentational State Transfer" and is a set of guidelines on how to create web APIs. As it is a set of guidelines, it is open-ended and can be implemented in many ways.
 
-The industry has settled on a few ideas on best practices for designing APIs with REST.
-RESTful APIs and REST APIs are very popular terms today that refer to API's built implementing REST.
-RESTful APIs are the most common form of message passing today.
+* The industry has settled on a few ideas on best practices for designing APIs with REST.
+* RESTful APIs and REST APIs are very popular terms today that refer to API's built implementing REST.
+* RESTful APIs are the most common form of message passing today.
 
 Analogy
 It may seem odd that we have a notion of an "architectural style" that simply provides us guidelines on how to implement software. To draw an analogy, let's compare REST to DOT certification for motorcycle helmets:
 
 DOT-Certified Helmets
-DOT certification for helmets is a series of guidelines to implement a safe helmet to protect a rider during impacts.
-The organization that implemented the DOT certification does not enforce the certification: it's up to individual manufacturers to test their own products.
+* DOT certification for helmets is a series of guidelines to implement a safe helmet to protect a rider during impacts.
+* The organization that implemented the DOT certification does not enforce the certification: it's up to individual manufacturers to test their own products.
 
 A manufacturer may decide to use a certain type of foam over a specific type of rubber inside their helmets to absorb shock. One material may absorb more shock over another but cost slightly less. The helmet will still pass the DOT-certification guidelines. We can have many different types of DOT-certified helmets that are optimized for different levels of cost, comfort, safety, and aesthetics.
 
 RESTful API's
 Similarly, REST guidelines involve setting up a stateless, client-server relationship leveraging HTTP. How an API makes itself RESTful is open-ended.
 
-Building a RESTful API is not a plug-and-play solution and involves architectural designs of its own.
-We have many options on how to build a RESTful design. For example, in a RESTful API endpoint, we can choose to potentially add a cache to improve performance at the expense of additional infrastructure, maintenance, and development.
+* Building a RESTful API is not a plug-and-play solution and involves architectural designs of its own.
+* We have many options on how to build a RESTful design. For example, in a RESTful API endpoint, we can choose to potentially add a cache to improve performance at the expense of additional infrastructure, maintenance, and development.
 
 Properties of RESTful APIs
 1. Client-Server
-A client makes a request and receives a response from the server.
+* A client makes a request and receives a response from the server.
 This relationship provides a good notion of isolation between the client and server: the client doesn't necessarily need to know all the details in how the server is implemented.
 
 2. Statelessness
-The server should not be keeping track of the context of client requests.
+* The server should not be keeping track of the context of client requests.
 Each inbound request should have all the information necessary to process the request. This makes the API easier to implement for the server and more predictable for the client.
 
 3. Cacheability
-Responses can potentially be cached for improved performance.
+* Responses can potentially be cached for improved performance.
 This is a server-level detail and abstracted from the client; clients shouldn't care about their responses being cached.
 
 4. Layered System
-The client makes requests against an API endpoint and receives a response. The request may have gone through layers of a system.
+* The client makes requests against an API endpoint and receives a response. The request may have gone through layers of a system.
+
 For example, it may have gone through a proxy, load balancer, different services, etc. before being processed into a response. This is a server-level detail and abstracted from the client; clients shouldn't need to care about the layers involved in their requests.
 
 5. Uniform Interface
-The interface should be consistent, and API messages and endpoints should be self-describing.
+* The interface should be consistent, and API messages and endpoints should be self-describing.
 
 REST Anatomy
 REST is built on top of HTTP requests and responses.
@@ -173,24 +174,27 @@ REST is built on top of HTTP requests and responses.
 HTTP Request
 An HTTP request is sent to the server by the client.
 
-Method - the type of action being taken (POST, GET, PUT, PATCH, DELETE)
-Endpoint - URL to send the request
-Header - additional metadata
-Body - content (typically in JSON format)
+* Method - the type of action being taken (POST, GET, PUT, PATCH, DELETE)
+* Endpoint - URL to send the request
+* Header - additional metadata
+* Body - content (typically in JSON format)
+
 HTTP Response
 An HTTP response is returned to the client by the server.
 
-Response Code - status of the HTTP request
-Header - additional metadata
-Body - content (typically in JSON format)
+* Response Code - status of the HTTP request
+* Header - additional metadata
+* Body - content (typically in JSON format)
+
 Methods
 REST utilizies HTTP methods to define the "verb" of the request. While there are a lot of HTTP methods available, REST typically uses:
 
-POST - create
-GET - retrieve
-PUT - replace
-PATCH - update
-DELETE - delete
+* POST - create
+* GET - retrieve
+* PUT - replace
+* PATCH - update
+* DELETE - delete
+
 While not enforced, it's a convention to not include a request body with GET and DELETE methods.
 
 RESTful API Example
@@ -207,6 +211,7 @@ We can model this as a JSON object. This captures the data that we need to pass 
         "name": <string>,
         "weight": <float>
     }
+
 REST API Interface
 The following is an example of a REST API interface that can add items to a warehouse shipment.
 
@@ -223,6 +228,7 @@ Response Body
     "name": <string>,
     "weight": <float>
 }
+
 Create Item
 POST /api/items/<item_id>
 
@@ -243,33 +249,38 @@ Response Body
     "name": <string>,
     "weight": <float>
 }
+
 REST API Specification Format
 REST relies heavily on documentation. In general, we will need to include details about our:
 
-URL
-Request Type
-Headers (if applicable)
-Body (if applicable)
-Response Code
+* URL
+* Request Type
+* Headers (if applicable)
+* Body (if applicable)
+* Response Code
+
 URL
 The URL documents the endpoint as well as path parameters or query parameters.
 
 /api/items/<item_id>?created_by=<user_id>
 
-item_id is a path parameter. It's often used to set the ID of the resource being queried.
-user_id is a query parameter. It's often used to control how the data is returned.
+* item_id is a path parameter. It's often used to set the ID of the resource being queried.
+* user_id is a query parameter. It's often used to control how the data is returned.
+
 Request Type
 The Request Type is an HTTP response code. It's often included with the URL.
 
 GET /api/items/<item_id>?created_by=<user_id>
 
-GET indicates that the endpoint supports an HTTP GET request
+* GET indicates that the endpoint supports an HTTP GET request
+
 Headers
 Headers are key-value pairs of data. They are often represented by a single string separated by a : character.
 
 Content-Type: application/json
 
-Content-Type is the key and application/json is the value
+* Content-Type is the key and application/json is the value
+
 Body
 The body is most often a JSON object. There are many ways to document JSON objects and I prefer the following syntax.
 
@@ -279,23 +290,25 @@ The body is most often a JSON object. There are many ways to document JSON objec
         "name": <string>,
         "weight": <float>
     }
-id captures the key of what the data represents
-<item_id: string> tells us that the field represents an item_id and that it is a string type.
-<string> tells us that the field is a string type. The field was self-describing enough that we don't have describe what it is representing.
+
+* id captures the key of what the data represents
+* <item_id: string> tells us that the field represents an item_id and that it is a string type.
+* <string> tells us that the field is a string type. The field was self-describing enough that we don't have describe what it is representing.
+
 Response Code
 The response code informs us of the result of the request. It's often captured as a string that returns us the code and its status. 200 OK
 
-200 is the HTTP response code
-OK is the definition of the 200 response. This isn't always needed because HTTP 200 will never mean anything other than an OK so it may be redundant.
+* 200 is the HTTP response code
+* OK is the definition of the 200 response. This isn't always needed because HTTP 200 will never mean anything other than an OK so it may be redundant.
 
 
 New Terms
-Term	Definition
+Term	                                 Definition
 REpresentational State Transfer (REST)	An architectural style used to describe how to create web services
-Statelessness	Context is not tracked between requests
-Cacheability	Ability to store data for efficient retrieval to optimize performance
-Client-Server	Relationship where a server provides data to a client that doesn't necessarily need to know the internals of the server's logic
-Uniform Interface	Different parts of the interfaces should look familiar and be consistent
+Statelessness	                        Context is not tracked between requests
+Cacheability	                        Ability to store data for efficient retrieval to optimize performance
+Client-Server                          Relationship where a server provides data to a client that doesn't necessarily need to know the internals of the server's logic
+Uniform Interface                      Different parts of the interfaces should look familiar and be consistent
 
 
 
@@ -311,29 +324,46 @@ The Google Drive API is a great example of how we can design a message and expos
 
 It shows how a File is captured as a JSON object and how to interact with it.
 
-A Files message is used as an object representing a file in Google Drive.
-The methods define actions one can make to interact with files.
+* A Files message is used as an object representing a file in Google Drive.
+* The methods define actions one can make to interact with files.
+
 Learn More About RESTful APIs
 API Documentation
 Below, I've provided a few companies that are well-known for their APIs. Take a look at some similarities and differences in how they have implemented their APIs to fit their business needs. I highly encourage you to browse -- or even play with -- a few of these!
 
-Stripe - Payment processing product
-Twilio - SMS integration product
-Plaid - Bank integration product
-Trello - Project management product
-Digital Ocean - PaaS for hosted infrastructure
+* Stripe - Payment processing product
+* Twilio - SMS integration product
+* Plaid - Bank integration product
+* Trello - Project management product
+* Digital Ocean - PaaS for hosted infrastructure
+* Google Docs - Productivity tools
+* Slack - Business communication product
+
+API Best Practices
+In addition, the following is a very well-written resource on some best practices for creating APIs:
+
+* Best Practices for a Pragmatic RESTful API
 
 
 
 3.6 Quizzes: REST Application and Best Practices
 ---------------------------------------
 q1
+> Match the following scenarios with properties of a RESTful API
+An API is implemented to treat every request independent of previous requests
 statelessness
+
+To improve the performance of subsequent reads, a developer configures their database to manage common queries
 cacheability
+
+A team manages an API and decides to change their backend system from a single server to a distributed Kubernetes deployment
 layered system
+
+An organization sets up its RESTful APIs such that authentication to use the service is consistent across its endpoints
 uniform interface
 
 q2
+> Which parts of a RESTful API endpoint can accept input from a user?
 request body
 request header
 url parameter
@@ -351,12 +381,16 @@ You are part of the IT department for a large national corporation. Every team c
 Exercise: Design a RESTful API Interface Task List
 We want to implement the following functionality:
 
-Place an order for a computer
-Get all computer orders
+1. Place an order for a computer
+2. Get all computer orders
+
 When a user orders a computer, we want to allow users to specify equipment such as a keyboard or a webcam to include with the order.
 
 An order should contain information on the user who created the order, the status of the order, the time the order was placed, and additional equipment.
 
+* Create an API endpoint for placing an order for a computer: include the request headers, request body, and request URL, response code, and response body.
+* Create an API endpoint for retrieving a list of all computer orders that have been placed: include the request headers, request body, request URL, response code, and response body.
+￼
 
 
 3.8 Solution: Design a RESTful API Interface
@@ -468,6 +502,8 @@ If our options for orders are more diverse, it may not make sense to have every 
 
 
 q1
+> Thinking Like a Cloud Native Developer
+> Compare your solution with mine. What are the pros and cons of your solution vs. my solution?
 your solution is much more uniform. i don't think the response result to be.
 
 
@@ -477,55 +513,51 @@ your solution is much more uniform. i don't think the response result to be.
 Introduction to gRPC and Protobuf
 
 What is gRPC?
-A message passing technique developed by Google in 2015.
-gRPC stands for g* Remote Procedure Calls where the g stands for something different in every release of gRPC. For example, the g in gRPC 1.12 stands for glorious.
-Programming-language agnostic
-Seeing greater traction and adoption in the industry.
-Compared to REST, gRPC provides greater performance at the expense of less flexibility.
-Clients that call gRPC can treat it as a method call in their own application by stubbing the gRPC service.
-Does not require an HTTP library to make an API request because the application code can call a method that is "hooked up" to a gRPC service internally.
+* A message passing technique developed by Google in 2015.
+* gRPC stands for g* Remote Procedure Calls where the g stands for something different in every release of gRPC. For example, the g in gRPC 1.12 stands for glorious.
+* Programming-language agnostic
+* Seeing greater traction and adoption in the industry.
+* Compared to REST, gRPC provides greater performance at the expense of less flexibility.
+* Clients that call gRPC can treat it as a method call in their own application by stubbing the gRPC service.
+* Does not require an HTTP library to make an API request because the application code can call a method that is "hooked up" to a gRPC service internally.
+
 gRPC is Fast!
-Leverages HTTP/2 for transporting messages
-Transports binary data
-Uses protocol buffers (protobufs) for efficiently transporting structured data
+* Leverages HTTP/2 for transporting messages
+* Transports binary data
+* Uses protocol buffers (protobufs) for efficiently transporting structured data
+
 HTTP/2
-gRPC takes advantage of the HTTP/2 protocol.
-There are changes introduced in HTTP/2 that improve the overall security and performance of the web.
-We need to acknowledge the fact that by using HTTP/2, gRPC can significantly improve its performance with regards to response sizes and overhead of connections.
+* gRPC takes advantage of the HTTP/2 protocol.
+* There are changes introduced in HTTP/2 that improve the overall security and performance of the web.
+* We need to acknowledge the fact that by using HTTP/2, gRPC can significantly improve its performance with regards to response sizes and overhead of connections.
+
 For more details on HTTP/2, I encourage you to visit the Additional Reading section below.
 
 Message Sizes
-Messages are transmitted as binary data.
-This reduces the overall size of the payload and thereby improving the request and response times.
+* Messages are transmitted as binary data.
+* This reduces the overall size of the payload and thereby improving the request and response times.
+
 Connections Overhead
-Traditionally, an HTTP request could end up creating more HTTP requests that are blocking in nature.
-HTTP/2 helps reduce this overhead and make more efficient use of resources by multiplexing its data with a unique connection between the client and server.
+* Traditionally, an HTTP request could end up creating more HTTP requests that are blocking in nature.
+* HTTP/2 helps reduce this overhead and make more efficient use of resources by multiplexing its data with a unique connection between the client and server.
+
 Protocol Buffers
-A Protocol buffer, also known as a protobuf, is another way to serialize messages. We can think of it as an alternative to JSON or YAML with its set of tradeoffs.
-gRPC uses protobufs to pass its messages.
-Protobuf messages are designed to be backward and forwards compatible.
-Clients that are processing a message expecting an older or newer version of the message will simply ignore fields they don't recognize.
+* A Protocol buffer, also known as a protobuf, is another way to serialize messages. We can think of it as an alternative to JSON or YAML with its set of tradeoffs.
+* gRPC uses protobufs to pass its messages.
+* Protobuf messages are designed to be backward and forwards compatible.
+* Clients that are processing a message expecting an older or newer version of the message will simply ignore fields they don't recognize.
+
 Structured Data
-Using protocol buffers helps us clearly define and lock down our interfaces to provide type safety and less confusion.
+* Using protocol buffers helps us clearly define and lock down our interfaces to provide type safety and less confusion.
+
 Analogy
 We can think of using a dict versus using a class in Python:
 
-The dict is flexible but doesn't have enforcement on what values go into it. A client reading a dict may run into `KeyErrorException'errors from trying to read bad data.
-A class defines which fields are used and sets up a straightforward interface. dict 's are very flexible and allow us to be more efficient at the expense of safety.
+1. The dict is flexible but doesn't have enforcement on what values go into it. A client reading a dict may run into `KeyErrorException'errors from trying to read bad data.
+2  A class defines which fields are used and sets up a straightforward interface. dict 's are very flexible and allow us to be more efficient at the expense of safety.
+
 A dict is similar to using REST while a class is similar to using gRPC.
 
-Binary Data
-Protobufs are designed to be serialized into binary blobs, making it very efficient to transport our data "over the wire" through a network.
-Compared to human-readable formats like JSON: these binary messages can't be read without first being decoded and we can't simply craft a binary message in our text editors.
-Message Size
-Message size matters in response times for APIs.
-A message that's 50 bytes will respond much faster than a message that is 50 Mb in size. In the context of an API that is processing thousands of requests per second, the effects of message size can add up!
-Protobuf messages passed in gRPC are significantly smaller in size than message formats like JSON:
-
-Binary encodings are efficient and have a small footprint.
-JSON has a lot of brackets and syntax that increase the size of the payload.
-Decoding
-Since protobufs are a form of structured data, the binary data can be decoded very quickly. Compare this with a format like JSON, which is simply an unstructured string that needs to be parsed into some data structure before it can be properly consumed.
 Protobuf Messages
 
 When we create a protobuf message, we are defining the format of the message.
@@ -533,8 +565,9 @@ When we create a protobuf message, we are defining the format of the message.
 Protobuf vs. JSON
 Protobuf messages define what an item must be. JSON defines what an item should be.
 
-Protobuf - breaks if schema is modified and is strictly typed
-JSON - schema can be modified and typing is not enforced
+* Protobuf - breaks if schema is modified and is strictly typed
+* JSON - schema can be modified and typing is not enforced
+
 Protobuf message
 
 message Item {
@@ -543,106 +576,134 @@ message Item {
   int32 id = 3;
   float weight = 4;
 }
+
 The message defines the fields for theItem field.
 
-Each field has a type associated with it.
-The integers at the end of each field are not values but are assignments used to declare field numbers. These are crucial in helping protobuf handle binary blobs of data.
+1. Each field has a type associated with it.
+2. The integers at the end of each field are not values but are assignments used to declare field numbers. These are crucial in helping protobuf handle binary blobs of data.
+
 Note that you may see some examples in other sources use required and optional for the fields in their messages. Those were removed in the proto3 version.
 
 JSON message
 
 {
- "id": <item_id: string>,
+    "id": <item_id: string>,
     "brand_name": <string>,
     "name": <string>,
     "weight": <float>,
 }
+
 Binary Data
-Protobufs are designed to be serialized into binary blobs, making it very efficient to transport our data "over the wire" through a network.
-Compared to human-readable formats like JSON: these binary messages can't be read without first being decoded and we can't simply craft a binary message in our text editors.
+* Protobufs are designed to be serialized into binary blobs, making it very efficient to transport our data "over the wire" through a network.
+* Compared to human-readable formats like JSON: these binary messages can't be read without first being decoded and we can't simply craft a binary message in our text editors.
+
 Message Size
 Binary data also helps reduce the size of messages. Data is stored in a way that is efficient for machines to process but unreadable for humans.
-
-Message size matters in response times for APIs.
-A message that's 50 bytes will respond much faster than a message that is 50 Mb in size. In the context of an API that is processing thousands of requests per second, the effects of message size can add up!
+* Message size matters in response times for APIs.
+* A message that's 50 bytes will respond much faster than a message that is 50 Mb in size. In the context of an API that is processing thousands of requests per second, the effects of message size can add up!
 
 Protobuf Service
-Unlike REST, we also define how our API messages are used in gRPC.
-Protobuf services define our input and outputs of our services.
+* Unlike REST, we also define how our API messages are used in gRPC.
+* Protobuf services define our input and outputs of our services.
+
 Service ItemService {
     rpc Create(ItemMessage) returns (ItemMessage)
 }
+
 In the example above, we declare that an ItemService has a method that accepts an ItemMessage and returns an ItemMessage
 
-Sets strict interface on how a user is expected to interact with the service.
-No logic needs to be implemented; we simply define how a user will interact with ItemService
+* Sets strict interface on how a user is expected to interact with the service.
+* No logic needs to be implemented; we simply define how a user will interact with ItemService
+
 Using gRPC
 
 By using binary data, Protobuf messages passed in gRPC are significantly smaller in size than message formats like JSON:
 
-Binary encodings are efficient and have a small footprint.
-JSON has a lot of brackets and syntax that increase the size of the payload.
+* Binary encodings are efficient and have a small footprint.
+* JSON has a lot of brackets and syntax that increase the size of the payload.
+
 Decoding
-Since protobufs are a form of structured data, the binary data can be decoded very quickly. Compare this with a format like JSON, which is simply an unstructured string that needs to be parsed into some data structure before it can be properly consumed.
+* Since protobufs are a form of structured data, the binary data can be decoded very quickly. Compare this with a format like JSON, which is simply an unstructured string that needs to be parsed into some data structure before it can be properly consumed.
+
 gRPC vs. REST Overview
-REST has wider adoption
-gRPC is more structured
-gRPC is faster out-of-the-box
+* REST has wider adoption
+* gRPC is more structured
+* gRPC is faster out-of-the-box
+
 In general, gRPC provides more speed and structure at the expense of less flexibility and more overhead of setup.
 
 Use Cases for gRPC
 There are many uses cases for gRPC.
 
 Need for Speed
-gRPC boasts better performance than REST, but this doesn't mean that we should default to using gRPC for everything.
-REST currently has significantly more adoption than gRPC, and REST can be designed to be very performant.
+* gRPC boasts better performance than REST, but this doesn't mean that we should default to using gRPC for everything.
+* REST currently has significantly more adoption than gRPC, and REST can be designed to be very performant.
+
 Microservices
-Microservices communicate with one another via a network and rely on message passing.
-Network calls inherently take more time to process than functionality contained in a single network like most monoliths.
-For internal systems that dictate fast performance, gRPC may be used by modules in a microservice to pass messages with one another.
+* Microservices communicate with one another via a network and rely on message passing.
+* Network calls inherently take more time to process than functionality contained in a single network like most monoliths.
+* For internal systems that dictate fast performance, gRPC may be used by modules in a microservice to pass messages with one another.
+
 Mobile Devices
-Mobile devices can integrate well with gRPC without an intermediary proxy to the backend service.
-Applications can invoke function calls directly as if it were local code. To illustrate with Python, the method can accept objects instead of serializing and deserializing a dict object.
+* Mobile devices can integrate well with gRPC without an intermediary proxy to the backend service.
+* Applications can invoke function calls directly as if it were local code. To illustrate with Python, the method can accept objects instead of serializing and deserializing a dict object.
 
 gRPC Protobuf Requirements
+
 Basics
 These the minimum requirements for a gRPC protobuf message:
 
-Typing - type definition such as if a field is a string, float, etc
-Field Name - the key for the value you are storing data
-Order Number - used by gRPC for managing binary serialization
+* Typing - type definition such as if a field is a string, float, etc
+* Field Name - the key for the value you are storing data
+* Order Number - used by gRPC for managing binary serialization
+
 Some Other Features
 These are a few features of protobufs that enrich our message definitions:
 
-Enum - denotes what values a string can be
-Nested Type - define a type as a user-defined type such as an enum
-Default Value - set gRPC to set a default value when none is provided
+* Enum - denotes what values a string can be
+* Nested Type - define a type as a user-defined type such as an enum
+* Default Value - set gRPC to set a default value when none is provided
+
 To learn more about available features, I encourage you to reference the Proto3 Language Guide.
 
 We've gone over how to create protobuf messages. We will learn about how to introduce them into our application code to build clients and servers in the next lesson.
 
 New Terms
-Term	Definition
-gRPC	Programming-agnostic way of passing messages as protocol buffers to enforce a strict interface
-HTTP/2	More secure and performant way of making HTTP requests that is backwards compatible
+Term	            Definition
+gRPC              Programming-agnostic way of passing messages as protocol buffers to enforce a strict interface
+HTTP/2            More secure and performant way of making HTTP requests that is backwards compatible
 Protocol buffers	A way to serialize structured data optimizing simplicity and performance
+
 Learn More About gRPC
 While we went over some concepts on a higher level, the following are some resources if you would like to dive into more detail about them:
 
-Protobuf
-HTTP/2
+* Protobuf https://developers.google.com/protocol-buffers/docs/overview
+* HTTP/2   https://en.wikipedia.org/wiki/HTTP/2
+
+
 
 
 
 3.10 Quizzes: Using gRPC
 ---------------------------------------
 q1
+> Match the following gRPC properties with their definitions
+
+Message format that uses structured binary data
 Protocol Buffers (protobuf)
+
+Backward-compatible protocol that enables more efficient web requests and responses
 http/2
+
+Non-human readable data format that is more compact and efficient for machines to process
 binary data
+
+Standardized formatting of messages that provides more reliability and predictability at the cost of less flexibility
 structured data
 
+
 q2
+>  Which of the following comparisons between gRPC and REST are false?
 gRPC requires fewer developer resources to implement
 gRPC and REST both use JSON to structure messages
 REST is often used over gRPC because it is more performant out-of-the-box
@@ -677,6 +738,12 @@ To customize the computer orders, we want to allow users to specify the equipmen
 
 Using the proto3 syntax, create the message and services for our computer ordering application. You may find it useful to use your previous JSON solution as a starting point and reference the protobuf documentation.
 
+Using the proto3 syntax, create the message and services for our computer ordering application. You may find it useful to use your previous JSON solution as a starting point and reference the protobuf documentation.
+
+* Create a protobuf message for the computer order using proto3 syntax
+* Create a protobuf service for the computer service using proto3 syntax￼
+* Compare the tradeoffs in the experience with using protobufs versus JSON
+
 
 
 3.12 Solution: Planning for gRPC
@@ -703,6 +770,7 @@ message OrderMessage {
   string created_at = 4;
   repeated string equipment = 5;
 }
+
 We are essentially mapping the JSON message into a Protobuf message. This may seem a little trivial -- the only benefit we get is that the fields have enforced typing of strings.
 
 With JSON, typing isn't enforced and we need application code to validate the type. For example, if we can pass order_id as an int instead of a string in JSON messages but protobuf messages will raise an error.
@@ -713,6 +781,7 @@ Since our OrderMessage is used as both the request and response, our service can
 service OrderService {
     rpc Create(OrderMessage) returns (OrderMessage);
 }
+
 Create an Even More Amazing Protobuf Message
 
 Protobuf Message - Better Solution
@@ -755,6 +824,8 @@ RESTful APIs using JSON are deliberately very flexible, and those who want to ad
 
 
 q1
+> Thinking Like a Cloud Native Engineer
+> Based on your experience with gPRC and REST, when might it be useful to use JSON instead of Protobuf? When might it be useful to use Protobuf instead of JSON?
 if you want to quickly prototype , json is very suitable. When speed matter, just use protobuf.
 
 ￼
@@ -766,59 +837,77 @@ Why Do We Need Message Queues?
 Mailbox Analogy
 Message queues are similar to handling mail delivery
 
-A small business can answer the door to receive every piece of mail as it arrives.
-As the business becomes larger, and mail volume grows, mail delivery becomes disruptive so the business can set up an unattended mailbox where the mail can be dropped off.
-Over time, the business may need to set up multiple mailboxes to handle the volume of mail
-At some point it becomes helpful to set up a Post Office box to receive all of the inbound mail and distribute the accumulated mail to various mailboxes by the company
+* A small business can answer the door to receive every piece of mail as it arrives.
+* As the business becomes larger, and mail volume grows, mail delivery becomes disruptive so the business can set up an unattended mailbox where the mail can be dropped off.
+* Over time, the business may need to set up multiple mailboxes to handle the volume of mail
+* At some point it becomes helpful to set up a Post Office box to receive all of the inbound mail and distribute the accumulated mail to various mailboxes by the company
+
 Message Queues
 Message queues improve performance, improve reliability, and enable decoupling of our systems
+* RabbitMQ can be helpful to set up a simple queue.
+* A distributed queue like Kafka may be needed for large volumes of data
 
-RabbitMQ can be helpful to set up a simple queue.
-A distributed queue like Kafka may be needed for large volumes of data
 When we can't handle the load of messages, or if we want to process our messages in batches instead of on-demand, or avoid losing messages during downtime, a message queue is a great solution.
 
 Performance
 A common source of latency in APIs is waiting for an API response. Queues allow us to do other things instead of idly waiting for a response from the server.
 
 Synchronous Request
-Usually, when we submit an HTTP request, it may take a few seconds for some backend logic to process everything.
-While it's processing, we are idly waiting either for a result or for an HTTP timeout to bail us out of an irregularly long wait time. The property of waiting for a process to complete is synchronous.
+* Usually, when we submit an HTTP request, it may take a few seconds for some backend logic to process everything.
+* While it's processing, we are idly waiting either for a result or for an HTTP timeout to bail us out of an irregularly long wait time. The property of waiting for a process to complete is synchronous.
+
 Asynchronous Request
-With an asynchronous request, we can make better use of our time by doing something else instead of waiting for the server to respond.
-In practice, this means that we design an API endpoint that will acknowledge a request immediately but not return any desired data.
+* With an asynchronous request, we can make better use of our time by doing something else instead of waiting for the server to respond.
+* In practice, this means that we design an API endpoint that will acknowledge a request immediately but not return any desired data.
+
 Reliability
-A generic API has a lot of custom business functionality. There are many moving parts and it is designed to address business values.
-A message queue is intentionally designed to do a few things very well: remain available to accept messages.
-Using a queue, we can have our systems available for clients, even if other parts of the service may not be functioning.
+* A generic API has a lot of custom business functionality. There are many moving parts and it is designed to address business values.
+* A message queue is intentionally designed to do a few things very well: remain available to accept messages.
+* Using a queue, we can have our systems available for clients, even if other parts of the service may not be functioning.
+
 Decoupling
 Designing with queues helps provide us a guideline for how we want to create cleanly decoupled systems. While this is not absolute, if it makes sense to use a queue, there's a good chance that we have identified a part of our service that can be decoupled into its own service. Message queues and microservices go hand-in-hand!
 
 New Terms
-Term	Definition
-Message Queue	Storing messages to set up performance, improve reliability, and enable decoupling of our systems
-Synchronous	A blocking action that will wait for a process to finish before proceeding
-Asynchronous	A non-blocking action that will continue while a process is still ongoing
-Decoupled	Different systems that can be modified without affecting the other
-Kafka	An open-source distributed message broker
-RabbitMQ	An open-source message broker
+Term                  Definition
+Message Queue	       Storing messages to set up performance, improve reliability, and enable decoupling of our systems
+Synchronous           A blocking action that will wait for a process to finish before proceeding
+Asynchronous          A non-blocking action that will continue while a process is still ongoing
+Decoupled             Different systems that can be modified without affecting the other
+Kafka                 An open-source distributed message broker
+RabbitMQ	             An open-source message broker
+
 Learn More About Message Queues
 The following are some additional resources for learning about 3 types of popular queues: Kafka, RabbitMQ, and AWS SQS.
 
-Kafka Use Cases
-RabbitMQ
-AWS SQS
+Kafka Use Cases  https://kafka.apache.org/uses
+RabbitMQ         https://www.rabbitmq.com/
+AWS SQS          https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-how-it-works.html
+
 
 
 3.14 Quizzes: Message Queues
 ---------------------------------------
 q1
+> Match the following terms and definitions
+An action that doesn't block other actions while it is being processed
 asynchronous
+
+An action that blocks other actions by making them wait until the current action is completed
 synchronous
+
+The extent to which we can depend on a resource to be healthy and running as expected
 reliability
+
+Separation and isolation of distinct resources from one another
 decoupling
+
+A durable distributed queue that is often used to handle requests that can be classified as events
 kafka
 
+
 q2
+> Which of the following are good scenarios to consider using message queues?
 A service periodically runs out of memory and fails during business hours with heavy traffic
 A service runs once a night to process batched requests
 A service produces a message that needs to be processed by multiple consumers
@@ -832,11 +921,20 @@ Your company wants to invest more in the computer ordering service! The tool is 
 
 Leverage message queues to show how they can be used to handle the increasing requests from customers and how the computer order tracking system can be used.
 
+Exercise: Use Cases of Message Queues
+Leverage message queues to show how they can be used to handle the increasing requests from customers and how the computer order tracking system can be used.
+
+* Write 3-5 sentences in how a message queue can help alleviate the increased API load. What problems are solved and what problems still exist?
+* Write 3-5 sentences in how a distributed message broker can help with the design of the computer order tracker. What are the pros and cons of using this over a simple database?
+
 q1
+> How Can a Message Queue Help
+> How can a message queue can help alleviate the increased API load? What problems are solved and what problems still exist?
 when api load increase, the processing capacity might not enough or sufficient to process the request in real time. If the thread is waiting for the backend to process, it might hang the application server. Message queue allow the api server request to receive and acknowledge the request and process it later or soonest possible.
 
-
 q2
+> How Can Distributed Message Broker Help?
+> How can a distributed message broker help with the design of the computer order tracker? What are the pros and cons of using this over a simple database?
 if a message broker is down for some reasons, there is redundancy in this case. API serer will still able to access message broker even if one of it is down. So in this case, API request still can be fulfill correctly.
 
 
@@ -845,12 +943,16 @@ if a message broker is down for some reasons, there is redundancy in this case. 
 ---------------------------------------
 My Solution
 How Can a Message Queue Alleviate the Increased API Load?
+
 Kafka is very useful for handling large volumes of data -- especially data that comes in as events. We will be expecting a large stream of events as they come in from our service. This will help prevent our server from crashing due to load but our messages will be backlogged as we won’t be able to process them more quickly.
 
 How Can a Distributed Message Broker Help?
+
 Databases are designed for specific use cases and often not optimized to function as a message broker. Using a queue should require high write performance. MySQL will lock table rows and prevent more than one resource from updating a row at a time. This can cause delays and even issues for data entering our makeshift queue. This implementation will also require a lot of custom logic to reshape the database into a queue.
 
 q1
+> Thinking Like a Cloud Native Engineer
+> Have you worked on any projects where message queues would have been helpful? Please describe them. Can you think of other good use cases for message queues?
 Receiving event such as logging data.. Logging data comes with large volume and frequency. By putting such event into message queue, it can be process correctly at the backend whilst response quickly to the caller request.
 
 
@@ -878,6 +980,8 @@ SOAP required using XML and was rigid in how its messages were defined. Creating
 </SOAP_ENV:Envelope>
 
 q1
+> QUESTION 1 OF 2
+Based on your understanding of REST, JSON, and XML what are some reasons why developers may have preferred REST over SOAP?
 REST is open-ended on message formats and enables you to use XML or JSON
 REST is less rigid and enables faster development cycles
 XML is too verbose
@@ -886,8 +990,9 @@ XML is too verbose
 Mindset
 There are other technologies available to facilitate message passing. In this lesson, we have gone over a few of the major ones.
 
-As technology is continuously evolving, we should be cautiously adopting new industry norms.
-We should utilize best design practices to understand what solution or technology works best to solve your problem!
+* As technology is continuously evolving, we should be cautiously adopting new industry norms.
+* We should utilize best design practices to understand what solution or technology works best to solve your problem!
+
 Informed Decisions
 As we learn about new technologies and techniques for message passing, we should be keen on avoiding buzzwords and make informed decisions on when to adopt something new.
 
@@ -898,19 +1003,20 @@ Example: Comparing gRPC with REST
 To highlight, we can the tradeoffs between gRPC and REST:
 
 gRPC
-Relatively new technology
-Lots of activity
-Lots of usage
-Actively developed
-Backed by Google#### REST
+* Relatively new technology
+* Lots of activity
+* Lots of usage
+* Actively developed
+* Backed by Google
 
-Flexible
-
-Industry standard
-Expected offering with Software as a Service products
+REST
+* Flexible
+* Industry standard
+* Expected offering with Software as a Service products
 
 
 q2
+> You have recently read about a new technology on a blog. The technology seems to be a good fit for your own company’s use cases. Which of the following are actions that you can take to vet the technology?
 Profile the performance of the technology by compiling metrics on its behavior on a small application. Then compare it with your existing technology.
 Understand how much custom code will need to be written to make the existing systems compatible with the code.
 Run the technology in a development environment and observe the types of failures that may occur.
@@ -919,11 +1025,14 @@ Go on GitHub and inspect the number of repositories that use the technology.
 New Terms
 Term	Definition
 SOAP	A message passing protocol that leverages HTTP and structured data represented with XML
+
 Learn More About Other Technologies
 The following are some resources that provide some information about industry standards
 
 Stack Overflow 2020 Developer Survey - Stack Overflow has an annual survey that captures industry trends with regards to tools and technologies
+https://insights.stackoverflow.com/survey/2020
 PyPi Package Popularity - Aggregation of the most popular Python packages installed through PyPi
+https://hugovk.github.io/top-pypi-packages/
 
 
 
@@ -936,8 +1045,13 @@ New message passing techniques are being introduced all the time. For GraphQL, w
 
 This exercise replicates a common task for software engineers: researching a new tool or technology and explaining the tradeoffs between it and the currently used tool or technology.
 
+Exercise: Trade-offs Task List
+Research how GraphQL is used for message passing and compare your findings against REST and gRPC. Start with the official GraphQL Documentation and leverage any other resources that may be helpful.
+* Compare and contrast tradeoffs between GraphQL and REST
+* Compare and contrast tradeoffs between GraphQL and gRPC
+
 New Terms
-Term	Definition
+Term	   Definition
 GraphQL	API interface that allows data querying with structured data
 
 
@@ -946,42 +1060,49 @@ GraphQL	API interface that allows data querying with structured data
 ---------------------------------------
 When researching new technologies, I like to:
 
-Reference the official documentation
-Gauge the activity on GitHub
-Reference articles and tutorials produced by companies that have a stake in the technology.
+* Reference the official documentation
+* Gauge the activity on GitHub
+* Reference articles and tutorials produced by companies that have a stake in the technology.
+
 Compared with REST
 When using REST, we have to make multiple requests to retrieve our data.
 
 Pros
 REST
-May over-fetch data where only a few fields of a large request are needed.
-An API client may have to chain multiple REST requests to retrieve all the necessary data.
+* May over-fetch data where only a few fields of a large request are needed.
+* An API client may have to chain multiple REST requests to retrieve all the necessary data.
 GraphQL
-GraphQL reduces this overhead by allowing the client to query for a specific subset of data in one query.
-GraphQL reduces overhead and can provide a more pleasant experience for users.
+* GraphQL reduces this overhead by allowing the client to query for a specific subset of data in one query.
+* GraphQL reduces overhead and can provide a more pleasant experience for users.
+
 Cons
 When we need high throughput in API performance or have a use case that doesn't merit the complexity of GraphQL, REST is a fine solution.
 
 REST
-REST is more straightforward
+* REST is more straightforward
 GraphQL
-GraphQL makes things more pleasant for users at the expense of more work for the application.
+* GraphQL makes things more pleasant for users at the expense of more work for the application.
+
 Compared with gRPC
 Pros
 GraphQL
-Often, GraphQL is optimized for flexible queries that provide a pleasant experience for integrations.
+* Often, GraphQL is optimized for flexible queries that provide a pleasant experience for integrations.
 gRPC
-gRPC is often used in situations where low latency requests are desired, such as between internal systems and streamed data.
+* gRPC is often used in situations where low latency requests are desired, such as between internal systems and streamed data.
+
 Cons
 GraphQL
-Less robust with schema
+* Less robust with schema
 gRPC
-gRPC is optimized for performance and predictability through contracts using protobuf.
-gRPC is more rigid in its schema.
-In general, gRPC also boasts better performance.
+* gRPC is optimized for performance and predictability through contracts using protobuf.
+* gRPC is more rigid in its schema.
+* In general, gRPC also boasts better performance.
+
 It's useful to perform tests against message passing techniques to profile their performance. Here is a great article detailing the performance of gRPC versus GraphQL: gRPC vs. GraphQL with keep-alive.
 
 q1
+> Thinking Like a Cloud Native Engineer
+How might GraphQL be useful in an application that you have worked on before in the past. How would the developer experience be different with regards to building a GraphQL API and integrating the service?
 I actually integrate GraphQL to my API and it allow client to use my API which he is already familiar with. So it is easier for him to integrate my API to his system.
 
 
@@ -990,35 +1111,37 @@ I actually integrate GraphQL to my API and it allow client to use my API which h
 ---------------------------------------
 In this lesson, we have learned about a few of today's popular message passing strategies:
 
-REST, gRPC, and message queues
-Some of the ideas behind why we would choose to use one over another when considering our architecture design
-Why we care about message passing
-How experts approach message passing
-REST application
-Use cases for gRPC
-Use cases for message queues.
+* REST, gRPC, and message queues
+* Some of the ideas behind why we would choose to use one over another when considering our architecture design
+* Why we care about message passing
+* How experts approach message passing
+* REST application
+* Use cases for gRPC
+* Use cases for message queues.
+
+The next lesson will focus on implementation. We’ll learn to implement a RESTful API, a gRPC client and server, and a message queue like Kafka. We'll also discuss how to choose the right message passing technologies for a specific use-case.
 
 
 
 3.21 Glossary
 ---------------------------------------
 New Terms In This Lesson
-Term			Definition
-Asynchronous		A non-blocking action that will continue while a process is still ongoing
-Cacheability		Ability to store data for efficient retrieval to optimize performance
-Client-Server		Relationship where a server provides data to a client that doesn't necessarily need to know the internals of the server's logic
-Decoupled		Different systems that can be modified without affecting the other
-GraphQL			API interface that allows data querying with structured data
-gRPC			Programming-agnostic way of passing messages as protocol buffers to enforce a strict interface
-HTTP/2			More secure and performant way of making HTTP requests that is backwards compatible
-Kafka			An open-source distributed message broker
-Message Queue		Storing messages to set up performance, improve reliability, and enable decoupling of our systems
-Protocol buffers	A way to serialize structured data optimizing simplicity and performance
-RabbitMQ		An open-source message broker
+Term                Definition
+Asynchronous		  A non-blocking action that will continue while a process is still ongoing
+Cacheability		  Ability to store data for efficient retrieval to optimize performance
+Client-Server		  Relationship where a server provides data to a client that doesn't necessarily need to know the internals of the server's logic
+Decoupled		     Different systems that can be modified without affecting the other
+GraphQL			     API interface that allows data querying with structured data
+gRPC			        Programming-agnostic way of passing messages as protocol buffers to enforce a strict interface
+HTTP/2			     More secure and performant way of making HTTP requests that is backwards compatible
+Kafka			        An open-source distributed message broker
+Message Queue		  Storing messages to set up performance, improve reliability, and enable decoupling of our systems
+Protocol buffers	  A way to serialize structured data optimizing simplicity and performance
+RabbitMQ            An open-source message broker
 REpresentational State Transfer (REST)	An architectural style used to describe how to create web services
-SOAP			A message passing protocol that leverages HTTP and structured data represented with XML
-Statelessness		Context is not tracked between requests
-Synchronous		A blocking action that will wait for a process to finish before proceeding
-Uniform Interface	Different parts of the interfaces should look familiar and be consistent
+SOAP			        A message passing protocol that leverages HTTP and structured data represented with XML
+Statelessness		  Context is not tracked between requests
+Synchronous		     A blocking action that will wait for a process to finish before proceeding
+Uniform Interface	  Different parts of the interfaces should look familiar and be consistent
 
 
