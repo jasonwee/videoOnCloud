@@ -6,15 +6,14 @@ date start : 30 august 2021
 Implementing Message Passing
 
 So far in our course, we have learned:
-
-How and when it makes sense to take apart a monolith application into microservices
-Different forms of message passing with REST, gRPC, and message queues.
+1. How and when it makes sense to take apart a monolith application into microservices
+2. Different forms of message passing with REST, gRPC, and message queues.
 
 In this lesson, we will be working on applying and implementing message passing techniques. We will learn about how to set up servers and clients for:
 
-REST
-gRPC
-Kafka
+* REST
+* gRPC
+* Kafka
 
 Programming Language: Python
 We will use common libraries and tools to implement these technologies.
@@ -23,9 +22,9 @@ Once you have a core understanding of how to implement a message passing techniq
 
 By the end of this lesson you will be able to:
 
-Use REST to implement a RESTful API and consumer
-Use gRPC to implement a gRPC server and client
-Use Kafka to implement a distributed message queue
+* Use REST to implement a RESTful API and consumer
+* Use gRPC to implement a gRPC server and client
+* Use Kafka to implement a distributed message queue
 
 
 
@@ -43,56 +42,62 @@ Some businesses have thrived partly due to their well-crafted APIs. Their well-c
 Freemium Models
 Today, it is common for businesses to offer a freemium model: hobbyists can sign up and use a free service within some usage limits.
 
-Once the users have a good experience using the tools and integrations, it is common for them to gravitate towards using them in their professional roles.
-An API that is unreliable and has a poor user experience would be a great hindrance to the adoption of the business' tools and services.
+* Once the users have a good experience using the tools and integrations, it is common for them to gravitate towards using them in their professional roles.
+* An API that is unreliable and has a poor user experience would be a great hindrance to the adoption of the business' tools and services.
 
 Technological Importance
-It's important to make decisions on technologies that will satisfy today's business requirements as well as provide a roadmap for future iterations.
-We need to understand the inspirations for certain message passing techniques and how they can be improved if business requirements change.
-It's not a good idea to blindly apply trendy technologies without understanding the impact that it will have.
-Throughout your career, new trends will come and go with different technologies that one can use in their systems.
-You should be able to weigh the tradeoffs of these tools and build maintainable systems that will have a great business impact.
+* It's important to make decisions on technologies that will satisfy today's business requirements as well as provide a roadmap for future iterations.
+* We need to understand the inspirations for certain message passing techniques and how they can be improved if business requirements change.
+* It's not a good idea to blindly apply trendy technologies without understanding the impact that it will have.
+* Throughout your career, new trends will come and go with different technologies that one can use in their systems.
+* You should be able to weigh the tradeoffs of these tools and build maintainable systems that will have a great business impact.
 
 q1
-Create and maintain documentation for developers to understand how to use and implement the API
-Ensure that new changes to the API won't break existing code implemented by users
-Set up a reliable infrastructure to reduce the downtime that services experience
+> How can a business make its API pleasant to use?
+* Create and maintain documentation for developers to understand how to use and implement the API
+* Ensure that new changes to the API won't break existing code implemented by users
+* Set up a reliable infrastructure to reduce the downtime that services experience
 
 
 
 4.3 Who is Our User?
 ---------------------------------------
+Who Is Using the API And What Do They Need?
+
 Internal versus External Usage
 It is often useful to consider whether it is used internally or externally.
 
-Internal refers to applications inside a microservice or other projects that you or your team own.
-External refers to other teams in an organization or customers outside of the organization.
+* Internal refers to applications inside a microservice or other projects that you or your team own.
+* External refers to other teams in an organization or customers outside of the organization.
 
 The key concepts are:
-You typically have more control over internal applications and can be relatively reactive and iterative quickly on changes.
-We should be aware of who will be using our APIs, and we should tailor our message passing techniques to optimize for their usability and business needs.
+1. You typically have more control over internal applications and can be relatively reactive and iterative quickly on changes.
+2. We should be aware of who will be using our APIs, and we should tailor our message passing techniques to optimize for their usability and business needs.
 
 Internal vs External
 It is a little easier to be more open-ended and ambitious with your message passing implementations in internal systems.
 
-External applications should be a bit safer and abide by what is dominant in the industry.
+* External applications should be a bit safer and abide by what is dominant in the industry.
 gRPC
-gRPC is becoming very popular but is still not as widely adopted in the industry.
-You will likely encounter developers who have never worked with or have even heard of gRPC.
-gRPC may be a great way to optimize internal services since knowledge transfer within a team is more fluid and requires less buy-in from stakeholders.
-REST
-REST is very popular, and it is a term that's well-recognized by sales engineers.
-If you are building an external system, REST may be the ideal approach to achieve widespread adoption.
+* gRPC is becoming very popular but is still not as widely adopted in the industry.
+* You will likely encounter developers who have never worked with or have even heard of gRPC.
+* gRPC may be a great way to optimize internal services since knowledge transfer within a team is more fluid and requires less buy-in from stakeholders.
+* REST
+* REST is very popular, and it is a term that's well-recognized by sales engineers.
+* If you are building an external system, REST may be the ideal approach to achieve widespread adoption.
 
 q1
-We can more easily track down where our applications are used by referencing the logs and code repositories in our organization.
-We can often connect directly with the stakeholders and coordinate on the changes.
-Users in the same organization can share more empathy and understand the business decisions that drive necessary but breaking changes.
+> Which of the following are reasons why we have more flexibility to make changes that only affect internal users?
+* We can more easily track down where our applications are used by referencing the logs and code repositories in our organization.
+* We can often connect directly with the stakeholders and coordinate on the changes.
+* Users in the same organization can share more empathy and understand the business decisions that drive necessary but breaking changes.
 
 
 
 4.4 Using REST
 ---------------------------------------
+Building a REST API
+Flask Overview
 Technologies
 We will build a RESTful API server with a micro-framework called Flask, and a client called requests. These two tools are used very commonly in the industry.
 
@@ -112,6 +117,7 @@ With Flask, we can define API routes and how they are handled. For example, a GE
 def test():
     result = "Hello, world!"
     return result
+
 Base Case Flask Application Example
 We can make this request more RESTful by importing the json library to manage JSON responses.
 
@@ -138,14 +144,15 @@ app = Flask(__name__)
 def health():
     result = {'result': 'Hello, World!'}
     return jsonify(result)
-app.route('/health', methods=['GET']) defines that we are exposing an API endpoint atGET /health
-def health() is the method that is invoked when the API is called
-jsonify(result) reduces the boilerplate to turn our Python dictionary into a JSON response with a response code
+
+* app.route('/health', methods=['GET']) defines that we are exposing an API endpoint atGET /health
+* def health() is the method that is invoked when the API is called
+* jsonify(result) reduces the boilerplate to turn our Python dictionary into a JSON response with a response code
 
 Flask and the Requests Library
 
 Requests - REST API Client
-Requests is a popular library that makes it easy to make HTTP requests. It makes things easier by providing a straightforward interface to set up your requests and process responses. For more details, see the Requests Quickstart guide.
+Requests is a popular library that makes it easy to make HTTP requests. It makes things easier by providing a straightforward interface to set up your requests and process responses. For more details, see the Requests Quickstart guide. https://docs.python-requests.org/en/master/user/quickstart/
 
 Request Library Syntax
 # GET Request
@@ -169,81 +176,96 @@ r = requests.get(ENDPOINT_URL)
 if r.status_code == 200:
     print(r.json())
 
-requests.get(ENDPOINT_URL) makes a GET request to the defined URL
-r.status_code provides us the HTTP response code
-r.json() provides us an easy way to retrieve the data as a JSON object
+* requests.get(ENDPOINT_URL) makes a GET request to the defined URL
+* r.status_code provides us the HTTP response code
+* r.json() provides us an easy way to retrieve the data as a JSON object
 
 Building A REST Endpoint with Flask
+
 Follow Along
-You can follow along with the demo by using the code here: Flask REST Demo
+You can follow along with the demo by using the code here: Flask REST Demo https://github.com/udacity/nd064-c2-message-passing-exercises/tree/master/lesson-3-implementing-message-passing/flask-demo
 
 Summary
 1. Install Flask
-Flask can be installed with the Python package manager, pip: pip install Flask
-Validate that it was installed with pip list
+* Flask can be installed with the Python package manager, pip: pip install Flask
+* Validate that it was installed with pip list
+
 2. Create REST Application
-Create a file named app.py for the API server
-Import Flask in the code to make it available
-Set up the Flask application with app = Flask(__name__)
-Create a method named health() that will return a JSON response using jsonify() to format a dictionary
-Add the app.route decorator on the health() method to configure how the code will handle an API request to/health
+* Create a file named app.py for the API server
+* Import Flask in the code to make it available
+* Set up the Flask application with app = Flask(__name__)
+* Create a method named health() that will return a JSON response using jsonify() to format a dictionary
+* Add the app.route decorator on the health() method to configure how the code will handle an API request to/health
+
 3. Run REST Application
-flask run in the same directory as app.py will start the application on localhost:5000
+* flask run in the same directory as app.py will start the application on localhost:5000
+
 4. Install Requests
-Requests can be installed with the Python package manager, pip: pip install requests
-Validate that it was installed with pip list
+* Requests can be installed with the Python package manager, pip: pip install requests
+* Validate that it was installed with pip list
+
 5. Create REST Client
-Create a file named client.py for the API client
-Import Requests in the cdoe to make it available
-Make a GET request to localhost:5000/health and print the result
+* Create a file named client.py for the API client
+* Import Requests in the cdoe to make it available
+* Make a GET request to localhost:5000/health and print the result
+
 6. Make a REST API Request
-Run client.py to make an API request to the Flask API server
+* Run client.py to make an API request to the Flask API server
 
 New Terms
-Term	Definition
-Flask	A popular Python framework often used to build APIs
-Requests	A popular Python HTTP library
+Term       Definition
+Flask	     A popular Python framework often used to build APIs
+Requests	  A popular Python HTTP library
+
 Learn More About Frameworks for REST
 Below are some additional libraries and frameworks used for creating HTTP server and HTTP clients:
-
-FastAPI - Newer Python framework for creating APIs
-Django - A very popular Python framework for creating APIs
-urllib3 - Low-level library for Python HTTP requests
+* FastAPI - Newer Python framework for creating APIs https://fastapi.tiangolo.com/
+* Django - A very popular Python framework for creating APIs https://www.djangoproject.com/
+* urllib3 - Low-level library for Python HTTP requests https://urllib3.readthedocs.io/en/latest/
 
 
 
 4.5 Using Postman to Test APIs
 ---------------------------------------
+Postman
+Postman is a commonly-used application to test APIs.
+
 Getting Started With Postman
 Postman provides useful tools to make HTTP requests and view the data in the HTTP responses. It can also be used for:
 
-Organizing and sharing HTTP requests as collections
-API documentation
-To get started with Postman, go to: Download Postman.
+* Organizing and sharing HTTP requests as collections
+* API documentation
+
+To get started with Postman, go to: Download Postman. https://www.postman.com/downloads/
 
 New Terms
-Term	Definition
+Term     Definition
 Postman	An application that provides useful tools for testing APIs
 
 
 
 4.6 Quizzes: Using REST
 ---------------------------------------
-Postman provides tools to organize API requests.
-Postman is programming-language agnostic
+Thinking About How to Use REST
+
+> Which of the following are benefits to using Postman over a REST client like Requests?
+
+* Postman provides tools to organize API requests.
+* Postman is programming-language agnostic
 
 
 
 4.7 Exercise: Using REST
 ---------------------------------------
 Implementing a REST API
-For this exercise, we will be implementing the REST API that you have designed in the previous lesson for placing computer orders. We will be using the boilerplate code provided here to get you started: Using REST Starter.
+For this exercise, we will be implementing the REST API that you have designed in the previous lesson for placing computer orders. We will be using the boilerplate code provided here to get you started: Using REST Starter. https://github.com/udacity/nd064-c2-message-passing-exercises/tree/master/lesson-3-implementing-message-passing/flask-demo
 
 Since we want to focus on building out the API definitions, feel free to stub out the code's actual logic similar to the boilerplate code. We can assume the computer service returns a hard-coded value. You should focus on understanding the basic Flask features in creating an API and understanding how our definitions translate into code.
 
 References
+
 Flask Demo
-You may find it useful to reference the demo code: Flask Demo Application
+You may find it useful to reference the demo code: Flask Demo Application https://github.com/udacity/nd064-c2-message-passing-exercises/tree/master/lesson-3-implementing-message-passing/flask-demo
 
 API Definition
 For your reference, below is my solution for the API definition. Feel free to implement either the API that you have designed or use mine as the starting point:
@@ -297,31 +319,138 @@ GET <BASE_URL>/api/orders/computers
     }
 ]
 
+Exercise: Using REST Task List
+Use the REST Starter Application and the computer order API design from the previous lesson to implement the interface for these API endpoints.
+* Use the REST Starter Application as your starting point.
+* You may find it useful to reference the Flask Demo Application
+￼
+* Implement the REST API interface for the retrieval of computer orders
+* Implement the REST API interface for the creation of computer orders
+
 
 
 4.8 Solution: Using REST
 ---------------------------------------
 
+My Solution Part I
+
+API Routes
+
+import Flask, jsonify, request
+@app.route('/api/orders/computers', methods=['GET', 'POST'])
+def computers():
+    if request.method == 'GET':
+        return jsonify(retrieve_orders())
+    elif request.method == 'POST':
+        return jsonify(create_orders(body=request.json))
+    else:
+        raise Exception('Unsupported HTTP request type.')
+
+Stubbing Responses
+
+def retrieve_orders():
+    """
+    This is a stubbed method of retrieving multiple resources. It doesn't do anything.
+    """
+    return [
+        {
+            "order_id": 1,
+            "created_by": "justin",
+            "status": Status.Completed.value,
+            "created_at": "2020-09-28T08:56:44",
+            "equipment": [
+                "KEYBOARD"
+            ]
+        },
+        {
+            "order_id": 2,
+            "created_by": "tom",
+            "status": Status.Queued.value,
+            "created_at": "2020-09-28T09:56:44",
+            "equipment": [
+               "MOUSE",
+               "WEBCAM"
+            ]
+        }
+    ]
+
+
+def create_order(body):
+    # do stuff to process the data
+    return body
+
+Using an Enum
+While not required, I wanted to show that since REST doesn't have built-in validations, we need to rely on application logic to ensure that our code conforms to some structure.
+
+One way to do that is to use an enum to ensure that the status fields are only one of Queued, Processing, Completed, and Failed.
+
+from enum import Enum
+
+class Status(Enum):
+    Queued = 'Queued'
+    Processing = 'Processing'
+    Completed = 'Completed'
+    Failed = 'Failed'
+
+My Solution Part II
+
+Solution Code
+You can review my solution here: Using REST Solution https://github.com/udacity/nd064-c2-message-passing-exercises/tree/master/lesson-3-implementing-message-passing/using-rest-solution
+
+Validating the Solution
+To validate the solution, an API server is set up and the GET and POST requests are verified.
+
+Run the API Server
+* Run the Flask application with flask run in the same directory as app.py
+* The application will be served on localhost:5000
+
+Verify GET Request with Postman
+* Create a new tab in the workspace
+* Set up a GET request to localhost:5000/api/orders/computers
+* Sending a GET request returns the JSON payload, the HTTP status and the time to process the request.
+
+Verify POST Request with Postman
+* Create a new tab in the workspace
+* Set up a POST request to localhost:5000/api/orders/computers
+* Set up a JSON body so that data can be passed in the request:
+
+{
+  "id": "3",
+  "status": "QUEUED",
+  "created_at": "2020-10-16T10:31:10.969696",
+  "created_by": "USER14",
+  "equipment": ["KEYBOARD", "MOUSE"]
+}
+
+* Sending a POST request returns the JSON payload, the HTTP status, the time to process the request, and the payload size
+
+
 q1
+> Thinking Like a Cloud Native Developer
+Reflect on your experience with translating your REST specifications into Flask code. Does it feel straightforward? What are your thoughts about the maintainability of large applications?
 yes. For large application, things may become complex.
+
 
 
 4.9 Using gRPC
 ---------------------------------------
+How to Use gRPC
+
 Using gRPC With Python
 Implementing gRPC with Python involves two libraries:
 
-grpcio to run client and server code
-grpcio-tools to generate definition code.
+* grpcio to run client and server code
+* grpcio-tools to generate definition code.
 
 Creating a gRPC Client and Server
-Define a protobuf request messages, response messages, and service in a .proto file.
-Use grpcio-tools command on the .proto file to generate a pair of Python files representing the messages and the services.
-Import the pair of Python files into your application logic and implement your client/server.
+1. Define a protobuf request messages, response messages, and service in a .proto file.
+2. Use grpcio-tools command on the .proto file to generate a pair of Python files representing the messages and the services.
+3. Import the pair of Python files into your application logic and implement your client/server.
 
 Example
 
 Step 1: Define .proto file
+
 message Item {
   string name = 1;
   string brand_name = 2;
@@ -350,6 +479,7 @@ Step 2: Generate gRPC Files
 Using grpcio-tools, generate a pair of files that can be directly imported into our Python code:
 
 grpc_tools.protoc -I./ --python_out=./ --grpc_python_out=./ item.proto
+
 The path ./, can be replaced with another path or an absolute path to your .proto file.
 
 The files item_pb2.py and item_pb2_grpc.py should have been generated.
@@ -359,6 +489,7 @@ Import the files to your application to use class definitions.
 
 import item_pb2
 import item_pb2_grpc
+
 Creating a message with data would look like the following:
 
 item = item_pb2.ItemMessage(
@@ -368,65 +499,81 @@ item = item_pb2.ItemMessage(
                weight=1.2
            )
 
+gRPC Demo Part I
+
 Follow Along
-To follow along with the demo, you can use the starter code here: gRPC Demo Source Code
+To follow along with the demo, you can use the starter code here: gRPC Demo Source Code https://github.com/udacity/nd064-c2-message-passing-exercises/tree/master/lesson-3-implementing-message-passing/grpc-demo
 
 Summary
 Create Protobuf File
-Create item.proto file
-Specify proto3 syntax
-Define an ItemMessage
-Define ItemService with a Create method using ItemMessage
-Generate gRPC Files
-Install grpc-io with pip install grpcio-tools
-Verify installation with pip list
-Run the grpc-io command in the same directory as item.proto. The command can be hard to remember so it's useful to save it in a README
-item_pb2.py and item_pb2_grpc.py should have been created
+* Create item.proto file
+* Specify proto3 syntax
+* Define an ItemMessage
+* Define ItemService with a Create method using ItemMessage
 
-nstall gRPC for Python
-Install grpcio with pip install grpcio
-This may have already been installed when grpcio-tools was installed
+Generate gRPC Files
+* Install grpc-io with pip install grpcio-tools
+* Verify installation with pip list
+* Run the grpc-io command in the same directory as item.proto. The command can be hard to remember so it's useful to save it in a README
+* item_pb2.py and item_pb2_grpc.py should have been created
+
+Install gRPC for Python
+* Install grpcio with pip install grpcio
+* This may have already been installed when grpcio-tools was installed
+
 Generated Files
-item_pb2_grpc.py and item_pb2.py should not be edited. The files even have lines that explicitly state DO NOT EDIT!.
+* item_pb2_grpc.py and item_pb2.py should not be edited. The files even have lines that explicitly state DO NOT EDIT!.
+
+gRPC Demo Part II
 
 Summary
 gRPC Server
-gRPC server logic is implemented in main.py
-grpc is imported to use gRPC in Python code
-item_pb2 and item_pb2_grpc is imported to handle the ItemMessage and ItemService that was defined in the .proto file
-ItemServicer is the implementation of the ItemService protobuf stub
-Create in ItemServicer defines our custom logic. It is set up in a simple manner where a Python dict is printed and returned as an item_pb2.ItemMessage object instead of an unstructured dict
-The file handles a lot of boilerplate for setting up a gRPC server since we aren't using a framework like Flask that can reduce boilerplate
+* gRPC server logic is implemented in main.py
+* grpc is imported to use gRPC in Python code
+* item_pb2 and item_pb2_grpc is imported to handle the ItemMessage and ItemService that was defined in the .proto file
+* ItemServicer is the implementation of the ItemService protobuf stub
+* Create in ItemServicer defines our custom logic. It is set up in a simple manner where a Python dict is printed and returned as an item_pb2.ItemMessage object instead of an unstructured dict
+* The file handles a lot of boilerplate for setting up a gRPC server since we aren't using a framework like Flask that can reduce boilerplate
 
 Running the gRPC Server
-python main.py will serve the gRPC server on localhost:5005 import gprc to use gRPC
+* python main.py will serve the gRPC server on localhost:5005 import gprc to use gRPC
 
 Summary
 Create gRPC Client
-gRPC client logic is implemented in writer.py
-grpc is imported to use gRPC in Python code
-item_pb2 and item_pb2_grpc is imported to handle the ItemMessage and ItemService that was defined in the .proto file. These files don't need to be regenerated.
-Client is configured to send messages to localhost:5005 where the gRPC server is running.
-iteM_pb2.ItemMessage object is created with expected fields and values.
+* gRPC client logic is implemented in writer.py
+* grpc is imported to use gRPC in Python code
+* item_pb2 and item_pb2_grpc is imported to handle the ItemMessage and ItemService that was defined in the .proto file. These files don't need to be regenerated.
+* Client is configured to send messages to localhost:5005 where the gRPC server is running.
+* iteM_pb2.ItemMessage object is created with expected fields and values.
 
 Running the gRPC Client
-python writer.py will run the gRPC client
-Changing tabs to where the gRPC server is running, it prints the payload that was passed by the gRPC client
+* python writer.py will run the gRPC client
+* Changing tabs to where the gRPC server is running, it prints the payload that was passed by the gRPC client
 
 Showcasing Type Checking
-Change the value of brand_name from a string to an integer in writer.py
-python writer.py to run the gRPC client will return an error that brand_name should be a string.
-New Terms
+* Change the value of brand_name from a string to an integer in writer.py
+* python writer.py to run the gRPC client will return an error that brand_name should be a string.
 
-Term		Definition
-grpcio		A Python library used to run gRPC client and gRPC server code
-grpcio-tools	Python library of tools that help generate definition code used by gRPC
+New Terms
+Term           Definition
+grpcio         A Python library used to run gRPC client and gRPC server code
+grpcio-tools   Python library of tools that help generate definition code used by gRPC
+
+Learn More About Using gRPC
+The following are some resources to learn more about how large organizations use gRPC:
+* gRPC Used in Netflix Tools 
+  https://netflixtechblog.com/evolution-of-netflix-conductor-16600be36bca
+* Dropbox Migration to gRPC
+  https://dropbox.tech/infrastructure/courier-dropbox-migration-to-grpc
 
 
 
 4.10 Quizzes: Using gRPC
 ---------------------------------------
-Ensures that grpcio-tools is parsing the expected syntax
+Thinking About How to Use gRPC
+> QUIZ QUESTION
+> Why do we define the syntax in our .proto file? In our example, the first line declared syntax = "proto3";.
+* Ensures that grpcio-tools is parsing the expected syntax
 
 
 
@@ -467,20 +614,33 @@ message OrderMessageList {
  repeated OrderMessage orders = 1;
 }
 
+Feel free to use the gRPC Demo Code as a starting point. https://github.com/udacity/nd064-c2-message-passing-exercises/tree/master/lesson-3-implementing-message-passing/grpc-demo
+
+Exercise: Using gRPC
+Set up and validate a gRPC server that can handle a OrderMessage.
+
+Feel free to use the gRPC Demo Code as a starting point. https://github.com/udacity/nd064-c2-message-passing-exercises/tree/master/lesson-3-implementing-message-passing/grpc-demo
+
+* Translate order.proto into gRPC files using grpcio-tools
+* Create gRPC server that accepts a OrderMessage
+* Pass a gRPC message to the server to validate its functionality
+
 
 
 4.12 Solution: Using gRPC
 ---------------------------------------
-The code to the solution can be found here: Using gRPC Solution.
+My Solution Part I
+
+The code to the solution can be found here: Using gRPC Solution. https://github.com/udacity/nd064-c2-message-passing-exercises/tree/master/lesson-3-implementing-message-passing/grpc-solution
 
 Summary
 Protobuf File
-proto3 is specified as the syntax
-OrderMessage uses enums Status and Equipment to add string validation
-Empty message is defined to help handle null values where an empty argument is passed to the service
-OrderMessageList helps capture multiple OrderMessage's
-OrderService defines Create and Get stubs
-OrderService.Get has no argument so it uses the Empty message as its input
+* proto3 is specified as the syntax
+* OrderMessage uses enums Status and Equipment to add string validation
+* Empty message is defined to help handle null values where an empty argument is passed to the service
+* OrderMessageList helps capture multiple OrderMessage's
+* OrderService defines Create and Get stubs
+* OrderService.Get has no argument so it uses the Empty message as its input
 
 Generating gRPC Files
 We should have run the following command (or similar) to set up the gRPC files for Python:
@@ -489,83 +649,102 @@ grpc_tools.protoc -I./ --python_out=./ --grpc_python_out=./ computer_orders.prot
 
 The resulting computer_orders_pb2_grpc.py and computer_orders_pb2.py files can be imported into Python and leveraged with the grpc package.
 
+My Solution Part II
+
 Summary
 Server Code
-Server code is defined in main.py using mostly boilerplate code to set up a gRPC server
-OrderServicer.Get returns hardcoded data by creating two order_pb2.OrderMessage objects and returning them in the OrderMessageList
-OrderServicer.Create returns the same data that was passed in
+* Server code is defined in main.py using mostly boilerplate code to set up a gRPC server
+* OrderServicer.Get returns hardcoded data by creating two order_pb2.OrderMessage objects and returning them in the OrderMessageList
+* OrderServicer.Create returns the same data that was passed in
 
 Running the gRPC Server
-python main.py will run the gRPC server and print its outputs
+* python main.py will run the gRPC server and print its outputs
 
 Create gRPC Client
 Writer
-Writer is used to demonstrate how OrderServicer.Create is called
-Defined in writer.py
-Creates an OrderMessage and passes it to OrderServicer.Create
+* Writer is used to demonstrate how OrderServicer.Create is called
+* Defined in writer.py
+* Creates an OrderMessage and passes it to OrderServicer.Create
 
 Getter
-Getter is used to demonstrate how OrderServicer.Get is called
-Defined in getter.py
-Creates an Empty message and passes it to OrderServicer.Get
+* Getter is used to demonstrate how OrderServicer.Get is called
+* Defined in getter.py
+* Creates an Empty message and passes it to OrderServicer.Get
 
 Running gRPC Clients
-python getter.py returns a hard-coded OrderMessageList
-python writer.py returns the data that we passed in
-gRPC server behavior can be validated as it prints the output
+* python getter.py returns a hard-coded OrderMessageList
+* python writer.py returns the data that we passed in
+* gRPC server behavior can be validated as it prints the output
 
 
 q1
+> Reflection on using gRPC
+> Reflect on your experience setting up a gRPC server compared to a REST server? Was it harder to translate a message that you have designed into an actual API interface in gRPC?
 yes, you need to go through a predefined "compilation" in order to use the gRPC feature.
 
 
 
 4.13 Using Kafka
 ---------------------------------------
+Intro to Kafka Part I
+
+Kafka is a distributed system. It is an abstraction of multiple servers that help it manage scale and durability.
+
 Kafka
 Use Cases
-Kafka is a special type of message queue that is often used to handle large volumes of data generated continuously as events.
-Some examples include application logs and user activity — things that represent that "something has happened."
+* Kafka is a special type of message queue that is often used to handle large volumes of data generated continuously as events.
+* Some examples include application logs and user activity — things that represent that "something has happened."
 
 Architecture Overview
-Kafka is a distributed system, which means that it is an application that is powered by multiple nodes.
-When a producer writes data to Kafka, it stores the data inside of topics.
+* Kafka is a distributed system, which means that it is an application that is powered by multiple nodes.
+* When a producer writes data to Kafka, it stores the data inside of topics.
 
 Topics
-Topics are abstractions of Kafka where messages can be stored and referenced.
-Internally, topics are distributed as partitions in different nodes and allow parallelized operations.
+* Topics are abstractions of Kafka where messages can be stored and referenced.
+* Internally, topics are distributed as partitions in different nodes and allow parallelized operations.
 
 In practice, this may mean that a producer has a topic named "Click" that captures a user's click events on a web page
 
+Data in Kafka is organized into topics. Internally, topics are partitioned in different servers.
+
+Intro to Kafka Part II
+
 Distributed Data
 Performance
-A single server may be limited by its ability to handle requests
-Using two servers can potentially improve a system's ability to handle requests by 2x
+* A single server may be limited by its ability to handle requests
+* Using two servers can potentially improve a system's ability to handle requests by 2x
 Since data for a topic is stored in multiple servers, multiple requests can be made in parallel for higher throughput.
 
 Durability
-A single server may have data loss when an error occurs
-Storing data in multiple servers can help prevent data loss when one of the servers go down
+* A single server may have data loss when an error occurs
+* Storing data in multiple servers can help prevent data loss when one of the servers go down
 Kafka handles the replication of data so that if a Kafka node goes down, the data is backed up and not lost.
 
-Every time a message is written to "Click" by a producer, it is stored in a different part of Kafka.
-Since they are stored in different parts of storage internally, producers and consumers can write and read different parts of a topic simultaneously.
+Kafka can store redundant data. If a server fails, there will be no data loss since copies of the data reside in other servers.
 
+* Every time a message is written to "Click" by a producer, it is stored in a different part of Kafka.
+* Since they are stored in different parts of storage internally, producers and consumers can write and read different parts of a topic simultaneously.
+
+Setting Up Kafka Part I
 
 Setup
 Kafka setup is straightforward. The best way to get started with Kafka is to follow the official Apache Kafka Quickstart.
 
 Starting Kafka Summary
-Download Kafka and as a compressed .tgz file. (If you're presented with options to download the Source Download or Binary Download, choose the Source Download)
-Start the Zookeeper service in the command line
-Start the Kafka broker in the command line
+1. Download Kafka and as a compressed .tgz file. (If you're presented with options to download the Source Download or Binary Download, choose the Source Download)
+2. Start the Zookeeper service in the command line
+3. Start the Kafka broker in the command line
+
+Setting Up Kafka Part II
 
 Using Kafka Summary
-Create a Kafka Topic named items using the bin/kafka-topics.sh script
-Read events from the Kafka Topic items using the bin/kafka-console-consumer.sh script
-Write events to the Kafka Topic items using the bin/kafka-console-producer.sh script
-Write messages to Kafka using the input script
-The terminal reading from Kafka will print the input that we have passed into the topic
+1. Create a Kafka Topic named items using the bin/kafka-topics.sh script
+2. Read events from the Kafka Topic items using the bin/kafka-console-consumer.sh script
+3. Write events to the Kafka Topic items using the bin/kafka-console-producer.sh script
+4. Write messages to Kafka using the input script
+5. The terminal reading from Kafka will print the input that we have passed into the topic
+
+Using Kafka With Python
 
 Kafka Python
 Kafka Python is a library that can be used to set up Kafka Producers or Kafka Consumers. The library is simply a client and you will need to run the Kafka broker separately.
@@ -575,11 +754,12 @@ Once a producer is configured, we can send a message with the .send() method.
 
 The .flush() method is used to write a message immediately.
 
-It's useful for a demo to view the results immediately.
-In practice, flush() helps with performance by sending a batch of messages instead of a request for every message that is sent.
+* It's useful for a demo to view the results immediately.
+* In practice, flush() helps with performance by sending a batch of messages instead of a request for every message that is sent.
 
 Demo Code
 producer.py
+
 from kafka import KafkaProducer
 
 
@@ -592,6 +772,7 @@ producer.send(TOPIC_NAME, b'Test Message!!!')
 producer.flush()
 
 consumer.py
+
 from kafka import KafkaConsumer
 
 
@@ -602,17 +783,35 @@ for message in consumer:
     print (message)
 
 New Terms
-Term	Definition
-Topic	Kafka's abstraction of messages stored internally as distributed partitions
-Producer	Generates messages to a message broker
-Consumer	Receives messages from a message broker
+Term           Definition
+Topic          Kafka's abstraction of messages stored internally as distributed partitions
+Producer       Generates messages to a message broker
+Consumer       Receives messages from a message broker
+
+Learn More About Applying Kafka
+Here are some resources for learning more about Kafka and Zookeeper:
+
+* Why Kafka Needs Zookeeper
+  https://www.cloudkarafka.com/blog/cloudkarafka-what-is-zookeeper.html
+* Kafka is Removing Zookeeper Dependency
+  https://www.confluent.io/blog/removing-zookeeper-dependency-in-kafka/
+* How Netflix Uses Kafka
+  https://www.confluent.io/blog/how-kafka-is-used-by-netflix/
+
+Learn more about RabbitMQ
+To learn more about RabbitMQ, have a look at this article. https://community.suse.com/landing
 
 
 
 4.14 Quizzes: Kafka
 ---------------------------------------
-Tracking user click activity on a website
-Post-processing user "likes" on a social media platform
+Thinking About Kafka
+
+> QUIZ QUESTION
+> Which of the following are ideal use cases for Kafka?
+
+* Tracking user click activity on a website
+* Post-processing user "likes" on a social media platform
 
 
 
@@ -621,14 +820,23 @@ Post-processing user "likes" on a social media platform
 Applying Kafka
 We want to set up a Kafka broker on our system to handle computer orders. We will then interact with it by sending it messages.
 
-For up-to-date instructions on installing and running Kafka, please refer to the Kafka Quickstart guide on Kafka's official website.
+For up-to-date instructions on installing and running Kafka, please refer to the Kafka Quickstart https://kafka.apache.org/quickstart guide on Kafka's official website.
 
+Exercise: Kafka
+Following the Kafka Quickstart https://kafka.apache.org/quickstart instructions, set up a Kafka broker with a topic to handle computer orders.
 
+* Follow instructions to run a Kafka broker
+* Create a Kafka topic named orders
+* Run a Kafka consumer using the script included in the Kafka package
+* Run a Kafka producer and write the message using the script included in the Kafka package
+* Verify that it works by sending the topic a message.
 
 
 
 4.16 Solution: Setting Up and Using Kafka
 ---------------------------------------
+My Solution
+
 Download Kafka
 Downloading the latest Kafka release following the instructions Get Kafka. This gives us a kafka_*.tgz file. Once we decompress this file, we have a directory containing a handful of files that can be used with Kafka.
 
@@ -652,6 +860,8 @@ bin/kafka-console-producer.sh --topic orders --bootstrap-server localhost:9092
 
 
 q1
+> Reflection on Kafka
+> How was your experience with setting up Kafka? How does running a Kafka broker differ from running a Python application?
 it takes a few steps to setup and run Kafka. In term of behavior, they are the same. but python application allow more flexibility.
 
 A Python application runs inside of a controlled environment with Python code. Running the Kafka broker involves system-level dependencies and is run as a system process.
@@ -660,30 +870,34 @@ A Python application runs inside of a controlled environment with Python code. R
 
 4.17 Choosing A Message Passing Technology
 ---------------------------------------
+How to Choose a Message Passing Technology
+
 q1
-Is our team using AWS?
-Is Kinesis newer than Kafka?
-Is my team open to using AWS managed services?
+> AWS has its own tool that is a distributed message queue known as AWS Kinesis. If we wanted to replace Kafka with Kinesis, what factors should we consider?
+* Is our team using AWS?
+* Is Kinesis newer than Kafka?
+* Is my team open to using AWS managed services?
 
 
 q2
-The technology is no longer supported as other dependencies are updated.
-The technology is more costly to maintain due to worse performance metrics
-A security vulnerability is not patched
-A strange error can't be diagnosed and solved due to lack of information on the problem
+> What are some possible pitfalls of choosing a technology without properly vetting it?
+* The technology is no longer supported as other dependencies are updated.
+* The technology is more costly to maintain due to worse performance metrics
+* A security vulnerability is not patched
+* A strange error can't be diagnosed and solved due to lack of information on the problem
 
 
 Decision-Making
-When we decide which technology to use and how to implement our message-passing techniques, we need to weigh the tradeoffs between them
-
-Sometimes, we may unsure about the best approach for our system design and implementation
+* When we decide which technology to use and how to implement our message-passing techniques, we need to weigh the tradeoffs between them
+* Sometimes, we may unsure about the best approach for our system design and implementation
 
 Best Practices
 Use the industry standard to ensure the least amount of friction for:
 
-Adoption
-Access to tools and libraries
-Comfort in the tool's stability and technical support
+1. Adoption
+2. Access to tools and libraries
+3. Comfort in the tool's stability and technical support
+
 The Current Industry Standard is REST
 If you are unsure which technology to use after weighing the tradeoffs of different technologies, it may be best to start with REST.
 
@@ -693,8 +907,10 @@ If our understanding of a system and business use case is not clear, it is best 
 Additional Reading
 The following are some examples of over-engineered solutions:
 
-Overengineering a Web Application is Easier Than Ever
-Juicero
+* Overengineering a Web Application is Easier Than Ever
+  https://envylabs.com/insights/the-perils-of-over-engineering-software/
+* Juicero
+  https://www.parkersoftware.com/blog/overengineered-software-and-the-juicero-problem/
 
 
 
@@ -712,6 +928,7 @@ Review the REST, gRPC, and Kafka implementations. What changes do we need to mak
 You don't have to implement any code; just write a list of tasks that you will present to your team so you and your team can properly scope out this effort.
 
 q1
+> List five tasks that will be needed in REST, gRPC, and Kafka message and implementation to make modifications to our existing computer orders schema to include a type field
 rest
 * sender need to include type field in the json body
 * api endpoint need to process the body that contain the type field
@@ -731,18 +948,22 @@ kafka
 
 4.19 Solution: Updating the Orders Service
 ---------------------------------------
+Updating the Orders Service Solution
+
 My Solution
 The following five items are tasks that I will present to my team:
 
-REST message interface
-gRPC protobuf message
-Flask code to handle new field
-gRPC server code to handle new field
-Update Kafka consumers to expect the new field
+1. REST message interface
+2. gRPC protobuf message
+3. Flask code to handle new field
+4. gRPC server code to handle new field
+5. Update Kafka consumers to expect the new field
 
 Note that there are different solutions to this exercise and that your solution may not look exactly like mine.
 
 q1
+> Reflection on Solution: [Final Exercise]
+> Why is it useful to present a list like this when you propose changes for your team to work on?
 so we can see how many changes are require before actually doing it. it also show what are the risk going to be due to the changes propose.
 
 Proposing a list of tasks gives the team information about how long a task might take, which is important for setting team priorities. If a major change delivers a very low amount of business value, we may want to focus on a task with a higher return.
@@ -751,11 +972,14 @@ Proposing a list of tasks gives the team information about how long a task might
 
 4.20 Lesson Recap
 ---------------------------------------
+What We Have Learned
+
 In this lesson, we learned about:
 
-Why we care about message passing
-How experts approach message passing
-How to use REST, gRPC, and Kafka
+* Why we care about message passing
+* How experts approach message passing
+* How to use REST, gRPC, and Kafka
+
 You have learned how to refactor the services in a microservice, design the message passing techniques to connect these services and implement these solutions. You are now well-equipped to build microservices!
 
 In the next lesson, we will learn how to implement message passing techniques in production.
@@ -765,13 +989,13 @@ In the next lesson, we will learn how to implement message passing techniques in
 4.21 Glossary
 ---------------------------------------
 New Terms In This Lesson
-Term		Definition
-Consumer	Receives messages from a message broker
-Flask		A popular Python framework often used to build APIs
-grpcio		A Python library used to run gRPC client and gRPC server code
-grpcio-tools	Python library of tools that help generate definition code used by gRPC
-Producer	Generates messages to a message broker
-Requests	A popular Python HTTP library
-Topic		Kafka's abstraction of messages stored internally as distributed partitions
+Term            Definition
+Consumer        Receives messages from a message broker
+Flask           A popular Python framework often used to build APIs
+grpcio          A Python library used to run gRPC client and gRPC server code
+grpcio-tools    Python library of tools that help generate definition code used by gRPC
+Producer        Generates messages to a message broker
+Requests        A popular Python HTTP library
+Topic           Kafka's abstraction of messages stored internally as distributed partitions
 
 
