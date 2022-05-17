@@ -9,43 +9,53 @@ Tools and strategies can improve how message passing is used in production syste
 
 In this lesson, we'll learn how message passing is implemented in production. We'll go over:
 
-Combining Techniques
-Open API Documentation
-Iterating on APIs
-Future-Proofing
+* Combining Techniques
+* Open API Documentation
+* Iterating on APIs
+* Future-Proofing
+
+Tools and strategies can improve how message passing is used in production systems.
 
 
 
 5.2 What is Different About Production?
 ---------------------------------------
+What is Different About Production?
+
 As we use microservices, all of our business functionality is communicating with one another through networks. It's important to optimize for business value when we are implementing our services.
 
 Production Systems
 Production systems are exposed to more sources of failure than those running in development environments.
 
-Testing our services locally is only one part of the puzzle: applications don't exist in a vacuum.
-Production systems undergo the stress from active users and can break from unanticipated edge cases.
+* Testing our services locally is only one part of the puzzle: applications don't exist in a vacuum.
+* Production systems undergo the stress from active users and can break from unanticipated edge cases.
+
 Application Lifecycle
-Our applications are rarely a one-and-done ordeal and involves maintenance and additional development as we iterate on features.
-The original developer or team of developers that built the system may no longer be around to support the application.
+* Our applications are rarely a one-and-done ordeal and involves maintenance and additional development as we iterate on features.
+* The original developer or team of developers that built the system may no longer be around to support the application.
 
 q1
-Increased user activity
-Large volumes of messages
-Security exploitations
+> What are some sources of failure that you may encounter in a production environment that you would not see in a development environment?
+* Increased user activity
+* Large volumes of messages
+* Security exploitations
 
 
 
 5.3 How Experts Approach Message Passing in Production
 ---------------------------------------
+Thinking About Message Passing in Production
+
 Not Simply Coding
-Delivering business value is not always about writing code.
-System design plays an integral part in ensuring that our business needs are met.
-We should also be conscious of the maintainability of our applications.
-We should ensure that the team has the right resources to implement new services or features when needed.
+* Delivering business value is not always about writing code.
+* System design plays an integral part in ensuring that our business needs are met.
+* We should also be conscious of the maintainability of our applications.
+* We should ensure that the team has the right resources to implement new services or features when needed.
+
 Interfaces in Production
-With software, we can deliver products and then iterate to add more features and solve bugs.
-With hardware, the product must be thoroughly tested and validated before it can be sold to the customers because making changes is difficult.
+* With software, we can deliver products and then iterate to add more features and solve bugs.
+* With hardware, the product must be thoroughly tested and validated before it can be sold to the customers because making changes is difficult.
+
 It is common to be undisciplined about interfaces because it is so convenient and simple to modify code.
 
 I've encountered a handful of situations where the interface for an API was changed without consideration for its users and ended up causing downtime for its dependents. Once we deliver an API and define its interface, we need to be conscious of breaking changes.
@@ -53,13 +63,18 @@ I've encountered a handful of situations where the interface for an API was chan
 It's important to understand how we can make minor and major changes to an API after it's been delivered and used by users.
 
 q1
-Easier onboarding for new teammates
-Simpler refactoring
+> Which of the following are the benefits of maintainable code?
+* Easier onboarding for new teammates
+* Simpler refactoring
 
 
 
 5.4 Combining Message Passing Techniques
 ---------------------------------------
+Why Would We Want To Combine Message Passing Techniques?
+
+The Benefits and Costs of Combining Message Passing Techniques
+
 Combining Message Passing Techniques
 Message passing techniques do not need to be disjointed from one another. We can use them with one another to make our APIs more performant and robust with tradeoffs regarding latency, cost, and more sources of failure.
 
@@ -69,29 +84,45 @@ The following are a few simple examples of how we can combine message passing te
 Message Queue and REST
 A queue can be placed in front of a RESTful API.
 
-Allows us to configure asynchronous requests in the REST API
-Makes the REST API requests more durable and less prone to failure from load
-Creating a queue in addition to an existing REST API will need additional resources such as servers and development efforts
+* Allows us to configure asynchronous requests in the REST API
+* Makes the REST API requests more durable and less prone to failure from load
+* Creating a queue in addition to an existing REST API will need additional resources such as servers and development efforts
+
+A Message Queue In Front of a RESTful API
 
 Exposing Message Queues
 Message queues can be exposed publicly with a RESTful API.
 
-Queues should be exposed in a controlled manner because Kafka doesn't have enforcement of data that enters the queue
-Creating a REST API in addition to an existing queue will need additional resources such as servers and development efforts
-Adding a REST API introduces more sources of failure in our system as it can break from an abnormally large number of requests
+* Queues should be exposed in a controlled manner because Kafka doesn't have enforcement of data that enters the queue
+* Creating a REST API in addition to an existing queue will need additional resources such as servers and development efforts
+* Adding a REST API introduces more sources of failure in our system as it can break from an abnormally large number of requests
 
 gRPC and REST
 We can expose a service with multiple interfaces.
 
-Expose both gRPC and REST as an interface to satisfy different use cases for different users
-Additional resources needed to create two interfaces
-Additional resources needed to maintain two interfaces: updating two schemas simultaneously can be cumbersome to deploy
+* Expose both gRPC and REST as an interface to satisfy different use cases for different users
+* Additional resources needed to create two interfaces
+* Additional resources needed to maintain two interfaces: updating two schemas simultaneously can be cumbersome to deploy
+
+A Message Queue With Multiple Interfaces
+
+Further Reading
+To learn more about how some of these designs may look in production, I encourage you to follow some of the engineering blogs from major tech companies:
+
+* A Running List of Netflix Architecture
+  https://netflixtechblog.com/tagged/cloud-architecture
+* Apache Airflow Architecture
+  https://freecontent.manning.com/an-overview-of-apache-airflow-architecture/
 
 
 
 5.5 Quiz: Combining Message Passing Techniques
 ---------------------------------------
-add structure to the messages ingested into kafka
+Thinking About Combining Message Passing Techniques
+> QUIZ QUESTION
+> Which of the following is a reason for adding a RESTful API in front of a Kafka queue?
+* add structure to the messages ingested into kafka
+
 
 
 5.6 Exercise: Combining Message Passing Techniques
@@ -104,37 +135,61 @@ You have been provided existing code and tasked with updating the REST API input
 Task
 Our REST API will now return a 202 Accepted HTTP response with no response body. It will take the input payload and write the dictionary into Kafka. We don't need to concern ourselves with reading the data off of Kafka to process it.
 
+Starter Code
+Use the Flask-Kafka Starter https://github.com/udacity/nd064-c2-message-passing-exercises/tree/master/lesson-4-message-passing-in-production/flask-kafka-starter code as your starting point. https://github.com/udacity/nd064-c2-message-passing-exercises/tree/master/lesson-4-message-passing-in-production/flask-kafka-starter
+
+The REST API will need to write its data into a Kafka queue for further processing
+
+Exercise: Combining Message Passing Techniques Task List
+Update the existing code for the computer order application to write creation of computer orders JSON data into a Kafka queue.
+
+You will only need to write data into the queue and won't need to concern yourself with reading the messages.
+
+Use the Flask-Kafka Starter https://github.com/udacity/nd064-c2-message-passing-exercises/tree/master/lesson-4-message-passing-in-production/flask-kafka-starter code as your starting point.
+
+* Set up a Kafka broker with a topic for computers
+* Set up a Kafka producer in the Flask application
+* Write computer orders creation into the Kafka queue
+
 
 
 5.7 Solution: Combining Message Passing Techniques
 ---------------------------------------
 
+My Solution
+
+Review The Starter Code
+
 Summary
 You have been tasked with writing data into a Kafka queue
 
-Write the Computer orders JSON data into Kafka
-You don't have to concern yourself with how the Kafka data is consumed
-The API response should now be 202 Accepted with no response body
+* Write the Computer orders JSON data into Kafka
+* You don't have to concern yourself with how the Kafka data is consumed
+* The API response should now be 202 Accepted with no response body
 
 Tasks
-Set up a Kafka broker with a topic for computers
-Set up a Kafka producer in the Flask application
-Write the computer orders creation data from the REST API into the Kafka queue
+* Set up a Kafka broker with a topic for computers
+* Set up a Kafka producer in the Flask application
+* Write the computer orders creation data from the REST API into the Kafka queue
 
 Starter Code
-app.py imports KafkaProducer
-g is a Flask object used to store the Kafka connection so we can use it in other parts of the application
-Response is a Flask object used to format API responses with more flexibility. We can declare Response(status=202) whereas jsonify is more rigid and configured to return a 200.
-app.before_request runs a method to set up a Kafka connection before an API request
-create_order() method has sample code on how to write a Kafka producer
+* app.py imports KafkaProducer
+* g is a Flask object used to store the Kafka connection so we can use it in other parts of the application
+* Response is a Flask object used to format API responses with more flexibility. We can declare Response(status=202) whereas jsonify is more rigid and configured to return a 200.
+* app.before_request runs a method to set up a Kafka connection before an API request
+* create_order() method has sample code on how to write a Kafka producer
 
 My Process
-Run the Kafka broker
-Update services.py to write create_order data into Kafka
-Update app.py to return an empty 202 response.
+1. Run the Kafka broker
+2. Update services.py to write create_order data into Kafka
+3. Update app.py to return an empty 202 response.
 
+Solution Code
+The solution code can be found here: Combining Message Passing Techniques Solution. https://github.com/udacity/nd064-c2-message-passing-exercises/tree/master/lesson-4-message-passing-in-production/combining-message-passing-techniques-solution
 
 q1
+> Thinking Like a Cloud Native Developer
+> How was your experience with integrating a Flask REST API with a Kafka queue? How might integrating a REST API with a Kafka queue be useful in large production systems?
 it is very structure to fit all the pieces in a systematically steps. when we have more requests coming in, we can add more front end (rest endpoint) to increase the capacity to satisfy the incoming traffics.
 
 
@@ -144,29 +199,32 @@ Using a Kafka queue with a Flask REST API introduces more complexity to an appli
 
 5.8 Using OpenAPI
 ---------------------------------------
+What Is OpenAPI?
+
 OpenAPI is a specification that provides us with a framework for documenting our RESTful APIs.
 
 The Problem
 REST Relies on Documentation
-RESTful APIs are highly reliant on their documentation.
-REST has little built-in enforcement for message structure and can be changed very easily.
+* RESTful APIs are highly reliant on their documentation.
+* REST has little built-in enforcement for message structure and can be changed very easily.
 
 Different developers also use different sets of best practices and may implement their APIs differently from one another. I have worked with non-documented or poorly-documented REST APIs in the past: it's not fun to have to dig through and read source code to figure out how to structure a simple GET request.
 
 Documentation Can Be Formatted Differently
-Documentation is very open-ended and can use different types of formatting and notation.
+* Documentation is very open-ended and can use different types of formatting and notation.
 
 OpenAPI
-The OpenAPI specification provides us with a uniform way to detail our API resources and query for them
-OpenAPI includes a wide range of optional fields that enrich our documentation
-OpenAPI can be loaded into a tool called Swagger, a user-friendly, interactive API documentation accessible through a web page
+* The OpenAPI specification provides us with a uniform way to detail our API resources and query for them
+* OpenAPI includes a wide range of optional fields that enrich our documentation
+* OpenAPI can be loaded into a tool called Swagger, a user-friendly, interactive API documentation accessible through a web page
 
 OpenAPI Overview I
-components.schemas help define reusable components so we can standardize an API interface
-paths defines the API endpoints
-description enriches documentation by allowing us to explain the API details
-path.<method_type>.parameters define API arguments
-path.<method_type>responses define what the API will return
+* components.schemas help define reusable components so we can standardize an API interface
+* paths defines the API endpoints
+* description enriches documentation by allowing us to explain the API details
+* path.<method_type>.parameters define API arguments
+* path.<method_type>responses define what the API will return
+
 InventoryItem is defined in components.schemas.InventoryItem for reusability
 
 paths./items/{itemId}.get defines GET items/<item_id>
@@ -245,28 +303,34 @@ components:
 Using OpenAPI Part II
 
 OpenAPI Overview II
-responses can define different responses depending on the response type
-Passing in a reference to a component with $ref helps standardize the API interface
-Defining $ref: '#/components/schemas/InventoryItem' is used to standardize the API while reducing code repeat
+* responses can define different responses depending on the response type
+* Passing in a reference to a component with $ref helps standardize the API interface
+* Defining $ref: '#/components/schemas/InventoryItem' is used to standardize the API while reducing code repeat
+
 Navigation Bar
-The navigation bar in the left provides an interface to view the documentation in an organized way
+* The navigation bar in the left provides an interface to view the documentation in an organized way
+
 Live Preview
-SwaggerHub generates the documentation so that we can preview how the OpenAPI spec will be generated
-Swagger documentation provides a standardized interface for API documentation
+* SwaggerHub generates the documentation so that we can preview how the OpenAPI spec will be generated
+* Swagger documentation provides a standardized interface for API documentation
+
 Options For Maintaining API Documentation With Swagger
 
 Options for Maintaining Documentation With Swagger
-Manually update OpenAPI specifications file
-Use a library to maintain OpenAPI specificatoins with inline comments
-Use a library to auto-generate OpenAPI Specifications
+* Manually update OpenAPI specifications file
+* Use a library to maintain OpenAPI specificatoins with inline comments
+* Use a library to auto-generate OpenAPI Specifications
+
 Creating Swagger Documentation
-Swagger is an interactive tool that accepts OpenAPI documentation as input and provides a user interface for API documentation.
-Swagger libraries are available for most programming languages and provide various ways to populate our API documentation.
-SwaggerHub is a hosted version of Swagger that provides live previews and an interactive editor to check your OpenAPI syntax.
+* Swagger is an interactive tool that accepts OpenAPI documentation as input and provides a user interface for API documentation.
+* Swagger libraries are available for most programming languages and provide various ways to populate our API documentation.
+* SwaggerHub is a hosted version of Swagger that provides live previews and an interactive editor to check your OpenAPI syntax.
+
 Maintaining Documentation
-Writing and maintaining documentation is often tedious. When we make a few changes to our code, we need to revisit our API documentation and reflect the latest changes.
-API documentation often drifts and becomes cumbersome to maintain.
-Rather than writing separate documentation for the work that we do, we can use integration tools to make our upkeep of documentation more manageable.
+* Writing and maintaining documentation is often tedious. When we make a few changes to our code, we need to revisit our API documentation and reflect the latest changes.
+* API documentation often drifts and becomes cumbersome to maintain.
+* Rather than writing separate documentation for the work that we do, we can use integration tools to make our upkeep of documentation more manageable.
+
 Options for OpenAPI
 Manually update and maintain an OpenAPI specification file
 This is the traditional way in how we have separate sets of documentation for our APIs.
@@ -319,23 +383,28 @@ When OpenAPI Doesn't Work...
 I worked on a project where I tried to use auto-generating documentation and found that since my API design did not conform to OpenAPI specification best practices, my documentation couldn't be auto-generated.
 
 New Terms
-Term	Definition
-OpenAPI	Provides a uniform way to detail and query API resources. It includes a wide range of optional fields that enrich our documentation
-Swagger	A tool used to render OpenAPI specifications into an interactive web page
-SwaggerHub	A tool that provides utilities to write OpenAPI specifications more easily as well as live previews of the corresponding Swagger documentation
+Team       Definition
+OpenAPI    Provides a uniform way to detail and query API resources. It includes a wide range of optional fields that enrich our documentation
+Swagger    A tool used to render OpenAPI specifications into an interactive web page
+SwaggerHub A tool that provides utilities to write OpenAPI specifications more easily as well as live previews of the corresponding Swagger documentation
 
 Further Reading
 The following are additional resources to learn about Swagger and its usefulness in applications:
 
-Interactive Swagger Editor
-Why API Documentation Matters
+* Interactive Swagger Editor
+  https://editor.swagger.io/
+* Why API Documentation Matters
+  https://swagger.io/resources/articles/documenting-apis-with-swagger/
 
 
 
 5.9 Quiz: Using OpenAPI
 ---------------------------------------
-Updating code will update documentation automatically
-Reduce time to release a production application
+Thinking About OpenAPI
+> QUIZ QUESTION
+> There are third party libraries for Flask that enable OpenAPI documentation to be automatically generated. What are some benefits of these types of integrations?
+* Updating code will update documentation automatically
+* Reduce time to release a production application
 
 
 
@@ -344,11 +413,19 @@ Reduce time to release a production application
 Applying OpenAPI
 Create an OpenAPI specification for our computer orders REST API. We want to make sure that users of the API know how to set up their integrations to retrieve all orders and create a new order.
 
+Exercise: OpenAPI
+Write an OpenAPI specification for the computer orders REST API. In one specification, we want to include the computer orders schema to document the message as well as the GET and POST methods.
+
+* Write the schema for computer orders
+* Write the path for creating a computer order
+* Write the path for retrieving all computer orders
 
 
 
 5.11 Solution: Applying OpenAPI
 ---------------------------------------
+My Solution
+
 OpenAPI Specification
 The following is an OpenAPI specification for a computer orders API. It details the ComputerOrder schema as well as the path /orders/computers to create and retrieve computer orders.
 
@@ -438,6 +515,9 @@ components:
 
 
 q1
+> Thinking Like a Cloud Native Developer
+> How might you find OpenAPI useful in your RESTful API implementations? When would it not make sense to use OpenAPI?
+
 well, u can test your api by using openapi in the interface. if the request and response data is not structure, then in this case, does not make sense to use OpenAPI.
 
 
@@ -518,10 +598,22 @@ Includes version data in the HTTP Header
 Less complicated than setting up a new API URL path
 Helpful when the API change is intended to change the expected payload
 
+Further Reading
+Below are a few resources to illustrate the overhead involved for migrating an API:
+* Auth0's API v1 to v2 Migration
+  https://auth0.com/docs/troubleshoot/product-lifecycle/past-migrations
+* ZenDesk API v1 to v2 Parity Guide
+  https://github.com/zendesk/zendesk_app_framework_sdk/wiki/ZAF-SDK-v2-Feature-Parity-Status
+* Twitter API Migration Guide
+  https://developer.twitter.com/en/docs/twitter-api/v1/tweets/timelines/guides/migration-guide
+
 
 
 5.13 Quiz: Iterating on APIs
 ---------------------------------------
+Thinking About Iterating on APIs
+> QUIZ QUESTION
+> Which of the following API refactor will be a good candidate for versioning via the API URL?
 An application changes its API endpoints and messages with a newly designed format.
 
 
@@ -540,6 +632,17 @@ We want these to be named /api/v2/orders/computers for GET and /api/v2/orders/co
 
 For this exercise, we only need to update our routes to add these new endpoints. Our existing endpoint for v1 of the API should still work.
 
+Starter Code
+Use the Computer Orders API as your starter code. https://github.com/udacity/nd064-c2-message-passing-exercises/tree/master/lesson-4-message-passing-in-production/iterating-on-apis-starter
+
+Exercise: Iterating on APIs
+Create v2 of your computer orders API. For this exercise, we need to update our routes to add these new endpoints. Our existing endpoint for v1 of the API should still work.
+
+Use the Computer Orders API as your starter code. https://github.com/udacity/nd064-c2-message-passing-exercises/tree/master/lesson-4-message-passing-in-production/iterating-on-apis-starter
+
+* Set up GET endpoint for /api/v2/orders/computers
+* Set up POST endpoint for /api/v2/orders/computers
+
 
 
 5.15 Solution: Iterating on APIs
@@ -548,9 +651,11 @@ Overview
 The solution involved copying the existing code and setting it to a new API route. We now have more flexibility in the new API route to introduce changes that won't affect the existing route.
 
 Solution Code
-The solution code can be found here: Iterating on APIs Solution
+The solution code can be found here: Iterating on APIs Solution https://github.com/udacity/nd064-c2-message-passing-exercises/tree/master/lesson-4-message-passing-in-production/iterating-on-apis-solution
 
 q1
+> Thinking Like a Cloud Native Developer
+> Once the new endpoints are set, what other parts of the code will we need to modify?
 the method name and it implementation.
 
 Shared code like the services will need to be updated as well to truly make the two versions not affect one another during code changes.
@@ -560,6 +665,7 @@ Shared code like the services will need to be updated as well to truly make the 
 5.16 Future-Proofing APIs
 ---------------------------------------
 q1
+> If one developer is solely responsible for creating and maintaining an application, what are some ways to minimize issues that may occur when the developer leaves the company?
 Encourage that documentation is kept up-to-date with auto-generated documentation.
 Implement code review policies so that teammates are accountable for making sure documentation is updated with code
 
@@ -569,23 +675,37 @@ Mindset
 Throughout this course, we've focused a lot on the concepts behind these tools and technologies. We've discussed the different situations in how they are applicable and why they would be used.
 
 Software is an ever-changing field
-Industry norms change every year
-Just a few years ago, Kubernetes was relatively unknown, and now it is the industry standard for container orchestration
+* Industry norms change every year
+* Just a few years ago, Kubernetes was relatively unknown, and now it is the industry standard for container orchestration
+
 Be thoughtful when determining if a new technology is a good fit
-DON'T use tooling that is not aligned with current tools
-DON'T force a team to use a tool they don't like
-DO look at new technologies that have established a track record
+* DON'T use tooling that is not aligned with current tools
+* DON'T force a team to use a tool they don't like
+* DO look at new technologies that have established a track record
 
 
 q2
-Share your notes or the conference slides from the talk with your teammates.
-Put together a document of tradeoffs to present to your manager.
-Request time during the workweek to build a proof of concept to present to the team.
+> After attending a conference, you learned about a technology that your company doesn't use. It seems to be a good fit for your team's application. How can you validate the tool?
+* Share your notes or the conference slides from the talk with your teammates.
+* Put together a document of tradeoffs to present to your manager.
+* Request time during the workweek to build a proof of concept to present to the team.
 
 
 
 5.17 Exercise: Applying Message Passing Strategies
 ---------------------------------------
+Using The Strategies We Have Learned
+
+In this lesson we covered a lot of ground:
+* Combining message passing techniques
+* OpenAPI documentation
+* Iterating on APIs
+* Future-Proofing our message passing
+
+How would these strategies have helped with a project you have worked on?
+
+> Thinking Like a Cloud Native Developer
+> Choose at least two of the strategies discussed in this lesson and describe how using those strategies would have helped you on an earlier project.
 Combining message passing techniques
 Iterating on APIs
 
@@ -595,6 +715,8 @@ combining message passing techniques allow different and various incoming data p
 
 5.18 Solution: Applying Message Passing Strategies
 ---------------------------------------
+My Solution
+
 OpenAPI Documentation
 A project that I worked on used inline comments to document API usage. By separating the documentation, my team was able to be more accountable for updating the documentation. In our GitHub pull requests, we were able to clearly see API changes through the git diff.
 
@@ -603,6 +725,8 @@ When releasing major changes to an API, the changes looked like they were going 
 
 
 q1
+> Thinking Like a Cloud Native Developer
+> We discussed situations in which these strategies can be useful. Can you think of situations when these strategies would not be useful and would add unnecessary complexity to your projects?
 if adding documentation would add up complexity, then better dont add in the first place. better yet, comments on code is sufficient and with no other documentation.
 
 Great work. Strategies don't always have to be applied. We should be conscious of when they may or may not be necessary.
@@ -614,11 +738,10 @@ Great work. Strategies don't always have to be applied. We should be conscious o
 It's important to see the different ways that the concepts we have learned about are used in the industry. Understanding real-world applications differentiates those who have played around with a technology and those who have true industry experience.
 
 In this lesson we covered:
-
-Combining message passing techniques
-OpenAPI documentation
-Strategies for iterating on APIs
-How to future-proof our message passing
+* Combining message passing techniques
+* OpenAPI documentation
+* Strategies for iterating on APIs
+* How to future-proof our message passing
 
 
 
@@ -628,23 +751,27 @@ Great work in making it through the course!
 
 We have learned a lot!
 
-How and why we can decompose a monolith into microservices
-Common message passing techniques
-Implementing message passing techniques.
-Using message passing in production systems.
+* How and why we can decompose a monolith into microservices
+* Common message passing techniques
+* Implementing message passing techniques.
+* Using message passing in production systems.
+
 Now it's time to demonstrate what we have learned in the UdaConnect project!
 
 
 
 5.21 Congratulations
 ---------------------------------------
+Congratulations!
 
+Thank you for sharing your learning journey with me!
 
+￼
 
 5.22 Glossary
 ---------------------------------------
 New Terms In This Lesson
-Term		Definition
+Term        Definition
 OpenAPI		Provides a uniform way to detail and query API resources. It includes a wide range of optional fields that enrich our documentation
 Swagger		A tool used to render OpenAPI specifications into an interactive web page
 SwaggerHub	A tool that provides utilities to write OpenAPI specifications more easily as well as live previews of the corresponding Swagger documentation
