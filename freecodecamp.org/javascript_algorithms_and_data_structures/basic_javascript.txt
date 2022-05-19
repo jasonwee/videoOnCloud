@@ -45,3 +45,6 @@ c = c + " String!";
 
 
 
+
+let catName = "Oliver";
+let catSound = "Meow!";
