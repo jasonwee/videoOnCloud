@@ -142,22 +142,26 @@ Join the Support Community now
 2.7 Plagiarism
 ---------------------------------------
 Plagiarism and Academic Dishonesty
+
 Overview of Plagiarism at Udacity
+
 Defining Plagiarism
 Any act claiming or implying another person’s work as your own.
 
 Examples:
 
-Submitting a project you didn’t create to copying code into a program without citation.
-Any action in which you misleadingly claim an idea or piece of work as your own, when it is not.
+* Submitting a project you didn’t create to copying code into a program without citation.
+* Any action in which you misleadingly claim an idea or piece of work as your own, when it is not.
+
 Copying and Combining Code
 Using another person’s work in your own work
 
 Examples:
 
-Following a guide that someone may have created for completing a Udacity project, whether from a video or website.
-Taking a part of someone else's project and changing some variable and function names, - regardless of whether you give the source credit or not.
-If you have not done the work yourself and attempt to mask it.
+* Following a guide that someone may have created for completing a Udacity project, whether from a video or website.
+* Taking a part of someone else's project and changing some variable and function names, - regardless of whether you give the source credit or not.
+* If you have not done the work yourself and attempt to mask it.
+
 Using Someone Else’s Code to Inform your Solution
 You should never knowingly view someone else’s work until you have completed the project yourself - nor should you share your project with someone who has not yet completed theirs. However, once you have completed your project, you are encouraged to see how other people have approached the same challenge in a different way. This allows you to compare your different strategies and ways of thinking.
 
