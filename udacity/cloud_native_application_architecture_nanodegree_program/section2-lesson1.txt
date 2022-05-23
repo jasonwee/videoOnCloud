@@ -18,10 +18,11 @@ In my current role, I am working for CNCF ( Cloud Native Computing Foundation) a
 Summary
 For this course, students should be comfortable with:
 
-web application development with Python
-using the CLI or command-line interface
-using git commands
-creating a DockerHub account
+* web application development with Python
+* using the CLI or command-line interface
+* using git commands
+* creating a DockerHub account
+
 These pre-requisites will be used throughout the course. Make sure you have them installed to closely follow the demos and exercise solutions.
 
 
@@ -33,17 +34,19 @@ Throughout the course, we will walk through a realistic example of applying good
 
 This course has the following lessons:
 
-Welcome
-Architecture Considerations
-Container Orchestration
-Open Source PaaS
-Cloud Native CI/CD
+* Welcome
+* Architecture Considerations
+* Container Orchestration
+* Open Source PaaS
+* Cloud Native CI/CD
+
 In the first lesson, we will cover:
 
-Introduction to Cloud Native
-CNCF and Cloud Native tooling
-Stakeholders
-Tools, Environment & Dependencies
+* Introduction to Cloud Native
+* CNCF and Cloud Native tooling
+* Stakeholders
+* Tools, Environment & Dependencies
+
 
 
 2.4 Introduction to Cloud-Native
@@ -62,12 +65,15 @@ Kubernetes had its first initial release in 2014 and it derives from Borg, a Goo
 
 Overall, Kubernetes is a container orchestrator that is capable to solutionize the integration of the following functionalities:
 
-Runtime
-Networking
-Storage
-Service Mesh
-Logs and metrics
-Tracing
+* Runtime
+* Networking
+* Storage
+* Service Mesh
+* Logs and metrics
+* Tracing
+
+Exernal Resource
+CNCF Glossary - Cloud Native Technology CNCF Glossary - Cloud Native Technology
 
 
 
@@ -78,42 +84,137 @@ An engineering team can use cloud-native tooling to enable quick delivery of val
 
 From a business perspective, the adoption of cloud-native tooling represents:
 
-Agility - perform strategic transformations
-Growth - quickly iterate on customer feedback
-Service availability - ensures the product is available to customers 24/7
+* Agility - perform strategic transformations
+* Growth - quickly iterate on customer feedback
+* Service availability - ensures the product is available to customers 24/7
+
 From a technical perspective, the adoption of cloud-native tooling represents:
 
-Automation - release a service without human intervention
-Orchestration - introduce a container orchestrator to manage thousands of services with minimal effort
-Observability - ability to independently troubleshoot and debug each component
+* Automation - release a service without human intervention
+* Orchestration - introduce a container orchestrator to manage thousands of services with minimal effort
+* Observability - ability to independently troubleshoot and debug each component
 
 
 
-2.7 
+2.7 Tools, Environment & Dependencies
 ---------------------------------------
+Tools, Environment & Dependencies
+
+Summary
+For this course, make sure you have the listed pre-requisites installed. These tools will be used throughout the course, so make sure you install them to follow the demo and exercise solutions closely.
+
+Tools, Environment & Dependencies Checklist
+Make sure you have the following dependencies installed:
+
+* Python 3.8.xx, using the instructions provided in the official Python documentation
+* Git, using the instructions provided in the official Git documentation
+* Docker Desktop, using the instructions provided in the official Docker documentation
+* Vagrant 2.2.xx, using the instructions provided in the official Vagrant documentation
+* VirtualBox 6.1.x, using the instructions provided in the official VirtualBox documentation. Make sure that you have installed VirtualBox in 6.1.xx or a higher version.
+* Code Editor - You probably already have a code editor installed on your computer; if not, you'll need to get one now to follow along with us for the rest of this course. We prefer Visual Studio Code (VS Code) for convenience or plain old Vim editor to work in the terminal. Here is the starter guide for VS Code editor.
+
+Though the requirements above apply to all users, the Windows users may have to go one step further by installing either WSL or Gitbash to run the Linux commands shown in the classroom demo videos.
+
+Additional Step for Windows Users to run Linux commands
+Windows OS also has a concept of the shell. The default shell in Windows is the command-line tool Cmd.exe. There is another shell available in Windows 7 SP1and above, PowerShell. PowerShell is primarily used for Windows system administration. Neither CMD nor PowerShell can run bash, ssh, git, apt, or any Linux commands by default.
+
+The solution is to use either of the options below:
+
+1. Option 1 - Windows Subsystem for Linux
+   Windows Subsystem for Linux (WSL) allows us to run Linux environment, including most command-line tools, utilities, and applications, from the Windows Command Prompt (CMD). You can even mix the Linux and Windows commands after installing WSL. Refer to the installation instructions here to install WSL on Windows.
+
+   The next step is to install and run a Linux distribution parallelly on WSL. There are multiple choices for installing - Ubuntu, OpenSUSE, Debian, and many more. If you have no preference, you can install Ubuntu on Windows App, and proceed as mentioned in the installation instructions above. The next page shows how to install WSL in Windows.
+
+2. Option 2 (Recommended) - Git Bash on Windows
+   Git is an open-source distributed Version Control System (VCS). Github is a repository hosting and version control service, where you can store, share, or download the repository content in collaboration with multiple contributors. Git provides a Unix style command-line tool called Git for Windows to help users work with Github repositories. Once you download and install Git for Windows, it can be run either in CMD or a GUI.
+
+   Git Bash is a command-line tool by default included in Git for Windows. Besides running Git commands, Git Bash allows users to run Linux/Bash commands as well.
 
 
 
-2.8 
+2.8 [Optional] - Install WSL 2
 ---------------------------------------
+Windows has two command-line tools: Command Line prompt (CMD) and PowerShell (available in Windows 7 SP1and above). But, neither CMD nor PowerShell can run bash, ssh, git, apt, or any Linux commands by default. Windows Subsystem for Linux (WSL) allows running a Linux environment in a Windows machine.
+
+After installing WSL, Windows users will follow the classroom instructions as if they are Linux users.
+
+Windows Subsystem for Linux (WSL) 2
+If you are using a Windows machine, you can run and learn Linux commands by installing the WSL utility. This tutorial follows the instructions mentioned at the Install Windows Subsystem for Linux (WSL) on Windows 10 Home Microsoft documentation. The steps are:
+
+Step 1 - Enable the Windows Subsystem for Linux
+* Open PowerShell as an Administrator.
+* Run the following command
+  dism.exe /online /enable-feature /featurename:Microsoft-Windows-Subsystem-Linux /all /norestart
+
+Step 2 - Check requirements
+Check your Windows version and build number using either:
+* Select Windows key + R, type winver, select OK
+* Enter the ver command in Windows Command Prompt
+
+For x64 systems, you should have a version 1903 or higher, and build 18362 or higher. Builds lower than 18362 do not support WSL 2.
+
+Step 3 - Enable Virtual Machine feature
+Run the following command in the PowerShell (as an Admin)
+
+  dism.exe /online /enable-feature /featurename:VirtualMachinePlatform /all /norestart
+
+  Screenshot of running the above command in Windows PowerShell
+
+Step 4 - Download the Linux kernel update package
+Download the WSL2 Linux kernel update package for x64 machines and install the package.
+
+  Right-click on the package and select Install
+
+Step 5 - Set WSL 2 as your default version
+Run the following command in the PowerShell (as an Admin)
+  
+  wsl --set-default-version 2
+
+  Screenshot of setting the default version of wsl in Windows PowerShell
+
+Step 6 - Install your Linux distribution of choice
+* Open the Microsoft Store and select any Linux distribution. For example, we have chosen Ubuntu 20.04 LTS in our example.
+* Once installed, you can launch the WSL from the Start menu.
+
+  Launch the WSL from the Start menu
+
+Step 7 - Configuring credentials for the first-time
+Provide a username and password of your choice. By default, Ubuntu does not allow capital letters in usernames. It may only contain lowercase letters, underscores (_), and dashes (-). This is a one-time-activity.
+
+Use the WSL terminal to work inside a Linux environment
+
+Congratulations! You are all set to run Linux commands in your Windows.
+
+Another Option
+If your system configuration doesn't allow installing WSL, you have an alternative: GitBash. It is a command-line tool that comes along with Git for Windows. Once you download and install Git for Windows, you can start executing Git commands and most Linux commands in the GitBash terminal.
 
 
 
-
-2.9 
+2.9 Recap
 ---------------------------------------
+Recap
+
+Summary
+In the first lesson, we went through:
+
+* Introduction to Cloud Native
+* CNCF and Cloud Native tooling
+* Stakeholders
+* Tools, Environment & Dependencies
 
 
-2.10 
+
+2.10 Good Luck!
 ---------------------------------------
+Good Luck
+
+Summary
+Every organization aims to succeed! This is represented by providing customer value and the ability to be responsive to the surrounding ecosystem. Coincidentally, this is closely correlated with technological innovation, which translates into the adoption of containers, automation, and usage of cloud-native tooling.
+
+By completing this course you will be equipped to lead the adoption of cloud-native tooling and principles within an organization.
+
+Hope you will enjoy the course and GOOD LUCK!
 
 
-
-2.11 
----------------------------------------
-
-
-2.12 
----------------------------------------
 
 
