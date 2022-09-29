@@ -616,3 +616,34 @@ int main()
 {
 	check2();
 }
+
+
+
+
+
+#include <cmath>
+#include <cstdio>
+#include <vector>
+#include <iostream>
+#include <algorithm>
+#include <bits/stdc++.h>
+using namespace std;
+
+
+int main() {
+    /* Enter your code here. Read input from STDIN. Print output to STDOUT */
+    int count;
+    scanf("%d", &count);
+
+    vector<int> vec;
+    int j;
+    for (int i = 0; i < count; i++) {
+        scanf("%d", &j);
+        vec.push_back(j);
+    }
+    sort(vec.begin(), vec.end());
+    for (auto x : vec)
+        cout << x << " ";
+    return 0;
+}
+
