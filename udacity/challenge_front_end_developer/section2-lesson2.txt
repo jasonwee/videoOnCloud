@@ -540,23 +540,253 @@ In this example, one would have font bigger than 16px, and two would have font s
 
 2.11 Typography
 ---------------------------------------
+Text alignment
+The aptly named text-align property defines the alignment of the text in an HTML element.
+
+p {
+  text-align: left;
+}
+
+Other accepted values are right, center, or justify.
+
+QUIZ QUESTION
+Which HTML elements will the following CSS statement be applied to?
+
+.has-text-centered {
+  text-align: center;
+}
+
+.has-text-centered {
+  text-align: center;
+}
+￼
+<div class="has-text-centered">
+<a href="#" class="has-text-centered">
+<p class="has-text-centered has-text-primary is-size-5">
+
+
+Underlined Text
+The text-decoration property determines whether text is underlined or not. By setting it to none, we can remove the default underline from all of our links. We’ll discuss link styles in-depth later on.
+
+a {
+  text-decoration: none;
+}
+
+Deleted Text
+The other common value for text-decoration is line-through to strike out “deleted” text. But, remember that meaning should always be conveyed through HTML—not CSS. It’s better to use the <ins> and <del> elements instead of adding a line-through style to, say, an ordinary <p> element.
+
+Line Height
+Just as alignment isn’t an arbitrary decision, neither is the space between text. In this section, we’re concerned with the responsible use of three CSS properties:
+
+* margin-top (or padding-top)
+* margin-bottom (or padding-bottom)
+* line-height
+
+The first two should be pretty familiar by now, and they define the vertical space between separate paragraphs. The new line-height property determines the amount of space between lines in the same paragraph. In traditional typography, line-height is called “leading” because printers used little strips of lead to increase the space between lines of text.
+
+QUIZ QUESTION
+What is the line-height property used for?
+controls height of space between two lines of content
 
 
 
 2.12 Fonts
 ---------------------------------------
+Fonts
+Font Family
+font-family is another built-in CSS property that defines the typeface for whatever element you selected. It accepts multiple values because not all users will have the same fonts installed.
+
+When using fonts on the web, you must first consider what fonts are available to your users. Every operating system, be it Windows, OS X, or Linux, comes with a set of pre-installed fonts that you can use for customizing your website. For a complete list of "web-safe" fonts, follow this link.
+
+The way it works is fairly simple. When using the font-family property, you specify the font(s) you want to use in your HTML.
+
+Then, the browser, starting from left to right, looks at the font(s) you've specified and checks to see if it can render the text using the font(s) you've provided. If it can't use the first font, then the browser moves to the next font, and so-on.
+
+The purpose for specifying multiple fonts is because not all fonts are available on every operating system. So, specifying multiple, similar fonts ensures users have a consistent experience regardless of the operating system they are using.
+
+Font Weight & Style
+In CSS, font weights are expressed as numeric values between 100 and 900. Fortunately, there are relatively standardized, human-friendly terms for each of these numeric values. “Black” usually means 900, “bold” is 700, “regular” is 400, etc. Most families don’t supply a face for every single weight. For example, Roboto is missing “extra light” (200), “semi bold” (600), and “extra bold” (800).
+
+It’s worth noting that each style and weight combination is designed as an entirely distinct face. In a high-quality font family, the condensed styles aren’t simply squashed versions of the roman faces, nor is the bold face merely a thicker version. Each letter in every face is hand-crafted to ensure it provides a uniform flow to its text.
+
+This is particularly apparent in the italic and roman faces of many serif fonts. For instance, the lowercase “a” in Century Schoolbook FS (the font you’re reading right now) takes on a completely different shape when it’s italicized.
+
+Emphasis & Importance
+For emphasized (usually italics) words, use the <em> tag.
+
+<p>
+  We <em>have</em> to buy the latest version of the pet hair remover vacuum, the
+  floor is covered with fur!
+</p>
+Which results in:
+
+We have to buy the latest version of the pet hair remover vacuum, the floor is covered with fur!
+
+For important words, use the <strong> tag. By default, <strong> elements are displayed in bold, but keep in mind that it is only the browser’s default behavior. Don’t use <strong> only to put some text in bold, but rather to give it more importance.
+
+<p>
+  My dog is the most <strong>important</strong> creature in my life right now.
+</p>
+
+External Fonts
+There are a number of ways to host fonts from external sources. One commonly used example is Google Fonts, which provides a great number of fonts free for use in web projects. If you go to the Google Fonts website linked below, you can select a font and then you will be provided with the line of code to link your font of choice. That link goes in the head section of your code like this:
+
+<head>
+  <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
+</head>
+
+In the CSS portion of your code, you could then set an elements property like this:
+
+.box{
+  font-family: 'Montserrat', sans-serif;
+}
+
+In this example the Google font I selected was ‘Montserrat’.
+
 
 
 2.13 Colors
 ---------------------------------------
+Colors
+Colors in CSS can be specified by the following methods:
+
+1. Hexadecimal colors
+2. RGB colors
+3. Predefined/Cross-browser color names
+4. RGBA colors
+5. HSL colors
+6. HSLA colors
+
+Let's talk about the first 3 since those are the most common.
+
+Hexadecimal Colors
+A hexadecimal color is specified with: #RRGGBB, where the RR (red), GG (green) and BB (blue) hexadecimal integers specify the components of the color. All values must be between 00 and FF.
+
+For example, the #0000ff value is rendered as blue, because the blue component is set to its highest value (ff) and the others are set to 00.
+
+Example
+Define different HEX colors:
+
+#p1 {
+  background-color: #ff0000;
+}
+
+#p2 {
+  background-color: #00ff00;
+}
+
+#p3 {
+  background-color: #0000ff;
+}
+
+RGB Colors
+An RGB color value is specified with the rgb() function, which has the following syntax:
+
+rgb(red, green, blue)
+
+Each parameter (red, green, and blue) defines the intensity of the color and can be an integer between 0 and 255 or a percentage value (from 0% to 100%).
+
+For example, the rgb(0,0,255) value is rendered as blue, because the blue parameter is set to its highest value (255) and the others are set to 0.
+
+Also, the following values define equal color: rgb(0,0,255) and rgb(0%,0%,100%).
+
+Example
+Define different RGB colors:
+
+#p1 {
+  background-color: rgb(255, 0, 0);
+}
+
+#p2 {
+  background-color: rgb(0, 255, 0);
+}
+
+#p3 {
+  background-color: rgb(0, 0, 255);
+}
+
+Predefined/Cross-browser Color Names
+140 color names are predefined in the HTML and CSS color specification.
+
+There's quite a few of these - check out this list to see more.
+https://developer.mozilla.org/en-US/docs/Web/CSS/color_value
+
+QUIZ QUESTION
+Which of the following values is not valid in CSS when defining a color?
+color: FFFFFF;
+
+
+QUIZ QUESTION
+Which CSS declarations can be used to represent the standard color for blue?
+color: blue;
+color: rgb(0, 0, 255);
+color: #fff;
+
 
 
 2.14 Exercise: Debugging CSS
 ---------------------------------------
 
+Debugging CSS is an important skill to practice because you will have to be able to discover and resolve CSS issues with your own eyes! So let’s get to practicing!
+
+Exercise: Debugging CSS
+The CSS code in the <style> tags below has a number of bugs in it. Find them and squash them by fixing each of the errors to get the CSS displaying properly in the browser.
+
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Exercise 1</title>
+    <meta
+      content="width=device-width, initial-scale=1, maximum-scale=1"
+      name="viewport"
+    />
+    
+    <style>
+/*  Debug CSS Code Below */
+    .box{
+      width: 200px;
+      height: 200px;
+      position: absolute;
+    }
+        
+    #one{
+      background: red;
+      top: 100px;
+      left: 150px;
+      z-index:1;
+    }
+    #two{
+      background: yellow;
+      top: 80px;
+      left: 100px;
+      z-index: -1;
+   }
+   #three{
+      background: blue;
+      z-index: 2;
+   }
+  </style>
+</head>
+
+  <body>
+    <div id="one" class="box"> Box 1</div>
+    <div id = "two" class="box"> Box 2</div>
+    <div id="three" class="box"> Box 3</div>
+        
+  </body>
+</html>
+
+
 
 2.15 Recap
 ---------------------------------------
+Additional Topics on CSS
 
+For more information on CSS background images, see the MDN documentation here.
 
+For more information on CSS in general, you can see the excellent website CSS-Tricks.
 
+https://developer.mozilla.org/en-US/docs/Web/CSS/background-image
+https://css-tricks.com/
