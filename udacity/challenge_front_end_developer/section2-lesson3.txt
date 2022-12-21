@@ -1,0 +1,109 @@
+date start : 18 december 2022
+
+
+2.1 Introducing Flexbox
+---------------------------------------
+To use flexbox set the display property of a div to flex. The items inside that element will automatically become flex items, and you can then use the flexbox syntax in your CSS code.
+
+
+
+2.2 A Quick Flexbox Example
+---------------------------------------
+By setting an element's display property to flex, all elements inside of it become flex items that can be laid out in a customized way following design patterns like columns, rows, alignment, and distribution.
+
+QUIZ QUESTION
+What do you add to your code to begin using flexbox properties?
+By setting the display property of the parent element to flex.
+
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Exercise 1</title>
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1" name="viewport"/>
+
+  <style>
+  .container{
+     /* set display position here */
+      display: flex;
+      flex-direction: row;
+      border: 2px solid yellow;
+  }
+  .box{
+        width: 250px;
+        height: 150px;
+        border: 1px solid red;
+    }
+  </style>
+  </head>
+
+  <body>
+  <div class = "container">
+    <div class="box"> Box 1</div>
+    <div class="box"> Box 2</div>
+    <div class="box"> Box 3</div>
+  </div>
+  </body>
+</html>
+
+
+Here, we have learned that Flexbox (the Flexible Box Module) is a set of CSS rules for stretching multiple columns or rows across a parent container. Flex is unique amongst CSS properties because you have a main container and the items nested within it. CSS flex has properties that apply to both the element itself, and the items inside of it.
+
+To use flexbox set the display property of the parent container to flex:
+
+.container{
+  display:flex;
+}
+
+Further research
+For more information about a Flexbox overview, see this MDN entry.
+https://developer.mozilla.org/en-US/docs/Learn/CSS/CSS_layout/Flexbox
+￼
+
+
+2.3 Axes and Direction with Flexbox
+---------------------------------------
+The Flexbox model relies on two axes: the main axis and the cross axis. The main axis is defined by flex-direction, which has four possible values:
+
+* row
+* row-reverse
+* column
+* column-reverse
+
+The two row settings will create the main axis horizontally - or inline direction. The two column settings will create the main axis vertically - or block direction. block or inline here refer to the CSS display settings which we have covered previously.
+
+The axis determines the flow of your content - you can think of this as being either rows or columns - and they will be determined when you start aligning and justifying content within a flex container.
+
+
+
+2.4 Axes and Direction in Action
+---------------------------------------
+
+
+
+2.5 Ordering Elements Demo
+---------------------------------------
+
+
+
+2.6 Aligning Items & Justifying Content with Flexbox
+---------------------------------------
+
+
+
+2.7 Aligning & Justifying in Action
+---------------------------------------
+
+
+
+2.8 Recap
+---------------------------------------
+
+
+
+
+
+2.9 
+---------------------------------------
+
