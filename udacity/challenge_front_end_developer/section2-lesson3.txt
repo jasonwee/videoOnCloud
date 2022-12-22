@@ -79,11 +79,68 @@ The axis determines the flow of your content - you can think of this as being ei
 
 2.4 Axes and Direction in Action
 ---------------------------------------
+Axes and Direction in Action
+After setting an element's display to flex, the next thing you will usually want to state is whether the elements inside the container should be laid out in rows or columns. You can do this using the flex-direction property, and setting its value to either column or row.
 
+To set the layout of the items in a flex container to either a row or column use the flex-direction property like this:
+
+.container{
+  display:flex;
+  flex-direction: row
+}
+
+QUIZ QUESTION
+Which of the following are true?
+If the flex-direction is set to row or row-reverse the main axis is horizontal.
+If the flex-direction is set to column or column-reverse the main axis is vertical.
+If the main axis is horizontal the cross axis is vertical.
+The two axis control the flow of space in flexbox and correspond to the align-items and justify-content properties.
+
+
+Axes and direction are important concepts for understanding flexbox. They are both conceptual and technical which can be tricky. One suggestion is to try and draw your flex containers out first in a notebook. This can be helpful for mapping out axes and direction.
+
+Further Research
+For more on axis and direction with flexbox see the documentation here.
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Exercise 1</title>
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1" name="viewport"/>
+
+  <style>
+  .container{
+    display:flex;
+/* Set Flex Direction Here */
+    flex-direction: column;
+      border: 2px solid yellow;
+  }
+  .box{
+        width: 250px;
+        height: 150px;
+        border: 1px solid red;
+    }
+  </style>
+  </head>
+
+  <body>
+  <div class = "container">
+    <div class="box"> Box 1</div>
+    <div class="box"> Box 2</div>
+    <div class="box"> Box 3</div>
+  </div>
+  </body>
+</html>
 
 
 2.5 Ordering Elements Demo
 ---------------------------------------
+There are three ways to explicitly set the order in which items will appear in a grid.
+
+1. Moving the HTML code for the elements themselves to reorder
+2. Appending -reverse to row or column will reverse the order in the specified row or column
+3. Using the order property of the individual items inside the grid
 
 
 
