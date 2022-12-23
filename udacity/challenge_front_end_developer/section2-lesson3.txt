@@ -134,7 +134,7 @@ For more on axis and direction with flexbox see the documentation here.
 </html>
 
 
-2.5 Ordering Elements Demo
+2.5 Ordering Elements with Flexbox
 ---------------------------------------
 There are three ways to explicitly set the order in which items will appear in a grid.
 
@@ -144,7 +144,7 @@ There are three ways to explicitly set the order in which items will appear in a
 
 
 
-2.6 Aligning Items & Justifying Content with Flexbox
+2.6 Ordering Elements Demo
 ---------------------------------------
 Ordering Elements Demo
 flex-direction:row; will lay elements out from left to right. But flex-direction:row-reverse will flip that order and display elements from right to left.
@@ -202,18 +202,84 @@ https://developer.mozilla.org/en-US/docs/Learn/CSS/CSS_layout/Flexbox#ordering_f
 
 
 
-2.7 Aligning & Justifying in Action
+2.7 Aligning Items & Justifying Content with Flexbox
 ---------------------------------------
+To align items on the cross axis use align-items with the possible values:
+
+* stretch
+* flex-start
+* flex-end
+* center
+
+To justify content on the main axis use justify-content, which has the possible values:
+
+* flex-start
+* flex-end
+* center
+* space-around
+* space-between
+* space-evenly
 
 
 
-2.8 Recap
+2.8 Aligning & Justifying in Action
 ---------------------------------------
+Aligning & Justifying in Action
+Aligning, justifying, and distributing is what flexbox is all about. Up next, we will focus in on two of the most powerful properties that flex introduces to achieve such easy and elegant layouts.
+
+By setting different values for the properties align-items and justify-content you can easily create elegant distribution of elements across the available space.
+
+QUIZ QUESTION
+Which of the following is true?
+The align-items property will align the items on the cross axis.
 
 
 
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Exercise 1</title>
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1" name="viewport"/>
+
+  <style>
+    /* Align and justify items in the grid to the center */
+  .container{
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid yellow;
+  }
+  .box{
+        width: 250px;
+        height: 150px;
+        border: 1px solid red;
+    }
+  </style>
+  </head>
+
+  <body>
+
+  <div class = "container">
+    <div class="box"> Box 1</div>
+    <div class="box"> Box 2</div>
+    <div class="box"> Box 3</div>
+  </div>
+  </body>
+</html>
 
 
-2.9 
+
+Further Research
+For further research on the topics covered in this section, see this MDN article Alignment, justification and distribution of free space between items.
+
+https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Flexible_Box_Layout/Basic_Concepts_of_Flexbox#alignment_justification_and_distribution_of_free_space_between_items
+
+Reading the documentation will make you smarter and enjoy coding more!
+
+
+
+2.9 Recap
 ---------------------------------------
 
