@@ -146,6 +146,59 @@ There are three ways to explicitly set the order in which items will appear in a
 
 2.6 Aligning Items & Justifying Content with Flexbox
 ---------------------------------------
+Ordering Elements Demo
+flex-direction:row; will lay elements out from left to right. But flex-direction:row-reverse will flip that order and display elements from right to left.
+
+The row and columns settings for flex elements can be reversed by appending -reverse to either property value.
+
+
+QUIZ QUESTION
+Which of the following is NOT a valid way to order elements inside a grid with Flexbox?
+Naming the elements in numeric order
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Exercise 1</title>
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1" name="viewport"/>
+    <!-- Change the order of elements so that box 3 appears first, then box2, then box 1 -->
+
+  <style>
+  .container{
+    display:flex;
+    flex-direction: row-reverse;
+    border: 2px solid yellow;
+  }
+  .box{
+        width: 250px;
+        height: 150px;
+        border: 1px solid red;
+    }
+  </style>
+  </head>
+
+  <body>
+    <!-- Change the order of elements so that box 3 appears first, then box2, then box 1 -->
+
+  <div class = "container">
+    <div class="box"> Box 1</div>
+    <div class="box"> Box 2</div>
+    <div class="box"> Box 3</div>
+  </div>
+  </body>
+</html>
+
+
+
+Summary
+The order of flex items is by default determined by the order they appear in your code. You can explicitly change this order using either -reverse or with the CSS property order.
+
+Further Research
+For more information on ordering flex items, you can see this section of the flexbox MDN article.
+https://developer.mozilla.org/en-US/docs/Learn/CSS/CSS_layout/Flexbox#ordering_flex_items
 
 
 
