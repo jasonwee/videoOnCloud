@@ -1,0 +1,334 @@
+date start : 25 december 2022
+
+
+2.1 Grid vs Flexbox
+---------------------------------------
+Flexbox is for how content flows, Grid is for how content is placed - i.e. grid works nicely for page layouts, flex works nicely for regions within the grid.
+
+￼
+
+2.2 An Example of Grid vs Flexbox
+---------------------------------------
+An Example of Grid vs Flexbox
+An excellent way to use flexbox and grid together is by creating the layout of a webpage with grid and then organizing the flow of the content with flex. Let's see an example of this!
+
+To use CSS Grid set the display property of the container element to grid.
+
+QUIZ QUESTION
+Do you need to use either Flexbox or CSS Grid, and not the other, for an individual web project?
+CSS Grid and Flexbox work together
+
+Recap
+CSS Grid v. Flexbox
+
+* Grid is two dimensional, while Flex is one
+* Grid is layout first, while Flexbox is content first
+* Flex is for components of an app, Grid is for the app layout itself
+
+CSS Grid does not replace Flexbox. Each can achieve things that the other is not capable of, and in fact, a true master can use Flexbox and CSS Grid together in harmony to create the ultimate webpage layout.
+
+At the highest level CSS Grid excels at creating layouts for a webpage, while Flexbox is a master of content flow for each element that makes up the page layout.
+
+Further Research
+For more information on CSS Grid and Flexbox together see the articles below:
+* Beginner’s Guide to choosing between CSS Grid and Flexbox
+  https://medium.com/youstart-labs/beginners-guide-to-choose-between-css-grid-and-flexbox-783005dd2412
+* The Ultimate CSS Battle: Grid vs. Flexbox
+  https://hackernoon.com/the-ultimate-css-battle-grid-vs-flexbox-d40da0449faf
+* Does CSS Grid Replace Flexbox?
+  https://css-tricks.com/css-grid-replace-flexbox/
+
+
+
+2.3 Rows & Columns
+---------------------------------------
+After setting the display property of your container div to grid, the next step is to set the rows and columns in your grid which can be done with the CSS properties:
+
+* grid-template-columns
+* grid-template-rows
+
+And to define gutters between rows and columns you can use the property grid-gap on the parent container that has the display property set to grid.
+
+
+
+2.4 rows & Columns in Action
+---------------------------------------
+Rows & Columns in Action
+grid-template-columns is the property that defines the column layout of your grid - that is how many sections the page should be divided into vertically. The values for this property are the explicit value for each column and the number of columns is defined implicitly by the number of values entered. For example:
+
+grid-template-columns: 60px 60px;
+would create two columns of 60px each. If you had two items inside your grid and didn't set their position explicitly, the first item would be placed in the first column and the second item in the second. grid-template-rows follows the same logic, so that:
+
+grid-template-columns: 60px 60px;
+grid-template-rows: 160px 60px;
+would create a grid with two columns and two rows.
+
+Let's take a look at this in action.
+
+The layout of a grid is defined using grid-template-columns and grid-template-rows.
+
+
+QUIZ QUESTION
+Which of the following is a valid line of code for CSS grid?
+grid-template-rows: 160px 60px;
+
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Exercise 1</title>
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1" name="viewport"/>
+
+  <style>
+    /* create grid in container below */
+  .container{
+
+    display: grid;
+    /* grid-template-columns: 10px 10px 10px 10px 10px;*/
+     grid-template-rows: 10px 10px 10px 10px;
+    grid-gap: 5px;
+  }
+  .box{
+        width: 250px;
+        height: 150px;
+        border: 1px solid red;
+    }
+  </style>
+  </head>
+
+  <body>
+  <div class = "container">
+    <div class="box"> Space 1</div>
+    <div class="box"> Space 2</div>
+    <div class="box"> Space 3</div>
+    <div class="box"> Space 4</div>
+    <div class="box"> Space 5</div>
+  </div>
+  </body>
+</html>
+
+
+A CSS Grid is made up of rows and columns which are defined using the CSS properties grid-template-columns and grid-template-rows, which take as values the size of each track.
+
+Further Research
+To explore grid setup deeper, you can check out this cool grid visualizer and generator.
+
+https://cssgrid-generator.netlify.app/
+
+
+
+2.5 Grid Areas
+---------------------------------------
+The grid-area property specifies a particular area or set of rows and columns that a grid item occupies. It is applied to the grid item itself with CSS. Here is an example:
+
+.item{
+  grid-area: 1/2/3/3
+}
+
+Because grid-area is shorthand for the properties: grid-row-start, grid-column-start, grid-row-end and grid-column-end, the code above places the item from rows 1-3, and columns 2-3.
+
+
+
+2.6 Working with Grid Areas
+---------------------------------------
+Working with Grid Areas
+The grid-area property defines the space an element takes up in the grid by setting values for the row it starts and ends in, and the column it starts and ends in. In practice it could look like this:
+
+
+  #one { 
+    /* row start/column start/ row end/ column end */
+    grid-area: 1/2/3/3;
+  }
+
+
+In this example the element with the id, one would start at the first row and the first column, and end at the third row (which is the end of the second row if there is no third row) and the third column.
+
+Let's take a look at this in action.
+
+The grid-area CSS property is a shorthand property for grid-row-start,grid-column-start, grid-row-endand grid-column-end, and it defines the area that an element occupies in a grid.
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Exercise 1</title>
+    <meta
+      content="width=device-width, initial-scale=1, maximum-scale=1"
+      name="viewport"
+    />
+
+  <style>
+  .container{
+    /* Step 1: Set display to grid */
+      display:grid;
+   /* Step 2: setup rows amd columns */
+      grid-template-columns: 300px 300px 300px;
+      grid-template-rows: 250px 600px;
+      border: 2px solid yellow;
+  }
+  .box{
+        border: 1px solid red;
+    }
+    #one{ 
+    /* set grid-area here: row start/column start/ row end/ column end */
+    grid-area: 1/2/1/2;
+  }
+    #two{ 
+    /* set grid-area here: row start/column start/ row end/ column end */
+    grid-area: 2/2/3/3;
+  }
+  </style>
+  </head>
+
+  <body>
+  <div class = "container">
+    <div id="one" class="box"> Space 1</div>
+    <div id="two" class="box"> Space 2</div>
+  </div>
+  </body>
+</html>
+
+
+
+
+Grid Areas Summary
+
+grid-template-areas is the property used to name the rows and columns of a grid and to set its layout. It could look like this:
+
+  .container {
+      display:grid;
+      grid-template-columns: 300px 300px 300px;
+      grid-template-rows: 250px 600px;
+      grid-template-areas:
+      "hd hd hd hd hd hd hd hd"
+      "sd sd sd main main main main main"
+      "ft ft ft ft ft ft ft ft";
+  }
+
+The named areas in the grid are then assigned to each element according to where you want them to be displayed in the grid:
+
+.header {
+  grid-area: hd;
+}
+
+In the example above the element with the class header will stretch across the entire first row of columns because we have assigned it the grid-area hd, and we have defined the area hd with the value for grid-template-areas in the parent element.
+
+QUIZ QUESTION
+Which accurately describes the placement of an item with the following CSS rule applied: grid-area: 2 / 1 / 2 / 4;
+Row 2 & Columns 1-3
+
+
+
+
+2.7 Working with Grid Areas II
+---------------------------------------
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Exercise 1</title>
+    <meta
+      content="width=device-width, initial-scale=1, maximum-scale=1"
+      name="viewport"
+    />
+
+  <style>
+  .container{
+    /* Step 1: Set display to grid */
+      display:grid;
+   /* Step 2: setup rows amd columns */
+      /* grid-template-columns: repeat(3, 1fr); */
+      grid-template-columns: 300px 300px 300px;
+      grid-template-rows: 250px 600px;
+      grid-template-areas:
+      "hd hd hd hd hd hd hd hd"
+      "sd sd sd main main main main main"
+      "ft ft ft ft ft ft ft ft";
+      border: 2px solid yellow;
+  }
+  .box{
+    border: 1px solid red;
+    background: #F8FA9D;
+    }
+/* Assign grid area below */
+  .header{
+    grid-area: hd;
+  }
+  .footer{
+    grid-area: ft;
+  }
+  .sidebar{
+    grid-area: sd;
+  }
+  .content{
+    grid-area: main;
+  }
+  </style>
+  </head>
+
+  <body>
+  <div class = "container">
+    <div class="header box">Header</div>
+    <div class="sidebar box">Sidebar</div>
+    <div class="content box">Content</div>
+    <div class="footer box">Footer</div>
+  </div>
+  </body>
+</html>
+
+
+Further Research
+There is so much flexibility with CSS grid! To learn even more about what you can do with grid-areas see the Complete Guide to Grid, from CSS-Tricks here.
+
+https://css-tricks.com/snippets/css/complete-guide-grid/
+
+
+2.8 Advanced Grid
+---------------------------------------
+CSS Grid includes advanced capabilities for creating large and complex grids. Some of these are:
+
+* the fr Unit
+* Track listings with repeat() notation
+* Track sizing and minmax()
+
+Let’s explore these advanced features in action.
+
+QUIZ QUESTION
+Which of the following is equivalent to grid-template-columns: repeat(3, 350px)
+grid-template-columns: 350px 350px 350px
+
+
+
+2.9 Advanced Grid Playground
+---------------------------------------
+Advanced Grid Playground
+Below, we’ve included an HTML workspace with the solution code from the last workspace. Here, there’s no determined exercise for you to perform, but feel free to use it as a playground to practice your Advanced Grid skills!
+
+Advanced Grid Recap
+The fr unit represents a fraction of the available space in the grid container.
+
+The repeat() notation can be used to quickly layout many tracks for large grids. For example:
+
+grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+Could be written with repeat notation like this:
+
+grid-template-columns: repeat(7, 1fr);
+
+The grid-auto-rows property can be used to generate the number of rows based on the content and available space. The following code:
+
+grid-auto-rows: minmax(100px, auto);
+Would create rows that are at least 100px tall and can be as tall as the content inside them demands.
+
+Further Research
+For even more control over how your content is laid out, check out this article titled How Items Flow Into a CSS Grid.
+https://mastery.games/post/grid-item-placement/
+￼
+
+
+2.9 Recap
+---------------------------------------
+
