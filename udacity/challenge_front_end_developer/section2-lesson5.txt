@@ -1,0 +1,46 @@
+date start : 26 december 2022
+
+
+2.1 Building Layouts with Grid
+---------------------------------------
+CSS Grid allows you to create simple, elegant and professional quality webpage designs.
+
+￼
+
+2.2 A Simple blog Page
+---------------------------------------
+
+
+2.3 Media Queries
+---------------------------------------
+
+
+2.4 Adding Media Queries in Code
+---------------------------------------
+
+
+2.5 Multiple Breakpoints
+---------------------------------------
+
+
+
+2.6 Building Responsive Layouts with Flexbox & Grid
+---------------------------------------
+
+
+2.7 Nesting Grids in Practice
+---------------------------------------
+
+
+
+
+2.8 Course Recap
+---------------------------------------
+
+
+
+2.9 Instructor Interview
+---------------------------------------
+
+
+
