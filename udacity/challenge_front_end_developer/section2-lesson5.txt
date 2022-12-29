@@ -9,14 +9,149 @@ CSS Grid allows you to create simple, elegant and professional quality webpage d
 
 2.2 A Simple blog Page
 ---------------------------------------
+A Simple Blog Page
+In the following screencast we will build the template for a simple blog webpage that has some dummy links and one real link to a demo page. In the end we will have a layout for a blog homepage and a blog entry itself. Let's dive in!
+
+CSS Grid can be used to setup multiple displays within a single site. In the previous demo we used to CSS Grid to create a blog home page and an individual page for blog posts.
+
+Separate pages within a web app can be stored in the same folder and linked to each other using <a> tags to create links with the name of the file as the target. For example, in a file index.html you could use the following code to link to another file in the same directory named go.html:
+
+<a href="go.html">Go to page</a>
+
+QUIZ QUESTION
+You can only use one CSS grid per web project.
+False
+
+In the workspace below add a link from the homepage to the individual blog post. Once you have successfully done this, navigate to the blog entry and then customize the style to start to get an idea of what you might want a blog post layout to look like.
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Exercise 1</title>
+    <meta
+      content="width=device-width, initial-scale=1, maximum-scale=1"
+      name="viewport"
+    />
+    <link rel="stylesheet" href="css/style.css">
+
+  </head>
+
+  <body>
+  <div class = "container">
+    <div class="header box">Header</div>
+    <div class="sidebar box">
+      <h1>Blog Posts</h1>
+      <!-- Add Link To Blog Here -->
+      <a href="blog-post.html">blog</a>
+    </div>
+    <div class="content box">Content</div>
+    <div class="footer box">Footer</div>
+  </div>
+  </body>
+</html>
+
+.container{
+    /* Step 1: Set display to grid */
+      display:grid;
+   /* Step 2: setup rows amd columns */
+  grid-template-columns: 300px 300px 300px;
+        grid-template-rows: 250px 600px;
+   /* Step : setup named grid areas */
+  grid-template-areas:
+    "hd hd hd hd hd hd hd hd"
+     "feat feat feat feat feat feat feat feat"
+   "main main main main main main main main"
+   "ft ft ft ft ft ft ft ft";
+      border: 2px solid yellow;
+
+  }
+  .box{
+    width: 100%;
+    border: 1px solid red;
+    background: #F8FA9D;
+    }
+
+  .header{
+      /* Set elements grid-area here */
+    grid-area: hd;
+  }
+
+  .footer{
+    /* Set elements grid-area here */
+    grid-area: ft;
+  }
+  .feature{
+    /* Set elements grid-area here */
+    grid-area: feat;
+  }
+  .content{
+    /* Set elements grid-area here */
+    grid-area: main;
+  }
+
+In this section we covered linking webpages together, with each page using its own custom CSS Grid layout. But what happens when people actually start using our web blog on different size screens?!?! Up next we'll cover how to get responsive!
+
+Further Research
+For more on Grid Layouts, see the below articles.
+* Creating complex Grid layouts
+  https://rachelandrew.co.uk/archives/2015/02/04/css-grid-layout-creating-complex-grids/
+* Nesting & overlapping of Grid items
+  https://gridbyexample.com/examples/example21/
+
 
 
 2.3 Media Queries
 ---------------------------------------
+While media queries can be used for a variety of things and in a number of ways, we are going to focus on what are called breakpoints, which are the viewport width at which we want our design to change. We then write the code inside that media query, with a set breakpoint, that we want to go into effect only when the viewport width that the app is being viewed on is at least the breakpoint width. Only the CSS that we want to change needs to go here - the original CSS rules will all still apply, and only the new CSS rules written inside the media query will override any pre-existing rules.
+
+Key Term
+viewport - the area of the window in which web content can be seen. We use the dimensions of the viewport (usually the width, but sometimes the height) as the basis of our media queries.
+
+For more information about viewport see
+* What is a viewport?
+  https://developer.mozilla.org/en-US/docs/Web/CSS/Viewport_concepts#what_is_a_viewport
+* Using the viewport meta tag to control layout on mobile browsers
+  https://developer.mozilla.org/en-US/docs/Mozilla/Mobile/Viewport_meta_tag
+
 
 
 2.4 Adding Media Queries in Code
 ---------------------------------------
+Adding Media Queries in Code
+Media queries are used to set different style rules for different devices or sized screens. We use breakpoints to set the condition of a media query. The logic is:
+
+@media(feature:value)
+Here media features are aspects of the device that our media (website) is being viewed on. The media feature we are most interested in for this lesson is width, which allows us to evaluate the viewport width of the browser and set conditions based on that evaluation. We actually write this feature min-width (or max-width) because width is one of many media features that are range features, which means they can be prefixed with min- or max- to express constraints, which is what we're looking for with our breakpoints! If the constraint of the breakpoint (viewport width being in the range below our breakpoint) is broken (the width is larger than the breakpoint) the new CSS rule takes effect. Here is an example of how that could look in action:
+
+@media(min-width:900px) {
+  body{
+   background:red;
+ }
+}
+
+In this example if the viewport width is greater than 900px the background of the webpage would turn red.
+
+Media queries are used to create responsive layouts using breakpoints. Below is an example of the syntax that is used for creating media queries:
+
+@media(min-width:1100px) {
+  body{
+    font-size: 27px;
+  }
+}
+In the example above, if the browser width of the webpage being viewed is above 1100px wide, then the font-size would become 27px.
+
+Media queries can help change the layout for different screen sizes
+
+QUIZ QUESTION
+Which of the following is the correct syntax for media queries with a responsive breakpoint?
+
+@media(min-width:800px) {
+  .container {
+    border: 2px solid blue;
+  }
+}
+
 
 
 2.5 Multiple Breakpoints
