@@ -156,6 +156,137 @@ Which of the following is the correct syntax for media queries with a responsive
 
 2.5 Multiple Breakpoints
 ---------------------------------------
+Multiple Breakpoints
+We have seen how to set a breakpoint and use Media Queries to create different layouts for smaller screens and larger screens, but there are some development moments that will call for 3 possible layouts.
+
+A simple example would be creating 2 different breakpoints so that up to x width one set of CSS rules apply, then between x and y width a second set would apply, and then for anything beyond a width of y a third set of CSS rules would apply.
+
+Here is an example of what that code could look like:
+
+/* Anything smaller than first breakpoint 600px */
+.container {
+  // rules for small screen
+}
+
+/* Medium Screens */
+@media (min-width: 600px) and (max-width:900px) {
+  .container {
+    // rules for medium-sized screen
+  }
+}
+
+/* Large Screens */
+@media (min-width:901px) {
+  .container {
+    // rules for large screen
+  }
+}
+
+In this example, the medium screens media query is new, and we use the keyword and to build a complex media query that evaluates both a min and max to create a range for the CSS rules to apply, in this case if the width of the viewport is between 600px-900px.
+
+/* Mobile first */
+.container{
+  display:grid;
+  grid-template-columns: 300px 300px 300px;
+  grid-template-rows: 250px 600px;
+  border: 2px solid yellow;
+    /* Use grid-template-area to create a mobile layout where each named space occupies its own row */
+  grid-template-areas:
+    "hd"
+    "sd"
+    "main"
+    "ft";
+}
+.box{
+    border: 1px solid red;
+    background: #F8FA9D;
+    }
+
+  .header{
+    grid-area:hd;
+  }
+  .footer{
+    grid-area: ft;
+  }
+  .sidebar{
+    grid-area: sd;
+  }
+  .content{
+    grid-area: main;
+  }
+
+/* If Screen Is Wide Enough */
+@media(min-width:900px){
+.container{
+      display:grid;
+      grid-template-columns: 300px 300px 300px;
+      grid-template-rows: 250px 600px;
+      grid-template-areas:
+      "hd hd hd hd hd hd hd hd"
+      "sd sd main main main main main main"
+      "ft ft ft ft ft ft ft ft";
+      border: 2px solid red;
+  }
+}
+
+
+
+/* Mobile First Layout */
+.container{
+      display:grid;
+      grid-template-columns: 300px 300px 300px;
+      grid-template-rows: 250px 600px;
+      border: 2px solid yellow;
+    /* Use grid-template-area to create a mobile layout where each named space occupies its own row */
+      grid-template-areas:
+    "hd"
+    "sd"
+    "main"
+    "ft";
+    border: 5px solid aquamarine;
+
+  }
+  .box{
+    border: 1px solid red;
+    background: #F8FA9D;
+    }
+
+  .header{
+      grid-area:hd;
+  }
+
+  .footer{
+    grid-area: ft;
+  }
+  .feature{
+    grid-area: feat;
+  }
+  .content{
+    grid-area: main;
+  }
+
+  /* If wide enough */
+  @media(min-width:900px){
+    .container{
+      display:grid;
+      grid-template-columns: 300px 300px 300px;
+      grid-template-rows: 250px 600px;
+      grid-template-areas:
+      "hd hd hd hd hd hd hd hd"
+      "feat feat feat feat feat feat feat feat"
+      "main main main main main main main main"
+      "ft ft ft ft ft ft ft ft";
+      border: 2px solid yellow;
+  }
+}
+
+Complex media queries can be built using the keyword and to bound CSS rules between a range using min-width and max-width.
+
+Further Research
+Media Queries are actually a vast landscape of possibility, most of which you will probably never use - but, having a strong grasp of media queries and responsive breakpoints is essential for a web developer. For more information see the MDN docs entry on using Media Queries.
+
+https://developer.mozilla.org/en-US/docs/Web/CSS/Media_Queries/Using_media_queries
+
 
 
 
