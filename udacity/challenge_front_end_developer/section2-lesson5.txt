@@ -292,6 +292,9 @@ https://developer.mozilla.org/en-US/docs/Web/CSS/Media_Queries/Using_media_queri
 
 2.6 Building Responsive Layouts with Flexbox & Grid
 ---------------------------------------
+One of the most useful features of CSS grid is that you can easily nest grids inside each other to create elegant, complex layouts. To nest CSS grids simply set the display property of the container element to grid and then select the child grid item you want to make the nested grid and set the display property of that element to grid as well! The same grid rules you’ve been learning still apply! Easy as that!
+
+￼
 
 
 2.7 Nesting Grids in Practice
