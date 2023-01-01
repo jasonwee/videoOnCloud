@@ -299,8 +299,109 @@ One of the most useful features of CSS grid is that you can easily nest grids in
 
 2.7 Nesting Grids in Practice
 ---------------------------------------
+Nesting Grids in Practice
+In the screencast below you’ll see how nesting grids works in practice, and how a nested grid can be used to make a simple image gallery.
 
+Nesting CSS grids is simple and can be done simply by using the display:grid rule for both a parent and child element.
 
+Here is how that could look with real code:
+
+.container {
+  display:grid;
+  // ...
+}
+
+#one {
+  display:grid
+}
+We are unable to load your Workspace.
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Exercise 1</title>
+    <meta
+      content="width=device-width, initial-scale=1, maximum-scale=1"
+      name="viewport"
+    />
+    <link rel="stylesheet" href="css/style.css">
+  </head>
+
+  <body>
+  <div class = "container">
+    <div class="header box">Header</div>
+    <div class="sidebar box"><h1>Blog Posts</h1><a href="post.html">Most Recent Post</a></div>
+    <div class="content box">
+<!-- nest grid here -->
+      <div class="nestedGrid">
+        <div><h1>Friday</h1></div>
+        <div><h1>Sunny</h1></div>
+        <div><h1>Jason</h1></div>
+        <div><h1>Chocalate</h1></div>
+      </div>
+    </div>
+    <div class="footer box">Footer</div>
+  </div>
+  </body>
+</html>
+
+.container{
+  display:grid;
+  grid-template-columns: 300px 300px 300px;
+  grid-template-rows: 250px 600px;
+  /* grid-template-columns: repeat(3, 1fr); */
+  /* Initially each element has its own row for small screens */
+  grid-template-areas:
+  "hd"
+  "sd"
+  "main"
+  "ft";
+  border: 2px solid yellow;
+}
+/* add css for nested grid here */
+.nestedGrid{
+  display: grid;
+  grid-template-columns: 50% 50%;
+  grid-template-rows: 50% 50%;
+}
+.nestedGrid > *{
+  border: 2px solid aquamarine;
+}
+.box{
+    border: 1px solid red;
+    background: #F8FA9D;
+    }
+  .header{
+    /* row start/column start/ row end/ column end */
+    grid-area:hd;
+  }
+  .footer{
+    grid-area: ft;
+  }
+  .sidebar{
+    grid-area: sd;
+  }
+  .content{
+    grid-area: main;
+  }
+/* If Screen Is Wide Enough */
+@media(min-width:900px) {
+.container{
+      display:grid;
+      grid-template-columns: 300px 300px 300px;
+      grid-template-rows: 250px 600px;
+      grid-template-areas:
+      "hd hd hd hd hd hd hd hd"
+      "sd sd main main main main main main"
+      "ft ft ft ft ft ft ft ft";
+      border: 2px solid red;
+  }
+}
+
+In this section we covered how to nest grids to make creative layouts for the web, and how CSS grid can be used to create an easy photo gallery for a website or blog.
+
+￼
 
 
 2.8 Course Recap
