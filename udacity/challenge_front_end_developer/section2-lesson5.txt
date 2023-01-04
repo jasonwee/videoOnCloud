@@ -411,6 +411,9 @@ In this section we covered how to nest grids to make creative layouts for the we
 
 2.9 Instructor Interview
 ---------------------------------------
+Instructor Interview
+Here, you’ll get a chance to listen to Daniel talk about how he first learned front end development, some important tips for you on your front end journey, common mistakes developers might make, as well as a preview of where you’ll soon be going in the program!
+
 
 
 
