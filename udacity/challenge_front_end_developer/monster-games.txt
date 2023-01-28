@@ -1,0 +1,965 @@
+#field {
+  display: grid;
+  /* type here */
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: 100px 1fr;
+  gap: 15px 15px;
+}
+
+#greenLand {
+  /* type here */
+  grid-column-start: span 2;
+}
+
+
+
+
+#field {
+  display: grid;
+  /* type here */
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(4, 1fr);
+  gap: 15px 15px;
+}
+
+#redLand {
+  /* type here */
+  grid-row-start: 3;
+  grid-row-end: 5;
+  grid-column-start: 2;
+  grid-column-end: 4;
+}
+
+
+#field {
+  display: grid;
+  /* type here */
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(4, 1fr);
+  gap: 15px 10px;
+}
+
+#greenLand {
+  /* type here */
+  grid-column: 2 / span 2;
+  grid-row: 3 / span 2;
+}
+
+#redLand {
+  /* type here */
+  grid-column: 4 / span 1;
+  grid-row: 1 / span 3;
+}
+
+
+
+
+
+
+#field {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(4, 1fr);
+  gap: 15px;
+  /* type here */
+  grid-template-areas: "mn mn mn"
+  "mn mn mn"
+  "mn mn mn";
+}
+
+#redLand {
+  /* type here */
+  grid-area: mn;
+}
+
+
+
+
+
+#field {
+  display: grid;
+  /* type here */
+  grid-template-columns: 1fr 2fr 1fr;
+  grid-template-rows: repeat(4, 1fr);
+  gap: 15px;
+  grid-template-areas: "mn mn hn"
+  "mn mn hn"
+  "mn mn hn"
+  ". . hn"
+}
+
+#greenLand {
+  /* type here */
+  grid-area: hn
+}
+
+#redLand {
+  /* type here */
+  grid-area: mn;
+}
+
+
+#field {
+  display: grid;
+  /* type here */
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  gap: 15px 10px;
+  grid-template-areas: "hn hn ."
+  "hn hn ."
+  "mn mn mn"
+}
+
+#greenLand {
+  /* type here */
+  grid-area: hn
+}
+
+#redLand {
+  /* type here */
+  grid-area: mn;
+}
+
+
+#field {
+  display: grid;
+  /* change something bellow */
+  grid-template-columns: min-content 1fr;
+  grid-template-rows: 1fr 1fr;
+  
+}
+
+
+#field {
+  display: grid;
+  /* type here */
+  grid-template-columns: min-content 1fr;
+  grid-template-rows: 1fr min-content;
+}
+
+
+
+#field {
+  display: grid;
+  /* type here */
+  grid-template-columns: max-content 1fr;
+  grid-template-rows: repeat(2, 1fr);
+}
+
+
+
+#field {
+  display: grid;
+  /* change something below */
+  grid-template-columns: minmax(250px, 1fr) 1fr;
+  grid-template-rows: 1fr 1fr;
+  gap: 15px;
+  
+}
+
+
+#field {
+  display: grid;
+  /* type here */
+  grid-template-columns: minmax(min-content, 200px) 150px;     
+  grid-template-rows: repeat(2, 1fr);
+  
+}
+
+
+#field {
+  display: grid;
+  /* type here */
+  grid-template-columns: minmax(max-content, 200px) minmax(min-content, auto);     
+  grid-template-rows: repeat(2, 1fr);
+}
+
+
+
+#field {
+  display: grid;
+  /* change something below */
+  grid-template-columns: repeat(auto-fit, 150px);
+  gap: 15px;
+  
+}
+
+
+.container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+}
+
+.container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+}
+
+
+#field {
+  display: grid;
+  /* type here */
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 15px;
+
+}
+
+
+
+#field {
+  display: grid;
+  /* type here */
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+  gap: 15px;
+}
+
+
+#field {
+  display: grid;
+  gap: 20px;
+  /* type here */
+  grid-template: 100px 1fr 100px / 100px 1fr 100px;
+}
+
+
+
+#field {
+  display: grid;
+  /* type here */
+  gap: 15px;
+  grid-template-areas: "mn mn mn"
+  ". hn hn"
+  ". hn hn"
+}
+
+#greenLand {
+  /* type here */
+  grid-area: hn
+}
+
+#redLand {
+  /* type here */
+  grid-area: mn;
+}
+
+
+
+
+/* grid-template-areas grid-template-rows / grid-template-column values */
+
+#field {
+  display: grid;
+  /* type here */
+  gap: 15px;
+  grid-template: "red red ." 100px
+                 "blue green green" 200px
+                 "blue green green" 1fr / 1fr 1fr 1fr;    
+}
+
+#greenLand {
+  /* type here */
+  grid-area: green;
+}
+
+#redLand {
+  /* type here */
+  grid-area: red;
+}
+
+#blueLand {
+  /* type here */
+  grid-area: blue;
+  
+}
+
+
+
+#field {
+  display: grid;
+  grid-template: repeat(3, 1fr) / repeat(3, 1fr);
+  gap: 20px;
+  /* type here */
+  grid-auto-flow: column;
+}
+
+#greenLand {
+  grid-column-start: 3;
+  
+}
+
+
+
+#field {
+  display: grid;
+  grid-template: repeat(4, 1fr) / repeat(4, 1fr);
+  gap: 20px;
+  /* type here */
+  grid-auto-flow: dense;
+}
+
+#field div:nth-child(3n) {
+  grid-column: span 3;
+}
+
+
+
+#field {
+  display: grid;
+  /* type here */
+  gap: 15px;
+  grid-template: repeat(4, 1fr) / repeat(4, 1fr);
+  grid-auto-flow: column;
+}
+
+  
+#greenLand {
+  grid-column: span 3;
+}
+
+
+
+
+
+
+
+
+
+
+#field {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  /* type here */
+  grid-auto-columns: 1fr;
+}
+
+#redLand {
+  grid-column: 3;
+  
+}
+
+
+
+
+#field {
+  display: grid;
+  gap: 20px;
+  grid-template: 1fr 1fr / 1fr 1fr;
+  /* type here */
+  grid-auto-rows: 100px;
+}
+
+
+
+
+#field {
+  display: grid;
+  grid-template: 1fr 1fr / 1fr 1fr;
+  /* type here */
+  gap: 20px;
+  grid-auto-columns: 100px;
+  grid-auto-rows: 100px;
+}
+
+#redLand {
+  /* type here */
+  grid-column: 3;
+  grid-row: 3;
+}
+
+
+
+
+
+
+
+
+
+
+#field {
+  display: grid;
+  grid-template: 1fr 1fr / 1fr 1fr;
+  /* type here */
+  gap: 15px;
+  grid-auto-columns: 1fr;
+  grid-auto-rows: 100px 150px;
+  grid-auto-flow: column;
+}
+
+#redLand {
+  grid-column: 3;
+  grid-row: 4;
+  
+}
+
+
+
+
+
+
+
+
+
+
+
+
+#field {
+  display: grid;
+  gap: 15px;
+  grid-template-columns: repeat(3, 1fr);
+  grid-auto-rows: 100px;
+  /* change something below */
+  justify-items: left;
+  
+}
+
+#field > div {
+  width: 75%;
+  
+}
+
+
+#field {
+  display: grid;
+  gap: 15px;
+  grid-template-columns: repeat(2, 1fr);
+  grid-auto-rows: 100px;
+  /* type here */
+  justify-items: right;
+}
+
+#field > div {
+  width: 70%;
+}
+
+
+
+
+
+
+
+
+
+
+
+#field {
+  display: grid;
+  /* type here */
+  grid-template: 100px 1fr / 2fr 1fr;
+  justify-items: center;
+}
+
+#field > div {
+  width: 50%;
+  
+}
+
+
+
+
+
+#field {
+  display: grid;
+  gap: 15px;
+  grid-template: repeat(3, 1fr) / repeat(3, 1fr);
+  /* change something below */
+  align-items: top;
+  
+}
+
+#field > div {
+  height: 50%;
+  
+}
+
+
+
+
+
+#field {
+  display: grid;
+  grid-template: repeat(3, 1fr) / repeat(2, 1fr);
+  /* type-here */
+  align-items: end;
+}
+
+#field > div {
+  height: 50%;
+  
+}
+
+
+
+
+
+#field {
+  display: grid;
+  /* type-here */
+  grid-template: 2fr 1fr / repeat(3, 1fr) ;
+  align-items: center;
+}
+
+#field > div {
+  height: 50%;
+  
+}
+
+
+
+
+
+
+
+
+
+
+#field {
+  display: grid;
+  /* type-here */
+  grid-template: 1fr 1fr / 2fr 1fr 1fr;
+  align-items: center;
+  justify-items: center;
+}
+
+#field > div {
+  height: 50%;
+  width: 50%;
+  
+}
+
+#greenLand {
+  /* type-here */
+  grid-column: span 2;
+}
+
+
+
+
+#field {
+  display: grid;
+  gap: 15px;
+  grid-template-columns: repeat(3, 1fr);
+  /* type here */
+  place-items: center right;
+}
+
+#field > div {
+  height: 50%;
+  width: 50%;
+}
+
+
+
+
+https://codingfantasy.com/games/css-grid-attack/play?mode=easy&love=true
+level 60
+
+
+
+#field {
+  display: grid;
+  gap: 15px;
+  grid-template: 1fr 1fr / 1fr 1fr;
+  justify-items: end;
+  
+}
+
+#field > div {
+  height: 50%;
+  width: 50%;
+  
+}
+
+#redLand {
+  /* type-here */
+  justify-self: start;
+  
+}
+
+
+
+
+#field {
+  display: grid;
+  gap: 15px;
+  grid-template: 1fr 1fr / 1fr 1fr;
+}
+
+#redLand {
+  height: 50%;
+  width: 50%;
+  /* type here */
+  justify-self: center;
+}
+
+
+
+
+#field {
+  display: grid;
+  /* type here */
+  gap: 15px;
+  grid-template: 1fr 1fr / 200px 1fr;
+}
+
+.redLand {
+  /* type here */
+  height: 50%;
+  width: 50%;
+  justify-self: right;
+}
+
+
+
+
+
+#field {
+  display: grid;
+  /* type here */
+  gap: 15px;
+  grid-template: 1fr 2fr / 1fr 2fr;
+}
+
+.redLand {
+  /* type here */
+  height: 50%;
+  width: 100%;
+  align-self: center;
+}
+
+
+
+
+
+
+#field {
+  display: grid;
+  /* type here */
+  grid-template: repeat(3, 1fr) / repeat(3, 1fr);
+}
+
+.redLand {
+  /* type here */
+  height: 50%;
+  align-self: end;
+}
+
+
+
+
+
+
+
+#field {
+  display: grid;
+  gap: 15px;
+  grid-template: 1fr 1fr / 2fr 1fr;
+  /* type here */
+  align-items: center;
+  justify-items: center;
+}
+
+#field > div {
+  height: 50%;
+  width: 50%;
+  
+}
+
+#redLand {
+  /* type here */
+  justify-self: end;
+  align-self: end;
+}
+
+#greenLand {
+  /* type here */
+  justify-self: start;
+  align-self: end;
+}
+
+
+
+
+
+#field {
+  display: grid;
+  /* type here */
+  grid-template: 1fr 1fr 1fr / 2fr 1fr;
+  place-items: start;
+}
+
+#field > div {
+  height: 50%;
+  width: 50%;
+}
+
+#redLand {
+  /* type here */
+ place-self: center end; 
+}
+
+#greenLand {
+  /* type here */
+  place-self: start end;
+}
+
+
+
+
+
+#field {
+  display: grid;
+  gap: 15px;
+  grid-template-columns: 150px 150px;
+  /* type here */
+  justify-content: center;
+}
+
+
+
+
+
+#field {
+  display: grid;
+  gap: 15px;
+  grid-template-columns: 30% 30%;
+  /* type here */
+  justify-content: right;
+}
+
+
+
+
+
+
+#field {
+  display: grid;
+  /* type here */
+  grid-template: 1fr 1fr / 40% 40%;
+  justify-content: space-evenly;
+  justify-items: end;
+}
+
+#field > div {
+  width: 50%;
+  height: 50%;
+  
+}
+
+
+
+
+
+
+
+#field {
+  display: grid;
+  gap: 15px;
+  grid-template-columns: 1fr 1fr;
+  grid-auto-rows: 100px;
+  /* type here */
+  align-content: center;
+}
+
+
+
+
+
+
+
+#field {
+  display: grid;
+  /* type here */
+  grid-template: 125px 125px / 40% 40%;
+  align-content: end;
+}
+
+
+
+#field {
+  display: grid;
+  /* type here */
+  grid-template-columns: 1fr 100px;
+  grid-auto-rows: 100px;
+  align-content: space-between;
+}
+
+
+
+
+
+
+#field {
+  display: grid;
+  /* type here */
+  gap: 15px;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(4, 1fr);
+  
+  
+}
+
+#greenLand {
+  /* type here */
+  grid-column: 2 / 4;
+  grid-row: 2 / 5;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#field {
+  display: grid;
+  /* type here */
+  grid-template: repeat(3, 1fr) / repeat(3, 1fr);
+  gap: 15px 10px;
+  grid-template-areas: "gl gl bl "
+  "gl gl bl"
+  "rl rl rl";
+}
+
+#greenLand {
+  /* type here */
+  grid-area: gl;
+}
+
+#redLand {
+  /* type here */
+  grid-area: rl;  
+}
+
+#blueLand {
+  /* type here */
+    grid-area: bl;
+}
+  
+  
+  
+  
+  
+  
+#field {
+  display: grid;
+  /* type here */
+  grid-template-columns: minmax(max-content, 1fr) minmax(min-content, auto);     
+}
+
+
+
+
+
+
+
+
+
+
+#field {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, 1fr);
+  /* type here */
+  gap: 15px;
+  grid-auto-rows: 100px;
+  align-content: space-between;
+}
+
+#field div:nth-child(3n) {
+  /* type here */
+  grid-column: span 3;
+}
+
+
+
+
+
+
+
+
+#field {
+  /* type here */
+  display: grid;
+  gap: 15px;
+  grid-template: repeat(2, 1fr) / 100px 1fr 1fr;
+  grid-template-areas: "gl . bl "
+  "gl rl ."
+}
+
+#greenLand {
+  /* type here */
+  grid-area: gl;
+}
+
+#redLand {
+  /* type here */
+  grid-area: rl;  
+}
+
+#blueLand {
+  /* type here */
+  grid-area: bl;
+  height: 50%;
+  align-self: center;
+}
+
+
+
+
+
+
+
+#field {
+  /* type here */
+  display: grid;
+  gap: 15px;
+  grid-template: repeat(4, 1fr);
+}
+
+#greenLand {
+  /* type here */
+  grid-column: 2 / span 3;
+  grid-row: 3 / 5;
+}
+
+#redLand {
+  /* type here */
+  grid-column: 3 / span 2;
+  grid-row: 1 / 4;  
+}
+
+
+
+
+
+#field {
+  /* type here */
+  display: grid;
+  grid: repeat(3, 1fr);
+}
+
+#greenLand {
+  /* type here */
+  grid-column: 1 / 3;
+  grid-row: 1;
+}
+
+#redLand {
+  /* type here */
+  grid-column: 2 / 4;
+  grid-row: 1 / 3;
+}
+
+#blueLand {
+  /* type here */
+  grid-column: 2 / 3;
+  grid-row: 1 / 5;
+}
