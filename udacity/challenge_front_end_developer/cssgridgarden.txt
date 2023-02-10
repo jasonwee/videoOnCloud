@@ -194,3 +194,34 @@ grid-column-start: -4;
 ---------------------------------------------------
 
 
+#garden {
+  display: grid;
+  grid-template-columns: 20% 20% 20% 20% 20%;
+  grid-template-rows: 20% 20% 20% 20% 20%;
+}
+
+#water {
+￼ grid-area: 1 / 2 / 4 / 6;
+}
+
+---------------------------------------------------
+
+grid-row-start, grid-column-start, grid-row-end, followed by grid-column-end
+
+#garden {
+  display: grid;
+  grid-template-columns: 20% 20% 20% 20% 20%;
+  grid-template-rows: 20% 20% 20% 20% 20%;
+}
+
+#water-1 {
+  grid-area: 1 / 4 / 6 / 5;
+}
+
+#water-2 {
+￼grid-area: 2 / 3 / 5 / 6;
+}
+
+---------------------------------------------------
+
+
