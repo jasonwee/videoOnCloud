@@ -66,6 +66,71 @@ align-items: flex-end;
 
 -------------------------------------------------
 
+#pond {
+  display: flex;
+￼ flex-direction: row-reverse;
+  justify-content: start;
+}
+
+
+-------------------------------------------------
+
+#pond {
+  display: flex;
+￼ flex-direction: column;
+  justify-content: end;
+}
+
+
+-------------------------------------------------
+
+#pond {
+  display: flex;
+￼ flex-direction: column-reverse;
+  justify-content: space-between;
+}
+
+
+-------------------------------------------------
+
+#pond {
+  display: flex;
+￼ flex-direction: row-reverse;
+  justify-content: center;
+  align-items: end;
+}
+
+
+
+-------------------------------------------------
+
+#pond {
+  display: flex;
+}
+
+.yellow {
+  order: 2;
+}
+
+
+-------------------------------------------------
+
+#pond {
+  display: flex;
+}
+
+.red {
+￼ order: -1;
+}
+
+
+-------------------------------------------------
+
+
+
+-------------------------------------------------
+
+
 
 -------------------------------------------------
 
