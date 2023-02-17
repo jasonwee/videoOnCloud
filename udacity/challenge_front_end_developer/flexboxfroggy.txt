@@ -126,10 +126,27 @@ align-items: flex-end;
 
 -------------------------------------------------
 
+#pond {
+  display: flex;
+  align-items: flex-start;
+}
+
+.yellow {
+  align-self: flex-end;
+}
 
 
 -------------------------------------------------
 
+#pond {
+  display: flex;
+  align-items: flex-start;
+}
+
+.yellow {
+align-self: flex-end;
+order: 2;
+}
 
 
 -------------------------------------------------
