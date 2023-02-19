@@ -151,4 +151,64 @@ order: 2;
 
 -------------------------------------------------
 
+#pond {
+  display: flex;
+￼ flex-wrap: wrap;
+}
+
+
+-------------------------------------------------
+
+#pond {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+}
+
+
+-------------------------------------------------
+
+#pond {
+  display: flex;
+  flex-flow: column wrap;
+}
+
+
+-------------------------------------------------
+
+#pond {
+  display: flex;
+  flex-wrap: wrap;
+  align-content: flex-start;
+}
+
+-------------------------------------------------
+
+#pond {
+  display: flex;
+  flex-wrap: wrap;
+  align-content: flex-end;
+}
+
+
+-------------------------------------------------
+
+#pond {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column-reverse;
+  align-content: center;
+}
+
+-------------------------------------------------
+
+#pond {
+  display: flex;
+flex-flow: column-reverse wrap-reverse;
+justify-content: center;
+align-content: space-between;
+}
+
+
+
 
