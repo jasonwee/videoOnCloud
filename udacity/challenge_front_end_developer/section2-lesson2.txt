@@ -59,6 +59,7 @@ selector:pseudo-class {
 }
 
 For more information on pseudo-classes, see the Mozilla Dev Docs here.
+https://developer.mozilla.org/en-US/docs/Web/CSS/Pseudo-classes
 
 QUIZ QUESTION
 Which of the following correctly demonstrated the syntax for CSS pseudo classes?
@@ -80,6 +81,7 @@ These attribute selectors try to match an exact attribute value:
 * [attr] This selector will select all elements with the attribute attr, whatever its value.
 * [attr=val] This selector will select all elements with the attribute attr, but only if its value is val.
 * [attr~=val] This selector will select all elements with the attribute attr, but only if val is one of a space-separated list of words contained in attr's value. (This one is a bit more complex, so checking some documentation might be helpful.)
+https://developer.mozilla.org/en-US/docs/Web/CSS/Pseudo-classes
 
 QUIZ QUESTION
 Using an attribute selector, how would you select an <img> element with the attribute of alt?
