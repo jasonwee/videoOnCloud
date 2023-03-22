@@ -34,6 +34,22 @@ What is responsive web design and how can it further improve my webpage?
 1.2 Example Blog Websites
 ---------------------------------------
 
+Example Blog Websites
+Here, we'll provide you with some examples of the final look of the blog website you will build as part of your project. Note that these use placeholder text, which you will also be allowed to utilize in the project instead of needing to type out all of your own blog posts (although you are certainly encouraged to do so!).
+
+Note that while these examples include most, if not all, of the requirements under the project rubric, the exact layout and styling is completely up to you. The bottom of the rubric contains some extra ways to stand out, but customizing the layout & styling of your blog website is a great way to create a unique website of your own regardless.
+
+Example 1
+In the first example below, the website does not utilize a design system (which you do not need to use in the project, but it's one thing to consider as you build your front end skills).
+
+Website
+
+Example 2
+In this example, the page does use a design system (which is included in the final screenshot). You should be able to notice the use of the design system's items on both the main blog website and on the example blog post. You can also check out Veritas, Udacity's design system (if you choose to implement one, yours does not need to be anywhere near as detailed).
+
+Hopefully these examples help to get you thinking on what you want to build for your own personal blog website! If you need some additional tips to get started, read on for the next page on Development Strategy.
+
+
 
 
 1.3 Development Strategy
