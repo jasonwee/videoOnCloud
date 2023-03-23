@@ -54,16 +54,93 @@ Hopefully these examples help to get you thinking on what you want to build for 
 
 1.3 Development Strategy
 ---------------------------------------
+Development Strategy
+In this project, you'll write code across a handful of HTML and CSS files. Note that it's very important that you plan your project before you start writing any code! Break your project down into small pieces of work and strategize your approach to each one. With these bite-sized amounts, it'll be easier to debug and fix any issues that appear.
 
+Feel free to implement your own design workflow, but if you get stuck -- here is a brief primer to get you up and running!
+
+Decide on the overall structure of your project. You'll want separate HTML files, and related CSS files, for each piece of the website: the main page, a blog post, and the (optional) design system (feel free to add more!). Note that these should not all fall in the parent directory, but should also be organized into subdirectories.
+Draw out some mock pages of the website. Even you aren't confident in your own drawing skills, that's okay - just a quick sketch of the different headers, boxes, etc. can help you think through what you want to do later with the layout.
+(Optional) Begin considering your design system. This is really 2a, but doing a first draft of your webpages can help you take the first steps toward the design system. You don't need to build the page out yet, but hopefully drawing these pages has you thinking more in-depth on how everything should look. If you want some ideas, you can also check out Veritas, Udacity's design system (yours does not need to be anywhere near as detailed).
+Start building out the HTML for the main page. Building out the HTML will allow you to start looking at the basics of what you are building, whether in the browser or in your IDE. Make sure to take a look at the Udacity HTML Style Guide as well from the get-go - it will be easier to follow this throughout than to have to re-format all your code once you've finished. Need a refresher? Head back into the lesson to review HTML structure!
+Build the HTML for your example blog post. Now that you've made one HTML page already, you're on a roll! Think about what items you might want on the blog post that weren't present on the main page, and vice versa.
+(Optional) Formalize your design system. Now that you have the primary HTML pages built, it's time to formalize your approach to design and styling. Note that you are fully able to iterate on this later, but make sure you keep the design system consistent to what is in your actual CSS coming up. You can make the HTML page for the design system at this time.
+Begin styling your pages with CSS. You should have a primary CSS file that is linked to from each of the HTML pages, and then import separate CSS files for each page into this primary CSS file. Be sure to take a look at the Udacity CSS Style Guide, and if you are using an (optional) design system, make sure you are staying true to it (or update it accordingly). Note that you need to use both Flexbox and Grid per the project rubric as part of your CSS.
+Take a look back at your initial drawings, and iterate. Is the page coming together as you initially planned? It's perfectly fine to have decided to go a different direction than you drew out, but this is a good chance to see if you are missing something you wanted on the page. From there, iterate, iterate, iterate, until each page looks how you want it to look.
+Link between pages. If your project structure is set up correctly and you add the appropriate links within your HTML, a user should be able to click on those links to go between the main page, an example blog post, and the (optional) design system without issue. Note that it is fine to have certain links, like "Subscribe", be fake links.
+Test and more iteration. Finally, just make sure you have tested out that everything on each page is working and looks as you want it to look. Take another look at the project rubric to double-check you have covered each item, and if you want, try to implement some of the ways to stand out at the end of the rubric. Deploying to Github Pages, for instance, is a good way to get your project up live where you can check it out on multiple devices, and even show your friends and family your work.
+Version Control
+Although not a requirement, we recommend using Git from the very beginning. Make sure to commit often and to use well-formatted commit messages that conform to our Git Style Guide.
+
+Udacity Style Guides
+You should write your code and markup to meet the specifications provided in these style guides:
+
+CSS Style Guide
+HTML Style Guide
+Git Style Guide
+Make sure to check the project rubric for specific requirements.
 
 
 1.4 A Note on Style Guides
 ---------------------------------------
+A Note on Style Guides
+A Note on Style Guides
+As part of the project, you will generally follow the Udacity Style Guides on HTML and CSS. Style guides help to make your code more readable, useable, and easier to debug. Note that the project rubric has some of its own specific styling to follow.
+
+Using a consistent style in your code is incredibly important as you progress on your developer journey. Of course, Udacity's style guide is not the only one out there, but it is the one you will use on your projects. There are a number of style guides available - the best one is the one used by the people who are paying you.
+
+We did not focus as much on a specific style in the lessons, so you could focus more on learning each of the topics, but now, you'll want to make sure to integrate the style guide guidelines from the start - it's much easier to do so throughout, and only make a few fixes near the end, than to go back and re-style everything once you are finished.
+
+An example
+Let's take a quick look at an example of why following a style guide can be helpful for others viewing your code, as well as yourself.
+
+First, here is some unindented HTML, where everything is to the left.
+
+<table>
+<thead>
+<tr>
+<th scope="col">Income</th>
+<th scope="col">Taxes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>$5.00</td>
+<td>$4.50</td>
+</tr>
+</tbody>
+</table>
+It's a little difficult to see exactly what elements are where in this HTML. Especially as you get into much longer HTML files and webpages, this could quickly become impossible to read, increasing the likelihood of errors and hours spent debugging.
+
+Now, how about the same code, but with indentation for each level of child elements?
+
+<table>
+    <thead>
+        <tr>
+            <th scope="col">Income</th>
+            <th scope="col">Taxes</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>$5.00</td>
+            <td>$4.50</td>
+        </tr>
+    </tbody>
+</table>
+Both of these will display the same thing:
+
+Income	Taxes
+$5.00	$4.50
+Even though the end result is the same, consistent styling will greatly increase readability of your code, reduce debugging time, and be much more impressive for a potential employer to look at.
+
 
 
 
 1.5 Project Cheat Sheet
 ---------------------------------------
+
+https://video.udacity-data.com/topher/2019/October/5d962d17_nd0011-p1-cheat-sheet/nd0011-p1-cheat-sheet.pdf
 
 
 
