@@ -1,7 +1,7 @@
 
 
 
-1.1 Getting Started 
+2.1 Getting Started 
 ---------------------------------------
 Getting Started
 Introduction
@@ -31,7 +31,7 @@ How can I use Flexbox and Grid to easily create a layout?
 What is responsive web design and how can it further improve my webpage?
 
 
-1.2 Example Blog Websites
+2.2 Example Blog Websites
 ---------------------------------------
 
 Example Blog Websites
@@ -52,7 +52,7 @@ Hopefully these examples help to get you thinking on what you want to build for 
 
 
 
-1.3 Development Strategy
+2.3 Development Strategy
 ---------------------------------------
 Development Strategy
 In this project, you'll write code across a handful of HTML and CSS files. Note that it's very important that you plan your project before you start writing any code! Break your project down into small pieces of work and strategize your approach to each one. With these bite-sized amounts, it'll be easier to debug and fix any issues that appear.
@@ -81,7 +81,7 @@ Git Style Guide
 Make sure to check the project rubric for specific requirements.
 
 
-1.4 A Note on Style Guides
+2.4 A Note on Style Guides
 ---------------------------------------
 A Note on Style Guides
 A Note on Style Guides
@@ -137,14 +137,14 @@ Even though the end result is the same, consistent styling will greatly increase
 
 
 
-1.5 Project Cheat Sheet
+2.5 Project Cheat Sheet
 ---------------------------------------
 
 https://video.udacity-data.com/topher/2019/October/5d962d17_nd0011-p1-cheat-sheet/nd0011-p1-cheat-sheet.pdf
 
 
 
-1.6 Submit project
+2.6 Submit project
 ---------------------------------------
 
 
