@@ -1,0 +1,68 @@
+
+
+3.2.1 Introduction
+---------------------------------------
+Course Outline
+You'll be learning so many things in this course! Here are the topics for each lesson:
+
+* Lesson 1 - The Document Object Model
+* Lesson 2 - Creating Content with JavaScript
+* Lesson 3 - Working with Browser Events
+* Lesson 4 - Performance
+
+In Lesson 1, we'll take a dive into what the Document Object Model (DOM) is, how it gets created, and how we can access it with JavaScript.
+
+In Lesson 2, you'll learn to interact with page content using JavaScript. You'll use the skills gained from the first lesson to JavaScript and the DOM to update existing page content, create new page content, add new content to the page, programmatically remove page content, and finally how to style page elements.
+
+In Lesson 3, you'll learn about browser events. There is an entire world of thousands of browser events that are happening when you interact with a website. You can't see them directly, but you'll learn about them, how to listen for them, and how to respond when they occur.
+
+In Lesson 4, you'll learn about Performance. It's never too early to start thinking about the performance implications of code. In this course we'll be writing code that can drastically change website (both its content and its looks!), so we need to make sure that the code we write is both functional and efficient.
+
+As you can see, this course is packed with a ton of information! I hope you're excited to begin!
+
+Being Successful
+To be successful in this program, there are a number of technologies that you need to know how to use:
+
+* HTML
+* CSS
+* JavaScript
+
+With JavaScript, though, it's imperative that you understand the basics of the language (variables, data types, loops, etc.). The course is called "JavaScript and the DOM", so JavaScript knowledge is vital for you to succeed.
+
+The following are a few quiz questions to get you back in the mindset of writing JavaScript.
+
+
+Quiz Question
+￼
+Which of the following is the correct way to declare a variable in JavaScript? (assume each line is run in isolation)
+
+const name = 'Miguel';
+var name = 'Orvin';
+
+
+Quiz Question
+￼
+Using the code below, which of the following correctly access the string 'Malaysia'?
+
+const locations = ['Florida', 'England', 'Malaysia', 'South Africa', 'Fiji', 'China'];
+￼
+locations[2];
+
+
+
+Want to Brush Up?
+Hopefully these JavaScript challenges were not too rough for you! These are some of the JavaScript skills that you'll need throughout this course.
+
+If you did find some of these a bit challenging, it's probably a good idea to brush up a bit on some of your JavaScript. Check out Intro to JavaScript for a refresher on these techniques!
+
+Throughout this course, you'll be using lot of fundamental JavaScript skills, so if you're feeling a bit rusty, make sure to brush up on them now before we start diving into this new content.
+
+And speaking of this new content, we're going to be covering some really exciting stuff!
+
+Throughout this course, you'll level up not only your web knowledge, but also your browser and JavaScript knowledge, so get excited!
+￼
+
+
+
+
+
