@@ -167,4 +167,71 @@ Further Research
 
 
 
+3.2.3 Selecting Page Elements with CSS selectors
+---------------------------------------
+
+A CSS Mindset
+
+You're probably used to seeing (and writing!) a lot of this kinda stuff:
+
+.header {
+    max-width: 100%;
+    margin-left: auto;
+    margin-right: auto
+}
+
+.header.header--clone .header__navbar {
+    height: 4.5rem
+}
+
+.header.header--stick {
+    top: 0;
+    background-color: #ffffff;
+    z-index: 8000;
+    box-shadow: 0px 1px 2px rgba(0,0,0,0.1)
+}
+
+.header__navbar {
+    max-width: 73.75rem;
+    margin-left: auto;
+    margin-right: auto;
+    height: 4.5rem;
+    padding: 0 1.5em
+}
+
+...you know, CSS! The skills that you've learned writing CSS will help you in this section!
+
+With this in mind, let's make sure that you're comfortable answering the following questions.
+
+
+Quiz Question
+￼
+Which of the following will style an element by its ID?
+
+#footer { ... }
+
+￼
+￼
+Quiz Question
+￼
+Which of the following will style an element by its class?
+
+.left-nav { ... }
+.id { ... }
+
+￼
+￼
+Quiz Question
+￼
+p { ... }
+
+
+So this was a quick review on how to select elements by ID, class, and tag. Believe it or not, being able to select HTML elements this way is actually going to be a vital skill in this section where we learn how to access page elements using JavaScript and the DOM!
+
+If you struggled a little bit with this section, perhaps you should do a quick review of CSS by reviewing the HTML and CSS course.
+
+Alrighty - let's get right to it and let the fun begin! 🙌
+
+
+
 
