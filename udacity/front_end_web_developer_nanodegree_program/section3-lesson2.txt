@@ -234,4 +234,168 @@ Alrighty - let's get right to it and let the fun begin! 🙌
 
 
 
+3.2.4 Select Page Element by ID
+---------------------------------------
+
+Select An Element By ID
+Let's take a look at how we can use JavaScript and the DOM to gain access to specific elements using their ID attribute.
+
+Remember the document object from the previous section? Well, we're going to start using it! Remember the document object is an object, just like a JavaScript object. This means it has key/value pairs. Some of the values are just pieces of data, while others are functions (also known as methods!) that provide some type of functionality. The first DOM method that we'll be looking at is the .getElementById() method:
+
+document.getElementById();
+
+If we ran the code above in the console, we wouldn't get anything, because we did not tell it the ID of any element to get! We need to pass a string to .getElementById() of the ID of the element that we want it to find and subsequently return to us:
+
+document.getElementById('footer');
+
+One thing to notice right off the bat, is that we're passing 'footer', not '#footer'. It already knows that it's searching for an ID (its name is "getElementById", for a reason!).
+
+If you'd like to read more about this method, check out its documentation page on MDN: https://developer.mozilla.org/en-US/docs/Web/API/Document/getElementById
+
+Let's use this MDN documentation page to try out using this method.
+
+To recap what we just did:
+
+* we opened the DevTools for the page we were looking at
+* we switched to the Console pane
+* we ran document.getElementById('content'); on the console
+
+Running this code caused the document object to search through its entire tree-like structure for the element that has an ID of "content".
+
+Now it's your turn!
+* I loaded the HTML page
+* I opened the DevTools
+* I switched to the Console pane
+* I used document.getElementById() to locate an element by its ID
+
+￼
+Quiz Question
+￼
+Now, what do you think will happen if you used document.getElementById('<some-nonexistent-ID>') to search for some ID that doesn't actually exist in the HTML page?
+
+null will be returned
+￼
+￼
+Quiz Question
+
+Which of the following will select the element with the ID of logo?
+￼
+document.getElementById('logo');
+
+Write the DOM code to select the element with ID strawberry-banner.
+
+document.getElementById('strawberry-banner');
+
+￼
+Selecting By ID Recap
+In this section, we learned how to select a DOM element by its ID:
+
+.getElementById()
+
+There are a couple of important things to keep in mind about this method:
+
+* it is called on the document object
+* it returns a single item
+
+// select the element with the ID "callout"
+document.getElementById('callout');
+
+Further Research
+.getElementById() on MDN
+
+
+
+3.2.5 Select Page Elements by class or tag
+---------------------------------------
+Selecting Multiple Elements At Once
+
+As I'm sure you remember from learning both HTML structure and CSS styling, an ID should be unique - meaning two or more elements should never have the same ID. Since IDs are unique, and since there will be only one element in the HTML with that ID, document.getElementById() will only ever return at most one element. So how would we select multiple DOM elements?
+
+The next two DOM methods that we'll be looking at that both return multiple elements are:
+
+* .getElementsByClassName()
+* .getElementsByTagName()
+
+Accessing Elements By Their Class
+
+The first method we'll look at is .getElementsByClassName():
+
+document.getElementsByClassName();
+
+Similarly to .getElementById(), if we ran the code above in the console, we wouldn't get anything, because we did not tell it the class to search for! Also just like .getElementById(), .getElementsByClassName() is expecting that we call it with a string of the class we want it to search for/return:
+
+document.getElementsByClassName('brand-color');
+
+If you'd like to read more about this method, check out its documentation page on MDN: https://developer.mozilla.org/en-US/docs/Web/API/Document/getElementsByClassName
+
+Let's use this MDN documentation page to try out using this method.
+
+Beware of the S!
+
+I know we haven't looked at .getElementsByTagName() just yet, but there's something different about .getElementById() compared with both .getElementsByClassName() and .getElementsByTagName() that I want to point out because it can be easy to miss; both .getElementsByClassName() and .getElementsByTagName() have an extra "s" in their name.
+
+The method's name is .getElementsByClassName(), not .getElementByClassName(). Notice the word right in the middle, it's "Elements" not "Element". If you think about it, this actually makes a lot of sense! Since both .getElementsByClassName() and .getElementsByTagName() could return multiple items, their method names tell us that directly. Now compare this with .getElementById() that will only ever return at most one element. Its name has the singular "Element" in it.
+
+I just wanted to point this out because I've been bitten by that missing "s" many-a-time when running code like:
+
+document.getElementByClassName('highlight-spanned');
+
+This code above will not work, because there is no DOM method .getElementByClassName() (with singular "Element").
+
+Accessing Elements By Their Tag
+
+After looking at both .getElementById() and .getElementsByClassName(), the new .getElementsByTagName() method should seem quite easy on the eyes:
+
+document.getElementsByTagName('p');
+
+Let's use this MDN documentation page to try out using this method: https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model/Introduction
+
+Quiz Question
+￼
+Which of the following would correctly select all elements with class: 'splort'?
+
+document.getElementsByClassName('splort');
+
+
+Write the DOM code to select all <article> elements.
+
+document.getElementsByTagName('article');
+
+
+Write the DOM code to select all elements with class: fancy-footer.
+
+document.getElementsByClassName('fancy-footer');
+
+
+What's Returned?
+
+We just saw that .getElementsByClassName() returns an array-like data structure of elements. But what exactly is an element?
+
+In the next section, we'll take the plunge and look at Elements and Nodes.
+
+Selecting Multiple Elements At Once Recap
+
+In this section, we learned two ways to select multiple DOM elements:
+
+* .getElementsByClassName()
+* .getElementsByTagName()
+
+There are a few important things to keep in mind about these two methods:
+
+* both methods use the document object
+* both return multiple items
+* the list that's returned is not an array
+
+// select all elements that have the class "accent-color"
+document.getElementsByClassName('accent-color');
+
+// select all "span" elements
+document.getElementsByTagName('span');
+
+Further Research
+.getElementsByClassName() on MDN
+.getElementsByTagName() on MDN
+
+
+
 
