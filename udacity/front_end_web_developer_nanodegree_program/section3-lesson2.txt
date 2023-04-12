@@ -398,4 +398,104 @@ Further Research
 
 
 
+3.2.6 nodes, elements, and interfaces... on my!
+---------------------------------------
+The Node Interface
+
+Quiz Question
+
+Put these in the correct order of operation.
+
+tag
+token
+nodes
+dom
+
+We looked at this in an earlier section, but let's take one more quick look at what Illya said about how the DOM is constructed.
+
+So to reiterate the process, it's:
+
+* characters
+* tags
+* tokens
+* nodes
+* DOM
+
+But what is a "node", exactly?
+
+⚠️ Interface vs User Interface ⚠️
+The word "interface" might be an unclear word right now, and that's ok. I do want to make sure that you're not connecting this "interface" with a user interface (UI) or a graphical user interface (GUI).
+Our use of "interface" is not related to either a UI or a GUI. Our use of "interface" is a technical, computer science word for a list of properties and methods that are inherited.
+
+Node (with a capital "N"!) is a blueprint that contains information about all of the properties and methods for real nodes (with a lowercase "n"!). If you're not used to them, the words "interface", "property", and "method" can be kind of cryptic at first. Just remember that:
+
+* interface = blueprint
+* properties = data
+* methods = functionality
+
+Let's check out Node on MDN: Node Interface on MDN
+
+So the Node Interface is a blueprint for all of the properties (data) and methods (functionality) that every real node has after it's been created. Now, the Node Interface has a lot of properties and methods, but it's not very specific...I mean, what is a node???
+
+Just like "blueprint for a Building" is not as specific as "blueprint for a house" or "blueprint for a skyscraper". These are more-specific blueprints. And these more-specific blueprints would probably have their own properties and methods that are specific to just houses or just skyscrapers.
+
+This brings us to the "Element Interface".
+
+Element Interface
+
+Just like the Node Interface, the Element Interface is a blueprint for creating elements: Element Interface on MDN
+
+One really important thing about the Element Interface is that it is a descendent of the Node Interface.
+
+Since Element is pointing at Node, this indicates that the Element Interface inherits all of the Node Interface's properties and methods. This means that any element (lowercase "e"!) that was created from the Element Interface is also a descendent from the Node Interface...which means the element (lowercase "e"!) is also a node (lowercase "n"!).
+
+Let's do a little digging around on an element!
+
+Quiz Question
+￼
+Does the .outerHTML property come from the Node Interface or the Element Interface? Check all that apply.
+
+Element Interface
+￼
+Quiz Question
+
+Which interface does the .id property come from?
+
+Element Interface
+
+Quiz Question
+￼
+Which interface does the .textContent property come from?
+￼
+Node Interface
+
+Do you remember the .getElementsByClassName() method on the document object that we looked at previously? While reviewing the Element interface, you might've noticed that it also has a .getElementsByClassName() method! The Element Interface inherits from the Node Interface, not the Document Interface (yep, there's a Document Interface!). The Element Interface has its own .getElementsByClassName() that does the exact same thing as the one on the document object.
+
+This means that you can use the document object to select an element, then you can call .getElementsByClassName() on that element to receive a list of elements with the class name that are descendents of that specific element!
+
+// selects the DOM element with an ID of "sidebar"
+const sidebarElement = document.getElementById('sidebar');
+
+// searches within the "sidebar" element for any elements with a class of "sub-heading"
+const subHeadingList = sidebarElement.getElementsByClassName('sub-heading');
+
+Recap
+
+Hopefully this was an enlightening lesson on a number of fronts! You learned about interfaces, properties, and methods; an interface is like a blueprint, properties are like bits of information or data, and methods are functionality.
+
+We also looked at a couple of specific interfaces:
+
+* Node Interface
+* Element Interface
+
+We saw that both of these interfaces have properties and methods. We also saw how the Element Interface inherits all of the properties and methods from the Node interface.
+
+Further Research
+
+* Node Interface
+* Element Interface
+* list of Web API Interfaces
+
+
+
 
