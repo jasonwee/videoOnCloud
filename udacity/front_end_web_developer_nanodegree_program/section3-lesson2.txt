@@ -498,4 +498,120 @@ Further Research
 
 
 
+3.2.7 more ways to access elements
+---------------------------------------
+
+We've been looking at the:
+
+* .getElementById()
+* .getElementsByClassName()
+* and .getElementsByTagName()
+
+Now these DOM methods are standardized. However, not all browsers support every standard. They do now, for these three methods, but there are hundreds of other methods with varying levels of support.
+
+That's why almost every method on MDN has a Browser compatibility table that lists when each browser started supporting that specific method.
+
+Thankfully, all browsers have pretty much aligned to support the official standard.
+
+However, back in the day, that wasn't the case. You had to write different code to perform the same action in different browsers. Then you had to write code to check which browser you were in to run the correct code for that browser. Let me tell you, it was a bit of a nightmare.
+
+Several JavaScript libraries came along to help mitigate these issues. Let's take a brief look at the jQuery library.
+
+We already reviewed this in a previous section, but let's recap it one more time!
+
+#header {
+    color: 'red';
+}
+
+.header {
+    color: 'red';
+}
+
+header {
+    color: 'red';
+}
+
+Each one of these sets the color to red. The only difference is in the selector; selecting by ID, selecting by class, and selecting by tag. Got it? Good!
+
+You've already learned the DOM methods to select by ID, class, and tag, too:
+
+* .document.getElementById()
+* .document.getElementsByClassName()
+* .document.getElementsByTagName()
+
+Three different methods that do almost the exact same thing. Wouldn't it be awesome if there were a way to do element selecting similar to how CSS does it?
+
+Wait for it - there is!
+
+The querySelector Method
+
+We can use the .querySelector() method to select elements just like we do with CSS. We use the .querySelector() method and pass it a string that's just like a CSS selector:
+
+// find and return the element with an ID of "header"
+document.querySelector('#header');
+
+// find and return the first element with the class "header"
+document.querySelector('.header');
+
+// find and return the first <header> element
+document.querySelector('header');
+
+Check out the .querySelector() method on MDN: https://developer.mozilla.org/en-US/docs/Web/API/Document/querySelector
+
+⚠️ .querySelector() Returns A Single Element ⚠️
+
+I want to point out one potentially tricky thing - the .querySelector() method only returns one element. This makes sense if you use it to search for an element by ID. However, even though .getElementsByClassName() and .getElementsByTagName() both return a list of multiple elements, using .querySelector() with a class selector or a tag selector will still only return the first item it finds.
+
+Write the .querySelector() code to find the first item with an ID of: fanciful-butterfly.
+
+document.querySelector('#fanciful-butterfly');
+
+Write the .querySelector() code to find the first paragraph element that also has a class of: callout
+
+document.querySelector('p.callout');
+
+The querySelectorAll Method
+
+The .querySelector() method returns only one element from the DOM (if it exists). However, there are definitely times when you will want to get a list of all elements with a certain class or all of one type of element (e.g. all <tr> tags). We can use the .querySelectorAll() method to do this!
+
+// find and return a list of elements with the class "header"
+document.querySelectorAll('.header');
+
+// find and return a list of <header> elements
+document.querySelectorAll('header');
+
+Here's the .querySelectorAll() method on MDN: https://developer.mozilla.org/en-US/docs/Web/API/Document/querySelectorAll
+
+Write the .querySelectorAll() code to find all paragraph elements that are descendents of elements that have the class: articles
+
+document.querySelectorAll('.articles p');
+
+Recap
+In this section, we took a brief look the history of browser support for standard DOM methods, the rise of the jQuery library, and how jQuery's success brought about new DOM methods. The new DOM methods we looked at are
+
+* .querySelector() - returns a single element
+* .querySelectorAll() - returns a list of elements
+
+// find and return the element with an ID of "header"
+document.querySelector('#header');
+
+// find and return a list of elements with the class "header"
+document.querySelectorAll('.header');
+
+We also took a brief look that the list returned by .querySelectorAll() is a NodeList. We saw that it is possible to loop over a NodeList with either its .forEach() method, or the humble for loop:
+
+const allHeaders = document.querySelectorAll('header');
+
+for(let i = 0; i < allHeaders.length; i++){
+    console.dir(allHeaders[i]);
+}
+
+Further Research
+* jQuery website
+* .querySelector() method on MDN
+* .querySelectorAll() method on MDN
+* NodeList on MDN
+
+
+
 
