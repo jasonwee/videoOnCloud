@@ -1,0 +1,30 @@
+
+
+3.3.1 Introduction
+---------------------------------------
+Need to Know
+To be successful in this section, there are a couple of things from the previous section that you need to know. You need to have a solid grasp of selecting DOM elements using:
+
+* document.getElementById()
+* document.querySelector()
+
+Also, remember the Node Interface and the Element interface we went over in the previous section? Understanding how an interface determines the properties and methods for an element and understanding how to research an interface's properties and methods will be vital in this lesson.
+
+If you get stuck, just jump back to the previous section that's giving you a bit of trouble.
+
+Project Repository
+Throughout this course, you'll learn skills and techniques to access and modify page content. There's no better way to demonstrate these skills than through trying them out on a real website! So I've created a copy of just the Udacity homepage on GitHub - https://github.com/udacity/course-JS-and-the-DOM. You can call this as a remote repository. Now, you can do either of the following:
+
+* Clone the remote repository to your local machine so that you can follow along. To clone, you can use git clone https://github.com/udacity/course-JS-and-the-DOM command on your terminal. When you clone a remote repository, you get an identical copy locally, where you can make desired changes.
+* Fork the remote repository to your own online account. When you fork a remote repository, a new duplicate copy of the remote repository is created in your account.
+
+A detailed course on Git & GitHub is available in the extracurricular section of this nano-degree.
+
+Check off tasks as you complete them
+* I have cloned the project
+* I understand that this project is just the index page of the Udacity site.
+* I understand that the code in this repo is not representative of how Udacity builds its site. ;-)
+
+
+
+
