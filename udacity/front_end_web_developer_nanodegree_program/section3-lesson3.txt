@@ -317,4 +317,309 @@ Further Research
 
 
 
+3.3.4 remove Page Content
+---------------------------------------
+What's in store!
+In this quick section, you're going to learn how to remove content from the page. Specifically, we'll look at these new methods:
+
+* .removeChild()
+* .remove()
+
+In the process, you'll also learn about these two properties:
+
+* .firstElementChild
+* .parentElement
+
+Removing a Child Element
+We can use the .removeChild() method to...wait for it...remove a child element. Basically, this is exactly the opposite of the .appendChild() method. So just like the .appendChild() method, the .removeChild() method requires:
+
+* a parent element
+* the child element that will be removed
+
+<parent-element>.removeChild(<child-to-remove>);
+
+Here's the .removeChild() documentation page on MDN: removeChild docs
+
+Let's see how to use this method:
+
+A drawback (and workaround!) with the .removeChild() Method
+
+Just like the .appendChild() method, there's a (somewhat minor) drawback to the .removeChild() method. Both methods:
+
+* require access to parent to function
+
+However, we don't actually need to have the parent element because there is a workaround! Just like the .firstElementChild property can be called on a parent element to access its first element, every element also has a parentElement property that refers to its parent! So if we have access to the child element that we're about to add or remove, you can use the parentElement property to "move focus" to the element's parent. Then we can call .removeChild() (or .appendChild()) on that referenced parent element.
+
+Let's look at an example:
+
+const mainHeading = document.querySelector('h1');
+
+mainHeading.parentElement.removeChild(mainHeading);
+
+Let's walk through this code.
+
+const mainHeading = document.querySelector('h1');
+
+The preceding code will select the first <h1> on the page and stores it in the mainHeading variable. Now to the next line:
+
+mainHeading.parentElement.removeChild(mainHeading);
+
+This starts with the mainHeading variable. It calls .parentElement, so the focus of the next code is directed at the parent element. Then .removeChild() is called on the parent element. Finally, mainHeading itself is passed as the element that needs to be removed from its parent.
+
+So an element uses itself to remove itself from its parent. Pretty cool, huh?
+
+Removing a Child Element (Part 2!)
+We went through all of those steps selecting an element, using DOM traversal techniques like .parentElement and .firstElementChild, so that we can remove a child element. I showed you this way so that you can get some exposure and practice to moving around in the DOM.
+
+Now, you might be glad (or frustrated! haha) to find out there's an easier way to do all this! We can remove the child element directly with the .remove() method:
+
+const mainHeading = document.querySelector('h1');
+
+mainHeading.remove();
+
+Here's the .remove() documentation page on MDN: .remove() docs
+
+Remove Page Content Recap
+In this short section, we learned two ways to remove an element from the page. You learned about:
+
+* .removeChild()
+* .remove()
+
+The difference is that with .removeChild() must be called on the parent of the element being removed and must be passed the child to be removed, while .remove() can be called directly on the element to delete.
+
+We also learned about the following helpful properties:
+
+* .firstChild
+* .firstElementChild
+* .parentElement
+
+The difference between .firstChild and .firstElementChild, is that .firstElementChild will always return the first element, while .firstChild might return whitespace (if there is any) to preserve the formatting of the underlying HTML source code.
+
+Further Research
+* removeChild on MDN
+* remove on MDN
+* firstChild on MDN
+* firstElementChild on MDN
+* parentElement on MDN
+
+
+
+3.3.5 Style Page Content
+---------------------------------------
+
+In this section, we'll be looking at controlling page and element styling using the following properties and methods:
+
+* .style.<prop>
+* .cssText
+* .setAttribute()
+* .className
+* .classList
+
+Quiz Question
+
+Before we begin, put these in the correct order of CSS specificity. Put the least-specific option at the top and the most-specific option at the bottom.
+
+Level of Specificity       CSS Rule
+Least specific             rules in a stylesheet
+More specific              rules in a <style> tag
+Most specific              rules in a tag's style attribute
+
+CSS Specificity
+
+To be successful in this section, it will help to have an understanding of how CSS Specificity works. According to the MDN, "specificity" is:
+
+the means by which browsers decide which CSS property values are the most relevant to an element and, therefore, will be applied.
+
+Basically, the closer the style rule is to an element, the more specific it is. For example, a rule in a style attribute on an element will override a style rule for that element in a CSS stylesheet. There is also the specificity of the type of selector being used. An ID is more specific than a class.
+
+If you'd like to learn more about CSS Specificity, check out the following links:
+
+* Specificity on MDN
+
+Modifying an Element's Style Attribute
+
+Let's jump back to your knowledge of CSS. When trying to style an element, the most-specific rules that you can write for an element are written in that element's style attribute. Lucky for us, we can access an element's style attribute using the .style property!
+
+const mainHeading = document.querySelector('h1');
+
+mainHeading.style.color = 'red';
+
+Now, I want to point out that when using the .style property, you can only modify one CSS style at a time. That's why the previous code has .style.color = 'red' and not just .style = 'red'.
+
+Check out the documentation page for more information: style docs
+
+Reflect
+
+Why do you think it has to be fontSize? Why would font-size not work?
+because fontSize is the property of the style in javascript whilst font-size is the property in css.
+
+
+Reflect
+
+Write the JavaScript code to set the width of element to 50%;
+heading.style.width: 50%;
+
+
+Adding Multiple Styles At Once
+
+We've seen how the .style.<property> syntax will let us change just one piece of styling for an element. So if we wanted to set an element's color, background color, and font size, we'd have to use three separate lines of code:
+
+const mainHeading = document.querySelector('h1');
+
+mainHeading.style.color = 'blue';
+mainHeading.style.backgroundColor = 'orange';
+mainHeading.style.fontSize = '3.5em';
+
+...and that's just for setting three styles. Imagine if we needed 15 or 20 different styles! So the .style.property syntax is perfect for setting one style at a time, but it's not great for controlling multiple styles.
+
+Fortunately, we can use the .style.cssText property to set multiple CSS styles at once!
+
+const mainHeading = document.querySelector('h1');
+
+mainHeading.style.cssText = 'color: blue; background-color: orange; font-size: 3.5em';
+
+Notice that when using the .style.cssText property, you write the CSS styles just as you would in a stylesheet; so you write font-size rather than fontSize. This is different than using the individual .style.<property> way.
+
+Quiz Question
+￼
+<p id="quizzing-quizzes" style="color: orange;">Howdy</p>
+
+For the element above, which of the following styles will be applied after running this code?
+
+document.querySelector('#quizzing-quizzes').style.cssText = 'width: 30px; textDecoration: underline;';
+
+width
+
+Setting An Element's Attributes
+
+Another way to set styles for an element is to bypass the .style.<property> and .style.cssText properties altogether and use the .setAttribute() method:
+
+const mainHeading = document.querySelector('h1');
+
+mainHeading.setAttribute('style', 'color: blue; background-color: orange; font-size: 3.5em;');
+
+Check out the documentation page for more information: style docs
+
+.setAttribute() Is Not Just For Styling
+
+The setAttribute() method is not just for styling page elements. You can use this method to set any attribute for an element. If you want to give an element an ID, you can do that!:
+
+const mainHeading = document.querySelector('h1');
+
+// add an ID to the heading's sibling element
+mainHeading.nextElementSibling.setAttribute('id', 'heading-sibling');
+
+// use the newly added ID to access that element
+document.querySelector('#heading-sibling').style.backgroundColor = 'red';
+
+The last two lines could've been combined into one to bypass setting an ID and just styling the element directly:
+
+mainHeading.nextElementSibling.style.backgroundColor = 'red';
+
+...but this was just to demonstrate that it's possible to set an attribute with JavaScript that affects the DOM which then can be used immediately
+
+Accessing an Element's Classes
+The first element property we'll look at is the .className property. This property returns a string of all of the element's classes. If an element has the following HTML:
+
+<h1 id="main-heading" class="ank-student jpk-modal">Learn Web Development at Udacity</h1>
+
+
+We could use .className to access the list of classes:
+
+const mainHeading = document.querySelector('#main-heading');
+
+// store the list of classes in a variable
+const listOfClasses = mainHeading.className;
+
+// logs out the string "ank-student jpk-modal"
+console.log(listOfClasses);
+
+The .className property returns a space-separated string of the classes. This isn't the most ideal format, unfortunately. We can, however, convert this space-separated string into an array using the JavaScript string method, .split():
+
+const arrayOfClasses = listOfClasses.split(' ');
+
+// logs out the array of strings ["ank-student", "jpk-modal"]
+console.log(arrayOfClasses);
+
+Now that we have an array of classes, we can do any data-intensive calculations:
+
+* use a for loop to loop through the list of class names
+* use .push() to add an item to the list
+* use .pop() to remove an item from the list
+
+.className is a property, so we can set its value just by assigning a string to the property:
+
+mainHeading.className = "im-the-new-class";
+
+The above code erases any classes that were originally in the element's class attribute and replaces it with the single class im-the-new-class.
+
+Since .className returns a string, it makes it hard to add or remove individual classes. As I mentioned earlier, we can convert the string to an array and then use different Array Methods to search for a class remove it from the list, and then update the .className with the remaining classes. However, we don't want to do all of that work! Let's use the newer .classList property.
+
+The .classList Property
+
+The .classList property is newer than the .className property, but is much nicer, check it out:
+
+<h1 id="main-heading" class="ank-student jpk-modal">Learn Web Development at Udacity</h1>
+
+const mainHeading = document.querySelector('#main-heading');
+
+// store the list of classes in a variable
+const listOfClasses = mainHeading.classList;
+
+// logs out ["ank-student", "jpk-modal"]
+console.log(listOfClasses);
+
+Check out the documentation page on MDN: classList docs
+
+Quiz Question
+￼
+Review the classList property's documentation. What data structure does the .classList property return?
+
+a DOMTokenList
+
+The .classList property has a number of properties of its own. Some of the most popularly used ones are:
+
+* .add() - to add a class to the list
+* .remove() - to remove a class from the list
+* .toggle() - to add the class if it doesn't exists or remove it from the list if it does already exist
+* .contains() - returns a boolean based on if the class exists in the list or not
+
+Let's take a look!
+
+Quiz Question
+￼
+What happens if you try to toggle a nonexistent class? For example, if you had this HTML:
+
+<h1 id="main-heading" class="ank-student jpk-modal">Learn Web Development at Udacity</h1>
+
+...what would happen after running the following JavaScript:
+
+const mainHeading = document.querySelector('#main-heading');
+
+mainHeading.classList.toggle('richard');
+
+the richard class is added to the list of classes
+
+
+Style Page Content Recap
+We learned a ton of content in this section! We looked at:
+
+* modifying individual styles with .style.<prop>
+* updating multiple styles at once with .style.cssText
+* getting/setting a list of classes with .className
+* getting/setting/toggling CSS classes with .classList
+
+My recommendation to you is that, out of the list of techniques you learned in this section, to use the .classList property more than any other. .classList is by far the most helpful property of the bunch, and it helps to keep your CSS styling out of your JavaScript code.
+
+Further Research
+* style on MDN
+* Article: Using dynamic styling information
+* DOM methods to control styling
+* nextElementSibling on MDN
+* className on MDN
+* classList on MDN
+* Specificity on MDN
+
+
+
 
