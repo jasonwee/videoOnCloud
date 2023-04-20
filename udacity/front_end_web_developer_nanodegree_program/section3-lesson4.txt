@@ -43,4 +43,158 @@ One last little bit of info on monitorEvents is that this is for development/tes
 
 
 
+3.4.2 Respond to Events
+---------------------------------------
+An Event Target
+Do you remember the Node Interface and the Element interface from the first lesson? Do you remember how the Element Interface is a descendant of the Node Interface, and therefore inherits all of Node's properties and methods?
+
+Well there was one piece that I totally skipped over then but am addressing now. The Node Interface inherits from the EventTarget Interface.
+
+The EventTarget page says that EventTarget:
+
+is an interface implemented by objects that can receive events and may have listeners for them.
+
+and
+
+Element, document, and window are the most common event targets, but other objects can be event targets too…
+
+As you can see from the image above, the EventTarget is at the top of the chain. This means that it does not inherit any properties or methods from any other interfaces. However, every other interface inherits from it and therefore contain its properties and methods. This means that each of the following is an "event target";
+
+* the document object
+* a paragraph element
+* a video element
+* etc.
+
+Remember that both the document object and any DOM element can be an event target. And again, why is this?...because both the Element Interface and the Document Interface inherit from the EventTarget Interface. So any individual element inherits from the Element Interface, which in turn inherits from the EventTarget Interface. Likewise, the document object comes from the Document Interface, which in turn inherits from the EventTarget Interface.
+
+If you take a look at the EventTarget Interface, you'll notice that it doesn't have any properties and only three methods! These methods are:
+
+* .addEventListener()
+* .removeEventListener()
+* .dispatchEvent()
+
+The one that we'll be looking at for the rest of this course will be the .addEventListener() method.
+
+Adding An Event Listener
+We've taken a brief look at this hidden world of events. Using the .addEventListener() method will let us listen for events and respond to them! I just said "listen for events". There are several ways to "phrase" this, so I want to give some examples:
+
+* listen for an event
+* listen to an event
+* hook into an event
+* respond to an event
+
+...all of these mean the same thing and are interchangeable with one another.
+
+Let's use some pseudo-code to explain how to set an event listener:
+
+<event-target>.addEventListener(<event-to-listen-for>, <function-to-run-when-an-event-happens>);
+
+So an event listener needs three things:
+
+1. an event target - this is called the target
+* the type of event to listen for - this is called the type
+* a function to run when the event occurs - this is called the listener
+
+The <event-target> (i.e. the target) goes right back to what we just looked at: everything on the web is an event target (e.g. the document object, a <p> element, etc.).
+
+The <event-to-listen-for> (i.e. the type) is the event we want to respond to. It could be a click, a double click, the pressing of a key on the keyboard, the scrolling of the mouse wheel, the submitting of a form...the list goes on!
+
+The <function-to-run-when-an-event-happens> (i.e. the listener) is a function to run when the event actually occurs.
+
+Let's transform the pseudo-code to a real example of an event listener:
+
+const mainHeading = document.querySelector('h1');
+
+mainHeading.addEventListener('click', function () {
+  console.log('The heading was clicked!');
+});
+
+Let's break down the snippet above:
+
+* the target is the first <h1> element on the page
+* the event type to listen for is a "click" event
+* the listener is a function that logs "The heading was clicked!" to the console
+
+Check out the documentation for more info: addEventListener docs
+
+Quiz Question
+￼
+In the following code, what is the event type?
+
+const lotsOfElements = document.querySelectorAll('.quizzing-quizzby');
+const element = lotsOfElements[2];
+
+element.addEventListener('animationend', function () {
+    const mainHeading = document.querySelector('h1');
+
+    mainHeading.style.backgroundColor = 'purple'; 
+});
+
+The string animationend
+
+
+Quiz Question
+￼
+Given this code:
+
+document.addEventListener('keypress', function () {
+    document.body.remove();
+});
+What will happen if the mouse is used to click the page?
+￼
+nothing
+
+
+Now it's your turn to write an event listener!
+
+* go to one of your favorite sites
+* open the Console pane in DevTools
+* use .addEventListener() to register a listener on the document object
+* listen for a click event
+* when a click happens, log a message to the console
+
+Add Event Listener to the Project
+
+Running code in a browser's developer tools is fantastic for testing. But that event listener will only last until the page is refreshed. As with all real JavaScript code that we want to send to our users, our event listener code needs to be in a JavaScript file.
+
+Let's try adding an Event Listener to our project's files!
+
+Reflect
+Think about these interfaces:
+
+EventTarget
+Node
+Element
+Is there a difference between these two:
+
+document.addEventListener()
+myHeading.addEventListener() (assume the myHeading variable is an element)
+
+yes, document.addEventListner applied to the whole document but myHeading only applied to that particular html tag.
+
+So far, we've only looked at the "click" event and a couple of other ones. When we used the monitorEvents() function in the previous section, we saw a number of different event types (e.g. dblclick, scroll, resize).
+
+How do you know what events are even out there to listen for? The answer is easy - documentation! To see a full list of all of the possible events you can listen for, check out the Events documentation: list of events
+
+Recap
+
+In this section, you learned all about events, the EventTarget Interface, and how to add event listeners. We used the .addEventListener() method to attach listeners to:
+
+* the document
+* a Node
+* an Element
+
+...basically anything that inherits from the EventTarget Interface. We also saw that there are three main parts to an event listener:
+
+1. an event target - the target
+* the type of event to listen for - the type
+* a function to run when the event occurs - the listener
+
+Further Research
+* addEventListener on MDN
+* EventTarget Interface
+* Introduction to events
+
+
+￼
 
