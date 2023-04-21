@@ -197,4 +197,143 @@ Further Research
 
 
 ￼
+3.4.3 Remove an Event Listener
+---------------------------------------
+Removing An Event Listener
+We say that we can use an event target's .addEventListener() method to start listening for specific events and respond to them. Let's say you only want to listen for just the first click event, respond to it, and ignore all other click events. The .addEventListener() event will listen for and respond to all click events.
+
+(The newest version of the .addEventListener() specification does allow for an object to be passed as a third parameter. This object can be used to configure how the .addEventListener() method behaves. Of note, there is an option to listen for only a single event. However, this configuration object is not widely supported just yet).
+
+To remove an event listener, we use the .removeEventListener() method. It sounds straightforward enough, right? However, before we look at .removeEventListener(), we need to take a brief review of object equality. It seems like an odd jump, but it'll make sense in just a moment.
+
+Are Objects Equal in JavaScript
+
+Equality is a common task in most programming languages, but in JavaScript, it can be a little bit tricky because JavaScript does this thing called type coercion where it will try to convert the items being compared into the same type. (e.g. string, number,). JavaScript has the double equality (==) operator that will allow type coercion. It also has the triple equality (===) symbol that will prevent type coercion when comparing.
+
+Hopefully, this is all review. But let's talk about just object equality, which includes objects, arrays, and functions. Try giving this quiz a shot:
+
+Quiz Question
+￼
+Will the following equality test result in true or false?
+
+{ name: 'Richard' } === { name: 'Richard' }
+
+false
+
+Quiz Question
+￼
+Given this code:
+
+var a = {
+    myFunction: function quiz() { console.log('hi'); }
+};
+var b = {
+    myFunction: function quiz() { console.log('hi'); }
+};
+Does the following code evaluate to true or false?
+
+a.myFunction === b.myFunction
+￼
+false
+
+Quiz Question
+￼
+Given this code:
+
+function quiz() { ... }
+
+var a = {
+    myFunction: quiz
+};
+var b = {
+    myFunction: quiz
+}
+Does the following code evaluate to true or false?
+
+a.myFunction === b.myFunction
+￼
+true
+
+Ok, so why do we care about any of this object/function equality? The reason is that the .removeEventListener() method requires you to pass the same exact listener function to it as the one you passed to .addEventListener().
+
+Let's see some pseudo-code for the .removeEventListener():
+
+<event-target>.removeEventListener(<event-to-listen-for>, <function-to-remove>);
+So an event listener needs three things:
+
+1. an event target - this is called the target
+* the type of event to listen for - this is called the type
+* the function to remove - this is called the listener
+
+Remember, the listener function must be the exact same function as the one used in the .addEventListener() call...not just an identical looking function. Let's look at a couple of examples.
+
+This code will successfully add and then remove an event listener:
+
+function myEventListeningFunction() {
+    console.log('howdy');
+}
+
+// adds a listener for clicks, to run the `myEventListeningFunction` function
+document.addEventListener('click', myEventListeningFunction);
+
+// immediately removes the click listener that should run the `myEventListeningFunction` function
+document.removeEventListener('click', myEventListeningFunction);
+
+Now, why does this work? It works because both .addEventListener() and .removeEventListener:
+
+* have the same target
+* have the same type
+* and pass the exact same listener
+
+Now let's look at an example that would not work (it does not remove the event listener):
+
+// adds a listener for clicks, to run the `myEventListeningFunction` function
+document.addEventListener('click', function myEventListeningFunction() {
+    console.log('howdy');
+});
+
+// immediately removes the click listener that should run the `myEventListeningFunction` function
+document.removeEventListener('click', function myEventListeningFunction() {
+    console.log('howdy');
+});
+
+This code does not successfully remove the event listener. Again, why does this not work?
+
+* both .addEventListener() and .removeEventListener have the same target
+* both .addEventListener() and .removeEventListener have the same type
+* .addEventListener() and .removeEventListener have their own distinct listener functions...they do not refer to the exact same function (this is the reason the event listener removal fails!)
+
+When we wrote
+
+function myEventListeningFunction() {
+    console.log('howdy');
+}
+a second time, we actually created a completely new function that was stored in a completely new location in memory! They may look the same and do the same thing, but that doesn't make them the same. Imagine a scenario where you see two houses that look exactly the same. While the houses might look the same, their addresses are different! That's exactly what just happened in our previous example.
+
+Why don't you try your hand at this!
+
+Quiz Question
+￼
+Assuming that myForm is a <form> element, will the <form> element have a submit event listener after running the following code, or not?
+
+myForm.addEventListener('submit', function respondToSubmit(){...});
+myForm.removeEventListener('submit', function respondToSubmit(){...});
+
+the element will still have an event listener
+
+What's Next?
+Now that we've learned about adding and removing event listeners, it's time to learn about the phases of an event!
+
+Recap
+In this section, you learned about how to remove event listeners. You took a dive into object equality and how that plays a huge part in removing an event. Lastly, we also looked at how you can find out what event listener a DOM element has by using the DevTools.
+
+Further Research
+* removeEventListener on MDN
+* Easily jump to event listeners
+* Equality comparisons and sameness
+* Article: Object Equality in JavaScript
+* EventTarget Interface
+
+
+
 
