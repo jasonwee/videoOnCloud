@@ -336,4 +336,160 @@ Further Research
 
 
 
+3.4.4 Phases of an Event
+---------------------------------------
+Phases of an Event
+
+Reflect
+
+Thinking about nodes and how the DOM is structured, after running the code below, which event listener will fire first when the page is clicked? Write out your answer and your explanation of why it will be in that order:
+
+because the body receive the event first before bubble up to the document.
+
+Event Phases
+There are three different phases during the lifecycle of an event. They are:
+
+* the capturing phase
+* the at target phase
+* and the bubbling phase
+
+And they actually follow the order above; first, it's capturing, then at target, and then the bubbling phase.
+
+Most event handlers run during the at target phase, such as when you attach a click event handler to the button. The event arrives at the button (its target), and there's only a handler for it right there, so the event handler gets run.
+
+But sometimes you have a collection of items -- such as a list -- and want to have one handler cover every item (and still have the option of individual handlers for some items.) By default, if you click on a child item and a handler doesn't intercept the click, the event will "bubble" upward to the parent, and keep bubbling until something handles it or it hits the document.
+
+Capturing, on the other hand, lets the parent intercept an event before it reaches a child.
+
+Let's dig into these phases to see how they affect when events fire and the order they fire in!
+
+So of the three phases in an event, which one does the .addEventListener() method actually use? And, how can we change it?
+
+Up until this point, we've only seen the .addEventListener() method called with two arguments, the:
+
+* event type
+* and the listener
+
+document.addEventListener('click', function () {
+   console.log('The document was clicked');
+});
+
+There's actually a third argument to the .addEventListener() method; the useCapture argument. From it's name, you'd think that if this argument were left out, .addEventListener() would default to using the capturing phase. This is an incorrect assumption! By default, when .addEventListener() is called with only two arguments, the method defaults to using the bubbling phase.
+
+The code below uses .addEventListener() with only two arguments, so it will invoke the listener during the bubbling phase:
+
+document.addEventListener('click', function () {
+   console.log('The document was clicked');
+});
+
+However, in this code, .addEventListener() is called with three arguments with the third argument being true (meaning it should invoke the listener earlier, during the capturing phase!).
+
+document.addEventListener('click', function () {
+   console.log('The document was clicked');
+}, true);
+
+Quiz Question
+￼
+Which of the phases is the following code set up for?
+
+const items = document.querySelectorAll('.quizzing-quizzes');
+const el = items[1];
+
+el.addEventListener('click', function () {
+    console.log('You clicked on the 2nd quizzing-quizzes item!');
+}, false);
+
+the at bubble phase
+
+Now that you have a little more knowledge about the "capturing", "at target", and "bubbling" phases, we're going to go back to the question at the beginning of this section.
+
+Quiz Question
+After running the code below and clicking on the page, two console.log messages will display in the console. Put the messages in the correct order.
+
+document.addEventListener('click', function () {
+   console.log('The document was clicked');
+});
+
+document.body.addEventListener('click', function () {
+    console.log('The body element was clicked');
+});￼
+
+These are the correct matches.
+
+Order of Messages  console.log Message
+First Message      The body element was clicked.
+Second Message     The document was clicked.
+
+The Event Object
+Now that you know that event listeners fire in a specific order and how to interpret and control that order, it's time to shift focus to the details of the event itself.
+
+When an event occurs, the browser includes an event object. This is just a regular JavaScript object that includes a ton of information about the event itself. According to MDN, the .addEventListener()'s listener function receives:
+
+a notification (an object that implements the Event interface) when an event of the specified type occurs
+
+Up until this point, I've been writing all of the listener functions without any parameter to store this event object. Let's add a parameter so we can store this important information:
+
+document.addEventListener('click', function (event) {  // ← the `event` parameter is new!
+   console.log('The document was clicked');
+});
+Notice the new event parameter that's been added to the listener function. Now when the listener function is called, it is able to store the event data that's passed to it!
+
+💡 An "event" is an "evt" is an "e" 💡
+
+Remember that a function's parameter is just like a regular variable. In the following example, I'm using a parameter with the name event.
+
+const items = document.querySelectorAll('.quizzing-quizzes');
+const el = items[1];
+
+el.addEventListener('keypress', function (event) {
+    console.log('You clicked on the 2nd quizzing-quizzes item!');
+});
+
+Instead of event, the parameter's name could just as easily be:
+
+* evt
+* e
+* theEvent
+* horse
+
+The name event or evt does not provide any inherent meaning or special capabilities; there is nothing special to the name... it's just the name of the parameter. Feel free to give it any name that's informative/descriptive!
+
+The Default Action
+As we just looked at, the event object stores a lot of information, and we can use this data to do all sorts of things. However, one incredibly common reason that professionals use the event object for, is to prevent the default action from happening. That sounds like an odd thing to do, but let's explore this.
+
+Think about an anchor link on a webpage. There are probably a couple dozen links on this page! What if you wanted to run some code and display some output when you click on one of these links. If you click on the link, it will automatically navigate you to the location listed in its href attribute: that's what it does by default.
+
+What about a form element? When you submit a form, by default, it will send the data to the location in its action attribute. What if we wanted to validate the data before sending it, though?
+
+Without the event object, we're stuck with the default actions. However, the event object has a .preventDefault() method on it that a handler can call to prevent the default action from occurring!
+
+const links = document.querySelectorAll('a');
+const thirdLink = links[2];
+
+thirdLink.addEventListener('click', function (event) {
+    event.preventDefault();
+    console.log("Look, ma! We didn't navigate to a new page!");
+});
+
+Recap
+We covered a number of important aspects of events and event listeners in this section! We looked at:
+
+* the phases of an event:
+ * the capturing phase
+ * the at target phase
+ * the bubbling phase
+* the event object
+* prevent the default action with .preventDefault()
+
+Further Research
+* Event dispatch and DOM event flow on W3C
+ * capture phase on W3C
+ * target phase on W3C
+ * bubble phase on W3C
+* Event on MDN
+* Event reference on MDN
+* addEventListener on MDN
+
+
+
 
