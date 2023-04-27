@@ -15,4 +15,25 @@
 
 
 
+4.1.4 Introduction: Recap
+---------------------------------------
+Course Map
+* Lesson 1: Introduction
+* Lesson 2: Node & Express Environment
+* Lesson 3: HTTP Requests & Routes
+* Lesson 4: Asynchronous JavaScript
+
+By the end of this course, you will be able to:
+
+* Set up a Node and Express environment to develop a web application on your local machine
+* Set up a server and route data through a web app
+* Integrate an external API into a web app and data routes
+* Use HTTP POST & GET requests to create persistent data in your app
+* Use the JavaScript Fetch API to update the UI based on HTML input forms and external API data
+
+If you have questions along the way, or are excited to dig deeper into what we’re learning, some great resources for you to work with are:
+
+* Express routing documentation
+* MDN fetch API documentation
+* JavaScript Promises Introduction
 
