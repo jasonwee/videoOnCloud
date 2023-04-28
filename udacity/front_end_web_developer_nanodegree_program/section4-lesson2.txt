@@ -1,0 +1,13 @@
+
+
+4.2.1 Node.js Overview
+---------------------------------------
+The first step to using Node.js is to install it on your computer. You can do so by following the link below and installing the Windows or Mac version, depending on what type of operating system you are using.
+
+Node.js Download Page https://nodejs.org/en/download
+
+If you've installed Node previously and need to update to a newer version, check out this article. https://www.mend.io/free-developer-tools/blog/how-to-update-node-js-to-latest-version/
+
+
+
+
