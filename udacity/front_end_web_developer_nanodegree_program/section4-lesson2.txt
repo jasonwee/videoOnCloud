@@ -50,4 +50,26 @@ https://www.npmjs.com/
 
 
 
+4.2.3 Exercise: Node and Package Installation
+---------------------------------------
+Lesson 2 Exercises
+L2- Set 1
+In this set of exercises you will be demonstrating your ability to install dependencies for a Node.js project. Good luck!
+1) Double check node is installed by checking the node version in the terminal.
+
+￼HIDE SOLUTION
+node --version
+
+2) Install the cors package from the terminal.
+
+￼HIDE SOLUTION
+npm install cors
+
+3) Install the body-parser package from the terminal
+
+￼HIDE SOLUTION
+npm install body-parser
+
+
+
 
