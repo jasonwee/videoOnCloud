@@ -10,4 +10,44 @@ If you've installed Node previously and need to update to a newer version, check
 
 
 
+4.2.2 Using Node
+---------------------------------------
+Using Node
+One of the most useful features of Node is that it comes pre-installed with a standard package manager called NPM. NPM started as an easier way to download and manage dependencies of Node.js packages, but now it is also used as a tool in front-end JavaScript as well.
+
+A package in Node.js contains all the files you need for a module. Modules are JavaScript libraries you can include in your project. There are hundreds of thousands of Node.js packages and NPM gives you easy access to all of them! For the purposes of this course we will make heavy use of the Node package called Express, as well as packages called CORS which allows for communication across the web, and Body-Parser (which is considered in the category of Middleware) which will allow us to parse the data we eventually will be passing through routes on our server. Let’s take a look at how to install and include these last two packages from the command line using NPM:
+
+Here is the code to install packages with NPM from the command line: npm install package-name
+
+So to install the package called ‘body-parser’: npm install body-parser
+
+And to install Cors: npm install cors
+
+And then in a file named Server.js the installed package is included and made available in the code with: const bodyParser = require('body-parser')
+
+You need to create the file Server.js in Visual Studio Code.
+
+Node invokes that require() function with a local file path as the function’s only argument.
+
+Quiz Question
+￼
+Which of the following are true about Node and NPM. Check all that apply:
+￼
+Node allows developers to write server-side code
+NPM is a package manager for Node that allows for easy inclusion of dependencies in a project
+To include a Node package already installed via the terminal, the require() function is used
+
+Node Quiz 2
+Suppose there is a Node package called amazing.js. What line of code would you write in the terminal to include that package in your project?
+npm install amazing
+
+More on Node
+For more information about Node.js, you can read their website and documentation, or follow @node.js on Twitter.
+You can learn more about NPM from their website.
+https://nodejs.org/en
+https://twitter.com/nodejs
+https://www.npmjs.com/
+
+
+
 
