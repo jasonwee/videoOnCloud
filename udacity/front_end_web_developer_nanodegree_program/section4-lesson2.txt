@@ -72,4 +72,50 @@ npm install body-parser
 
 
 
+4.2.4 Express Overview
+---------------------------------------
+Express Overview
+To install express, we use the npm install express command in the terminal. Using Express we set up an instance of our web app like this:
+
+// Express to run server and routes
+const express = require('express');
+
+// Start up an instance of app
+const app = express();
+
+First, we include express in our project, and then we instantiate an instance of the app we are going to build in a file called server.js. Once we have created an instance of our app using Express, we can connect the other packages we have installed on the command line to our app in our code with the .use() method. Express version 4 and above require an extra middle-ware layer to handle a POST request (You will learn about POST requests in later lessons). This middle-ware is called as bodyParser. This used to be an internal part of the Express framework, but now you have to install it separately. Below is an example of how the body-parser and cors packages discussed earlier could be connected to the app instance.
+
+/ *Dependencies* /
+const bodyParser = require('body-parser')
+/ *Middleware*/
+//Here we are configuring express to use body-parser as middle-ware.
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.json());
+// Cors for cross origin allowance
+const cors = require('cors');
+app.use(cors());
+
+Quiz Question
+￼
+Which of the following is not a feature associated with Express:
+Express is an API for web apps.
+
+Express Quiz 2
+Assume you have installed a package amazing.js from the terminal, and included it in your project using require() under the name amazing. Assuming you have an instance of an express app running with the name app, what line of code would you write to connect the app to the 'amazing.js' package?
+app.use(amazing());
+
+So far we have just seen how Express can be used to create an instance of a web app, and to include other Node packages in that web app, but the real fun of Express is unleashed with Routes. Before we can work with routes however, there are a couple other topics we need to cover. Next we'll learn what a server is, and how to create one locally to develop web projects on our own machines.
+
+More on Express
+You can learn more about Node and Express by reading the Express/Node introduction on the MDN web docs page.
+https://developer.mozilla.org/en-US/docs/Learn/Server-side/Express_Nodejs/Introduction
+
+What about cors, urlencoded and json?
+While we won’t cover cors, urlencoded and json in-depth here, if you want to read about more on each, see the following links:
+* Cross-origin resource sharing (CORS) and related Express documentation for CORS
+* URL Encoding and related Express documentation for bodyParser’s urlencoded functionality
+* JavaScript Object Notation (JSON) and related Express documentation for bodyParser’s json functionality
+
+
+
 
