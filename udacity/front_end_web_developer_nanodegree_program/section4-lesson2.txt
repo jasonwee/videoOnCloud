@@ -145,4 +145,60 @@ const port = 3000;
 
 
 
+4.2.6 Creating a Local Server I
+---------------------------------------
+Another way you might see this same server code written is with an arrow function. Here is an example of the same code using an arrow function:
+
+const server = app.listen(port, ()=>{console.log(`running on localhost: ${port}`)})
+
+What's an arrow function?
+Arrow functions are a shorter, more efficient way to write functions.
+
+Here's another example of a regular function and then we'll write it as an arrow function:
+
+Regular Function
+
+function addition(number){ return 4 + number }
+
+addition(4); `
+
+Arrow Function
+
+const addition = number => 4 + number
+
+addition(4);
+
+As you can see, there is less need for parenthesis and return statements, allowing the syntax to be much more compact. Both are acceptable ways of writing functions, and best practice would be for you to be consistent in how you write your code. Even if you choose not to write your code with arrow functions, you should still be aware of how they are written.
+
+Curly brackets aren’t required if only one expression is present, and parentheses are optional if there is only one parameter. So, our previous example could also be written as:
+
+const addition = number => 4 + number
+
+Steps to creating a local server
+Set your variables
+In this example, we set our variable to port 8000.
+
+const port = 8000;
+
+Utilize the .listen() method
+Set your variable named server, and pass the listen method with two arguments port and listening.
+
+const server = app.listen(port, listening);
+
+The port argument refers to the port variable we set above. The listening argument refers to a callback function we create.
+
+The listening function
+This function will run when we execute the listen method to let you know that the server is running and on which port by logging messages to the console.
+
+function listening(){
+     console.log("server running"); 
+     console.log(`running on localhost: {$port}`);
+}
+Supporting Material:
+
+Arrow functions
+https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Arrow_functions
+
+
+
 
