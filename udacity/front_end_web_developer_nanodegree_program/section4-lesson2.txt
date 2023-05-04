@@ -201,4 +201,24 @@ https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Arro
 
 
 
+4.2.7 Creating a Local Server II
+---------------------------------------
+Creating a Local Server - Part 2
+Because we are writing server-side code, the console.log code will execute in the terminal, instead of the browser where you may be used to. Here is a video showing what this process looks like:
+
+
+Server Quiz
+Think about the steps to setting up a server and make sure you understand the logic:
+* Install the Express package from the terminal (make sure you have pointed the terminal to the directory where you are creating your server code).
+* Include the Express package in your code.
+* Write the code to start the server.
+* Check the terminal for confirmation that the server is working or any error messages for issues with the code.
+* Open your browser and go to the port specified in your code--ready to rock!
+
+Server Quiz 2
+Assuming you have created an app instance named app, and set variable named port to 8000 and have created a callback function named listening -- what line of code would you add above the callback function to successfully initiate a server named server?
+app.list(port, listening);
+
+
+
 
