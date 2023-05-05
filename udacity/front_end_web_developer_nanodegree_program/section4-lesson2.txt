@@ -257,4 +257,37 @@ node starter.js
 
 
 
+4.2.9 Servers-File Structure Hierachy
+---------------------------------------
+All of the files pictured above are included in the projects main folder, which is often referred to as the project 'root'. After making sure your project folders are setup in this way, the only thing you need to do is write one line of code in the server.js file that points the server code to the folder that has the index.html and any additional pages. In the example above the name of that folder is website, so in the server.js file the following line of code needs to be added:
+
+app.use(express.static('website'));
+
+This line of code connects our server-side code (the code in the server.js file) to our client-side code (the browser code written in the files housed in the website folder).
+
+Server-Client Code Quiz
+Assume you are writing server-side code in a file that is inside the root directory with another folder named 'public'. What line of code would you write in your server file to point your app to use that folder?
+
+app.use(express.static('public'));
+
+In this lesson, we covered how to create a server to run a web app locally in your browser, and to setup the ability to pass code between different parts of a web app through routes. We also covered the folder structure for web apps with an Express server. We will cover routes in the next lesson.
+
+More on Express servers
+For more information on Express you can visit their website, or see this basic example of an Express server.
+
+https://expressjs.com/
+https://expressjs.com/en/starter/hello-world.html
+
+
+
+4.2.10 Glossary
+---------------------------------------
+Glossary
+Below is the summary of all the keywords in this lesson:
+
+* Server-side: It refers to operations performed by the server in a network. In web development, we used the Server-side scripting technique to employ scripts on a web server that produces a response for each user's request.
+* Client-side: It refers to operations performed at the client or user's end.
+* Package: It is a file or directory defined by a package.json. The npm registry contains many packages which are node modules or include node modules.
+* Module: Any file or directory in the node_modules directory that can be loaded by the Node.js require() function is known as a module.
+* Arrow function: An arrow function is a compact alternative to a traditional function expression.
 
