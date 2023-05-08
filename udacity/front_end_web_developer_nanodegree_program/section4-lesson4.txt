@@ -1,0 +1,450 @@
+
+
+4.4.1 Async JS
+---------------------------------------
+Asynchronous JavaScript
+JavaScript is a single threaded programming language, which means for the most part it will be run as a single process in your computer (essentially writing and running it top to bottom).
+
+To be an effective web developer you have to be comfortable writing async code when the situation calls for it. For those times JavaScript does have a few async tricks up its sleeve. One of the most common is setTimeout() which allows you to break out of the inherent JS behavior of executing code line by line starting at the top. Let’s explore these ideas more in a video:
+
+Here is the async function code shown in the video above:
+
+/*SYNC REVIEW*/
+
+setTimeout(function(){ console.log('third') }, 3000);
+
+function sync(){
+console.log('first')
+}
+
+sync()
+console.log('second')
+
+
+
+4.4.2 Async Promises
+---------------------------------------
+Async Promises
+While there have always been some async work arounds in JS, including setTimeout(), and AJAX, more recently a tool called Promises has been introduced natively to JavaScript, and Promises are now the accepted best practice for writing asynchronous functions in JavaScript.
+
+You can think of Promises as a special function that either satisfy (resolve) or fail (reject) to execute a task, and then executes the corresponding actions, usually another task with the returned data in the case of 'resolved' and usually throw an error in the case of 'reject'.
+
+Here is the basic anatomy of a Promise:
+
+Syntax
+
+var promise = new Promise(function(resolve, reject) {
+  // do a thing, possibly async, then…
+
+  if (/ *everything turned out fine* /) {
+    resolve("Stuff worked!");
+  }
+  else {
+    reject(Error("It broke"));
+  }
+});
+
+There are many methods to handle asynchronous work already, however Promises are the recommended option because they give you flexibility, intuitive syntax, and easy error handling. Promises are an amazing development in JavaScript, but until ES2017 (ES8) they still required extra boilerplate code, called generators, to run asynchronously. Now however, with the addition of native async functions to JavaScript, we can easily apply the async keywords to a Promise to execute asynchronous JavaScript code.
+
+To make a fetch() call, or any other methods inside of a function, asynchronous we must use the keywords provided by JavaScript. Here is an example of an asynchronous fetch function using JavaScript keywords:
+
+const postData = async ( url = '', data = {})=>{
+
+      const response = await fetch(url, {
+      method: 'POST', // *GET, POST, PUT, DELETE, etc.
+      credentials: 'same-origin',
+      headers: {
+          'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(data), // body data type must match "Content-Type" header
+    });
+
+      try {
+        const newData = await response.json();
+               return newData
+      }catch(error) {
+      console.log("error", error);
+      // appropriately handle the error
+      }
+  }
+
+  postData('/addMovie', {movie:' the matrix', score: 5})
+
+postData is an async arrow function that is called with parameters on the last line of code. It is asynchronous because of the keyword async placed before its parameters.
+
+const postData = async ( url = '', data = {})=>{
+      const response = await fetch(url, {
+      method: 'POST',
+      credentials: 'same-origin',
+      headers: {
+          'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(data),
+    });
+
+...
+}
+
+Once you mark a function as 'async' you have access to the keywords await, try, and catch.
+
+   try {
+        const newData = await response.json();
+        return newData
+      } catch(error) {
+      console.log("error", error);
+      // appropriately handle the error
+      }
+
+The keywords try and catch mirror the Promise functionality of resolving or rejecting to execute a task. In this case, if and elseare replaced with the keywords tryand catch. The await keyword is used in places where the next action requires data from the current action, so we want to tell our program to wait until the data has been received before continuing with the next steps-- this is the magic of ASYNC JavaScript.
+
+Quiz Question
+￼
+Which of these amazing ‘facts’ are also true about asynchronous JavaScript
+￼
+Native Promises in JavaScript allow for asynchronous functions that are dependent on satisfying a condition.
+JavaScript functions can be made asynchronous simply by using the keyword async.
+JavaScript functions denoted by the keyword async allow for the syntax of await, try, and catch, for an elegant way of dealing with code asynchronously.
+
+
+In the next lesson we will learn how to pair JavaScript async fetch functions with Web APIS to unleash the dynamic power of front-end programming.
+
+More on Async JS
+For a more detailed overview on Promises and why they matter, read the article here.
+
+
+
+4.4.3 Exercise: Async Function
+---------------------------------------
+// TODO
+const postData = async ( url = '', data = {})=>{
+
+      const response = await fetch(url, {
+      method: 'POST', // *GET, POST, PUT, DELETE, etc.
+      credentials: 'same-origin',
+      headers: {
+          'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(data), // body data type must match "Content-Type" header
+    });
+
+      try {
+        const newData = await response.json();
+               return newData
+      }catch(error) {
+      console.log("error", error);
+      // appropriately handle the error
+      }
+}
+
+
+
+4.4.4 Async Fetch w/ Web APIs Intro
+---------------------------------------
+
+
+
+4.4.5 Credentials and API keys
+---------------------------------------
+Credentials and API keys
+Many APIs require you to sign up, create credentials, and use an API key in order to start sending requests to the API.
+
+For instance, if you travel to NASA’s API documentation, the next step after testing out an example API call is to sign up for an API key.
+
+
+
+4.4.6 Adding Fetch to Your Code
+---------------------------------------
+
+Here is the client side code that would make a GET request to the animal info API:
+
+let baseURL = 'http://api.animalinfo.org/data/?animal='
+let apiKey = '&appid=9f15e45060...';
+
+document.getElementById('generate').addEventListener('click', performAction);
+
+function performAction(e){
+const newAnimal =  document.getElementById('animal').value;
+getAnimal(baseURL,newAnimal, apiKey)
+
+}
+const getAnimal = async (baseURL, animal, key)=>{
+
+  const res = await fetch(baseURL+animal+key)
+  try {
+
+    const data = await res.json();
+    console.log(data)
+    return data;
+  }  catch(error) {
+    console.log("error", error);
+    // appropriately handle the error
+  }
+}
+
+If you would like to read more about Fetch, you can check out the documentation here.
+
+
+
+4.4.7 Exercise: Async GET
+---------------------------------------
+// Async POST
+const postData = async ( url = '', data = {})=>{
+
+    const response = await fetch(url, {
+    method: 'POST', 
+    credentials: 'same-origin', 
+    headers: {
+        'Content-Type': 'application/json',
+    },
+    body: JSON.stringify(data), // body data type must match "Content-Type" header        
+  });
+
+    try {
+      const newData = await response.json();
+      return newData
+    }catch(error) {
+    console.log("error", error);
+    }
+}
+
+// TODO-Async GET
+const retrieveData = async (url='') =>{ 
+  const request = await fetch(url);
+  try {
+  // Transform into JSON
+  const allData = await request.json()
+  }
+  catch(error) {
+    console.log("error", error);
+    // appropriately handle the error
+  }
+}
+
+
+
+4.4.8 Async Fetch with Web APIs Demo
+---------------------------------------
+Here is the Fetch demo code shown in the video above:
+
+  / *WEB API WITH FETCH DEMO-- * /
+  let baseURL = 'http://api.animalinfo.org/data/?animal='
+  let apiKey = '&appid=9f15e45060...';
+  const newAnimal =  document.getElementById('animal').value;
+
+  document.getElementById('generate').addEventListener('click', performAction);
+
+  function performAction(e){  
+    getAnimalDemo(baseURL,newAnimal, apiKey)
+  }
+
+
+  const getAnimalDemo = async (baseURL, animal, key)=>{
+  // 1.
+    const res = await fetch(baseURL+animal+key)
+  // 2. Call Fake API
+    // const res = await fetch('/fakeAnimalData')
+    try {
+
+      const data = await res.json();
+      console.log(data)
+      // 1. We can do something with our returned data here-- like chain promises!
+  
+      // 2. 
+      // postData('/addAnimal', data)
+    }  catch(error) {
+      // appropriately handle the error
+      console.log("error", error);
+    }
+  }
+
+As you continue to work with Promises and Async JavaScript it will start to feel more natural to do so. In the meantime, you can keep checking back against the keywords and making sure you are using async await try and catch to lead you to async dreamland.
+
+Quiz Question
+￼
+Which of the steps below are associated with working with Web APIs asynchronously?
+
+Registering for developer credentials on the Web API’s website.
+Creating variables to hold the base url and api key for the Web API.
+Building a dynamic URL to make a query to the Web API.
+Using Fetch in an async function to make a GET request to the Web API.
+
+Async Fetch w/ Web APIs Quiz 2
+Create a dynamic URL for a web api with the base url www.api.com/data? where the variable holding the user input you are interested in is named holder, and your API key is the number 68.
+
+'www.api.com/data?='+holder+68
+
+The JavaScript Fetch API provides a more elegant interface and syntax for working with HTTP requests. This makes it a perfect fit for working with Web API data. Up next, we will learn how to chain Fetch calls together to dynamically update the UI of an app.
+* Fetch over view on MDN
+* Using Fetch on MDN
+
+￼
+
+4.4.9 Chaining Promises
+---------------------------------------
+Notice we have set up a helper function to use fetch to make an async GET request for a route that is made to simulate the Animal Info Web API we are using as an example.
+
+Inside .then() we could call another async function to make a POST request to store this data in our app. Assuming a POST route has been setup on the server side to add data it received to the app endpoint, we could simply call the function we have been using to create POST requests on the client side and pass it the POST route url and the data we want to save to our app. The only tricky part (which can also be fun!), is that we need to use the returned data, and data that we retrieve from a DOM element to create the structure for our POST request.
+
+As a reminder, the postData() function takes a URL, and a data object as parameters. To build the data object using data received from the previous fetch call we can use dot notation. So we could set our first elements like this:
+
+postData('/addAnimal', {animal:data.animal, fact: data.fact} )
+
+But we also want to include the users favorite thing about the animal, which we can add using the variable name which selects the textarea where the users response is. So our final code for creating a POST route to save the data to our app would look like this:
+
+postData('/addAnimal', {animal:data.animal, fact: data.fact, fav:favFact} )
+
+Then on the server side to actually add the sent data to our app, we would use this code:
+
+app.post('/addAnimal', addAnimal);
+
+function addAnimal(req,res){
+
+  newEntry = {
+    animal: req.body.animal,
+    facts: req.body.fact,
+    fav: req.body.fav
+  }
+
+  animalData.push(newEntry)
+  console.log(animalData)
+}
+
+Quiz Question
+￼
+Which of the following is true about working with Promises?
+Chaining Promises with .then() allows you to make multiple dependent HTTP requests.
+
+Great! Now let’s finally learn how to update the UI of an app with the data gathered from requests and routes.
+
+
+
+4.4.10 Updating UI Elements
+---------------------------------------
+Here is what it would look like to use chained GET and POST requests to retrieve information from our animal Web API, and then update DOM elements accordingly:
+
+HTML
+
+<label for="animal">Enter the name of your favorite animal</label>
+<input id="animal" name="animal">
+<textarea id="favorite" placeholder="Enter your favorite thing about your favorite animal" rows="9" cols="50"></textarea>
+<button id = "generate">GO</button>
+
+JS
+
+document.getElementById('generate').addEventListener('click', performAction);
+
+function performAction(e){
+  const newAnimal =  document.getElementById('animal').value;
+  const favFact =  document.getElementById('favorite').value;
+
+  getAnimal('/animalData',)
+  // New Syntax!
+  .then(function(data){
+    // Add data
+    console.log(data);
+    postData('/addAnimal', {animal:data.animal, fact: data.fact, fav:favFact} );
+  })
+  .then(
+    updateUI()
+  )
+}
+
+const updateUI = async () => {
+  const request = await fetch('/all');
+  try{
+    const allData = await request.json();
+    document.getElementById('animalName').innerHTML = allData[0].animal;
+    document.getElementById('animalFact').innerHTML = allData[0].facts;
+    document.getElementById('animalFav').innerHTML = allData[0].fav;
+
+  }catch(error){
+    console.log("error", error);
+  }
+}
+
+Notice how calling the function to update the UI is the last thing we do -- this is because the update UI function depends on data from each of the other functions, so each Promise must be resolved successfully before we can update the UI. This demonstrates why native Promises and the Fetch API are such powerful tools for Asynchronous JavaScript.
+
+
+
+4.4.11 Exercise: Putting It All Together
+---------------------------------------
+// TODO-Chain your async functions to post an animal then GET the resulting data
+function postGet() {
+postData('/addAnimal', {animal:data.animal, fact: data.fact, fav:favFact} )  
+  .then(function(data) {
+    retrieveData('/all')
+  })
+}
+
+// TODO-Call the chained function
+postGet();
+
+
+
+4.4.12 Updating UI Elements Demo
+---------------------------------------
+Quiz Question
+￼
+Which are the three steps to updating the UI of an app dynamically...
+Create a selector, capture the data you want to update the element with, set updated property for element.
+
+Updating UI Elements Quiz 2
+Assume you have a div with the id: score. Assume you also have the data object below returned from a fetch() call-- what line of code would you write to assign the innerHTML property of <div id=”score”></div> to the value of the key returnedScore .
+
+data = {
+  name: ‘who cares’,
+  returnedScore: 6
+}
+Hint: Use getElementById
+
+document.getElementById("score").innerHTML = data.returnedScore;
+
+And that’s it! Now you have learned how to create an Asynchronous App that uses Web APIs with routes and requests using Express! Hooray!
+
+
+
+4.4.13 Real-World Examples of Asynchronous Javascript
+---------------------------------------
+Real-world examples of Asynchronous Javascript
+
+Before asynchronous JavaScript with promises, if you wanted to query a database to retrieve information, such as a user's password and login name, you would need to write a long series of callback functions and if anything in your code failed, the entire process would stop. For example, if a program tried to access the database to get the user password, but it wasn't able to, instead of continuing to attempt to retrieve the login, the program would just stop without notice. With Asynchronous promises, the program could report an error for the password, and continue on retrieving the login.
+
+In this example, moving the code from regular synchronous JavaScript to asynchronous JavaScript has 3 positive effects:
+
+1. The asynchronous code will be much cleaner and shorter.
+2. If there is an error in one part of the code, it will not block other portions of the code.
+3. Debugging the code will be much easier because you will get much more specific and generally more helpful error messages from asynchronous code.
+
+Here's another quick example to illustrate asynchronous JavaScript in the real world. Imagine you were making an application that converted international currency. The application would let a user enter a dollar amount in U.S. currency and select another country's currency to convert to. Without asynchronous JavaScript, programming this application could be a nightmare because there are so many dependent parts, such as the APIs you would need to get the conversion rates for every currency, the equations needed to transform the original dollar amount into the new currency, and the code to hold everything together. Asynchronous JavaScript can organize this code into discrete parts that can fail or succeed on their own without breaking the rest of the program. Additionally, asynchronous JavaScript lets you wait until one command is completed before executing the next.
+
+In this example, that means your code can wait until it has received the information from the API about a specific currency, before trying to make the calculations of conversion. Without asynchronous JavaScript, a program would fail because it would take too long to retrieve the information from the API, and there would be no way to tell the program to wait until the previous action was finished before taking on the next command.
+
+From this example, we can add a fourth feature of asynchronous Javascript which is that it allows you to complete one line of code, regardless of how long it takes, before moving on to the next line of code.
+
+In Summary
+
+Based on these examples, four features of asynchronous JavaScript in the real world are:
+
+1. Clean and Concise Syntax
+2. Better error handling
+3. Easier Debugging
+4. Ability to add timing to code
+
+External Resources
+1. Mozilla - Introducing Asynchronous Javascript
+2. Introduction to Asynchronous JavaScript
+3. Writing Asynchronous Tasks In Modern JavaScript
+
+
+
+4.4.14 Outro
+---------------------------------------
+
+
+4.4.15 Instructor Interview
+---------------------------------------
+Instructor Interview
+Here, you’ll get a chance to listen to Daniel talk about the importance of the skills you’ve learned, how to use them to build a portfolio-worthy project, what jobs you can apply these skills towards, and more!
+
+
+
