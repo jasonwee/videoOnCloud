@@ -1,0 +1,95 @@
+
+4.5.1 Getting Started
+---------------------------------------
+Introduction
+This project requires you to create an asynchronous web app that uses Web API and user data to dynamically update the UI for a Weather-Journal App.
+
+Project Rubric
+Your project will be evaluated by a Udacity code reviewer according to the Weather-Journal project rubric. Please review the rubric for detailed project requirements. If you'd like to start from scratch without any files, you are encouraged to do so! You learn the most by developing on your own. But, it can be a bit challenging having to start from scratch, so we do provide a starter project (i.e., a "skeleton") to use.
+
+Get the Starter Code
+You can download the starter code below by cloning the specific branch 'refresh-2019':
+
+* The Weather Journal project repository
+
+The starter code has all the elements and CSS you will need to complete the project, plus a little help getting started with the JavaScript. If you decide to start development on your own and then get stuck, you can always take a peek at the starter code available at the links provided for inspiration.
+
+If you want to try the project without the starter code, and would like to use a comments only version of the finished JS code, you can find that at the link below.
+
+* Comments only version of final JS code (commentsOnlyJS directory)
+
+Web APIs and Asynchronous Applications
+Great! You now have the starter code. Before moving forward, make sure you are comfortable with the content from Web APIs and Asynchronous Applications.
+
+Ask yourself:
+
+* How do I setup a Node environment with Express and the necessary project dependencies?
+  https://developer.mozilla.org/en-US/docs/Learn/Server-side/Express_Nodejs/Introduction
+* How do I setup a server with GET and POST routes?
+  https://expressjs.com/en/guide/routing.html
+* How do I create developer credentials for a Web API?
+* How do I use the Fetch API with my credentials and user input to get dynamic data into my app routes?
+  https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch
+* How do I access a GET route on the server side, from a function called on the client side?
+* How do I chain Promises together
+  https://javascript.info/promise-chaining
+* How do I access HTML elements with JavaScript and set their properties dynamically?
+
+
+
+4.5.2 Development Strategy
+---------------------------------------
+For this project, you will be writing most of your code in two files: server.js and website/app.js. Note that it's very important that you plan your project before you start writing any code! Break your project down into small pieces of work and strategize your approach to each one. With these bite-sized amounts, it'll be easier to debug and fix any issues that appear.
+
+Feel free to implement your own design workflow, but if you get stuck -- here is a walkthrough to get you up and running!
+
+1. Start by setting up your project environment. Make sure Node is installed from the terminal. Install the packages Express, Body-Parser, and Cors from the terminal and include them in your server.js file.
+ * Create a server running on the port of your choosing
+ * Add a console.log() to the server callback function, and test that your server is running using Node in the terminal to run the file server.js
+
+2. Add a GET route that returns the projectData object in your server code Then, add a POST route that adds incoming data to projectData.
+ * The POST route should anticipate receiving three pieces of data from the request body
+   * temperature
+   * date
+   * user response
+ * Make sure your POST route is setup to add each of these values with a key to projectData.
+
+3. Acquire API credentials from OpenWeatherMap website. Use your credentials and the base url to create global variables at the top of your app.js code.
+ * Write an async function in app.js that uses fetch() to make a GET request to the OpenWeatherMap API.
+ * Create an event listener for the element with the id: generate, with a callback function to execute when it is clicked.
+ * Inside that callback function call your async GET request with the parameters:
+  * base url
+  * user entered zip code (see input in html with id zip)
+  * personal API key
+ * Rubric Tip: This step will help you to pass the rubric item "Integrating OpenWeatherMap API."
+
+4. After your successful retrieval of the weather data, you will need to chain another Promise that makes a POST request to add the API data, as well as data entered by the user, to your app.
+ * You will need to write another async function to make this POST request.
+ * The function should receive a path and a data object.
+ * The data object should include
+  * temperature
+  * date
+  * user response
+ * Remember, you can access the value of DOM elements by selecting them in your JS code.
+
+5. Finally, chain another Promise that updates the UI dynamically Write another async function that is called after the completed POST request. This function should retrieve data from our app, select the necessary elements on the DOM (index.html), and then update their necessary values to reflect the dynamic values for:
+ * Temperature
+ * Date
+ * User input
+
+
+
+4.5.3 Submit project
+---------------------------------------
+
+Weather Journal App with Asynchronous JavaScript
+This project requires you to create an asynchronous web app that uses Web API and user data to dynamically update the UI in a Weather Journal application.
+
+Project Files
+You can obtain the project code here. To complete the project will require modifying the server.js file and the website/app.js file. You can see index.html for element references, and once you are finished with the project steps, you can use style.css to style your application to customized perfection.
+
+Rubric
+Your project will be evaluated by a Udacity code reviewer according to the Weather-Journal project rubric. Please make sure to re-review the rubric for detailed project requirements prior to submission.
+
+Submission
+Once you've met all of the rubric requirements, you can submit your project as either a zip file or a Github repository link below.
