@@ -1,0 +1,34 @@
+
+
+5.1.1 Introduction
+---------------------------------------
+Welcome to part four of the front end development course!
+You have learned to build a webpage with HTML and CSS, and to make it interactive with Javascript. You have all the tools you need to make a fully functional website - and that’s awesome! But you might be asking - where do I go from here? In this course we are going to cover some tools that will take your front end web development skills to a professional level. We will focus on a build tool called Webpack and let it take us on a tour through all the most common technologies and strategies you’ll see in a professional front end project.
+
+This course is really about a mental shift. Up to this point we have built toy apps for the purpose of learning that typically only have one user - us. But how does our development need to change in order to build, say, a large company website with a whole team of devs? We’re going to explore that and a whole lot more in the coming modules.
+
+Lesson Objectives
+The prime objectives of this first lesson are:
+
+1. To set up the context of why we need build-tools for front end development.
+2. To understand how any build tool uses a configuration file where all the app development rules are defined.
+
+Baseline Questions
+Have you ever used build tools in a project?
+yes, many, from ant, maven, gradle, make and npm
+
+Baseline Questions
+As you start this course, what is your current understanding of build tools (if any)? What are they? What are they for/what do they do?
+allow quickly to run compile , to test and build final binary files in a single command.
+
+Baseline Questions
+As you start this course, what is your current understanding of Webpack (if any)? Feel free to throw out even bits and pieces if you can't think of a full description. Things like where is Webpack used, what it does, other technologies that use it, etc..
+in npm, when install package, npm provide a means to find,  install and update its config file , provide dependencies solution and many more.
+
+Interview Question
+Tell me about one tool you have used that improved your frontend workflow and why. This could be anything from a text editor plugin, linter, time tracker, etc... whatever you like.
+i would say the devtools that comes with the browser is a must to use... it contain all tools to identify the problem during frontend development.
+
+
+
+
