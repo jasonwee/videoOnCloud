@@ -31,4 +31,39 @@ i would say the devtools that comes with the browser is a must to use... it cont
 
 
 
+5.1.2 Setting the Stage
+---------------------------------------
+Setting the Stage
+
+In this section we are going to talk about why we need build tools for front end projects.
+
+Go to the Udacity website and inspect element to look at all of the assets on the Udacity home page.
+
+Pro tip: Don't just open inspector and go to the head tag element to see what's there. One of my favorite browser dev tools is the Network tab. Go there and you can look at all the requests made by the page, separate them by type, see the http request responsible, see the response, etc.. I could do an entire course just on this tab probably. You can learn a ton by taking a look at sites this way and it is a priceless debugging tool.
+
+On your own
+More practice examples.
+
+x Go to two websites you visit often or like
+x Inspect their dependency lists just like we did Udacity's website earlier
+x Take note of any trends, questions, or observations you have while inspecting each
+
+Questions
+What are some of your observations and takeaways from looking at Udacity and the other website assets?
+
+there are many differetn type of requests , example xhr, js, css, img , media and font.
+also occassional post requests even after page loaded.
+
+Quiz Question
+When loading website styles the order in which each css file is loaded matters
+true
+
+Interview Question
+If a client is complaining that their website load time is too slow, what things would you do to assess where the slowdown is occurring and what might fix the issue?
+take a look at the devtools network tab, see which request took the most time.
+another way is to turn on profilers on devtools and indentify components that take the longest to load/paint.
+
+
+
+
 
