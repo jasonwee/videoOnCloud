@@ -137,5 +137,9 @@ install library require, manage various libraries dependency and conflict manage
 
 
 
+5.1.4 Conclusion
+---------------------------------------
+To get a wider view of all the options in the build tool world, this is a good compare/contrast article to give you the lay of the land, though it was written a few years ago and not all of the details are correct for current versions, the technologies listed there representative of what is out there, though webpack would probably be at the top of that list if it had been written today.
+
 
 
