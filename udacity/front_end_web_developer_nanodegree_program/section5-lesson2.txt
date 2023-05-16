@@ -1,0 +1,123 @@
+
+
+5.2.1 Introduction to Webpack
+---------------------------------------
+Lesson Objectives
+The objectives of this lesson are to:
+
+1. Understand the role and necessity of webpack as a build tool
+2. Install webpack, and get started with a Node/Express web app
+3. Understand to use the major components of webpack - entry point, output, loaders, and plugins
+4. Explain the use to two different modes - production and development. We will also learn to use webpack-dev-server in development mode.
+
+Getting Started with Webpack
+The webpack documentation describes itself this way:
+
+At its core, webpack is a static module bundler for modern JavaScript applications.
+
+But…what does that really mean?
+
+This image from the Webpack website is a good visual.
+
+The idea here is that on the left you have all the various asset file formats you will probably come across in a project. You might not recognize all the extensions, but just imagine that these are all your images, stylesheets, javascripts and more.
+
+Webpack takes all the assets on the left and “bundles” or combines them into fewer files that are much easier to manage. Notice that multiple .js files on the left became one .js file on the right - that’s because the two files were combined into one large .js file.
+
+Key Terms Used in the Video Above
+1. Bootstrap is an open-source CSS library that helps to build responsive web sites, meaning the websites can adapt to the user's device (platform). Bootstrap library contains CSS and JavaScript-based design templates for different web page components. Refer to Bootstrap documentation for more details. Note that Bootstrap comprises a variety of components, two that the Instructor mentioned are tooltips, and modal.
+
+2. Bootstrap Tooltip provides textual boxes that pop-up whenever we hover the mouse over a particular component or element. Refer a few Tooltip examples to have a better overview and usages. Note that the tooltip depends on third party library Popper.js, which in turn has its dependencies such as popper.min.js, and util.js.
+
+3. Bootstrap Modal plugin adds dialogs to your site for lightboxes, user notifications, or any other component. They offer a variety of effects such as sliding, fading of the containing page, and scrolling. See a few examples here.
+
+4. Animation library such as Parallax. Parallax is the type of animation effect where a component has a relative difference in the positioning on the web page. For example, an image that can seem to be moving when scrolling a web page is a Parallax. There are numerous libraries available in the market.
+
+Quiz Question
+￼
+Based on what you know of Webpack so far, which of these tasks would NOT be performed by webpack:
+All of the above could be done with webpack
+
+Interview Question
+Tell us how you have addressed an issue caused by conflicting asset files (or if you haven't experienced this first hand, tell us about a situation where this could happen). Examples could be styles conflicting with a third party stylesheet, or a bug caused by the order of javascript files.
+
+use different naming convention or dont use the 3rd party stylesheet at all.
+
+
+
+5.2.2 Getting Started
+---------------------------------------
+In this section, we're going to walk through the steps required to set up Webpack in your local machine.
+
+This course is going to include a lot of work on your Git repository. We chose this style of practice because:
+* We prefer learning by doing. By the end of the course, we want you to own a solid example to look back at for new projects.
+* When working on your own repository, you have more freedom to try things and change things - which is an excellent way to learn! Just remember to stop and make a branch or at least commit before going off onto a rabbit trail.
+
+Choose a Mode of Practice
+In order to get the starter code up and running on your machine, before we start with Webpack, you have to pick either of the two options here:
+
+1. Fork the Webpack Express Example App - Github repository, and then clone it onto your local machine to avoid accidentally trying to push your updates to the Udacity master repository.
+
+2. You can use the in-classroom workspaces, starting from the next page, spread throughout this lesson. In this option, that you don’t need to deal with any environment setup.
+
+About Github Repository - Webpack Express Example App
+Each stage of the Webpack setup is reflected as a branch in the Github repository, and each branch has a README.md file documenting the steps taken in the branch. Note the following six branches that correspond to different stages, as shown in the snapshot below:
+
+This repository makes use of git branches for each stage of this lesson. You will want to use the stage before the exercise you are on, as a starting point. The first exercise is branch 0-initial-setup, but you’ll also want to use that as the basis for the second exercise. You’ll use the next branch 1-install-webpack as the basis for moving onto the third exercise.
+
+If you need to check which branches are available, use git branch -a. Then, once you know which branch you want, use git checkout <branch-name>, e.g., git checkout 0-initial-setup.
+
+Give a moment to have a glance at the different files available in the repository:
+
+Once, we will start configuring the initial setup, you will notice the change in package.json, node_modules, and package-lock.json.
+
+Steps for Initial Setup of the Starter Code - Locally in Your Machine
+Follow the steps as explained below:
+
+1. Fork this repo, then clone the branch of your choice from your forked repo down to your computer locally. When you fork the repo, you can add your own personal notes to the README.md markdown file.
+
+2. Open your terminal, go to a specific directory for this Nanodegree, and clone the Git repo using the command: git clone https://github.com/<Your Github Username>/fend-webpack-content.git
+
+3. Get inside the newly downloaded directory, using cd fend-webpack-content
+
+4. As we are just starting this process the first time, we will switch to the branch 0-initial-setup, using:
+
+git checkout 0-initial-setup
+git branch
+
+Install NPM in your project, giving the ability to use Node. NPM is by-default installed with Node.js. To see if you already have Node.js and NPM installed and check the installed version, run the following commands:
+node -v
+npm -v
+
+You can upgrade to the latest version of npm using:
+
+npm install -g npm@latest
+npm install
+
+6. If the npm install throws NPM error, try clearing the cache and a fresh re-install, using:
+npm cache clean
+[sudo] npm install -g npm
+npm install
+
+If it asks to fix the vulnerabilities, run npm audit fix
+
+7. Start your project, using npm run start
+
+8. Check the website running at http://localhost:8080/. By default, this app runs on port 8080, but you can, of course, edit that in server.js. If everything, goes well, you'll see the app running as shown in the snapshot below:
+
+Quiz Question
+￼
+When you use npm to install a new package, how many files/folders in your code change?
+3
+
+Quiz Question
+￼
+What do the commands npm i or yarn do? Choose the best answer.
+They install all modules listed in the package.json and add to or create a new node_modules folder
+
+Interview Question
+What information can go into a package.json file? Name everything you can think of.
+dependencies
+
+
+
+
