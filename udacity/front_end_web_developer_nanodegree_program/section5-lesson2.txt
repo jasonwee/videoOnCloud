@@ -151,4 +151,78 @@ Note that you could normally edit the port in server.js, although you won't be a
 
 
 
+5.2.4 Install Webpack
+---------------------------------------
+Install Webpack
+In this exercise we will install Webpack locally.
+
+Current Version of Webpack
+At the time this course is created, the most recent stable version of Webpack is version 4. Webpack 4 comes with some significant changes from previous versions, so you will find different information out there if you read an older tutorial.
+
+One of the new things about version 4, is that webpack declared a few default settings that are automatically in place when you install webpack. So, you might not even need a webpack config file. But, our app won't be following all the default settings, so we will need a custom config file, webpack.config.js.
+
+Install Webpack in Local Machine
+Prerequisite - We suggest you have any code editor, such as Visual Studio Code in your local machine. It will help to edit the files, keep track of the changes, and easy navigation. In this exercise, we will install Webpack locally. The steps are as follows:
+
+In the terminal (Mac/Linux) or command prompt (Windows), go to the project directory. If you wish to practice the steps mentioned in the video demonstration below, stay on the 0-initial-setup branch. Else, switch to the branch 1-install-webpack corresponding the current exercise where all the steps have already been carried out. Note: If you are switching branches don't forget to make a commit on the current branch before switching.
+
+git checkout 1-install-webpack
+git branch
+
+1. Install Webpack and the command line instructions (CLI) tool using npm, as:
+
+npm install
+
+Remember that npm i is just shorthand for npm install. A CLI is a terminal program that allows developers to run commands from the command line to communicate with the Webpack.
+
+1. In package.json, verify if webpack and webpack-cli are added to the "dependencies" as:
+
+"dependencies": {
+"express": "^4.17.1",
+"webpack": "^4.43.0",
+"webpack-cli": "^3.3.11"
+},
+
+1. In package.json, add a build npm script as:
+
+"scripts": {
+"build": "webpack"
+},
+
+Lastly, verify the dependency for the development in "devDependencies" block as:
+
+"devDependencies":{
+"webpack-dev-server": "^3.11.0",
+},
+
+1. Create a webpack.config.js file in the root location of your project, and add the necessary require statements, and a blank module.exports code as:
+
+const path = require("path")
+const webpack = require("webpack")
+module.exports = {
+}
+
+We will populate the module.exports with the entry code in the next exercise.
+
+1. Try running Webpack using the command npm run build. You can expect to get an error in the terminal because our config file is currently still empty. We will start building the config file in the following lessons.
+2. Let's commit the work done until now, using git commit.
+
+Erratum - The webpack.config.js file has to be created in the root (/) location of your project.
+
+Note: Let's see why we have mentioned in the video above that "the default entry point is not going to work for us because we have express installed."
+
+The default location for the webpack entry point is ./src/index.js - but because we are already set up with express and have a slightly different file structure, that file doesn't exist! Instead, we need to tell webpack to use a custom entry point. You will learn more about this in the next pages!
+
+￼
+Quiz Question
+￼
+A webpack config file:
+Allows us to override the webpack default setup as necessary
+
+Interview Question
+At work, a project requires the use of a technology that is completely new to you. What steps would you take to learn the required technology?
+install it, go through quick example and play around with it.
+
+
+
 
