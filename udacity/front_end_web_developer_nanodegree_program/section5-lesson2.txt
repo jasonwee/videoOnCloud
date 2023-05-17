@@ -120,4 +120,35 @@ dependencies
 
 
 
+5.2.3 Ex 0: Getting Started - Workspace
+---------------------------------------
+Set up the Local Machine
+In the previous page, we explained the steps required for the initial setup of the starter code in your local machine.
+
+If you are using the classroom workspace, you do not need to use the tasklist below - it’s here to help those working on their local machines. The same instructions are included in the workspace, so you should click “Expand” on the bottom left to be able to use your full screen.
+
+￼
+Exercise: Getting Started Tasklist
+Fork this repo.
+x Clone it onto your own machine
+x Install npm packages
+x [optional] Change server to run on different port
+x Start server (find the start command in package.json)
+
+Udacity Workspace
+Below, we’ve included a Udacity workspace. Here, you'll be able to work on exercises without leaving the classroom environment.
+
+Exercise: Getting Started
+
+Exercise: Getting Started¶
+cd into your folder (webpack-content) and run:
+
+npm install
+npm start to start the app
+this app runs on localhost:3000 on your local machine, although you can use the OPEN APP button here to view it.
+Note that you could normally edit the port in server.js, although you won't be able to view it outside of port 3000 in this workspace.
+
+
+
+
 
