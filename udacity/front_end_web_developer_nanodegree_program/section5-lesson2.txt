@@ -225,4 +225,32 @@ install it, go through quick example and play around with it.
 
 
 
+5.2.5 Ex 1: Install Webpack - Workspace
+---------------------------------------
+Exercise: Install Webpack
+If you are using the classroom workspace, you do not need to use the tasklist below - it’s here to help those working on their local machines. The same instructions are included in the workspace, so you should click “Expand” on the bottom left to be able to use your full screen.
+
+￼
+Exercise: Install Webpack Tasklist
+In your own repo:
+x Install webpack and webpack cli
+x Add the config file: webpack.config.js
+x Add necessary require statements and module.exports to config file
+
+   const path = require(‘path’) 
+   const webpack = require('webpack')
+
+   module.exports = {
+
+   }
+x Add a new webpack npm script to your package.json
+   "build": "webpack"
+x Try running webpack (You should get a Webpack error in terminal, but you’ll see it trying to run)
+   npm run build
+x Git commit
+
+
+
+
+
 
