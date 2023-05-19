@@ -253,4 +253,43 @@ x Git commit
 
 
 
+5.2.6 Webpack Entry
+---------------------------------------
+Webpack Entry
+Let's create the Webpack entry point. Webpack broke at the last step because it didn’t have an entry point.
+
+Switch the Git Branch
+If you want to practice the steps mentioned in the video demonstration below, then stay on the 1-install-webpack branch.
+
+Else, switch to the branch 2-add-webpack-entry corresponding to the current exercise where all the steps have already been carried out, using
+
+git checkout 2-add-webpack-entry
+git branch
+
+Note: If you are switching branches don't forget to make a commit on the current branch before switching.
+
+You can view the files specific to the current branch, in the Github repository online, as well. For your convenience, the todo steps for the current stage/exercise are mentioned in STEP-2.md file available in the root directory of the project.
+
+Webpack Entry
+Webpack is going to make a map of our app assets and all of their dependencies, but it needs somewhere to start. The default location for the webpack entry point is ./src/index.js - but because we are already set up with express and have a slightly different file structure, that file doesn't exist! Instead, we need to tell webpack to use a custom entry point. In webpack.config.js, mention the entry point as:
+
+module.exports = {
+    entry: './src/client/index.js'
+}
+
+Quick Check -
+
+1. For your easy reference, the index.js file at path ./src/client/ is already available in the 2-add-webpack-entry branch that you are working on. If you are unable to find index.js in ./src/client/, feel free to create the file here.
+2. For building the app, you can use either npm run build.
+3. After running the build command successfully, verify that a dist directory is created in the root, containing the bundled file main.js.
+
+To check what files are included in the webpack build, you can run webpack-cli command from the terminal: npx webpack --display-modules or npx webpack --json > info.json (if you want to generate a json file in the project folder).
+
+Interview Question
+Without using build tools, what are the strategies available to you for loading assets in a particular order?
+
+include in html file
+
+
+
 
