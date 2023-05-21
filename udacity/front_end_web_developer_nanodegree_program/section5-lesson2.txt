@@ -292,4 +292,49 @@ include in html file
 
 
 
+5.2.7 Ex 2: Webpack Entry - Workspace
+---------------------------------------
+Exercise: Webpack Entry
+If you are using the classroom workspace, you do not need to use the tasklist below - it’s here to help those working on their local machines. The same instructions are included in the workspace, so you should click “Expand” on the bottom left to be able to use your full screen.
+
+Exercise: Webpack Entry Tasklist
+In your project:
+x Add an index.js file to the client directory (you may need to remove the existing one from the repo)
+x Add the entry point attribute to webpack config './src/client/index.js'
+x Add an alert to the index.js so we can see it run
+x Build webpack
+x Check for a dist folder - look in the main.js file for the alert you added
+x Commit your changes!
+
+Exercise: Webpack Entry¶
+Now, we'll start to see the files webpack will create for us. Again, start by cd into webpack-content.
+
+* Add an index.js file to the client directory
+* Add the entry point attribute to the webpack config './src/client/index.js'
+
+HIDE SOLUTION
+
+In webpack.config.js, within module.exports, add:
+￼
+entry: './src/client/index.js'
+
+* Add an alert to the index.js so we can see it run
+
+HIDE SOLUTION
+Here's one option here:
+
+￼alert('I exist!')
+
+Build webpack
+￼HIDE SOLUTION
+npm run build
+
+If you want to also see the app in action, use npm start as well.
+
+* Check for a dist folder - look in the main.js file for the alert you added
+
+Need to try viewing the app? Use these to view or stop the app.
+
+
+
 
