@@ -337,4 +337,174 @@ Need to try viewing the app? Use these to view or stop the app.
 
 
 
+5.2.8 Output and Loaders
+---------------------------------------
+We have setup webpack just enough to be performing the most basic function of webpack - creating a dist folder with a main.js file from our entry point. And all of that is great - but none of it is useful yet.
+
+What’s wrong? Let’s take a look:
+
+1. The distribution folder has no connection whatsoever to our app. If you start the express server, our app is still functioning exactly the same way it did in part 0.
+2. The main.js file of our distribution folder contains none of the javascript or other assets we wrote for our webpage.
+
+In short - there are some things wrong with our distribution folder. So it’s time to take a look at customizing the webpack output. The “output” of webpack is - no surprise here - the distribution folder. It is where webpack drops or “outputs” the neat bundles of assets it creates from the individual files we point it to.
+
+So we are going to solve the issues above by setting up our webpack output, along with a few other tasks required to make it all work.
+
+Switch the Git Branch
+
+If you want to practice the steps mentioned in the video demonstration below, then stay on the 2-add-webpack-entry branch.
+
+Else, you can switch to the branch 3-webpack-output-and-loaders corresponding to the current exercise where all the steps have already been carried out.
+
+git checkout 3-webpack-output-and-loaders
+git branch
+
+Note: If you are switching branches don't forget to make a commit on the current branch before switching.
+
+You will need to run npm install to install babel dependencies in package.json file.
+
+About the dist Directory, Installing the Babel Tool and Loading the JS Dependencies
+
+
+Reflect
+If you were told to install a node module called awesomest-linter for your development dependencies, what command would you write?
+Hint - Use npm or yarn.
+npm install -D awesomest-linter
+
+Quiz Question
+￼
+When using webpack, if you need to change the button background color, which of the following theoretical files would you choose to edit?
+ui.css
+
+Steps Demonstrated in the Video Above
+It might seem strange that we have to add ANOTHER library before we’re even finished setting up the first library - but believe me, that’s how it goes. Babel itself is also not an easy tool to use necessarily, it requires a bit of setup but it is widely used throughout the javascript world to translate new ES syntax into vanilla js that can run on browsers etc. They describe their tool like this:
+
+Babel is a toolchain that is mainly used to convert ECMAScript 2015+ code into a backwards compatible version of JavaScript in current and older browsers or environments.
+
+Once you have the hang of this setup, I have personally found it helpful to have babel even on projects that don’t have Webpack. Sometimes I’ll install it just for the convenience … like the convenience of no semicolons or being able to use import/export syntax.
+
+First off, we need to install Babel via npm. Babel occasionally changes its install requirements, but at the moment these are the configurations that work and seem to be pretty stable:
+
+npm i -D @babel/core@^7.5.4 @babel/preset-env@^7.5.4 babel-loader@^8.0.6
+
+Remember that the -D will install these as development dependencies.
+
+And now, just like webpack, babel also requires a config file. In this case, it is a fairly simple one.
+
+Create a new file .babelrc in the root of the project. Fill it with this code:
+
+{ ‘presets’: ['@babel/preset-env'] }
+
+Now, we’re about to go through a whole rigamarole of settings, these aren’t the kind of settings I would commit to memory necessarily, but I will try to explain the steps as we go along.
+
+First, we have both webpack and babel installed, now we have to get webpack to use babel. Doing that forces us to use a part of webpack we haven’t explained yet - we will explain them I promise - but that would jump us just a little ahead of where we are, so for now, you can copy and paste this part. We will observe what it does and then circle back around to explain it.
+
+So, back we go to the webpack config, because we have some things to add.
+
+First, we could specify the “output” of our webpack config, it would look something like this:
+
+output: { ...output options }
+
+But at the moment, we don’t need to add any custom settings there. The default settings are good enough for us - creating a dist folder in the root of our project.
+
+So, output is set, but there’s still the matter of getting webpack to use babel. For that we’ll use a webpack loader. Loaders are what we will circle back around to in a second, but for now, add this to your webpack config.
+
+    module: {
+            rules: [
+                    {
+                test: /\.js$/,
+                exclude: /node_modules/,
+                loader: "babel-loader"
+                    }
+            ]
+    }
+
+Now, with that loader in place, we should be able to get going.
+
+Go to your index.js file and import our two javascript files (also make sure you export them in the original files!). Then console log one of the functions. Here is an example:
+
+import { checkForName } from './js/nameChecker'
+import { handleSubmit } from './js/formHandler'
+
+console.log(checkForName);
+
+alert("I EXIST")
+
+Really we don’t need the alert any more, but either way, delete the current distribution folder and rerun the build command.
+
+You have been successful if you see your console logged function in the main.js that is output.
+
+￼
+Quiz Question
+￼
+Babel is a javascript library that allows us to:
+
+Use the latest version of javascript, even if our browser or runtime doesn't allow it
+
+Quiz
+What file would you look for in a project to see if it is using babel?
+.babelrc
+
+
+Quiz Question
+Why are webpack and babel seen together so frequently?
+Babel allows developers to use convenient es6 syntax that works well with Webpack in a front end application
+
+
+Interview Question
+What is the difference between source code and built code?
+source code is the place where we add/remove/edit/update the code and this source code will be transpire into build code where it will be ready by the client/browser.
+
+Resource - Webpack Introductory Documentation
+Have a look at the Webpack Introductory Documentation, where you can understand its core concepts - Entry, Output, Loaders, and Plugins.
+
+
+
+
+5.2.9 Ex 3a: Output & Loaders - Workspace
+---------------------------------------
+Exercise: Output & Loaders
+If you are using the classroom workspace, you do not need to use the tasklist below - it’s here to help those working on their local machines. The same instructions are included in the workspace, so you should click “Expand” on the bottom left to be able to use your full screen.
+
+Exercise: Output & Loaders Tasklist
+Now it’s your turn! Follow the steps below to add babel and the correct import statements to your repo.
+￼
+x For now, hardcode a reference to your javascript into the index.html:
+
+  <script type="text/javascript" src="../../../dist/main.js">
+  </script>
+￼
+x Add babel to your repo:
+
+  npm i -D @babel/core @babel/preset-env babel-loader
+￼
+x Create a .babelrc file and fill it with these settings:
+  { ‘presets’: ['@babel/preset-env'] }
+
+
+Exercise: Output & Loaders¶
+Now, we'll get babel hooked up to our code. Start by cd into webpack-content.
+
+For now, hardcode a reference to your dist javascript into index.html (in the views folder of client)
+￼HIDE SOLUTION
+<script type="text/javascript" src="../../../dist/main.js"></script>
+
+Add babel to your repo
+￼HIDE SOLUTION
+npm i -D @babel/core @babel/preset-env babel-loader
+
+Create a .babelrc file and fill it with the appropriate settings
+￼HIDE SOLUTION
+{ ‘presets’: ['@babel/preset-env'] }
+
+Need to try viewing the app? Use these to view or stop the app.
+
+￼OPEN APP ￼CLOSE APP
+
+Troubleshooting: If facing any dependency issue, please use these versions:
+
+npm i -D @babel/core@^7.5.4 @babel/preset-env@^7.5.4 babel-loader@^8.0.6
+
+
+
 
