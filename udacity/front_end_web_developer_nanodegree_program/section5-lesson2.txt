@@ -554,4 +554,76 @@ Check out the ECMAScript 6 — New Features: Overview & Comparison with respect 
 
 
 
+5.2.11 Ex 3b: Loaders
+---------------------------------------
+Exercise: Loaders
+If you are using the classroom workspace, you do not need to use the tasklist below - it’s here to help those working on their local machines. The same instructions are included in the workspace, so you should click “Expand” on the bottom left to be able to use your full screen.
+
+Exercise: Loaders Tasklist
+Take some time to play with the Webpack loader we installed.
+x Make sure you have installed Babel according to the instructions in the last tasklist.
+x Tell webpack to use our new babel loader; add this to the module.exports in webpack config:
+  module: {
+     rules: [
+         {
+             test: /\.js$/,
+             exclude: /node_modules/,
+             loader: "babel-loader"
+         }
+     ]
+   }
+x Add export statements to your javascript files
+  export { functionName }
+x Add import statements for your javascript files in the index.js
+  import { functionName } from './js/fileName'
+x Delete your dist folder. You can delete it through your text editor, but it’s good practice to try it in the command line. Run the following command from your project root: `` `rm -rf dist
+x Re-build webpack and watch the text that shows up in your terminal. You should see the names of your javascript files included in the files Webpack has looked through. You might not find your javascript code in the main.js, but as long as you can see that Webpack found your js files, it is all working as expected.
+
+￼
+Exercise: Loaders Optional Tasklist
+Choose another loader to add to webpack. I would suggest starting with one of the following:
+
+* JSON loader
+* Eslint loader
+* File Loader
+￼
+x Before doing ANYTHING - create a new git branch! Anytime you want to try an experiment, just make a branch.
+x Go to the documentation for the loader you want to try
+x Implement and see if you can get it to work. Remember to google any errors you get and look up the github repo for the loader if you come across any issues.
+
+
+Exercise: Loaders
+Now, you'll see how babel helps with linking, along with exports and imports. Start by cding into webpack-content.
+
+* Make sure you have installed Babel according to the instructions in the last tasklist.
+* Tell webpack to use our new babel loader; add this to the module.exports in webpack config:
+
+module: {
+    rules: [
+        {
+            test: '/\.js$/',
+            exclude: /node_modules/,
+            loader: "babel-loader"
+        }
+    ]
+}
+
+* Add export statements to your javascript files
+
+export { functionName }
+
+* Add import statements for your javascript files in the index.js
+
+import { functionName } from './js/fileName'
+
+* Delete your dist folder. You can delete it through your text editor, but it’s good practice to try it in the command line. Run the following command from your project root:
+
+rm -rf dist
+
+Re-build webpack and watch the text that shows up in your terminal. You should see the names of your javascript files included in the files Webpack has looked through. You might not find your javascript code in the main.js, but as long as you can see that Webpack found your js files, it is all working as expected.
+
+Need to try viewing the app? Use these to view or stop the app.
+
+
+
 
