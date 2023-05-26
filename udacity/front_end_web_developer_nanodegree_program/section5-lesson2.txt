@@ -626,4 +626,68 @@ Need to try viewing the app? Use these to view or stop the app.
 
 
 
+5.2.12 Plugins
+---------------------------------------
+Switch the Git Branch
+If you want to practice the steps mentioned in the video demonstration below, then use on the 3-webpack-output-and-loaders branch.
+
+Else, you can switch to the branch 4-webpack-plugins corresponding to the current exercise where all the steps have already been carried out.
+
+git checkout 4-webpack-plugins
+git branch
+
+Webpack Plugins
+Plugins are one of the last vital concepts for webpack. The Webpack documentation explains them like this:
+
+While loaders are used to transform certain types of modules, plugins can be leveraged to perform a wider range of tasks like bundle optimization, asset management and injection of environment variables.
+
+So, pretty much anything that we need to do that falls outside the range of loaders will be accomplished with plugins.
+
+Plugins can do all sorts of things, from automatically adding asset references to an html file (which we’ll cover in a second) to allowing for hot module replacement - which is used in React’s Create React App to create an auto updating development server.
+
+Note - In the video demonstration above, one more change is required to be done in <project_root_directory>/src/server/index.js file:
+
+Change the path from:
+
+app.use(express.static('src/client'))
+To:
+
+app.use(express.static('dist'))
+
+We will see a sequential task list of all the instructions on the next page.
+
+if you are facing errors while running npm run build, remove the dist folder and run the same command again.
+
+Quiz Question
+￼
+Would a webpack plugin or loader be responsible for creating global constant values that can be used throughout the application?
+Plugin
+
+Quiz Question
+Would a webpack plugin or loader be responsible for taking a .less file and returning css?
+Loader
+
+
+Quiz Question
+￼
+What are the three steps to install most plugins:
+Declare a new instance of the plugin in the plugins list
+Require the plugin from the node modules directory
+Install the plugin via yarn or npm
+
+
+Interview Question
+In javascript, when you see the "new" keyword, what does it do and what does it say about the thing it is being called on?
+create a new object
+
+Things to think about
+Some words and concepts that should be part of your answer here are:
+
+The word instantiate, you create a new instance of the class
+We create instances from classes, so the thing it is called on must be a class
+If you want to get into the nitty gritty, you could talk about javascript pseudo classes and how the new keyword in javascript classes is really just syntactic sugar for javascript prototypes
+
+
+
+
 
