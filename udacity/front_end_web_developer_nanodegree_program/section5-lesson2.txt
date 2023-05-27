@@ -690,4 +690,101 @@ If you want to get into the nitty gritty, you could talk about javascript pseudo
 
 
 
+5.2.13  Ex 4: Plugins
+---------------------------------------
+Exercise: Plugins
+If you are using the classroom workspace, you do not need to use the tasklist below - it’s here to help those working on their local machines. The same instructions are included in the workspace, so you should click “Expand” on the bottom left to be able to use your full screen.
+
+Exercise: Plugins Tasklist
+In your repo:
+
+￼
+x Install the html webpack plugin
+
+    npm i -D html-webpack-plugin
+￼
+x Require the plugin at the top of your webpack config
+
+    const HtmlWebPackPlugin = require(‘html-webpack-plugin’)
+￼
+x Add a plugins list to the webpack config and instantiate the plugin
+
+    plugins: [
+      new HtmlWebPackPlugin({
+        template: "./src/client/views/index.html",
+        filename: "./index.html",
+      })
+    ]
+￼
+x Run webpack and observe the new dist folder output
+
+x Update your server file. Change the home route to use the index file from dist:
+
+    app.get('/', function (req, res) {
+      res.sendFile('dist/index.html')
+    })
+￼
+x Update your server file to look for asset files in the dist instead of client. Change:
+
+    app.use(express.static('src/client'))
+    
+    To:
+
+    app.use(express.static('dist'))
+￼
+x Run the server
+
+x Git commit
+
+
+Note: Some students are facing dependency issues, if you are facing such issues, we would suggest you to modify the version of html plugin in package.json to "html-webpack-plugin": "^3.2.0" and then install the packages again npm i. Now you can run npm run build and the dist folder will be generated again.
+
+
+
+Exercise: Plugins
+Now's your chance to begin work with plugins! Start by cding into webpack-content.
+
+Install the html webpack plugin
+￼HIDE SOLUTION
+npm i -D html-webpack-plugin
+
+Require the plugin at the top of your webpack config
+￼HIDE SOLUTION
+￼
+const HtmlWebPackPlugin = require('html-webpack-plugin')
+Add a plugins list to the webpack config and instantiate the plugin
+￼HIDE SOLUTION
+￼
+plugins: [
+    new HtmlWebPackPlugin({
+        template: "./src/client/views/index.html",
+        filename: "./index.html",
+    })
+]
+Run webpack and observe the new dist folder output
+
+Update your server file. Change the home route to use the index file from dist.
+
+￼HIDE SOLUTION
+￼
+app.get('/', function (req, res) {
+    res.sendFile('dist/index.html')
+})
+Update your server file to look for asset files in the dist instead of client.
+￼HIDE SOLUTION
+Change:
+
+￼
+app.use(express.static('src/client'))
+To:
+
+￼
+app.use(express.static('dist'))
+Run the server
+Need to try viewing the app? Use these to view or stop the app.
+
+
+
+
+
 
