@@ -787,4 +787,77 @@ Need to try viewing the app? Use these to view or stop the app.
 
 
 
+5.2.14 Mode
+---------------------------------------
+Mode
+
+Switch the Git Branch
+If you wish to practice the steps mentioned in the video demonstration below, use the 4-webpack-plugins branch.
+
+Else, you can switch to the branch 5-webpack-mode corresponding to the current exercise where all the steps have already been carried out.
+
+git checkout 5-webpack-mode
+git branch
+
+Webpack Mode
+The last core Webpack concept we’re going to cover is Mode. In the last concept, when you build, you probably noticed the warning:
+
+The issue is that we haven’t told webpack which mode to run in. Modes won’t make sense until we delve into environments. You have probably already come across the idea of environments in code projects, or at least heard mention of a “development” or “prod” environment. But in order to use webpack to its true potential, we have to fully understand these concepts.
+
+Production vs. Development Environments
+Developers refer to the various “states” of a website as environments. When we are developing a website, we call it the development environment - we run the server on localhost and use tools that are specifically convenient for us as developers. On the other hand, there is a production environment, which is our code on a server and where we can tune every tool and file for optimal efficiency, thereby giving our users the best experience when they use the webpage. There can be many environments for a project, like a testing environment or review environment, but we are going to focus on development and production for now.
+
+There are lots of tools that aim to make writing code easier for developers. One of these tools, called “sass”, we will cover in a future lesson, but for now just know that it is css with some developer friendly syntax and features. It’s great that we have tools that make development easier, but if you take sass as an example - we can’t run sass on a server. All our sass files have to be run through a transpiler in order to become css that can go on a live webpage. No matter how awesome a development tool is, in the end our code will be judged by how well it runs on a server, and oftentimes what is best for the server is the opposite of what is convenient for developers. So how do we handle both of these environments? By utilizing build tools, we can make code that is convenient for our dev team, without sacrificing speed on the server.
+
+One of the awesome features of webpack, is that it lets us apply configurations to our code based on the environment we are running. We can create a development environment (MODE in webpack) and run totally different loaders and plugins than we do for production mode.
+
+Now we have learned the second part of why we use build tools. First, we learned that build tools allow devs to use the tools that are more convenient for them. The other side of that coin is that build tools simultaneously allow devs to optimize code for the server. Build tools like Webpack are one tool we can use to help us with organization in all environments. If that doesn’t fully make sense now, don’t worry too much, it will become more clear as we go along.
+
+You can see that a lot of times, what is best for developers is the opposite of what is most efficient for the server. Webpack helps us have the best of both worlds.
+
+Changes proposed for the Configuration Files
+1. Create a copy of the webpack.config.js, and rename it as webpack.prod.js. This file should have mode: 'production' statement in module.exports.
+2. Now, rename the webpack.config.js to webpack.dev.js. This file should have the following statements in module.exports
+
+mode: 'development',
+devtool: 'source-map',
+
+Changes proposed for package.json
+The statements added to the package.json for the configuration files of production and development modes separately in the "script" block are:
+
+"scripts": {
+    "build-prod": "webpack --config webpack.prod.js",
+    "build-dev": "webpack --config webpack.dev.js --open"
+},
+Note that you should remove the "build": "webpack" script now from package.json, and only have the two related to build-dev and build-prod. This also means when you build your app with npm, you should use the correct script, e.g.
+
+npm run build-dev
+Note: Some students are facing dependency issues, if you are facing such issues, we would suggest you to modify the version of html plugin in package.json to "html-webpack-plugin": "^3.2.0" and then install the packages again npm i. Now you can run npm run build and the dist folder will be generated again.
+
+Mode Quiz
+Which environment is concerned with what happens on a server?
+
+production
+
+
+Quiz Question
+￼
+Select the following webpack loaders and plugins that you would expect to find in development mode and not in production mode
+Linters
+A source map mode for debugging
+￼
+Quiz Question
+Which environment has the most direct effect on users?
+Production
+
+
+Interview Question
+Would you minify files for development or production? Why?
+
+production, so it can be tranfer as minimal time as possible to client/browser so the response is quick!
+
+
+
+
+
 
