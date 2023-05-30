@@ -860,4 +860,132 @@ production, so it can be tranfer as minimal time as possible to client/browser s
 
 
 
+5.2.15 Ex 5: Mode
+---------------------------------------
+Exercise: Mode
+If you are using the classroom workspace, you do not need to use the tasklist below - it’s here to help those working on their local machines. The same instructions are included in the workspace, so you should click “Expand” on the bottom left to be able to use your full screen.
+
+Exercise: Mode Tasklist
+Your turn!
+x Experiment with setting the mode in the webpack script when you run it
+x Observe the dist folder output
+x Create a prod config file
+x Update your npm scripts
+x Git commit
+
+Note: Some students are facing dependency issues, if you are facing such issues, we would suggest you to modify the version of html plugin in package.json to "html-webpack-plugin": "^4.5.1" and then install the packages again npm i. Now you can run npm run build and the dist folder will be generated again.
+
+
+Exercise: Mode
+Here, you'll get to compare production vs. development builds. Start by cding into webpack-content.
+
+Experiment with setting the mode in the webpack script when you run it
+￼HIDE SOLUTION
+One potential mode here would be:
+
+￼
+mode: 'production'
+Observe the dist folder output
+Create a prod config file
+Change your webpack config file to be a webpack dev file
+Update your npm scripts
+￼HIDE SOLUTION
+In package.json (make sure to open with the Editor), add the following scripts:
+
+￼
+"build-prod": "webpack --config webpack.prod.js",
+"build-dev": "webpack --config webpack.dev.js"
+Note that you should remove the build script now from package.json, and only have the two related to build-dev and build-prod. This also means when you build your app with npm, you should use the correct script, e.g. npm run build-dev.
+
+Need to try viewing the app? Use these to view or stop the app.
+
+
+
+5.2.16 Convenience in Webpack
+---------------------------------------
+Congratulations!
+We have made our tedious way through all of the webpack concepts. Now we get to actually make things awesome.
+
+As you probably noted during this lesson so far, there are some things about the process we have now that aren’t exactly smooth. Overall, I wouldn’t call our set up a good dev experience and we don’t have production set up at all. It is functional, and that’s about it. But the whole point of using all these tools is to make our lives easier. So...what’s going wrong? Let’s use what we’ve learned to make some improvements.
+
+Switch the Git Branch
+If you wish to practice the steps mentioned in the video demonstration below, use the 5-webpack-mode branch.
+
+Else, you can switch to the branch 6-webpack-for-convenience corresponding to the current exercise where all the steps have already been carried out.
+
+git checkout 6-webpack-for-convenience
+
+Install Webpack Dev Server
+It helps in live reloading of the page, only for Development mode, and automatically re-builds the application.
+
+Up next, have you noticed how we often have to remove the dist folder manually before re-running the build script? From what I have seen, when you rebuild, new code will be added to the bundled files, but if there was old code that you got rid of, webpack build does not remove the old stuff. So, we have been removing the dist folder via the terminal and before rebuilding.
+
+Really though, that is an extra and unnecessary step. If we wanted to go really low tech, we could just edit our build script:
+
+rm -rf dist && webpack-dev-server  --config webpack.dev.js --open
+
+And there’s really nothing wrong with that. Honestly, being comfortable customizing your npm scripts will make so many things easier. But, it is doing a little bit of extra work. That script blindly deletes everything and then rebuilds it, even if 99% of the code remained the same.
+
+To be a little more efficient, there is a webpack plugin called Clean. From its documentation:
+
+By default, this plugin will remove all files inside webpack's output.path directory, as well as all unused webpack assets after every successful rebuild.
+
+Now, some people will choose to go with the simpler blanket dist folder delete, but just to try it, lets install the clean plugin.
+
+npm i -D clean-webpack-plugin
+
+Then, as we learned before, to make webpack use a plugin, we have to do two things:
+
+Add a require statement to the top of the webpack config file:
+
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+
+Add the plugin to Plugins array in the module.exports. The clean plugin is a good example of a plugin that allows for various options. Take a look at this:
+
+We could use CleanWebpackPlugin like this:
+
+   new CleanWebpackPlugin()
+
+ And the above would function. When there are no options passed in, a plugin will run all the default settings, but we can also pass in our custom selections of the various plugin options, like this:
+
+     new CleanWebpackPlugin({
+                // Simulate the removal of files
+                dry: true,
+                // Write Logs to Console
+                verbose: true,
+                // Automatically remove all unused webpack assets on rebuild
+                cleanStaleWebpackAssets: true,
+                protectWebpackAssets: false
+        })
+
+You can’t know what options a plugin allows without reading the documentation for that plugin.
+
+Add that code to your wepack.dev.js file and rerun the build script, now you’ll see a few lines added to the webpack output that tell you the clean plugin is functioning.
+
+Note: If facing dependency issue, install: npm i -D clean-webpack-plugin@^3.0.0
+
+Quiz
+What do you think are the most time-saving developer tools for you? Which tools do you absolutely want in a development environment, or which could you do without?
+
+Your reflection
+depend on which language and/or product you develop, if it is front end, vscode and chrome devtools, if it is java, eclipse ide.
+
+Interview Question
+You start work on a project with webpack already installed, but there is no specific build for production. Walk me through the steps of setting up a production environment in webpack
+
+
+Interview Question
+You start work on a project with webpack already installed, but there is no specific build for production. Walk me through the steps of setting up a production environment in webpack
+webpack.prod.js
+with mode: 'produciton'
+
+change in package.json in scripts section, add the following:
+"scripts": {
+    "build-prod": "webpack --config webpack.prod.js",
+},
+
+
+
+
+
 
