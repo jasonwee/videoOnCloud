@@ -988,4 +988,66 @@ change in package.json in scripts section, add the following:
 
 
 
+5.2.17 Ex 6: Convenience
+---------------------------------------
+Ex 6: Convenience
+Exercise: Convenience
+If you are using the classroom workspace, you do not need to use the tasklist below - it’s here to help those working on their local machines. The same instructions are included in the workspace, so you should click “Expand” on the bottom left to be able to use your full screen.
+
+Exercise: Convenience Tasklist
+Now it’s time to get some more practice.
+
+x Install the webpack dev server
+
+    npm i -D webpack-dev-server
+￼
+x Edit the build-dev npm script to use webpack-dev-server, it should look like this:
+
+    webpack-dev-server --config webpack.dev.js --open
+￼
+x Next, implement one of the following:
+
+    * Clean Webpack plugin
+    * Source Maps
+￼
+Exercise: Convenience Optional Tasklist
+If you feel comfortable with the things we’ve learned so far, I highly recommend you try out this fun Bundle Analyzer. It will give you a graphical representation of all the bundles in your code. We’ve done enough hand holding, so try this one on your own!
+
+x Installation instructions can be found here.
+x You’ve been successful when you can generate the webpage that shows you all your bundles!
+
+Exercise: Convenience¶
+Now, let's check out webpack-dev-server. Start by cding into webpack-content.
+
+Install the webpack dev server
+￼HIDE SOLUTION
+npm i -D webpack-dev-server
+
+Edit the build-dev npm script to use webpack-dev-server
+￼HIDE SOLUTION
+In package.json, the script for "build-dev" should now look like this:
+
+￼
+webpack-dev-server --config webpack.dev.js --open
+Next, implement one of the following:
+Clean Webpack plugin
+Source Maps
+Note: The classroom unfortunately does not support the --open flag with the webpack-dev-server. However, if your terminal notes that npm run build-dev has compiled successfully, open a new terminal (File...New...Terminal) with the first terminal still running, and use:
+
+￼
+curl localhost:3000
+You should be able to see the HTML from your app from there.
+
+
+Troubleshooting:
+
+For dependency issues, follow the given versions for installation:
+
+npm i -D webpack-dev-server@^3.7.2
+npm i -D clean-webpack-plugin@^3.0.0
+
+
+
+
+
 
