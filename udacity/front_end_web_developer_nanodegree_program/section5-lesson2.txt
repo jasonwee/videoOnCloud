@@ -1048,6 +1048,26 @@ npm i -D clean-webpack-plugin@^3.0.0
 
 
 
+5.2.18 Conclusion
+---------------------------------------
+Summary
+Webpack Entry: Webpack is going to make a map of our app assets and all of their dependencies, but it needs somewhere to start. That entry point is Webpack entry.
+
+Loaders: Loaders allow us to transform files of one type into another type so that Webpack can work with them
+
+Plugins: While loaders are used to transform certain types of modules, plugins can be leveraged to perform a wider range of tasks like bundle optimization, asset management, and injection of environment variables.
+
+Mode: One of the awesome features of Webpack, is that it lets us apply configurations to our code based on the environment we are running. We can create a development environment (MODE in Webpack) and run totally different loaders and plugins than we do for production mode
+
+Additional Resources
+If you want to go further with webpack, check out these topics next:
+
+1. Multiple entry points with webpack
+   https://github.com/webpack/webpack/tree/main/examples/multiple-entry-points
+2. Using webpack to be more efficient with your styles and assets
+   https://www.jonathancreamer.com/advanced-webpack-part-1-the-commonschunk-plugin/
+3. Cache busting with webpack
+   https://webpack.js.org/guides/caching/
 
 
 
