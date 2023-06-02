@@ -1,0 +1,50 @@
+
+
+5.3.1 Sass Basics
+---------------------------------------
+
+Lesson Objectives
+In this lesson, we will learn about a CSS extension language - Sass, and how it can be used in conjunction with webpack. Sass provides an extra set of CSS language syntax that helps writing more efficient styles. The objectives are:
+
+1. Explain the basics of Sass, and introduce the important features
+2. Describe more about the features - nesting, variables, ampersand
+3. Learn to use Sass with webpack
+
+Introduction
+The two of the famous CSS extension languages are:
+
+1. Sass - Note that these files have an extension as .scss
+2. Less - It has .less as file extension
+
+We are going to learn about Sass in this lesson.
+
+When a developer writes a .scss file, there is a problem. Browsers don’t know what Sass is, they don’t run Sass, they run CSS. Sass transpiles to CSS - or in more common english - Sass can be directly translated to CSS. Anything you write in Sass can be written in 100% pure CSS, they are equivalent to each other, but the Sass syntax is going to be much shorter and easier to write than the CSS.
+
+Sass now comes with some of its own tools to run that translation process to create CSS, but since we’re using webpack anyway, we’re going to leverage webpack to do that job.
+
+Quiz Question
+￼
+From what you have learned of webpack loaders and plugins, which one do you think we will need to turn our .scss files into .css files?
+A Loader
+
+Quiz
+Do you have any previous experience with sass?
+yes, a little
+
+
+Quiz Question
+CSS is valid Sass and Sass can be transpiled to pure CSS￼
+True
+
+Interview Question
+Name two or three reasons developers often prefer to work with sass or less over vanilla css.
+class/id naming conflict, easier separate scss for each html
+
+Sass Tutorial Resource
+Learning sass is worth every minute of your time as you hone your front end developer skills. These days it is pretty much required knowledge and it could be a whole course of its own. Unfortunately, this course is jam-packed enough as it is so we aren’t going to spend much time here. On the bright side, the sass website has a good tutorial that will take you through all the basics. In the next few sections, I’ll highlight three of the concepts I think are most important to learn about sass.
+
+Again, we strongly recommend you to give it some time to read through the preprocessing, variables, nesting, modules, inheritance, and operators, from the link above.
+
+
+
+
