@@ -1,0 +1,412 @@
+
+
+5.4.1 Broken Project
+---------------------------------------
+As we have gone along setting up this project, we have let all functionality slide. We just got our styles to show up again, but now, what about our click events? What if we wanted to make an API call or add pages to this app?
+
+This will hopefully be a short and sweet lesson where we solve those entirely practical issues, so that I can get out of your way and let you build stuff.
+
+Lesson Objectives
+In this lesson, we will learn to incorporate the following in our web app:
+
+1. JavaScript functionalities - This will help us to attach listeners to the events and have webpack configure to access the listeners.
+2. API call - Learn to call APIs from our exercise project, add pages it.
+3. Production environment - Set up production configuration for webpack
+4. Offline functionality - Introduce the "Service Workers" script that runs in the background and helps to load the webpage even without internet connectivity.
+
+Let's start by introducing JavaScript functionalities in our web app, that are currently broken.
+
+Immediately Invoked Function Expression (IIFE)
+
+If you haven't run into IIFE's yet, this is a great time to become familiar with them. Go to the mozilla developer docs here and see if you can answer the following questions. If you think you have a handle on IIFEs, try answering the questions first and then go back to the docs to fill in any gaps. Also, the mozilla developer docs are an amazing resource for many many front end concepts, so you might want to bookmark it for future reading if you haven't already.
+
+IIFE Quiz
+What does IIFE stand for?
+
+Immediately Invoked Function Expression
+
+Quiz Question
+￼
+What are some benefits of using IIFEs?
+They will import all necessary code from other files at run time
+They run directly after being defined, so you don’t have to name them
+
+IIFE Quiz - Reflect
+What is wrong with this IIFE?
+
+function foo() {
+...javascript
+}();
+Your reflection
+wrong anonymous function declaration?
+
+￼
+Things to think about
+Potentially there are other answers, but the big one that you shouldn’t miss, is that this is an invalid IIFE because it is a named function.
+
+If I were asked this in an interview, I wouldn’t stop at saying why it is an invalid IIFE - a question like this is an opportunity to tell the interviewer everything you know about the topic.
+
+It isn’t going too far to talk about a time that you used them, or a lightbulb moment you had while learning about it.
+
+
+
+5.4.2 Fixing Our Functionality
+---------------------------------------
+Fixing Our Functionality
+
+Switch the Git Branch
+You can continue to practice the demonstration instructions below on 1-add-sass-loaders branch, or you can switch to 2-fixing-js branch corresponding to the current exercise where all the steps have already been carried out. Use the following checkout command in your project root directory:
+
+git checkout 2-fixing-js
+
+Fixing the JS Functionality
+
+Instructions to Follow
+
+1. As we will start the Express server on a different port, we have to make familiar changes in the webpack.prod.js. Add the rule for sass files, like below:
+
+            {
+                test: /\.scss$/,
+                use: [ 'style-loader', 'css-loader', 'sass-loader' ]
+            }
+
+2. In webpack.prod.js as well as webpack.dev.js, add a new section in module.exports as:
+
+output: {
+        libraryTarget: 'var',
+        library: 'Client'
+    },
+
+3. In client/index.js, add the export statement:
+
+export {
+    checkForName,
+    handleSubmit
+}
+
+4. In client/views/index.html, confirm that the custom handleSubmit() function references the newly created Client library, as:
+
+            <section>
+                <form class="" onsubmit="return Client.handleSubmit(event)">
+                    <input id="name" type="text" name="input" value="" onblur="onBlur()" placeholder="Name">
+                    <input type="submit" name="" value="submit" onclick="return Client.handleSubmit(event)" onsubmit="return handleSubmit(event)">
+                </form>
+            <section>
+
+5. In client/js directory, confirm that the javascript function calls refer to the Client library. In formHandler.js:
+
+Client.checkForName(formText)
+
+Change the port number in the fetch request in the formHandler.js to 8081:
+
+    fetch('http://localhost:8081/test')
+    .then(res => {
+        return res.json()
+    })
+    .then(function(data) {
+        document.getElementById('results').innerHTML = data.message
+    })
+
+6. Change the port number in server/index.js to 8081 as well:
+
+// designates what port the app will listen to for incoming requests
+app.listen(8081, function () {
+    console.log('Example app listening on port 8081!')
+})
+
+7. Open two terminal, one for the webpack dev server, and another for Express in production mode. In terminal 1, run the following commands:
+
+# If you have switched to a new branch
+npm install
+
+# Optional installation for development mode
+npm i -D @babel/core @babel/preset-env babel-loader
+npm i -D style-loader node-sass css-loader sass-loader
+npm i -D clean-webpack-plugin
+npm i -D html-webpack-plugin
+
+# Build and start the webpack dev server at port 8080
+npm run build-dev
+
+8. In terminal 2, run the following commands:
+
+# generate a `dist` folder for prod
+npm run build-prod
+# Run the Express server on port 8081
+npm start
+
+
+Interview Question
+Explain scope in javascript. It might be easier if you choose an example to walk through.
+
+Your reflection
+In JavaScript, the scope refers to the accessibility or visibility of variables, functions, and objects in a particular part of your code during runtime. It determines where these entities are defined and where they can be accessed.
+
+￼
+Things to think about
+This question is likely to come up in some form or another in a javascript interview. Even if they never ask about scope directly, they will most likely ask a question that revolves around your knowledge of scope. But it is a frustratingly abstract and difficult concept to answer point blank. The simplest answer is to say that scope is where a variable can be seen. But you need to go into better detail than that, so most people choose an allegory or code examples. No one expects your answer to be perfect, so just try your best to get the point across. This is also a great interview question to show off your communication skills. A big part of being a developer is being able to clearly explain complex and technical topics, especially to non-technical people.
+
+
+
+5.4.3 Exercise: Fixing Functionality
+---------------------------------------
+Exercise: Fixing Functionality
+
+If you are using the classroom workspace, you do not need to use the tasklist below - it’s here to help those working on their local machines. The same instructions are included in the workspace, so you should click “Expand” on the bottom left to be able to use your full screen.
+
+Exercise: Fixing Functionality Tasklist
+In your repo:
+
+x Update the webpack config output to include libraryTarget and library
+
+  output: {
+    libraryTarget: 'var',
+    library: 'Client'
+  },
+￼
+x Update your Javascript to use the Client package created by webpack
+
+x Change which port your express server is running on
+
+x Make sure all functionality on the page works as expected
+
+x Commit your changes!
+
+
+
+
+5.4.4 Exercise: API Call Challenge
+---------------------------------------
+If you are using the classroom workspace, you do not need to use the tasklist below - it’s here to help those working on their local machines. The same instructions are included in the workspace, so you should click “Expand” on the bottom left to be able to use your full screen.
+
+Exercise: API Call Challenge Tasklist
+Implement a fetch request to an external API and get the response to show up in the view of your app. Try to get all of this working on your own, but in case you get stuck, the feedback will have some code hints. Remember that the file client/js/formHandler.js has an example fetch request you can use as a template.
+
+￼
+x Create a new git branch for this activity
+￼
+x Create a javascript fetch request to an external API (you can use the same API that you used in the previous course if you already have credentials)
+
+x Make the fetch request run after an event on your webpage (form submit is an easy one, but you can do something else if you’d like)
+
+x Make the response show up on your webpage. This will require some vanilla javascript DOM manipulation, you can see examples of this in formHandler.js
+
+x See if you can run the app, trigger the event, and see the result from your API call!
+
+x Commit and push your code!
+
+
+
+5.4.5 Webpack for Production
+---------------------------------------
+Now we have a usable and fairly well set up development environment for webpack with express. But though our development environment has gotten a lot of attention lately, we haven’t done much with our production config. So we’ll give it some love in this section. Thankfully, just by setting mode as “production” webpack knows to do some optimizations. For instance, have you noticed that the main.js file is not minified in development, but is minified for production? That’s webpack automatically knowing what we want, just because we specified the mode.
+
+When we bundle assets for production, I like to think of it like your app is going on a camping trip and you have to pack the bag. Everything your app needs to run has to be there, but you have to make it as small and light as possible, or else your app won’t do very well on its trip.
+
+
+Switch the Git Branch
+You can continue to practice the demonstration instructions below on 2-fixing-js branch, or you can switch to 3-webpack-production-config branch corresponding to the current exercise where all the steps have already been carried out. Use the following checkout command in your project root directory:
+
+git checkout 3-webpack-production-config
+
+Set up Production Configuration for Webpack
+
+Steps Followed in the Demonstration Video
+
+1. Add the new plugins using npm to install to "devDependencies":
+
+npm install --save-dev mini-css-extract-plugin terser-webpack-plugin@4 optimize-css-assets-webpack-plugin
+
+NOTE. The plugins in this course, configured as shown above, are only tested with Webpack version 4. Upgrading to Webpack version 5 might require you to update other plugins or edit configuration code. For instance, if you are using Webpack 5, you will need to install terser-webpack-plugin@5 to avoid errors.
+
+2. In webpack.prod.js config file, append the new plugin statements:
+
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
+const TerserPlugin = require('terser-webpack-plugin');
+
+Add the optimization attribute in module.exports section, that will help us to minimize certain files. Notice that the TerserPlugin and OptimizeCSSAssetsPlugin are being initialized here.
+
+optimization: {
+	 minimizer: [new TerserPlugin({}), new OptimizeCSSAssetsPlugin({})],
+	 },
+
+Updated the rule section for Sass file loaders:
+
+{
+test: /\.scss$/,
+use: [MiniCssExtractPlugin.loader, "css-loader", "sass-loader"],
+},
+
+Instantiate the new plugin in the plugin list:
+
+new MiniCssExtractPlugin({ filename: "[name].css" })
+
+3. On the terminal, run the following commands:
+
+npm i -D mini-css-extract-plugin
+npm i -D optimize-css-assets-webpack-plugin terser-webpack-plugin
+npm run build-prod
+
+Note: To avoid any errors during the npm install we would recommend to use the given versions for Webpack v4:
+
+mini-css-extract-plugin@ ^0.8.0
+
+optimize-css-assets-webpack-plugin@^5.0.3
+
+terser-webpack-plugin@^1.3.0
+
+Quiz Question
+￼
+What are the three biggest factors contributing to slow and bloated websites?
+High resolution images and gifs
+Javascript
+Styles
+
+Quiz
+With your minified css file, go check the overall page size in your browser again. How much smaller is your webpage? The results won't be drastic here, because our styles are quite short, but whatever percentage of space you saved, apply that mentally to 5MB of styles. Then you really start to see some page speed results!
+
+Your reflection
+90%
+
+Interview Question
+What is the purpose of a .map file?
+
+Your reflection
+mapping the version of the details
+
+￼
+Things to think about
+Map files keep track of which source files the code in your bundled file comes from. This is incredibbly handy when debugging. Without a map file, you would get an error that says it is coming from like 1783 of bundle.js - which isn’t very helpful, but with a source map turned on it would tell you the file name and line where the error is occuring. Much better!
+
+A real life example
+Just as a bit of extra for how knowing all of this about production builds can be useful, take this example. Imagine you just took on a new client, and want to give them a report of their current site before starting on any development work (that is a great thing to do for all your clients, by the way). Minimizing assets can be an easy win. You might be able to bump a client's page speed considerably, just by minimizing their stylesheets, if they aren't being minimized already. You can also check if styles are being loaded that are never used on the page.
+
+Webpack allows us to do some really powerful optimizations for production, and we have only scratched the surface here, but we have done probably the most important tasks. If you want to delve more into production optimizations, webpack has its own documentation for this and reading plugin documentation like Terser’s will have lots of ways to help you.
+
+If you feel comfortable with webpack and what we've done so far, you might have noticed that our webpack config files don't exactly follow the DRY principle. There is definitely going to be some overlap between our prod and dev configs. Webpack recognizes this and has actually created a webpack merge plugin that allows you to create a webpack config file that is generic across all your configs, that can be merged with another config to contain exactly the settings you need. Create a new branch on your repo, then see if you can get it working.
+
+
+
+5.4.6 Exercise: Dev Tools Challenge
+---------------------------------------
+If you are using the classroom workspace, you do not need to use the tasklist below - it’s here to help those working on their local machines. The same instructions are included in the workspace, so you should click “Expand” on the bottom left to be able to use your full screen.
+
+Exercise: Dev Tools Challenge Tasklist
+This is a dev tools challenge.
+
+￼
+Using the developer tools of whatever browser you are using, look up how to see the total web page size
+
+x Build prod and note the size of the page
+x Install the Minimize CSS plugin and terser plugin
+x Run webpack in prod mode
+x Note the size of the page with minified CSS
+
+
+5.4.7 Service Workers
+---------------------------------------
+Switch the Git Branch
+You can continue to practice the instructions below, making use of 3-webpack-production-config branch, and create a new branch for yourself adding service workers.
+
+Otherwise, you can switch to 4-service-workers branch corresponding to the current exercise where all the steps have already been carried out. Use the following checkout command in your project root directory:
+
+git checkout 4-service-workers
+
+Add Service Workers
+Google Workbox makes working with basic Service Workers incredibly convenient. We are going to follow their setup instructions, the steps are going to feel very familiar by now, because Google Workbox created a webpack plugin for us.
+
+We are going to add service workers to webpack.prod.js config file, because to allow offline access, what the service workers actually do is create a cached version of your website that they can supply if the server can’t be reached. But we don’t want that caching around our dev site, so we won’t add this to our dev config at all.
+
+Like we’ve learned with most plugins, when we call the generate service workers function, we have the ability to pass in some options. There are lots of cool options you can choose from, to do things like cache images at runtime, limit the max size of your cache, etc. For now, we are going to stick with the default settings.
+
+So, we do our three steps:
+
+1. In webpack.prod.js config file,
+
+* Require the plugin, by appending the new plugin statement
+
+const WorkboxPlugin = require('workbox-webpack-plugin');
+
+* Instantiate the new plugin in the plugin list:
+
+new WorkboxPlugin.GenerateSW()```
+
+
+2. On the terminal, install the plugin using `npm install workbox-webpack-plugin --save-dev`
+
+3. If you follow along with the Workbox Service Worker documentation, there’s one more step. We need to register a Service Worker with our app. To do this, we will add a script to our /src/client/views/index.html file and call the register service worker function if the browser supports service workers.
+
+Add this code to the bottom of your html file, just above the closing body tag.
+
+<script>
+    // Check that service workers are supported
+    if ('serviceWorker' in navigator) {
+        // Use the window load event to keep the page load performant
+        window.addEventListener('load', () => {
+            navigator.serviceWorker.register('/service-worker.js');
+        });
+    }
+</script>
+
+Quiz Question
+￼
+A service worker is a json file that keeps a cached copy of your DOM
+False
+￼
+
+Quiz Question
+￼
+Service Workers do all the following except:
+
+Allow websites to be available through app stores like phone apps
+
+
+In case this idea of PWA's really caught your interest, I would go to the Google Workbox PWA tutorial. Your knowledge of webpack and service workers will put you in a good place to get started.
+
+
+
+5.4.8 Exercise: Service Workers
+---------------------------------------
+If you are using the classroom workspace, you do not need to use the tasklist below - it’s here to help those working on their local machines. The same instructions are included in the workspace, so you should click “Expand” on the bottom left to be able to use your full screen.
+
+Exercise: Service Workers Tasklist
+In your repo:
+
+x Create a new branch called “adding service workers”
+x Install the workbox plugin
+x Run your server, refresh the page a few times
+x Turn off the server in your terminal
+x Go back to your web page and refresh
+x You’ve been successful if you still see your webpage!
+x Merge the branch back to master
+
+Troubleshooting tips:
+
+1. If service worker is not working for you, try to run the command npm i -D workbox-webpack-plugin again.
+2. If you are facing any issue with the port, try to change the port 8081 to some other port.
+3. If you are facing an error in the workspace, please try to install every dependency's version as given in packgae.json of the github repository branch 4.
+4. Install workbox plugin here if it is not installed or the service worker isn't working.
+
+
+
+5.4.9 Course 4 Conclusion
+---------------------------------------
+If you want some more advanced webpack topics to research next, might I suggest these:
+
+* Code splitting/lazy loading (spoiler - they're the same thing in webpack)
+* Tree shaking or dead code elimination
+* A list of plugins and tutorials for more webpack fun
+* If you want to hear someone who works for Webpack explain webpack, here’s a video
+
+Interview Question
+What excites or interests you about coding?
+
+Your reflection
+if it is inter-related, it is fun.
+
+Interview Question
+What is a recent technical challenge you experienced and how did you solve it?
+a lot of problem during npm install, try different version of node.
+
+Congratulations! We are at the end of course 4. Perhaps it’s been a whirlwind of new things for you, or maybe you already knew a good portion of what we covered, but either way, I hope that this course has helped you on your way to making awesome apps with webpack and all the doors it opens. Remember that the repository you forked (or your workspace) and all the github materials will continue to be there for you as a resource whenever you want to set up another project. Best of luck and happy coding!
