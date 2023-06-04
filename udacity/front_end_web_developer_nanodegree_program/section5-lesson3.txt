@@ -165,4 +165,315 @@ Fewer classes required Shorter stylesheets
 
 
 
+5.3.3 Exercise: Sass Conversion
+---------------------------------------
+Exercise: Sass Conversion
+If you are using the classroom workspace, you do not need to use the task list below - it’s here to help those working on their local machines. The same instructions are included in the workspace, so you should click “Expand” on the bottom left to be able to use your full screen.
+
+Exercise: Sass Conversion Tasklist
+Convert your CSS to Sass!
+￼
+Convert all CSS code and/or files to Sass
+
+Exercise: Sass Conversion
+Currently all of the files in our github app are CSS file format - except the Sass resets file that I have provided for you. Now, you should translate all the remaining files from CSS to Sass. Note that this time, you'll want to cd into webpack-sass to start.
+
+HINT - The least effort you could put out to complete this step would be to change all the file names to .scss and leave the content all the same. CSS is valid Sass!
+
+x Convert all CSS code and/or files to Sass
+
+As noted in the hint, all you have to do here is re-name the CSS files from .css to .scss. However, if you want to re-factor your code to use the nesting discussed on the prior page, feel free to do so!
+
+Don't forget you may be linking these filenames somewhere that also may need updating...
+
+Need to try viewing the app? Use these to view or stop the app.
+
+
+5.3.4 Sass Variables
+---------------------------------------
+Variables
+Another great sass feature is actually one that’s available in vanilla css as well, but the intentional use of variables in stylesheets, especially when theming, can make for far more flexible and understandable styles.
+
+$font-stack: Helvetica, sans-serif;
+$primary-color: #333;
+
+body {
+  font: 100% $font-stack;
+  color: $primary-color;
+}
+
+In CSS becomes:
+
+body {
+  font: 100% Helvetica, sans-serif;
+  color: #333;
+}
+
+Perhaps that doesn’t look impressive, but what it means most certainly is. Imagine, you’ve built a website with hard coded values for font all throughout. The client comes to two days before launch, after the last pass of QA, and tells you that everything looks good but they want to change the font (as happens from time to time). You might cringe, because it will take you an hour to go through every single reference to font in the whole app, replace it with the new one and change sizes proportionally. Or, you might sigh a sigh of relief because you used a sass variable, and now all of those 170 references to font are all using the same single variable, you change that one value in your code, and can go to bed early that night instead of staying up and working.
+
+Quiz Question
+Select the css properties that might be most valuable as css variables:
+primary and secondary theme colors
+fonts
+line height and padding in paragraphs and sections
+warning colors
+icons
+transitions
+all of the above
+
+Quiz
+Sass variables are denoted with a:
+$
+
+Declare Variables
+Write the three sass variable declarations required by this code. The order of declaration and assigned values don't matter.
+
+h1 {
+  theme-secondary: #000000;
+  font-main: fantasy;
+  theme-spacing: 25px;
+}
+h2{
+  font-main: fantasy;
+  theme-spacing: 25px;
+  color: black;
+}
+h3{
+  theme-secondary: #000000;
+  theme-spacing: 25px;
+  color: green;
+}
+p {
+  theme-secondary: #000000;
+  color: red;
+  text-transform: uppercase;
+}
+
+$theme-second: #000000;
+$font-main: fantasy;
+$theme-spacing: 25px;
+￼
+
+
+
+5.3.5 Sass Ampersand
+---------------------------------------
+Quiz
+I will keep making this point throughout the course - there is no better way to advance as a developer than to read source code and documentation. While it might not be the most fun, you will learn that technology in the most full sense - at least if the documentation is good. Fortunately, the Sass documentation is top-notch, so go to their docs here and look up one concept that we did not cover in this course. Explain it in this free response.
+
+Your reflection
+Partials You can create partial Sass files that contain little snippets of CSS that you can include in other Sass files. This is a great way to modularize your CSS and help keep things easier to maintain. A partial is a Sass file named with a leading underscore. You might name it something like _partial.scss. The underscore lets Sass know that the file is only a partial file and that it should not be generated into a CSS file. Sass partials are used with the @use rule.
+
+Quiz Question
+￼
+Sass can do all of the following EXCEPT:
+
+Make our site faster by serving sass directly from the server
+
+
+Quiz
+Which sass concept we covered would you use most to style all states of a tooltip on our site?
+&
+
+
+Interview Question
+Choose one piece of sass syntax and explain what it is for, how to use it, and what css it generates.
+Think of variables as a way to store information that you want to reuse throughout your stylesheet. You can store things like colors, font stacks, or any CSS value you think you'll want to reuse. Sass uses the $ symbol to make something a variable
+
+
+
+5.3.6 Webpack and Sass
+---------------------------------------
+Switch the Git Branch
+You can continue to practice the exercise instructions below on 0-initial-setup branch, or you can switch to 1-add-sass-loaders branch corresponding to the current exercise where all the steps have already been carried out. Use the following checkout command in your project root directory:
+
+git checkout 1-add-sass-loaders
+
+Set up Sass with Webpack
+So now for the webpack portion of all of this. Like we talked about earlier, we are going to use webpack loaders to turn our sass into css. First let’s install all the tools we’ll need:
+
+npm i -D style-loader node-sass css-loader sass-loader
+
+Note: The latest sass-loader has some breaking changes. We recommend to use the versions of the dependencies from package.json in branch 1-add-sass-loaders to avoid errors when running the webpack build script.
+
+For reference(node v14):
+
+In dev dependencies the versions that are be used are:
+
+    "@babel/core": "^7.10.2",
+
+    "@babel/preset-env": "^7.10.2",
+
+    "babel-loader": "^8.1.0",
+
+    "css-loader": "^3.6.0",
+
+    "html-webpack-plugin": "^3.2.0",
+
+    "node-sass": "^4.14.1",
+
+    "sass-loader": "^7.3.1",
+
+    "style-loader": "^0.23.1"
+
+Then add this test case to the rules array in your dev webpack config.
+
+{
+        test: /\.scss$/,
+        use: [ 'style-loader', 'css-loader', 'sass-loader' ]
+}
+
+Erratum: In between the timestamp 0:32 - 1:36, in webpack.dev.js file, the Instructor has shown a test case for '/\.scss$/' with-in quotes, but then she has shown the same regex without quotes, at timestamp 3:32. You have to use it without quotes, as test: /\.scss$/.
+
+Quiz Question
+￼
+What is going wrong in the video?
+we aren't importing the sass files as a dependency
+
+
+Well, if you think back to how we got the javascript files into our main.js, we are missing one of those steps for our css. There are the following steps that you have to do to use webpack loaders:
+
+1. Install the sass loader, using npm i -D style-loader node-sass css-loader sass-loader. Babel loader is optional to be install for this exercise, npm i -D @babel/core @babel/preset-env babel-loader
+
+2. Call the loader to the "rules" array in the webpack.dev.js config while targeting the correct file extensions.
+
+{
+        test: /\.scss$/,
+        use: [ 'style-loader', 'css-loader', 'sass-loader' ]
+}
+
+3. In the last exercise, we already had converted our .css to .scss in client/style directory. Now we need to import the files in index.js. And because of the dependency tree that webpack builds, if nothing ever is imported, it’s as if it doesn’t exist. So, to fix that, let’s go to client/index.js. Because of css-loader, we can add lines like this:
+
+import './styles/resets.scss'
+import './styles/base.scss'
+import './styles/footer.scss'
+import './styles/form.scss'
+import './styles/header.scss'
+
+4. Run webpack and look for your styles in the bundled js file. The included package.json file in branch 1-add-sass-loaders has been adjusted to not use webpack-dev-server. Now run npm run build-dev and npm run start so that you can verify in the browser, as shown in the snapshot below:
+
+This time check the main.js for some of our sass styles, and they should just be there!
+
+Troubleshooting: Most of the students are facing error while running npm run start, or are unable to view the distfolder. In both of these cases, we suggest you to run npm run build-prod first. This will create the dist folder and eventually remove the error while runnning npm run start.
+To run npm run build-prod, you need to add the sass loaders in the webpack.prod.js file:
+
+{
+                test: /\.scss$/,
+                use: [ 'style-loader', 'css-loader', 'sass-loader' ]
+}
+
+Now, one thing that might feel awkward, is that all of our css styles are being run through our main.js. Webpack natively only understands javascript, so it makes sense that until we tell it to do otherwise, it turns everything into javascript by default. Now, this isn’t a problem for development mode necessarily, but it can cause styles to load a split second after content on the server, so we are going to have to clean that up for production mode later on.
+
+Quiz Question
+￼
+The following loaders would run in which order:
+
+{
+        test: /\.less$/,
+        use: [ 'one', 'two', 'three' ]
+}
+
+three, two, one
+
+Interview Question
+Explain the practice of chaining loaders in webpack. What is the value of this webpack feature, how is it implemented, etc..
+
+loader can be reuse. loader is small enough, faster debug
+
+Additional Resources
+We know enough sass to be dangerous, and we can add it to a webpack project. We got a little more practice with loaders and learned that they can be a lot more helpful when chained together than just by themselves.
+
+There are so many more things that you can do with loaders that we just don’t have time to go into. Some of these things include:
+
+* Loading images
+* Working in typescript or other languages that compile to javascript
+* Working with third party style and js libraries like Bootstrap
+
+
+
+5.3.7 Exercise: Sass Loaders & Webpack
+---------------------------------------
+Exercise: Sass Loaders & Webpack
+If you are using the classroom workspace, you do not need to use the tasklist below - it’s here to help those working on their local machines. The same instructions are included in the workspace, so you should click “Expand” on the bottom left to be able to use your full screen.
+
+Exercise: Sass Loaders & Webpack Tasklist
+In your own repo, do the following:
+
+x Install the sass loaders and their dependencies
+
+x Add the sass loaders
+
+{
+    test: /\.scss$/,
+    use: [ 'style-loader', 'css-loader', 'sass-loader' ]
+}
+￼
+x Change all your css files to sass files
+
+x Import the sass files into index.js. You can use this import format as a template: import './styles/resets.scss'
+
+x Run webpack and look for your styles in the bundled js file
+
+Troubleshooting: If you are facing any dependency issues on the local machine or in the workspace, please install the versions as shared on the previous page "Webpack and Sass".
+
+npm i -D style-loader@^0.23.1 node-sass@^4.14.1 css-loader@^3.6.0 sass-loader@^7.3.1
+
+npm i -D @babel/core@^7.5.4 @babel/preset-env@^7.5.4 babel-loader@^8.0.6
+
+Welcome!
+
+Install the sass loaders and their dependencies
+￼HIDE SOLUTION
+npm i -D style-loader node-sass css-loader sass-loader
+
+Add the sass loaders
+￼HIDE SOLUTION
+Add this test case to the rules array in your dev webpack config file.
+
+￼
+{
+    test: /\.scss$/,
+    use: [ 'style-loader', 'css-loader', 'sass-loader' ]
+}
+Import the sass files into index.js. You can use this import format as a template:
+import './styles/resets.scss'
+
+￼HIDE SOLUTION
+In client/index.js, after the above import, you should also add:
+
+￼
+import './styles/base.scss'
+import './styles/footer.scss'
+import './styles/form.scss'
+import './styles/header.scss'
+These are just all the other styling files you have.
+
+Run webpack and look for your styles in the bundled js file. The included package.json file has been adjusted to not use webpack-dev-server so that you can use the "Open App" button below after npm run build-dev and npm start so that you can verify in the browser.
+Note: If you are unable to view the dist folder, run npm run build-prod after adding the sass loaders in the webpack.prod.js file
+
+Need to try viewing the app? Use these to view or stop the app.
+
+
+
+5.3.8 Optional Exercise: Challenge
+---------------------------------------
+Optional Exercise: Challenge
+If you are using the classroom workspace, you do not need to use the tasklist below - it’s here to help those working on their local machines. The same instructions are included in the workspace, so you should click “Expand” on the bottom left to be able to use your full screen.
+
+Optional Exercise: Challenge Tasklist
+If you’re tracking along with this lesson pretty well, try this challenge! It is optional.
+x Add to your sass styles to implement the sass syntax we learned in this course
+x Try implementing one or two other features of sass that we didn't cover
+
+
+
+5.3.9 Conclusion
+---------------------------------------
+Deep Dive Resources
+As a front end developer, proficiency with styling is of utmost importance. And it isn't always as easy at it seems. For indepth css and sass documentation, take a look at these resources:
+
+* Sass Documentation
+* Learn to style HTML using CSS
+
+
 
