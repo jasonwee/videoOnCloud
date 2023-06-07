@@ -756,3 +756,62 @@ int main() {
     return 0;
 }
 
+
+#include <cmath>
+#include <cstdio>
+#include <vector>
+#include <iostream>
+#include <set>
+#include <map>
+#include <algorithm>
+#include <string>
+using namespace std;
+
+
+int main() {
+    /* Enter your code here. Read input from STDIN. Print output to STDOUT */   
+    std::map <string, int> student_scores;
+    
+    int queries;
+    cin >> queries;
+
+    int type;
+    string name;
+    int score;
+    for (int i = 0; i < queries; i++) {
+        scanf("%d ", &type);
+        switch (type) {
+            case 1: {
+                // add to map
+                std::cin >> name >> score;
+                std::map<string,int>::iterator itr1 = student_scores.find(name);
+                if (itr1 == student_scores.end()) {
+                    student_scores.insert(make_pair(name, score));
+                } else { 
+                    itr1->second = itr1->second + score;
+                }
+                break;
+            }
+            case 2: {
+                // remove the value
+                std::cin >> name;
+                student_scores.erase(name);
+                break;
+            }
+            case 3: {
+                // show the value
+                std::cin >> name;
+                std::map<string,int>::iterator itr = student_scores.find(name);
+                if (itr == student_scores.end()) { 
+                    cout << "0" << endl;
+                } else { 
+                    cout << itr->second << endl;
+                }
+                break;
+            }
+        }
+    }
+
+
+    return 0;
+}
