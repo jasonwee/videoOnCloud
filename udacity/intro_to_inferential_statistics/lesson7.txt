@@ -1,0 +1,55 @@
+date start : 16 june 2023
+
+
+7.1 Normal vs t-Distribution
+---------------------------------------
+blue line
+
+
+7.2 Z vs. t
+---------------------------------------
+know
+do not know
+
+7.3 Vocabularies - Type of Study
+---------------------------------------
+2,3
+
+
+7.4 Vocabularies - Independent Variable
+---------------------------------------
+kids age
+
+
+7.5 vocabularies - Dependent Variable
+---------------------------------------
+3
+
+7.6 vocabularies - Dependent Variable
+---------------------------------------
+3
+
+
+7.7 vocabularies - Alternative Hypothesis
+---------------------------------------
+1
+
+7.8 vocabularies - One-orTwo-Tailed?
+---------------------------------------
+one-tailed
+
+
+7.9 vocabularies - t-Critical Value
+---------------------------------------
+
+
+7.10 vocabularies - Mean and SD
+---------------------------------------
+
+
+
+7.11 vocabularies - t-Statistic
+---------------------------------------
+
+
+
