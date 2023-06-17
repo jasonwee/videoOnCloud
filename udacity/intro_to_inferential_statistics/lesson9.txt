@@ -1,0 +1,60 @@
+date start : 18 june 2023
+
+
+9.1 Cell Phone Law: Type of Study
+---------------------------------------
+1,3
+
+
+9.2 Cell Phone Law: Dependent Variable
+---------------------------------------
+4
+
+9.3 Cell Phone Law: Independent Variable
+---------------------------------------
+3
+
+9.4 Cell Phone Law: Null Hypothesis
+---------------------------------------
+1
+
+9.5 Cell Phone Law: Alt. Hypothesis
+---------------------------------------
+2
+
+9.6 Cell Phone Law: t-Test
+---------------------------------------
+2
+
+9.7 Cell Phone Law: Difference Scores
+---------------------------------------
+
+
+9.8 Cell Phone Law: t-Critical Value
+---------------------------------------
+
+
+9.9 Cell Phone Law: Standard Error
+---------------------------------------
+
+
+9.10 Cell Phone Law: t-Statistic
+---------------------------------------
+
+
+
+9.11 Cell Phone Law: Decision
+---------------------------------------
+yes
+reject
+p < 0.05
+
+9.12 Cell Phone Law: Cohen's d
+---------------------------------------
+
+
+9.13 Cell Phone Law: CI
+---------------------------------------
+
+
+
