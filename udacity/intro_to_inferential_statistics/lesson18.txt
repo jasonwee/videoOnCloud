@@ -1,0 +1,170 @@
+date start : 29 june 2023
+
+
+18.1 Intro to Linear Regression
+---------------------------------------
+
+
+18.2 Airplane Flights
+---------------------------------------
+
+
+18.3 Symbolize Regression Equation
+---------------------------------------
+2,3
+
+
+18.4 Guess Best Fit Line
+---------------------------------------
+2
+
+
+18.5 Minimize Sum of Squares
+---------------------------------------
+We have decided to symbolize the regression line by y = bx + a, where b represents the slope and a represents the y-intercept.
+Since b = r(standard deviation of y-values)/(standard deviation of x-values), we can also symbolize the regression line like this:
+y = r(standard deviation of y-values)/(standard deviation of x-values)x + a
+
+
+
+18.6 Calculate r
+---------------------------------------
+0.909
+
+
+
+18.7 Calculate Standard Deviations
+---------------------------------------
+508.19
+2315.34
+
+
+
+18.8 Calculate slope
+---------------------------------------
+0.1997
+
+
+
+18.9 Find y-Intercept
+---------------------------------------
+1
+
+
+
+18.10 What Point Does the Line Go Through?
+---------------------------------------
+mean of x and mean of y
+
+
+
+18.11 Calculate Means
+---------------------------------------
+2601.11
+680.35
+
+
+
+18.12 Calculate y-Intercept
+---------------------------------------
+160.13
+
+
+
+18.13 Travel 4000 Miles
+---------------------------------------
+960.13
+
+
+
+18.14 Additional Cost per Mile
+---------------------------------------
+0.2
+
+
+
+18.15 Cost to Travel 0 Miles
+---------------------------------------
+160.13
+
+
+
+18.16 Travel on a Budget
+---------------------------------------
+1699.35
+
+
+
+18.17 Which Has More Error?
+---------------------------------------
+blue
+
+
+
+18.18 Standard Error of Estimate
+---------------------------------------
+
+
+18.19 Confidence Intervals
+---------------------------------------
+
+
+18.20 Hypothesis Testing for Slope
+---------------------------------------
+2
+
+
+
+18.21 t-Test for Slope 
+---------------------------------------
+1
+1
+
+
+
+18.22 R Output
+---------------------------------------
+
+
+18.23 Factors Affecting Linear Regression
+---------------------------------------
+
+
+18.24 Summary of Linear Regression
+---------------------------------------
+
+
+18.25 Intro to Multiple Regression
+---------------------------------------
+
+
+18.26 Alcohol, Religiosity, & Self-Esteem
+---------------------------------------
+-0.149
+0.093
+
+
+
+18.27 Make Predictions
+---------------------------------------
+2.7
+
+
+
+18.28 Relationship
+---------------------------------------
+1
+
+
+
+18.29 Causation
+---------------------------------------
+no
+
+
+
+18.30 Applets
+---------------------------------------
+
+
+
