@@ -1,0 +1,98 @@
+ud169
+
+date start : 06-07-2023
+
+
+1.1 Prerequisits
+---------------------------------------
+This course will cover embedded systems and their compilers.
+
+The student should:
+1. Be familiar with compiler design
+2. Have a solid understanding of computer architecture
+(as covered in a course like GT CS6290: High Performance Computer Architecture)
+
+
+
+1.2 Textbooks
+---------------------------------------
+This course will use two textbooks in addition to several academic papers.
+
+Embedded Computing, A VLIW Approach to Architecture, Compilers, and Tools.
+Joseph A. Fisher, Paolo Faraboschi, Cliff Young
+Morgan Kaufman Publishing
+ISBN: 1-55860-766-8
+
+
+Compilers Principles, Techniques, and Tools, Second Edition
+Alfred Aho, Monica Lam, Ravi Sethi, Jeffery D. Ullman
+Pearson, AddisonWesley Pulishing
+ISBN: 0-321-48681-1
+
+(It may be possible to borrow an electronic copy of the textbooks from the Georgia Tech Library. )
+
+
+
+1.3 Academic Papers
+---------------------------------------
+In addition to the textbooks, it is recommended students read the following academic papers.
+
+Binary Translation to Improve Energy Efficiency through Post-Pass Register Re-allocation
+
+Allocating Archietected Registers Through Differential Encoding
+
+An Optimization Framework for Embedded Processors with Auto-Addressing Mode
+
+Frequent Value Locality and its Applications
+
+Profile Guided Selection of ARM and Thumb Instructions
+
+Balancing Register Allocation Across Threads for a Multithreaded Network Processor
+
+Framework for Parallelizing Load/Stores on Embedded Processors
+
+Resolving Register Bank Conflicts for a Network Processor
+
+Optional Reading:
+Parallelizing Load Stores
+
+
+
+1.4 Course Syllabus
+---------------------------------------
+The entire course consists of 17 lessons:
+
+Part 1: Embedded Systems
+Lesson 1: Review of Computer Architecture (video)
+Lesson 2: Review of VLIW(video)
+Lesson 3: Introduction to ISA(video)
+Lesson 4: Datapaths(video)
+Lesson 5: Registers and Memory(video)
+Lesson 6: Branches(video)
+
+Part 2: Compilers for Embedded Systems
+Lesson 1: Introduction to Compilers (reading nodes)
+Lesson 2: Control Flow Analysis (reading nodes)
+Lesson 3: Liveness Analysis (reading nodes)
+
+Part 3 Compiler Optimizations
+Lesson 1: Register Allocation (video)
+Lesson 2: Optimizing for Code Size (video)
+Lesson 3: Differential Register Allocation (video)
+Lesson 4: Storage Assignment Optimizations (video)
+Lesson 5: A Framework ffor Parallelizing Load and Store (video)
+
+Part 4 Network Processors
+Lesson 1: Introduction to Network Processors (reading nodes)
+Lesson 2: Resolving Register Bank Conficts for a Network Processor (video)
+Lesson 3: Balancing Register Allocation Across Threads for a Multithreaded Network Processor (video)
+
+
+
+1.4 VEX Manual
+---------------------------------------
+A users manual for VEX can be found at:
+
+VEX Manual
+
+
