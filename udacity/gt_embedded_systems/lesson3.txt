@@ -1,0 +1,104 @@
+date start : 08-07-2023
+
+
+3.1 Video Time
+---------------------------------------
+Video time for this lesson is 30 minutes.
+
+
+3.2 Recommended Reading
+---------------------------------------
+The recommended reading for this lesson is:
+Chapter 2 in the 'Embedded Computing' textbook.
+
+
+3.3 Course Notes
+---------------------------------------
+Course notes for this lesson can be found at:
+
+Lesson P1L2 Course Notes
+
+https://s3.amazonaws.com/content.udacity-data.com/courses/gt-cs8803/course+notes/Lesson2ReviewofVLIW.pdf
+
+
+3.4 Lesson Introduction
+---------------------------------------
+
+
+3.5 Design Philosophies Examples
+---------------------------------------
+
+
+
+3.6 RISC vs CISC Quiz
+---------------------------------------
+c
+c
+c
+r
+r
+r
+
+3.7 First Definition of VLIW
+---------------------------------------
+
+
+3.8 VLIW Tradeoffs
+---------------------------------------
+
+
+
+3.9 Architecture Quiz
+---------------------------------------
+c v r
+
+
+3.10 VLIW vs Superscalar
+---------------------------------------
+
+
+3.11 VLIW vs Superscalar Quiz
+---------------------------------------
+s
+v
+s
+s
+v
+
+
+3.12 VLIW vs DSP
+---------------------------------------
+
+
+3.13 VLIW vs DSP Quiz
+---------------------------------------
+2nd
+
+
+3.14 Role of the Compiler
+---------------------------------------
+
+
+3.15 Compiling for ILP and VLIW
+---------------------------------------
+
+
+3.16 Compiler Quiz
+---------------------------------------
+3
+
+
+3.17 Compiler Techniques Quiz
+---------------------------------------
+1
+
+
+3.18 VLIW Hardware Considerations
+---------------------------------------
+
+
+3.19 Lesson Summary
+---------------------------------------
+
+
+
