@@ -1,0 +1,146 @@
+date start : 07-07-2023
+
+
+2.1 Video Time
+---------------------------------------
+Video time for this lesson is 40 minutes.
+
+
+2.2 Recommended Reading
+---------------------------------------
+The recommended reading for this lesson is:
+Chapter 1 in the 'Embedded Computing' textbook.
+
+
+2.3 Course Notes
+---------------------------------------
+Course notes for this lesson can be found at:
+
+Lesson P1L1 Course Notes
+
+https://s3.amazonaws.com/content.udacity-data.com/courses/gt-cs8803/course+notes/Lesson1CourseNotes.pdf
+
+
+2.4 Course Introduction
+---------------------------------------
+
+
+
+2.5 Lesson Introduction
+---------------------------------------
+
+
+
+2.6 Embedded Systems in Cars Quiz
+---------------------------------------
+https://www.embedded.com/motoring-with-microprocessors/
+
+50
+100
+
+
+2.7 Purpose of Embedded Processors
+---------------------------------------
+
+
+2.8 Overview of VLIW and ILP
+---------------------------------------
+
+
+2.9 Processor Designs and Embedded Systems Quiz
+---------------------------------------
+VLIW, in order
+
+
+2.10 Review of ILP
+---------------------------------------
+
+
+2.11 Pipelines in Modern Processors Quiz
+---------------------------------------
+15 to 20 stages
+
+
+2.12 Sequential Program Semantics
+---------------------------------------
+
+
+
+2.13 Simple VEX Example
+---------------------------------------
+
+
+2.14 Modern CPU Techniques: Pipelining
+---------------------------------------
+
+
+
+2.15 IPC Quiz
+---------------------------------------
+3.6
+
+
+2.16 Basic Pipeline Execution Model
+---------------------------------------
+
+
+
+2.17 Pipeline Execution Model Quiz
+---------------------------------------
+k-1
+
+
+2.18 Example Pipeline Revised by VEX
+---------------------------------------
+
+
+2.19 VEX Pipeline Quiz
+---------------------------------------
+needs the results of load in 1st slot (that is $r20)
+which is nto available for 3 cycles due to load latency
+
+
+2.20 Example Pipeline Revised by VEX contd.
+---------------------------------------
+
+
+2.21 Pipelining Cycles Quiz
+---------------------------------------
+4
+
+
+2.22 Branches
+---------------------------------------
+
+
+
+2.23 Branches Quiz
+---------------------------------------
+Both A and B are responsible
+
+
+2.24 Minimizing Dependencies: Control Dependence
+---------------------------------------
+
+
+
+2.25 Minimizing Dependencies: Techniques
+---------------------------------------
+
+
+
+2.26 IPC Quiz
+---------------------------------------
+no
+
+
+
+2.27 Other Parallelisms
+---------------------------------------
+
+
+2.28 Lesson Summary
+---------------------------------------
+
+
+
