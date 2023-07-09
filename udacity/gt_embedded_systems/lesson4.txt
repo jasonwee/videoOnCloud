@@ -1,0 +1,179 @@
+date start : 09-07-2023
+
+
+4.1 Video Time
+---------------------------------------
+
+
+
+4.2 Recommended Reading
+---------------------------------------
+
+
+
+4.3 Course Notes
+---------------------------------------
+
+
+4.4 Lesson Introduction
+---------------------------------------
+
+
+4.5 ISA Introduction Quiz
+---------------------------------------
+data access
+control flow
+arithmetic
+
+
+4.6 Overview of ISA Design
+---------------------------------------
+
+
+
+4.7 Terminology instruction and Operations
+---------------------------------------
+
+
+4.8 Terminology Quiz
+---------------------------------------
+2,3
+
+
+4.9 What to Hide
+---------------------------------------
+
+
+4.10 Memory and Registers
+---------------------------------------
+
+
+
+4.11 Pipelining and Operational Latency
+---------------------------------------
+
+
+
+4.12 Dependence Quiz
+---------------------------------------
+2
+
+
+
+4.13 Exposing Dependence and Independence
+---------------------------------------
+
+
+4.14 Architecture Comparison
+---------------------------------------
+
+
+4.15 Hazards Quiz 1
+---------------------------------------
+none
+
+
+4.16 Hazards Quiz 2 
+---------------------------------------
+2
+3
+
+
+4.17 Hazards
+---------------------------------------
+
+
+4.18 Resource Quiz
+---------------------------------------
+memory access
+
+fetch (from memory as well)
+
+4.19 Design Tradeoffs
+---------------------------------------
+
+
+4.20 Basic VLIW Design Principles
+---------------------------------------
+
+
+4.21 VLIW Design Quiz
+---------------------------------------
+1,2
+
+
+4.22 Compiler Quiz
+---------------------------------------
+2
+
+
+4.23 Role of VLIW Compilers
+---------------------------------------
+
+
+4.24 Execution Model Subleties Horizontal Issues
+---------------------------------------
+
+
+4.25 Execution Model Subleties Vertical Issues
+---------------------------------------
+
+
+4.26 Execution Model Quiz
+---------------------------------------
+E   E
+L   E
+L   L
+
+
+
+4.27 Instruction Set Encoding Quiz
+---------------------------------------
+V   H
+F
+
+
+
+4.28 DSP Encodings
+---------------------------------------
+
+
+4.29 Summary of Encodings
+---------------------------------------
+
+
+4.30 Summary of Encodings Contd
+---------------------------------------
+
+
+4.31 Instrunction Encoding
+---------------------------------------
+
+
+4.32 Compacted Encoding
+---------------------------------------
+
+
+
+4.33 Fixed Overhead Encoding
+---------------------------------------
+
+
+
+4.34 Distributed Encoding
+---------------------------------------
+
+
+4.35 Template based VLIW Encoding
+---------------------------------------
+
+
+4.36 Set Extensions
+---------------------------------------
+
+
+4.37 Lesson Summary
+---------------------------------------
+
+
+
