@@ -1,0 +1,150 @@
+date start : 11-07-2023
+
+
+5.1 Video Time
+---------------------------------------
+Video time for this lesson is 50 minutes.
+
+
+
+5.2 Recommended Reading
+---------------------------------------
+The recommended reading for this lesson is:
+
+Chapter 4 in Embedded Computing
+
+
+
+5.3 Course Notes
+---------------------------------------
+Course notes for this lesson can be found at:
+
+Lesson P1L4 Datapaths Course Notes
+
+
+
+5.4 Lesson Introduction
+---------------------------------------
+
+
+5.5 The Datapath
+---------------------------------------
+
+
+5.6 Location of Operands and Results
+---------------------------------------
+
+
+5.7 Datapath Operations Quiz
+---------------------------------------
+44
+3
+2
+
+
+
+5.8 Datapath Width
+---------------------------------------
+
+
+5.9 Minimus ISA Quiz #1
+---------------------------------------
+load a value from memory into a register
+store a value in a register into a memory location
+
+
+
+5.10 Minimus ISA Quiz #2 
+---------------------------------------
+subtract
+
+
+
+5.11 Minimus ISA Quiz #3
+---------------------------------------
+result is zero
+result is less than zero
+result is greater than zero
+branch unconditional
+
+
+
+5.12 Operation Repertoire
+---------------------------------------
+
+
+5.13 Integer Multiplication
+---------------------------------------
+
+
+5.14 Fixed Point Multiplication
+---------------------------------------
+
+
+5.15 Integer Division
+---------------------------------------
+
+
+5.16 Multiplication Quiz
+---------------------------------------
+1
+2
+5
+
+
+
+5.17 Saturated Arithmetic
+---------------------------------------
+
+
+
+5.18 Saturated Arithmetic Quiz
+---------------------------------------
+90
+100
+100
+-100
+100
+70
+
+
+
+5.19 Saturated Arithmetic Example
+---------------------------------------
+
+
+5.20 VLIW vs SIMD Architecture
+---------------------------------------
+
+
+5.21 MicroSIMD Operations
+---------------------------------------
+
+
+5.22 Dealing with Control Flow
+---------------------------------------
+
+
+5.23 Reductions
+---------------------------------------
+
+
+5.24 MicroSIMD Operations Summary
+---------------------------------------
+
+
+5.25 MicroSIMD Quiz
+---------------------------------------
+2
+
+
+
+5.26 Constants
+---------------------------------------
+
+
+5.27 Lesson Summary
+---------------------------------------
+
+
+
