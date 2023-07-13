@@ -1,0 +1,165 @@
+date start : 13-07-2023
+
+
+7.1 Video Time
+---------------------------------------
+Video time for this lesson is 90 minutes.
+￼
+
+
+7.2 Recommended Reading
+---------------------------------------
+The recommended reading for this lesson is:
+Chapter 4 in the 'Embedded Computing' textbook.
+
+
+
+7.3 Course Notes
+---------------------------------------
+Course notes for this lesson can be found at:
+
+Lesson P1L6 Course Notes
+
+
+
+7.4 Lesson Introduction
+---------------------------------------
+
+
+
+7.5 Branches Quiz
+---------------------------------------
+conditional branches
+Unconditional branches
+Function calls
+Indirect jump
+
+
+7.6 Branch Architecture
+---------------------------------------
+
+
+7.7 Branch Architecture 2
+---------------------------------------
+
+
+7.8 Unbundling Branches in VLIW
+---------------------------------------
+
+
+
+7.9 Unbundling Branches in VLIW (cont)
+---------------------------------------
+
+
+7.10 Unbundling Branches in VLIW (cont 2)
+---------------------------------------
+
+
+7.11 Unbundling Branches Quiz
+---------------------------------------
+2,
+4
+
+7.12 Multiway Branches
+---------------------------------------
+
+
+7.13 Multiway Branches (cont)
+---------------------------------------
+
+
+7.14 Multicluster Branches
+---------------------------------------
+
+
+7.15 Multiway Branches Quiz
+---------------------------------------
+a
+b
+c
+
+e
+g
+
+d
+f
+h
+
+7.16 Branches and Loops
+---------------------------------------
+
+
+7.17 Speculation and Prediction
+---------------------------------------
+
+
+7.18 Speculation
+---------------------------------------
+
+
+
+7.19 Speculation (cont)
+---------------------------------------
+
+
+7.20 Control Speculation
+---------------------------------------
+
+
+7.21 Data Speculation
+---------------------------------------
+
+
+7.22 Data Speculation (cont)
+---------------------------------------
+
+
+7.23 Speculation Quiz
+---------------------------------------
+             v1=DIVE v1,v2
+                  
+                    v3 = ADD v1,5
+
+
+
+7.24 Predication
+---------------------------------------
+
+
+7.25 Full Predication
+---------------------------------------
+
+
+7.26 Partial Predication
+---------------------------------------
+
+
+
+7.27 Predication Cost and Benefits
+---------------------------------------
+
+
+7.28 Predication in the Embedded Domain
+---------------------------------------
+
+
+
+7.29 Predication Quiz
+---------------------------------------
+2,5
+
+
+
+7.30 System Operations
+---------------------------------------
+
+
+7.31 Lesson Summary
+---------------------------------------
+
+
+
+
+
+
