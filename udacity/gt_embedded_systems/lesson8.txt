@@ -1,0 +1,166 @@
+date start : 14-07-2023
+
+8.1 Video Time
+---------------------------------------
+The video time for this lesson is 75 minutes.
+￼
+￼
+
+8.2 Course Notes
+---------------------------------------
+The course notes for this lesson can be found at:
+
+Lesson 1 Course Notes
+
+
+
+8.3 Introduction to Course
+---------------------------------------
+
+
+8.4 Introduction to Compilers
+---------------------------------------
+
+
+8.5 What is a Compiler?
+---------------------------------------
+
+
+8.6 Why Compilers?
+---------------------------------------
+
+
+8.7 How Compilers Work: Overview
+---------------------------------------
+Note: Compilers do not add two different variable types, but they can convert types to perform an operation.
+
+In the code below, the compiler allows a char 'A' to be added to 10. When we look at the result of this sum we see the answer is an int or a char depending upon the definition of the variable sum. So the compiler converted the char or the int to perform the required operation.
+
+Also notice, when we changed to a string with multiple digits the compiler flagged this as a warning, the implicit conversion could not be done reliably.
+
+#include<iostream>
+
+int main()
+{
+    char A = '2';
+    int sum = A + 10;
+    std::cout<<"sum = "<<sum;
+    
+    int sum1 = 'A' + 10;
+    std::cout<<"\nsum1  = "<<sum1;
+    
+    char sum2 = 'A' + 10;
+    std::cout<<"\nsum2 = "<<sum2;
+    
+    char B = '2322';
+    int sum3 = B + 10;
+    std::cout<<"\nsum3 = "<<sum3;
+    return 0;
+}
+
+
+
+
+
+
+8.8 How Compilers Work: Details
+---------------------------------------
+
+
+
+8.9 Compiler Parts
+---------------------------------------
+
+
+8.10 The Big Picture
+---------------------------------------
+
+
+8.11 Tokenization Quiz
+---------------------------------------
+21
+
+
+8.12 Scanning and Tokenization
+---------------------------------------
+
+
+8.13 Parser Quiz
+---------------------------------------
+a+b
+a+b*c
+
+
+
+8.14 Parser
+---------------------------------------
+
+
+8.15 Parser: Grammar Rules
+---------------------------------------
+
+
+8.16 Parser: Example
+---------------------------------------
+
+
+8.17 Parser: Overview
+---------------------------------------
+
+
+8.18 Parser: Ambiguity
+---------------------------------------
+
+
+
+8.19 Ambiguous Parsing Quiz
+---------------------------------------
+both
+
+
+8.20 Scanning and Parsing
+---------------------------------------
+
+
+8.21 Syntax vs Semantics Quiz
+---------------------------------------
+a
+
+c
+b
+
+
+8.22 Syntax vs Semantics
+---------------------------------------
+
+
+8.23 Symbol Table
+---------------------------------------
+
+
+8.24 Semantic Actions: Overview
+---------------------------------------
+
+
+8.25 Semantic Actions: Implementation
+---------------------------------------
+
+
+8.26 Semantic Actions: Symbols
+---------------------------------------
+
+
+8.27 Semantic Actions: Example
+---------------------------------------
+
+
+8.28 Semantic Actions: Two Types
+---------------------------------------
+
+
+
+8.29 Full Compiler Structure
+---------------------------------------
+
+
+
