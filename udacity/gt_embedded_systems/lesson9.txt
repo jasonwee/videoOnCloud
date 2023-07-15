@@ -1,0 +1,104 @@
+date start : 15-07-2023
+
+9.1 Recommended Reading
+---------------------------------------
+The recommended reading for this lesson is:
+Chapter 2 in the 'Compilers' textbook.
+￼
+
+
+9.2 Video Time
+---------------------------------------
+The video time for this lesson is 33 minutes.
+
+￼
+
+9.3 Course Notes
+---------------------------------------
+Course notes for this lesson can be found at: P2L2 Course Notes
+
+
+
+9.4 Intro to Control Flow Graphs
+---------------------------------------
+
+
+
+9.5 Basic Block Quiz
+---------------------------------------
+1,3
+
+
+9.6 Basic Block Quiz 2
+---------------------------------------
+b1
+b1
+b1
+b1
+b2
+b2
+b3
+b3
+b4
+
+9.7 Finding Basic Blocks
+---------------------------------------
+
+
+9.8 Basic Block Partitiong Algorithm Quiz
+---------------------------------------
+1, 3, 13
+
+
+9.9 Forming Basic Blocks
+---------------------------------------
+
+
+
+9.10 Forming Basic Blocks Quiz
+---------------------------------------
+1
+1
+2
+2
+2
+2
+2
+2
+2
+2
+2
+2
+3
+
+
+
+9.11 Control Flow Graph
+---------------------------------------
+from b1 to b2
+from b2 to b2
+from b2 to b3
+
+
+9.12 CFG Flow Quiz
+---------------------------------------
+
+
+9.13 MultiGraphs
+---------------------------------------
+
+
+9.14 CFG Quiz
+---------------------------------------
+               x = z - 2;
+               y = 2 * z;
+               if (c)
+  x = x + 1;                x = x - 1;
+  y = y + 1;                y = y - 1 ;
+                z = x + y;
+
+9.15 Lesson Preview
+---------------------------------------
+
+
+
