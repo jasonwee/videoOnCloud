@@ -1,0 +1,156 @@
+date start : 16-07-2023
+
+
+10.1 Video Time
+---------------------------------------
+The video time for this lesson is 70 minutes.
+
+
+
+10.2 Course Notes
+---------------------------------------
+Course notes for this lesson can be found at: P2L3 Course Notes
+
+
+
+10.3 Lesson Preview
+---------------------------------------
+
+
+10.4 Compiler Structure
+---------------------------------------
+
+
+10.5 The Back End
+---------------------------------------
+
+
+10.6 Control Flow Graph Revisited
+---------------------------------------
+
+
+10.7 Information Flow
+---------------------------------------
+
+
+10.8 IR Quiz
+---------------------------------------
+x = 20
+if x >= 10 goto (8)
+x = x - 1
+A[x] = 10
+if x <> 4 goto (7)
+x = x - 2
+goto (2)
+y = x + 5
+
+
+10.9 Basic Blocks Quiz
+---------------------------------------
+b1
+b2
+b3
+b3
+b3
+b5
+b6
+b4
+
+
+
+10.10 CFG Quiz
+---------------------------------------
+B2, B3
+B4
+B2, B6
+
+
+
+10.11 Live Variable Analysis
+---------------------------------------
+
+
+
+10.12 Live Range Quiz
+---------------------------------------
+2
+3
+4
+
+
+
+10.13 Computing Liveness
+---------------------------------------
+
+
+10.14 Analyze instructions
+---------------------------------------
+
+
+10.15 Analyze Instructions General Rule
+---------------------------------------
+
+
+10.16 Liveness Across Instructions
+---------------------------------------
+
+
+10.17 Analaysis Example
+---------------------------------------
+
+
+10.18 Def Use Quiz
+---------------------------------------
+a
+b a
+c bc
+a b
+  a
+  c
+
+
+
+10.19 Flow of Information
+---------------------------------------
+
+
+10.20 Analzye Flow Control
+---------------------------------------
+
+
+10.21 Liveness Analysis
+---------------------------------------
+
+
+10.22 Control Flow Quiz
+---------------------------------------
+a     ac c
+b a   bc ac
+c bc  bc bc
+a b   ac bc
+  ac  ac ac
+  c      c
+
+
+
+10.23 System of Equations
+---------------------------------------
+
+
+10.24 Solving the Problem
+---------------------------------------
+
+
+10.25 Analysis Example Introduction
+---------------------------------------
+
+
+10.26 Analysis Example
+---------------------------------------
+
+
+10.27 Generalization
+---------------------------------------
+
+
+
