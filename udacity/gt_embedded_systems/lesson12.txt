@@ -1,0 +1,132 @@
+date start : 20-07-2023
+
+12.1 Video Time
+---------------------------------------
+
+
+12.2 Recommended Reading
+---------------------------------------
+It is recommended the student read:
+
+Binary Translation to Improve Energy Efficiency through Post-Pass Register Re-allocation
+
+
+12.3 Course Notes
+---------------------------------------
+Course notes for this lesson can be found at:
+
+Lesson P3L2 Optimizations for Code Size
+
+
+12.4 Lesson Introduction
+---------------------------------------
+
+
+12.5 Cache Energy Consumption
+---------------------------------------
+
+
+12.6 Register Allocation
+---------------------------------------
+
+
+12.7 Graph Coloring Regster Allocator
+---------------------------------------
+
+
+12.8 Coalescing Quiz
+---------------------------------------
+no
+
+
+12.9 Postpass Optimization
+---------------------------------------
+
+
+12.10 Register Allocation Without Splitting
+---------------------------------------
+
+
+12.11 Framework Overview
+---------------------------------------
+
+
+12.12 Register Re Allocation
+---------------------------------------
+
+
+12.13 Dead Registers Quiz
+---------------------------------------
+true
+false
+
+
+12.14 Unused Register Information
+---------------------------------------
+
+
+12.15 Compensation Code Quiz
+---------------------------------------
+2
+
+12.16 Hot Region Identification
+---------------------------------------
+
+
+12.17 Weighted Bipartite Graph Matching
+---------------------------------------
+
+
+12.18 Bipartite Graph Creation
+---------------------------------------
+
+
+
+12.19 Compensation Code Cost Analysis
+---------------------------------------
+
+
+12.20 Unused Register Allocation
+---------------------------------------
+
+
+12.21 Unused Registers Quiz
+---------------------------------------
+true
+
+
+12.22 Unused Register Allocation Identification
+---------------------------------------
+
+
+12.23 Dead vs Unused Registers Quiz
+---------------------------------------
+2,3,4
+
+
+12.24 Experiments
+---------------------------------------
+
+
+12.25 Hot Cold Basic Blocks and Spills
+---------------------------------------
+
+
+12.26 Re allocation Runtime
+---------------------------------------
+
+
+12.27 Cycle Counts
+---------------------------------------
+
+
+12.28 Energy Consumption
+---------------------------------------
+
+
+
+12.29 Lesson Summary
+---------------------------------------
+
+
+
