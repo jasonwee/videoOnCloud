@@ -1,0 +1,192 @@
+date start : 19-07-2023
+
+
+11.1 Video Time
+---------------------------------------
+Video time for this lesson is 2 hours.
+
+
+11.2 Course Notes
+---------------------------------------
+Course notes for this lesson can be found at:
+
+Lesson P3L2 Register Allocation Course Notes
+
+
+11.3 Lesson Introduction
+---------------------------------------
+
+
+11.4 Full Compiler Structure
+---------------------------------------
+
+
+11.5 Code Generation
+---------------------------------------
+
+
+11.6 Code Generation Quiz
+---------------------------------------
+2,3,4
+
+
+
+11.7 Register Allocation
+---------------------------------------
+
+
+11.8 Register Allocation Quiz
+---------------------------------------
+no
+
+
+11.9 Register Allocation 2
+---------------------------------------
+
+
+11.10 Register Allocation Definitions
+---------------------------------------
+
+
+11.11 Register Allocation Definitions 2
+---------------------------------------
+
+
+11.12 Register Allocation Definitions 3
+---------------------------------------
+
+
+11.13 Graph Example
+---------------------------------------
+
+
+11.14 Register Allocation Defined
+---------------------------------------
+
+
+11.15 Available Registers Quiz
+---------------------------------------
+false
+
+
+11.16 Webs Part 1
+---------------------------------------
+
+
+11.17 Webs Part 2
+---------------------------------------
+
+
+11.18 Interference
+---------------------------------------
+
+
+
+11.19 Interference Graph
+---------------------------------------
+
+
+11.20 Register Allocation and Graph Coloring
+---------------------------------------
+
+
+11.21 Graph Coloring
+---------------------------------------
+
+
+11.22 Graph Coloring Heuristics
+---------------------------------------
+
+
+11.23 Graph Coloring Heuristics (cont)
+---------------------------------------
+
+
+11.24 Graph Coloring Quiz
+---------------------------------------
+2
+
+
+11.25 Graph Coloring Example 5
+---------------------------------------
+
+
+11.26 Graph Coloring Example 6
+---------------------------------------
+
+
+11.27 Graph Coloring Example (cont)
+---------------------------------------
+
+
+11.28 coloring Quiz
+---------------------------------------
+k registers
+
+
+11.29 When Coloring Fails
+---------------------------------------
+
+
+11.30 Choosing a Web
+---------------------------------------
+
+
+11.31 Spill Costs
+---------------------------------------
+
+
+11.32 Computing Spill Costs
+---------------------------------------
+
+
+11.33 Spill Cost Example
+---------------------------------------
+
+
+11.34 Splitting the Web
+---------------------------------------
+
+
+11.35 Splitting Example
+---------------------------------------
+
+
+11.36 Splitting Heuristic
+---------------------------------------
+
+
+11.37 Cost and Benefits of Splitting
+---------------------------------------
+
+
+11.38 Further Optimzations
+---------------------------------------
+
+
+11.39 Register Coalescing
+---------------------------------------
+
+
+11.40 Register Targeting (Pre coloring)
+---------------------------------------
+
+
+11.41 Pre Splitting Webs
+---------------------------------------
+
+
+11.42 Liver Range Splitting Quiz
+---------------------------------------
+false
+
+
+11.43 Interprocedural Register Allocation
+---------------------------------------
+
+
+11.44 Lesson Summary
+---------------------------------------
+
+
+
