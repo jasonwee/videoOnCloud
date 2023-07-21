@@ -1,0 +1,150 @@
+date start : 21-07-2023
+
+13.1 Video Time
+---------------------------------------
+The video time for this lesson is: 70 minutes
+￼
+
+
+13.2 Recommended Reading
+---------------------------------------
+It is recommended the student read:
+
+Allocating Architected Registers Through Differential Encoding
+
+
+
+13.3 Course Notes
+---------------------------------------
+Course notes for this lesson can be found at:
+
+Differential Register Allocation Course Notes
+
+
+
+13.4 Lesson Introduction
+---------------------------------------
+
+
+
+13.5 Register Encoding Dilemma
+---------------------------------------
+
+
+13.6 Register Encoding Quiz
+---------------------------------------
+1
+
+
+13.7 Encode Differences
+---------------------------------------
+
+
+13.8 Modulo Differences
+---------------------------------------
+
+
+
+13.9 Differential Encoding
+---------------------------------------
+
+
+13.10 Differential Encoding Quiz
+---------------------------------------
+4
+2
+13
+
+
+
+13.11 Differential Encoding Justifications
+---------------------------------------
+
+
+13.12 Differential Encoding Justifications Quiz 
+---------------------------------------
+0110   100
+0010   010
+1100   011
+
+
+13.13 Worst Case Difference
+---------------------------------------
+
+
+13.14 Multiple Path Inconsistency
+---------------------------------------
+
+
+13.15 Encoding Quiz
+---------------------------------------
+2
+
+
+13.16 Hardware Implementation for Decoding
+---------------------------------------
+
+
+13.17 Integration into Register Allocation
+---------------------------------------
+
+
+13.18 Adjacency Graph
+---------------------------------------
+
+
+
+13.19 Edge Coverage and Cost Calculation
+---------------------------------------
+
+
+13.20 Differential Remapping
+---------------------------------------
+
+
+13.21 Differential Remaping Algorithm
+---------------------------------------
+
+
+13.22 Algorithm Quiz
+---------------------------------------
+6
+2
+0
+
+
+13.23 Diffenretial Select
+---------------------------------------
+
+
+13.24 Differential Coalesce
+---------------------------------------
+
+
+13.25 Differential Coalesce Quiz
+---------------------------------------
+differential encoding
+move instructions
+
+
+
+13.26 Differential Register Allocation Quiz
+---------------------------------------
+1
+
+
+
+13.27 Applications
+---------------------------------------
+
+
+13.28 Evaluation Through Processor Simulation
+---------------------------------------
+
+
+
+13.29 Lesson Summary
+---------------------------------------
+
+
+
