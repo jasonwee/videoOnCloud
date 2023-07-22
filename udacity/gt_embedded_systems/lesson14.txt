@@ -1,0 +1,242 @@
+date start : 22-07-2023
+
+14.1 Video Time
+---------------------------------------
+The video time for this lesson is 2.25 hours
+￼
+
+
+14.2 Recommended Reading
+---------------------------------------
+It is recommended that the student read:
+
+
+An Optimization Framework for Embedded Processors with Auto-Addressing Mode
+
+
+
+14.3 Course Notes
+---------------------------------------
+The course notes for this lesson can be found at:
+
+Storage Assignment Optimizations
+￼
+
+
+14.4 Lesson Introduction
+---------------------------------------
+
+
+
+14.5 Simple Offset Assignment
+---------------------------------------
+
+
+14.6 Offset Quiz
+---------------------------------------
+TODO
+
+
+14.7 Access Sequence and Graph
+---------------------------------------
+
+
+14.8 Weight of a Graph and Cost of Assignment Part 1
+---------------------------------------
+
+
+
+14.9 Weight of a Graph and Cost of Assignment Part 2
+---------------------------------------
+
+
+14.10 Assumptions in Single Offset Assignment
+---------------------------------------
+
+
+14.11 General Offset Assignment Problem
+---------------------------------------
+
+
+14.12 GOA Example
+---------------------------------------
+
+
+14.13 Algorithm for GOA
+---------------------------------------
+
+
+14.14 SOA Heuristic vs Branch and Bound
+---------------------------------------
+
+
+14.15 Relax Fixed Evaluation Order Assumption
+---------------------------------------
+
+
+14.16 Access Sequence Quiz
+---------------------------------------
+TODO
+
+
+
+14.17 Example of Fixed Evaluation Order Assumption
+---------------------------------------
+
+
+14.18 Register Instructions Quiz
+---------------------------------------
+TODO
+
+
+
+14.19 Graph Quiz
+---------------------------------------
+TODO
+
+
+14.20 Algebraic Transformations
+---------------------------------------
+
+
+14.21 Assembly Code Quiz
+---------------------------------------
+TODO
+
+
+14.22 Graph Quiz The Sequel
+---------------------------------------
+TODO
+
+
+14.23 Least Cost Access Sequence
+---------------------------------------
+
+
+14.24 Concepts
+---------------------------------------
+
+
+14.25 Concepts Quiz 1
+---------------------------------------
+TODO
+
+
+14.26 Concepts Quiz 2
+---------------------------------------
+TODO
+
+
+14.27 Pruning Example
+---------------------------------------
+
+
+14.28 Pruning Example 2
+---------------------------------------
+
+
+
+14.29 Results for TMS320C25
+---------------------------------------
+
+
+14.30 Variable Coalescence and Separation
+---------------------------------------
+
+
+14.31 Variable Coalescence and Separation Facts and Assumptions
+---------------------------------------
+
+
+14.32 Variable Coalescence and Separation Example
+---------------------------------------
+
+
+14.33 Variable Coalescence and Separation Quiz 1 
+---------------------------------------
+TODO
+
+
+14.34 Variable Coalescence and Separation Quiz 2
+---------------------------------------
+TODO
+
+
+14.35 Variable Coalescence and Separation Quiz 3
+---------------------------------------
+TODO
+
+
+14.36 Issues on Applying Coalescence
+---------------------------------------
+
+
+14.37 Profitability of Coalescence
+---------------------------------------
+
+
+14.38 Coalescence Quiz
+---------------------------------------
+TODO
+
+
+14.39 Coalescence Weight Quiz
+---------------------------------------
+TODO
+
+
+14.40 Coalescence Node Degrees 
+---------------------------------------
+
+
+14.41 Framework for SOA
+---------------------------------------
+
+
+14.42 Pre Iteration Rules
+---------------------------------------
+
+
+14.43 The Main SOA Algorithm
+---------------------------------------
+
+
+14.44 Benchmark Results
+---------------------------------------
+
+
+14.45 Lesson Summary
+---------------------------------------
+
+
+14.46 Bibliography
+---------------------------------------
+Storage Offset Assignment
+S. Liao, S. Devadas, K. Keutzer, S. Tjiang, A. Wang. Storage assignment to decrease code size. In ACM TOPLAS, 18(3):235-253, May 1996. (Also in Proc. PLDI, pages 186-196,1995).
+
+A. Rao and S. Pande. Storage assignment optimizations to generate compact and efficient code on embedded DSPs. In Proc. SIGPLAN PLDI, pages 128-138, 1999.
+
+X. Zhuang, C. Lau and S. Pande. Storage Assignment Optimizations through Variable Coalescence for Embedded Processors In Proc. SIGPLAN LCTES, pages 220-231, 2003.
+
+R. Leupers and P. Marwedel. Algorithms for address assignment in DSP code generation. In Proc. ICCAD, pages 109-112, 1996.
+
+S. Atri, J. Ramanujam, M. T. Kandemir Improving offset assignment for embedded processors. In Proc. LCPC, pages 158-172, 2000.
+
+B. Li and R. Gupta. Simple Offset Assignment in Presence of Subword Data. In Proc. CASES, pages 12-23, 2003.
+
+Code Optimization
+
+
+
+14.47 Bibliography, cont.
+---------------------------------------
+XY Memory
+X. Zhuang, S. Pande, and J. Greenland. A Framework for Parallelizing Load/Stores on Embedded Processors In Proc. PACT, pages 68-72, 2002.
+
+J. Cho, Y. Paek, and D.B. Whalley. Fast memory bank assignment for fixed-point digital signal processors. In ACM TODAES, 9(1): 52-74 (2004).
+Multiple Load Store (MLS) Instructions
+V. Nandivada and J. Palsberg. Efficient spill code for SDRAM. In Proc. CASES, 2003.
+
+Y. Paek, J. Choi, J. Joung, J. Lee, and S. Kim. Exploiting parallelism in memory operations for code optimizations. In Workshop on Languages and Compilers for Parallel Computing, 2003.
+
+
