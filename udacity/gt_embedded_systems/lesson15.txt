@@ -1,0 +1,126 @@
+date start : 23-07-2023
+
+15.1 Video Time
+---------------------------------------
+The video time for this lesson is: 45 minutes
+￼
+
+
+15.2 Recommended Reading
+---------------------------------------
+It is recommended the student read:
+
+A Framework for Parallelizing Load/Stores on Embedded Processors
+
+
+
+15.3 Course Notes
+---------------------------------------
+Course notes for this lesson can be found at:
+
+P3L5 Framework for Parallelizing Load/Stores
+
+
+
+15.4 Lesson Introduction
+---------------------------------------
+
+
+15.5 Memory Access Times Quiz
+---------------------------------------
+1
+10
+100
+1000000
+
+
+
+15.6 General Approaches
+---------------------------------------
+
+
+15.7 X Y Memory Architecture
+---------------------------------------
+
+
+15.8 Model as Integer Linear Programming Problem
+---------------------------------------
+
+
+
+15.9 Model as Graph Probelm
+---------------------------------------
+
+
+15.10 Model as Graph Problem Part 2
+---------------------------------------
+
+
+15.11 Major Contributions
+---------------------------------------
+
+
+15.12 Major Contributions Part 2
+---------------------------------------
+
+
+15.13 Register Dependencies Quiz
+---------------------------------------
+none
+
+
+15.14 Def Use Chains Quiz
+---------------------------------------
+TODO
+
+
+15.15 Basic Concepts Part 2
+---------------------------------------
+
+
+15.16 Basic Concepts Part 3
+---------------------------------------
+
+
+15.17 Movable Boundary Problem
+---------------------------------------
+
+
+15.18 Motion Schedule Graph
+---------------------------------------
+
+
+
+15.19 Motion Range Determination Quiz
+---------------------------------------
+
+
+15.20 Post pass Phases
+---------------------------------------
+
+
+15.21 Cross BB Merge
+---------------------------------------
+
+
+15.22 Variable Duplication
+---------------------------------------
+
+
+15.23 Local Conflict Elimination
+---------------------------------------
+
+
+15.24 Benchmark Results Compilation Time
+---------------------------------------
+
+
+15.25 Benchmark Results Runtime Performance
+---------------------------------------
+
+
+15.26 Lesson Summary
+---------------------------------------
+
+
+
