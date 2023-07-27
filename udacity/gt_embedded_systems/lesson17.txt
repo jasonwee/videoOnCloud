@@ -1,0 +1,131 @@
+date start : 27-07-2023
+
+17.1 Video Time
+---------------------------------------
+The video time for this lesson is: 1 hour
+
+
+17.2 Recommended Reading
+---------------------------------------
+It is recommended the student read:
+
+Resolving Register Bank Conflicts for a Network Processor
+
+
+17.3 Course Notes
+---------------------------------------
+Course notes for this lesson are still under construction.
+
+
+17.4 Lesson Preview
+---------------------------------------
+
+
+17.5 Emerging Networking Applications
+---------------------------------------
+
+
+17.6 Intel IXP Network Processors
+---------------------------------------
+
+
+17.7 Dual Bank Constraints
+---------------------------------------
+
+
+17.8 dual Bank Register Assignment Problem
+---------------------------------------
+
+
+
+17.9 Register Assignment Quiz
+---------------------------------------
+overhead
+spill code
+
+
+17.10 Conflict Edge4 and Register Conflict Graph
+---------------------------------------
+
+
+17.11 Conflict Edge and register Conflict Graph Quiz
+---------------------------------------
+F A B
+D E C
+
+
+
+17.12 Graph Coloring Quiz
+---------------------------------------
+1 2 3
+2 1 1
+
+
+
+17.13 Bipartite Graphs Quiz
+---------------------------------------
+A B A
+B B A
+A
+
+
+
+17.14 No Conflict Law
+---------------------------------------
+
+
+17.15 Approaches to Register Allocation
+---------------------------------------
+
+
+17.16 Combined Register Allocation
+---------------------------------------
+
+
+17.17 Detecting Odd Cycles
+---------------------------------------
+
+
+17.18 Cycle Quiz
+---------------------------------------
+left top 
+left bottom
+
+
+17.19 Breadth First Hierarchy
+---------------------------------------
+
+
+17.20 Live Range Splitting to Break Cycles
+---------------------------------------
+
+
+17.21 Live Range Splitting to Break Cycles 2 
+---------------------------------------
+
+
+17.22 Cycle Detection Breaking Procedure
+---------------------------------------
+
+
+17.23 Reviews of Approaches
+---------------------------------------
+
+
+17.24 Cycle Breaking Quiz
+---------------------------------------
+1
+
+
+17.25 Additional Topics
+---------------------------------------
+
+
+17.26 Benchmark Results
+---------------------------------------
+
+
+17.27 Lesson Summary
+---------------------------------------
+
+
