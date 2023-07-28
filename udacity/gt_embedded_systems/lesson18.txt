@@ -1,0 +1,123 @@
+date start : 28-07-2023
+
+
+18.1 Video Time
+---------------------------------------
+
+
+18.2 Recommended Reading
+---------------------------------------
+It is recommended that the student read:
+
+Balancing Register Allocation Across Threads for a Multithreaded Network Processor
+
+
+18.3 Course Notes
+---------------------------------------
+Course notes for this lesson can be found at:
+P4L3 Balancing Register Allocations
+
+
+18.4 Lesson Preview
+---------------------------------------
+
+
+18.5 Motivation
+---------------------------------------
+
+
+18.6 Threads Quiz
+---------------------------------------
+2
+
+
+18.7 Hiding Latency Quiz
+---------------------------------------
+cp
+cmt
+fmt
+smt
+
+
+18.8 Multithreading Context Switch
+---------------------------------------
+
+
+
+18.9 context Switch Quiz
+---------------------------------------
+1,2
+
+
+18.10 Register Sharing
+---------------------------------------
+
+
+18.11 Shared Registers
+---------------------------------------
+
+
+18.12 Overall Framework
+---------------------------------------
+
+
+18.13 Non Switch Region
+---------------------------------------
+
+
+18.14 NSR Quiz
+---------------------------------------
+b
+c
+e
+d
+a
+
+
+18.15 Live Range Classification
+---------------------------------------
+
+
+18.16 Live Range Quiz
+---------------------------------------
+
+s1
+s1, s2
+s1, s2, s3
+s1, s2, s3, s4
+s2, s3, s4, s5
+s4, s5, s6
+s6, s7
+
+
+18.17 Interference Graph
+---------------------------------------
+
+
+18.18 Upper and Lower Bounds
+---------------------------------------
+
+
+
+18.19 Bounds Quiz
+---------------------------------------
+insert a mov command at the split point
+
+
+18.20 Inter-Thread
+---------------------------------------
+
+
+18.21 Live Range Splitting
+---------------------------------------
+
+
+18.22 Lesson Summary
+---------------------------------------
+
+
+18.23 Course Summary
+---------------------------------------
+
+
+
