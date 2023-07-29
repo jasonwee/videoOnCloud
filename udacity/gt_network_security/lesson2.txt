@@ -1,0 +1,203 @@
+date start : 30 jul 2023
+
+
+2.1 Acknowledgements
+---------------------------------------
+Acknowledgements
+
+This lesson incorporated materials from:
+
+Prof. Dan Boneh at Stanford University.
+
+
+
+2.2 Video Time
+---------------------------------------
+Video Time
+
+Video time for this lesson is 30 minutes.
+
+
+
+2.3 Recommended Reading
+---------------------------------------
+Recommended Reading
+Recommended Reading for this lesson:
+
+i. The DDOS that almost Broke the Internet
+https://blog.cloudflare.com/the-ddos-that-almost-broke-the-internet/
+
+ii. Practical Network Support for IP Traceback
+https://s3.amazonaws.com/content.udacity-data.com/courses/gt-cs6262/recommended+reading/Sigcomm00.pdf
+
+iii. A DoS-limiting Network Architecture
+https://s3.amazonaws.com/content.udacity-data.com/courses/gt-cs6262/recommended+reading/tva-sigcomm2005.pdf
+
+
+
+2.4 Course Notes
+---------------------------------------
+Course Notes
+Course notes for this lesson can be found at: L1 Course Notes
+https://s3.amazonaws.com/content.udacity-data.com/courses/gt-cs6262/course+notes/Course+Notes-Denial+of+Service+Attacks.pdf
+
+
+
+2.5 Introduction to Large Scale Attacks
+---------------------------------------
+
+
+2.6 Denial of Service Taxonomy Quiz One
+---------------------------------------
+random scanning
+each compromised computer probes random addresses.
+
+permutation scanning
+all compromised comuters share a common pseudo-random permutation of the ip addrss space.
+
+signpost scanning
+uses the communication patterns of the compromised computer to find new target.
+
+hitlist scanning
+a portion of a list of targets is supplied to a compromised computer.
+
+
+
+2.7 Denial of Service Taxonomy Quiz Two
+---------------------------------------
+subnet spoofing
+generate random adddresses within a given address space.
+
+random spoofing
+generate 32bit numbers and stamp packets with them.
+
+fixed spoofing
+the spoofed address is the addrss of the target.
+
+
+
+2.8 Denial of Service Taxonomy Quiz Three
+---------------------------------------
+server application
+the attack is targeted to a specific application on a server
+
+network access
+the attack is used to overload or crash the communcation mechanism of a network
+
+infrastructure
+the motivation of this attack is a crucial service of a global internet oepration, for example core router.
+
+2.9 Network DoS
+---------------------------------------
+
+
+2.10 Amplification Quiz
+---------------------------------------
+which of these are reasons why the UDP-based NTP protocol is particulary vulnerable to amplication attacks? select allt hat are true.
+* a small command generate a large response.
+* vulnerable to source ip spoofing.
+* it is difficult to ensure computers communicate only with legitimate NTP servers.
+
+2.11 Amplification Example
+---------------------------------------
+
+
+2.12 TCP
+---------------------------------------
+
+
+2.13 TCP SYN Flood I
+---------------------------------------
+
+
+2.14 SYN Cookies Quiz
+---------------------------------------
+select all the true statements
+* the server msut reject all tcp options because the server discards the syn queue entry
+
+
+
+2.15 SYN Flood II
+---------------------------------------
+
+
+2.16 Attack Quiz
+---------------------------------------
+with regards to a udp flood attack, which of the following statements are true:
+* attackers can spoof the ip address of their udp packets
+* firewalls cannot stop a flood because the firewall is susceptible to flooding
+
+
+
+2.17 DoS and Route Hijacking
+---------------------------------------
+
+
+2.18 Higher Level DoS
+---------------------------------------
+
+
+2.19 DoS Mitigation Client Puzzles
+---------------------------------------
+
+
+2.20 Puzzle Quiz
+---------------------------------------
+which of the following statements are true?
+* client puzzles should be stateless
+* puzzle complexity should increase as the strength of the attack increases.
+
+
+
+2.21 DoS Mitigation CAPTCHAs
+---------------------------------------
+
+
+2.22 DoS Mitigation Source Identification
+---------------------------------------
+
+
+2.23 DoS Mitigation Tracebook
+---------------------------------------
+
+
+2.24 Traceback Quiz
+---------------------------------------
+which of the following are assumptions that can be made about Traceback?
+* attackers may work alone or in groups
+
+
+
+2.25 DoS Mitigation Edge Sampling
+---------------------------------------
+
+
+2.26 Edge Saampling Quiz
+---------------------------------------
+Select all the statements that are true for edge sampling:
+* multiple attackers can be identified since edge idnetifies splits in reverse path
+* requires space in the ip packet header
+
+
+
+2.27 Reflector Attack
+---------------------------------------
+
+
+2.28 Reflector Attack Quiz
+---------------------------------------
+Self defense against reflectors attacks should incorporate:
+* server redundancy - servers should be located in multiple networks and locations.
+* traffic limiting - traffic from a name server should be limited to reasonable thresholds.
+
+
+
+2.29 Capability Based Defense
+---------------------------------------
+
+
+2.30 DoS Reality
+---------------------------------------
+
+
+
