@@ -1,0 +1,140 @@
+date start : 29-07-2023
+
+
+19.1 Video Time
+---------------------------------------
+The video time for this lesson is 80 minutes.
+
+
+19.2 Course Notes
+---------------------------------------
+Course notes for this lesson can be found at: P3L4 Course Notes
+
+
+19.3 Intro to Instruction Selection
+---------------------------------------
+
+
+19.4 Full Compiler Structure
+---------------------------------------
+
+
+19.5 ISA Quiz
+---------------------------------------
+data and memory operations
+arithmetic and logic operations
+control flow operations
+
+
+19.6 Instruction Selection
+---------------------------------------
+
+
+19.7 Instruction Selection Example
+---------------------------------------
+
+
+19.8 Assembly Language Quiz
+---------------------------------------
+(a + b) - c
+
+
+19.9 IR Code Quiz
+---------------------------------------
+j * 4
+b + t1
+*t2
+i+1
+t4 * 4
+a + t5
+t3
+
+
+19.10 Translations Part 1
+---------------------------------------
+
+
+19.11 Translations Part 2
+---------------------------------------
+
+
+19.12 Translations Instruction Costs
+---------------------------------------
+
+
+19.13 x86 Idioms
+---------------------------------------
+
+
+19.14 Swap Quiz
+---------------------------------------
+it uses one fewer register
+
+
+19.15 Architecture Differences
+---------------------------------------
+
+
+19.16 Minimizing Cost
+---------------------------------------
+
+
+19.17 Tree Representation
+---------------------------------------
+
+
+19.18 Tiles
+---------------------------------------
+
+
+
+19.19 Tiles Part 2
+---------------------------------------
+
+
+19.20 algorithms
+---------------------------------------
+
+
+19.21 Ad Hoc Algorithms
+---------------------------------------
+
+
+19.22 Cost Algorithms
+---------------------------------------
+
+
+19.23 Tiling Quiz
+---------------------------------------
+mov %ebp, t0
+sub $20, t0
+mov (t0), t1
+add t1, a
+
+
+19.24 Dynamic Programming
+---------------------------------------
+
+
+19.25 Recursive Algorithm
+---------------------------------------
+
+
+19.26 Code Generator Generators
+---------------------------------------
+
+
+19.27 Rewrite Rules
+---------------------------------------
+
+
+19.28 Rewrite Process
+---------------------------------------
+
+
+
+19.29 Modern Processors
+---------------------------------------
+
+
+
