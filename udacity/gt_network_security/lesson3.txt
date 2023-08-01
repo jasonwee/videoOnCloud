@@ -1,0 +1,138 @@
+
+date start : 01 aug 2023
+
+
+3.1 Acknowledgements
+---------------------------------------
+This lesson incorporated materials from Prof. Dan Boneh at Stanford University
+
+
+
+3.2 Video Time
+---------------------------------------
+Video time for this lesson is 25 minutes.
+
+
+
+3.3 Recommended Reading
+---------------------------------------
+The recommended readings for this lesson are:
+
+Spamalytics: An Empirical Analysis of Spam Marketing Conversion
+
+PharmaLeaks: Understanding the Business of Online Pharmaceutical Affiliate Programs
+
+
+
+3.4 Course Notes
+---------------------------------------
+The course notes for this lesson can be found at:
+Course Notes Cybercrime
+
+
+
+3.5 Introduction to Cybercrimes
+---------------------------------------
+
+
+
+3.6 Actors in the Underground
+---------------------------------------
+
+
+
+3.7 Structure of the Underground
+---------------------------------------
+
+
+3.8 Underground Forums
+---------------------------------------
+
+
+3.9 Exploits as a Service
+---------------------------------------
+
+
+3.10 Dark Web Quiz
+---------------------------------------
+deep web
+it is not indexed by standard search engines
+
+dark web
+web content that exists on darknets
+
+surface web
+readily available to the public, and searchable with standard search engines
+
+
+
+3.11 Traffic PPI Example
+---------------------------------------
+
+
+3.12 PPI Quiz
+---------------------------------------
+doorway pages
+a webpage that lists many keywords, in hopes of increasing search engine ranking. Scripts on the page redirect to the attackers page.
+
+crypters
+a program that hides malicious code from anti-virus software
+
+blackhat search engine optimizer
+it increases traffic to the attacker's site by manipulating search engines.
+
+trojan download manager
+software that allows an attacker to update or install malware on a victim's computer.
+
+
+
+3.13 From Malware to Botnets
+---------------------------------------
+
+
+
+3.14 Command and Control
+---------------------------------------
+
+
+
+3.15 SPAM Quiz
+---------------------------------------
+what are the two defining characteristics of internet spam?
+irrelevant
+large number of recipients
+
+
+
+3.16 SPAM
+---------------------------------------
+
+
+
+3.17 SPAM Filter Effectiveness
+---------------------------------------
+
+
+
+3.18 SPAM Revenue Quiz
+---------------------------------------
+Name the top three countries where spam directed visitors added itesm to their shopping card:
+United States
+Canada
+Philipines
+
+
+
+3.19 Scamming Ain't Easy
+---------------------------------------
+
+
+
+3.20 Example Pharmacy Express
+---------------------------------------
+
+
+3.21 Pharmaleaks
+---------------------------------------
+
+
