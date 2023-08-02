@@ -1,0 +1,156 @@
+date start : 02 aug 2023
+
+
+4.1 Video Time
+---------------------------------------
+Video time for this lesson is 20 minutes.
+
+
+
+4.2 Recommended Reading
+---------------------------------------
+The recommended reading for this lesson is:
+
+The Hacker Playbook – Practical Guide to Penetration Testing, by Peter Kim
+
+
+
+4.3 Course Notes
+---------------------------------------
+Course Notes for this lesson can be found at:
+
+Course Notes Pentration Testing
+https://s3.amazonaws.com/content.udacity-data.com/courses/gt-cs6262/course+notes/course_notes_PenetrationTesting.pdf
+
+
+
+4.4 Introduction to Penatration Testing
+---------------------------------------
+
+
+
+4.5 Overview
+---------------------------------------
+
+
+4.6 Methodology
+---------------------------------------
+
+
+4.7 Footprinting
+---------------------------------------
+
+
+4.8 Scanning
+---------------------------------------
+
+
+4.9 Enumeration
+---------------------------------------
+
+
+4.10 Gaining Access
+---------------------------------------
+
+
+4.11 Escalating Privilege
+---------------------------------------
+
+
+4.12 Pilfering
+---------------------------------------
+
+
+4.13 Covering Tracks
+---------------------------------------
+
+
+4.14 Creating Back Doors
+---------------------------------------
+
+
+4.15 Penetration Testing Quiz
+---------------------------------------
+Which events should trigger a penetration test?
+infrastructure is added or modified
+applications are added or modified
+end user policies are changed
+security patches are installed
+
+
+
+4.16 Persistence and Stealth
+---------------------------------------
+
+
+4.17 Social Engineering
+---------------------------------------
+
+
+
+4.18 RSA Breach Quiz
+---------------------------------------
+identify employees that are vulnerable
+craft and email subject line that entices an employee to open it
+hide an executable file in the email that will install onto the victim's computer when the email is opened
+
+
+4.19 Common Social Engineering Techniques
+---------------------------------------
+
+
+4.20 Impersonation
+---------------------------------------
+
+
+4.21 Impersonation Quiz
+---------------------------------------
+Match each social engineering training tool with its description:
+
+flash or cd autoplay
+a flash is created that has a program that creates a connection to the exploit server
+
+reverse shell applet
+a signed java applet is sent to the user, if they accept it, a shell is sent back to the exploit server.
+
+click logger
+used to determine which users click on links in emails
+
+download connection
+an email contains an attachment. when the attachment is downloaded an connection is made to the exploit server.
+
+
+
+4.22 Computer Attacks
+---------------------------------------
+
+
+4.23 Computer Attacks Quiz
+---------------------------------------
+On this pie chart, what are the top three industries that were targets of cyber attacks in 2016?
+defense contractor
+restaurant
+software
+
+
+
+4.24 Counter Social Engineering Attacks
+---------------------------------------
+
+
+4.25 Motivator Quiz
+---------------------------------------
+Match the motivation with its description
+
+liking
+a desire to fit it and to be more easily influenced by someone you like
+
+scarcity
+a desire to pursue a limited or exclusive item or service
+
+commitment
+a desire to act in a consistent manner
+
+social proof
+looking to others for clues on how to behave
+
