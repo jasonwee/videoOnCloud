@@ -1,0 +1,80 @@
+date start : 04 aug 2023
+
+
+6.1 Acknowledgements
+---------------------------------------
+Acknowledgements
+This lesson incorporated materials from Prof. John Mitchell at Stanford University
+This lesson incorporated materials from Prof. Dan Boneh at Stanford University
+
+
+
+6.2 Video Time
+---------------------------------------
+Video time for this lesson is 15 minutes.
+
+
+
+6.3 Recommended Reading
+---------------------------------------
+Recommended Readings for this lesson are:
+
+Session management
+
+i. Secure Session Management With Cookies for Web Applications
+https://s3.amazonaws.com/content.udacity-data.com/courses/gt-cs6262/recommended+reading/web-session-management.pdf
+
+ii. Origin Cookies: Session Integrity for Web Applications
+https://s3.amazonaws.com/content.udacity-data.com/courses/gt-cs6262/recommended+reading/session-integrity.pdf
+
+
+
+6.4 Course Notes
+---------------------------------------
+Course Notes for this lesson can be found at:
+
+Course Notes Advanced Web Security: Sessions
+https://s3.amazonaws.com/content.udacity-data.com/courses/gt-cs6262/course+notes/Advanced+Web+Security-Sessions.pdf
+
+
+
+6.5 Session Management
+---------------------------------------
+
+
+
+6.6 Session Logout
+---------------------------------------
+
+
+6.7 Session Token Quiz
+---------------------------------------
+Check all the statements that are true
+the token must be stored somewhere
+tokens expire, but there should still be mechanisms to revoke them if necessary
+
+
+
+6.8 Session Hijacking
+---------------------------------------
+
+
+6.9 Session Fixation
+---------------------------------------
+
+
+6.10 Session Hijacking Quiz
+---------------------------------------
+Check all the statements that are true
+active session hijacking involves disconnecting the
+user from the server once that user is logged on.
+Social engineering is required to perform this
+type of hijacking
+
+
+
+6.11 Session Management Summary
+---------------------------------------
+
+
+
