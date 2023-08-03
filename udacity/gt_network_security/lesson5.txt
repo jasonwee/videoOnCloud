@@ -1,0 +1,273 @@
+date start : 03 aug 2023
+
+
+5.1 Acknowledgements
+---------------------------------------
+This lesson incorporated materials from Prof. John Mitchell at Stanford University
+This lesson incorporated materials from Prof. Dan Boneh at Stanford University
+
+
+
+5.2 Video Time
+---------------------------------------
+Video time for this lesson is 41 minutes.
+
+
+
+5.3 Recommended Reading
+---------------------------------------
+Recommended Reading
+Recommended Readings for this lesson are:
+
+Web security model
+
+i. Securing Frame Communication in Browsers
+https://s3.amazonaws.com/content.udacity-data.com/courses/gt-cs6262/recommended+reading/post-message.pdf
+
+ii. The Security Architecture of the Chromium Browser
+https://s3.amazonaws.com/content.udacity-data.com/courses/gt-cs6262/recommended+reading/chromium-security-architecture.pdf
+
+iii. Exposing Private Information by Timing Web Applications
+https://s3.amazonaws.com/content.udacity-data.com/courses/gt-cs6262/recommended+reading/webtiming.pdf
+
+iv. An Introduction to Content Security Policy
+https://web.dev/csp/
+
+v. Play safely in sandboxed IFrames
+https://web.dev/sandboxed-iframes/
+
+vi. The Basics of Web Workers
+https://web.dev/workers-basics/
+
+vii. Using CORS
+https://web.dev/learn/
+
+
+
+5.4 Course Notes
+---------------------------------------
+Course Notes for this lesson can be found at:
+
+Course Notes Advanced Web Security: Browser Security
+https://s3.amazonaws.com/content.udacity-data.com/courses/gt-cs6262/course+notes/Course_Notes-Advanced+Web+SecurityP1.pdf
+
+Course Notes Advanced Web Security: Browser Security Part 2
+https://s3.amazonaws.com/content.udacity-data.com/courses/gt-cs6262/course+notes/Course-Notes+Advanced+Web+SecurityP2+(1).pdf
+
+
+
+5.5 Introduction to Advanced Web Security
+---------------------------------------
+
+
+5.6 Common Application Attacks Quiz
+---------------------------------------
+using components with known vulnerabilities
+uses unpatched third party components
+
+missing function level access control
+privilege functionality is hidden rather than enforced through access controls.
+
+sensitive data exposure
+abusses lack of data encryption.
+
+security misconfiguration
+exploits misconfigured servers.
+
+insecure direct object references
+attackers modify file names.
+
+cross site scripting
+inserts javascript into trusted sites.
+
+broken authentication and session
+program flaws allow bypass of authentication methods.
+
+injection
+modifies back-end statement through user input.
+
+
+
+5.7 Goals of Web Security
+---------------------------------------
+
+
+5.8 Threat Models
+---------------------------------------
+
+
+5.9 Attack Top 10 Quiz
+---------------------------------------
+rank these in order, 1 for the most common,
+10 for the least common attack methods:
+
+5  security misconfiguration
+4  insecure direct object references
+7  missing function level access control
+6  sensitive data exposure
+9  using components with known vulnerabilities
+3  cross site scripting
+10 unvalidated redirects and forwards
+2  broken authentication and session
+1  injection
+8  cross site request forgery
+
+
+5.10 Threat Models
+---------------------------------------
+
+
+5.11 Modern Websites
+---------------------------------------
+
+
+5.12 Website Quiz
+---------------------------------------
+in 2015 how many active websites 
+were on the internet?
+1billion
+
+how many websites does google
+quarantine each DAY?
+10000
+
+How many malicious websites 
+are identified every DAY?
+30000
+
+
+
+5.13 Browsers
+---------------------------------------
+
+
+5.14 Sandbox Quiz 1
+---------------------------------------
+Next to each characteristic, put an s for sandbox
+v for virtual machine, or b for both
+
+b anything changed or created is nto visible beyond its boundaries
+s if data is not saved, it is lost when the application closes
+v it is a machien within a machine
+s lightweight and easy to setup
+v disk space must be allocated to the application
+
+
+
+5.15 Browser SOP
+---------------------------------------
+
+
+5.16 Frame Security
+---------------------------------------
+
+
+
+5.17 Browsing Context
+---------------------------------------
+
+
+
+5.18 Content Security Policy
+---------------------------------------
+
+
+
+5.19 CSP Quiz
+---------------------------------------
+Which of the following statements are true?
+csp will allow third party widgets (e.g. google +1 button) to be embedded on your site.
+
+
+
+5.20 Web Worker
+---------------------------------------
+
+
+
+5.21 Subresource Integrity
+---------------------------------------
+
+
+
+5.22 Cross Origin Resource Sharing
+---------------------------------------
+
+
+
+5.23 CORS Quiz
+---------------------------------------
+select all statements that are true
+cors allow cross-domain communicaiton from the browser
+cors requires coordination between the server and client
+
+
+
+5.24 SOP Quiz
+---------------------------------------
+same scheme, hostname and port number
+
+
+
+5.25 SOP Review
+---------------------------------------
+
+
+
+
+5.26 SOP and cookies
+---------------------------------------
+
+
+
+
+5.27 Setting and Deleting Cookies
+---------------------------------------
+
+
+
+
+5.28 SOP Security Quiz
+---------------------------------------
+Given this website http://www.example.com/dir/page.html
+
+determine the outcome(success or failure) for each compared URL. Check each URL that has the same origin as the given site.
+
+http://www.example.com/dir2/other.html
+http://www.example.com/dir/page2.html
+http://username:password@www.example.com/dir2/other.html
+
+
+
+5.29 Cookie Quiz
+---------------------------------------
+super
+zombie
+samesite
+httponly
+third-party
+session
+persistent
+secure
+
+
+
+5.30 Cookie Protocol Problem
+---------------------------------------
+
+
+
+
+5.31 Cryptographic Checksums
+---------------------------------------
+
+
+
+5.32 Checksum Quiz
+---------------------------------------
+check all the statements that are true
+crytographic hash functions that are not one-way are vulnerble to preimage attacks
+a good cryptographic hash funciton should employ an avalanche effect
+
+
+
