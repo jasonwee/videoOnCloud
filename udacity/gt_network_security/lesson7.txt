@@ -1,0 +1,97 @@
+date start : 05 aug 2023
+
+
+7.1 Acknowledgements
+---------------------------------------
+This lesson incorporated materials from Prof. John Mitchell at Stanford University
+This lesson incorporated materials from Prof. Dan Boneh at Stanford University
+
+
+
+7.2 Video Time
+---------------------------------------
+Video time for this lesson is 10 minutes.
+
+
+
+7.7. Recommended Reading
+---------------------------------------
+Recommended Readings for this lesson are:
+
+HTTPS: goals and pitfalls
+
+i. ForceHTTPS: Protecting High-Security Web Sites from Network Attacks
+https://s3.amazonaws.com/content.udacity-data.com/courses/gt-cs6262/recommended+reading/forcehttps.pdf
+
+ii.Towards Short-Lived Certificates
+https://s3.amazonaws.com/content.udacity-data.com/courses/gt-cs6262/recommended+reading/w2sp12-final9.pdf
+
+
+
+7.4 Course Notes
+---------------------------------------
+Course Notes for this lesson can be found at:
+
+
+Course Notes Advanced Web Security:https
+https://s3.amazonaws.com/content.udacity-data.com/courses/gt-cs6262/course+notes/Course-Notes+Advanced+Web+SecurityP3.pdf
+
+
+
+7.5 Goals
+---------------------------------------
+
+
+7.6 HTTPS
+---------------------------------------
+
+
+7.7 HTTPS Quiz
+---------------------------------------
+Select all of the items that can be encrypted by HTTPS
+request url
+query parameters
+headers
+cookies
+
+
+
+7.8 Network Attacker
+---------------------------------------
+
+
+
+7.9 SSL TLS Overview
+---------------------------------------
+
+
+7.10 Certificates
+---------------------------------------
+
+
+7.11 SSL and TLS
+---------------------------------------
+
+
+7.12 HTTPS in the Browser
+---------------------------------------
+
+
+7.13 HTTPS Disadvantages Quiz
+---------------------------------------
+Which of the followings are real disadvantages to using https
+you need to buy an ssl certificate
+mixed modes issue- loading insecure content on a secure site
+proxy caching probelms -public caching cannot occur
+
+
+
+7.14 HTTPS Problems
+---------------------------------------
+
+
+7.15 HTTPS Attack Prevention
+---------------------------------------
+
+
+
