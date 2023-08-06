@@ -1,0 +1,152 @@
+date start : 06 aug 2023
+
+
+8.1 Acknowledgements
+---------------------------------------
+This lesson incorporated materials from Prof. Dan Boneh at Stanford University
+
+
+
+8.2 Video Time
+---------------------------------------
+The video time for this lesson is 22 minutes.
+
+
+
+8.3 Recommended Reading
+---------------------------------------
+The recommended readings for this lesson are:
+
+A Look Back at “Security Problems in the TCP/IP Protocol Suite”
+https://s3.amazonaws.com/content.udacity-data.com/courses/gt-cs6262/recommended+reading/acsac-ipext.pdf
+
+Steve Friedl's Unixwiz.net Tech Tips: An Illustrated Guide to the Kaminsky DNS Vulnerability
+http://unixwiz.net/techtips/iguide-kaminsky-dns-vuln.html
+
+BGP Security in Partial Deployment
+https://s3.amazonaws.com/content.udacity-data.com/courses/gt-cs6262/recommended+reading/1307.2690v1.pdf
+
+
+
+8.4 Course Notes 
+---------------------------------------
+Course notes for this lesson can be found at:
+Security Internet Protocols
+https://s3.amazonaws.com/content.udacity-data.com/courses/gt-cs6262/course+notes/Course-Notes+Security+Internet+Protocols.pdf
+
+
+
+8.5 Introduction to Security Internet Protocols
+---------------------------------------
+
+
+8.6 Internet Infrastructure
+---------------------------------------
+
+
+8.7 Infrastructure Quiz
+---------------------------------------
+tier one
+a network can reach every other network through peering
+
+tier two
+a network that peers some of its network access and purchases some of it.
+
+tier three
+a network can reach every other network through peering.
+
+
+
+8.8 TCP Protocol Stack
+---------------------------------------
+
+
+8.9 Internet Protocol
+---------------------------------------
+
+
+8.10 IP Quiz
+---------------------------------------
+select all the true statements about internet protocol (ip)
+ip provides only best effort delivery, it is not guaranteed.
+due the connectionless nature of ip, data corruption, packet loss, duplication, and out-of-order delivery can occur.
+
+
+
+8.11 IP Authentication
+---------------------------------------
+
+
+8.12 TCP
+---------------------------------------
+
+
+8.13 Review TCP Handshake
+---------------------------------------
+
+
+8.14 TCP Security Issues
+---------------------------------------
+
+
+8.15 TCP IP Security Issues Quiz
+---------------------------------------
+select all the true statements
+
+ip information cannot be protected by transport layer controls.
+network layer controls can protect the data within the packets as well as ip information for each packet.
+
+
+8.16 Random Initial Sequence Numbers
+---------------------------------------
+
+
+
+8.17 Protocols Quiz
+---------------------------------------
+match the protocol with its description
+
+address resolution protcol
+protocol designed to map ip netwrok addresses to the hardware addresses used by a data link protocol
+
+open shortest path first
+protocol uses a link state routing algorithm and falls into the group of interior routing protocols
+
+border gateway protocol
+protocol designed to exchange routing and reachability information among autonomous systems(as)
+
+
+8.18 Routing Security
+---------------------------------------
+
+
+
+8.19 BGP
+---------------------------------------
+
+
+8.20 BGP Attacks Quiz
+---------------------------------------
+match the attack to its cahracteristic:
+
+denial of service
+create a false route or kill a legitimate one.
+
+sniffing
+the attakcer must control a device along the victim's communication path.
+
+routing to endpoints in malicious networks
+the first step is to hijack traffic from a legitimate host.
+
+creating route instabilities
+not yet used by hackers because damage cannot be contained. it can blowback to the attacker.
+
+revelation of network topologies
+unmasking the as relationships by hacking the routing table.
+
+
+
+8.21 S BGP
+---------------------------------------
+
+
