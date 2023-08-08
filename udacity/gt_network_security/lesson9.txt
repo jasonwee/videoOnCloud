@@ -1,0 +1,104 @@
+date start : 08 aug 2023
+
+
+9.1 Acknowledgements
+---------------------------------------
+Acknowledgements
+
+This lesson incorporated materials from Prof. Dan Boneh at Stanford University
+
+
+
+9.2 Video Time
+---------------------------------------
+Video Time
+
+The video time for this lesson is 20 minutes.
+
+
+
+9.3 Recommended Reading
+---------------------------------------
+The recommended readings for this lesson are:
+
+A Look Back at “Security Problems in the TCP/IP Protocol Suite”
+https://s3.amazonaws.com/content.udacity-data.com/courses/gt-cs6262/recommended+reading/acsac-ipext.pdf
+
+Steve Friedl's Unixwiz.net Tech Tips: An Illustrated Guide to the Kaminsky DNS Vulnerability
+http://unixwiz.net/techtips/iguide-kaminsky-dns-vuln.html
+
+BGP Security in Partial Deployment
+http://unixwiz.net/techtips/iguide-kaminsky-dns-vuln.html
+
+
+
+9.4 Course Notes
+---------------------------------------
+Course Notes for this lesson can be found at:
+Course Notes DNS
+https://s3.amazonaws.com/content.udacity-data.com/courses/gt-cs6262/course+notes/Course_Notes_Domain+Name+Systems.pdf
+
+
+
+9.5 Introduction to Domain Name Servers
+---------------------------------------
+
+
+9.6 DNS
+---------------------------------------
+
+
+9.7 DNS Lookup Example
+---------------------------------------
+
+
+9.8 DNS Caching Quiz
+---------------------------------------
+cached
+ttl
+
+
+9.9 Caching
+---------------------------------------
+
+
+9.10 Basic DNS Vulnerabilities
+---------------------------------------
+
+
+9.11 DNS Quiz
+---------------------------------------
+all domain names and ip addresses are stored at the central registry.
+it can take several days for information to propagate to all dns servers
+
+9.12 DNS Packet
+---------------------------------------
+
+
+9.13 Poisoning Attacks
+---------------------------------------
+
+
+9.14 DNS Defenses
+---------------------------------------
+
+
+9.15 DNS SEC
+---------------------------------------
+
+
+9.16 DNS Signing
+---------------------------------------
+
+
+9.17 DNS Rebinding Attack
+---------------------------------------
+
+
+9.18 DNS Rebinding Quiz
+---------------------------------------
+select all the true statements about rebinding attacks:
+the attacker needs to register a domain and delegate it to a server under his control.
+the attacker's server responds with a short ttl record.
+
+
