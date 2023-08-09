@@ -1,0 +1,132 @@
+date start : 09 aug 2023
+
+
+10.1 Acknowledgements
+---------------------------------------
+This lesson incorporated materials from:
+
+Paul Royal at Georgia Tech.
+
+
+
+10.2 Video Time
+---------------------------------------
+The video time for this lesson is 30 minutes.
+
+
+
+10.3 Recommended Reading
+---------------------------------------
+Recommended readings:
+
+1. Ether: Malware Analysis via Hardware Virtualization Extensions. Artem Dinaburg, Paul Royal, Monirul Sharif, and Wenke Lee. In Proceedings of The 15th ACM Conference on Computer and Communications Security (CCS 2008), Alexandria, VA, October 2008. http://ether.gtisc.gatech.edu/
+
+2. Automatic Reverse Engineering of Malware Emulators. Monirul Sharif, Andrea Lanzi, Jon Giffin, and Wenke Lee. In Proceedings of The 2009 IEEE Symposium on Security and Privacy, Oakland, CA, May 2009. http://old.iseclab.org/people/andrew/download/oakland09.pdf
+
+3. Exploring Multiple Execution Paths for Malware Analysis. Andreas Moser, Christopher Kruegel, and Engin Kirda. In Proceedings of The 2007 IEEE Symposium on Security and Privacy, Oakland, CA, May 2007. https://www.auto.tuwien.ac.at/~chris/research/doc/oakland07_explore.pdf
+
+
+
+10.4 Course Notes
+---------------------------------------
+Course Notes for this lesson can be found at:
+Course Notes Lesson 7
+https://s3.amazonaws.com/content.udacity-data.com/courses/gt-cs6262/course+notes/L7_Advanced+Malware+Analysis_Final.pdf
+
+
+
+10.5 Introduction
+---------------------------------------
+
+
+10.6 Malware Prevalence
+---------------------------------------
+
+
+10.7 Malware Evolution
+---------------------------------------
+
+
+10.8 Malware Obfuscation Quiz
+---------------------------------------
+which of the following statements are true?
+
+code that reverses the pre-runtime transformation is included in the executable.
+
+a signature scanner that tries to identify malware by its unique strings would not be effective.
+
+
+
+10.9 Malware Obfuscation
+---------------------------------------
+
+
+10.10 MALWARE QUIZ
+---------------------------------------
+Given the following obfuscation techniques, which hiding from
+users or security or researches?
+
+users
+rootkits
+
+security
+thoroughly mapping security sites and honey pots so as to avoid them
+
+researchers
+using nonce-based encryption methods
+
+
+
+10.11 Malware Analysis
+---------------------------------------
+
+
+10.12 Identical Notion of Time
+---------------------------------------
+
+
+10.13 Analysis Difficulty Quiz
+---------------------------------------
+Rank the four categories from easiest 1 to hardest 4.
+
+1. fully automated analysis: use fully automated tools to analyze the malware.
+
+2. static properties analysis: examine the static properties of the malware. static properties include: metadata, strings embedded in the malware, header details, etc.
+
+3. interactive behavior analysis: running the malware in a protected and isolated environment.
+
+4. manual code reversing use a disassembler and decompiler to recreate the malware code.
+
+
+
+10.14 Analysis Technique Results Quiz
+---------------------------------------
+Rank the four categories from most informaiton is obtained 1 to least information is obtained 4.
+
+1. manual code reversing use a disassembler and decompiler to recreate the malware code.
+
+2. interactive behavior analysis: running the malware in a protected and isolated environment.
+
+3. static properties analysis: examine the static properties of the malware. static properties include: metadata, strings embedded in the malware, header details, etc.
+
+4. fully automated analysis: use fully automated tools to analyze the malware.
+
+
+
+10.15 Robust and Efficient Malware Analysis
+---------------------------------------
+
+
+10.16 Ether Malware Analyzer
+---------------------------------------
+
+
+10.17 Malware Emulators
+---------------------------------------
+
+
+10.18 Approaches of Emulation
+---------------------------------------
+
+
+
