@@ -1,0 +1,148 @@
+date start : 10 aug 2023
+
+
+11.1 Acknowledgements
+---------------------------------------
+This lesson incorporated materials from:
+
+John Mitchell at Stanford University,
+Yanick Fratantonio at UC Santa Barbara.
+
+
+
+11.2 Recommended Reading
+---------------------------------------
+Recommended readings: other than the papers already listed on slides, please add:
+
+Jekyll on iOS: When Benign Apps Become Evil. Tielei Wang, Kangjie Lu, Long Lu, Simon Chung, and Wenke Lee.
+In Proceedings of The 22nd USENIX Security Symposium. Washington DC. August 2013.
+These papers are listed on the video called 'Mobile Malware Protection":
+https://www.usenix.org/system/files/conference/usenixsecurity13/sec13-paper_wang_2.pdf
+
+
+On Lightweight Mobile Phone Application Certification
+https://www.usenix.org/system/files/conference/usenixsecurity13/sec13-paper_wang_2.pdf
+
+
+Mitigating Android Software Misuse Before It Happens
+https://www.usenix.org/system/files/conference/usenixsecurity13/sec13-paper_wang_2.pdf
+
+
+
+11.3 Course Notes
+---------------------------------------
+Course notes for this lesson can be found at:
+
+Lesson 8 Course Notes
+https://s3.amazonaws.com/content.udacity-data.com/courses/gt-cs6262/course+notes/Course_Notes_Advanced+Malware+Analysis.pdf
+
+
+
+11.4 Video Time
+---------------------------------------
+The video time for this lesson is 15 minutes.
+
+
+
+11.5 Introduction
+---------------------------------------
+
+
+11.6 Mobile Device Quiz
+---------------------------------------
+According to Wikipedia, which of these devices is a mobile device?
+smart phone held by person
+self driving car
+robot
+
+
+
+11.7 Forensics Quiz
+---------------------------------------
+Which of the following characteristics are associated with mobile devices (M)
+and which are for stationary computers (c)?
+M Specialized hardware
+C Standardized hardware
+M Many different (versions of) operating systems
+C Usually runs Widnows, MAC OS or Linux
+C Large storage capability
+M Larget number of accessories: cameras, GPS
+
+
+
+11.8 Malware Trends
+---------------------------------------
+
+
+11.9 iOS Malware
+---------------------------------------
+
+
+11.10 Android Malware
+---------------------------------------
+https://forensics.spreitzenbarth.de/android-malware/
+
+
+
+11.11 Lifetime of iOS Malware
+---------------------------------------
+
+
+11.12 Toolchain Attacks
+---------------------------------------
+
+
+11.13 Toolchain Attacks Quiz
+---------------------------------------
+What code did the attackers modify? The Xcode compiler and linker.
+
+The code modified the UI Window class and the UIDevice class, adding 
+extra files to any app created with XCodeGhost.
+
+What kind of information can an infected app obtain about the device
+that is running the app?
+
+
+current time                system's language and country
+app's name                  network type
+app's bundle identifier     device uuid
+the device's name and type 
+
+
+
+
+11.14 Hardening the ToolChain Quiz
+---------------------------------------
+List the four areas of the C based toolchain where hardening 
+can occur. (Hint - what are the steps in a C based toolchain?)
+
+configuration
+preprocessor
+compiler
+linker
+
+
+11.15 Mobile Malware Protection
+---------------------------------------
+https://patrickmcdaniel.org/pubs/ccs09a.pdf
+https://www.enck.org/pubs/NAS-TR-0094-2008.pdf
+
+
+
+11.16 Information Leakage Protection
+---------------------------------------
+
+
+11.17 STAMP Admission System
+---------------------------------------
+
+
+11.18 Data Flow Analysis
+---------------------------------------
+
+
+11.19 Data Flows
+---------------------------------------
+
+
+
