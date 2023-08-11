@@ -1,0 +1,249 @@
+date start : 11 aug 2023
+
+
+12.1 Video Time
+---------------------------------------
+The video time for this lesson is 25 minutes.
+
+
+
+12.2 Acknowledgements
+---------------------------------------
+Professor Lee would like to acknowledge the following people. He found their work to be invaluable in the creation of this lesson.
+
+Peter Mell and Tim Grance at NIST
+Bryan Payne at Netflix
+Monirul Sharif at Google
+
+
+
+12.3 Recommended Reading
+---------------------------------------
+Recommended reading for this lesson:
+
+Secure and Flexible Monitoring of Virtual Machines. Bryan D. Payne and Martim Carbone and Wenke Lee. In Proceedings of The 23rd Annual Computer Security Applications Conference (ACSAC 2007), Miami Beach, FL, December 2007. https://www.acsac.org/2007/papers/138.pdf
+https://www.acsac.org/2007/papers/138.pdf
+
+Lares: An Architecture for Secure Active Monitoring Using Virtualization. Bryan D. Payne, Martim Carbone, Monirul Sharif, and Wenke Lee. In Proceedings of The 2008 IEEE Symposium on Security and Privacy, Oakland, CA, May 2008. https://pdfs.semanticscholar.org/efed/7da88060a855a7ce391fd805a030d5966f12.pdf
+https://www.semanticscholar.org/paper/Lares%3A-An-Architecture-for-Secure-Active-Monitoring-Payne-Carbone/efed7da88060a855a7ce391fd805a030d5966f12?p2df
+
+Secure In-VM Monitoring Using Hardware Virtualization. Monirul Sharif, Wenke Lee, Weidong Cui, and Andrea Lanzi. In Proceedings of The 16th ACM Conference on Computer and Communications Security (CCS 2009), Chicago, IL, November, 2009. https://www.microsoft.com/en-us/research/wp-content/uploads/2016/02/sim-ccs09.pdf
+https://www.microsoft.com/en-us/research/wp-content/uploads/2016/02/sim-ccs09.pdf
+
+
+
+12.4 Course Notes
+---------------------------------------
+Course Notes for this lesson can be found at:
+Lesson 14 Cloud Computing VMM
+https://s3.amazonaws.com/content.udacity-data.com/courses/gt-cs6262/course+notes/Course+Notes+Cloud+Computing+VMM.pdf
+
+
+
+12.5 Introduction
+---------------------------------------
+
+
+12.6 Definition of Cloud Computing
+---------------------------------------
+
+
+12.7 Cloud Characteristics Quiz
+---------------------------------------
+Given our definition of cloud computing fill in the 5 essential cloud characteristics.
+
+on demand self service
+broad or wide network access
+resource pooling or sharing
+measured service
+rapid elasticity
+
+
+
+12.8 Cloud Service Models
+---------------------------------------
+
+
+12.9 Services Quiz
+---------------------------------------
+Given the definitions of saas, laas, paas determine the service
+category for each of the products listed:
+
+paas google apps
+laas amazon web services
+paas salesforce
+saas knowledge tree
+laas microsoft azure
+
+
+12.10 Cloud Deployment Models
+---------------------------------------
+
+
+12.11 Common Cloud Charateristics Quiz
+---------------------------------------
+list some of the charateristics that all four cloud models share:
+
+massive scale
+homogenieity
+virtualization
+resilient computing
+low cost software
+geographic distribution
+
+
+
+12.12 NIST Cloud
+---------------------------------------
+
+
+12.13 NIST Risk Identified Quiz
+---------------------------------------
+Give the risks, determine which mode belongs to each circle:
+
+saas   pass
+
+iaas
+
+
+
+12.14 Cloud Security Concerns
+---------------------------------------
+
+
+12.15 Analyzing Cloud Security
+---------------------------------------
+
+
+12.16 Security Relevant Cloud Components
+---------------------------------------
+
+
+12.17 Cloud Security Advantages
+---------------------------------------
+
+
+12.18 Cloud Security Challenges
+---------------------------------------
+
+
+12.19 Cloud Security Quiz
+---------------------------------------
+which of the following statements are true?
+most data in transit is encrypted
+
+
+
+12.20 Cloud Security Additional Issues
+---------------------------------------
+
+
+12.21 Cloud Security Architectures
+---------------------------------------
+
+
+12.22 Virtualization Quiz
+---------------------------------------
+fill in the blanks with regards to cloud computing virtualization.
+virtualization requires at least 1 instances(s) of 
+an application or resource that is to be shared by different
+organizations.
+sharing between organizations is accomplished by
+assigning a logical name to the resource and then giving
+each requests a pointer to the resource.
+
+
+
+12.23 Virtualization Quiz 2
+---------------------------------------
+fill in the blacks with regards to cloud computing virtualization:
+virtualization involves creating a virtual machine
+using existing hardware  and operating systems
+the virtual machine is logically isolated from the
+host hardware.
+
+
+
+12.24 Virtualization Quiz 3
+---------------------------------------
+A hypervisor acts as a virtual machine manager.
+given these two diagrams, answer the questions:
+
+which one does not have any host operating system
+because they are installed on a bare system?
+type 1 hypervisor
+
+which one emulates the devices with which a system
+normally interacts?
+type 2 hypervisor
+
+
+
+12.25 Platform Virtualization
+---------------------------------------
+
+
+12.26 Kernel Level Attack Tools
+---------------------------------------
+
+
+12.27 Hypervisor Approaches
+---------------------------------------
+
+
+12.28 VirtualBox Security Quiz
+---------------------------------------
+Which of the following steps is considered safe when working
+with virtual machines?
+
+
+
+12.29 Monitoring Memory
+---------------------------------------
+
+
+12.30 Production Level Systems
+---------------------------------------
+
+
+12.31 Passive Monitoring
+---------------------------------------
+
+
+12.32 libVMI
+---------------------------------------
+
+
+12.33 Active Monitoring
+---------------------------------------
+
+
+12.34 Active Monitoring Challenge
+---------------------------------------
+
+
+12.35 Security in VM Monitoring
+---------------------------------------
+
+
+12.36 VM Monitoring
+---------------------------------------
+
+
+12.37 VM Monitoring Requirements
+---------------------------------------
+
+
+12.38 SIM Design
+---------------------------------------
+
+
+12.39 Protected Address
+---------------------------------------
+
+
+12.40 Monitor Overhead
+---------------------------------------
+
+
+
