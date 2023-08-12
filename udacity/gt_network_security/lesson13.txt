@@ -1,0 +1,158 @@
+date start : 12 aug 2023
+
+
+13.1 Video Time
+---------------------------------------
+The video time for this lesson is 15 minutes.
+
+
+
+13.2 Acknowledgements
+---------------------------------------
+Acknowledgements
+Professor Lee would like to acknowledge the work of
+Prof. Muhammad Naveed of University of Southern California
+and its contribution to this lesson.
+
+
+
+13.3 Recommended Reading
+---------------------------------------
+Recommended Reading for this Lesson:
+
+Muhammad Naveed, Seny Kamara, Charles V Wright.
+Inference Attacks on Property-Preserving Encrypted Databases.
+In ACM Conference on Computer and Communications Security (CCS2015). https://cs.brown.edu/~seny/pubs/edb.pdf
+
+Vincent Bindschaedler, Muhammad Naveed, Xiaorui Pan, XiaoFeng Wang, Yan Huang.
+Practicing Oblivious Access on Cloud Storage: the Gap, the Fallacy, and the New Way Forward.
+In ACM Conference on Computer and Communications Security (CCS2015). http://homes.soic.indiana.edu/yh33/mypub/ocs.pdf
+The following are papers referenced in the lesson:
+
+Practical Oblivious Storage
+https://s3.amazonaws.com/content.udacity-data.com/courses/gt-cs6262/recommended+reading/codaspy12.pdf
+
+Oblivistore
+https://s3.amazonaws.com/content.udacity-data.com/courses/gt-cs6262/recommended+reading/codaspy12.pdf
+
+Path ORAM
+https://s3.amazonaws.com/content.udacity-data.com/courses/gt-cs6262/recommended+reading/codaspy12.pdf
+
+Oblivious RAM Simulation with Efficient Worst-Case Access Overhead
+https://s3.amazonaws.com/content.udacity-data.com/courses/gt-cs6262/recommended+reading/codaspy12.pdf
+
+
+
+13.4 Course Notes
+---------------------------------------
+Course Notes
+Course Notes for this lesson can be found at:
+
+Cloud Computing: Data Security Lesson Notes
+https://s3.amazonaws.com/content.udacity-data.com/courses/gt-cs6262/course+notes/Course_Notes_Cloud_Computing_Data_Security.pdf
+
+
+
+13.5 Introduction
+---------------------------------------
+
+
+13.6 How Do Data Breaches Happen
+---------------------------------------
+
+
+13.7 Encryption Quiz
+---------------------------------------
+property preserving
+encrypted data is in the same order as the plaintext.
+
+searchable
+encrypted data that can be searched using encrypted keywords
+
+secure computation
+several parties can compute a function using inputs that are kept private.
+
+homomorphic
+computations performed on encrypted data matches that result of the computation on the plaintext.
+
+functional
+a secret key that allows someone to learn the function that is being encrypted.
+
+
+
+13.8 PPE
+---------------------------------------
+
+
+13.9 PPE Quiz One
+---------------------------------------
+what is preserved? equality
+what is leaked?    frequency
+
+13.10 PPE Quiz Two
+---------------------------------------
+what is leaked in order-preserving encryption?
+order frequency
+
+13.11 PPE Leakage
+---------------------------------------
+
+
+13.12 Data for Attributes
+---------------------------------------
+
+
+13.13 Encryption Attacks
+---------------------------------------
+
+
+13.14 Attack Analysis
+---------------------------------------
+
+
+13.15 Optimization Attack
+---------------------------------------
+
+
+13.16 Optimization Attack Analysis
+---------------------------------------
+
+
+13.17 Cumulative Attack
+---------------------------------------
+
+
+13.18 Cumulative Attack Analysis
+---------------------------------------
+
+
+13.19 Attack Recap
+---------------------------------------
+
+
+13.20 Suppose We Don't Trust the cloud
+---------------------------------------
+
+
+13.21 Oblivious ram
+---------------------------------------
+Practical Oblivious Storage
+https://s3.amazonaws.com/content.udacity-data.com/courses/gt-cs6262/recommended+reading/codaspy12.pdf
+
+Oblivistore
+https://s3.amazonaws.com/content.udacity-data.com/courses/gt-cs6262/recommended+reading/ObliviStore.pdf
+
+Path ORAM
+https://s3.amazonaws.com/content.udacity-data.com/courses/gt-cs6262/recommended+reading/280.pdf
+
+Oblivious RAM Simulation with Efficient Worst-Case Access Overhead
+https://s3.amazonaws.com/content.udacity-data.com/courses/gt-cs6262/recommended+reading/1107.5093.pdf
+
+
+
+13.22 ORAM Quiz
+---------------------------------------
+select the statements that are true with regards to ORAM
+client must have a private source of randomness
+each access to the remote storage must have a read and a write
+
