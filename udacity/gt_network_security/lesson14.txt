@@ -1,0 +1,135 @@
+date start : 13 aug 2023
+
+
+14.1 Video Time
+---------------------------------------
+The video time for this lesson is 23 minutes.
+
+
+14.2 Recommended Reading
+---------------------------------------
+Recommended readings for this lesson:
+
+BotHunter: Detecting Malware Infection Through IDS-Driven Dialog Correlation. Guofei Gu, Phillip Porras, Vinod Yegneswaran, Martin Fong, Wenke Lee. In Proceedings of The 16th USENIX Security Symposium (Security'07), Boston, MA, August 2007. http://faculty.cs.tamu.edu/guofei/paper/Gu_Security07_botHunter.pdf
+
+BotMiner: Clustering Analysis of Network Traffic for Protocol- and Structure-Independent Botnet Detection. Guofei Gu, Roberto Perdisci, Junjie Zhang, and Wenke Lee. In Proceedings of The 17th USENIX Security Symposium (Security'08), San Jose, CA, July 2008. https://www.usenix.org/legacy/event/sec08/tech/full_papers/gu/gu_html/
+
+Modeling Botnet Propagation Using Time Zones. David Dagon, Cliff Zou, and Wenke Lee. In Proceedings of The 13th Annual Network and Distributed System Security Symposium (NDSS 2006), San Diego, CA, February 2006. http://www.cs.ucf.edu/~czou/research/botnet_tzmodel_NDSS06.pdf
+
+
+
+14.3 Course Notes
+---------------------------------------
+Course Notes for this lesson can be found at:
+Course Notes Network Monitoring
+
+https://s3.amazonaws.com/content.udacity-data.com/courses/gt-cs6262/course+notes/Course+Notes+-+Botnet+Detection.pdf
+
+
+
+14.4 Introduction
+---------------------------------------
+
+
+14.5 Network Monitoring
+---------------------------------------
+
+
+14.6 BOT Quiz
+---------------------------------------
+a bot is often called a zombie because it is a 
+compromised computer controlled by malware without the
+consent and knowledge of the user.
+
+
+
+14.7 BOTNET Quiz
+---------------------------------------
+a botnet is a network of bots controlled by a 
+bot master 
+it is a key platform for fraud and other for-profit exploit
+
+
+
+14.8 BOTNET Tasks Quiz
+---------------------------------------
+select all the tasks that botnets commonly perform:
+more than 95% of all spam
+all distributed denial of service (ddos) attacks
+click fraud
+phising & pharming attacks
+key logging & data/identity theft
+distributing other malware, e.g., spyware
+anonymized terrorist & criminal communication
+
+
+
+14.9 Traditional Security Fail
+---------------------------------------
+
+
+14.10 Botnet Detection
+---------------------------------------
+
+
+14.11 Bot Hunter
+---------------------------------------
+
+
+14.12 BotHunter Architecture
+---------------------------------------
+
+
+14.13 Botminer
+---------------------------------------
+
+
+14.14 Botnet Detection Quiz
+---------------------------------------
+which of these behaviors are indicative of botnets?
+linking to an established c&c server
+generating internet relay chat (irc) traffic using a specific range of ports
+generating smtp emails/traffic
+reducing workstation performance/internet access to the level that it is a noticable to users
+
+
+
+14.15 Botminer Limitations Quiz
+---------------------------------------
+what can botnets do to evade c-plane clustering?
+manipulate communication patterns.
+introduce noise (in the form of random packets) to reduce similarity between c&c flows.
+
+what can botnets do to evade a-plane monitoring?
+perform slow spamming
+use undetectable activities (spam sent with gmail, download exe from thtps server)
+
+
+
+14.16 Botnet Detection
+---------------------------------------
+
+
+14.17 Botnet and Dynamic DNS 1
+---------------------------------------
+
+
+14.18 Botnet and Dynamic DNS 2
+---------------------------------------
+
+
+14.19 Botnet and Dynamic DNS 3
+---------------------------------------
+
+
+14.20 APT Quiz
+---------------------------------------
+which of the information should be considered in order to identify the
+source (perpetrator) of an apt attack?
+source ip address of tcp-based attack packets
+coding style of malware
+inclusion of special libraries wiht known authors
+motives of the attack
+language encoding
+
+
