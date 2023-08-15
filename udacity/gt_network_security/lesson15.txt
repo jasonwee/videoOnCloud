@@ -1,0 +1,154 @@
+date start : 15 aug 2023
+
+
+15.1 Video Time
+---------------------------------------
+The video time for this lesson is 25 minutes.
+
+
+
+15.2 Acknowledgements
+---------------------------------------
+Professor Lee would like to acknowledge Zakir Durumeric of University of Michigan, whose work was incorporated into this lesson.
+
+
+
+15.3 Recommended Reading
+---------------------------------------
+The recommended reading for this lesson is:
+
+Zakir Durumeric, Eric Wustrow, and J. Alex Halderamn.
+ZMap: Fast Internet-Wide Scanning and its Security Applications.
+In Proceedings of the 22nd USENIX Security Symposium
+https://s3.amazonaws.com/content.udacity-data.com/courses/gt-cs6262/recommended+reading/sec13-paper_durumeric.pdf
+
+
+
+15.4 Course Notes
+---------------------------------------
+Course Notes for this lesson can be found at:
+Course Notes Internet Scan
+
+https://s3.amazonaws.com/content.udacity-data.com/courses/gt-cs6262/course+notes/Course_Notes_InternetScan
+
+
+
+15.5 Introduction
+---------------------------------------
+
+
+15.6 Attacker Intelligence Quiz
+---------------------------------------
+Attackers have three phrases of intellince gathering.
+match each phrase to its description:
+
+footprinting
+the attacker gathers information about a target.
+the kind of information gathered is: dns, email servers, and the ip address range.
+
+scanning
+the attacker uses the itnernet to obtain information on specific ip addresses. The kind of information gathered is: O.S., services, and architecture of the target system
+
+enumeration
+the attacker gathers information on network user and gropu names, routing tables, and simple network management protocol.
+
+
+
+15.7 Internet Wide Security Scanning
+---------------------------------------
+
+
+15.8 Internet Wide Network Studies
+---------------------------------------
+
+
+15.9 ZMap
+---------------------------------------
+
+
+15.10 ZMap Architecture
+---------------------------------------
+
+
+15.11 Addressing Probes
+---------------------------------------
+
+
+15.12 TCP IP Quiz
+---------------------------------------
+which protocol is used to break data into packets?
+tcp
+
+which protocol is used to move packets from router to router?
+ip
+
+which protocol reassembles the data packets?
+tcp
+
+
+
+15.13 Validating Responses
+---------------------------------------
+
+
+15.14 Packet Transmission and Receipt
+---------------------------------------
+
+
+15.15 Scan Rate
+---------------------------------------
+
+
+15.16 Coverage
+---------------------------------------
+
+
+15.17 ZMap vs NMap
+---------------------------------------
+
+
+15.18 Entropy Quiz
+---------------------------------------
+with regards to computing, what is entropy?
+randomness for use in cryptography or other applications that require random data.
+
+what are the two sources of entropy?
+hardware sources and randomness generators
+
+a lack of entropy will have a negative impact on performance and security.
+
+
+
+15.19 Cryptographic Keys
+---------------------------------------
+
+
+15.20 Embedded Systems
+---------------------------------------
+
+
+15.21 Certificate Authorization
+---------------------------------------
+
+
+15.22 Certificate Chains
+---------------------------------------
+
+
+15.23 Identifying CA
+---------------------------------------
+
+
+15.24 CA Risks
+---------------------------------------
+
+
+15.25 HTTPS Adoption
+---------------------------------------
+
+
+15.26 ZMap Open Source
+---------------------------------------
+
+
+
