@@ -1,0 +1,211 @@
+date start : 16 aug 2023
+
+
+16.1 Acknowledgements
+---------------------------------------
+Professor Lee would like to thank
+Prof. Manos Antonakakis and Dr. Yacin Nadji of Georgia Tech
+for their contribution to this lesson.
+
+
+
+16.2 Video Time
+---------------------------------------
+The video time for this lesson is 25 minutes.
+
+
+
+16.3 Recommended Reading
+---------------------------------------
+The recommended reading for this lesson:
+
+Manos Antonakakis, Roberto Perdisci, David Dagon, Wenke Lee, and Nick Feamster. Building a Dynamic Reputation System for DNS. In Proceedings of The 19th USENIX Security Symposium, Washington, DC, August 2010.
+https://astrolavos.gatech.edu/articles/Antonakakis.pdf
+
+Manos Antonakakis, Roberto Perdisci, Wenke Lee, Nikolaos Vasiloglou II, and David Dagon. Detecting Malware Domains at the Upper DNS Hierarchy. In Proceedings of The 20th USENIX Security Symposium, San Francisco, August 2011.
+https://astrolavos.gatech.edu/articles/Kopis.pdf
+
+Charles Lever, Manos Antonakakis, Bradley Reaves, Patrick Traynor and Wenke Lee. The Core of the Matter: Analyzing Malicious Traffic in Cellular Carriers. In Proceedings of The 20th Annual Network and Distributed System Security Symposium (NDSS), San Diego, CA, February 2013.
+http://wenke.gtisc.gatech.edu/papers/lever-ndss13.pdf
+
+Yacin Nadji, Manos Antonakakis, Roberto Perdisci, and Wenke Lee. Beheading Hydras: Performing Effective Botnet Takedowns. In Proceedings of The 20th ACM Conference on Computer and Communications Security (CCS), Berlin, Germany, November 2013.
+http://wenke.gtisc.gatech.edu/papers/hydras.pdf
+
+
+
+16.4 Course Notes
+---------------------------------------
+Course notes for this lesson can be found at:
+Domain and Network Reputation
+https://s3.amazonaws.com/content.udacity-data.com/courses/gt-cs6262/course+notes/Course_Notes_Domain_and+Network_Reputation.pdf
+
+
+
+16.5 Introduction
+---------------------------------------
+
+
+16.6 DNSBL Quiz
+---------------------------------------
+white
+complete trust in this ip address
+
+black 
+no trust in this ip address
+
+grey
+this ip address is not directly involved in spamming
+but is associated with spam-like behaviors
+
+yellow 
+tihs ip address is known to produce spam and non-spam email
+
+nobl
+this ip address does not send spam, and should not be blacklisted.
+but it is not fully trustworthy.
+
+
+
+16.7 Motivation for Reputation
+---------------------------------------
+
+
+16.8 New Blocklist Model Criteria
+---------------------------------------
+
+
+16.9 DNS Quiz
+---------------------------------------
+match the malicious application with its dns characteristic.
+
+botnets
+short lived domains
+
+spyware
+anonymously registered domains
+
+adware
+disposable domains
+
+
+
+16.10 Notos
+---------------------------------------
+
+
+16.11 Global Kopis
+---------------------------------------
+
+
+16.12 Malicious Domain Names Quiz
+---------------------------------------
+List the types of characters a malicious domain name detection
+program should look for in a domain name.
+number of characters
+number of hyphens
+number of digits
+number of numbers
+
+
+
+16.13 Notation and Terminology
+---------------------------------------
+
+
+16.14 Local Notos
+---------------------------------------
+
+
+16.15 DNS Database Quiz
+---------------------------------------
+The inforamtion extracted from pdns database can be grouped
+into three categories. match the category to its definition.
+
+network-based features
+quantities such as the total number of ips historically
+associated with the diversity of their geographical locations,
+the number of distinct autonomous systems, etc.
+
+zone-based features
+the average length of domain names, the occurrence 
+frequency of different characters, etc.
+
+evidence-based features
+the number of distince malware samples that 
+connected to any of the ips.
+
+
+
+16.16 Notos Statistical Features
+---------------------------------------
+
+
+16.17 Notos Reputation Function
+---------------------------------------
+
+
+16.18 Dynamic Detection Quiz
+---------------------------------------
+Check all the true statements that pertain to A dynamic malware-
+related domain detection system. A Dynamic malware-related domain
+detection system should:
+
+have global visibility into dns request and response messages
+not require data from other networks
+be able to detect malware-related domains even if there is no reputation data.
+
+
+
+16.19 Kopis Statistical Features
+---------------------------------------
+
+
+16.20 Kopis Detection Performance
+---------------------------------------
+
+
+16.21 Predictability
+---------------------------------------
+
+
+16.22 Mobile
+---------------------------------------
+
+
+16.23 Key Data and Findings
+---------------------------------------
+
+
+16.24 Methodology
+---------------------------------------
+
+
+16.25 Botnet Takedown Quiz
+---------------------------------------
+With regards to botnet, select all the true statements
+a proven method to stop botnets erquires isolating the c&c
+domain from the botnet
+
+
+
+16.26 Botnet Takedowns
+---------------------------------------
+
+
+16.27 RZA Malware Interrogation
+---------------------------------------
+
+
+16.28 RZA Takedown
+---------------------------------------
+
+
+16.29 RZA Studies
+---------------------------------------
+
+
+16.30 RZA Takedown Study
+---------------------------------------
+
+
+
