@@ -1,0 +1,182 @@
+date start : 17 aug 2023
+
+
+17.1 Acknowledgements
+---------------------------------------
+Professor Lee would like to thank Prof. James Hays of Georgia Tech for his contribution to this lesson.
+
+
+
+17.2 Video Time
+---------------------------------------
+The video time for this lesson is 20 minutes.
+
+
+
+17.3 Recommended Reading
+---------------------------------------
+The recommended reading for this lesson is:
+
+Reading:
+
+Tom Mitchell, Machine Learning, McGraw-Hill, 1997
+
+Wenke Lee and Sal Stolfo. A Framework for Constructing Features and Models for Intrusion Detection Systems Wenke Lee and Sal Stolfo. ACM Transactions on Information and System Security, 3(4), November 2000.
+
+
+
+
+17.4 Course Notes
+---------------------------------------
+The course notes for this lesson can be found at:
+Course Note Big Data Analysis and ML
+
+https://s3.amazonaws.com/content.udacity-data.com/courses/gt-cs6262/course+notes/Course_Notes_Big_Data_Analysis_ML.pdf
+
+
+
+17.5 Introduction
+---------------------------------------
+
+
+17.6 Data Analysis Quiz
+---------------------------------------
+Match the type of analytics to its characteristics.
+
+anomaly
+model normal network and system behavior and identify deviations from the norm.
+
+hybrid
+combination of misuse and anomaly detection
+
+misuse
+detect known attacks using signatures of those attacks
+
+misuse
+can detect known types of attakcs without generating a lot of false positives
+
+anomaly
+have the ability to detect zero-day attacks
+
+
+
+17.7 Machine Learning Review
+---------------------------------------
+
+
+17.8 Machine Learning Example
+---------------------------------------
+
+
+17.9 Machine Learning Features
+---------------------------------------
+
+
+17.10 Generalization
+---------------------------------------
+
+
+17.11 ML Types Quiz
+---------------------------------------
+match the ML type to its characteristics.
+
+unsupervised
+the main task is to find patterns, structures, or knowledge in unlabeled data
+
+supervised
+the task is to find a funciton or model that explains the data
+
+semi-supervised
+some of the data is labeled during acquisition
+
+
+
+17.12 Performance Measures
+---------------------------------------
+
+
+17.13 Classification Problem
+---------------------------------------
+
+
+17.14 Decision Tree Learning
+---------------------------------------
+
+
+17.15 Decision Tree Quiz
+---------------------------------------
+select the true statements with regards to decision tree based
+detection models:
+can supplement honeypot analysis
+can supplement penetration testing
+can detect previous unknown network anomalies
+
+
+
+17.16 Clustering
+---------------------------------------
+
+
+17.17 Define the ML Problem Quiz
+---------------------------------------
+c&c protocol detection:
+* task - recognize and attribute c&c communication on networks
+* training - supervised learning
+* performance measures - percentage of network communication correctly classified
+
+what type data will we need for c&c protocol detection?
+we will need known c&c communication
+
+
+
+17.18 Classifiers
+---------------------------------------
+
+
+17.19 Audit Data Preprocessing
+---------------------------------------
+
+
+17.20 Building ID Models
+---------------------------------------
+
+
+17.21 Mining Patterns
+---------------------------------------
+
+
+17.22 Basic Algorithms
+---------------------------------------
+
+
+17.23 Axis Algorithms
+---------------------------------------
+
+
+17.24 Patterns
+---------------------------------------
+
+
+17.25 Dataset Collection Quiz
+---------------------------------------
+list some considerations when selecting a dataset for training:
+
+there is no perfect way of labelling data, therefore there is really no perfect IDS dataset.
+selecting a correct baseline dataset for your network.
+selecting a dataset that has a range of intrusion attacks
+
+
+
+17.26 Construciton Example
+---------------------------------------
+
+
+17.27 DARPA Evaluation
+---------------------------------------
+
+
+17.28 TCP Dump Overall
+---------------------------------------
+
+
+
