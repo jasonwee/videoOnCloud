@@ -1,0 +1,235 @@
+date start : 18 aug 2023
+
+
+18.1 Acknowledgements
+---------------------------------------
+Professor Lee would like to acknowledge the work of:
+Dr. Prahlad Fogla of Google, and Prof. Roberto Perdisci of University of Georgia.
+
+
+
+18.2 Video Time
+---------------------------------------
+The video time for this lesson is 35 minutes.
+
+
+
+18.3 Recommended Reading
+---------------------------------------
+The recommended reading for this lesson:
+Ke Wang and Sal Stolfo. Anomalous Payload-based Network Intrusion Detection. In Proceedings of International Symposium on Recent Advances in Intrusion Detection, 2005. https://pdfs.semanticscholar.org/c441/1d48c00924f7ebc57d4e7ebaa8d2f23c973e.pdf
+
+Prahlad Fogla, Monirul Sharif, Roberto Perdisci, Oleg Kolesnikov, and Wenke Lee. Polymorphic Blending Attacks. In Proceedings of the USENIX Security Symposium, 2006. https://www.usenix.org/legacy/event/sec06/tech/full_papers/fogla/fogla_html/main.html
+
+Roberto Perdisci, David Dagon, Wenke Lee, Prahlad Fogla, and Monirul Sharif. Misleading Worm Signature Generators Using Deliberate Noise Injection. In Proceedings of the IEEE Symposium on Security and Privacy, 2006. http://www.cc.gatech.edu/home/wenke/papers/ieee-sp-06.pdf
+
+
+
+
+18.4 Course Notes
+---------------------------------------
+The course notes for this lesson can be found at:
+Course Notes for Big Data and Data Poisoning
+https://s3.amazonaws.com/content.udacity-data.com/courses/gt-cs6262/course+notes/Course+Notes+Big+Data+and+Data+Poisoning.pdf
+
+
+
+18.5 Introduction
+---------------------------------------
+
+
+18.6 ML for Security Recent Work
+---------------------------------------
+
+
+18.7 Machine Learning for Security History
+---------------------------------------
+
+
+18.8 ML for Security Future
+---------------------------------------
+
+
+18.9 Adversarial Machine Learning
+---------------------------------------
+
+
+18.10 Attacks on Machine Learning
+---------------------------------------
+
+
+18.11 Evasion Tactics Quiz
+---------------------------------------
+match the attack to its description:
+
+allows malware sample to detect the underlying runtime enviornment of the system it is trying to infect.
+environmental awareness
+
+allow malware to avoid detection by technologies such as signature based antivirus software.
+confusing automated tools
+
+used by malware to run at certain times or following certain actions taken by the user.
+timing-based evasion
+
+users a number of tricks to run code that cannot be detected by the analysis system
+obfuscating internal data
+
+
+
+18.12 Dyre Wolf Attack
+---------------------------------------
+
+
+18.13 PAYL
+---------------------------------------
+
+
+18.14 Polymorphism Quiz
+---------------------------------------
+which of the following statements are true? check all that are true
+a polymorphic attack can change its apperance with every instance.
+a polymorphic attack has no predicatable signature for the attack.
+
+
+
+18.15 Polymorphism Attacks vs Detection
+---------------------------------------
+
+
+18.16 Evading Detection
+---------------------------------------
+
+
+18.17 Polymorphic Quiz
+---------------------------------------
+which of the following are true statements with regards to a polymorhpic blending attack?
+the proecss should not result in an abnormally large attack size
+the bleding needs to be economical in time and space
+
+
+
+18.18 Polymorphic Attack Secnario
+---------------------------------------
+
+
+18.19 Blending Steps
+---------------------------------------
+
+
+18.20 Polymorphic Blending Quiz
+---------------------------------------
+is the following true or false?
+false : after blending, the attack should match the normal profile perfectly
+
+
+
+18.21 Blending Attacks Requirements
+---------------------------------------
+
+
+18.22 Encrypting Attack Contents
+---------------------------------------
+
+
+18.23 Decryptor
+---------------------------------------
+
+
+18.24 Evaluation
+---------------------------------------
+
+
+18.25 Evaluation Results
+---------------------------------------
+
+
+18.26 Countermeasures
+---------------------------------------
+
+
+18.27 Poisoning Attack
+---------------------------------------
+
+
+18.28 Poison Attack Goals Quiz
+---------------------------------------
+List the goals of a successful poisoning attack:
+neighborhoods inundated with traffic diverted from congested freeways
+neighbors used the app to falsely report their streets as congested
+the app would learn on false data and not direct traffic through neighborhood streets
+there were enough waze users driving through the local streets to offset the poisoned data.
+
+
+
+18.29 Syntactic Worms Signatures
+---------------------------------------
+
+
+18.30 Synatactic Worms Signature Generators
+---------------------------------------
+
+
+18.31 Traffic Based Flow Classifiers
+---------------------------------------
+Honeycomb: Creating Intrusion Detection Signatures Using Honeypots
+http://packetstorm.foofus.com/papers/IDS/nids/Honeycom.pdf
+
+An Architecture for Generating Semantics-Aware Signatures
+https://static.usenix.org/events/sec05/tech/full_papers/yegneswaran/yegneswaran_html/
+
+Defending Against Internet Worms; A Signature Based Approach
+https://www.cise.ufl.edu/~sgchen/papers/infocom05_worm.pdf
+
+
+
+18.32 Fake Anomalous Flows
+---------------------------------------
+
+
+18.33 Case Study
+---------------------------------------
+
+
+18.34 Hierachical Clustering
+---------------------------------------
+
+
+18.35 Misleading Conjunction
+---------------------------------------
+
+
+18.36 Misleading Hierachical Clustering
+---------------------------------------
+
+
+18.37 Polygraph
+---------------------------------------
+
+
+18.38 Misleading Bayes Signatures
+---------------------------------------
+
+
+18.39 Crafting the Noise
+---------------------------------------
+
+
+18.40 Experimental Results
+---------------------------------------
+
+
+18.41 Results with Bayes
+---------------------------------------
+   
+
+18.42 Conclusion
+---------------------------------------
+
+
+18.43 Misleading Worm signature Quiz
+---------------------------------------
+which of the following statements are true?
+if we can completely control the process of generating or collecting the training data and ascertain the autyenticity and integrity of the dataset, we don't have to worry about data poisoning attacks
+if the training data is obtained in an open environment, e.g. the ewb, there is always the potential of poisoning attacks, (i.e. such attacks can't be eliminated)
+
+
