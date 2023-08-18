@@ -1,0 +1,200 @@
+date start : 19 aug 2023
+
+
+19.1 Video Time
+---------------------------------------
+Video Time
+The video time for this lesson is: 30 minutes
+
+
+
+19.2 Recommended Reading
+---------------------------------------
+The recommended reading for this lesson is:
+Bitcoin and Cryptocurrency Technologies: A Comprehensive Introduction
+by Arvind Narayanan, Joseph Bonneau, Ed Felten, Andrew Miller, and Steven Goldfeder
+
+https://s3.amazonaws.com/content.udacity-data.com/courses/gt-cs6262/recommended+reading/Princeton+Bitcoin+and+Cryptocurrency+Technologies+Course.pdf
+
+
+
+19.3 Course Notes
+---------------------------------------
+Course notes for this lesson can be found at:
+Course Notes Bitcoins Introduction
+https://s3.amazonaws.com/content.udacity-data.com/courses/gt-cs6262/course+notes/Course_notes_Bitcoins.pdf
+
+
+
+19.4 Acknowledgements
+---------------------------------------
+
+
+19.5 Where does joe go quiz
+---------------------------------------
+3
+collisions
+
+
+
+19.6 Hash Function Quiz
+---------------------------------------
+with regards to cryptographic hash functions select all the true statements:
+hash fucntion do not have a key
+hash functions are primarily used for message integrity
+
+
+
+19.7 Review of Hash Functions
+---------------------------------------
+
+
+19.8 Pointers and Structures
+---------------------------------------
+
+
+19.9 Digital Signatures
+---------------------------------------
+
+
+19.10 Public Keys as Identities
+---------------------------------------
+
+
+19.11 Crpytocurrency Quiz
+---------------------------------------
+select all the true statements with regards to cryptocurrency:
+the security of crypto currency ledgers depends on the honesty of its miners.
+
+
+
+19.12 Simple Cryptocurrencies
+---------------------------------------
+
+
+19.13 Double Spending Attack
+---------------------------------------
+
+
+19.14 Wallet Quiz
+---------------------------------------
+Match the characteristic to each wallet.
+answer choices are: cold, desktop, hardware, hot, mobile, online
+
+hot
+a wallet connected to the internet
+
+cold
+the wallet is offline
+
+desktop
+used on laptops and personal computers
+
+mobile
+qr code capable, with instant payments
+
+online
+wallets provided on the cloud
+
+hardware
+developers make use of top grade crytography
+
+
+
+19.15 Scrooge Coin
+---------------------------------------
+
+
+19.16 Scrooge Transactions
+---------------------------------------
+
+
+19.17 Centralization Problem
+---------------------------------------
+
+
+19.18 Top Cryptocurrency Failures Quiz
+---------------------------------------
+Match the cryptocurrency description to its name.
+The answer choices are: GetGems. Paycoin, DAO (decentralized Autonomous Org),
+Dogecoin, Spacebit
+
+Spacebit
+provide a globally accessible block chain through the user of nano-satellites
+
+GetGems
+a social networking platform that uses crpytocurrency to members that view ads in the app. popular in uzbekistan.
+
+Dogecoin
+a decentralized peer-to-peer digital currency. The community is friendly and vibrant and known for charaitable acts, such as sending the 2014 jamaican bobsled team to the olympics.
+
+Paycoin
+according to a published white paper, it used new variations on the block chain that would result in a new breed of cryptocurrency.
+
+DAO
+the largest crowfund in history. an attacker exploited a vulnerability in its smart contract, with losses totalling $50 million.
+
+
+
+19.19 Bitcoins and Decentralization
+---------------------------------------
+
+
+19.20 distributed Consensus
+---------------------------------------
+
+
+19.21 Bitcoin Safeguards
+---------------------------------------
+
+
+19.22 Proof of Work Quiz
+---------------------------------------
+with regards to bitcoin, which of the following statements are true?
+proof of work is costly and time consuming to produce
+changing a block requires regenerating all successors and redoing the work they contain.
+
+
+
+19.23 Incentives and Proof of Work
+---------------------------------------
+
+
+19.24 Bitcoin Incentive #1
+---------------------------------------
+
+
+19.25 Bitcoin Incentive #2
+---------------------------------------
+
+
+19.26 Sybil Attack Quiz
+---------------------------------------
+with regards to sybil attacks, check all true statements:
+the atacker creates a lot of fake identities and uses them to change voting outcomes or control the network
+a sybil attack is designed to attack reputation systems in a peer-to-peer network
+sybil attack can be stopped if users are willing to give up anonymity.
+
+
+
+19.27 Bitcoin Remaining Problems
+---------------------------------------
+
+
+19.28 Proof of Work
+---------------------------------------
+
+
+19.29 Proof of Work
+---------------------------------------
+
+
+19.30 PoW Properties
+---------------------------------------
+
+
+19.31 Bitcoin Summation
+---------------------------------------
+
+
+
