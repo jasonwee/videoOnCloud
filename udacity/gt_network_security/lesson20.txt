@@ -1,0 +1,122 @@
+date start : 20 aug 2023
+
+
+20.1 Video Time
+---------------------------------------
+The video time for this lesson is: 30 minutes
+
+
+
+20.2 Recommended Reading
+---------------------------------------
+The recommended reading for this lesson is:
+Bitcoin and Cryptocurrency Technologies: A Comprehensive Introduction
+by Arvind Narayanan, Joseph Bonneau, Ed Felten, Andrew Miller, and Steven Goldfeder
+https://s3.amazonaws.com/content.udacity-data.com/courses/gt-cs6262/recommended+reading/Princeton+Bitcoin+and+Cryptocurrency+Technologies+Course.pdf
+
+
+
+20.3 Course Notes
+---------------------------------------
+The course notes for this lesson can be found at:
+Course Notes: Bitcoins
+https://s3.amazonaws.com/content.udacity-data.com/courses/gt-cs6262/course+notes/Course_Notes_Bitcoins.pdf
+
+
+
+20.4 Introduction
+---------------------------------------
+
+
+20.5 Acknowledgements
+---------------------------------------
+
+
+20.6 Bitcoin Operations
+---------------------------------------
+
+
+20.7 Bitcoin Wallet Quiz
+---------------------------------------
+What is the defining characteristic of these bitcoin wallets?
+hot storage: online
+cold storage:  offline
+
+
+
+20.8 Hierachical Wallet
+---------------------------------------
+
+
+20.9 Cold Storage
+---------------------------------------
+
+
+20.10 Cold Wallet Quiz
+---------------------------------------
+paper 
+can rot or be lost, torn, stolen
+
+coin
+if made of magnesium, tin, lead can be destroyed by fire
+
+online
+multiple overwriting attempts are not enough to ensure
+that discarded computers cannot be hacked
+
+usb
+data can be hard to recover if the sotrage device is old
+
+offline
+can be damaged by magnets
+
+
+
+20.11 Online Wallets and Exchanges
+---------------------------------------
+
+
+20.12 Merkle Trees
+---------------------------------------
+
+
+20.13 Proof of Reserve
+---------------------------------------
+
+
+20.14 Anonymity
+---------------------------------------
+
+
+20.15 Bitcoin Anonymity Quiz
+---------------------------------------
+with regards to bitcoins, check all the true statements:
+x a time-stamping service prevents people from double spending bitcoins.
+
+
+
+20.16 De Anonymize Bitcoin
+---------------------------------------
+
+
+20.17 Decentralized Mixing
+---------------------------------------
+
+
+20.18 Bitcoin Append Only Log
+---------------------------------------
+
+
+20.19 Timestamping
+---------------------------------------
+
+
+20.20 Overlay Currencies
+---------------------------------------
+
+
+20.21 Mastercoin
+---------------------------------------
+
+
+
