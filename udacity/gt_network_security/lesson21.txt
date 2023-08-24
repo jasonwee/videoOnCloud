@@ -1,0 +1,144 @@
+date start : 24 aug 2023
+
+
+21.1 Video Time
+---------------------------------------
+The video time for this lesson is 20 minutes.
+
+
+
+21.2 Recommended Reading
+---------------------------------------
+The recommended reading for this lesson:
+
+Readings:
+
+Adi Shamir, How to share a secret. In Communications of the ACM, 22(11), Nov, 1979. https://github.com/Strilanc/Rational-Secret-Sharing-Master-s-Thesis/blob/master/References/1979%20Shamir%20-%20How%20to%20share%20a%20secret.pdf
+
+Miguel Castro and Barbara Liskov. Practical Byzantine Fault Tolerance. In Proceedings of the Third Symposium on Operating Systems Design and Implementation. February 1999. http://pmg.csail.mit.edu/papers/osdi99.pdf
+
+
+
+21.3 Course Notes
+---------------------------------------
+The course notes for this lesson can be found at:
+Course Notes for Attack Tolerant Systems
+
+https://s3.amazonaws.com/content.udacity-data.com/courses/gt-cs6262/course+notes/Coures_Notes_Attack+Tolerance.pdf
+
+
+
+21.4 Introduction
+---------------------------------------
+
+
+21.5 WWW Robustness Quiz
+---------------------------------------
+answer the questions by filling in the blanks in reference to the internet:
+
+the internet is a scale-free network. we can infer that it has a high 
+degree of tolerance towards random failures and a low
+degree of tolerance againsts attacks. the most
+successful attacks target the nodes that are the most
+connected.
+
+
+
+21.6 Node Connectedness Quiz
+---------------------------------------
+match the method of determining node connectedness to its
+definition. answer choices are: temporal closeness, average node degree, node persistence
+
+average node:
+nodes with largest number of nodes connected to them
+
+node persistence:
+during a snapshots of internet traffic, these nodes are the ones most likely to appear.
+
+temporal closeness:
+nodes that interact with the largest number of nodes
+
+
+21.7 Defense in Depth
+---------------------------------------
+
+
+21.8 Naive Secret Sharing Quiz
+---------------------------------------
+what is a major weakness of the naive secret sharing scheme?
+the major weakness of naive scret hsaring is the more shares you have
+of the secret, the less work you have to do to guess the secret.
+
+
+
+21.9 Secret Sharing
+---------------------------------------
+
+
+21.10 Mathematical Definition
+---------------------------------------
+
+
+21.11 Shamir's Secret Sharing
+---------------------------------------
+
+
+21.12 Shamir's Scheme Example
+---------------------------------------
+
+
+21.13 Shamir's Scheme Example 2
+---------------------------------------
+
+
+21.14 Shamir's Scheme Summation
+---------------------------------------
+
+
+21.15 Practical Byzantine Fault Tolerance
+---------------------------------------
+
+
+21.16 Redundancy of System Services
+---------------------------------------
+
+
+21.17 Redundancy Quiz
+---------------------------------------
+fill in the blanks using the followin answers:
+
+availability
+probability the system operates correctly at any given moment
+
+realiability
+ability to run correctly for a long interval time
+
+safety
+failure to operate correctly does not lead to catastrophic events
+
+maintainability
+ability to easily repair a failed system
+
+
+
+21.18 Byzantine Generals Problem
+---------------------------------------
+
+
+21.19 System Models
+---------------------------------------
+
+
+21.20 System Properties
+---------------------------------------
+
+
+21.21 System Algorithm
+---------------------------------------
+
+
+21.22 Attack Tolerance
+---------------------------------------
+
+
+
