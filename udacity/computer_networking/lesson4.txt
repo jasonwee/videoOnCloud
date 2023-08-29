@@ -1,0 +1,84 @@
+date start : 28 august 2023
+
+
+4.1 Lesson 4 Intro
+---------------------------------------
+
+
+4.2 Internet Routing
+---------------------------------------
+
+
+4.3 AS Quiz
+---------------------------------------
+Intradomain Routing
+
+4.4 Intra-AS Topology
+---------------------------------------
+
+
+4.5 Distance-Vector Routing
+---------------------------------------
+
+
+4.6 Example of Distance Vector Routing 1
+---------------------------------------
+
+
+4.7 Example of Distance Vector Routing 2
+---------------------------------------
+
+
+4.8 Routing Information Protocol 
+---------------------------------------
+
+
+4.9 Link State Routing
+---------------------------------------
+
+
+4.10 Coping with Scale Hierarchy
+---------------------------------------
+
+
+4.11 Interdomain Routing  
+---------------------------------------
+
+
+4.12 Interdomain Routing 2
+---------------------------------------
+
+
+4.13 IGP vs iBGP
+---------------------------------------
+
+
+4.14 Protocol Quiz
+---------------------------------------
+iBGP
+
+4.15 BGP Route Selection
+---------------------------------------
+
+
+4.16 BGP Route Selection Process
+---------------------------------------
+
+
+4.17 Local Preference
+---------------------------------------
+
+
+4.18 Multiple Exit Discriminator
+---------------------------------------
+
+
+4.19 Interdomain Routing Business Models
+---------------------------------------
+
+
+4.20 Interdomain Routing Can Oscillate!
+---------------------------------------
+
+
+
