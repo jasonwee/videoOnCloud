@@ -1,0 +1,110 @@
+date start : 30 august 2023
+
+
+5.1 Lesson 5 Intro
+---------------------------------------
+
+
+5.2 IP Addressing
+---------------------------------------
+
+
+5.3 Pre-1994: "Classful" Addressing
+---------------------------------------
+
+
+5.4 IP Addressing Quiz
+---------------------------------------
+3
+
+
+5.5 IP Address Allocation
+---------------------------------------
+
+
+5.6 Classless interdomain Routing
+---------------------------------------
+
+
+5.7 Longest Prefix Match
+---------------------------------------
+
+
+5.8 Multihoming Frustrates Aggregation
+---------------------------------------
+
+
+5.9 Longest Prefix Match to Control Inbound Traffic
+---------------------------------------
+
+
+5.10 CIDR Quiz
+---------------------------------------
+3
+
+5.11 Lookup Tables and How LPM Works (put with other slide)
+---------------------------------------
+
+
+5.12 Lookup Algorithm Depends on Protocol
+---------------------------------------
+
+
+5.13 IP Lookups Find Long Prefixes
+---------------------------------------
+
+
+5.14 LPM in IPv4 Exact Match
+---------------------------------------
+
+
+5.15 Address Lookup Using Tries
+---------------------------------------
+
+
+5.16 Direct Trie
+---------------------------------------
+
+
+5.17 Direct Trie Quiz
+---------------------------------------
+3
+
+5.18 Direct Trie Quiz 2
+---------------------------------------
+16
+
+5.19 Memory Efficiency and Fast Lookup
+---------------------------------------
+
+
+5.20 4-ary Trie
+---------------------------------------
+
+
+5.21 Alternavites to LPM with Tries
+---------------------------------------
+
+
+5.22 NAT and IPv6
+---------------------------------------
+
+
+5.23 Network Address Translation
+---------------------------------------
+
+
+
+5.24 IPv4 to IPv6
+---------------------------------------
+
+
+5.25 IPv6 Routing Table Entries
+---------------------------------------
+
+
+5.26 IPv6 Incremental Deployment
+---------------------------------------
+
+
+
