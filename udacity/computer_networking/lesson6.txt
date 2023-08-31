@@ -1,0 +1,55 @@
+date start : 31 august 2023
+
+
+6.1 router design
+---------------------------------------
+
+
+6.2 basic router architecture
+---------------------------------------
+
+
+6.3 each line card has own forwarding table copy
+---------------------------------------
+
+
+6.4 decision: crossbar switching
+---------------------------------------
+
+
+6.5 corssbar switching
+---------------------------------------
+
+
+6.6 switching algorithm: maximal matching
+---------------------------------------
+
+
+6.7 head of line blocking
+---------------------------------------
+
+
+6.8 scheduling and fairness
+---------------------------------------
+
+
+6.9 max min fairness
+---------------------------------------
+
+
+6.10 example: max-min fairness
+---------------------------------------
+
+
+6.11 max mind fairness quiz
+---------------------------------------
+1
+2
+5
+12
+
+6.12 how to achieve max min fairness
+---------------------------------------
+
+
+
