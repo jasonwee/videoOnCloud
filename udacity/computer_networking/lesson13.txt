@@ -1,0 +1,82 @@
+date start : 09 september 2023
+
+
+13.1 Traffic Engineering Intro
+---------------------------------------
+
+
+13.2 Traffic Engineering Overview
+---------------------------------------
+
+
+13.3 Intradomain Traffic Engineering
+---------------------------------------
+
+
+13.4 Measuring, Modeling and Controlling Traffic
+---------------------------------------
+
+
+13.5 Link Utilization Function
+---------------------------------------
+
+
+13.6 Interdomain Routing Quiz
+---------------------------------------
+1,2,3,5
+
+
+13.7 BGP in Interdomain Traffic Engineering
+---------------------------------------
+
+
+13.8 Interdomain Traffic Engineering Goals
+---------------------------------------
+
+
+13.9 Multipath Routing
+---------------------------------------
+
+
+13.10 Source Router Path Quiz
+---------------------------------------
+2
+
+13.11 Data Center Networking
+---------------------------------------
+
+
+13.12 Data Center Networking Challenges
+---------------------------------------
+
+
+13.13 Data Center Topologies
+---------------------------------------
+
+
+
+13.14 Data Center (Intradomain) Traffic Engineering
+---------------------------------------
+
+
+13.15 Valiant Load Balancing
+---------------------------------------
+
+
+13.16 Jellyfish Data Center Topology
+---------------------------------------
+
+
+13.17 Data Center Topology Quiz
+---------------------------------------
+3
+
+13.18 Jellyfish Random Regular Graph
+---------------------------------------
+
+
+13.19 Constructing a Jellyfish Topology
+---------------------------------------
+
+
+
