@@ -1,0 +1,104 @@
+date start : 10 september 2023
+
+
+14.1 Networking Security Intro
+---------------------------------------
+
+
+14.2 Need for Network Security
+---------------------------------------
+
+
+14.3 Internet is Insecure
+---------------------------------------
+
+
+14.4 Internet insecurity Quiz
+---------------------------------------
+1,3,4
+
+
+14.5 Resource Exhaustion Attacks
+---------------------------------------
+
+
+14.6 Confidentiality and Authenticity Attacks
+---------------------------------------
+
+
+14.7 Network Attack Quiz
+---------------------------------------
+availability
+
+
+14.8 Negative Impacts of Attacks
+---------------------------------------
+
+
+14.9 Routing Security
+---------------------------------------
+
+
+14.10 BGP Routing Security Quiz
+---------------------------------------
+origin
+
+
+14.11 Route Attacks
+---------------------------------------
+
+
+14.12 Route Hijacking
+---------------------------------------
+
+
+14.13 Route Hijacking (cont)
+---------------------------------------
+
+
+
+14.14 Autonomous System Session Authentication 
+---------------------------------------
+
+
+14.15 Origin and Path Authentication
+---------------------------------------
+
+
+14.16 Autonomous System Path Attestation
+---------------------------------------
+
+
+14.17 DNS Security
+---------------------------------------
+
+
+14.18 Why is DNS Vulnerable
+---------------------------------------
+
+
+14.19 DNS Vulnerability Quiz
+---------------------------------------
+1,3
+
+
+14.20 DNS Cache Poisioning
+---------------------------------------
+
+
+14.21 DNS Cache Poisioning Defense
+---------------------------------------
+
+
+14.22 DNS Security Quiz
+---------------------------------------
+2
+
+
+14.23 DNS Amplication Attacks
+---------------------------------------
+
+
+14.24 DNSSEC DNS Security
+---------------------------------------
+
