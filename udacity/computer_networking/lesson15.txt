@@ -1,0 +1,43 @@
+date start : 12 september 2023
+
+
+15.1 Types of Viruses and Worm Overview
+---------------------------------------
+
+
+15.2 Worm and Virus Quiz
+---------------------------------------
+4
+
+
+15.3 Internet Worm Lifecycle
+---------------------------------------
+
+
+15.4 First Worm: "Morris" Worm
+---------------------------------------
+
+
+15.5 Worm Lifecycle Quiz
+---------------------------------------
+1,3,4
+
+
+
+15.6 Worm Outbreaks in Detail
+---------------------------------------
+
+
+15.7 Modeling Fast-Spreaking Worms
+---------------------------------------
+
+
+15.8 Increasing Compromise Rate
+---------------------------------------
+
+
+15.9 Slammer Worm Quiz
+---------------------------------------
+2,4
+
+
