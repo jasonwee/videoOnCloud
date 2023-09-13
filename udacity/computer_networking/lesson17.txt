@@ -1,0 +1,25 @@
+date start : 14 september 2023
+
+
+17.1 Denial of Service Attacks Overview
+---------------------------------------
+
+
+17.2 TCP 3-Way Handshake Review
+---------------------------------------
+
+
+17.3 TCP SYN Cookie Quiz
+---------------------------------------
+2
+
+
+17.4 Inferring Denial of Service using Backscatter
+---------------------------------------
+
+
+17.5 Backscatter Quiz
+---------------------------------------
+6.5
+
+
