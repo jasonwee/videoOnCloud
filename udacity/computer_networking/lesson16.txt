@@ -1,0 +1,21 @@
+date start : 13 september 2023
+
+
+16.1 spam
+---------------------------------------
+
+
+16.2 content-based email filter quiz
+---------------------------------------
+easy for attackers to evade
+
+
+16.3 ip blacklisting
+---------------------------------------
+
+
+16.4 spam blacklisting (cont)
+---------------------------------------
+
+
+
