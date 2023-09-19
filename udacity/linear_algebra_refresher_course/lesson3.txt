@@ -1,0 +1,141 @@
+date start : 19 september 2023
+
+
+3.1 Why Intersections?
+---------------------------------------
+
+
+3.2 Lines in Two Dimensions
+---------------------------------------
+
+
+3.3 Intersections of Lines in 2D
+---------------------------------------
+
+
+3.4 Coding Functions for Lines
+---------------------------------------
+                  x
+1.173,0.073
+              x
+
+
+3.5 More Than Two Lines in Two Dimensions
+---------------------------------------
+
+
+3.6 Palnes in 3 Dimensions - 1
+---------------------------------------
+
+
+3.7 Planes in 3 Dimensions - 2
+---------------------------------------
+x
+    x
+  x
+
+3.8 Intersections of Planes in 3D
+---------------------------------------
+
+
+3.9 Rules for Manipulating Equations
+---------------------------------------
+
+
+3.10 Solving a System of Equations
+---------------------------------------
+
+
+3.11 Gaussian Elimination Practice
+---------------------------------------
+1
+-3
+2
+
+
+3.12 Special Cases in Gaussian Elimination
+---------------------------------------
+
+
+
+3.13 More GE Practice
+---------------------------------------
+                 x
+4
+3
+1
+
+3-2y
+y
+-4
+
+3.14 Systems with No Solutions
+---------------------------------------
+x   x
+
+x   x
+
+3.15 Systems with One Solution
+---------------------------------------
+x
+
+
+    x
+
+3.16 Systems with Many Solutions
+---------------------------------------
+
+
+3.17 Summary of Characterization Results
+---------------------------------------
+
+
+3.18 The LinearSystem Class
+---------------------------------------
+
+
+3.19 Coding Row Operations
+---------------------------------------
+
+
+3.20 Coding Triangular Form
+---------------------------------------
+
+
+3.21 Coding RREF
+---------------------------------------
+
+3.22 Coding GE Solution
+---------------------------------------
+no solution
+
+inifinite solutions
+
+-1.177
+0.707
+-0.083
+
+
+3.23 Coding Parametrization
+---------------------------------------
+-1.346-t
+t
+0.585
+
+-0.301-0.091t
+-0.492+0.509t
+t
+
+-10.647-1.882t+10.016s
+t
+s
+
+3.24 Extending to Higher Dimensions
+---------------------------------------
+
+
+3.25 Summing Up
+---------------------------------------
+
+
+
