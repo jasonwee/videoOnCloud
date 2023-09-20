@@ -1,0 +1,173 @@
+date start : 20 september 2023
+
+
+4.1 Connection to Kalman Filters
+---------------------------------------
+
+
+4.2 Kalman Prediction
+---------------------------------------
+2
+
+
+4.3 Kalman Filter Land
+---------------------------------------
+
+
+4.4 Kalman Filter Prediction
+---------------------------------------
+top right
+
+4.5 Another Prediction
+---------------------------------------
+(3,2)
+
+
+4.6 More Kalman Filters
+---------------------------------------
+
+
+4.7 A Note on Notation
+---------------------------------------
+
+
+4.8 Kalamn Filter Design
+---------------------------------------
+
+
+4.9 Let's Look at Where we Are
+---------------------------------------
+
+
+4.10 The Kalman Filter Equations
+---------------------------------------
+
+
+4.11 Simplifying the Kalamn Filter Equations
+---------------------------------------
+
+
+4.12 The Rest of the Lesson
+---------------------------------------
+
+
+4.13 Representing State with Matrices
+---------------------------------------
+
+
+4.14 Kalman Equation Reference
+---------------------------------------
+
+
+4.15 What is a vector?
+---------------------------------------
+
+
+4.16 Vectors in Python
+---------------------------------------
+
+
+4.17 Coding Vectors
+---------------------------------------
+
+
+4.18 Coding Vectors (solution)
+---------------------------------------
+
+
+4.19 Guide to Mathematical Notation
+---------------------------------------
+
+
+4.20 Matrices in Python
+---------------------------------------
+yes
+
+4r, 1c
+
+2x4
+
+68
+
+x = [[1,5,9,3,1]]
+
+
+
+
+4.21 Coding Matrices
+---------------------------------------
+
+
+4.22 Coding Matrices (Solution)
+---------------------------------------
+
+
+4.23 Matrix Addition
+---------------------------------------
+
+
+
+4.24 Coding Matrix Addition
+---------------------------------------
+
+
+4.25 Coding Matrix ADdition (Solution)
+---------------------------------------
+
+
+4.26 Matrix Multiplication
+---------------------------------------
+1
+
+
+
+4.27 Coding Matrix Multiplication
+---------------------------------------
+
+
+4.28 Coding Matrix Multiplicatin (Solution)
+---------------------------------------
+
+
+4.29 Transpose of a Matrix
+---------------------------------------
+
+
+4.30 Coding the Transpose
+---------------------------------------
+
+
+4.31 Coding the Tranpose (Solution)
+---------------------------------------
+
+
+
+4.32 The Identity Matrix
+---------------------------------------
+3
+
+
+4.33 Coding Identity Matrix
+---------------------------------------
+
+
+4.34 Coding Identity Matrix (Solution)
+---------------------------------------
+
+
+4.35 Matrix Inverse
+---------------------------------------
+
+
+4.36 Coding Matrix Inverse
+---------------------------------------
+
+
+4.37 Coding Matrix Inverse (Solution)
+---------------------------------------
+
+
+4.38 What to Take Away from this Lesson
+---------------------------------------
+
+
