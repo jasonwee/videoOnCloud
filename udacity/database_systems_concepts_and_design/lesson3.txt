@@ -1,0 +1,88 @@
+date start : 24 september 2023
+
+
+3.1 Database Application Development Methodology-Assumptions
+---------------------------------------
+
+
+
+3.2 The Software Process
+---------------------------------------
+
+
+
+3.3 Overview of Methodology Data First
+---------------------------------------
+
+
+3.4 Example Project Description
+---------------------------------------
+
+
+3.5 (headshot) GTOnline Networking Application
+---------------------------------------
+
+
+3.6 Case Study Description: GTOnline System
+---------------------------------------
+GTOnline System Overview
+Please review the case study document by clicking opening CS6400 GTOnline.pdf in the Concept resources, or by clicking the URL below. It is important that you review the case study before you resume video lectures.
+
+https://video.udacity-data.com/topher/2021/April/607dc577_cs6400-gtonline/cs6400-gtonline.pdf
+
+Supporting Materials
+CS6400 GTOnline
+
+
+
+3.7 Analysis
+---------------------------------------
+
+
+3.8 Analysis-Information Flow Diagram
+---------------------------------------
+
+
+3.9 Requirements 01
+---------------------------------------
+
+
+
+3.10 Requirements 02
+---------------------------------------
+
+
+3.11 Requirements 03
+---------------------------------------
+
+
+3.12 Requirements 04
+---------------------------------------
+
+
+3.13 Requirements 05
+---------------------------------------
+
+
+
+3.14 IFD chart
+---------------------------------------
+
+
+3.15 Don't Go There
+---------------------------------------
+
+
+3.16 Specification v2
+---------------------------------------
+
+
+3.17 What goes in out of the Database
+---------------------------------------
+
+
+
+3.18 DETOUR: EER MODEL
+---------------------------------------
+
+
