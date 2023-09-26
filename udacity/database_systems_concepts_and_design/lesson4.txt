@@ -1,0 +1,186 @@
+date start : 25 september 2023
+
+
+4.1 (headshot) Introduction
+---------------------------------------
+
+
+
+4.2 Entity Type and Entity Surrogates
+---------------------------------------
+
+
+
+4.3 Single-valued Properties
+---------------------------------------
+
+
+4.4 Identifying Properties
+---------------------------------------
+
+
+4.5 Composite Properties
+---------------------------------------
+
+
+4.6 Multi-valued Properties
+---------------------------------------
+
+
+4.7 Knowledge Check 1
+---------------------------------------
+job title
+
+
+4.8 1-1 relationship types
+---------------------------------------
+
+
+4.9 1-many relationship types
+---------------------------------------
+
+
+
+4.10 Mandatory 1-N relationship types
+---------------------------------------
+
+
+4.11 N-M relationship types
+---------------------------------------
+
+
+4.12 Knowledge Check 2
+---------------------------------------
+all of the above
+
+
+4.13 N-ary relationship types
+---------------------------------------
+
+
+
+4.14 Many relationship types
+---------------------------------------
+
+
+4.15 Identifying relationships
+---------------------------------------
+
+
+4.16 Knowledge Check 3
+---------------------------------------
+one
+
+
+4.17 Recursive relationship types
+---------------------------------------
+
+
+
+4.18 Supertypes and subtypes
+---------------------------------------
+
+
+4.19 Supertypes and subtypes-inheritance
+---------------------------------------
+
+
+4.20 Knowledge Check 4
+---------------------------------------
+name
+
+
+4.21 Union Entity types
+---------------------------------------
+
+
+4.22 (headshot) Thing, Relationship, Property v2
+---------------------------------------
+
+
+4.23 Are relationships entities?
+---------------------------------------
+
+
+4.24 Anther Example
+---------------------------------------
+
+
+4.25 Messing with your brain part 1
+---------------------------------------
+
+
+4.26  Messing with your brain part 2
+---------------------------------------
+
+
+4.27 Relationship type or Entity type?
+---------------------------------------
+
+
+4.28 What can the EER do?
+---------------------------------------
+
+
+4.29 Car graphic
+---------------------------------------
+
+
+4.30 Knowledge Check 5
+---------------------------------------
+none of the above
+
+
+4.31 What's the Result Type of a Query?
+---------------------------------------
+
+
+4.32 EER Diagram
+---------------------------------------
+
+
+4.33 (headshot) Relationship Model Theoretical Foundation v2
+---------------------------------------
+
+
+4.34 Relational Model
+---------------------------------------
+
+
+4.35 Data Structures
+---------------------------------------
+
+
+4.36 Big Deal
+---------------------------------------
+
+
+4.37 Knowledge Check 6
+---------------------------------------
+3
+
+
+4.38 Constraints
+---------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
