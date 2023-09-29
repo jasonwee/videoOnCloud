@@ -1,0 +1,121 @@
+date start : 30 september 2023
+
+
+
+8.1 Normalize
+---------------------------------------
+
+
+
+8.2 What's it all about?
+---------------------------------------
+
+
+
+8.3 (headshot) The Rules
+---------------------------------------
+
+
+8.4 Not a relation
+---------------------------------------
+
+
+8.5 Relation with problems
+---------------------------------------
+
+
+8.6 Relation with Problems-Redundancy
+---------------------------------------
+
+
+8.7 Relation with Problems-insertion anomaly
+---------------------------------------
+
+
+8.8 Relation with Problems-Deletion anomaly
+---------------------------------------
+
+
+8.9 Relation with Problems-Update anomaly
+---------------------------------------
+
+
+
+8.10 Information loss
+---------------------------------------
+
+
+8.11 Dependency Loss
+---------------------------------------
+
+
+8.12 Perfect
+---------------------------------------
+
+
+8.13 Functional Dependencies
+---------------------------------------
+
+
+
+8.14 Full Functional Dependencies
+---------------------------------------
+
+
+8.15 Functional Dependencies and Keys
+---------------------------------------
+
+
+8.16 Overview of Normal Forms
+---------------------------------------
+
+
+8.17 Normal Forms-Definitions
+---------------------------------------
+
+
+
+8.18 Kent and Diehr quote
+---------------------------------------
+
+
+8.19 1NF BCNF flow chart
+---------------------------------------
+
+
+8.20 Compute with Functional Dependencies-Armstrong's rules
+---------------------------------------
+
+
+8.21 How to guarantee lossless joins
+---------------------------------------
+
+
+8.22 How to guarantee preservation of FDs
+---------------------------------------
+
+
+8.23 Email interest
+---------------------------------------
+
+
+8.24 3NF and BCNF
+---------------------------------------
+
+
+8.25 It Nevers Happens in Practice
+---------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
