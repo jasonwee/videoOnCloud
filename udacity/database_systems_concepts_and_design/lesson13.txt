@@ -1,0 +1,72 @@
+date start : 06 october 2023
+
+
+13.1 Implementation
+---------------------------------------
+
+
+
+13.2 AMP solution stack
+---------------------------------------
+
+
+
+13.3 Implementation Data First
+---------------------------------------
+
+
+13.4 WAMP stack demos(headshot)
+---------------------------------------
+
+
+13.5 Install the WAMP Stack
+---------------------------------------
+
+
+13.6 Run the WAMP Stack
+---------------------------------------
+
+
+13.7 Demo 03
+---------------------------------------
+
+
+13.8 To Index or Not Many Things to Consider
+---------------------------------------
+
+
+13.9 To Index or No Size of Table
+---------------------------------------
+
+
+
+13.10 To Index or Not Multiple Access Paths add up
+---------------------------------------
+
+
+13.11 To Index or Not Reads and or Writes
+---------------------------------------
+
+
+13.12 To Index or Not Already Indexed
+---------------------------------------
+
+
+13.13 To Index or Not Some Advice
+---------------------------------------
+
+
+
+13.14 Implementation Tasks
+---------------------------------------
+
+
+13.15 Run PHP Scripts for GTOnline example
+---------------------------------------
+
+
+13.16 HTML Demo
+---------------------------------------
+
+
+
