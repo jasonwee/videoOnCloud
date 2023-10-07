@@ -1,0 +1,55 @@
+date start : 07 october 2023
+
+
+14.1 Archival Metadata Hardware used
+---------------------------------------
+
+
+
+14.2 Experiences with Metadata
+---------------------------------------
+
+
+
+14.3 The Question
+---------------------------------------
+
+
+14.4 Preservation Metadata OAIS Information Model
+---------------------------------------
+
+
+14.5 OASIS Information Model
+---------------------------------------
+
+
+14.6 Content Information Package
+---------------------------------------
+
+
+14.7 OAIS Information Model part 02
+---------------------------------------
+
+
+14.8 Preservation Descrption Information
+---------------------------------------
+
+
+14.9 OAIS Information Model part 03
+---------------------------------------
+
+
+
+14.10 Standards for Archival Metadata are not mature
+---------------------------------------
+
+
+14.11 Metadata Representation Standards
+---------------------------------------
+
+
+14.12 Several elements are necessary
+---------------------------------------
+
+
+
