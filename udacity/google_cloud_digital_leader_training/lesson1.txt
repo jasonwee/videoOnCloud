@@ -1,0 +1,232 @@
+ud301
+
+date start : 18 october 2023
+
+
+1.1 Course introduction
+---------------------------------------
+Introduction
+Welcome to Introduction to Digital Transformation with Google Cloud! In this module, you'll meet the instructor, learn about the course content, and how to get started.
+
+Learning Objectives:
+
+Gain an overview of the course structure and content breakdown.
+
+
+
+1.2 Module 1 Overview
+---------------------------------------
+Module 1: Why cloud technology is revolutionizing business
+This module introduces cloud technology as a paradigm shift and explains how it’s irrevocably transforming businesses globally. It defines the fundamental ingredients of cloud technology—compute power and data—and how they can be used to create new value within a business.
+
+Learning Objectives:
+
+Explain why and how the cloud revolutionizes businesses.
+Define key terms such as cloud, cloud technology, data, and digital transformation.
+
+
+
+1.3 What is cloud?
+---------------------------------------
+
+
+
+1.4 Dange rof maintaining the status quo
+---------------------------------------
+
+
+1.5 A paradigm shift
+---------------------------------------
+
+
+1.6 Extraordinary compute power
+---------------------------------------
+
+
+
+1.7  Data as currency
+---------------------------------------
+
+
+1.8 Quiz: Why cloud technology is revolutionizing business
+---------------------------------------
+q1
+1
+
+
+q2
+1
+3
+
+
+q3
+4
+
+
+q4
+3
+
+
+q5
+3
+
+
+1.9 Module 2 Overview
+---------------------------------------
+Module 2: Digital Transformation with Google Cloud
+Businesses might be at different stages in their digital transformation journey. Google Cloud has identified common opportunities and challenges that necessitate the use of cloud technology. Similarly, Google Cloud offers solutions categorized according to these challenges and opportunities. All of that is covered in this module.
+
+Learning Objectives:
+
+Recognize common challenges and opportunities that business might encounter in their digital transformation journey.
+Identify Google Cloud solution pillars and common use cases for each.
+Recognize the Google Cloud Adoption Framework (GCAF).
+
+
+
+1.10 Enhancing productivity and collaboration
+---------------------------------------
+
+
+1.11 Modernizing IT infrastructure
+---------------------------------------
+
+
+
+1.12 Modernizing business platforms and applications
+---------------------------------------
+
+
+1.13 Unlocking the vaule of data
+---------------------------------------
+
+
+
+1.14 Using a new built-in security model
+---------------------------------------
+
+
+1.15 Google Cloud solutions for digital transformation
+---------------------------------------
+
+
+1.16 Google Cloud Adoption Framework
+---------------------------------------
+Google Cloud Adoption Framework
+Take some time to read through the Google Cloud Adoption Framework. You can find this in the Resources tab in the left portion of the classroom.
+
+
+1.17 Quiz: Digital Transformation with Google Cloud
+---------------------------------------
+q1
+2,5
+
+q2
+2
+
+q3
+1
+
+q4
+2
+
+q5
+1
+2
+
+
+
+1.18 Module 3 Overview
+---------------------------------------
+Module 3: Scale and innovation mindset
+Cloud is not just about a technological transformation; it requires transforming the way we work, too. This module begins with an overview of six focus areas for an organizational transformation and then hones in on the sixth: innovation. It looks specifically at how to organically create and scale innovation through culture and business practices. It offers key principles, drawing examples from Google’s success and a real world scenarios, that you can apply in your day-to-day operations.
+
+Learning Objectives:
+
+List Google's 6 focus areas for organizational transformation.
+Define innovation and principles for scaling the innovation mindset.
+Explain the importance of focusing on your users and use Google’s methods to identify user expectations.
+Familiarize yourself with how a business case for the cloud is created.
+
+
+
+
+1.19 Focus areas for culture transformation
+---------------------------------------
+
+
+1.20 Scale the innovation mindset
+---------------------------------------
+
+
+1.21 Think 10X
+---------------------------------------
+
+
+
+1.22 Launch and iterate
+---------------------------------------
+
+
+1.23 Innovation example: Banking industry
+---------------------------------------
+
+
+
+1.24 Try it yourself
+---------------------------------------
+
+
+1.25 Quiz: Scaling the innocation mindset
+---------------------------------------
+q1
+1
+
+q2
+2
+
+q3
+2
+
+q4
+4
+
+q5
+3
+
+
+
+1.26 Summary
+---------------------------------------
+Summary
+This module provides a summary of the key points covered in each module and next steps you can take to continue your learning.
+
+Learning Objectives:
+
+Review the key topics and core concepts covered in this course.
+Find additional resources to continue your learning.
+
+What's Next?
+Take some time to read through the What's Next document. You can find this in the Resources tab in the upper left portion of the classroom.
+
+
+
+1.27 What's next?
+---------------------------------------
+Congratulations!
+The Introduction to Digital Transformation with Google Cloud lesson provides a great foundation for developing cloud literacy and knowledge about Google Cloud solutions.
+
+What’s Next?
+This lesson is 1 of 4 lessons in a learning path aligned to the Cloud Digital Leader certification. Here are the recommended next lessons.
+
+Continue your learning journey
+Introduction to Digital Transformation with Google Cloud – Complete
+Innovating with Data and Google Cloud
+Infrastructure and Application Modernization with Google Cloud
+Understanding Google Cloud Security and Operations
+Validate your learning with
+Cloud Digital Leader Certification
+
+Once you’ve completed all four lessons, take advantage of the Cloud Digital Leader certification. Follow the instructions on the cloud certification path page to register for the exam.
+
+
