@@ -1,0 +1,226 @@
+date start : 19 october 2023
+
+
+2.1 Course Introduction
+---------------------------------------
+Introduction
+Welcome to Innovating with Data and Google Cloud! In this module, you'll meet the instructor, learn about the course content, and how to get started.
+
+Learning Objectives
+Obtain a copy of the student slides.
+Gain an overview of the course structure and content breakdown.
+
+
+
+2.2 Module 1 overview
+---------------------------------------
+Module 1: The Value of Data
+Data is key to digital transformation. In fact, capturing, managing, and leveraging data is central to redefining customer experience and creating new value in almost every industry. This module begins by exploring the value of data for enabling digital transformation, followed by a breakdown of the different types of data and considerations for collecting, storing, and processing data when using cloud technology.
+
+Learning Objectives:
+
+Describe the role of data in digital transformation.
+Describe how to use data to create business insights.
+Recognize examples of structured and unstructured data.
+
+
+
+2.3 The role of data in digital transformation
+---------------------------------------
+
+
+2.4 Leveraging data in your organization
+---------------------------------------
+
+
+2.5 Understanding data types
+---------------------------------------
+
+
+2.6 Important data considerations
+---------------------------------------
+
+
+2.7 Quiz: The value of data
+---------------------------------------
+evaluate real-time data to predict maintenance requirements
+
+
+User data
+
+
+Unstructured
+
+
+education
+years of experience
+
+
+business can process terabytes of data in real-time.
+businesses can query their data and rerieve resutls intantly.
+
+
+
+2.8 Module 2 overview
+---------------------------------------
+Module 2: Data Consolidation and Analytics
+This module introduces key terms that are related to data management and highlights the benefits of migrating data to the cloud. It offers several customer uses cases along with relevant Google Cloud data management solutions. It concludes with a review of key products such as BigQuery and Looker that enable users to draw insights from their data.
+
+Learning Objectives:
+
+Explain the benefits of storing data in the cloud.
+Define key terms such as database, data warehouse, and data lake.
+Identify Google Cloud data storage and database services.
+
+https://www.youtube.com/watch?v=K84yLwjaXtc
+
+
+
+2.9 Migrating your data to the cloud
+---------------------------------------
+
+https://www.youtube.com/watch?v=8Dka-Jm2MWc
+
+
+
+2.10 Cloud databases
+---------------------------------------
+
+youtube.com/watch?v=Mmc4ZNIwcGs
+
+
+
+2.11 Cloud data warehouses
+---------------------------------------
+
+youtube.com/watch?v=ls6zSBDek5w
+
+
+
+2.12 Cloud data lakes
+---------------------------------------
+
+youtube.com/watch?v=D7oNv4sDcDM
+
+
+
+2.13 Business intelligence solutions 
+---------------------------------------
+
+https://www.youtube.com/watch?v=N3cl_lqm30c
+
+
+
+2.14 Quiz: Data consolidation and analytics
+---------------------------------------
+speed
+elasticity
+
+through ongoing error checking and validation routines as data is collected
+by implementing a set of rules when a database is first desinged
+
+databases efficiently ingest large amounts of real-time data, while data warehouses rapidly analyze multi-dimensional datasets.
+
+a repository of raw data nad tend to hold 'back up' data
+
+she can use it to create real-time dashboards
+
+
+
+2.15 Module 3 overview
+---------------------------------------
+
+Module 3: Innovation with Machine Learning
+Data analytics has historically been about understanding what has already happened in the past. With advancements in cloud technology, and the availability of digital devices, we're generating volumes of data everyday. This module explores the capabilities of machine learning and what becomes possible with volumes of data. It builds on the previous module by explaining ways a machine can learn to predict, categorize, and recommend based on lots and lots of data. Throughout the module, you'll uncover examples of customers who have used machine learning to bring innovative solutions to their customers.
+
+Learning Objectives:
+
+Define artificial intelligence (AI) and machine learning (ML).
+Explain the importance of data quality in ML prediction accuracy.
+Describe Google Cloud’s differentiators when it comes to AI and Machine Learning.
+
+youtube.com/watch?v=dHAnEZ8AZsY
+
+
+
+2.16 What is machine learning?
+---------------------------------------
+
+youtube.com/watch?v=9e7go_JTYYI
+
+
+
+2.17 Data quality
+---------------------------------------
+
+youtube.com/watch?v=jiektiuli0o
+
+
+
+2.18 AI and ML with Google Cloud
+---------------------------------------
+
+https://www.youtube.com/watch?v=3K54Pr6sDcM
+
+
+
+2.19 Real-world use cases for ML
+---------------------------------------
+
+youtube.com/watch?v=zNMQIv6RQu8
+
+
+
+2.20 Quiz: Innovation with Machine Learning
+---------------------------------------
+
+artificial intelligence
+
+completeness
+cleanliness
+
+Google apis on google cloud ai hub
+
+this is an infrequent decision for a specific role and department
+
+creating personalize customer experience
+automating processes
+
+the availability of sufficient dataabout the world to replace human knowledge
+
+
+
+2.21 Summary 
+---------------------------------------
+
+Summary
+This module provides a summary of the key points covered in each module and steps you can take to continue your learning.
+
+Learning Objectives:
+
+Review the key topics and core concepts covered in this course.
+Find additional resources to continue your learning.
+
+youtube.com/watch?v=2zFa8YLqytM
+
+
+
+2.22 What's next?
+---------------------------------------
+
+
+Congratulations!
+The Innovating with Data and Google Cloud lesson provides a great foundation for learning about how you can leverage data and cloud technology to create more value within your role and within a business.
+
+What’s Next?
+This lesson is 2 of 4 lessons in a learning path aligned to the Cloud Digital Leader certification. Here are the recommended next lessons.
+
+Continue your learning journey
+Introduction to Digital Transformation with Google Cloud
+Innovating with Data and Google Cloud – Complete
+Infrastructure and Application Modernization with Google Cloud
+Understanding Google Cloud Security and Operations
+Validate your learning with
+Cloud Digital Leader Certification
+
+Once you’ve completed all four lessons, take advantage of the Cloud Digital Leader certification. Follow the instructions on the cloud certification path page to register for the exam.
