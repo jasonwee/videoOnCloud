@@ -1,0 +1,195 @@
+date start : 20 october 2023
+
+
+3.1 Course Introduction
+---------------------------------------
+Introduction
+Welcome to Infrastructure and Application Modernization with Google Cloud! In this module, you'll meet the instructor, learn about the course content, and how to get started.
+
+Learning Objectives:
+
+Gain an overview of the course structure and content breakdown.
+Obtain a copy of the student slides.
+
+
+
+3.2 Module 1 overview
+---------------------------------------
+Module 1: Modernizing IT Infrastructure with Google Cloud
+This module covers what it means to modernize an IT infrastructure and why it matters. It then turns to the different compute options available, before moving onto private, hybrid and multi-cloud architectures. It ends with an overview of the Google Cloud global infrastructure.
+
+Learning Objectives:
+
+Explain why legacy infrastructure struggles to deliver modern services to customers.
+Define private, hybrid, and multi-cloud infrastructures, and how businesses gain value from them.
+Identify the Google Cloud solutions that help businesses modernize their infrastructure.
+
+
+
+3.3 Infrastructure modernization
+---------------------------------------
+
+
+3.4 Understanding compute options in the cloud
+---------------------------------------
+
+
+3.5 Hybrid and multi cloud
+---------------------------------------
+
+
+3.6 Google Cloud compute solutions
+---------------------------------------
+
+
+3.7 Quiz: Modernizing IT infrastructure with Google Cloud
+---------------------------------------
+maintenance work is outsourced to the cloud provider.
+
+elasticity
+
+hybrid cloud
+
+operating systems
+
+serverless computing
+
+
+
+3.8 Module 2 overview
+---------------------------------------
+This module explores how businesses can modernize their existing applications and build new ones in the cloud. It focuses on five common change patterns for businesses who want to modernize their applications. Next, the module turns to some key application development challenges that businesses face, before highlighting two Google Cloud solutions for these challenges: Google Kubernetes Engine and App Engine.
+
+Learning Objectives:
+
+Describe patterns for modernizing and developing applications.
+Explain Google Cloud core solutions for application development and modernization.
+
+
+
+3.9 Cloud change patterns
+---------------------------------------
+
+
+
+3.10 Challenges in application development
+---------------------------------------
+
+
+3.11 Google Kubernetes Engine
+---------------------------------------
+
+
+3.12 App Engine
+---------------------------------------
+
+
+3.13 Customer case studies
+---------------------------------------
+Customer Examples
+The following are a few Google Cloud customers who have successfully used Google Kubernetes Engine (GKE) and App Engine.
+
+Arcules
+Arcules is a Canon Company, and Google Cloud partner, that uses IoT technology to deliver the next generation of cloud-based video surveillance, access control and video analytics – all in one unified, intuitive platform. Click the link to read about their case study.
+
+Forbes
+Forbes Media (Forbes) is a global media, branding, and technology company, with a focus on news and information about business, investing, technology, entrepreneurship, leadership, and affluent lifestyles. The Forbes brand reaches more than 120 million people worldwide through its popular magazine and ForbesLive events, with 40 licensed local editions in 70 countries. Click here to read their case study.
+
+Zulily
+Zulily is an American e-commerce company headquartered in Seattle, Washington, that sells products for the whole family, including apparel, toys, footwear, and home décor. The company needed an innovative solution to modernize its infrastructure and Google Cloud delivered. Zulily uses AutoML Vision to select personalized images for marketing and Google Kubernetes Engine (GKE) to deploy ML models as microservices to its website servers. Click here to read more about their case study.
+
+
+
+For more customer stories, check out: cloud.google.com/customers
+
+
+
+3.14 Quiz: Modernizing applications with Google Cloud
+---------------------------------------
+invent in browfield
+
+microsevice pattern, because it's modular and therefore easy to update.
+
+a google cloud managed service for container orchestration
+
+a platform for building scalable web applications and mobile backends.
+
+in increases application release velocity and reliability.
+
+
+
+3.15 Module 3 overview
+---------------------------------------
+Module 3: The Value of APIs
+This module explains how APIs are a tool for both digital integration and digital transformation. It begins by defining legacy systems and the specific barriers to the demands of the digital age. It then defines APIs and explains how they can modernize legacy systems and create new business value. The module closes with a description of Apigee, an API management tool, along with customer use cases.
+
+Learning Objectives:
+
+Explain how APIs can create new business models and support app modernization.
+Explain how Apigee simplifies API management.
+
+
+
+3.16 Legacy system challenges
+---------------------------------------
+
+
+3.17 How APIs can modernize legacy systems
+---------------------------------------
+
+
+3.18 Using APIs to create new business vaue
+---------------------------------------
+
+
+
+3.19 Apigee
+---------------------------------------
+
+
+
+3.20 Quiz: The value of APIs
+---------------------------------------
+they scale slowly.
+
+they enable integration between systems
+
+by gaining access to data stored in legacy systems
+
+apigee
+
+measuring and tracking business performance
+
+
+
+3.21 Summary
+---------------------------------------
+Summary
+This module provides a summary of the key points covered in each module and steps you can take to continue your learning.
+
+Learning Objectives:
+
+Review the key topics and core concepts covered in this course.
+Find additional resources to continue your learning.
+
+
+
+3.22 What's next?
+---------------------------------------
+Congratulations!
+The Infrastructure and Application Modernization with Google Cloud lesson provides a great foundation for understanding the disadvantages of an outdated IT infrastructure and ways cloud technology can be used to modernize applications in a way that suits an organization’s business objectives and constraints.
+
+What’s Next?
+This lesson is 3 of 4 lessons in a learning path aligned to the Cloud Digital Leader certification. Here are the recommended next lessons.
+
+Continue your learning journey
+Introduction to Digital Transformation with Google Cloud
+Innovating with Data and Google Cloud
+Infrastructure and Application Modernization with Google Cloud – Complete
+Understanding Google Cloud Security and Operations
+Validate your learning with
+Cloud Digital Leader Certification
+
+Once you’ve completed all four lessons, take advantage of the Cloud Digital Leader certification. Follow the instructions on the cloud certification path page to register for the exam.
+
+
