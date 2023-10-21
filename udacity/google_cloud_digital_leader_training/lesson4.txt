@@ -1,0 +1,180 @@
+date start : 22 october 2023
+
+
+4.1 Course introduction
+---------------------------------------
+Introduction
+Welcome to Understanding Google Cloud Security and Operations! In this module, you'll meet the instructor, learn about the course content, and how to get started.
+
+Learning Objectives:
+
+Gain an overview of the course structure and content breakdown.
+Obtain a copy of the student slides.
+
+
+
+4.2 Module 1 overview
+---------------------------------------
+Module 1: Financial Governance in the Cloud
+Organizations that adopt cloud technology will inevitably need to fundamentally change some of their business operations. The first of these is about financial governance. This module explains the core challenges organizations face when managing cloud costs and proposes a solution through three lenses: people, process, and technology. It also explains how to think about the total cost of ownership when using cloud services, before unpacking core Google Cloud cost management concepts. It ends by describing some best practices for effective cloud cost management.
+
+Learning Objectives:
+
+* Explain how to think about total cost of ownership (TCO) in the cloud.
+* Describe best practices for effective cloud cost management.
+
+
+
+4.3 Fundamentals of cloud cost management
+---------------------------------------
+
+
+4.4 Total cost of ownership
+---------------------------------------
+
+
+4.5 Best practices for managing Google Cloud costs
+---------------------------------------
+
+
+4.6 Quiz: Financial governance in the cloud
+---------------------------------------
+visibility, accountability, control, intelligent recommendations.
+
+qualified personnel (i.e. Financial controller with expertise in cloud)
+cloud architecture (i.e. private, hybrid, and multi-cloud architecture)
+
+it would give her (and her teammates) greater visibility into costs.
+
+it would promote a culture of accountability
+
+budgeting needs to be assesssed on a daily, monthly, or weekly basis.
+
+
+
+4.7 Module 2 overview
+---------------------------------------
+
+Module 2: Security in the Cloud
+This module covers the second way that businesses need to change their operations to work effectivey inn the cloud: security. It examines a new cloud-first security model and explains how it differs from traditional on-premises IT security models. The module starts by defining a few fundamental terms related to security in the cloud. Then, it considers today’s top cybersecurity challenges and the most common threats to data privacy and security. After that, it uses the Shared Responsibility Model to illustrate how organizations can maintain data security and compliance on an ongoing basis. Finally, it looks at how Google Cloud equips organizations to control and manage access to data and resources through Cloud Identity.
+
+Learning Objectives:
+
+Identify today's top cybersecurity challenges and threats to data privacy.
+Explain what is meant by a ‘Shared Responsibility Model’ and how customers can use Google Cloud tools to implement their chosen security policies.
+
+
+
+
+4.8 Fundamental terms: Privacy, security, compliance, and availability
+---------------------------------------
+
+
+4.9 Today's top cyber security challenges
+---------------------------------------
+
+
+4.10 Share responsibility model - part 1
+---------------------------------------
+
+
+4.11 Share responsibility model - part 2
+---------------------------------------
+
+
+4.12 Identity and access management 
+---------------------------------------
+
+
+4.13 Resource hierarchy
+---------------------------------------
+
+
+4.14 Quiz: Security in the cloud
+---------------------------------------
+shrding, biometric auth, 2fa
+
+malware attacks on files
+phising for sensitive data
+
+identity
+
+who, can do waht, and on which resource.
+
+least privilege
+
+
+
+4.15 Module 3 overview
+---------------------------------------
+Module 3: Monitoring Cloud IT Services and Operations
+The third operational shift that businesses must make in the cloud is re-evaluating how they monitor their IT services. This module starts by exploring IT operational challenges—specifically, how IT teams are traditionally structured, and why that structure prevents organizations from quickly delivering updates to services or fresh customer experiences. Next, it defines what DevOps and Site Reliability Engineering are, before using them as a framework for IT operational changes. Finally, the module examines Google Cloud resource monitoring tools and how they help organizations maintain control and visibility of their cloud environment.
+
+Learning Objectives:
+
+Define monitoring, logging, and observability within the context of cloud operations.
+Identify the Google Cloud resource monitoring and maintenance tools.
+Differentiate DevOps from SRE.
+
+
+
+
+4.16 IT development and operations challenges 
+---------------------------------------
+
+
+4.17 DevOps and SRE
+---------------------------------------
+
+
+4.18 Google Cloud resource monitoring tools
+---------------------------------------
+
+
+4.19 Quiz: Monitoring cloud IT services and operations
+---------------------------------------
+the goal for your cloud service performance level
+
+devops
+
+operations-focused tools
+application performance management tools
+
+because service mainteance is inevitable and requires downtime
+
+cloud logging
+cloud monitoring
+
+
+
+4.20 Summary
+---------------------------------------
+Summary
+This module provides a summary of the key points covered in each module and steps you can take to continue your learning.
+
+Learning Objectives:
+
+Review the key topics and core concepts covered in this course.
+Find additional resources to continue your learning.
+
+
+
+4.21 What's next?
+---------------------------------------
+Congratulations!
+The Understanding of Google Cloud Security and Operations lesson provides a great foundation for learning about cloud financial governance and key operational shifts as businesses continue to digitally transform the IT infrastructure. Moreover, it offers a brief overview of the key Google Cloud products and services that help you to monitor cloud resources and costs.
+
+What’s Next?
+This lesson is 4 of 4 lessons in a learning path aligned to the Cloud Digital Leader certification. If you’ve completed all four, well done! And if you haven’t, here are the other recommended lessons.
+
+Continue your learning journey
+Introduction to Digital Transformation with Google Cloud
+Innovating with Data and Google Cloud
+Infrastructure and Application Modernization with Google Cloud
+Understanding Google Cloud Security and Operations – Complete
+Validate your learning with
+Cloud Digital Leader Certification
+
+Once you’ve completed all four lessons, take advantage of the Cloud Digital Leader certification. Follow the instructions on the cloud certification path page to register for the exam.
+
+
