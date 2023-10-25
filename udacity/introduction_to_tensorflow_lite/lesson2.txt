@@ -1,0 +1,94 @@
+date start : 25 oct 2023
+
+
+
+2.1 Introduction
+---------------------------------------
+
+
+
+2.2 TensorFlow Lite Under The Hood
+---------------------------------------
+
+
+
+2.3 TensorFlow Lite Examples
+---------------------------------------
+
+
+
+2.4 Quantization
+---------------------------------------
+
+
+
+2.5 Post-Training
+---------------------------------------
+Note
+TF Lite offers another optimization option called OPTIMIZE_FOR_LATENCY. This option optimizes your model for speed.
+
+
+
+
+2.6 Post-Training Quantization Example
+---------------------------------------
+
+
+
+2.7 Post-Training Decision Tree
+---------------------------------------
+Post-Training Decision Tree
+The decision tree depicted below can help you determine which post-training quantization method is best for your particular application:
+
+If you don’t intend to quantize your model, you’ll end up with a floating point model. Also, remember that the converter will do its best to quantize all the operations (ops), but your model may still end up with a few floating point ops.
+
+It is important to note that even though post-training quantization works really well, quantization-aware training generally results in a model with higher accuracy because it makes the model more tolerant to lower precision values. Therefore, quantization-aware training should be used in cases where the loss of accuracy brought by post-training quantization is beyond acceptable thresholds.
+
+To learn more about Post-Training Quantization make sure to check out the TF Lite Documentation.
+
+
+
+2.8  TF Lite Delegates
+---------------------------------------
+
+
+
+2.9 Testing your TFListe Models in Python
+---------------------------------------
+
+
+
+2.10 TF Lite Models
+---------------------------------------
+
+
+
+2.11 Colab: Linear Regression
+---------------------------------------
+
+
+2.12 Colab: Transfer Learning
+---------------------------------------
+
+
+2.13 Exercise: Fashion MNIST
+---------------------------------------
+Exercise: Fashion MNIST
+Congrats! Now that you’ve reached the end of this lesson, you will be getting hands-on experience on all the things that you’ve learned so far. In this exercise you will train a simple convolutional neural network on the Fashion MNIST dataset. Once your model is trained, you will convert it to a TF Lite model and then test it using the TF Lite Interpreter.
+
+In the next section we will provide a separate Colab with our solution so that you you can compare your answers to ours.
+
+Have fun!
+
+Colab
+To access the Colab Notebook, login to your Google account and click on the link below:
+
+Exercise: Fashion MNIST
+
+
+
+2.14 Solution: Fashin MNIST
+---------------------------------------
+
+
+
