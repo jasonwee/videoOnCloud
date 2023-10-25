@@ -1,0 +1,267 @@
+date start : 26 oct 2023
+
+
+
+3.1 Introduction
+---------------------------------------
+
+
+
+3.2 Android Apps
+---------------------------------------
+Android Apps
+You can find all the apps for this lesson in this Zip file. Once you unzip the file you will find the corresponding folders for each app used in this lesson.
+
+
+
+3.3 Adding TF Lite to the Android Project
+---------------------------------------
+
+
+
+
+3.4 Performing Inference
+---------------------------------------
+
+
+
+3.5 Cats and Dogs App
+---------------------------------------
+
+
+
+3.6 App Architecture
+---------------------------------------
+
+
+
+3.7 Setting Up Cats and Dogs
+---------------------------------------
+Cats vs Dogs App
+In this part of the lesson you are going to deploy a TF Lite model in an Android App that classifies images of cats and dogs. To get things up running you will need to download:
+
+Cats vs Dogs app
+
+TF Lite model we created in the Transfer Learning Colab.
+
+Once you have downloaded the app, you can run it in Android Studio. For simplicity, the app already contains the above pre-trained .tflite model and the .txt file containing the class labels in the assets folder, so you can start using the app right away.
+
+If you want to use another TF Lite model, download the TF Lite model and labels to your computer and then drag and drop the .tflite file containing your model and the .txt file containing the labels into the assets folder of the app:~/cats_vs_dogs/app/src/main/assets/. You can then run your app in Android Studio.
+
+
+
+3.8 Step 1 - Cats and Dogs App
+---------------------------------------
+
+
+
+3.9 Step 2 - Cats and Dogs App
+---------------------------------------
+
+
+
+3.10 Step 3 & 4 - Cats and Dogs App
+---------------------------------------
+
+
+
+3.11 Image Classification App
+---------------------------------------
+
+
+
+3.12 Setup Image Classification
+---------------------------------------
+Image Classification App
+In this part of the lesson you are going to deploy a TF Lite model in an Android App that continuously classifies whatever it sees from your device's back camera . To get things up running you will need to download:
+
+Image Classification app
+
+Quantized MobileNet model and Labels .
+
+Once you have downloaded the app, you can run it in Android Studio. For simplicity, the app already contains the above pre-trained .tflite model and the .txt file containing the class labels in the assets folder, so you can start using the app right away.
+
+If you want to use another TF Lite model, download the TF Lite model and labels to your computer and then drag and drop the .tflite file containing your model and the .txt file containing the labels into the assets folder of the app: ~/image_classification/app/src/main/assets/. You can then run your app in Android Studio.
+
+App Resources
+For extra documentation on this app, make sure you check out the links below:
+
+Image Classification Overview
+
+Android Example
+
+
+
+3.13 Step 1 - Image Classification App
+---------------------------------------
+
+
+
+3.14 Step 2 - Image Classification App
+---------------------------------------
+
+
+
+3.15 Step 3 & 4 - Image Classification App
+---------------------------------------
+
+
+
+3.16 Object Detection App
+---------------------------------------
+
+
+
+3.17 setup object detection
+---------------------------------------
+Object Detection App
+In this part of the lesson you are going to deploy a TF Lite model in an Android App that continuously detects the objects (bounding boxes and classes) in the frames seen by your device's back camera . To get things up running you will need to download:
+
+Object Detection app
+
+MobileNet SSD model and Labels .
+
+Once you have downloaded the app, you can run it in Android Studio. For simplicity, the app already contains the above pre-trained .tflite model and the .txt file containing the class labels in the assets folder, so you can start using the app right away.
+
+If you want to use another TF Lite model, download the TF Lite model and labels to your computer and then drag and drop the .tflite file containing your model and the .txt file containing the labels into the assets folder of the app: ~/object_detection/app/src/main/assets/. You can then run your app in Android Studio.
+
+App Resources
+For extra documentation on this app, make sure you check out the links below:
+
+Object Detection Overview
+
+Android Example
+
+
+￼
+3.18 Step 1 - Object Detection App
+---------------------------------------
+
+
+
+3.19 Step 2 - Object Detection App
+---------------------------------------
+
+
+
+3.20 Step 3 - Object Detection App
+---------------------------------------
+
+
+
+3.21 Step 4 - Object Detection App
+---------------------------------------
+
+
+
+3.22 Speech Recognition App
+---------------------------------------
+
+
+
+3.23 Setup Speech Recognition
+---------------------------------------
+Speech Recognition App
+In this part of the lesson you are going to deploy a TF Lite model in an Android App that recognizes speech commands . To get things up running you will need to download:
+
+Speech Recognition app
+
+Convolutional Model
+
+Once you have downloaded the app, you can run it in Android Studio. For simplicity, the app already contains the above pre-trained .tflite model and the .txt file containing the class labels in the assets folder, so you can start using the app right away.
+
+If you want to use another TF Lite model, download the TF Lite model and labels to your computer and then drag and drop the .tflite file containing your model and the .txt file containing the labels into the assets folder of the app: ~/speech_commands/app/src/main/assets/. You can then run your app in Android Studio.
+
+App Resources
+For extra documentation on this app, make sure you check out the links below:
+
+Simple Audio Recognition
+
+Android Example
+
+
+3.24 Speech Recognition App Architecture
+---------------------------------------
+
+
+
+3.25 Step 1 - Speech Recognition App
+---------------------------------------
+
+
+
+3.26 Step 2 - Speech Recognition App
+---------------------------------------
+
+
+
+3.27 Step 3 - Speech Recognition App
+---------------------------------------
+
+
+
+3.28 Step 4 - Speech Recognition App
+---------------------------------------
+
+
+
+3.29 Exercise: Rock, Paper, or Scissors
+---------------------------------------
+xercise: Rock, Paper, or Scissors
+In this exercise you will first train your own model that classifies hand gestures into rock, paper, or scissors. Then you will deploy your model in an app.
+
+You can download the app in the link below:
+
+Rock, Paper, Scissors
+Once you have downloaded the app, you can run it in Android Studio. For simplicity, the app already contains the above pre-trained .tflite model and the .txt file containing the class labels in the assets folder, so you can start using the app right away.
+
+If you want to use another TF Lite model, download the TF Lite model and labels to your computer and then drag and drop the .tflite file containing your model and the .txt file containing the labels into the assets folder of the app: ~/rock_paper_scissors/app/src/main/assets/. You can then run your app in Android Studio.
+
+Have fun!
+
+Colab
+To access the Colab Notebook, login to your Google account and click on the link below:
+
+Exercise: Rock, Paper, or Scissors
+
+In the next section we will provide a separate Colab with our solution so that you you can compare your answers to ours.
+
+
+3.30 Solution: Rock, Paper, or Scissors
+---------------------------------------
+Solution: Rock, Paper, or Scissors
+We hope you had fun training your own model to classify hand gestures! Feel free to check your solution with ours by taking a look at the Colab below.
+
+Colab
+To access the Colab Notebook, login to your Google account and click on the link below:
+
+Solution: Rock, Paper, or Scissors
+
+
+3.31 Exercise: Linear Regression
+---------------------------------------
+Linear Regression App
+In this part of the lesson you are going to deploy a TF Lite model in an Android App that performs linear regression. To get things up running you will need to download:
+
+Linear Regression app
+
+TF Lite model we created in the Linear Regression Colab.
+
+Once you have downloaded the app, you can run it in Android Studio. For simplicity, the app already contains the above pre-trained .tflite model in the assets folder, so you can start using the app right away.
+
+If you want to use another TF Lite model, download the TF Lite model to your computer and then drag and drop the .tflite file containing your model into the assets folder of the app: ~/linear_regression/app/src/main/assets/. You can then run your app in Android Studio.
+
+
+3.32 Exercise: Fashion MNIST
+---------------------------------------
+Fashion MNIST App
+In this part of the lesson you are going to deploy a TF Lite model in an Android App that classifies images of the Fashion MNIST dataset. To get things up running you will need to download:
+
+Fashion MNIST app
+
+TF Lite model we created in the Fashion MNIST Colab
+
+Once you have downloaded the app, you can run it in Android Studio. For simplicity, the app already contains the above pre-trained .tflite model and the .txt file containing the class labels in the assets folder, so you can start using the app right away.
+
+If you want to use another TF Lite model, download the TF Lite model and labels to your computer and then drag and drop the .tflite file containing your model and the .txt file containing the labels into the assets folder of the app: ~/fashion_mnist/app/src/main/assets/. You can then run your app in Android Studio.
+
