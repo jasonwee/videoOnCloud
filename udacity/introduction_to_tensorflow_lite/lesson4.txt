@@ -1,0 +1,294 @@
+date start : 27 oct 2023
+
+
+
+
+4.1 Introduction
+---------------------------------------
+
+
+
+4.2 iOS Apps
+---------------------------------------
+iOS Apps
+You can find all the apps for this lesson in this Zip file. Once you unzip the file you will find the corresponding folders for each app used in this lesson.
+
+
+
+4.3 Installing CocoaPods
+---------------------------------------
+Installing CocoaPods for TensorFlowLite Swift
+We will be integrating the TensorflowLiteSwift library using Cocoapods. If you are unfamiliar with Cocoapods, please refer this link.
+
+If you head to the root folder of any of the apps, you will notice a file named Podfile. As an example let's take the image classification app. If you go to the root folder of this app ~/image_classification/ you will see the following files:
+
+f you open the Podfile file you will see pod ‘TensorFlowLiteSwift’ defined under the target section:
+
+’TensorFlowLiteSwift’ is the name of the pod for the Swift library we will be using to integrate our model. In general, for all the apps you will see the following:
+
+# Pods for 'Your Project'
+pod 'TensorFlowLiteSwift'
+To install the pods used for TensorFlowLiteSwift, in a terminal window go to the root directory of the app and then run pod install as shown below:
+
+$ cd /path/to/directory/containing/podfile
+
+$ pod install
+After the installation process is completed, you should see a file with extension .xcworkspace in the root folder of the app. You can then open the .xcworkspace file and run the app.
+
+
+
+4.4 Performing Inference
+---------------------------------------
+
+
+
+4.5 Cats and Dogs App
+---------------------------------------
+
+
+
+4.6 App Architecture
+---------------------------------------
+
+
+
+4.7 Setting Up Cats and Dogs
+---------------------------------------
+Cats vs Dogs App
+In this part of the lesson you are going to deploy a TF Lite model in an iOS App that classifies images of cats and dogs. To get things up running you will need to first install the pods for TensorFlowLite library by running pod install from the terminal and then download:
+
+Cats vs Dogs app
+
+TF Lite model we created in the Transfer Learning Colab.
+
+Once you have both the app and the model downloaded to your computer, you can drag and drop your .tflite file containing your model into the Model folder in the Xcode Project Navigator. Also, make sure you select the name of your target in ‘add to target’ box. In our case, the name of the target is ‘CatVsDogClassifierSample’:
+
+After your files are added, you can go ahead and run the target in Xcode to see the app in action. You can also install the app on a simulator or device to take a look at how it performs .
+
+
+
+4.8 Step 1 - Cats and Dogs App
+---------------------------------------
+Note: The Interpreter is coming from the TensorFlowLite package imported within ModelDataHandler.swift - you don't need to add this yourself here.
+
+
+
+4.9 Step 2 - Cats and Dogs App
+---------------------------------------
+
+
+
+4.10 Step 3 - Cats and Dogs App
+---------------------------------------
+
+
+
+4.11 Step 4 - Cats and Dogs App
+---------------------------------------
+
+
+
+4.12 Image Classification App
+---------------------------------------
+
+
+4.13 Image Classification - App Architecture
+---------------------------------------
+
+
+4.14 Setup Image Classification
+---------------------------------------
+Image Classification App
+In this part of the lesson you are going to deploy a TF Lite model in an iOS App that continuously classifies whatever it sees from your device's back camera . To get things up running you will need to first install the pods for TensorFlowLite library by running pod install from the terminal and then download:
+
+Image Classification app
+
+Quantized MobileNet model and Labels
+
+Once you have both the app and the model downloaded to your computer, you can drag and drop your .tflite file containing your model into the Model folder in the Xcode Project Navigator. After your files are added, you can go ahead and run the target in Xcode to see the app in action. You can also install the app on a simulator or device to take a look at how it performs. When you open the app for the first time, you will have to agree to the camera permissions.
+
+Note: The Xcode simulator does not include camera functionality. In order to test this app, you will need to deploy on a device.
+
+App Resources
+For extra documentation on this app, make sure you check out the links below:
+
+Image Classification Overview
+
+iOS Example
+
+TF Lite iOS
+
+
+
+4.15 Step 1 - Image Classification App
+---------------------------------------
+
+
+4.16 Step 2 - Image Classification App
+---------------------------------------
+
+
+4.17 Step 3 & 4 - Image Classification App
+---------------------------------------
+
+
+4.18 Image Classification - Camera Feed
+---------------------------------------
+
+
+
+4.19 Object Detection App
+---------------------------------------
+
+
+4.20 Setup Object Detection
+---------------------------------------
+Object Detection App
+In this part of the lesson you are going to deploy a TF Lite model in an iOS App that continuously detects the objects (bounding boxes and classes) in the frames seen by your device's back camera. To get things up running you will need to first install the pods for TensorFlowLite library by running pod install from the terminal and then download:
+
+Object Detection app
+
+MobileNet SSD model and Labels
+
+Once you have both the app and the model downloaded to your computer, you can drag and drop your .tflite file containing your model into the Model folder in the Xcode Project Navigator. After your files are added, you can go ahead and run the target in Xcode to see the app in action. You can also install the app on a simulator or device to take a look at how it performs. When you open the app for the first time, you will have to agree to the camera permissions.
+
+Note: The Xcode simulator does not include camera functionality. In order to test this app, you will need to deploy on a device.
+
+App Resources
+For extra documentation on this app, make sure you check out the links below:
+
+Object Detection Overview
+
+iOS Example
+
+
+
+4.21 Step 1 & 2 - Object Detection App
+---------------------------------------
+
+
+4.22 Step 3 & 4 - Object Detection App
+---------------------------------------
+
+
+
+4.23 Speech Recognition App
+---------------------------------------
+
+
+4.24 Setup Speech Recognition
+---------------------------------------
+Speech Recognition App
+In this part of the lesson you are going to deploy a TF Lite model in an iOS App that recognizes speech commands . To get things up running you will need to first install the pods for TensorFlowLite library by running pod install from the terminal and then download:
+
+Speech Recognition app
+
+Convolutional Model
+
+Once you have both the app and the model downloaded to your computer, you can drag and drop your .tflite file containing your model into the Model folder in the Xcode Project Navigator. After your files are added, you can go ahead and run the target in Xcode to see the app in action. You can also install the app on a simulator or device to take a look at how it performs. When you open the app for the first time, you will have to agree to the microphone permissions.
+
+App Resources
+For extra documentation on this app, make sure you check out the links below:
+
+Simple Audio Recognition
+
+iOS Example
+
+
+
+4.25 Speech Recognition - App Architecture
+---------------------------------------
+
+
+4.26 Speech Recognition - Audio Input
+---------------------------------------
+
+
+
+4.27 Speech Recognition - Inference Steps
+---------------------------------------
+Inference Steps for the Speech Commands App
+Here we have rephrased the steps involved in inference in accordance with the context of the Speech Commands model.
+
+First, we initialize the interpreter like in all inference processes. We then prepare the input audio buffer values for inference. The ViewController hands over an Int buffer for inference so, we have to convert this into a Float32 buffer. Then we have to copy the input to the tensors and invoke the Interpreter to perform inference. Finally, we have to average the confidence scores for each class over a duration to get reliable results.
+
+
+
+4.28 Step 1 & 2 - Speech Recognition App
+---------------------------------------
+
+
+4.29 Step 3 & 4 - Speech Recognition App
+---------------------------------------
+
+
+4.30 Exercise: Rock, Paper, or Scissors
+---------------------------------------
+Exercise: Rock, Paper, or Scissors
+In this exercise you will first train your own model that classifies hand gestures into rock, paper, or scissors. Then you will deploy your model in an app.
+
+You can download the app in the link below:
+
+Rock, Paper, Scissors
+Note: The Xcode simulator does not include camera functionality. In order to test the deployed app, you will need to deploy on a device.
+
+Note 2: Re-name the model file as rock_paper_scissors.tflite for upload into Xcode.
+
+Have fun!
+
+Colab
+To access the Colab Notebook, login to your Google account and click on the link below:
+
+Exercise: Rock, Paper, or Scissors
+
+In the next section we will provide a separate Colab with our solution so that you you can compare your answers to ours.
+
+
+
+4.31 Solution: Rock, Paper, or Scissors 
+---------------------------------------
+Solution: Rock, Paper, or Scissors
+We hope you had fun training your own model to classify hand gestures! Feel free to check your solution with ours by taking a look at the Colab below.
+
+Colab
+To access the Colab Notebook, login to your Google account and click on the link below:
+
+Solution: Rock, Paper, or Scissors
+
+
+
+4.32 Exercise: Linear Regression
+---------------------------------------
+Linear Regression App
+In this part of the lesson you are going to deploy a TF Lite model in an iOS App that performs linear regression. To get things up running you will need to first install the pods for TensorFlowLite library by running pod install from the terminal and then download:
+
+Linear Regression app
+
+TF Lite model we created in the Linear Regression Colab.
+
+Once you have both the app and the model downloaded to your computer, you can drag and drop your .tflite file containing your model into the Model folder in the Xcode Project Navigator.
+
+
+
+4.33 Exercise: Fashion MNIST
+---------------------------------------
+Fashion MNIST App
+In this part of the lesson you are going to deploy a TF Lite model in an iOS App that classifies images of the Fashion MNIST dataset.To get things up running you will need to first install the pods for TensorFlowLite library by running pod install from the terminal and then download:
+
+Fashion MNIST app
+
+TF Lite model we created in the Fashion MNIST Colab.
+
+Once you have both the app and the model downloaded to your computer, you can drag and drop your .tflite file containing your model into the Model folder in the Xcode Project Navigator.
+
+Note: Re-name the model file as fashion_mnist.tflite for upload into Xcode.
+
+
+
+
+
+
+
+
+
+
