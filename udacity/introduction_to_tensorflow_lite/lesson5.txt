@@ -1,0 +1,285 @@
+date start : 02 november 2023
+
+
+5.1 Introduction
+---------------------------------------
+
+
+
+5.2 Rapsberry Pi
+---------------------------------------
+
+
+
+5.3 Coral
+---------------------------------------
+Coral Links
+If you are interested in learning more about Coral check out the links below:
+
+* Coral https://coral.ai/
+* Coral Models https://coral.ai/models/
+
+
+
+5.4 Raspberry Pi Applications
+---------------------------------------
+Raspberry Pi Applications
+You can find all the applications for this lesson in this Zip file. Once you unzip the file you will find the corresponding folders for each app used in this lesson.
+
+
+
+5.5 Getting Started
+---------------------------------------
+Links To Get Started
+
+Python Quickstart https://www.tensorflow.org/lite/guide/python
+TensorFlow Lite for Raspberry Pi https://www.tensorflow.org/lite/guide/build_arm
+
+
+
+5.6 Setting Up
+---------------------------------------
+Setting Up TensorFlow on a Raspberry Pi
+Before we can run models on the Raspberry Pi, we have to setup TensorFlow on the Raspberry Pi. You have two options:
+
+Install the full TensorFlow package from source
+Just install the TensorFlow Lite interpreter.
+In the sections below you will show you how to do both.
+
+1. Build From Source
+Clone the TensorFlow repository:
+
+ # Clone the repository
+$ git clone https://github.com/tensorflow/tensorflow.git
+$ cd tensorflow
+This can take some time, and once everything’s downloaded, you can find a branch that works for you and check it out.
+
+# Pick a TensorFlow version
+$ git checkout branch_name  # e.g., r1.13.1, r1.14, r2.0
+
+The following lines of code builds a TensorFlow package for a Raspberry Pi device running Raspbian 9.0:
+
+# Cross compile
+CI_DOCKER_EXTRA_PARAMS="-e CI_BUILD_PYTHON=python3 -e \   
+CROSSTOOL_PYTHON_INCLUDE_PATH=/usr/include/python3.4" \
+     tensorflow/tools/ci_build/ci_build.sh PI-PYTHON3 \
+     tensorflow/tools/ci_build/pi/build_raspberry_pi.sh
+
+# For Raspberry Pi Zero/1, use PI_ONE instead of PI-PYTHON3
+
+# Install the TensorFlow Python wheel package
+$ pip install tensorflow-version-cp34-none-linux_armv7l.whl
+
+While the instructions might work for other Raspberry Pi variants, it is only tested and supported for this configuration. We recommend cross-compiling the TensorFlow Raspbian package. Cross-compilation is using a different platform to build the package than deploy to. Instead of using the Raspberry Pi's limited RAM and comparatively slow processor, it's easier to build TensorFlow on a more powerful host machine running Linux, macOS, or Windows.
+
+For Raspberry Pi Zero or One users, use an alternative build mode PI_ONE instead. This will build a package that supports all Raspberry Pi devices—including the Pi 1 and Zero. In the end, you can find that a .whl package file is created in the output-artifacts directory of the host's source tree. Copy the wheel file to the Raspberry Pi and install with pip.
+
+Check out the TensorFlow documentation to know more about building/installing TensorFlow for the Rasbperry Pi.
+
+Running Inference
+To run inference, you need to import the Interpreter as follows:
+
+from tensorflow.lite.python.interpreter import Interpreter 
+
+2. Just Install the TensorFlow Lite Interpreter
+If building from source is just not your thing, and want an easy way to quickly start executing TensorFlow Lite models with Python, you can install just the TensorFlow Lite interpreter, instead of all TensorFlow packages.
+
+This interpreter-only package is a fraction the size of the full TensorFlow package and includes the bare minimum code required to run inferences with TensorFlow Lite—it only includes the tf.lite.Interpreter Python class. This small package is ideal when all you want to do is execute .tflite models and want to avoid wasting disk space with the large TensorFlow library.
+
+To install just the interpreter, download the appropriate Python wheel for your system from this link, and then install it with the pip install command.
+
+For example, if you're setting up a Raspberry Pi Model B (using Raspbian Stretch, which has Python 3.5), install the Python wheel as follows (after you have downloaded the .whl file from the previous link):
+
+$ pip install tflite_runtime-1.14.0-cp35-cp35m-linux_armv7l.whl
+
+Running inference
+In this case, to run inference, you need to import the Interpreter from tflite_runtime:
+
+from tflite_runtime.interpreter import Interpreter
+
+
+
+5.7 Image Classification
+---------------------------------------
+
+
+
+5.8 Setup Image Classification
+---------------------------------------
+Setup Image Classification
+To getting everything up and running on a Raspberry Pi you first need to download:
+
+Image Classification application
+
+Quantized MobileNet model and Labels .
+
+You can also download and extract the model by running:
+
+$ wget https://storage.googleapis.com/download.tensorflow.org/models/tflite/mobilenet_v1_1.0_224_quant_and_labels.zip
+
+$ unzip mobilenet_v1_1.0_224_quant_and_labels
+
+(You might need to scroll sideways in the above cell to view all the code).
+
+Next, install the Python dependencies by running:
+
+$ pip install -r requirements.txt
+
+inally, to run the model on the Raspberry Pi use the following (including your choice of input image):
+
+$ python3 classify.py --filename input.jpg --model_path mobilenet_v1_1.0_224_quant.tflite --label_path labels_mobilenet_quant_v1_224.txt
+
+(You might need to scroll sideways in the above cell to view all the code).
+
+We encourage you to look through all the available options in classify.py.
+
+Troubleshooting
+If you get an error related to libf77blas when trying to run the Python file, you may need to sudo apt-get install libatlas-base-dev to resolve the error.
+
+Application Resources
+For extra documentation on this application, make sure you check out the links below:
+
+Image Classification Overview
+
+Raspberry Pi Example
+
+
+
+5.9 step 1 - Image Classification
+---------------------------------------
+
+
+
+5.10 Step 2 & 3 - Image Classification
+---------------------------------------
+
+
+
+5.11 Step 4 - Image Classification
+---------------------------------------
+
+
+
+5.12 Object Detection
+---------------------------------------
+
+
+
+5.13 Setup Object Detection
+---------------------------------------
+Setup Object Detection
+To getting everything up and running on a Raspberry Pi you first need to download:
+
+Object Detection application
+
+MobileNet SSD model and Labels .
+
+Additionally, you will need a camera attached to your Raspberry Pi in order to perform inference.
+
+You can also download and extract the model by running:
+
+$ wget http://storage.googleapis.com/download.tensorflow.org/models/tflite/coco_ssd_mobilenet_v1_1.0_quant_2018_06_29.zip
+$ unzip coco_ssd_mobilenet_v1_1.0_quant_2018_06_29.zip
+
+(You might need to scroll sideways in the above cell to view all the code).
+
+Next, install the Python dependencies by running:
+
+$ pip install -r requirements.txt
+
+Finally, to run the model on the Raspberry Pi use the following:
+
+python3 main.py --model_path detect.tflite --label_path labelmap.txt
+
+Application Resources
+For extra documentation on this application, make sure you check out the links below:
+
+Object Detection Overview
+
+
+
+5.14 Step 1 - Object Detection
+---------------------------------------
+
+
+
+5.15 Step 2 - Object Detection
+---------------------------------------
+
+
+
+5.16 Step 3 - Object Detection
+---------------------------------------
+
+
+
+5.17 Step 4 - Object Detection
+---------------------------------------
+
+
+
+5.18 Setting Up Cats and Dogs
+---------------------------------------
+etup Cats and Dogs
+To getting everything up and running on a Raspberry Pi you first need to download:
+
+Cats and Dogs application
+
+TF Lite model we created in the Transfer Learning Colab.
+
+Next, install the Python dependencies by running:
+
+$ pip install -r requirements.txt
+
+Finally, to run the model on the Raspberry Pi use the following (including your choice of input image):
+
+python3 classify.py --filename input.jpg --model_path converted_model.tflite
+
+
+
+5.19 Cats and Dogs
+---------------------------------------
+
+
+
+5.20 Exercise: Rock, Paper, or Scissors
+---------------------------------------
+
+Exercise: Rock, Paper, or Scissors
+In this exercise you will first train your own model that classifies hand gestures into rock, paper, or scissors. Then you will deploy your model in an application.
+
+You can download the application in the link below:
+
+Rock, Paper, Scissors
+Have fun!
+
+Colab
+To access the Colab Notebook, login to your Google account and click on the link below:
+
+Exercise: Rock, Paper, or Scissors
+
+In the next section we will provide a separate Colab with our solution so that you you can compare your answers to ours.
+
+
+
+5.21 Solution: Rock, Paper, or Scissors
+---------------------------------------
+Solution: Rock, Paper, or Scissors
+We hope you had fun training your own model to classify hand gestures! Feel free to check your solution with ours by taking a look at the Colab below.
+
+Colab
+To access the Colab Notebook, login to your Google account and click on the link below:
+
+Solution: Rock, Paper, or Scissors
+
+Run the App
+Next, install the Python dependencies by running:
+
+$ pip install -r requirements.txt
+
+imilarly to the other apps, you will be able to run python3 classify.py, although you will also need to feed in --filename (the image to classify) and --model_path (your trained and converted model) to run the app, e.g.:
+
+$ python3 classify.py --filename "hand.png" --model_path "rock_paper_scissors.tflite"
+
+
+
