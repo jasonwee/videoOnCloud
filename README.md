@@ -17,7 +17,7 @@ currently supported datastore included:
 
 ## How to
 
-to start, see src/java/org/just4fun/voc/RunMe.java
+to start, see [RunMe.java](src/java/org/just4fun/voc/RunMe.java)
 
 Contributing to voc
 ======================
