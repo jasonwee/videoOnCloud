@@ -23,7 +23,7 @@ Contributing to voc
 ======================
 
 [![Travis Build Status](https://travis-ci.org/jasonwee/videoOnCloud.svg?branch=master)](https://travis-ci.org/jasonwee/videoOnCloud)
-[![wercker status](https://app.wercker.com/status/37830e84277c4fcaa162395e2612576e/s "wercker status")](https://app.wercker.com/project/bykey/37830e84277c4fcaa162395e2612576e)
+<!--- fixme [![wercker status](https://app.wercker.com/status/37830e84277c4fcaa162395e2612576e/s "wercker status")](https://app.wercker.com/project/bykey/37830e84277c4fcaa162395e2612576e) --->
 
 Want to learn and contribute back to this project? Send me a message and I will
 guide you. 
