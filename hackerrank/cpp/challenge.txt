@@ -815,3 +815,50 @@ int main() {
 
     return 0;
 }
+
+
+
+
+
+#include <iostream>
+#include <iomanip> 
+using namespace std;
+
+int main() {
+	int T; cin >> T;
+	cout << setiosflags(ios::uppercase);
+	cout << setw(0xf) << internal;
+	while(T--) {
+		double A; cin >> A;
+		double B; cin >> B;
+		double C; cin >> C;
+
+		/* Enter your code here */
+        int AA = (long) A;
+        //std::cout <<  "0x" << std::hex << AA << std::endl;
+        //printf ("0x%x\n", AA);
+        
+ 
+        cout << left << hex 
+             << showbase << nouppercase 
+             << (long)A << endl;
+   
+        
+        //printf ("%-15.2f\n", B);
+        std::cout 
+        << std::setfill('_') // The fill character
+        << std::right        // right justify
+        << std::setw(15)     // field width
+        << std::fixed        // fixed precision
+        << std::setprecision(2)  // 2 decimals
+        << std::showpos 
+        << B << endl;
+        
+        std::cout.precision(9);
+        std::cout << std::noshowpos << std::uppercase << std::scientific << C << endl;
+
+
+	}
+	return 0;
+
+}
