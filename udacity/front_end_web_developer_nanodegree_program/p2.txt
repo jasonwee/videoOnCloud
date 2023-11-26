@@ -1,0 +1,12 @@
+Make sure to remove any debugging code from your final submission.
+
+https://review.udacity.com/#!/rubrics/3601/view
+
+You can download the starter code here by cloning the specific branch 'refresh-2019'.
+https://github.com/udacity/fend/tree/refresh-2019/projects/landing-page
+
+For this project, you will be writing most of your code in js/app.js.
+
+https://learn.udacity.com/nanodegrees/nd0011-connect-bmann/parts/cd0428/lessons/ls1853/concepts/79f66b4e-5850-4d74-b71b-31f6e11ae6f1
+
+
