@@ -1,0 +1,68 @@
+https://www.w3schools.com/CPP/default.asp
+
+
+
+C++ Output (Print Text)
+The cout object, together with the << operator, is used to output values/print text:
+
+
+#include <iostream>
+using namespace std;
+
+int main() {
+  cout << "Hello World!";
+  return 0;
+}
+
+
+You can add as many cout objects as you want. However, note that it does not insert a new line at the end of the output:
+
+#include <iostream>
+using namespace std;
+
+int main() {
+  cout << "Hello World!";
+  cout << "I am learning C++";
+  return 0;
+}
+
+
+
+New Lines
+To insert a new line, you can use the \n character:
+
+#include <iostream>
+using namespace std;
+
+int main() {
+  cout << "Hello World! \n";
+  cout << "I am learning C++";
+  return 0;
+}
+
+Tip: Two \n characters after each other will create a blank line:
+
+#include <iostream>
+using namespace std;
+
+int main() {
+  cout << "Hello World! \n\n";
+  cout << "I am learning C++";
+  return 0;
+}
+
+Another way to insert a new line, is with the endl manipulator:
+
+#include <iostream>
+using namespace std;
+
+int main() {
+  cout << "Hello World!" << endl;
+  cout << "I am learning C++";
+  return 0;
+}
+
+Both \n and endl are used to break lines. However, \n is used more often and is the preferred way.
+
+
+
