@@ -1,0 +1,339 @@
+nd0035
+
+date start : 17 december 2023
+
+
+1.1.1 Meet your instructor
+---------------------------------------
+Ron Woerner, CISSP, CISM
+Hi, I'm Ron, your instructor for this class.
+
+I have over 20 years of Information Technology (IT) and Security experience and am a noted consultant, speaker, and writer in the Security industry. As President and Chief Security Evangelist at Cyber-AAA, I work as a Security Consultant delivering awareness, performing security risk assessments, and advising small, medium, and large organizations.
+
+I established the Cybersecurity Studies program at Bellevue University, an NSA Center of Academic Excellence where I still teach. I have been a featured speaker at the Omaha TEDx ("Hackers Wanted"), (ISC)2, ISACA, and RSA conferences. My crowning achievement was being selected as the Air Force Association CyberPatriot Mentor of the Year in 2014 for my work coaching High School Students in cybersecurity. I love to talk to others who are passionate about Security and Privacy.
+
+LinkedIn: https://www.linkedin.com/in/ronwoerner/ Twitter: @ronw123 Cyber-AAA YouTube: https://www.youtube.com/channel/UCsd0v4subHt4n_ORPetFGCQ
+
+Glossary:
+* (ISC)2: The International Information System Security Certification Consortium, CISSP: Certified Information Systems Security Professional
+* ISACA: Information Systems Audit and Control Association, CISM: Certified Information Security Manager
+* NSA: National Security Agency - Centers of Academic Excellence
+
+
+
+1.1.2 Course Outline
+---------------------------------------
+Introduction to Cybersecurity - Course Outline
+Welcome to "Introduction to Cybersecurity." This course has the following lessons:
+
+1. What is Cybersecurity: this lesson will go over some security trends and how to take the first step to set a career in the field.
+2. Maintaining a Secure Infrastructure: this lesson will cover important security regulations, laws, and frameworks you need to know to maintain a secure infrastructure.
+3. Thinking like a Hacker: this lesson will give you a high-level introduction to the hacking lifecycle, risk, vulnerability, and threat.
+4. Security Defenses: this lesson will cover some skills to keep your computer and network safe.
+5. Applying Cybersecurity: this lesson will give you an opportunity to apply the fundamental skills you have learned.
+The first three lessons cover many conceptual topics that will help you set a foundation for cybersecurity and for the final project. In the last two lessons, you will have more hands-on opportunities to practice how to secure a system. Throughout the course, you will be provided with many exercises. Some of them introduce you to useful websites and documents that you may use in your future career, some of them will let you apply what you have learned from the course and prepare you for the final project. Hope you will enjoy the course!
+
+
+
+1.1.3 Lesson Outline
+---------------------------------------
+In this lesson, we will introduce the high-level course concepts and learning objectives, review why this material is important, and compare today's systems to those of the past. Finally, we'll wrap up with discussing the course project and a recap.
+
+* Introduction to Cybersecurity
+* Cybersecurity and You
+* Business Stakeholders
+* History of Cybersecurity
+* Tools and Environments
+* Course Project
+
+Lesson Objectives
+You will be able to:
+
+* Understand how cybersecurity affects your life
+* Describe how business stakeholders play a role in cybersecurity
+* Understand a brief history of information security and cybersecurity
+* Understand why the topics of this course are important to creating valuable skills
+* Understand high-level cybersecurity tools, environments, and dependencies
+* Have a high-level understanding of the course project
+
+
+
+1.1.4 Prerequisites
+---------------------------------------
+Course Prerequisites
+To successfully follow the entire course, we recommend you to have the following skills:
+* Understand basic principles of network connectivity.
+* Understand basic operating system fundamentals including Windows or Linux.
+* Working knowledge of basic practices for securing systems and information.
+Nice to have: Understand virtual environments and service models.
+
+
+
+1.1.5 Introduction to Cybersecurity
+---------------------------------------
+Summary
+In today’s online world, security is a major concern of virtually everyone on the Internet. Consider the reasons why: attacks directed at point-of-sale computer systems resulted in over one billion credit cards being stolen in a single year.
+
+The US Federal Bureau of Investigation has a top priority to “Protect the United States against cyber-based attacks and high-technology crimes”
+
+What is Cybersecurity? According to the National Institute of Standards and Technology (aka NIST), it’s the prevention of damage to, protection of, and restoration of computers, electronic communications systems, electronic communications services, wire communication, and electronic communication, including information contained therein, to ensure its availability, integrity, authentication, confidentiality, and nonrepudiation. Source: NIST CSRC Glossary https://csrc.nist.gov/glossary/term/cybersecurity
+
+Throughout this course, you’ll gain an understanding of ways to make your data, your computers, and devices like laptops, tablets, smartphones, and networks secure. This course presents a basic introduction to practical computer security for all types of users to reduce cyber risks to you, your organization, and the community.
+
+Course Prerequisites
+A well-prepared learner is already able to:
+
+* Understand the basic principles of network connectivity.
+* Understand basic operating system fundamentals including Windows or Linux.
+
+Quiz Question
+Which of the following is not a goal of cybersecurity according to NIST?
+Usability
+
+
+
+1.1.6 Cybersecurity and You
+---------------------------------------
+Cybersecurity and You
+In today’s world, everyone is online. Computers are all around us; on our wrists, in our pockets, in our cars and homes and of course businesses. With all this technology, comes risks and dangers.
+
+* What if someone was able to gain access to your computers, accounts, and sensitive data?
+* How much damage could they do?
+* What do we need to do to secure our technologies?
+
+It’s up to each of us to do our part in securing our cyber world. Failure to do so not only affects you but the world, businesses, and people around you. A single moment where you unconsciously click a link could take down your organization.
+Learning how to protect yourself better online may be one reason you’re in this course.
+
+Another reason may be to get employed in a cybersecurity career. According to the Security Magazine, 76% of security leaders believe there is a shortage of cybersecurity skills. That means there are many opportunities for cybersecurity professionals.
+
+
+
+1.1.7 Business stackholders
+---------------------------------------
+Security in Business
+According to the US Federal Communications Commission (FCC), "The Internet allows businesses of all sizes, types, industries, and from any location to reach new and larger markets and provides opportunities to work more efficiently by using computer-based tools. Whether an organization is thinking of adopting cloud computing or just using email and maintaining a website, cybersecurity should be a part of the plan. Theft of digital information has become the most commonly reported fraud, surpassing physical theft. Every business that uses the Internet is responsible for creating a culture of security that will enhance business and consumer confidence."
+
+Here are some of the topics related to business protection that we’ll cover in this class:
+
+* Cybersecurity basics,
+* Understanding the NIST Cybersecurity Framework,
+* Physical Security,
+* Attacks such as ransomware and phishing,
+* Email security, and
+* Securing remote access.
+
+The US Federal Trade Commission website on cybersecurity for small business provides information all businesses need to know to protect their technologies, data, and people from cyber attacks. This is more evidence of the importance of cybersecurity for business. Consider this website as a resource not only in this course but throughout your professional career.
+
+Quiz Question
+Go to the FTC Cybersecurity for Small Business website and review the topic areas under Protect Your Small Business. (Note that these apply to businesses of all types and sizes.)
+For each of the topic areas, find the matching protection technique. Select the best way to protect the specific area.
+
+Topic Area                            Protection Technique
+Physical Security                     Protect Equipment & Paper Files
+Cybersecurity Basics                  Make Smart Security Your Business as Usual
+Tech Support Scams                    Know what to do if you're scammed
+Vendor Security                       Put all agreements in writing and verify compliance
+Secure Remote Access                  Know how to connect remotely to the network
+
+
+
+1.1.8 History of Cybersecurity
+---------------------------------------
+History of Computer Viruses and Worms
+With the start of the Internet in the late 1960s, known then as the ARPANET came a need to secure the data, connections, and computer systems for those using it; mostly research institutions, universities, and governments. Computers in the early days of the Internet often didn’t have basic protection and used telephone modems to dial-into the network. Highlights of memorable computer viruses and worms include:
+
+* 1968 - Development of the ARPANET (early Internet)
+* 1971 - First reported computer worm - Creeper
+* 1986 - Brain MS-DOS virus
+* 1989 - Morris Worm - Internet Denial of Service
+* 2000 - ILOVEYOU Worm
+* 2010 - Stuxnet
+
+Further Reading:
+* Timeline of Computer Viruses, Mapcon
+
+Key Events in Cybersecurity History
+* 1975 - “The Protection of Information in Computer Systems” published
+* 1983 - RSA Patent
+* 1986 - The Cuckoo’s Egg and Clifford Stoll
+* 1986 - US Computer Fraud and Abuse Act (CFAA)
+* 1990 - UK Computer Misuse Act
+* 2001 - Advanced Encryption Standard (AES) established by NIST
+
+Further Reading:
+* The Quick and Dirty History of Cybersecurity
+
+Quiz Question
+From the History of Cybersecurity video, which virus or worm is considered the first Denial of Service attack on the Internet?
+morris worm
+
+
+Quiz Question
+What is considered the first U.S. patent for cybersecurity when MIT was issued one for the first public key cryptosystem?
+RSA (Rivest-Shamir-Adleman)
+
+
+
+1.1.9 Tools & Environment
+---------------------------------------
+Cybersecurity Environments, Tools, and Websites
+To work in cybersecurity, you need to be familiar with typical environments, operating systems and tools. In this course, we’ll mainly focus on the Windows 10 operating system, since it’s the predominant platform for most end-users in business. It’s okay if you don’t have one to use as we’ll give you access to one. Most Windows operating systems come with built-in security tools. Some of the Windows components you’ll use are:
+
+* The Control Panel
+* Computer Management
+* Local Security Policies
+
+There are also other tools that help you as a cybersecurity professional. These include:
+
+* Sysinternals Suite
+* Windows God Mode
+* NMap - network mapper
+* 7-Zip
+
+The number 1 tool you’ll use is a search engine like Bing or Google. We use it to help find information on any topic.
+
+Lastly, you’ll be exploring numerous websites that provide specific information about security topics such as the largest cyber breaches, software vulnerabilities, and security standards.
+
+Don't be overwhelmed by so many tools. We will walk you through in subsequent lessons when you need to use them.
+
+Further reading
+* Click here to learn more about Microsoft Sysinternals Suite
+* Read Nmap page to learn more about the network mapping tool
+* Use this link to view and download 7-zip
+
+
+
+1.1.10 Introducting Cloud Labs
+---------------------------------------
+Introducing Cloud Labs
+For the current course, you will practice on the following virtual machines (VMs):
+
+VM Name         OS              Purpose
+CYBERND01PRJ01	Windows 10 Pro	Course exercises
+JoesGaragePC	Windows 10 Pro	Course project
+
+The instructor has explicitly created the VMs above for you to practice your skills. Students can work inside VMs using either of the options below:
+* Option 1 - Work in the Udacity Cloud Labs or
+* Option 2 (only for Windows 10 users) - Set these VMs up in your personal Azure account.
+
+Option 1 - Udacity Cloud Labs
+Udacity Cloud Labs are the Virtual machines made available to you on the pages labeled "Cloud Lab - <VM_Name>". The VMs in the Cloud Labs are actually running on the Azure cloud.
+
+Start the Cloud Lab VM
+* Click on the ACCESS LAB button. Wait until the Cloud Lab loads (this could take up to 10 minutes)
+* You can use the Cloud Lab VM in the classroom. For Linux VM's, go to the Lab Environment tab to get the SSH credentials for connecting from your local machine.
+
+Tip: Access the Cloud Labs from an incognito browser to have a seamless experience.
+
+Known Issue in the Cloud Lab
+While accessing the cloud lab VM in the browser, a problem with the keyboard input may occur, where the VM will not recognize the keystrokes from your local machine. As a result, you will not be able to type (write) any characters in the cloud lab VM.
+
+As a workaround to resolve this issue, you can click somewhere on the Resource tab on the right collapsible pane and click back in the VM desktop, as shown in the snapshot below.
+
+Restrictions
+* Cloud Labs' session time is limited. Your session will expire after the validity expires, and you will lose all your resources in the temporary Azure account.
+* Later, when you come back or refresh the Cloud lab page, you will get a new VM with a new pair of temporary credentials.
+* You will not be able to create additional Resource Groups. There is one resource group already created for you named cloud-demo-XXXXXX. Choose the existing Resource Group when creating resources.
+* You will not be able to create Active Directory resources. This is not a requirement for any project/exercise.
+
+If you are not familiar with Azure, you can ignore the restriction points above.
+
+Option 2 - Only for Windows 10 Users
+If you have a Windows 10 computer, you can follow the steps below and run the given Azure Powershell script to create a VM in your Azure account.
+
+You will work in the CYBERND01PRJ01 for exercises and JoesGaragePC for the final project.
+
+Prerequisites: You should have an Azure account.
+
+1. Download this Zip file, and unzip it when the download is completed. It has an Azure Powershell script, Initialize-Udacity.CYBERND01.LabVM2.ps1.
+
+2. After downloading the script, follow these steps to run the script file. Running the script successfully will create a VM - CYBERND01PRJ1 in your Azure account. The setup process may take up to 30 min to finish.
+
+3. Once the Azure VM is up and running,
+
+* For Windows machine, use it in the classroom.
+
+* For Linux machine, use SSH to connect remotely from your local or Windows 10 VM.
+
+Use the IP address as "Computer name" and click Connect. Username and password are:
+
+Username: 
+Password: 
+
+IMPORTANT: Always shut down all your virtual machines, across all regions, when not in use to avoid charges! The status of all virtual machines should be stopped! You can shut down the VM by clicking the Power button and “shut down” inside the VM or click on the “Stop” button on Azure portal.
+
+
+
+1.1.11 Cloud Lab - Terms of Use
+---------------------------------------
+Cloud Lab - Terms of Use
+
+Terms of Use
+* This cloud lab is a sandbox environment and thus has a limited session duration. After the session expires, the learner will have to reload the lab page and start a new session, which will be counted as the second attempt.
+
+* Click on the Access Lab button at the bottom of the current page to load the Cloud lab, and it will take up to 5 mins to boot a Virtual Machine and configure it for the exercises.
+
+* Udacity does not preserve Azure resources across sessions. After the session expires, any resources you have created (VMs, Databases, Web Apps and their files, etc.) will be deleted.
+
+* There are only 10 attempts permitted for this lab throughout the course. Therefore, we strongly recommend that learners only access the lab when necessary. After exhausting all attempts, learners will encounter the Usage limit is crossed error, which a learner can resolve by writing an email to "udacity-labsupport@udacity.com".
+
+* There are certain restrictions we've set up in the cloud lab. Refer to the Cloud Lab - Overview and Restrictions page to know more.
+
+* Please follow the instructions described in the exercise/project instructions. Udacity monitors lab usage to ensure the proper use of resources for educational purposes.
+
+* As Udacity pays for every minute of runtime, please stop the environment when you take a break. Always delete the resources if not in use.
+
+* Misusing the lab resources can cause revoking your lab access or deactivation of your Udacity account.
+
+Getting Help
+Lab loading issues
+If you have a problem while loading your cloud lab or permission issues in Azure, you can send an email, titled Error in Lab, to Udacity Support at udacity-labsupport@udacity.com. Please be sure to send your message from the email ID you used to enroll in the Nanodegree program. Please include the following information in your email body:
+
+* Course name
+* Lesson name
+* Page name
+* Steps to replicate the issue
+* Error screenshots
+
+Note that the "udacity-labsupport@udacity.com" email is dedicated only to Azure cloud lab support, such as lab loading issues, Azure policy issues, or increasing the retake count. DO NOT email this team for content-related problems. Instead, file a support ticket for content-related issues.
+
+Self help resources
+* Review the Udacity FAQ - Your question may have already been answered! Search through our FAQ first.
+* Submit a question via Knowledge Hub - Knowledge Hub is where you can ask questions specific to the course or Nanodegree you’re enrolled in. This is mainly to get that one on one feedback from mentors in a way similar to the real world using Stack Overflow.
+
+Submit a support ticket
+If you have a classroom content-related issue blocking your progress, you can submit a support ticket to escalate to the correct Udacity team. You can find the link to file a support ticket in your classroom home.
+
+For other blocking issues, you can write to us at support@udacity.com
+
+
+
+1.1.12 Cloud Lab - CYBERND01PRJ01
+---------------------------------------
+If you are having issues with the lab, please contact support at udacity-labsupport@udacity.com.
+
+
+
+1.1.13 Project: Cybersecurity Fundamentals
+---------------------------------------
+Summary
+The course culminates with a project where you get to practice your fundamental cybersecurity skills using a case study based on real-life events. In this course’s project, you’ll be given a scenario where you’re asked to help your friend secure his business’s Windows 10 computer. You’ll need to apply what you’ve learned throughout the course to improve the security and give recommendations. You’ll also need to make sure only needed applications are running. Lastly, there is a computer forensics challenges where you’ll need to determine what bad guys were doing on the computer. You’ll be documenting all of this in your course report, just like the one I prepare for my clients when I perform security assessments. It’s meant to be a fun way for you to get hands-on cybersecurity experience.
+
+
+
+1.1.14 Lesson Conclusion
+---------------------------------------
+Summary
+We've briefly reviewed the learning objectives of the course, provided a standard cybersecurity definition, talked about why security is important and how it applies to business goals. We reviewed a brief history of malicious software and computer security key events. You saw an example of a typical cybersecurity environment and tools. Lastly, you were introduced to the course project.
+
+Lesson Objectives
+You will be able to:
+
+Understand how cybersecurity affects your life
+* Describe how business stakeholders play a role in cybersecurity
+* Understand a brief history of information security and cybersecurity
+* Understand why this courses topics are important to creating valuable skills
+* Understand high-level cybersecurity tools, environments and dependencies
+* Have a high level understanding of the course project
+
+
