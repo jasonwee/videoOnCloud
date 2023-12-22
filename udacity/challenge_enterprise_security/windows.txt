@@ -1,0 +1,21 @@
+apt install freerdp2-wayland
+
+$ /usr/bin/wlfreerdp 20.245.210.94
+[14:03:33:435] [56882:56882] [WARN][com.freerdp.client.common.cmdline] - ----------------------------------------
+[14:03:33:435] [56882:56882] [WARN][com.freerdp.client.common.cmdline] - Using deprecated command-line interface!
+[14:03:33:435] [56882:56882] [WARN][com.freerdp.client.common.cmdline] - This will be removed with FreeRDP 3!
+[14:03:33:435] [56882:56882] [WARN][com.freerdp.client.common.cmdline] - ----------------------------------------
+[14:03:33:435] [56882:56882] [WARN][com.freerdp.client.common.compatibility] - 20.245.210.94 -> /v:20.245.210.94
+[14:03:33:435] [56882:56882] [WARN][com.freerdp.client.common.compatibility] - 
+[14:03:35:490] [56882:56882] [WARN][com.freerdp.crypto] - Certificate verification failure 'self-signed certificate (18)' at stack position 0
+[14:03:35:490] [56882:56882] [WARN][com.freerdp.crypto] - CN = CYBERND01PRJ01
+Username: cyberadmin
+Domain:   
+Password: 
+[14:03:58:878] [56882:56882] [INFO][com.freerdp.gdi] - Local framebuffer format  PIXEL_FORMAT_BGRA32
+[14:03:58:878] [56882:56882] [INFO][com.freerdp.gdi] - Remote framebuffer format PIXEL_FORMAT_RGB16
+[14:03:58:885] [56882:56882] [INFO][com.freerdp.channels.rdpsnd.client] - [static] Loaded fake backend for rdpsnd
+[14:04:01:871] [56882:56882] [INFO][com.freerdp.client.wayland] - Logon Error Info LOGON_FAILED_OTHER [LOGON_MSG_SESSION_CONTINUE]
+
+
+domain leave it empty
