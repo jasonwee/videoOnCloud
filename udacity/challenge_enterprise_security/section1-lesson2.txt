@@ -1,0 +1,490 @@
+date start :  27 december 2023
+
+
+1.2.1 Introduction
+---------------------------------------
+
+Summary
+In this lesson, you will learn some security trends in cybersecurity events and protection techniques. This lesson also teaches you some fundamentals about how to take the first step to establish a cybersecurity career. You will also learn some security principles and best practices. Now let's get started.
+
+
+
+1.2.2 Cybersecurity Overview
+---------------------------------------
+Note: in the video, it says the cybersecurity market is expected to grow "to $300 billion" by 2024. It should be "to over $300 billion".
+
+Summary
+Internet of Things (IoT) refers to anything that is connected to a network, such as computers, our phones, tablets, laptop, and desktop computers as well as those we don’t see in our cars, TVs, speakers, and watches.
+
+We also have "The Cloud" that enables systems, applications, and data to be reached from anywhere using almost any type of device. All of these devices require security to ensure they are only being used for the purposed in which they are intended.
+
+The $120 billion cybersecurity industry is standing guard while our society becomes ever more dependent on technology is with its multitude of products and services. This industry is expected to grow exponentially in the coming years.
+
+Businesses today are looking for qualified cybersecurity professionals. In this lesson, you’ll understand why security is so important and how you can play a part.
+
+Quiz Question
+What can be the anticipated amount the security industry will grow to by 2024?
+$340billion
+
+Further research
+If you want to learn more about the global security market growth and insight, read Global Cybersecurity Projected to Exceed $300 Billion in 2024 and Cybersecurity Market Worth Over $300bn by 2024: Global Market Insights, Inc.
+
+
+
+1.2.3 The Security Mindset
+---------------------------------------
+Summary
+Cybersecurity is an art as well as a science. It’s the ability to understand the past and current trends to better understand the future. It’s about being curious, tenacious, and always learning, which means developing your security mindset.
+
+In March 2008, security pundit Bruce Schneier blogged about the security mindset. Security professionals look at the world differently. When they walk into a store, airport, or museum, they naturally look for security guards and cameras. It’s the same on computers where they look for vulnerabilities and error messages to better understand how the technology works. They try to figure out how security can be bypassed to better understand how it can be strengthened.
+
+In developing your intuition about cybersecurity, consider three mantras.
+
+* Trust, but verify.
+* Stop.Think.Connect.
+* If you see something, say something.
+
+Throughout this course and your life, continually be building your security mindset and developing your security intuition.
+
+Reflect on Your Security Mindset
+In the box below, consider how you are building your security mindset and intuition. What steps will you take to be cyber-smart? Use the three sayings to develop your answer.
+
+learn , experience , do, rinse and repeat.
+
+Things to think about
+A good security mindset is about being curious about how things work and why they work the way they do. It's about being tenacious in our problem-solving. And it's about helping others being cyber safe.
+
+
+
+1.2.4 Lesson Outline
+---------------------------------------
+Summary
+This lesson will cover:
+
+* Security trends in cybersecurity events and protection techniques
+* Cybersecurity career
+* Core security principles and critical security controls
+* Security best practices for keeping yourself and others safe online
+
+Lesson learning objectives
+By the end of this lesson, you’ll be able to
+
+* Identify current trends in cybersecurity events and protection techniques
+* Describe careers as a cybersecurity professional and skill qualifications
+* Explain security fundamentals including core security principles, critical security controls, and cybersecurity best practices
+
+
+
+1.2.5 Security Trends
+---------------------------------------
+Security Trends
+Cybersecurity incidents and data breaches are now a part of our lives. Security is integrated into what we do, how we act, and even where we go, both online and offline.
+
+In this section, we talked about the following security trends:
+
+* Phishing, Ransomware & Business Email Compromise
+* Social Engineering & Scams
+* Smart devices, IoT & Cloud Services
+* More opportunities for cybersecurity professionals
+
+New terms
+* Phishing: A technique for attempting to acquire sensitive data, such as bank account numbers, through a fraudulent solicitation in email or on a web site, in which the perpetrator masquerades as a legitimate business or reputable person.
+* Malware: Software or firmware intended to perform an unauthorized process that will have an adverse impact on the confidentiality, integrity, or availability of an information system. A virus, worm, Trojan horse, or other code-based entity that infects a host. Spyware and some forms of adware are also examples of malicious code.
+* Ransomware: A type of malicious software designed to block access to a computer system until a sum of money is paid.
+* Business Email Compromise: An exploit in which an attacker obtains access to a business email account and imitates the owner's identity, in order to defraud the company and its employees, customers or partners.
+* Internet of Things: The interconnection via the Internet of computing devices embedded in everyday objects, enabling them to send and receive data.
+
+Definitions from the NIST CSRC Glossary: https://csrc.nist.gov/glossary
+
+Further research
+* StaySafeOnline - https://staysafeonline.org/
+* FBI News Stories - https://www.fbi.gov/news/stories
+* Verizon Data Breach Report - https://enterprise.verizon.com/resources/reports/dbir/
+* Information is Beautiful, World's Largest Data Breaches - https://www.informationisbeautiful.net/visualizations/worlds-biggest-data-breaches-hacks/
+
+
+
+1.2.6 Security Trends Quizzes
+---------------------------------------
+Quiz Question
+As of March 2020, how many complaints has the FBI Cybercrime Complaint Center received?
+5million
+
+Quiz Question
+Which of the following is not a variation of phishing attacks?
+dishing
+
+Quiz Question
+In this type of attack, the victim is convinced he/she is conducting a legitimate business transaction.
+Business Email Compromise
+
+
+
+1.2.7 Security Trends Exercise
+---------------------------------------
+Security Trends Exercises
+Exercise #1 - Instructions
+Cybersecurity incidents and data breaches are now a part of our lives. The website Information is Beautiful provides a visualization of recent cyber events.
+
+Step 1: Go to the Information is Beautiful World's Biggest Data Breaches & Hacks website. Scroll down the page to view data breaches. The size of the breach is indicated by the size of the bubble.
+
+Step 2: Pick a recent event and click on its bubble. Review what happened.
+
+Reflect on Security Trends - Information is Beautiful
+For the data breach you selected on the Information is Beautiful, reflect on what happened, who is or was affected, and how it happened (if known).
+
+Your reflection
+user data on facebook were exposed.
+
+Things to think about
+The intent of this exercise is for you to explore the Information is Beautiful website collection of recent data breaches. For example, in the Marriott data breach of 2018, malicious hackers attacked their Starwood reservation system exposing personal data for up to 500 million of their guests. The names, addresses, phone numbers, birth dates, email addresses, and encrypted credit card details of hotel customers were stolen. The travel histories and passport numbers of a smaller group of guests were also taken. The article does not say how the data may have been stolen.
+
+Exercise #2 - Instructions
+Another resource with information on recent data breaches is the Verizon Data Breach Investigations Report (DBIR). For over 12 years, the report provides an analysis of data breach trends affecting a variety of sectors, including public administration, healthcare, and education.
+
+Step 1: Go to the Verizon DBIR website and view the Executive Summary from the most recent report. You may also want to look through the entire report. The Verizon DBIR provides quantitative data on recent breaches.
+
+Step 2: From the Executive Summary, answer the questions below. The intent is to get you into the report and familiar with its contents.
+
+Reflect on Security Trends - Verizon DBIR
+From the Verizon DBIR you selected, answer the following:
+
+Who is behind the attacks? Explain the general categories rather than specific threat actors.
+What actions are being used?
+Who are the breach victims?
+Your reflection
+not sure, please explain
+
+Things to think about
+From the 2020 Verizon Data Breach Investigations Report:
+
+70% of attacks were perpetrated by outsiders and 34% involved internal actors.
+45% of breaches featured Hacking, 22% included social attacks, and 17% involved malware. 86% of the breaches were financially motivated
+72% of victims were large businesses and 28% were small businesses.
+Even though these values change over time, the general concepts have remained steady. Take time to understand this report as it's used throughout the cybersecurity industry.
+
+
+
+1.2.8 Security Trends Exercise Solution
+---------------------------------------
+Security Trends Excercise Summary
+The intent of this exercise is for you to explore the recent data breaches as reported on the Information is Beautiful website and the Verizon Data Breach Investigations Report. You should use these references throughout this course as you learn about cybersecurity and as a part of your cyber career to stay current on security trends.
+
+
+
+1.2.9 Cybersecurity Careers
+---------------------------------------
+Note: in the pie chart in the video, the age should be 35-44 for 33%
+
+Summary
+There are many opportunities in the world of cybersecurity. It’s not only about the sheer number of jobs, but also the types and breadth of work available.
+
+Currently, we are experiencing a phenomenon known as the Cybersecurity Skills Gap. This means the number of open jobs is way beyond the number of cybersecurity people available to fill them.
+
+According to a recent survey in Security Magazine, 76% of organizations of all types and sizes are and have been struggling to find quality cybersecurity talent. ISACA, an international professional association focused on IT audit, governance, risk, and security has a similar survey. Their State of Cybersecurity 2020 report echoes the challenges of hiring cybersecurity positions. Additionally, two-thirds of respondents say it’s difficult to retain cybersecurity talent.
+
+To build a career in cybersecurity or technology takes three things:
+
+* Experience
+* Education
+* Certifications
+
+Also needed to fill a cybersecurity role are
+
+* Technical Skills
+* Functional Knowledge
+* Personal abilities
+
+The Further Research area contains links for you to explore including a wiki from Peerlyst with articles on starting or expanding a cybersecurity career.
+
+Use these resources as you are building your cyber career to develop your path and reach your goals. Take a few minutes to visit them and reflect on the information that can help you establish or broaden your cyber career.
+
+Further research
+* ISACA - https://www.isaca.org/
+* (ISC)2 - https://www.isc2.org/
+* Cyberseek - https://www.cyberseek.org/
+
+
+
+1.2.10 Cybersecurity Careers Quizzes
+---------------------------------------
+Quiz Question
+
+From the 2020 ISACA State of Cybersecurity report, what percentage of security leaders feel it's difficult to retain cybersecurity talent?
+66%
+
+Quiz Question
+
+According to their website, the mission of this US Federal organization is to energize and promote a robust network and an ecosystem of cybersecurity education, training, and workforce development.
+
+nist nice
+
+
+
+1.2.11 Cybersecurity Careers Exercise
+---------------------------------------
+Instruction
+The U.S. National Institute of Standards and Technology (NIST) National Initiative for Cybersecurity Education (NICE) has the mission “to energize and promote a robust network and an ecosystem of cybersecurity education, training, and workforce development.” The NICE Cybersecurity Workforce Framework is a national-focused resource that categorizes and describes cybersecurity work.
+
+Cyberseek provides detailed, actionable data about supply and demand in the cybersecurity job market. The Cybersecurity Career Pathway shows key jobs within cybersecurity, common transition opportunities between them, and detailed information about the salaries, credentials, and skillsets associated with each role.
+
+For this exercise, you are to investigate the NIST NICE and Cyberseek websites and review the many options for cybersecurity careers (see links in the paragraph above).
+
+Reflection on Careers
+Pick a role you would like to have within the next six months (which is short term) and then within the next 3-5 years or mid-term. Use the Cyberseek website to explore that career.
+
+1. For the job role you select, list at least two common job titles, three skills, and two certifications for each cybersecurity role in the box below.
+2. Next, on the heatmap, pick on your state or if you're outside the United States, pick any state and explore the availability of jobs, types, titles, and certifications. Write the job titles, availability, and certifications within that area.
+
+The intent of this exercise is for you to understand different cybersecurity roles and the requirements to fill them.
+
+Your reflection
+Cybersecurity Analyst Public Cloud Security Comprehensive Software Security Threat Hunting Certified Information Systems Security Professional GIAC Certifications
+
+Things to think about
+Example answer: For the role of Systems Engineer, common job titles include Systems Engineer, Systems Analyst, or IT Business Analyst. Skills include Systems Engineering, SQL (database), Project Management, Software Development, or Systems Administration. Certifications include Project Management Certification (PMP), CompTIA Security+, and Certified Information Systems Security Professional (CISSP).
+
+
+
+1.2.12 cybersecurity Careers Exercise Solution
+---------------------------------------
+Cybersecurity Careers Summary
+From the Cyberseek Careers website, you should have picked a role you would like to have. For each one, you can review the common job titles, required skills, certifications, and requested education and the number of opening positions. The intent of this exercise is for you to understand different cybersecurity roles and the requirements to fill them. You can also use the heatmap portion of Cyberseek to see the number of openings in your area. Cyberseek is a good resource to help you in your journey for building your cybersecurity career.
+
+
+
+1.2.13 Security Principles
+---------------------------------------
+Security Principles
+This video explains a set of security principles that are the framework for all security programs. These basic ideas are not specific to cybersecurity or IT and are used to structure how we protect our technologies.
+
+Saltzer and Schroeder’s Design Principles published in their paper “The Protection of Information in Computer Systems” in 1975:
+
+* Economy of mechanism
+* Fail-safe defaults
+* Complete mediation
+* Open design
+* Separation of privilege
+* Least privilege
+* Least common mechanism
+* User-friendly interface
+
+(Source: http://web.mit.edu/Saltzer/www/publications/protection/index.html)
+
+Economy of Mechanism means to keep things small and simple.
+
+* Bigger is not better. It just means there’s more to protect. And complexity is an enemy of security.
+* Complex systems are harder to defend because you need to understand all of the ways to access it and how processes can be broken to allow unauthorized activities.
+
+To fail safe means to anticipate how things can go wrong and to ensure when it does, things are in a safe state. This safe state should be the default, not an exception. To do this, you need to know how something may fail and plan for that failure, which is failing smart.
+
+Least Privilege is a concept dealing with Access Control. It means having the minimum privileges or permissions needed to do a job. Nothing more, nothing less. Too much and you could be blamed if there are problems.
+
+For choke points and defense in depth
+
+* Choke Point - only one way in or out
+* Defense in Depth - layers of security
+
+The CIA of security is Confidentiality, Integrity, and Availability*.*
+
+* Confidentiality means limiting who can see and read sensitive information.
+* Integrity means limiting who can change sensitive information.
+* Availability means ensuring the information is there when we need it.
+
+Quiz Question
+Match the example with the security concept.
+
+Security Principle     Example
+
+Economy of Mechanism   Keep It Short and Simple
+
+Fail Safe              Unlock doors with a power outage
+
+Least Privilege        General user (non admin) rights
+
+Chokepoint             Drawbridge
+
+Confidentiality        Keeping secrets
+
+
+
+1.2.14 Security Principles Quizzes
+---------------------------------------
+Security Principles Quizzes
+
+Which of the following means to have minimum access or permissions needed to do a job?
+Least privilege
+
+Quiz Question
+This security concept focuses on making sure information, applications, websites or other resources are there when they are needed.
+Availability
+
+Quiz Question
+Imagine you are working in the cybersecurity team at a hedge fund. Which statement about CIA is correct?
+The availability level of client information is high because this information is required for trading.
+
+
+
+1.2.15 Security Best Practices
+---------------------------------------
+It's important that anyone using the Internet follows basic Cybersecurity hygiene - the understanding of cybersecurity best practices for protecting your information, devices, and networks. These tips will help you apply security fundamentals including core security principles and critical security controls in your world.
+
+Personal Security means protecting yourself online
+* Defeating Social Engineering
+ * Think before you click
+ * Trust your gut – Be a little skeptical
+ * When in doubt, ASK
+* Passwords
+ * Long - at least 12 characters
+ * Complex - Use numbers and special symbols
+ * Passphrases are better
+ * Not anything about you
+ * Not the same from previous passwords
+ * Use a password manager
+* Multifactor Authentication (MFA)- Using at least two of the following, something you
+ * Know (password)
+ * Are (fingerprint, face, voice)
+ * Have (smartphone, card)
+
+Device and Network security
+
+Device Security means protecting your computers (PCs, laptops, tablets, etc.)
+* AntiVirus (AV) applications
+* Patching and Updates
+
+Network Security means protecting how you connect
+* Wireless (WiFi) Security - Home and Remote
+
+New terms
+* Multi-Factor Authentication (MFA): Authentication using two or more factors to achieve authentication.
+* AntiVirus (AV) applications: A program or tool specifically designed to detect many forms of malware and prevent them from infecting computers, as well as cleaning computers that have already been infected.
+* Patching: A software component that, when installed, directly modifies files or device settings related to a different software component without changing the version number or release details for the related software component.
+* Updating: An authorized increase in the level of protection to be provided to specified information, e.g., from a Low impact-level to a Moderate impact-level.
+Definitions from the NIST CSRC Glossary: https://csrc.nist.gov/glossary
+
+Further research
+* National Cybersecurity Alliance, How to Stay Safe Online: https://staysafeonline.org/stay-safe-online/
+* Stop.Think.Connect., General Tips, and Advice: https://stopthinkconnect.org/tips-advice/general-tips-and-advice
+* For terms and definitions, see the NIST Computer Security Resources Center (CSRC) Glossary: https://csrc.nist.gov/glossary/
+
+
+
+1.2.16 Security Best Practice Quizzes
+---------------------------------------
+Security Best Practice Quizzes
+
+
+Quiz Question
+Which of the following are characteristics of strong passwords? (Select all that apply)
+At least 12 characters long
+Uses a mix of letters, numbers and special symbols
+Different from any previous password
+
+
+Quiz Question
+Which of the following are the best ways to help secure your device such as computers? (Select all that apply)
+Automatically install patches and updates
+Install anti-virus softwares
+Keep your software and operating system up-to-date
+
+
+Quiz Question
+Why did Microsoft establish Patch Tuesday as the second Tuesday of the month in 2003? (Pick the best answer)
+To reduce costs associated with patch deployment
+
+
+
+1.2.17 Security Best Practice Exercise
+---------------------------------------
+Security Best Practice Exercise #1 - Password Managers
+Passwords are a poor way to prove a user's identity. They are easily shared, written down, and leaked. Plus, there are so many to remember! Password managers are encrypted vaults that hold your passwords so you don't need to memorize them or write them down. Besides keeping your identity, credentials, and sensitive data safe, a password manager can generate strong, unique passwords to ensure you aren't reusing them across your devices and services. This way, you can use a much longer, complex, and ultimately more secure password. An additional benefit with many password managers is that you can use Multi-Factor Authentication (MFA) with them. Common password management applications include:
+
+* LastPass
+* KeePass
+* 1Password
+* Dashlane
+
+Some of these are free and some may require a paid subscription.
+
+Reflect on Password Managers
+For this exercise, select a password manager either from the list above or from your own experience or research. Install the application and use it for a few of your accounts. Answer the following:
+
+* Which password manager did (or do) you use?
+* How does it help you as a general use? Does it make it easier for you to use other applications that require a user-id and password?
+* Would you recommend it to others? Why or why not?
+revelation
+i dont have to remember all passwors for different applications, revelation does it for me
+yes, i would recommend for all.
+
+Things to think about
+The intent of this exercise is to give you the opportunity to test a password manager to understand how it fits as a part of security best practices. Example answers:
+
+I use LastPass to store IDs and passwords used for my education and training websites.
+With this, I don't need to memorize my password and it's much easier to login to the stored websites. I can also use a much longer and stronger password.
+I found LastPass very easy to initially configure and use. It automatically asks if I want to store a new account in its password vault/database.
+
+Security Best Practice Exercise #2 - Checking for Viruses
+Viruses, worms, trojan horse applications, ransomware, spyware, etc continue to haunt us and be a threat vector according to the Verizon Data Breach Report from a previous lesson. Anti-Virus or EndPoint Protection Programs aren't perfect and may miss zero-day threats.
+Virustotal.com inspects uploaded files and website URLs with over 70 antivirus scanners and URL/domain blacklisting services. It's free to end-users for non-commercial use. See their How It Works webpage for more information about it.
+
+Reflect on Virus Scanning
+Now it's your turn to use two VirusTotal features: file scanning and URL scanning.
+
+Step 1: Go to the VirusTotal Website: https://www.virustotal.com/
+Step 2: To check a file for viruses against the VirusTotal database, select the File option, and upload a file of your choice to see if it is safe from known viruses. Record your observations. You can answer these questions about your observations: Were any viruses detected in the file you selected? How many virus scanning programs were used?
+Step 3: Repeat the process above using the URL Scanning tool.
+
+Your reflection
+no 73
+
+Things to think about
+The intent of this exercise is for you to explore VirusTotal.com and see how it can supplement a device's anti-virus and end-point protection applications.
+Hopefully, the file you uploaded on the site had no viruses detected. You can see the 70+ different programs it uses to detect potential malware in both files and website URLs.
+
+
+
+1.2.18 Security Best Practice Exercise Solution
+---------------------------------------
+Exercise #1 Password Managers Solution Summary
+The intent of this exercise is to give you the opportunity to test a password manager to understand how it fits as a part of security best practices. Example answers:
+
+* I use LastPass to store IDs and passwords used for my education and training websites.
+* With this, I don't need to memorize my password and it's much easier to login to the stored websites. I can also use a much longer and stronger password.
+* I found LastPass very easy to initially configure and use. It automatically asks if I want to store a new account in its password vault/database.
+
+Exercise #2 Virus Total Solution Summary
+As you saw in the exercise video, you can use VirusTotal to inspect both files and website URLs for malware against many AntiVirus programs.
+
+
+
+1.2.19 Lesson Conclusion
+---------------------------------------
+Lesson Summary
+In this lesson, you looked at security trends with different cybersecurity events and protection techniques. It helps us to better understand the importance of cybersecurity for all organizations. You also saw what you need to do to establish a cybersecurity career. This lesson also taught you about core security principles, critical security controls, and cybersecurity best practices. Lastly, you learned about some security best practices for keeping yourself and others safe online.
+
+Now that you’re done with this lesson, you should be able to
+
+* Identify current trends in cybersecurity events and protection techniques
+* Describe careers as a cybersecurity professional and skill qualifications
+* Explain security fundamentals including core security principles, critical security controls, and cybersecurity best practices
+
+Use this as a foundation throughout the rest of this course.
+
+Glossary
+* Phishing: A technique for attempting to acquire sensitive data, such as bank account numbers, through a fraudulent solicitation in email or on a web site, in which the perpetrator masquerades as a legitimate business or reputable person.
+* Malware: Software or firmware intended to perform an unauthorized process that will have an adverse impact on the confidentiality, integrity, or availability of an information system. A virus, worm, Trojan horse, or other code-based entity that infects a host. Spyware and some forms of adware are also examples of malicious code
+* Ransomware: A type of malicious software designed to block access to a computer system until a sum of money is paid.
+* Business Email Compromise: An exploit in which an attacker obtains access to a business email account and imitates the owner's identity, in order to defraud the company and its employees, customers or partners
+* Internet of Things: The interconnection via the Internet of computing devices embedded in everyday objects, enabling them to send and receive data
+* Multi-Factor Authentication (MFA): Authentication using two or more factors to achieve authentication.
+* AntiVirus (AV) applications: A program or tool specifically designed to detect many forms of malware and prevent them from infecting computers, as well as cleaning computers that have already been infected.
+* Patching: A software component that, when installed, directly modifies files or device settings related to a different software component without changing the version number or release details for the related software component.
+* Updating: An authorized increase in the level of protection to be provided to specified information, e.g., from a Low impact-level to a Moderate impact-level.
+
+Further reading
+* Definitions from the NIST CSRC Glossary: https://csrc.nist.gov/glossary
+* ISACA - https://www.isaca.org/
+* (ISC)2 - https://www.isc2.org/
+* Cyberseek - https://www.cyberseek.org/
+* National Cybersecurity Alliance, How to Stay Safe Online: https://staysafeonline.org/stay-safe-online/
+* Stop.Think.Connect., General Tips and Advice: https://stopthinkconnect.org/tips-advice/general-tips-and-advice
