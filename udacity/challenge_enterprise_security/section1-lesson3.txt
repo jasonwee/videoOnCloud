@@ -1,0 +1,222 @@
+nd0035
+
+date start : 28 december 2023
+
+
+1.3.1 Introduction
+---------------------------------------
+Summary
+Organizations worldwide are required to maintain a secure technical infrastructure for the reasons stated earlier.
+In this lesson, we'll go over some of the leading cybersecurity laws, regulations, standards, and frameworks. These help organizations of all sizes know what to do in securing their infrastructure.
+
+
+
+1.3.2 Rules Governing Cybersecurity
+---------------------------------------
+Summary
+It’s important for you to know the rules governing cybersecurity you'll need to make sure you and your organization are following those rules. In this lesson, you'll learn about influential, international organizations that develop and maintain the standards used by companies worldwide to defend data, computers, and networks.
+
+There are organizations responsible for setting the standards in the US and Internationally. There are also ones that focus on specific areas.
+
+* In the United States, that organization is the National Institute of Standards and Technology, also known as NIST.
+* The International Organization for Standards or ISO works with the International Electrotechnical Commission or IEC to set worldwide technology standards.
+* There are also governing bodies that set the rules for specific areas. For example, the Payment Card Industry (PCI) has the Data Security Standards that are required for any business accepting or handling credit card data.
+
+Why do we need security standards?
+
+* For safety, to make sure technology doesn’t cause problems for people or other technologies
+* Allow technology interconnectivity
+* Make sure everyone is playing by the same rules (this is known as compliance)
+* For efficiency
+
+Quiz Question
+Why is it important to set standards for technology and cybersecurity? [Pick all that appy]
+
+Compliance
+Safety
+Efficiency
+
+
+
+
+1.3.3 Lesson Outline
+---------------------------------------
+Summary
+In this lesson, we’ll cover the following topics:
+
+* Governance and compliance
+* Security regulations
+* NIST Cybersecurity Framework
+* Center for Internet Security’s Critical Security Controls (CIS CSC)
+
+Lesson learning objective
+By the end of this lesson, you will be able to:
+
+* Explain cybersecurity governance concepts
+* Apply methods to enforce cybersecurity governance
+* Identify common security regulations and frameworks
+* Explain how current security laws, regulations and standards applied to cybersecurity and data privacy
+* Recognize components of the NIST Cybersecurity Framework (CSF)
+* Recognize components of the CIS CSC
+
+
+
+1.3.4 Governance and Compliance
+---------------------------------------
+Summary
+This lesson explains governance and compliance and how policies are used as a form of communicating corporate rules and enforcing compliance.
+
+* Governance - A strategic planning responsibility providing organizational oversight that sets policies and establishes practices to enforcement.
+* Compliance - Requirement all affected parties follow the same rules.
+* Audit - Independent review and examination of records and activities to assess the adequacy of system controls, to ensure compliance with established policies and operational procedures. (NIST Glossary)
+* Policies are the bedrock of a security program. Policies are:
+
+  * Formal statements, rules or assertions that specify the correct or expected behavior of an entity.
+  * Example: Acceptable Use Policy (AUP)
+  * Enforcement and compliance
+  * Written and accessible
+
+New terms
+* Governance: A strategic planning responsibility providing organizational oversight that sets policies and establishes practices to enforcement
+* Compliance: The requirements of all affected parties follow the same rules.
+* Audit: An independent review and examination of records and activities to assess the adequacy of system controls, to ensure compliance with established policies and operational procedures.
+* Policy: Statements, rules, or assertions that specify the correct or expected behavior of an entity.
+
+Definitions from the NIST CSRC Glossary: https://csrc.nist.gov/glossary
+
+Further research
+* NIST Glossary: https://csrc.nist.gov/glossary/
+
+
+
+1.3.5 Governance and Compliance Quizzes
+---------------------------------------
+Quiz Question
+These are statements, rules or assertions that specify the correct or expected behavior for an organization, it's users and customers.
+policies
+
+Quiz Question
+Why should you know about corporate governance, compliance and policies? (Check all that that are true)
+New employees need to follow organizational rules
+You may have the job of writing, updating or enforcing compliance with policies
+You may work with auditors as they assess compliance with policies
+
+
+
+1.3.6 Governance and Compliance Exercise
+---------------------------------------
+As you learned during the lesson, Governance establishes authority, management, and decision making related to information systems and data. The different types of policy documents set the rules all need to follow or at least be aware of.
+Udacity uses Governance for its users so you know their rules and expectations. These are often required by government regulators to be compliant with data security and privacy laws. In this exercise, we'll explore some of the Udacity policies on their legal website: https://www.udacity.com/legal.
+On that website, click on Udacity's Terms of Use, which sets the rules for using Udacity's website and services and answer the quiz questions below.
+
+Security and Privacy Professionals need to be very knowledgeable about the different types of Policies and how they are used. I encourage you to explore Udacity's policies as an example.
+
+Quiz Question
+From Udacity's Terms of Use (ToU), under the Access and User Accounts section, which term means that you have created a User Account (defined below) registered and have enrolled in and paid for access to the Online Courses and other Udacity’s Services and/or services.
+A student
+
+
+Exploring Udacity's Privacy Policy
+In this exercise, we'll explore Udacity's Privacy policy. It explains how we treat the information collected and received from your use of our Services (as defined in our Terms of Use or “ToU”) provided through the website, http://www.udacity.com and any other websites or applications we own, operate, or control (the “Website(s)”).
+Step 1: Go to Udacity's Privacy Policy website.
+Step 2: In the answer box, list at least three items for each:
+
+Types of information Udacity collects from users
+How Udacity collects the information from users
+How Udacity uses the information we collect
+
+Your reflection
+ok
+
+Things to think about
+Udacity's Privacy Policy is comprehensive in stating the information it collects, how it collects it, and how it uses that information.
+Sample answers for each question are below:
+
+Types of information Udacity collects from users
+Name, address, telephone number and email address
+Log-in credentials, if you register a User Account with us
+Information about purchases or other transactions with us, such as your shipping address.
+Information about your customer service and maintenance interactions with us
+Demographic information, such as your gender, socio-economic status, and other personal information
+How Udacity collects the information from users
+Using any of our Services, including registering for a User Account through the Website(s)
+Making a purchase from us, including registering and enrolling in any Online Course
+Signing up for email updates
+Uploading or posting to public forums included through the Services
+Submitting requests or questions to us via forms or email
+How Udacity uses the information we collect
+Send you information in connection with the Services
+Respond to your communications and requests
+Manage and process Online Courses
+Contact you by email, postal mail, or phone (including via SMS messages) regarding Udacity and third-party products, services, surveys, research studies, promotions, special events, and other subjects
+Help us better understand your interests and needs, and improve the Services
+Engage in analysis, research, and reports regarding use of the Services
+Secure the Services
+Comply with any procedures, laws, and regulations
+
+
+
+1.3.7 Governance and Compliance Exercise Solution
+---------------------------------------
+Solution Summary
+In this exercise, you explored some of the Udacity policies on their legal website and the Udacity's Terms of Use. These set the rules for using Udacity's website and services. In particular, please pay attention to the Services they provide, Udacity's rights regarding those services, Access and User Accounts definitions and requirements, and the User Conduct Policy.
+
+On the Udacity Privacy Policy, note how they may use your information and what they may collect. You can also see how they use analytics as part of their services. Lastly, review how they may share or disclose the user's private information.
+
+Security and Privacy Professionals need to be very knowledgeable about the different types of policies and how they are used. I encourage you to explore Udacity's policies as examples.
+
+
+
+1.3.8 Intro to Security Regulations
+---------------------------------------
+
+
+1.3.9 Intro to Security Regulations Quizzes
+---------------------------------------
+
+
+1.3.10 Intro to Security Regulations Exercise
+---------------------------------------
+
+
+1.3.11 Intro to Security Regulations Exercise Solution
+---------------------------------------
+
+
+1.3.12 NIST Cybersecurity Framework
+---------------------------------------
+
+
+1.3.13 NIST Cybersecurity Framework Quizzes
+---------------------------------------
+
+
+1.3.14 NIST Cybersecurity Framework (CSF) Exercise
+---------------------------------------
+
+
+1.3.15 NIST Cybersecurity Framework Exercise Solution
+---------------------------------------
+
+
+1.3.16 Center for Internet Security
+---------------------------------------
+
+
+1.3.17 Center for Internet Security Controls Quizzes
+---------------------------------------
+
+
+1.3.18 Center for Internet Security Controls Exercise
+---------------------------------------
+
+
+1.3.19 Center for Interset Security Controls Exercise Solution
+---------------------------------------
+
+
+1.3.20 Lesson Conclusion
+---------------------------------------
+
+
+
