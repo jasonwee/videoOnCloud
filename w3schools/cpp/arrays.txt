@@ -1,0 +1,278 @@
+C++ Arrays
+Arrays are used to store multiple values in a single variable, instead of declaring separate variables for each value.
+
+To declare an array, define the variable type, specify the name of the array followed by square brackets and specify the number of elements it should store:
+
+string cars[4];
+
+We have now declared a variable that holds an array of four strings. To insert values to it, we can use an array literal - place the values in a comma-separated list, inside curly braces:
+
+string cars[4] = {"Volvo", "BMW", "Ford", "Mazda"};
+
+To create an array of three integers, you could write:
+
+int myNum[3] = {10, 20, 30};
+
+Access the Elements of an Array
+You access an array element by referring to the index number inside square brackets [].
+
+This statement accesses the value of the first element in cars:
+
+Example
+
+string cars[4] = {"Volvo", "BMW", "Ford", "Mazda"};
+cout << cars[0];
+// Outputs Volvo
+Try it Yourself »
+
+Note: Array indexes start with 0: [0] is the first element. [1] is the second element, etc.
+
+Change an Array Element
+To change the value of a specific element, refer to the index number:
+
+cars[0] = "Opel";
+
+Example
+
+string cars[4] = {"Volvo", "BMW", "Ford", "Mazda"};
+cars[0] = "Opel";
+cout << cars[0];
+// Now outputs Opel instead of Volvo
+
+C++ Exercises
+
+Exercise:
+Create an array of type string called cars.
+
+￼ ￼[4] = {"Volvo", "BMW", "Ford", "Mazda"};
+
+
+
+Loop Through an Array
+
+You can loop through the array elements with the for loop.
+
+The following example outputs all elements in the cars array:
+
+string cars[4] = {"Volvo", "BMW", "Ford", "Mazda"};
+for (int i = 0; i < 4; i++) {
+  cout << cars[i] << "\n";
+}
+
+The following example outputs the index of each element together with its value:
+
+string cars[4] = {"Volvo", "BMW", "Ford", "Mazda"};
+for (int i = 0; i < 4; i++) {
+  cout << i << ": " << cars[i] << "\n";
+}
+
+
+
+Omit Array Size
+
+You don't have to specify the size of the array. But if you don't, it will only be as big as the elements that are inserted into it:
+
+string cars[] = {"Volvo", "BMW", "Ford"}; // size of array is always 3
+
+This is completely fine. However, the problem arise if you want extra space for future elements. Then you have to overwrite the existing values:
+
+string cars[] = {"Volvo", "BMW", "Ford"};
+string cars[] = {"Volvo", "BMW", "Ford", "Mazda", "Tesla"};
+
+If you specify the size however, the array will reserve the extra space:
+
+string cars[5] = {"Volvo", "BMW", "Ford"}; // size of array is 5, even though it's only three elements inside it
+
+Now you can add a fourth and fifth element without overwriting the others:
+
+Example
+cars[3] = "Mazda";
+cars[4] = "Tesla";
+
+Omit Elements on Declaration
+It is also possible to declare an array without specifying the elements on declaration, and add them later:
+
+Example
+string cars[5];
+cars[0] = "Volvo";
+cars[1] = "BMW";
+...
+
+
+
+Get the Size of an Array
+
+To get the size of an array, you can use the sizeof() operator:
+
+Example
+int myNumbers[5] = {10, 20, 30, 40, 50};
+cout << sizeof(myNumbers);
+Result:
+
+20
+
+Why did the result show 20 instead of 5, when the array contains 5 elements?
+
+It is because the sizeof() operator returns the size of a type in bytes.
+
+You learned from the Data Types chapter that an int type is usually 4 bytes, so from the example above, 4 x 5 (4 bytes x 5 elements) = 20 bytes.
+
+To find out how many elements an array has, you have to divide the size of the array by the size of the data type it contains:
+
+Example
+int myNumbers[5] = {10, 20, 30, 40, 50};
+int getArrayLength = sizeof(myNumbers) / sizeof(int);
+cout << getArrayLength;
+Result:
+
+5
+
+
+
+Multi-Dimensional Arrays
+A multi-dimensional array is an array of arrays.
+
+To declare a multi-dimensional array, define the variable type, specify the name of the array followed by square brackets which specify how many elements the main array has, followed by another set of square brackets which indicates how many elements the sub-arrays have:
+
+string letters[2][4];
+
+As with ordinary arrays, you can insert values with an array literal - a comma-separated list inside curly braces. In a multi-dimensional array, each element in an array literal is another array literal.
+
+string letters[2][4] = {
+  { "A", "B", "C", "D" },
+  { "E", "F", "G", "H" }
+};
+
+Each set of square brackets in an array declaration adds another dimension to an array. An array like the one above is said to have two dimensions.
+
+Arrays can have any number of dimensions. The more dimensions an array has, the more complex the code becomes. The following array has three dimensions:
+
+string letters[2][2][2] = {
+  {
+    { "A", "B" },
+    { "C", "D" }
+  },
+  {
+    { "E", "F" },
+    { "G", "H" }
+  }
+};
+
+Access the Elements of a Multi-Dimensional Array
+To access an element of a multi-dimensional array, specify an index number in each of the array's dimensions.
+
+This statement accesses the value of the element in the first row (0) and third column (2) of the letters array.
+
+Example
+string letters[2][4] = {
+  { "A", "B", "C", "D" },
+  { "E", "F", "G", "H" }
+};
+
+cout << letters[0][2];  // Outputs "C"
+
+Remember that: Array indexes start with 0: [0] is the first element. [1] is the second element, etc.
+
+Change Elements in a Multi-Dimensional Array
+To change the value of an element, refer to the index number of the element in each of the dimensions:
+
+Example
+string letters[2][4] = {
+  { "A", "B", "C", "D" },
+  { "E", "F", "G", "H" }
+};
+letters[0][0] = "Z";
+
+cout << letters[0][0];  // Now outputs "Z" instead of "A"
+
+Loop Through a Multi-Dimensional Array
+To loop through a multi-dimensional array, you need one loop for each of the array's dimensions.
+
+The following example outputs all elements in the letters array:
+
+Example
+string letters[2][4] = {
+  { "A", "B", "C", "D" },
+  { "E", "F", "G", "H" }
+};
+
+for(int i = 0; i < 2; i++) {
+  for(int j = 0; j < 4; j++) {
+    cout << letters[i][j] << "\n";
+  }
+}
+
+This example shows how to loop through a three-dimensional array:
+
+Example
+string letters[2][2][2] = {
+  {
+    { "A", "B" },
+    { "C", "D" }
+  },
+  {
+    { "E", "F" },
+    { "G", "H" }
+  }
+};
+
+for(int i = 0; i < 2; i++) {
+  for(int j = 0; j < 2; j++) {
+    for(int k = 0; k < 2; k++) {
+      cout << letters[i][j][k] << "\n";
+    }
+  }
+}
+
+Why Multi-Dimensional Arrays?
+Multi-dimensional arrays are great at representing grids. This example shows a practical use for them. In the following example we use a multi-dimensional array to represent a small game of Battleship:
+
+Example
+// We put "1" to indicate there is a ship.
+bool ships[4][4] = {
+  { 0, 1, 1, 0 },
+  { 0, 0, 0, 0 },
+  { 0, 0, 1, 0 },
+  { 0, 0, 1, 0 }
+};
+
+// Keep track of how many hits the player has and how many turns they have played in these variables
+int hits = 0;
+int numberOfTurns = 0;
+
+// Allow the player to keep going until they have hit all four ships
+while (hits < 4) {
+  int row, column;
+
+  cout << "Selecting coordinates\n";
+
+  // Ask the player for a row
+  cout << "Choose a row number between 0 and 3: ";
+  cin >> row;
+
+  // Ask the player for a column
+  cout << "Choose a column number between 0 and 3: ";
+  cin >> column;
+
+  // Check if a ship exists in those coordinates
+  if (ships[row][column]) {
+    // If the player hit a ship, remove it by setting the value to zero.
+    ships[row][column] = 0;
+
+    // Increase the hit counter
+    hits++;
+
+    // Tell the player that they have hit a ship and how many ships are left
+    cout << "Hit! " << (4-hits) << " left.\n\n";
+  } else {
+    // Tell the player that they missed
+    cout << "Miss\n\n";
+  }
+
+  // Count how many turns the player has taken
+  numberOfTurns++;
+}
+
+cout << "Victory!\n";
+cout << "You won in " << numberOfTurns << " turns";
+
