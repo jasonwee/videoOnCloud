@@ -1,0 +1,436 @@
+nd0035
+
+date start : 25 january 2024
+
+
+1.4.1 Introduction
+---------------------------------------
+Summary
+Many may think that hacking is a bad thing, when really it’s encouraged among cybersecurity professionals. In this lesson, you’ll learn to think like a hacker to better secure your technologies. By the end of the lesson, you will be able to assess high-level risks, vulnerabilities and attack vectors using a sample computing system.
+
+
+
+1.4.2 Lesson Outline
+---------------------------------------
+Topics:
+* Hacking Lifecycle
+* Vulnerability Management
+* Introduction to Threats, Attacks, and Exploits
+
+Lesson Learning Objectives:
+* Categorize assets, risks, threats, vulnerabilities, exploits
+* Identify different types of vulnerabilities in a system
+* Identify the categories of a cyber threat
+* Determine the phase of a cyber attack
+* Recognize common exploits
+
+
+
+1.4.3 Hacker Process
+---------------------------------------
+Summary
+In the Hacker lexicon written in the 1990s by Eric Raymond, “Hackers solve problems and build things, and they believe in freedom and voluntary mutual help.” Hacking is a mindset, a technique, a way of viewing your world. Hackers don’t randomly try to break things but follow a well-established process. It starts by determining their target, learning all they can about it, exploring it from multiple perspectives, figuring out how it can break to better understand how it can, and should be used.
+
+Throughout this lesson, you’ll see the hacker lifecycle in action and you’ll use it to build your cybersecurity intuition.
+
+Your definition of a hacker
+How do you define a hacker? What does hacking mean to you?
+
+Your reflection
+a person who got nothing better to do , breaking into a system causing a lot of pain to the software engineer
+
+Things to think about
+This is for you to reflect on the definitions of a hacker. Many see them as only evil, but in reality most hackers are "white-hat" or good rather than "black-hat" or bad.
+
+
+1.4.4 Hacking Lifecycle
+---------------------------------------
+Hacking Lifecycle
+Throughout history, hackers have followed the same lifecycle process:
+
+1. A target or goal: understand why you are assessing it’s security.
+2. Learn it: learn as much as you can about it
+3. Explore it: understand how it works and what others know about it. This is known as reconnaissance.
+4. Break it: understand the target’s weaknesses or vulnerabilities.
+5. Fix it: secure operating systems, applications and networks.
+6. Make it better: figure out a better way to secure the asset.
+7. Tell others: tell others what we find. It’s called ethical disclosure.
+
+This is in order to categorize assets, risks, threats, vulnerabilities, and exploits affecting computer systems
+
+New terms
+* Asset: A major application, general support system, high impact program, physical plant, mission-critical system, personnel, equipment, or a logically related group of systems.
+* Vulnerability: Weakness in an information system, system security procedures, internal controls, or implementation that could be exploited or triggered by a threat
+* Threat: Any circumstance or event with the potential to adversely impact organizational operations (including mission, functions, image, or reputation), organizational assets, individuals, other organizations, or the Nation through an information system via unauthorized access, destruction, disclosure, modification of information, and/or denial of service
+* Risk: A measure of the extent to which an entity is threatened by a potential circumstance or event, and typically a function of: (i) the adverse impacts that would arise if the circumstance or event occurs; and (ii) the likelihood of occurrence
+* Penetration Testing: A test methodology in which assessors, typically working under specific constraints, attempt to circumvent or defeat the security features of an information system.
+Source: https://csrc.nist.gov/glossary/
+
+Further research
+* The Jargon File contains a more thorough explanation of the hacking lifecycle including a comprehensive glossary of hacking terms.
+* If you enjoy history and want to learn more about original hackers, read How To Become A Hacker by Eric Steven Raymond found at http://www.catb.org/~esr/faqs/hacker-howto.html.
+You can also read The Jargon File at http://www.catb.org/jargon/, which is "a comprehensive compendium of hacker slang illuminating many aspects of hackish tradition, folklore, and humor."
+
+
+
+1.4.5 Hacking Lifecycle Quizzes
+---------------------------------------
+Quiz Question
+Which phase of the hacking lifecycle tries to understand system or application vulnerabilities?
+break it
+
+Quiz Question
+When ethical hackers see a problem, they keep it secret to protect the owner from getting exploited.
+False
+
+Quiz Question
+You should always have explicit or written permission before you test, attack or try to break anything that doesn't belong to you as a part of the hacking process.
+
+
+Quiz Question
+You should always have explicit or written permission before you test, attack or try to break anything that doesn't belong to you as a part of the hacking process.
+True
+
+
+
+1.4.6 Hacking Lifecycle - Exercise Part 1
+---------------------------------------
+Hacking Lifecycle - Exercise Part 1: Reconnaissance
+This exercise has two parts. You will also perform a similar analysis in the final project.
+
+Part 1 - System Reconnaissance
+The first step of the hacking lifecycle is to understand the networks, devices, systems, and applications under review. This is known as reconnaissance.
+You can use whatever device or computer you're using for this course.
+Answer the questions below about the device you're using for this course.
+
+You'll use this information in the next lesson on Vulnerability Management
+
+Device Reconnaissance
+For the device you're using for this course, answer the questions below:
+x List the hardware manufacturer, make and model
+x List the operating system. Include the edition, version and OS build if available.
+x List two or three applications used on your device. For each, include the version information if available.
+
+Device information workspace
+For each of the questions in the task list above, use this workspace to record your answers.
+
+Your reflection
+ok
+
+Things to think about
+You've taken the first step in the hacking lifecycle by capturing device, operating system and application information. Your answers may vary based on the device you use and the applications selected.
+
+
+
+1.4.7 Hacking Lifecycle - Exercise Part 2
+---------------------------------------
+Hacking Lifecycle - Exercise Part 2: Performing Threat Intelligence
+Network Ownership
+Each IP address and domain on the Internet has an owner. This is the organization or person who registered it. In this exercise, you'll practice viewing ownership of Internet domains and IP addresses.
+
+Viewing Domain Owners
+Follow the steps below to view the domain owners for Udacity.com. You can repeat this for any domain or IP on the Internet.
+
+x Go to the Domaintools WhoIs website: http://whois.domaintools.com/
+x In the input field, "Whois Lookup," you can enter a domain name. For this, enter www.udacity.com and click the green Search button
+x View the Whois Record for Udacity.com. You should click on the captcha box at the bottom for more information.
+x Answer the questions below.
+
+Domain Ownership
+For the domain used in your Whois search, answer the following:
+
+Registrant Org:
+Registrar:
+IP Address:
+IP Location:
+Your reflection
+MarkMonitor, Inc. MarkMonitor Inc. 104.18.4.237 Noord-holland - Amsterdam -
+
+Things to think about
+For Udacity.com, the answers are (as of May 2020):
+
+Registrant Org: Udacity, Inc.
+Registrar: MarkMonitor, Inc.
+IP Address: 104.16.103.31
+IP Location: California - San Francisco - Cloudflare Inc.
+
+
+
+1.4.8 Vulnerability Management
+---------------------------------------
+Vulnerability
+NIST defines vulnerability as a “Weakness in an information system, system security procedures, internal controls, or implementation that could be exploited or triggered by a threat.”
+
+In IT, vulnerabilities are inevitable. No matter how hard we try, there will always be weaknesses in software, operating systems and networks. Most vulnerabilities are minor or the path to use or exploit them to cause harm is long and difficult. We need to pay attention and know what vulnerabilities need to be fixed right away and which ones can maybe wait.
+
+Vulnerability management
+Vulnerability management starts with Identifying the vulnerability, Analyzing it, and then taking action. Identification is just knowing that something could be a problem. Analysis is the decision - what to do about it, and taking action is implementing the decision
+
+Vulnerability Management - Identification
+Identification summary
+Identification is finding vulnerabilities.
+
+Examples of vulnerabilities with cars:
+
+* Bald tires
+* Old breaks
+* Manufacturer recall
+
+Examples of vulnerabilities in information technology.
+
+* Code / Software apps
+* Networks
+* Unpatched systems
+
+There’s a large community dedicated to finding vulnerabilities and letting others know. Sources include:
+
+* Vendors
+* Vulnerability lists & databases
+
+NIST National Vulnerability Database (NVD) - https://nvd.nist.gov/
+MITRE Common Vulnerabilities and Exposures (CVE) list - https://cve.mitre.org/about/index.html
+
+* Bug Bounties
+* Security assessments
+
+Vulnerability Management - Analysis and Action
+
+Analysis and action summary
+Analysis is studying the vulnerability and deciding a course of action.
+The CVE and NVD websites provide vulnerability ratings. The manufacture may also tell you their idea of the risk.
+
+Taking Action is doing something about the vulnerability once you’ve analyzed its risks and the benefits of applying a fix.
+
+Zero-Day (0-Day) Vulnerabilities are vulnerabilities that have no notification to the manufacturer or public.
+
+Vulnerability Information Resources
+There are two resources for discovering and analyzing vulnerabilities: the MITRE Common Vulnerabilities and Exposures (CVE) list and the NIST National Vulnerability Database (NVD). They are commonly used in the cybersecurity world and you will see them very often. In this section, we will only cover them at a high-level.
+
+Summary
+CVE is “a list of common identifiers for publicly known cybersecurity vulnerabilities.” It was started over 20 years ago to create a common language and naming convention for all vulnerabilities. In the early days, manufactures would have their own names and identification numbers, which became very confusing.
+
+Description from the CVE website: “The process of creating a CVE Entry begins with the discovery of a potential security vulnerability. The information is then assigned a CVE ID by a CVE Numbering Authority (CNA), the CNA writes the Description and adds References, and then the completed CVE Entry is added to the CVE List and posted on the CVE website by the CVE Team”
+
+The NVD is the U.S. government repository of standards-based vulnerability management data. They perform analysis on CVEs that have been published to the CVE Dictionary.
+
+
+New terms
+* Vulnerability: A weakness in an information system, system security procedures, internal controls, or implementation that could be exploited or triggered by a threat.
+Source: https://csrc.nist.gov/glossary
+
+Further research
+* MITRE Common Vulnerabilities and Enumeration - https://cve.mitre.org
+* NIST National Vulnerability Database - https://nvd.nist.gov/general
+
+
+
+1.4.9 Vulnerability Management Quizzes
+---------------------------------------
+Quiz Question
+In this phase of the vulnerability management process, we decide what to do about a vulnerability.
+Analysis
+
+Quiz Question
+Which of the following is true about the CVE List (pick all that apply):
+One identifier for one vulnerability or exposure
+One standardized description for each vulnerability or exposure
+Allows tools to "speak" the same language
+Free for public download and use
+
+Quiz Question
+CVE entries contain all of the following except?
+severity rating
+
+
+Actions                   Steps
+Jane found that several employees stored their account passwords in .txt files and saved them on the desktop.
+Identification
+
+Jane asked these employees to delete the .txt files that contain their passwords.
+Take action
+
+Jane got access to the .txt files with the passwords and assessed how important those accounts are and how sensitive the information is.
+Analysis
+
+
+
+1.4.10 Identifying Software Vulnerabilities Exercise
+---------------------------------------
+Identifying Software Vulnerabilities Exercise
+In this exercise, you'll investigate known software vulnerabilities. The MITRE Common Vulnerabilities and Enumeration (CVE®) website is a list of common identifiers for publicly known cybersecurity vulnerabilities. It standardized names and information about security vulnerabilities and is used throughout cybersecurity. See the About CVE page for more information.
+
+The National Vulnerability Database (NVD) maintained by NIST has the U.S. government repository of standards-based vulnerability management data. From the NVD website, the data "enables automation of vulnerability management, security measurement, and compliance. The NVD includes databases of security checklist references, security-related software flaws, misconfigurations, product names, and impact metrics".
+
+Using the CVE and NVD List
+Follow the tasks below and enter the information you learn from the CVE list for common software vulnerabilities.
+
+x Go to the Search CVE List website: https://cve.mitre.org/cve/search_cve_list.html
+x In the search bar, type the name of a common operating system or application. For this exercise, you can use Windows 10 and click on the submit button.
+x Review the information about vulnerabilities associated with Windows 10. In the box below, list three that you observe. Include the CVE Name.
+x Click on the hyperlink for one of the CVE names in the list. This provides more information on that specific vulnerability.
+x Next to the CVE Name, click on the link that says Learn more at National Vulnerability Database (NVD). This takes you to even more information about the vulnerability from NIST's NVD. Note the vulnerability base score and links for more information.
+
+Using the CVE and NVD List
+Use the area to note your results in performing the tasks above.
+
+Your reflection
+CVE-2023-5257 A vulnerability was found in WhiteHSBG JNDIExploit 1.4 on Windows. It has been rated as problematic. Affected by this issue is the function handleFileRequest of the file src/main/java/com/feihong/ldap/HTTPServer.java. The manipulation leads to path traversal. The exploit has been disclosed to the public and may be used. VDB-240866 is the identifier assigned to this vulnerability. CVE-2023-48365 Qlik Sense Enterprise for Windows before August 2023 Patch 2 allows unauthenticated remote code execution, aka QB-21683. Due to improper validation of HTTP headers, a remote attacker is able to elevate their privilege by tunneling HTTP requests, allowing them to execute HTTP requests on the backend server that hosts the repository application. The fixed versions are August 2023 Patch 2, May 2023 Patch 6, February 2023 Patch 10, November 2022 Patch 12, August 2022 Patch 14, May 2022 Patch 16, February 2022 Patch 15, and November 2021 Patch 17. NOTE: this issue exists because of an incomplete fix for CVE-2023-41265. CVE-2023-45689 Lack of sufficient path validation in South River Technologies' Titan MFT and Titan SFTP servers on Windows and Linux allows an authenticated attacker with administrative privileges to read any file on the filesystem via path traversal
+
+Things to think about
+Your answers will vary depending on the current results from the CVE and NVD searches. Explore the information about the vulnerability to determine the likelihood and impact of exploits.
+
+
+
+1.4.11 Identifying Vulnerabilities Exercise Solution
+---------------------------------------
+Exercise Summary - Sample Results
+Your answers will vary based on the current CVE and NVD search results. Below are screenshots from May 7, 2020 when I searched for Windows 10 and selected one of the entries: CVE-2020-8145. Use this information to understand the severity of the vulnerability and what it may affect.
+
+
+
+1.4.12 Introduction to Threats, Attacks, and Exploits
+---------------------------------------
+Threats
+Now that we know about vulnerabilities, we need to understand threats that may try to take advantage of them.
+
+Definition of threat: Any circumstance or event with the potential to adversely impact organizational operations (including mission, functions, image, or reputation), organizational assets, individuals, other organizations, or the Nation through an information system via unauthorized access, destruction, disclosure, modification of information, and/or denial of service. (NIST)
+
+Examples of threats with cars
+* Nails in the road
+* Rain
+* Drunk Driving
+Examples of threats with information technology
+
+* Malicious hacker
+* Disclosed passwords
+* User error
+Threat source - The person or thing that is likely to cause damage.
+
+Threat vector- The way a threat or threat source will take advantage of or exploit a vulnerability to cause damage.
+
+Attack and exploit
+In cybersecurity, the behavior of a threat trying to exploit or take advantage of a flaw in a computer system is an attack or exploit in action
+
+For example, a malicious hacker may attack a computer system by cracking a password database and then use the results to gain unauthorized access. Here, the hacker is exploiting multiple vulnerabilities: gaining access to the password database, having the ability to crack it, and exploiting the results and using the password.
+
+Threat Information Resource
+
+The MITRE ATT&CK® Framework is a well-known knowledge base of cybersecurity attack scenarios based on real-world observations and it is used in many places. It is very likely you will see this framework in other places or lessons. In this section, we just gave you a high-level introduction.
+
+New terms
+* Threat: Any circumstance or event with the potential to adversely impact organizational operations (including mission, functions, image, or reputation), organizational assets, individuals, other organizations, or the Nation through an information system via unauthorized access, destruction, disclosure, modification of information, and/or denial of service.
+* Exploit: A hardware or software tool designed to take advantage of a flaw in a computer system, typically for malicious purposes such as installing malware.
+* Attack: Any kind of malicious activity that attempts to collect, disrupt, deny, degrade, or destroy information system resources or the information itself.
+Source: https://csrc.nist.gov/glossary
+
+Further research
+* MITRE ATT&CK Framework - https://attack.mitre.org/
+
+
+
+1.4.13 Introduction to Threats, Attacks, and Exploits Quizzes
+---------------------------------------
+Quiz Question
+Consider this scenario: a malicious attacker may try to crack a password database and then use the results to gain unauthorized access into computer systems. What action this person is doing?
+exploitation
+
+Quiz Question
+Which of the following can be considered cybersecurity threats? (Pick all that apply)
+distrunteld employee
+user error
+hackers
+
+Quiz Question
+Company ABC's client information recently got breached. Upon investigation, they found that an employee clicked an advertisement link sent to his working email. This email was sent by a group of hackers to steal account ID and password. Which of the following statement is true about threat vectors and threat sources.
+the fake advertisement ink is a threat source
+
+
+
+1.4.14 Introduction to Threats, Attacks, and Exploits Exercise
+---------------------------------------
+A Threat Example
+In this exercise, you will take a look at a specific threat.
+
+In this exercise, you'll explore threat information found on the MITRE ATT&CK® website.
+
+x Go to the MITRE ATT&CK website: https://attack.mitre.org/. Once there, scroll down to see the ATT&CK Matrix for Enterprise.
+x Click on the top-left item Drive-by Compromise
+x Review the information on the Drive-by Compromise page and answer the questions below.
+x For advanced students, you can pick any of the threats listed in the framework.
+
+For the attack you selected (either the Drive-by Compromise or one of your choosing) answer the following:
+
+Attack Name:
+ID:
+Tactic:
+Platform:
+Permissions Required:
+Brief description of the attack:
+
+Your reflection
+attack name : Drive-by Compromise ID: T1189 Tactic: Initial Access Platforms: Linux, SaaS, Windows, macOS
+
+Things to think about
+See an explanation of the answers for the Drive-by Compromise:
+
+Attack Name: Drive-by Compromise
+ID: T1189
+Tactic: Initial Access
+Platform(s): Windows, Linux, macOS, SaaS
+Permissions Required: User
+Brief description of the attack: see the solution page
+
+
+
+1.4.15 Introduction to Threats, Attacks, and Exploits Solution
+---------------------------------------
+Exercise Summary
+The intent of this exercise is to give you an opportunity to learn specific information about different types of threats.
+
+See an explanation of the answers for the Drive-by Compromise:
+
+* Attack Name: Drive-by Compromise
+ * The specific name for the attack
+* ID: T1189
+ * The attack's unique identifying number
+* Tactic: Initial Access
+ * Where this type of attack typically occurs. This type of attack is used to gain the initial access into a system.
+* Platform(s): Windows, Linux, macOS, SaaS
+ * Operating systems or platforms affecting this attack.
+* Permissions Required: User
+*  Type of authorization required for the attack. In this case, a general user can accomplish it.
+* Brief description of the attack: "A drive-by compromise is when an adversary gains access to a system through a user visiting a website over the normal course of browsing. With this technique, the user's web browser is typically targeted for exploitation, but adversaries may also use compromised websites for non-exploitation behavior such as acquiring application access tokens."
+
+
+
+1.4.16 Lsson Conclusion
+---------------------------------------
+Lesson Summary
+In this lesson, you learned a little bit about how to think like a hacker. We covered the Hacking Lifecycle, Vulnerability Management, and Threats, Attacks, and Exploits.
+
+By now, you should be able to:
+
+* categorize assets, risks, threats, vulnerabilities, exploits
+* identify different types of vulnerabilities in a system
+* identify the categories of a cyber threat
+* determine the phase of a cyber attack
+* and recognize common exploits
+
+Glossary
+* Asset: A major application, general support system, high impact program, physical plant, mission-critical system, personnel, equipment, or a logically related group of systems.
+* Vulnerability: Weakness in an information system, system security procedures, internal controls, or implementation that could be exploited or triggered by a threat.
+* Threat: Any circumstance or event with the potential to adversely impact organizational operations (including mission, functions, image, or reputation), organizational assets, individuals, other organizations, or the Nation through an information system via unauthorized access, destruction, disclosure, modification of information, and/or denial of service.
+* Exploit: A hardware or software tool designed to take advantage of a flaw in a computer system, typically for malicious purposes such as installing malware.
+* Risk: A measure of the extent to which an entity is threatened by a potential circumstance or event, and typically a function of: (i) the adverse impacts that would arise if the circumstance or event occurs; and (ii) the likelihood of occurrence.
+* Attack: Any kind of malicious activity that attempts to collect, disrupt, deny, degrade, or destroy information system resources or the information itself.
+* Penetration Testing: A test methodology in which assessors, typically working under specific constraints, attempt to circumvent or defeat the security features of an information system.
+Source: https://csrc.nist.gov/glossary/
+
+Further research
+* MITRE Common Vulnerabilities and Enumeration - https://cve.mitre.org
+* NIST National Vulnerability Database - https://nvd.nist.gov/general
+* MITRE ATT&CK Framework - https://attack.mitre.org/
+* The Jargon File contains a more thorough explanation of the hacking lifecycle including a comprehensive glossary of hacking terms.
+
+
+
