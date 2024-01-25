@@ -1,6 +1,6 @@
 nd0035
 
-date start : 28 december 2023
+date start : 26 january 2024
 
 
 1.3.1 Introduction
@@ -169,54 +169,378 @@ Security and Privacy Professionals need to be very knowledgeable about the diffe
 
 1.3.8 Intro to Security Regulations
 ---------------------------------------
+Intro to Security Regulations and Frameworks
+
+Summary
+Every organization, no matter its size, structure or sector has a governing body saying what security rules must be followed. These laws, regulations, standards and frameworks provide oversight and direction for security programs. They supply a process for securing an organization's infrastructure. Many also have very specific rules or controls that must be followed.
+
+This section helps you identify these common security regulations and frameworks that you will see as a cybersecurity professional.
+
+Security Frameworks
+ISO 27000 Series
+* ISO/IEC 27001:2013, Information Security Management System (ISMS) Specification
+* ISO/IEC 27002:2013, The Code of Practice for Information Security Management
+ * 14 security control groups
+ * 35 control objectives
+* More than 110 individual controls
+* ISO/IEC 27005:2011, ISMS Risk Management
+
+NIST Computer Security Resources Center Special Publications
+The NIST CSRC provides resources including standards, practice guides and requirement documents on a computer, cyber, and information security and privacy.
+In particular, the Special Publication or SP 800 Series comprises guidelines, recommendations, technical specifications, and annual reports of NIST’s cybersecurity activities. See: https://www.nist.gov/itl/publications-0/nist-special-publication-800-series-general-information
+
+Industry-Specific Regulations
+* HIPAA Security and Privacy rules - Safeguarding Protected Health Information (PHI)
+* Payment Card Industry Data Security Standard (PCI DSS) - Rules for processing, storing or transmitting Cardholder Data
+* European Union’s General Data Privacy Regulation (GDPR) - EU’s law on data protection and privacy
+
+New terms
+* ISMS: Information Security Management System
+
+Further research
+* ISO/IEC 27000 Series - https://www.iso.org/isoiec-27001-information-security.html
+* NIST CSRC - https://csrc.nist.gov/
+* NIST Special Publications - https://csrc.nist.gov/publications
+* HIPAA Privacy Rule - https://www.hhs.gov/hipaa/for-professionals/privacy/index.html
+* HIPAA Security Rule - https://www.hhs.gov/hipaa/for-professionals/security/laws-regulations/index.html
+* PCI DSS - https://www.pcisecuritystandards.org/
+* EU GDPR - https://gdpr-info.eu/
+
 
 
 1.3.9 Intro to Security Regulations Quizzes
 ---------------------------------------
+Quiz Question
+Which document from the ISO/IEC 27000 Series has more than 110 individual security controls?
+ISO/IEC 27002
+
+Quiz Question
+Match the Security Regulation with its topic area.
+
+Security Regulation     Topic Area
+HIPAA                   Safeguarding Protected Health Information (PHI)
+PCI DSS                 Handling Cardholder (Credit Card) Data
+ISO 27000               International Information Security Management System (ISMS) Specification
+GDPR                    European Union's Privacy Law
+NIST                    US Federal Standards
+
 
 
 1.3.10 Intro to Security Regulations Exercise
 ---------------------------------------
+For this exercise, you are to explore the NIST Computer Security Resources Center (CSRC) Special Publications found at https://csrc.nist.gov/publications/sp. NIST is chartered to provide information security and data privacy standards and guidelines, which are contained in their Special Publications. The 800 Series are the ones dedicated to security.
+
+Quiz Question
+Go to the NIST Special Publications SP 800 Series website: https://csrc.nist.gov/publications/sp800. Using that website, match the title of the Special Publication with its SP number. You don't need to be concerned about the version or revision number.
+
+SP Number   SP Title
+SP 800-171  Protecting Controlled Unclassified Information in Nonfederal Systems and Organizations
+SP 800-160  Developing Cyber Resilient Systems: A Systems Security Engineering Approach
+SP 800-63-3 Digital Identity Guidelines
+SP 800-53   Security and Privacy Controls for Information Systems and Organizations
+SP 800-61   Computer Security Incident Handling Guide
+
+
+Reflect on NIST SPs
+From the NIST Special Publications SP 800 Series website, pick one of the publications and explain what it contains and how you would use it. Below are some examples for you to explore:
+
+* NIST SP 800-210(Draft) - General Access Control Guidance for Cloud Systems
+* NIST SP 800-181 - National Initiative for Cybersecurity Education (NICE) Cybersecurity Workforce Framework
+* NIST SP SP 800-61 Rev. 2 - Computer Security Incident Handling Guide
+
+explain about security incidents and can use this documentation for a guide
+
+Things to think about
+Answers may vary. NIST Special Publications are used throughout cybersecurity. Use this as an opportunity to understand how they can help you as a security professional and your organization secure their infrastructure.
+
+NIST SP 800-210 presents an initial step toward understanding security challenges in cloud systems by analyzing the access control (AC) considerations in all three cloud service delivery models—Infrastructure as a Service (IaaS), Platform as a Service (PaaS), and Software as a Service (SaaS).
+NIST SP 800-181 describes the National Initiative for Cybersecurity Education (NICE) Cybersecurity Workforce Framework (NICE Framework), a reference structure that describes the interdisciplinary nature of the cybersecurity work. It serves as a fundamental reference resource for describing and sharing information about cybersecurity work and the knowledge, skills, and abilities (KSAs) needed to complete tasks that can strengthen the cybersecurity posture of an organization.
+NIST SP800-61 assists organizations in establishing computer security incident response capabilities and handling incidents efficiently and effectively. This publication provides guidelines for incident handling, particularly for analyzing incident-related data and determining the appropriate response to each incident.
+
 
 
 1.3.11 Intro to Security Regulations Exercise Solution
 ---------------------------------------
+Summary
+For this exercise, you reviewed the NIST Special Publications. These are documents you’ll reference regularly as a security professional. For the exercise, you should have used that website and match the title of the Special Publication with its SP number. You don't need to be concerned about the version or revision number.
+
+For part 2 of the exercise, you should have picked one of the publications and explain what it contains and how you would use it. Some that I found interesting are:
+
+* NIST SP 800-210(Draft) - General Access Control Guidance for Cloud Systems
+* NIST SP 800-181 - National Initiative for Cybersecurity Education (NICE) Cybersecurity Workforce Framework
+* NIST SP SP 800-61 Rev. 2 - Computer Security Incident Handling Guide
+
 
 
 1.3.12 NIST Cybersecurity Framework
 ---------------------------------------
+NIST Cybersecurity Framework - Overview
+
+NIST CSF
+The NIST Cybersecurity Framework helps to simplify the process of maturing an organization’s cybersecurity program. By following NIST CSF, businesses experience fewer breaches and compliance issues. NIST CSF consists of standards, guidelines, and practices to promote the protection of critical infrastructure.
+
+The Framework Tiers describe how mature an organization is when it comes to cybersecurity technology, management, and operational practices. The more mature, the more efficient, effective, and secure. There are four tiers. A company new to NIST would start at Tier 1, while a mature program would be a level 3 or 4.
+
+The CSF Core is a set of cybersecurity activities organized into high-level functions and categories. Using non-technical and straightforward language, it provides a translation layer among multi-disciplinary teams. The Core includes five high-level functions: Identity, Protect, Detect, Respond, and Recover. The categories fit within the functions and provide greater direction on implementing the function.
+
+The NIST CSF organizational Profile forms the company’s unique alignment of business objectives, threats, risks, and requirements. By comparing the current profile with a target profile, the company can identify the area to improve the cybersecurity.
+
+The NIST CSF Tiers, Core, and Profile provide direction on implementing a compliant security program that manages its cybersecurity risks to acceptable levels.
+
+NIST CSF Core - Functions
+The NIST CSF five Functions or steps are Identify, Protect, Detect, Respond, and Recover.
+
+1. Identify valuable company assets and data.
+2. Protect valuable company assets and data from threats.
+3. Detect when a cyber incident occurs.
+4. Respond quickly and efficiently to a cyber incident.
+5. Recover from an incident and get back to business
+
+NIST CSF Core - Categories
+The next layer of the CSF Core is Categories, which are a set of cybersecurity activities and outcomes organized into 23 Categories. Each category has a unique identifier based on the function and category name. It’s what you need to do or prove you do for a cybersecurity program. It uses simplistic and non-technical language to provide easy communication between multi-disciplinary teams.
+
+Further research
+* NIST CSF, "An Introduction to the Components of the Framework" - https://www.nist.gov/cyberframework/online-learning/components-framework
+* NIST CSF Five Functions - https://www.nist.gov/cyberframework/online-learning/five-functions
+
 
 
 1.3.13 NIST Cybersecurity Framework Quizzes
 ---------------------------------------
+Quiz Question
+This describes how mature an organization is when it comes to cybersecurity technology, management and operational practices.
+Tiers
+
+Quiz Question
+Match the NIST CSF category with its function.
+
+Category             Function
+Anomalies and Events Detect
+Recovery Planning    Recover
+Mitigation           Respond
+Governance           Identify
+Access Control       Protect
+
 
 
 1.3.14 NIST Cybersecurity Framework (CSF) Exercise
 ---------------------------------------
+The NIST Cybersecurity Framework (CSF) Core includes five high level functions: Identify, Protect, Detect, Respond, and Recovery and 23 Categories that are split across the five Functions. The image below depicts the Framework Core's Functions and Categories.
+
+Identify Function
+The Identify Function assists in developing an organizational understanding in managing cybersecurity risk to systems, people, assets, data, and capabilities. Understanding the business context, the resources that support critical functions, and the related cybersecurity risks enable an organization to focus and prioritize its efforts, consistent with its risk management strategy and business needs.
+
+List at least three examples of the Identify Function.
+
+Your reflection
+asset management, business environment , governance
+
+Things to think about
+Examples of outcome Categories within the Identify Function include:
+* Identifying physical and software assets within the organization to establish the basis of an Asset Management program
+* Identifying the Business Environment the organization supports including the organization's role in the supply chain and the organization's place in the critical infrastructure sector
+* Identifying cybersecurity policies established within the organization to define the Governance program as well as identifying legal and regulatory requirements regarding the cybersecurity capabilities of the organization
+* Identifying asset vulnerabilities, threats to internal and external organizational resources, and risk response activities as a basis for the organization's Risk Assessment
+* Identifying a Risk Management Strategy for the organization including establishing risk tolerances
+* Identifying a Supply Chain Risk Management strategy including priorities, constraints, risk tolerances, and assumptions used to support risk decisions associated with managing supply chain risks
+Answers found at https://www.nist.gov/cyberframework/online-learning/five-functions
+
+
+Protect Function
+The Protect Function outlines appropriate safeguards to ensure delivery of critical infrastructure services. The Protect Function supports the ability to limit or contain the impact of a potential cybersecurity event.
+
+List at least three examples of the Protect Function.
+
+Your reflection
+protect identity management & access control provide awareness and training enforce data security
+
+Things to think about
+Examples of outcome Categories within the Protect Function include:
+
+Protections for Identity Management and Access Control within the organization including physical and remote access
+Empowering staff within the organization through Awareness and Training including role based and privileged user training
+Establishing Data Security protection consistent with the organization’s risk strategy to protect the confidentiality, integrity, and availability of information
+Implementing Information Protection Processes and Procedures to maintain and manage the protection of information systems and assets
+Protecting organizational resources through Maintenance, including remote maintenance, activities
+Managing Protective Technology to ensure the security and resilience of systems and assists are consistent with organizational policies, procedures, and agreements
+Answers found at https://www.nist.gov/cyberframework/online-learning/five-functions
+
+
+Detect Function
+The Detect Function describes suitable actions to recognize the existence of a cybersecurity event. The Detect Function allows the identification of cybersecurity events.
+
+List at least three examples of the Detect Function.
+
+Your reflection
+detect anomalies and events have security continous monitoring in place establish a detection process
+
+Things to think about
+Examples of categories within the Detect Function include:
+
+Ensuring Anomalies and Events are identified, and their possible effects are analyzed
+Implementing Security Continuous Monitoring capabilities to watch for cybersecurity events and verify the usefulness of defensive methods including network and physical activities
+Maintaining Detection Processes to provide awareness of anomalous events
+Answers found at https://www.nist.gov/cyberframework/online-learning/five-functions
+
 
 
 1.3.15 NIST Cybersecurity Framework Exercise Solution
 ---------------------------------------
+NIST CSF function summary
+
+* The first function, Identify: identify and document your valuable business assets and inventories. This step assists you with recognizing the valuable technology, data, and other resources your company owns.
+
+* The second function, Protect: ways you can secure the items you identified in step one. Ways to establish valid protection come in many forms, including nontechnical human components, such as security awareness. On the other side are technical products or services requiring some level of expertise, such as network security with firewalls and web filters, malware and virus protection, patching and updating, and encryption.
+
+* The third function, Detect: a real or potential incident as quickly as possible. This allows you to quickly and easily respond and recover. Detect is a process of developing and implementing activities to identify the occurrence of a cybersecurity event, with a focus on finding of such events.
+
+* The fourth function, Respond: Once you detect a problem, whether it’s a security breach, network outage, or system misconfiguration, you need to respond. This is your plan for handling incidents to ensure minimal organizational impacts.
+
+* The fifth function, Recovery: when an incident is properly responded, you may need to recover your organizational activities. To get your operations quickly back to normal can lessen the financial and human costs of a cybersecurity incident. The more resilient you are, the less your organization is effected.
+
+By using the NIST CSF functions and categories, organizations experience fewer breaches and security compliance issues.
+
 
 
 1.3.16 Center for Internet Security
 ---------------------------------------
+Center for Internet Security Best Practices
+In the final section of this lesson, we look at the Center for Internet Security (CIS) Cybersecurity Best Practices. The Center for Internet Security is a non-profit organization that leads a global community of IT professionals in developing security standards to safeguard against emerging threats.
+
+Their best practices are made up of two parts:
+
+* The Critical Security Controls, also known as the CIS CSC or CIS Controls™ which are the top 20 activities for organizational security.
+* The CIS Benchmarks™ are guidelines to secure or lockdown operating systems, software, applications and networks
+
+They are both developed by a community of cybersecurity professionals from many different areas with the goal of establishing a form of a checklist of activities as organizations mature their cybersecurity programs.
+
+The CIS Controls™ is separated into three functional areas that the CIS calls Implementation Groups:
+
+* Basic Controls
+* Foundational Controls
+* Organizational Controls
+
+Further research
+* CIS Best Practices: https://www.cisecurity.org/cybersecurity-best-practices/
+* CIS Controls List: https://www.cisecurity.org/controls/cis-controls-list/
+
 
 
 1.3.17 Center for Internet Security Controls Quizzes
 ---------------------------------------
+Quiz Question
+The CIS Controls can be done in any order as long as they are all accomplished prior to a security audit.
+false
+
+Quiz Question
+Which controls fit into the Basic Controls implementation group?
+hardware and software inventory
+vulnerability management
+controlling the use of administrator accounts
+
+Quiz Question
+Which controls fit into the Foundational Controls implementation group?
+email and web browser security
+data recovery
+wireless access
+
 
 
 1.3.18 Center for Internet Security Controls Exercise
 ---------------------------------------
+CIS control is a great resource you can use to secure your business. You will perform a similar analysis in the final project.
+
+Jill & Roy's Accounting - Case Study
+Jill and Roy provide accounting services throughout their area. They employ 7 full-time workers: 4 accountants, 1 office administrator, and themselves. They also have about a dozen seasonal workers during tax season.
+
+They use Microsoft 365 (aka Office 365) for all of their office applications (email, word processing, spreadsheets, etc.). For their accounting, they use Intuit's Quickbooks and ProConnect online versions. They have a single office with a network router to their ISP, a Linksys LGS116P Ethernet Switch and a Linksys AC1900 WiFi Router.
+
+The full-time accountants each have a Lenovo ThinkPad T490 and the office administrator has a Lenovo desktop. All company workstation computers use Windows 10 and all users have administrator access on their PC. They also have one internal Windows 10 Lenovo desktop that they use as a centralized print and file server that sits in the main office area. Only Roy, Jill and the office admin have an account on it. The temporary workers use their own laptops, which are a mixture of Windows and Macs.
+
+The office has a Bring Your Own Device (BYOD) Policy for all cell phones. They have a contract with a local IT company to provide services, which includes a weekly backup of the file/print server, monthly updating of all computers, and maintenance of the network equipment.
+
+For each of the CIS Controls below, provide your interpretation of how they may apply to Jill & Roy's Accounting. You may use the CIS CSC website https://www.cisecurity.org/controls/cis-controls-list/ to help you answer these questions.
+
+
+
+Hardware and Software Inventory
+CIS Control #1 is Inventory and Control of Hardware Assets and #2 is Inventory and Control of Software Assets.
+
+How do these controls apply to the company?
+What can they do to make sure they meet them?
+Your reflection
+standardized a set of hardware and software to use.
+
+Things to think about
+Having a good software and hardware inventory is the starting point for any security program.
+
+Sample Answer:
+Jill & Roy should have a written inventory of all major hardware devices and computers. This includes all company-owned laptops, desktops, printers, networking equipment, and devices. They should also have an inventory of all software in use by the company, including anything installed on company PCs and cloud services. This inventory should be reviewed at least monthly and updated as needed.
+
+Quiz Question
+Select the CIS Controls that should be the top priority for Jill & Roy's Accounting. Focus on ones in the Basic and Foundational groups.
+Secure Configuration for Hardware and Software on Mobile Devices, Laptops, Workstations, and Servers
+Continuous Vulnerability Management
+Malware Defenses
+Email and Browser Protections
+
+
+Reflect on Using the CIS Controls
+In the box below, provide additional observations on how Jill and Roy's Accounting can use the CIS Controls to improve the security in their business.
+
+Your reflection
+have firewall
+
+Things to think about
+Your answers may vary. The CIS Controls helps businesses of all sizes mature their security programs by taking them through a step-by-step process for securing their infrastructure.
+
 
 
 1.3.19 Center for Interset Security Controls Exercise Solution
 ---------------------------------------
+Summary
+Jill and Roy's Accounting is a typical small business that uses a mix of local and cloud computing. Many small businesses rely on others to provide IT and security services. The Center for Internet Security Controls helps organizations of all sizes know what to do for security and how to do it. You can almost use the top 20 controls like a security checklist.
+
 
 
 1.3.20 Lesson Conclusion
 ---------------------------------------
+Lesson Summary
+In the Maintaining a Secure Critical Infrastructure lesson, we evaluated specific security techniques used to administer a system that meets industry standards and core controls. We covered the following areas:
 
+1. Governance and Compliance
+2. Security Regulations
+3. NIST Cybersecurity Framework
+4. Center for Internet Security Critical Security Controls
+
+By now, you should be able to
+* Explain cybersecurity governance concepts
+* Apply method to enforce cybersecurity governance
+* Identify common security regulations and frameworks
+* Explain how current security laws, regulations and standards applied to cybersecurity and data privacy
+* Recognize components of the NIST Cybersecurity Framework (CSF)
+* Recognize components of the CIS Controls
+
+Glossary
+* Governance: A strategic planning responsibility providing organizational oversight that sets policies and establishes practices to enforcement
+* Compliance: The requirements all affected parties follow the same rules.
+* Audit: An independent review and examination of records and activities to assess the adequacy of system controls, to ensure compliance with established policies and operational procedures. (NIST Glossary)
+* Policy: Statements, rules, or assertions that specify the correct or expected behavior of an entity. (NIST)
+* ISMS: Information Security Management System
+Source: https://csrc.nist.gov/glossary
+
+Further research
+* NIST Glossary: https://csrc.nist.gov/glossary/
+* ISO/IEC 27000 Series - https://www.iso.org/isoiec-27001-information-security.html
+* NIST CSRC - https://csrc.nist.gov/
+* NIST Special Publications - https://csrc.nist.gov/publications
+* HIPAA Privacy Rule - https://www.hhs.gov/hipaa/for-professionals/privacy/index.html
+* HIPAA Security Rule - https://www.hhs.gov/hipaa/for-professionals/security/laws-regulations/index.html
+* PCI DSS - https://www.pcisecuritystandards.org/
+* EU GDPR - https://gdpr-info.eu/
+* NIST CSF, "An Introduction to the Components of the Framework" - https://www.nist.gov/cyberframework/online-learning/components-framework
+* NIST CSF Five Functions - https://www.nist.gov/cyberframework/online-learning/five-functions
+* CIS Best Practices: https://www.cisecurity.org/cybersecurity-best-practices/
+* CIS Controls List: https://www.cisecurity.org/controls/cis-controls-list/
 
 
