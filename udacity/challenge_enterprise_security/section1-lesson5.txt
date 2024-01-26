@@ -1,0 +1,570 @@
+nd0035
+
+date start : 27 january 2024
+
+
+1.5.1 Introduction
+---------------------------------------
+Lesson Introduction
+Welcome to the fifth lesson of the course. This lesson is about establishing security defenses on computer systems. By the end of the lesson, you’ll be able to explain ways to create and manage the security of a network, computing environment, and applications.
+
+
+
+1.5.2 Establishing Security Defenses
+---------------------------------------
+Overview
+This lesson is about establishing security defenses on computer systems. It’s the Protect function from the NIST Cybersecurity Framework. These defenses:
+
+* Reduce the risk of data breaches and disclosure
+* Prevent unauthorized access
+* Minimize vulnerabilities by keeping your devices and applications updated
+* Use email and the web safely
+The more you can automate these activities and establish security procedures as part of your normal routine, the less chance you’ll need to respond to or recover from a security incident.
+
+
+
+1.5.3 Lesson Outline
+---------------------------------------
+Lesson Outline
+Throughout this lesson, you will understand methods for establishing and maintaining the security of a network, computing environment, and application. There are four sections:
+
+* Layering protection
+* Identity and Access Control
+* Patching and Updating, and
+* Web and email security.
+
+Lesson Learning Objectives:
+* Explain how security defenses are layered throughout different system architectures
+* Explain components of identity and access control
+* Identify common identity and access control protection techniques
+* Determine patch levels for common systems/applications
+* Describe the process and technique for applying
+* Understand protection for email and other communication methods
+
+
+
+1.5.4 Layering Protection
+---------------------------------------
+Layering Protection summary
+Defense in depth provides multiple layers of protection to our computer systems, networks and data. Computing systems today also use multiple levels.
+
+* Network
+* Mobile
+* Operating System
+* Applications
+* Data
+
+Surrounding each of these layers are humans that interact with each layer.
+
+For more information on industry-standard network layering, see the OSI 7-Layer model.
+
+By the end of this lesson, you'll be able to explain how security defenses are layered throughout different system architectures.
+
+Hardening Systems
+
+Hardening Systems summary
+A part of layering security is “hardening” systems. This means applying security settings to protect against attacks, misuse or error. Rather than creating your own technical security standards, it's better to follow what others are doing. Fortunately, we have a resource for that.
+
+The Center for Internet Security provides benchmark guides for common networking devices, operating systems and applications. These are a target for optimal security on specific technologies and can be used to compare an organization’s systems against those targets. Their website (https://www.cisecurity.org/cis-benchmarks/) provides over 140 technical guidelines providing best practices for securing a system’s configuration. CIS Benchmarks are distributed free of charge in PDF format.
+Examples of benchmarks:
+
+* Desktops & Web Browsers
+* Mobile Devices
+* Network Devices
+* Servers – Operating Systems
+* Servers – Other
+* Virtualization Platforms & Cloud
+
+As a security and systems administrator, we use these guides to tell us how to harden our systems.
+
+New terms
+* Hardening: A process intended to eliminate a means of attack by patching vulnerabilities and turning off nonessential services.
+Source: https://csrc.nist.gov/glossary/
+
+Further research
+* CIS Benchmarks - https://www.cisecurity.org/cis-benchmarks/
+
+
+
+1.5.5 layering Protection Quizzes
+---------------------------------------
+Quiz Question
+Humans only interact with the application and data levels.
+false
+
+Quiz Question
+Please match the layer with its potential protection method.
+Layer             Protection
+Database          Access control
+Data              Encryption
+Operating system  Credentials
+
+
+
+1.5.6 Layering Protection Exercise
+---------------------------------------
+Jill & Roy's Accounting - Case Study
+You should be familiar with this case study from an earlier lesson. We'll be reusing it throughout this one. Jill and Roy provide accounting services throughout their area. They employ 7 full-time workers: 4 accountants, 1 office administrator, and themselves. They also have about a dozen seasonal workers during tax season.
+
+They use Microsoft 365 (aka Office 365) for all of their office applications (email, word processing, spreadsheets, etc.). For their accounting, they use Intuit's Quickbooks and ProConnect online versions. They have a single office with a network router to their ISP, a Linksys LGS116P Ethernet Switch and a Linksys AC1900 WiFi Router.
+
+The full-time accountants each have a Lenovo ThinkPad T490 and the office administrator has a Lenovo desktop. All company workstation computers use Windows 10, Google Chrome for their standard web browser, and all users have administrator access on their PC. They also have one internal Windows 10 Lenovo desktop that they use as a centralized print and file server that sits in the main office area. Only Roy, Jill, and the office admin have an account on it. They recently allowed Remote Desktop Protocol (RDP) into it to allow employees to access files from home. The temporary workers use their own laptops, which are a mixture of Windows and Macs.
+
+The office has a Bring Your Own Device (BYOD) Policy for all cell phones (a mix of Apple iPhones and Android). They have a contract with a local IT company to provide services, which includes a weekly backup of the file/print server, monthly updating of all computers, and maintenance of the network equipment.
+
+Answer the questions below based on this case study.
+
+Quiz Question
+Match the Layer with the technology used by Jill & Roys.
+
+Layer             Asset
+Application       Quickbooks
+Operating System  Microsoft Windows 10
+Network           Linksys Ethernet Switch
+Mobile            iPhone and Android smartphones
+Human             Employees
+Data              Personally Identifiable Tax Information
+
+Quiz Question
+From the Center for Internet Security Benchmark website, select the benchmarks that you think apply to Jill & Roys.
+
+microsoft office
+microsoft windows desktop
+print devices
+google chrome
+
+
+Reflection on layering of security
+Based on what you've learned so far, provide 1-2 sentences to Jill & Roy about how they are layering security and any potential recommendations. You'll build on this in future lessons.
+
+Your reflection
+every layering of security applied should be isolated and yet it can be fix or update should the layer require to do so.
+
+Things to think about
+Jill & Roys have a satisfactory layering of security by using a network switch as their firewall and by using cloud services for many of their applications. Most of their critical data is stored in the Intuit cloud.
+
+By opening their Windows 10 File Server to the Internet, they are potentially by-passing the layering and allowing direct access into their work environment.
+
+
+
+1.5.7 Layering Protection Exercise Solution
+---------------------------------------
+Summary
+Using the Jill & Roy's Accounting as a Case Study for a typical company, you can see the many layers in place.
+
+They should use the CIS Benchmarks as standards for setting security baselines on the applications, operating systems, and devices in their environment. The specific ones for them are:
+
+* Microsoft Office
+* Microsoft Windows Desktop
+* Print Devices
+* Google Chrome
+
+
+
+1.5.8 Identity and Access Control
+---------------------------------------
+Identity and Access Control
+This lesson is about control access to computers, systems, applications and data. By the end of this lesson, you’ll be able to (1) explain parts of identity and access control and (2) identify common identity and access control protection techniques.
+
+Identity and access control is about proving who you are. It starts with your identifier or user-id. This is usually an email address or some form of your name.
+Next, you need to prove it's you which is authentication. This is often a password or pin or on some devices like your smart, it’s your fingerprint or face. The device itself can also be used to prove it’s you. All this to confirm to a remote computer that it’s really you and not some imposter.
+
+For stronger security and to ensure it’s really you, we use something known as Multi-Factor Authentication (MFA). This is something you
+
+* Know - e.g. Password
+* Are - e.g. Fingerprint
+* Have - e.g. Smartphone
+
+Authorization:
+
+* What are you allowed to do once you have access?
+* Includes access rights/permissions - Read, Write, Delete, Execute
+* Least Privilege limits access based on need
+
+New terms:
+* Authentication: Verifying the identity of a user, process, or device, often as a prerequisite to allowing access to resources in an information system.
+* Multi-Factor Authentication (MFA): Authentication using two or more factors to achieve authentication.
+Source: https://csrc.nist.gov/glossary/
+
+Further research
+* NIST SP800-63-3, Digital Identity Guidelines, https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-63-3.pdf
+
+
+
+1.5.9 Identity and Access Control Quizzes
+---------------------------------------
+Quiz Question
+Match the authentication type with the example.
+
+Authentication Type - Something you:     Example
+Know                                     Email address
+Have                                     Laptop
+Are                                      Voice
+
+
+Quiz Question
+Permissions to access a file or data element is considered this part of Access Control.
+authorization
+
+
+
+1.5.10 Identity and ACcess Control Exercise
+---------------------------------------
+Identity and Access Control Exercise
+
+Exercise 1
+In this exercise, you're setting up Identity, Access, Authentication, and Authorization on a sample Windows 10 system for Jill & Roy's Accounting. You need to complete the following on the CYBERND01PRJ01 VM provided to you as a part of this class:
+
+1. Log into the Azure Windows 10 PC.
+2. Set the password policy in the Account Policy in the Local Security Policy. Set the maximum password age to 90 days, set the minimum password length to 10 characters, and set the accounts lockout threshold to 5 times.
+3. Create a local user account for Jill & Roy's office manager Samuel on the Windows 10 office computer using the Control Panel. Make sure it does not have administrator privileges. Set it so that he needs to change their password upon first use.
+4. Create a folder and share it with every user on this computer. Make sure the users have full access to the folder.
+
+IMPORTANT: Please always remember to shut down ALL of the virtual machines when not in use to avoid charges! The status of ALL virtual machines should be stopped!
+
+
+Exercise 2
+For this exercise, you'll use the KeePass application on the Windows 10 virtual PC.
+
+1. Log into the Windows 10 virtual PC and start the KeePass application on the desktop.
+2. Create a New Database using the default settings and following the on-screen instructions.
+3. Be sure to create a very long Master password with a quality of at least 100 bits.
+4. Add a new entry to the database. This would be a user-id and password you may use for an application or website. Open the built-in Password Generator and use it to generate a complex password assigned to a sample user-id.
+IMPORTANT: Please always remember to shut down ALL of the virtual machines when not in use to avoid charges! The status of ALL virtual machines should be stopped!
+
+Exercise 2 - Reflection
+In the answer box below, write your observations of use KeePass. Include the benefits of using a password management tool and a password generator.
+
+Your reflection
+password is encrypted by keepas so it is safe. password generator ensure that password is random yet its strength is strong.
+
+Things to think about
+KeePass and other password managers reduce the need to memorize multiple passwords for applications and websites.
+A password generator prevents users from creating an easily-guessable password. By using it along with a password manager, you can set much longer and complex passwords.
+
+
+
+1.5.11 Identity and Access Control Exercise Solution
+---------------------------------------
+In this exercise, you set up Identity, Access, Authentication, and Authorization on a sample Windows 10 system for Jill & Roy's Accounting. The steps and videos below show the steps you should take in meeting the exercise requirements.
+
+Exercise 1 solution
+
+Setting the password policy video
+
+Setting the password policy
+To set the password policies for this PC, follow the steps in the video.
+
+1. Type Local Security Policy in the Windows search bar. The Local Security Policy window will appear.
+2. In that window, select the arrow next to Account Policies and click on Password Policy to see these security settings.
+3. Double-click on each policy to change it according to the requirements. If needed, you can use the "Explain."
+
+Create local user accounts video
+
+Creating Local User Accounts
+To create new local accounts in Windows, follow the steps in the video.
+
+1. Go to the Control Panel and select User Accounts. Select Manage another account and then Add a new user in PC settings to add another account.
+2. On the "Create an account for this PC" Window, create and account for each Jill, Roy and Samuel. Make sure you use a secure password that meets the password standards.
+3. Make sure all accounts are not an administrator. The only administrator account should be the one you use to sign-in to this computer.
+
+Create shared folders video
+
+Setting folder and file permissions
+To set file and folder permissions in Windows, follow the steps in the video.
+
+1. Create a new folder on the desktop by right-clicking anywhere on the desktop and select New > Folder. You may rename the folder if you'd like
+2. With the new folder created, right-click on it and select Give access to. You will then have the option to select the names of the users who should have access. A new window appears asking, "Do you want to share the selected items?" Select Yes, share the items.
+3. To ensure the users have full access to the folder (as opposed to just having read-only access), right-click on the folder and select Properties. Click on the Sharing tab and then the Share... button. From the Window can you "Choose people to share with" and select the appropriate permissions to match the requirements. When you're done with your modifications, click the Share button on the bottom.
+
+Quiz Question
+On a Windows 10 system, where do you set the access control policies?
+Local Security Policy
+
+Exercise 2 solution
+Use KeePass video
+
+Using a Password Manager application
+KeePass and other password managers reduce the need to memorize multiple passwords for applications and websites.
+A password generator prevents users from creating an easily-guessable password. By using it along with a password manager, you can set much longer and complex passwords.
+
+
+
+
+1.5.12 Patching & Updating
+---------------------------------------
+Patching & Updating
+One of the easiest and cost-effective ways to secure computers is by fixing vulnerabilities before evil hackers have a chance to exploit them. By the end of this lesson, you’ll be able to describe the process and technique for applying computer patches and updates and determine patch levels for common systems/applications.
+
+In cybersecurity a patch, meaning a software or code revision, is used to fix some type of issue, whether it’s with functionality, security or to add new features.
+
+NIST Five-step patch management process:
+
+1. Notification - Vendor announcement
+2. Identification - Asset inventory
+3. Deployment - Downloading to the local computer
+4. Installation - Install on the computer
+5. Verification - Confirm the patch is installed successfully
+
+New terms
+* Patch: A software or code revision, is used to fix some type of issue, whether it’s with functionality, security or to add new features
+Source: https://csrc.nist.gov/glossary/
+
+Further research
+* NIST Glossary, Patch Management - https://csrc.nist.gov/glossary/term/patch_management
+
+
+
+1.5.13 Patching & Updating Quizzes
+---------------------------------------
+Quiz Question
+It's best practice is to always get software updates from a trusted source like the manufacturer.
+true
+
+Quiz Question
+Match the patch management process step with a common example
+
+Step                       Example
+Notification               Manufacturer email about a fix
+Identification             Analyzing the update
+Deployment                 Acquiring the patch
+Installation               Installing the patch on affected computers
+Verification               Certifying the patch is installed
+
+
+
+1.5.14 Patching & Updating Exercise
+---------------------------------------
+In this exercise, you'll review the Microsoft Security Resource Center (MSCR) where they provide information on security updates for their products.
+
+Also as part of this exercise, you'll practice updating your own applications. If you are using any Microsoft products, you can use the information provided from the MSCR in understanding the update process for your devices, software and applications. Other vendors provide similar information.
+
+Exercise 1: Updating your applications
+
+Updating your applications
+In the Hacking Lifecycle lesson, you took an inventory of your home systems and applications. This is also the first step for both the NIST CSF and CIS Controls.
+
+1. Using that list, document below the systems and applications that need to be updated. Quite often today, applications are automatically updated. In those cases, document the latest version.
+2. Are all of your applications and operating systems completely up-to-date? Why or why not?
+
+Your reflection
+yes. to prevent any security issues.
+
+Things to think about
+1. You should list the same applications previously used in your software inventory. Each one should now show it's on the latest version available from the manufacturer.
+   Your answers may vary. The intent is for you to ensure all of the applications you use are updated to the latest version.
+2. Sometimes we don't update software for many reasons:
+* It's an application we don't use very often
+* We don't realize it needs to be updated. For example, smartphone apps are updated through a separate function and not as a part of the app.
+* We don't know or understand the impact of the update and are fearful it will disrupt us using the app.
+* We want to make sure the application is fully tested and vetted by others before we install it.
+
+
+Exercise 2: Microsoft Security Resource Center (MSRC)
+The Microsoft Security Resource Center (MSRC) is a centralized location for information about vulnerabilities and updates to Microsoft products. In this exercise, you'll explore the MSRC to understand Microsoft's process patch process.
+
+Microsoft Security Resource Center (MSCR) - Part 1
+Go to the Microsoft Security Resource Center (MSCR). Click on Read the Security Update Guide FAQ to go to that page. Answer these questions:
+* When does Microsoft release security updates?
+* How can you receive notifications about Microsoft updates?
+
+Your reflection
+Microsoft schedules the release of security updates on "Patch Tuesday," the second Tuesday of each month at 10:00 AM PST. Microsoft sends out a notification whenever there is material information that affects customers’ security. If security changes are required, Microsoft releases a security update which includes all of its supporting collateral such as the Security Update Guide and Knowledge Base article. Otherwise, Microsoft communicates via several methods (for example, a security advisory or a blog post) on the matter that affects customers’ security and provides guidance along the way.
+
+Things to think about
+The MSCR is a one-stop-shop for all information about Microsoft patches, updates and vulnerabilities.
+
+Microsoft schedules the release of security updates on "Patch Tuesday," the second Tuesday of each month at 10:00 AM PST. Please note that there are some products that do not follow the Patch Tuesday schedule.
+Microsoft sends out a notification whenever there is material information that affects customers’ security. Microsoft's free monthly Security Notification Service provides links to security-related software updates and notification of re-released security updates.
+
+Microsoft Security Resource Center (MSCR) - Part 2
+2. You can also use the Security Update Guide (SUG) to understand vulnerabilities associated with their products. It helps IT professionals understand and use Microsoft security release information, processes, communications, and tools so they can manage organizational risk and develop a repeatable, effective deployment mechanism for security updates.
+On the SUG, find three vulnerabilities and explain them below.
+
+Your reflection
+Microsoft Edge (Chromium-based) PowerShell 7.4 Remote Desktop client for Windows Desktop
+
+Things to think about
+Student's answers will vary. The intent is to get you familiar with this website as a resource for general information about known vulnerabilities, patches, and Microsoft articles for updating their products.
+
+Microsoft Security Resource Center (MSCR) - Part 3
+3. Go to the Windows Update FAQ website. In particular, look at the FAQ questions supplied below and provide your observations in the answer space.
+We encourage you to become familiar with this process since so many organizations use Windows operating systems.
+* How do I manually update my Windows PC?
+* How long does it take to download updates?
+
+Your reflection
+Some updates may not be available on all devices at the same time—we’re making sure updates are ready and compatible. To stay up to date, select Start > Settings > Windows Update > Check for updates. The time required to download updates primarily depends on internet connection speed, network settings, and update size. Make sure your device is plugged in and connected to the internet to download updates faster.
+
+Things to think about
+Student's answers will vary. The intent is to get you familiar with this website as a resource for information about Windows 10 updating process.
+Answers to the specific FAQ questions:
+
+Some updates may not be available on all devices at the same time—we’re making sure updates are ready and compatible.
+* To stay up to date, select the Start button > Settings > Update & Security > Windows Update, and then select Check for updates.
+* The time required to download updates primarily depends on internet connection speed, network settings, and update size. Make sure your device is plugged in and connected to the internet to download updates faster.
+
+
+
+1.5.15 Patching & Updating Exercise Solution
+---------------------------------------
+Summary
+To install a patch or update, you first need to identify the asset inventory, i.e. what you have to allow the upgrade. Then you need to compare the current version of applications installed to the lasted versions available. This information can usually be found on the applications' official webpage.
+
+There are many reasons not to patch, some of them are:
+
+* Don't realize an update is needed
+* Don't know or understand the impact of the update
+* Fearful it will disrupt us
+* Want to make sure the application is fully tested before installed
+If possible, always keep your software and applications up to date, the easiest way to do it is to enable auto-update.
+
+Summary
+Microsoft provides numerous resources to help their clients stay current with updates to Microsoft products. Organizations of all types and sizes use them as part of their daily business. Security professionals often need to lead the updating process to ensure those products stay current and free from known vulnerabilities.
+
+Students should become familiar with the MSRC, the Security Update Guide FAQ, and the SUG list of product updates (screenshots below).
+
+
+
+1.5.16 Web and Email Security
+---------------------------------------
+Summary
+Web browsing and email are the top ways computers can get infected with malware, information is stolen and data gets breached. In this session, you’ll understand basic protection techniques for email and other communication methods.
+
+There are simple steps you and your organization can take to protect email:
+
+1. Inventory of accounts - Personal & Business
+2. Know if your email information has been breached (haveibeenpwned.com)
+3. Use a standard format for your email addresses
+
+Another step that protects both your email and your website domain is to make sure your provider uses the email authentication protocols SPF, DKIM, and DMARC. These make it harder for scammers to impersonate your domain and send phishing emails that look like they’re from you.
+
+* Sender Policy Framework (SPF) tells external receiving email servers that your organization’s email servers are approved to send emails from your business’s domain name.
+* Domain Keys Identified Mail (DKIM) adds a digital signature to your outgoing email so that external email servers can confirm that your email is from your domain.
+* Domain-based Message Authentication, Reporting & Conformance (DMARC) verifies the address the server uses matches the “from” address. It also tells external email servers what to with potentially suspicious emails from your domain.
+
+When you send an email from your organization using these security protocols, the receiving servers can confirm that you sent that email and not an imposter. If the email is not validated, the receiving servers can send an alert or block the email. See the FTC, Cybersecurity for Small Business, Email Authentication flyer for more details on web authentication security.
+
+
+Summary
+A simple way to protect ourselves and our private information is to set up our browsers to be as secure as possible.
+
+There are many things you can explore in the security and privacy settings in a browser. For example, you can clear your browsing history, delete or restrict cookies, and restrict locations and cameras. You are recommended to look through your browser's security and privacy settings and secure it.
+
+New terms
+* Cookie: A small file that stores information for a Web site in order to capture the website's state and information about the browsing session.
+* Cache: The temporarily storing of information and images from web pages to improve browsing efficiency.
+Source: https://csrc.nist.gov/glossary/
+
+Further research
+* haveibeenpwned.com: https://haveibeenpwned.com/
+* FTC, Cybersecurity for Small Business, Email Authentication flyer for more details: https://www.ftc.gov/system/files/attachments/email-authentication/cybersecurity_sb_email-authentication.pdf
+* DMARC Overview: https://dmarc.org/overview/
+
+
+
+
+1.5.17 Web and Email Security Quizzes
+---------------------------------------
+Quiz Question
+Why is it important to have an inventory of active email accounts? (Check all that apply)
+
+* Reduce risk of an impostor using someone's email account
+* Ensure only current employees have valid email accounts
+* Make sure any unused email accounts are disabled
+
+Quiz Question
+Which of the following adds a digital signature to your outgoing email?
+sender policy framework (spf)
+
+Quiz Question
+This is a small file that stores information for a Web site in order to capture the web site's state and information about the browsing session.
+cookie
+
+
+
+1.5.18 Web and Email Security Exercises
+---------------------------------------
+Web and Email Security Exercises
+There are two exercises in this lesson to help you understand email and web browser security.
+
+Reflect on Email Security
+Exercise 1: Reflect on HaveIBeenPwned
+Haveibeenpwned.com is a free resource for anyone to quickly assess if they may have been put at risk due to an online account of theirs having been compromised or "pwned" in a data breach. For this exercise, you are to go to the website https://haveibeenpwned.com/ and type in an email address you own. You can also try with multiple email addresses.
+
+Were any of your email accounts compromised (aka pwned)?
+If yes, what information of yours was disclosed in the breach?
+What did you learn from this website?
+
+Your reflection
+yes
+
+Things to think about
+Student answers will vary.
+My email was breached (pwned) in two incidents. In both cases, my compromised data was Email addresses, Employers, Job titles, Names, Phone numbers, Physical addresses, and Social media profiles. For me, all of this information is public knowledge associated with my work, so no harm was done.
+
+
+Exercise 2: Web Cookies and History
+In this exercise, you're reviewing Google Chrome security settings and cookies.
+
+1. Open the Chrome browser and go to Udacity's website.
+2. Click Settings > Privacy and Security in > Site Settings > Cookies and site data. Review the cookies generated on Udacity's website. Delete all of the cookies and refresh the browser.
+3. Go to another website of your choosing and review their cookies.
+4. In Chrome's Settings, clear the browsing data. As you go through this process, be aware of the time range and what is removed.
+
+Reflect on Chrome Settings
+What did you learn about web cookies and history?
+Did any of the cookies surprise you?
+How often do you clear your browser history, cache and cookies?
+
+Your reflection
+just information stored about the user. no never unless in public
+
+Things to think about
+Student answers will vary. Note that cookies track us all over the Internet. Some locations like in Europe have laws restricting what can be tracked and require your permission to track you on their website.
+Many of us don’t think to clear our history and cookies and when we do it breaks what we do on the Internet. So just be aware of the tracks you leave when browsing.
+
+
+
+1.5.19 Web and Email Security Solutions
+---------------------------------------
+
+Exercise 1: HaveIBeenPwned Explanation
+
+Summary
+It's common for email addresses to be compromised. The image below shows the results for one of my email accounts. All of the information of mine is public, so there's no impact and therefore little risk.
+
+Exercise 2: Web Cookies and History Explanation
+
+Summary
+You should observe the number of cookies captured from websites. Most if not all are not harmful and are just used to help you navigate web pages. Some could contain sensitive information.
+When you are done browsing on any public computer, you should clear your browsing history to make sure no one can see what you've been doing.
+
+
+
+1.5.20 Lesson Conclusion
+---------------------------------------
+
+Lesson Summary
+In this lesson, you learned about establishing security defenses on computer systems. It’s what you need to do to prevent unauthorized access on your systems and networks by layering defenses, minimize vulnerabilities by keeping your devices and applications updated, and use email and the web safely. By now, you should be able to explain ways to create and manage the security of a network, computing environment, and applications.
+
+Glossary
+* Hardening: A process intended to eliminate a means of attack by patching vulnerabilities and turning off nonessential services.
+* Authentication: Verifying the identity of a user, process, or device, often as a prerequisite to allowing access to resources in an information system.
+* Multi-Factor Authentication (MFA): Authentication using two or more factors to achieve authentication.
+* Patch: A software or code revision, is used to fix some type of issue, whether it’s with functionality, security or to add new features
+* Cookie: A small file that stores information for a Web site in order to capture the web site's state and information about the browsing session.
+* Cache: The temporarily storing of information and images from web pages to improve browsing efficiency.
+Source: https://csrc.nist.gov/glossary/
+
+Further reading
+* CIS Benchmarks - https://www.cisecurity.org/cis-benchmarks/
+* NIST SP800-63-3, Digital Idenity Guidelines - https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-63-3.pdf
+* NIST Glossary, Patch Management - https://csrc.nist.gov/glossary/term/patch_management
+* haveibeenpwned.com: https://haveibeenpwned.com/
+* FTC, Cybersecurity for Small Business, Email Authentication flyer for more details: https://www.ftc.gov/system/files/attachments/email-authentication/cybersecurity_sb_email-authentication.pdf
+* DMARC Overview: https://dmarc.org/overview/
+
+
+
+
