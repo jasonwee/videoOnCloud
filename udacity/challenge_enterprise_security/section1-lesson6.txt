@@ -1,0 +1,533 @@
+nd0035
+
+date start :  30 january 2024
+
+
+1.6.1 Introduction
+---------------------------------------
+Summary
+Welcome to the sixth lesson in this course where you learn to apply what you’ve learned throughout the course. Learning theory is important to understanding the underlying reasons why we do what we do. However, you need to be able to apply it to your home and work environments. This lesson and your subsequent project gives you hands-on experience in assessing a sample Windows 10 operating system like you’d find in many businesses. You have the opportunity to put your hacker hat on and apply security defenses.
+
+
+
+1.6.2 Appolying Cybersecurity
+---------------------------------------
+Summary
+The application of cybersecurity principles follows a few steps.
+
+1. Identifying assets. Identify which users, machines, software, and networks belong to your organization.
+2. Analyze vulnerabilities and threats. You need to identify where an attack might arise, and how.
+3. Recommend how to secure and protect your organization’s assets based on your analysis.
+4. Communicate with others and convince them to adopt your recommendations to keep the organization safe.
+
+
+
+1.6.3 Lesson Outline
+---------------------------------------
+Lesson Outline
+Throughout this lesson, you will understand methods for establishing and maintaining the security of a network, computing environment, and application. There are three sections:
+
+* Identify existing assets and security controls
+* Analyze vulnerabilities and threats, and
+* Recommend and apply basic security controls.
+
+Lesson Learning Objectives:
+* Categorize assets, risks, threats, vulnerabilities, exploits
+* Identify the organizational asset(s)
+* Analyze vulnerabilities and risks to those organizational assets
+* Recommend and apply basic security controls
+
+
+
+1.6.4 Identify Existing Assets and Security Controls
+---------------------------------------
+Identifying Hardware and Software Assets and Security Controls summary
+According to the CIS Controls, there are multiple options for you to identify assets and devices on your network
+
+* You can use active or passive discovery tools to identify devices on the organization’s network.
+ * Active tools like the NMAP application can query a network range for all IP addresses.
+ * Passive tools like Windows DHCP (Dynamic Host Control Protocol) automatically distributes IP addresses when a device attaches to a network.
+
+* Many organizations also have a manual list of organizational assets in a database or spreadsheet.
+* An option on a network is port-level access control that controls which devices can authenticate to the network.
+
+The CIS Controls has direction for identifying and controlling software programs as well.
+
+* Many organizations maintain a list of organizational assets in a database, a commercial software inventory tool, or Windows Server Update Services.
+* Restrict who has administrative authority.
+* Application whitelisting is a list of what’s allowed on your systems. Anything that’s not on the list is automatically denied from being installed or used.
+
+Once you have an inventory, all organizations should address any unauthorized hardware or software assets on the network.
+
+NMAP walkthrough
+
+Nmap
+Nmap, short for network mapper, is a commonly used tool to query network devices. It’s been around for over 20 years and has both a command line and GUI interface.
+
+Further research
+* More information on this topic is available from the Center for Internet Security (CIS) Controls framework.
+* Nmap is a common application used to map networks. It is free and an open-source for network discovery and security auditing. https://nmap.org/
+
+
+
+1.6.5 Identify Existing Assets and Security Controls Quizzes
+---------------------------------------
+Quiz Question
+Which is not a standard control for limiting software assets (applications)?
+llow users to have administrator rights to easily manage their own system
+
+
+Quiz Question
+From the following list, check all of the ways to identify and control network devices.
+* using active or passive discovery tools
+* maintain a manual inventory database of devices
+* restrict network ports that limit what can connect
+
+Quiz Question
+From the Nmap website, which of the following is not a benefit or attribute of the Nmap application?
+proprietary code
+
+
+
+1.6.6 Identify Existing Assets and Security Controls Exercise
+---------------------------------------
+Identify Existing Assets and Security Controls Exercise
+For this exercise, you'll continue to use the Windows 10 virtual PC CYBERND01PRJ01 to identify the system type and the security measures or controls in place to protect it.
+
+Option 1: Use the Udacity Cloud Labs provided on the next page to complete the exercise.
+
+Option 2: Sign in to the Windows 10 virtual PC provided with this class. If you don't know how to get remote control of the virtual PC, please follow Step 4. Return to lab VM in the document Setup Student LAB
+
+* Username: cyberadmin
+* Password: @UdacityLearning#1
+
+IMPORTANT: Please always remember to shut down ALL of the virtual machines when not in use to avoid charges! The status of ALL virtual machines should be stopped!
+
+Part 1: Apps and Features
+
+Apps and Features
+After right-clicking on the Windows Start icon, select "Apps and Features." Enter at least three applications here:
+
+Your reflection
+3d viewer 7-zip alarms & clock
+
+Things to think about
+In Apps and Features, you'll see any applications installed on this PC such as 7-Zip, Google Chrome, NMap, and the native Windows applications.
+
+
+Part 2: System Information
+
+System Information
+After right-clicking on the Windows Start icon, select "System." Enter information about the system here:
+
+Your reflection
+device name processor installed ram
+
+Things to think about
+You should observe the Device name of CYBERND01PRJ01, the system's processor, Installed RAM (7.00 GB), System type (64-bit operating system), and Windows specifications (Windows 10 Pro), version and OS build.
+
+
+Part 3: Computer Management
+
+Computer Management
+After right-clicking on the Windows Start icon, select "Computer Management." This window has a lot of additional information about the system. Enter at least three of the options available in the Computer Management window. You'll use this for other exercises.
+
+Your reflection
+systems tools storage services and applications
+
+Things to think about
+Computer Management functions include the Event Viewer, Shared Folders, Local Users and Computers, and Services.
+
+Part 4: Local Security Policies
+
+Local Security Policies
+On the Windows search bar, type “Local Security Policy” to access it. Click the > arrow next to both “Account Policies” and "Local Policies" and review their contents. Review the password policies and record your observations about the passwords and account lockout policies currently set on this PC. This should have been set in an earlier exercise.
+
+Under Local Policies, click the > arrow next to "Security Options," review the many security settings available within Windows Operating Systems and record your observations.
+
+Your reflection
+enforce password history, maximum password age, minimum password age. account lockout duration, account lockout threshold, allow administrator account lockout total 98 seceurity settings
+
+Things to think about
+The Password Policy contains the password requirements for this system. The Account Lockout Policy contains the requirements for the number of times a password can be tried and how long an account may be locked. This should have been set in an earlier exercise. It never hurts to double-check.
+
+Windows Security Options allow the fine-tuning of security settings within a Windows operating system. You can set requirements for accounts, Devices, Interactive logon, and Network Access and Security.
+
+IMPORTANT: Please always remember to shut down ALL of the virtual machines when not in use to avoid charges! The status of ALL virtual machines should be stopped!
+
+
+
+1.6.7 Cloud Lab - CYBERND01PRJ01
+---------------------------------------
+
+
+1.6.8 Identify Existing Assets and Security Contorls Solution
+---------------------------------------
+Windows 10 System Type and Policies Summary
+For this exercise, you used the Windows 10 virtual image to identify the system type and the security measures or controls in place to protect it.
+
+When right-clicking the Windows Start icon, you can view information about the Windows 10 OS, applications installed, network connections, and computer management.
+
+Computer Management functions include the Event Viewer, Shared Folders, Local Users and Computers, and Services.
+
+Local Security Policies contains the requirements for passwords, account lockout, and security options.
+
+Windows Security Options allow the fine-tuning of security settings within a Windows operating system. You can set requirements for accounts, Devices, Interactive logon, and Network Access and Security
+
+
+
+1.6.9 Analyze Vulnerabiliteis and Threats
+---------------------------------------
+Analyze Vulnerabilities and Threats
+In this lesson, we’ll look at three primary areas within a Windows Operating System that may contain vulnerabilities:
+
+* Shared folders and files - Folders and files are often shared by users to make it easier for others to view or modify them.
+
+  The threat is that you don’t always know who may be able to see or change their content. Ransomware is another threat that will often try to lock file shares on a network until the ransom is paid. It’s good to know what files and folders are shared on both a PC and across a network
+
+* Windows Services - These are executable applications that often run continuously in the background. They can be automatically started when a computer starts. Trigger events can also start services, like when you run a particular application. Services running that aren’t needed can bog down a computer.
+
+A potential security threat is that running services can allow unauthorized access to the computer or its contents.
+
+* Windows and Application Updates
+
+Malicious software is a continual threat to unpatched systems and applications. Other threats include unauthorized access to the system or data or the disclosure of sensitive data.
+
+Further research
+* Common Vulnerabilities and Enumeration (CVE) - https://cve.mitre.org/
+* Microsoft Security Resource Center (MSCR), Security Update Guide - https://portal.msrc.microsoft.com/en-us/security-guidance
+
+
+
+1.6.10 Analyze Vulnerabilities and Threats Quizzes
+---------------------------------------
+Quiz Question
+These are executable applications that run continuously in the background of the Windows Operating System.
+services
+
+Quiz Question
+Which of the following are common threats associated with shared files and folders? (Pick all that apply)
+ransomeware
+unauthorized information disclosure
+accidental modification
+
+
+
+1.6.11 Analyze Vulnerabilities and Threats Exercise
+---------------------------------------
+Student Lab Setup
+For this exercise, you'll continue to use the Windows 10 virtual PC CYBERND01PRJ01 to identify real or potential vulnerabilities. In particular, you want to look for shared files/folders, unneeded Windows services, and unpatched applications.
+
+Option 1: Use the Udaicty cloud-lab to complete this exercise.
+
+Option 2: Sign in to the Windows 10 virtual PC provided with this class and complete the exercises below. If you don't know how to get remote control of the virtual PC, please follow Step 4. Return to lab VM in the document Setup Student LAB
+
+* Username: cyberadmin
+* Password: @UdacityLearning#1
+
+IMPORTANT: Please always remember to shut down ALL of the virtual machines when not in use to avoid charges! The status of ALL virtual machines should be stopped!
+
+Part 1: Shared Folders and Files
+Shared Folders and Files
+Right-click on the Windows Start icon and select "Computer Management." In that window, select the > symbol next to "Shared Folders" and click on "Shares." This shows the files or folders shared on this PC. Is there any shared folder? What is the name of the shared folder if there is any? Who are the people the folder is shared with?
+
+As part of a security assessment, you should review the file shares to ensure they are appropriate and that only those who need access have it.
+
+Your reflection
+c$ d$
+
+Things to think about
+In the Identity and Access Control Exercise, you created a shared folder. You should see it in the Share Name column.
+
+
+Part 2: Windows Services
+
+Windows Services
+In the Computer Management window, click on the > symbol next to "Services and Applications." Select "Services" to see the services available on this PC. You can also search for "Services" in the Windows run bar. Click on a specific service to learn more about it. For example, click on the "Geolocation Service" to see how this tracks the location of the PC. In the space below, document 2-3 services running on this PC.
+
+Your reflection
+application information appx deployment service (appXSVC) background intelligent transfer service
+
+Things to think about
+You'll see there are many services running by default on a Windows PC. As a beginning IT or Cybersecurity student, you're not expected to know what all of these services mean. Use the description to learn more about each. This is a good opportunity to familiarize yourself with typical services.
+
+Part 3: Windows and Application Updates
+
+Windows and Application Updates
+The last step in this exercise is to ensure applications and the operating system are all up-to-date on patches. Let's start with applications.
+
+You need to make sure the Windows Operating System is up-to-date and that it will automatically be updated when patches are available from Microsoft. To do that, type "Update" from the Windows start bar. Click on "Check for updates" in System Settings. The "Windows Update" window will show you if this PC needs updates to any operating system component. At the bottom of the page, click on "Advanced options" to see the different options available for installing updates. Record your observations about Windows updates below.
+
+Next, on the Windows 10 PC, search for "Control Panel" and click on it to open its window. From there, select "Programs" and then "Programs and Features" to see a list of applications or programs installed on the PC along with its version. Ensure all applications are at the latest version. You can also uninstall applications using this window. Record any applications that need to be updated in the field below.
+
+Your reflection
+update options all set to on yes, all apps up to date
+
+Things to think about
+Student's answers may vary because applications and operating systems are continually updating. It's one of the best ways to reduce the likelihood of software vulnerabilities from impacting your work.
+
+IMPORTANT: Please always remember to shut down ALL of the virtual machines when not in use to avoid charges! The status of ALL virtual machines should be stopped!
+
+
+
+1.6.12 Analyze Vulnerabilities and Threats Solution
+---------------------------------------
+Windows and Application Updates Summary
+As a part of a security assessment, you should ensure all systems and applications are updated based on the vendor's standards. Microsoft makes this easy between their websites and the ability to automatically update Windows. Having all systems stay up-to-date on patches is one of the best ways to reduce the likelihood of software vulnerabilities from impacting your work.
+
+
+
+
+1.6.13 Recommend and Apply Basic Security Controls
+---------------------------------------
+Recommend and Apply Basic Security Controls
+Once you identify potential security issues like vulnerabilities and threats, you need to recommend how to minimize the risks. These are putting protective or detective measures in place to meet security requirements and keep others from breaking it either on purpose or by accident. This can be done with technical settings, corporate policies, user training, or all three. You can use the CIS Controls™ for guidance on how you should secure computer systems.
+
+Secure the Configuration of Software, Operating Systems & Networks includes the following steps:
+* Application Security - Remove unneeded applications and make sure the rest are up-to-date on patches.
+* End-Point Protection - Make sure antivirus and firewall applications are on and they stay up to date. For Windows 10, this is known as Windows Defender.
+* Security Policy settings - Configure the operating system to log events
+
+Access Control includes:
+* Account ownership
+* Administrative Privileges
+* Limit accounts in the Administrator group
+* User Account Control (UAC) on Windows
+
+Implement Security Awareness
+* Best practices for keeping systems, applications, and data safe
+* Company policies
+* Throughout the year verified annually
+
+Further research
+* StaySafeOnline: "Free Online Security Checkups and Tools"
+* StaySafeOnline: "Securing Your Home"
+
+
+
+1.6.14 Recommend and Apply Basic Security Controls Quizzes
+---------------------------------------
+Quiz Question
+What's the name of the Windows 10 application that comes with the operating system that provides antivirus and firewall capabilities?
+Windows Defender
+
+Quiz Question
+On the Windows operating system, this restricts or allows what end-users can or cannot do on the computer.
+user Account Control (UAC)
+
+Quiz Question
+Users only need security awareness training annually.
+False
+
+
+
+1.6.15 Recommend and Apply Basic Security Controls Exercise
+---------------------------------------
+Jill & Roy's Accounting - Case Study
+You should be familiar with this case study from an earlier lesson. But notice that more information has been added.
+
+Jill and Roy provide accounting services throughout their area. They employ 7 full-time workers: 4 accountants, 1 office administrator, and themselves. They also have about a dozen seasonal workers during tax season.
+
+They use Microsoft 365 (aka Office 365) for all of their office applications (email, word processing, spreadsheets, etc.). For their accounting, they use Intuit's Quickbooks and ProConnect online versions. They have a single office with a network router to their ISP, a Linksys LGS116P Ethernet Switch and a Linksys AC1900 WiFi Router.
+
+The full-time accountants each have a Lenovo ThinkPad T490 and the office administrator has a Lenovo desktop. All company workstation computers use Windows 10 and Google Chrome for their standard web browser. All users have administrator rights on their PC and many have installed their own software, which includes games and media streaming applications.
+
+They also have one internal Windows 10 Lenovo desktop that they use as a centralized print and file server that sits in the main office area. Only Roy, Jill, and the office admin have an account on it. They recently allowed Remote Desktop Protocol (RDP) into it to allow employees to access files from home. The temporary workers use their own laptops, which are a mixture of Windows and Macs. It's known that some of the temporary accountant workers will download client files onto their personal computers to work offline.
+
+The office has a Bring Your Own Device (BYOD) Policy for all cell phones (a mix of Apple iPhones and Android). Cell phones are used for business email and to speak with office workers and clients.
+
+Jill & Roys has a contract with a local IT company to provide services, which includes a weekly backup of the file/print server, monthly updating of Microsoft products on office computers, and maintenance of the network equipment.
+
+Answer the questions below based on this case study.
+
+Part 1: Recommendations
+
+Recommendations
+Based on the case study described above, provide three recommendations to improve security for Jill & Roy's Accounting. Consider the following areas: access and authority, passwords, updating, network access, and use of personnel devices for work.
+
+Your reflection
+only allow access and authority to certain staffs based on their workscope password updating with maximum age and password strength is require only allow network access until the workscope require personnel devices for work is kept at minimal.
+
+Things to think about
+Jill & Roy's have many areas to improve their cybersecurity posture. Below are sample answers:
+
+* All users should have local or standard user privileges and not be an administrator. The risk is that unauthorized software could be installed. You should remove administrator rights for all users and there should be a separate administrator account for installing new programs on PCs.
+* You should set a password policy using the Local Security Policy as explained in an earlier lesson. All users should have a password that is at least 8 characters, changed at least every 90 days, and meets the complexity requirements. You can also set the account lockout policies.
+* Remove any applications that aren't needed for the business.
+* Ensure the Windows operating system and all applications are set to auto-update.
+* Review running services including the use of Remote Desktop (RDP). That service should be disabled for the business's file/print server. Jill & Roy's should use a secured cloud service for sharing sensitive files.
+* Review the firewall rules that allow access into the internal network.
+* Create and deliver user security awareness training for all employees. This should include the protection of Personally Identifiable Information (PII) and on the use of personal devices and their safe use for businesses.
+* Create an announcement upon log-in to remind all employees that these computers are to be for Jill & Roy's business-use only.
+
+Part 2: Applying Security Controls
+For part 2, you'll continue to use the Windows 10 virtual PC CYBERND01PRJ01.
+
+Option 1: Use the Udaicty cloud-lab to complete this exercise.
+
+Option 2: Sign in to the Windows 10 virtual PC provided with this class and complete the exercises below. If you don't know how to get remote control of the virtual PC, please follow Step 4. Return to lab VM in the document Setup Student LAB
+
+* Username: cyberadmin
+* Password: @UdacityLearning#1
+
+IMPORTANT: Please always remember to shut down ALL of the virtual machines when not in use to avoid charges! The status of ALL virtual machines should be stopped!
+
+Action based on Recommendations
+Now you have given some useful recommendations, please make the appropriate changes in the CYBERND01PRJ01 VM based on your recommendations.
+Note: Check, but don't change RDP use. Use the space below to record your observations.
+
+Your reflection
+done
+
+Things to think about
+Good job. Please see the solution page for more information.
+
+
+
+1.6.16 Recommend and Apply Basic Security Controls Solution
+---------------------------------------
+Here are some sample recommendations:
+
+* Review user accounts and restrict administer access
+* Set password policies
+* Remove applications
+* Operating system and applications are updated
+* Review operating systems services
+* Configure security settings on the Local Security Policy
+
+Part 2: Applying Security Controls
+Solutions Summary
+Jill & Roy's have many areas to improve their cybersecurity posture. Below are sample answers:
+* All users should have local or standard user privileges and not be an administrator. The risk is that unauthorized software could be installed. You should remove administrator rights for all users and there should be a separate administrator account for installing new programs on PCs.
+* You should set a password policy using the Local Security Policy as explained in an earlier lesson. All users should have a password that is at least 8 characters, changed at least every 90 days, and meets the complexity requirements. You can also set the account lockout policies.
+* Remove any applications that aren't needed for business.
+* Ensure the Windows operating system and all applications are set to auto-update. See previous lessons for instructions.
+* Review the use of RDP on the Windows 10 image. That service should be disabled for the business's file/print server. Jill & Roy's should use a secured cloud service for sharing sensitive files.
+* Create and deliver user security awareness training for all employees. This should include the protection of Personally Identifiable Information (PII) and on the use of personal devices and their safe use for businesses.
+* Create an announcement upon log-in to remind all employees that these computers are to be for Jlll & Roy's business-use only. This is done in Local Security Policy > Security Options.
+
+
+
+1.6.17 Communicate Risks Exercise
+---------------------------------------
+Instruction
+The ability to communicate risks, assessment findings, and recommendations is a critical part of a security professional's job.
+
+Let's go back to Jill & Roy's accounting. You should be familiar with this case study from an earlier lesson. Here is the basic introduction of their business if you want to get check it again.
+
+Jill and Roy provide accounting services throughout their area. They employ 7 full-time workers: 4 accountants, 1 office administrator, and themselves. They also have about a dozen seasonal workers during tax season.
+
+They use Microsoft 365 (aka Office 365) for all of their office applications (email, word processing, spreadsheets, etc.). For their accounting, they use Intuit's Quickbooks and ProConnect online versions. They have a single office with a network router to their ISP, a Linksys LGS116P Ethernet Switch and a Linksys AC1900 WiFi Router.
+
+The full-time accountants each have a Lenovo ThinkPad T490 and the office administrator has a Lenovo desktop. All company workstation computers use Windows 10, Google Chrome for their standard web browser, and all users have administrator access on their PC and many have installed their own software, which includes games and media streaming applications.
+
+They also have one internal Windows 10 Lenovo desktop that they use as a centralized print and file server that sits in the main office area. Only Roy, Jill, and the office admin have an account on it. They recently allowed Remote Desktop Protocol (RDP) into it to allow employees to access files from home. The temporary workers use their own laptops, which are a mixture of Windows and Macs. It's known that some of the temporary workers will download client files onto their personal computers to work offline.
+
+The office has a Bring Your Own Device (BYOD) Policy for all cell phones (a mix of Apple iPhones and Android). Cell phones are used for business email and to speak with office workers and clients.
+
+Jill & Roys has a contract with a local IT company to provide services, which includes a weekly backup of the file/print server, monthly updating of Microsoft products on office computers, and maintenance of the network equipment.
+
+For this exercise, you are to create a presentation to Jill & Roy based on your findings and recommendations. Include the following:
+
+* Summary of how you performed your security assessment
+* Top 5 risks and why they are risks
+* At least 5 key takeaways
+* At least 10 slides
+* What visuals can you use to support your presentation
+
+Practice.
+
+Present to a friend:
+
+* Ask for feedback
+* Were there any parts that were confusing?
+* What are the most important ideas?
+
+
+1.6.18 Communitcate Risks Exercise Solution
+---------------------------------------
+Summary
+The risks to Jill & Roy’s accounting I found are:
+
+* Administrative Access” to machines
+* “Personal Computers” handling business data
+* The “Bring Your Own Device” policy for cellphones
+* “Games and Streaming” software on business machines
+* “Remote Access” to the company fileserver
+* “Update Frequency” specified by the IT contract.
+
+Summary
+My recommendations to migrate the risks are:
+
+* Follow the Least-Privilege principle
+* No Client Data on Personal Devices
+* Mandatory Anti-Virus Software
+* Only Work-Related Software
+* Set Credentials To Protect The Network
+* Increase IT Update Frequency
+
+
+
+1.6.19 Lesson Conclusion
+---------------------------------------
+Summary
+This lesson explained the different ways to establish and maintain the security of a network, computing environment, and application. It’s the final step for applying cybersecurity on organizational computer systems. In this lesson, you learned about identifying existing assets and devices on your network, analyzing those assets for vulnerabilities and threats that could harm them and finished with how to recommend and apply some basic security controls
+
+Lesson learning objective
+* Categorize assets, risks, threats, vulnerabilities, exploits
+* Identify the organizational asset(s)
+* Analyze vulnerabilities and risks to those organizational assets
+* Recommend and apply basic security controls
+
+
+
+1.6.20 Recap of Course
+---------------------------------------
+Summary
+This concludes the course. At this point, you should have a good idea of why cybersecurity is so critical in today's world and what it means to be secure online. In the course, you learned what it means to maintain a secure infrastructure and administer a system that meets industry security standards. You need to think like a hacker in assessing high-level risks, vulnerabilities, threats, and attacks. Once you know how a data breach may happen, you need to enable adequate defenses. With all of this knowledge, you practiced applying cybersecurity on a sample system using a case study.
+
+Course learning objective
+Now you should be able to:
+* Explain security fundamentals including core security principles, critical security controls, and cybersecurity best practices.
+* Evaluate specific security techniques used to administer a system that meets industry standards and core controls
+* Assess high-level risks, vulnerabilities and attack vectors of a sample system
+* Explain methods for establishing and maintaining the security of a network, computing environment, and application.
+
+Glossary
+* Phishing: A technique for attempting to acquire sensitive data, such as bank account numbers, through a fraudulent solicitation in email or on a web site, in which the perpetrator masquerades as a legitimate business or reputable person.
+* Malware: Software or firmware intended to perform an unauthorized process that will have an adverse impact on the confidentiality, integrity, or availability of an information system. A virus, worm, Trojan horse, or other code-based entity that infects a host. Spyware and some forms of adware are also examples of malicious code
+* Ransomware: A type of malicious software designed to block access to a computer system until a sum of money is paid.
+* Business Email Compromise: An exploit in which an attacker obtains access to a business email account and imitates the owner's identity, in order to defraud the company and its employees, customers or partners
+* Internet of Things: The interconnection via the Internet of computing devices embedded in everyday objects, enabling them to send and receive data
+* Multi-Factor Authentication (MFA): Authentication using two or more factors to achieve authentication.
+* AntiVirus (AV) applications: A program or tool specifically designed to detect many forms of malware and prevent them from infecting computers, as well as cleaning computers that have already been infected.
+* Patching: A software component that, when installed, directly modifies files or device settings related to a different software component without changing the version number or release details for the related software component.
+* Updating: An authorized increase in the level of protection to be provided to specified information, e.g., from a Low impact-level to a Moderate impact-level.
+* Governance: A strategic planning responsibility providing organizational oversight that sets policies and establishes practices to enforcement
+* Compliance: The requirements all affected parties follow the same rules.
+* Audit: An independent review and examination of records and activities to assess the adequacy of system controls, to ensure compliance with established policies and operational procedures. (NIST Glossary)
+* Policy: Statements, rules, or assertions that specify the correct or expected behavior of an entity. (NIST)
+* ISMS: Information Security Management System
+* Asset: A major application, general support system, high impact program, physical plant, mission-critical system, personnel, equipment, or a logically related group of systems.
+* Vulnerability: Weakness in an information system, system security procedures, internal controls, or implementation that could be exploited or triggered by a threat.
+* Threat: Any circumstance or event with the potential to adversely impact organizational operations (including mission, functions, image, or reputation), organizational assets, individuals, other organizations, or the Nation through an information system via unauthorized access, destruction, disclosure, modification of information, and/or denial of service.
+* Exploit: A hardware or software tool designed to take advantage of a flaw in a computer system, typically for malicious purposes such as installing malware.
+* Risk: A measure of the extent to which an entity is threatened by a potential circumstance or event, and typically a function of: (i) the adverse impacts that would arise if the circumstance or event occurs; and (ii) the likelihood of occurrence
+* Attack: Any kind of malicious activity that attempts to collect, disrupt, deny, degrade, or destroy information system resources or the information itself.
+* Penetration Testing: A test methodology in which assessors, typically working under specific constraints, attempt to circumvent or defeat the security features of an information system.
+* Hardening: A process intended to eliminate a means of attack by patching vulnerabilities and turning off nonessential services.
+* Authentication: Verifying the identity of a user, process, or device, often as a prerequisite to allowing access to resources in an information system.
+* Multi-Factor Authentication (MFA): Authentication using two or more factors to achieve authentication.
+* Patch: A software or code revision, is used to fix some type of issue, whether it’s with functionality, security or to add new features
+* Cookie: A small file that stores information for a Web site in order to capture the web site's state and information about the browsing session.
+* Cache: The temporarily storing of information and images from web pages to improve browsing efficiency.
+
+Source: https://csrc.nist.gov/glossary/
+
+
+
+1.6.21 Congratulations
+---------------------------------------
+
+
+
