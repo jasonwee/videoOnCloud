@@ -1,0 +1,324 @@
+nd0035
+
+date start : 31 january 2024
+
+
+2.2.1 Intro to the Shell
+---------------------------------------
+Welcome to the Shell Workshop lesson
+With this lesson, you start with the familiarization of one of the essential tools for any programmer: the shell! The shell is a command-line interface for running programs on your computer. You type commands at a prompt and the shell runs programs for you and shows you their output. It's fast and flexible!
+
+When you use the shell, you need to specific commands and keywords. This may be difficult at first, but once you get the hang of it I'm sure you'll agree that the shell is a powerful tool!
+
+Where do I run shell commands?
+There are workspaces in this course that you can use to practice, but if you can also run shell commands on your local machine.
+
+If you are running a macOS or Linux computer, you can access the shell when you open a terminal window.
+
+If you are working on a Windows machine, it's a little more complicated. You'll want to install the Git Bash shell.
+
+Learning Objectives
+By the end of this lesson, you will be able to:
+
+* Recognize the importance of the Shell terminal for a Web Developer.
+* Operate with a Shell terminal using multiple commands.
+* Practice various commands to perform different operations like navigating directories, files organization, etc.
+
+Resources
+If you want to dig deeper into shell commands, here are two helpful resources:
+
+* An A-Z Index of the Linux command line
+* Terminal Cheatsheet for Mac
+
+
+
+2.2.2 [OPTIONAL] Windows: Installing Git Bash
+---------------------------------------
+Reminder: This page is Windows-only! Mac and Linux users, skip ahead to the next page!
+
+Download Git here: https://git-scm.com/download/win
+
+Note: There is a new Linux compatibility system in Windows 10, called Windows Subsystem for Linux (WSL). If you've heard of it, you may be wondering why we don't use that in this course. It's an experimental mini-Linux-OS that runs inside Windows, like a virtual machine. You can access your Windows files from inside it, but it's a little bit dangerous to share files between the Linux and Windows sides. In the future, WSL will probably become less experimental, but for now we'll be using Git Bash instead for this course.
+
+Install Git Bash on your Windows computer.
+* I have downloaded Git from git-scm.com
+* I have installed Git.
+* I have found the Git Bash application and run it.
+* I've adjusted the font to something comfortable for me.
+
+
+
+2.2.3 Opening a terminal
+---------------------------------------
+Let's Get Started!
+* [OPTIONAL] Open a terminal window on your local computer
+* Search on the internet for shell commands.
+
+
+
+2.2.4 Your first command (echo)
+---------------------------------------
+Using the Workspace
+The workspace is an environment that contains the software you need to run the shell commands. You can also run these command in the terminal of your local computer.
+
+Quiz Question
+What do you think is going on when you run this command:
+echo $COLUMNS x $LINES
+(Try it!) You can use the the Workspace above to run the commands
+
+The shell is telling me how big my terminal is.
+
+
+
+2.2.5 Navigating directories (ls, cd, ..)
+---------------------------------------
+Navigating directories
+Managing your directories and file structure in your computer or servers is an important skill you need to use in the development and deployment phases in your Web development.
+
+In this concept, we are going to show you how to use the Shell with multiple commands to navigate and organize your files.
+
+Use the workspace below the video to practice the commands and remember to practice locally in your computer too.
+
+
+Commands:
+ls: List the files in the directory.
+cd: Move to a different directory.
+
+If you are using the Git Bash on Windows you will find that some of your directories have spaces in the name like My Pictures in this case you need to use the command in this way cd 'My Pictures'.
+
+Use this workspace to test your commands, or run them in a terminal on your local machine.
+
+Quiz Question
+Which of these commands would list the contents of the Pictures directory?
+Mark all that are correct.
+
+ls Pictures
+cd Pictures; ls
+ls Pictures/../Pictures
+
+
+
+2.2.6 Current working directory (pwd)
+---------------------------------------
+Current working directory
+Sometimes you will get lost in many directories. With this command, you can see where you are.
+
+Use the workspace below the video to practice the commands, or try them in a terminal on your local computer.
+
+Command
+pwd: Print Working Directory
+
+Use this workspace to test your commands, or run them in a terminal on your local machine.
+
+Quiz Question
+Why are shell commands so short?
+
+It makes for less typing.
+
+
+
+2.2.7 Parameters and options (ls -l)
+---------------------------------------
+Use parameters and options in your commands
+Some commands have parameters or options to help you get more information or change the default behavior of those commands.
+
+Use the workspace below the video to practice the commands and remember to practice locally in your computer too.
+
+Quiz Question
+Which pieces of information can you find out from ls -l? You may want to do some research to answer this question; use your favorite search engine.
+
+The name of each listed file or directory.
+The date and time that a file was last modified.
+The size of a file, in bytes.
+
+Quiz Question
+If you wanted to list all the files whose names start with the word bear, how would you do it?
+ls bear*
+
+
+
+2.2.8 Organizing your files (mkdir, mv)
+---------------------------------------
+Organizing your files
+With the Shell, you can use commands to organize your files into directories, move files, copy or remove the files.
+
+Use the workspace below the video to practice the commands and remember to practice locally in your computer too.
+
+Commands
+* mkdir: Creates directories.
+* mv: Move files from a directory to another.
+
+Use this workspace to test your commands, or run them in a terminal on your local machine.
+
+Quiz Question
+Let's say I change my mind and want to move the epub files back from Documents/Books to Documents. How can I do this? My current working directory is my home directory, and Documents is inside that directory.
+Mark each answer that would work:
+
+mv Documents/Books/* Documents
+cd Documents; mv Books/*.epub .
+cd Documents/Books; mv * ..
+
+By the way, when you quote something in the shell, you always use straight quotes. This is what you'll get if you type into a terminal window. However, if you copy and paste from a web page or document, you should be really careful to make sure that it hasn't accidentally been written with “curly quotes”. Curly quotes will not work in the shell.
+
+Single quotes and double quotes do slightly different things in the shell. If you're unsure which to use, go for single quotes.
+
+
+
+2.2.9 Downloading (curl)
+---------------------------------------
+Downloading (curl)
+curl is used in command lines or scripts to transfer data.
+
+Use the workspace below the video to practice the commands and remember to practice locally in your computer too.
+
+Commands
+* CURL: is used in command lines or scripts to transfer data.
+
+Use this workspace to test your commands, or run them in a terminal on your local machine.
+
+Quiz Question
+Enter a shell command to download https://tinyurl.com/zeyq9vc and save it as the file dictionary.txt.
+
+Remember to use the option to follow web redirects.
+curl -L -o dictionary.txt 'https://tinyurl.com/zeyq9vc'
+
+By the way, a lot of URLs have special characters in them, such as the & sign, which have unusual meanings to the shell. That's why I'm always putting these URLs in quotes … even though these particular examples would work without them, it's a good practice to get into.
+
+
+
+2.2.10 Viewing files (cat, less)
+---------------------------------------
+Viewing files
+With the Shell, you can use commands to view files, let's learn how to do it in this concept.
+
+Use the workspace below the video to practice the commands and remember to practice locally in your computer too. You should have downloaded the dictionary.txt in the previous concept in the workspace.
+
+Commands
+cat: View file content.
+less: View file content screen by screen.
+Remember from the previous concept you downloaded dictionary.txt file into Downloads, you will need to cd into Downloads directory.
+
+Use this workspace to test your commands, or run them in a terminal on your local machine.
+
+What's the next word?
+Using the dictionary.txt file and the less command, find out the next word after the word goobers in this dictionary.
+
+good
+
+
+
+2.2.11 Removing things (rm, rmdir)
+---------------------------------------
+Removing files or directories (rm, rmdir)
+With the Shell, you can use commands to remove files or directories.
+
+Use the workspace below the video to practice the commands and remember to practice locally in your computer too.
+
+Commands
+* rm: Delete files.
+* rmdir: Delete directories.
+
+Use this workspace to test your commands, or run them in a terminal on your local machine.
+
+Quiz Question
+You have four files named:
+
+Good File
+Bad Name Good File
+Bad File
+Good Name Bad Face
+You want to remove files 3 and 4, while leaving 1 and 2 intact. There are two commands below that will accomplish this goal. Choose them:
+
+rm 'Bad File' 'Good Name Bad Face'
+rm *'Bad F'*␌
+
+
+
+2.2.12 Searching and pipes (grep , wc)
+---------------------------------------
+Searching and pipes (grep, wc)
+With the Shell, you can use commands search content in files.
+
+Use the workspace below the video to practice the commands and remember to practice locally in your computer too. You will need to have download dictionary.txt from Downloading (curl) concept
+
+Commands
+* grep: "global regular expression print,” processes text line by line and prints any lines which match a specified pattern
+* wc: "short for word count" reads either standard input or a list of files and generates one or more of the following statistics: newline count, word count, and byte count
+
+grep shell dictionary.txt | less
+
+Use this workspace to test your commands, or run them in a terminal on your local machine.
+
+Looking for `ibo`
+How many words are there in dictionary.txt that match the pattern ibo?
+
+22
+
+What are grep patterns called?
+Research question! You can use grep for more than just matching words. There's a specific term for the patterns that grep lets you use.
+
+Use your favorite search engine and do a little research to find out what those patterns are called.
+
+regular expression
+
+
+
+2.2.13 Shell and environment variables
+---------------------------------------
+Let's see what more things we can do with the Shell.
+
+Quiz Question
+Do you think the PWD variable is a shell variable or an environment variable?
+
+(Don't know what it is? Try echo $PWD.)
+
+Environment variable
+
+Display two variables
+Write a shell command using echo that displays the contents of the variables LOGNAME and PWD with a space between them. Note: In Git bash in Windows you won't get the result from LOGNAME variable because it doesn't exist, try using the command whoami instead.
+
+echo $LOGNAME $PWD
+
+
+
+2.2.14 Startup files (.bash_profile)
+---------------------------------------
+Note for Windows Users
+Users on Windows OS and using Git Bash won't have a .bash_profile file. Here is how you create one:
+
+1. Navigate to your home directory.
+2. Create a file using touch .bashrc
+3. Edit it with Vim vim .bashrc
+4. Save and close the file typing :wq and hit Enter.
+5. Restart your Git Bash shell.
+6. When you open your Git bash it will create a .bash_profile for you.
+
+Additional Resources
+* For a deeper understanding, you can read this post: Bash profile
+
+
+
+2.2.15 Controlling the shell prompt ($PS1)
+---------------------------------------
+If you want to create a fancy shell prompt, search the internet for "bashrc generator". You'll find a lot of resources to help you update your bashrc file.
+
+
+
+
+2.2.16 Aliases
+---------------------------------------
+Commands
+* alias: Allows you to create short names for commands.
+
+
+
+2.2.17 Keep learning!
+---------------------------------------
+Shell resources
+* The Bash Academy
+* Bash Beginners Guide
+* Bash Programming HOWTO
+
+
+
+
