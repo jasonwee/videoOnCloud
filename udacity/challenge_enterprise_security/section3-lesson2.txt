@@ -1,0 +1,499 @@
+nd0035
+
+date start :  2 february 2024
+
+
+3.2.1 Lesson Overview
+---------------------------------------
+Introduction to Network Security Architecture
+
+Let's Explore Network Security Architecture!
+Enterprises face many challenges in designing a secure network architecture. In this lesson we'll provide you an introduction to network security architecture for enterprise.
+
+
+
+
+3.2.2 Overview of Network Security Architecture
+---------------------------------------
+What is Network Security Architecture?
+A network is a communication medium between two or more devices.
+
+Security is a state in which the integrity, confidentiality, and accessibility of a network is assured through protective measures.
+
+Architecture is a set of related physical and logical representations of a system or a solution.
+
+Network Security Architecture is the design of security into the architecture of a network.
+
+Enterprises use network security architecture to:
+
+* Secure network design to protect enterprise data
+* Deploy and maintain network security devices
+* Use frameworks to help align business and security
+
+
+
+3.2.3 Basic Network Topologies
+---------------------------------------
+Network Topologies are representations of how devices are connected physically and logically.
+
+Here are a few basic topologies that we'll discuss first, as they are fundamental to understanding the topic:
+
+* Ring: Unidirectional
+* Ring: Bidirectional
+* Bus
+* Tree
+
+Note: In networks, we often refer to devices as "nodes."
+
+In a Unidirectional Ring topology, nodes are arranged in a loop with traffic flowing in one direction.
+
+In a Bidirectional Ring topology nodes are arranged in a loop with traffic flowing in both directions.
+
+In a Bus topology, nodes connect along a single backbone cable in a loop with traffic flowing in one direction.
+
+In a Tree topology, nodes are arranged to branch out from the root node to form parent-child hierarchies.
+
+Basic Network Topologies
+The topologies on this page are important to be aware of, and understand how they work, but they are outdated, and not in current use in enterprises.
+
+On the next page, we'll discuss more secure topologies that are currently in use.
+
+
+
+3.2.4 Advanced Network Topologies
+---------------------------------------
+Here we discuss these more advanced topologies that are in modern use:
+
+* Point to Point
+* Star: Wired
+* Star: Wireless
+* Mesh
+* Hybrid
+
+In a Point to Point topology, two nodes are directly connected to one another.
+
+In a Mesh topology, nodes are fully connected with every other node.
+
+In a Wired Star topology, we have nodes arranged to connect in to a central or star node to transmit and request data.
+
+In a Wireless Star topology, we have nodes arranged to connect in over WiFi to a central or star node to transmit and request data.
+
+In a Hybrid topology, nodes are arranged depending on the combination of topologies used. In the example above we see a hybrid of a star and ring topology.
+
+The advanced topologies we covered on this page offer a good representation of those currently used in enterprises today. As an enterprise, it's important to take into account the pros and cons of each topology as you choose how to build an enterprise network.
+
+Optional Further Research into Network Topologies
+I recommend these resources in case you are interested in exploring network topologies further:
+
+https://www.dnsstuff.com/what-is-network-topology
+
+https://topologynetwork.com/
+
+
+
+3.2.5 Security Topologies
+---------------------------------------
+Security Topologies are representations of the network from a security perspective.
+
+The goal of security topologies is to divide the network into manageable secure defined zones in which traffic can be regulated. Each of these zones has a well-defined perimeter and boundary protection.
+
+We will discuss the following types of Security Zones:
+
+* Internet
+* Demilitarized Zone (DMZ): External
+* Demilitarized Zone (DMZ): Internal
+* Extranet
+* Intranet
+* Internal LAN
+* Restricted
+* Management
+
+The Internet is the least trusted zone, outside the control of the organization.
+
+* The Internet zone is populated with threat actors
+* Attacks generally originate from the Internet
+
+A DMZ is a perimeter network zone that protects an enterprise's internal network from untrusted traffic.
+
+A DMZ is generally one zone but it can sometimes usefully be expanded into an External and Internal DMZ.
+
+An External DMZ is exposed to the Internet zone, and is secured to ensure there is no breach. There is a firewall in-between the Internet and External DMZ to filter traffic coming into the DMZ.
+
+Common devices found in the External DMZ are:
+
+* Web servers
+* Mail servers
+* Proxy servers
+* Secure email gateways
+
+An Internal DMZ can be used in various different ways, and is commonly configured to be an isolated testing zone. It can be modified to allow traffic to the Internet when needed.
+
+An Extranet is a controlled private network that is accessible to entities outside of the enterprise.
+
+* Primarily used for interacting with vendors or clients
+* Allows for private communication, collaboration, and data transfer between all parties.
+
+An Intranet is a controlled private network that should only be accessible by internal employees.
+
+* Primarily used for internal communication
+* Centralized repository for all enterprise information
+
+An Internal LAN is a trusted zone where an enterprise's workstations and internal resources reside.
+
+* Primary enterprise network which is considered secure
+* This zone is where the enterprise has majority of it's systems operate
+
+A Restricted Zone is a secure zone where businesses have critical systems, such as HR databases, financial databases, and intellectual property.
+
+* This zone should have the highest level of protection.
+* Only accessible from internal network with proper access control
+* Not accessible over the Internet
+
+A Management Zone is a secure zone where enterprises have administration, monitoring, and configuration servers.
+
+* This zone is only accessible by few privileged individuals
+* Zone is prime target for threat actors due to the level of access they can gain from breaching this zone
+
+
+
+3.2.6 Quizzes: Network and Security Topologies
+---------------------------------------
+Quiz Question
+What is the most common network topology found in enterprises today?
+star
+
+Quiz Question
+Drag each description below to match its topology name.
+
+Topology             Description
+Unidirectional Ring  nodes are arranged in a loop with traffic flowing in one direction.
+Bidirectional Ring   nodes are arranged in a loop with traffic flowing in both directions.
+Bus                  nodes connect along a single backbone cable in a loop with traffic flowing in one direction.
+Tree                 nodes are arranged to branch out from the root node to form parent-child hierarchies.
+Mesh                 nodes are fully connected with every other node.
+Star                 we have nodes arranged to connect in to a central node to transmit and request data.
+Hybrid               nodes are arranged depending on the combination of topologies used.
+Point to Point       two nodes are directly connected to one another.
+
+Quiz Question
+What do we call representations of how devices are connected physically and logically?
+network topologies
+
+Quiz Question
+What are representations of the network from a security perspective called?
+security topologies
+
+
+
+3.2.7 Exercise: Network and Security Topologies
+---------------------------------------
+Exercise: Network and Security Topologies
+Instructions:
+
+1. Look at the following security models and identify all the potential points of failure within each network topology.
+
+
+
+
+3.2.8 Exercise Solution: Network and Security Topologies
+---------------------------------------
+
+
+
+3.2.9 Security Devices
+---------------------------------------
+Security Devices are Responsible for Protecting the Network
+Here we discuss the following types of security devices:
+
+* Firewalls
+* Secure Email Gateways (SEG)
+* Intrusion Detection Systems (IDS)
+* Intrusion Prevention Systems (IPS)
+* Proxy Servers
+* VPN Servers
+
+Firewalls are security devices that filter traffic into a network.
+
+There are multiple different types of firewalls:
+
+* Packet-Filtering
+* Stateful
+* Web Application
+* Next-Gen
+
+Firewalls are placed in between zones to filter out malicious traffic. When building an enterprise network, firewalls are a necessary component to securing your network.
+
+Secure Email Gateways (SEG) are devices that protect an enterprise's mail servers by filtering out malicious and unwanted email.
+
+* SEGs are capable of preventing:
+ * Viruses and malware from hitting your end user mailbox
+ * Spam filtering
+ * Phishing protection
+* SEGs are placed in front of your mail servers, acting as a gateway for all incoming and outgoing mail.
+
+An Intrusion Detection System (IDS) is a monitoring system that monitors your network and alerts you in the event of malicious activity. An IDS is only capable of alerting and it cannot take action to deny traffic.
+
+There are two main types of IDS:
+
+* Network Intrusion Detection Systems (NIDS) are monitoring systems placed inside an enterprise network to monitor incoming and outgoing packets. This device is generally placed at entry points into your enterprise network or subnetworks.
+* Host Intrusion Detection Systems (HIDS) are monitoring systems placed directly on a single host. These monitor the host itself and not the entire network.
+
+Intrusion Prevention Systems (IPS) are control systems that can do everything an IDS does, but also have the capability to prevent malicious behavior, and take action and deny harmful packets.
+
+Proxy servers act as intermediaries between a requesting client and a destination server. The proxy shields the requesting client's personal identifiable information (PII) from the destination server ensuring privacy.
+
+Proxy servers operate in the following manner:
+
+1. Client server sends request
+2. Proxy handles takes request and connects to the destination server on behalf of client
+3. Proxy sends response back to the requesting client
+
+VPN servers establish a full secure tunnel before encrypting and securing all network traffic. Enterprises use VPNs to ensure total endpoint encryption, allow remote work, and connect branch offices together.
+
+There are two primary types of VPNs: Point-to-Site and Site-to-Site.
+
+We will learn more about VPNs in depth in our next lesson on Building an Enterprise Network!
+
+
+
+3.2.10 Quizzes: Security Devices
+---------------------------------------
+Quiz Question
+Which of the following devices is primarily responsible for both detecting and preventing known attacks?
+IPS
+
+Quiz Question
+Which type of firewall is best suited to protect web applications?
+WAF
+
+Quiz Question
+What are the two primary types of VPN?
+Point-to-Site
+site-to-site
+
+
+
+3.2.11 Exercise: Security Devices
+---------------------------------------
+Instructions:
+In the following network architecture diagram, add specific security devices into specific locations in the architecture to improve the security posture of the enterprise. Do this by clicking on this link and then using the edit (pencil) button at the bottom.
+
+
+
+
+3.2.12 Exercise Solution: Security Devices
+---------------------------------------
+
+
+
+3.2.13 Secure Network Frameworks I
+---------------------------------------
+Secure Network Frameworks are processes and practices that provide structure for organizing an enterprise's security needs.
+
+Sherwood Applied Business Security Architecture (SABSA) is a framework for enterprise security architecture.
+
+The goal of the SABSA framework is to define business objectives and then align security with those objectives.
+
+The SABSA matrix is shown below, representing the six layers of the framework, and six questions for each layer.
+
+The questions in the SABSA framework are (across the top in the diagram):
+
+* What
+* Why
+* How
+* Who
+* Where
+* When
+
+The layers are (represented in each row):
+* Contextual
+* Conceptual
+* Logical
+* Physical
+* Component
+* Management
+
+Each layer in the framework inherits all the security requirements of the layers above it.
+
+We'll discuss the first three layers on this page below, and the next three layers on the next page.
+
+Contextual Layer
+* Represents the business view
+* Describes the business context in which your secure systems must be designed, built and operated.
+
+Conceptual Layer
+* Represents the architect's view
+* Shows conceptually how the system will be built.
+
+Logical Layer
+* Represents the designer's view
+* Takes the architect's conceptual vision and turns it into a logical structure.
+
+
+
+3.2.14 Secure Network Frameworks II
+---------------------------------------
+Secure Network Frameworks II
+On the previous page we discussed the first three layers of the SABSA framework.
+
+We have three more to go - the Physical, Component, and Management layers.
+
+The SABSA Matrix is shown in the diagram below again.
+
+Reminder: The goal of the SABSA framework is to define business objectives and then align security with those objectives.
+
+Physical layer
+
+* Represents the constructor's view
+* Takes the logical security architecture designed in the previous layer and assigns a technological system that meets the functional requirement scoped out in the logical layer
+
+Component layer
+
+* Represents the technician's view
+* Systems scoped out from the physical layer are integrated and built in this layer
+
+Management layer
+
+* Represents the manager's view
+* Concerned with ensuring operational continuity and having a maintenance process in place for each layer.
+
+Optional Further Research into the SABSA Framework
+In case you are interested in diving deeper into the SABSA Framework, I recommend this resource:
+
+https://sabsa.org/white-paper-requests/
+
+
+
+3.2.15 Quizzes: Secure Network Frameworks 
+---------------------------------------
+Quiz Question
+Which one below describes processes and practices that provide structure for organizing an enterprise's security needs?
+secure network frameworks
+
+Quiz Question
+Drag the layers of the SABSA Framework to place them in the correct order, from the top layer to bottom.
+
+Number       Layer
+1 (Top)      Contextual
+2            Conceptual
+3            Logical
+4            Physical
+5            Component
+6 (Bottom)   Management
+
+
+
+3.2.16 Exercise: Secure Network Frameworks 
+---------------------------------------
+Exercise: Secure Network Frameworks
+In this exercise, use the SABSA framework to go through the following scenario and explain in detail what would happen in each layer.
+
+The goal of this exercise is to get familiar with the SABSA Matrix and work through the 6 layers from top to bottom.
+
+Scenario:
+
+Company XYZ's business driver is to protect employees from a recent string of advanced spear phishing attacks, which have cost other companies millions and damage to their reputations.
+
+
+Your reflection
+have a process to identify where the attacks come from and address them one by one.
+
+
+Things to think about
+Thanks for your work on this. You can check your explanation against mine on the next solution page.
+
+
+
+3.2.17 Exercise Solution: Secure Network Frameworks
+---------------------------------------
+There are multiple possibilities for this solution. Here's a sample explanation:
+Contextual Layer:
+
+Business has a requirement to ensure there are safeguards in place against phishing attacks to prevent loss of reputation and money.
+
+Conceptual Layer:
+
+Architect conceptualizes that there needs to be email filtering in place before emails hit mail servers, phishing awareness training, and threat intelligence.
+
+Logical Layer:
+
+The designer scopes out the design of how to implement an email filtering solution before the mail servers, designing traffic and filtering rules. Designer also designs the scope for the phishing awareness training and how to implement threat intelligence into the architecture.
+
+Physical Layer:
+
+In this layer the constructor identifies components required to achieve the logical layer. So for email filtering we would use a secure email gateway to help filter out phishing attempts. We would also look for firewalls that can incorporate external threat intelligence. Lastly have a phishing awareness solution purchased or built for staff.
+
+Component Layer:
+
+In this layer, the technician is deploying the secure email gateway and the firewall and ensuring the integration works.
+
+Management Layer:
+
+In this layer, the manager is ensuring there is a maintenance lifecycle in place for the newly deployed secure email gateway as well as the firewall. Manager is also implementing a lifecycle for how often and when to run the phishing awareness training.
+
+
+
+3.2.18 Drawbacks of Network Security Architecture
+---------------------------------------
+Current Perimeter and Network Security Architecture has its Limitations!
+Enterprises currently face threats from everywhere, and although current perimeter and network security architecture is generally effective, some of these threats are able to get through.
+
+A few examples of these threats are:
+
+* Insider threats
+* Compromised accounts
+* Compromised endpoints
+* Social engineering
+* Integrations with cloud environments
+
+To address some of these limitations, there are new innovations in the field:
+
+* Microsegmentation
+* Software-Defined Perimeter (SDP)
+* Zero Trust
+
+Microsegmentation takes the concept of zones further by focusing on visibility, granular security, and dynamic adaptation.
+
+Software-Defined Perimeter controls access to resources based on identity.
+
+Zero Trust is the philosophy of "Never trust, always verify." We will dive deeply into this innovation in our last lesson.
+
+Optional Further Research into Architecture Innovations
+I recommend these resources in case you are interested in further reading on this topic:
+
+https://www.paloaltonetworks.com/cyberpedia/what-is-microsegmentation
+
+https://www.paloaltonetworks.com/cyberpedia/what-is-a-zero-trust-architecture
+
+https://www.cloudflare.com/learning/access-management/software-defined-perimeter/
+
+
+
+3.2.19 Glossary of Key Terms
+---------------------------------------
+Key Terms Introduced in this Lesson
+Term	                        Definition
+Network	                        Communication medium between two or more devices
+Security                        State in which the integrity, confidentiality, and accessibility of a network is assured through protective measures.
+Architecture                    Set of related physical and logical representations of a system or a solution.
+Network Topologies              Representations of how devices are connected physically and logically.
+Security Topologies             Representations of the network from a security perspective.
+Secure Network Frameworks	Processes and practices that provide structure for organizing an enterprise's security needs.
+SABSA                           A business-driven framework for enterprise security architecture.
+Microsegmentation               Takes the concept of zones further by focusing on visibility, granular security, and dynamic adaptation.
+Software-Defined Perimeter	Controls access to resources based on identity.
+
+
+
+3.2.20 Lesson Conclusion
+---------------------------------------
+Well done on finishing this lesson on Network Security Architecture!
+
+Let's do a quick recap:
+In this lesson, we first learned about network topologies and their role in constructing an enterprise network. When building an enterprise network having a secure network topology is a requirement. Then we learned about security zones and how the flow of traffic should be restricted differently for each zone.
+
+Next we moved onto identifying security devices and their placement in an enterprise security architecture.
+
+Lastly we explored the SABSA framework and learned how businesses align objectives with security.
+
+This is a lot of content and I highly encourage going back through the lesson to recap any sections you found difficult.
