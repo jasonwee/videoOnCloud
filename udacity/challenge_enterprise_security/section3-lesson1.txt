@@ -1,0 +1,133 @@
+nd0035
+
+date start :  1 february 2024
+
+
+3.1.1 Meet your instructor
+---------------------------------------
+Hello everyone, welcome to Udacity!
+My name is Milind Adari and I'll be your instructor for this course on Enterprise Perimeter and Network Security.
+A little bit about me:
+
+* I work as an Information Security Engineer at The Associated Press
+* I teach a cybersecurity bootcamp at Columbia University
+* I have a Masters Degree in Management & Information Systems from NYU and a Bachelors in Computer Science & Psychology from Rutgers University
+
+
+
+3.1.2 Lesson Overview
+---------------------------------------
+Thanks for being a student in this course!
+
+In this introductory lesson, we'll give you a helpful overview of the course that will set you up for success:
+
+* Course prerequisites
+* Overview of the course topics
+* Why enterprise perimeter and network security is important
+* Stakeholders in your business with whom you'll interact around network security
+* Historical development of enterprise network security
+* Preview of the end-of-course project
+* Overview of the tools and environment you'll use for your project and exercises throughout the course
+
+
+
+3.1.3 Prerequisites
+---------------------------------------
+Course Prerequisites
+* Experience setting up and configuring a Linux server
+* Experience setting up an Azure cloud environment
+* Exposure to networking and security devices
+ * Able to explain the relationship between client and server within a web architecture
+ * Able to identify common networking protocols (HTTP, SSH, DNS, etc.)
+ * Able to distinguish between different hardware components in a network (firewall, load balancer, IDS/IPS)
+* Patience!
+
+
+
+3.1.4 Course Overview
+---------------------------------------
+Course Learning Objectives
+We first start by looking at an enterprise's perspective in designing network security architecture. In this first lesson you will learn to:
+
+* Identify weaknesses in network topologies
+* Design the placement of security devices in an enterprise network
+* Use the SABSA framework to align enterprise business and security needs
+
+Then we move on to the next lesson on building an enterprise network, where you will learn to:
+
+* Connect from public to private networks over a NAT gateway
+* Segment a virtual network into multiple subnets
+* Build a VPN solution to connect to an enterprise network
+
+Then we dive into continuous monitoring with a SIEM. By the end of this lesson you will be able to:
+
+* Deploy a SIEM
+* Setup alerts and monitor traffic
+* Build an Incident Response Playbook
+
+Lastly in our final lesson, we'll give you an introduction to Zero Trust. You will learn to:
+
+* Define the principles of Zero Trust
+* Identify key components in Zero Trust architecture
+* Design a Zero Trust mod
+
+
+
+3.1.5 Network Security is essential for enterprises
+---------------------------------------
+Enterprise perimeter and network security is incredibly important!
+* In just the past year enterprises had 36 billion records exposed due to data breaches
+* $3.86 million is the average cost of a data breach
+* 30% of data breaches involved insider threats
+* Cybercrime costs are expected to rise and hit a total of $6 trillion in 2021
+
+
+
+3.1.6 evolution of perimeter and network security
+---------------------------------------
+Milestones in the Historical Development of Enterprise Network Security
+* 1969 - Dr. Howard Frank designs the ARPAnet and some of the first network topologies
+* 1992 - DEC SEAL is the first commercial firewall
+* 1996 - Microsoft develops the first Virtual Private Network (VPN), a peer to peer tunnel
+* 2006 - Amazon unveils Amazon Web Services (AWS), providing commercial cloud resources
+* 2010 - John Kindervag creates Zero Trust
+* 2014 - The National Institute of Standards and Technology (NIST) publishes the first cybersecurity framework
+
+
+
+3.1.7 business stackholders
+---------------------------------------
+Roles in an Enterprise Involved with Perimeter and Network Security
+* Security staff
+* Information Technology staff
+* C-Suite (executives)
+
+
+
+3.1.8 project and tools overview 
+---------------------------------------
+Your final project, Securing the Perimeter, will be a culmination of all the skills you learn throughout the course.
+* Part 1: Designing a Secure Network Architecture
+* Part 2: Building a Secure Network Architecture in Azure
+* Part 3: Monitoring with a SIEM
+* Part 4: Zero Trust Model
+
+Tools and Environment
+In this course we'll use the following tools:
+
+* Microsoft Azure
+* ELK stack
+ * Elasticsearch
+ * Logstash
+ * Kibana
+* Linux Ubuntu
+Access to all of these tools will be provided to you in the project and in exercises in a Virtual Machine (VM), in a workspace inside your classroom.
+
+
+
+3.1.9 good luck!
+---------------------------------------
+
+
+
+
