@@ -1,0 +1,466 @@
+nd0035
+
+date start : 3 february 2024
+
+
+3.3.1 Lesson Overview
+---------------------------------------
+
+Let's Dive into Building an Enterprise Network!
+In this lesson we are going to take all the concepts we learned from Network Security Architecture and use them to build our own secure enterprise network in Microsoft Azure.
+
+
+
+3.3.2 Overview of Building an Enterprise Network
+---------------------------------------
+An enterprise network is responsible for facilitating an organization's communications, and connections of all devices.
+Landscape of Enterprise Networks
+On-Premise Network
+Cloud Network
+Hybrid Network
+These are the options an enterprise has when building a network. Enterprises carefully weigh their requirements before selecting a model to go with.
+
+An On-Premise Network, or "On-Prem Network," refers to a physical location where an enterprise houses all their applications, systems, and data.
+
+A Cloud Network refers to an infrastructure where network and resources are hosted by a third-party vendor in a cloud platform.
+
+A Hybrid Network refers to an infrastructure that is a mix of both an On-Premise and a Cloud Network.
+
+
+
+3.3.3 Private and Public Networks
+---------------------------------------
+A Private Network (or Internal Network) is an address realm that is not routed to the Internet and only works within a local network.
+
+The Internet Assigned Numbers Authority (IANA), is an entity responsible for overseeing global IP address allocation. IANA allocated the following IP ranges for private networks:
+
+* Class A
+* Class B
+* Class C
+
+A Public Network (or External Network) is an address realm with a unique network address routed to the Internet.
+
+There are about 3.7 billion public IP addresses!
+
+If private networks can only communicate locally and public networks can only communicate on the internet, how are they able to communicate with each other?
+
+Through the use of Network Address Translation!
+
+Network Address Translation (NAT) is the process of of mapping a private IP to a pubilc IP so it can communicate on the Internet.
+
+Additional Optional Reading
+I recommend this resource if you are interested in a deeper dive into IP address classes:
+
+https://www.geeksforgeeks.org/introduction-of-classful-ip-addressing/
+
+
+
+3.3.4 Quizzes: Private and Public Networks
+---------------------------------------
+Quiz Question
+Which network has more IPs - Public or Private?
+public
+
+
+Quiz Question
+Is each IP below public or private?
+
+IP Addresses      Public or Private
+96.22.15.10       Public
+192.168.1.10      Private
+192.168.29.178    Private
+192.167.200.200   Public
+
+
+A Private Network (or _______) is an address realm that is not routed to the Internet and only works within a local network.
+internal network
+
+
+Quiz Question
+A Public Network (or _______) is an address realm with a unique network address routed to the Internet.
+external network
+
+
+
+3.3.5 Transition to Microsoft Azure
+---------------------------------------
+Transition to Microsoft Azure
+Up to this point, we've discussed a lot of theoretical concepts about network security architecture and building an enterprise network.
+
+We're now going to transition to what building an enterprise network actually looks like using Microsoft Azure. Azure is a cloud computing service created by Microsoft.
+
+For all of the exercises and project in this course that requires you to use Azure, we offer you a workspace in the Udacity classroom here that provides you access to Azure. This Azure environment has been configured to focus you primarily on tasks you need to complete for the exercises and project.
+
+However, you are welcome to use your own Azure account, instead of these workspaces, if you’d like.
+
+If you choose to use your own Azure account, please be wary of incurring unnecessary costs.
+
+
+
+3.3.6 Demo: Initial Azure Environment Setup
+---------------------------------------
+Setting up our Azure environment involves four key tasks, which we'll walk through below, in four separate videos.
+Creating a Resource Group
+Note: If you are accessing Azure through the Udacity classroom workspace, the resource group will already have been created for you, so you would not need to complete this step.
+
+If you access Azure using your own account, you will need to create a resource group as shown here.
+
+Resource groups are logical groupings of resources in Azure. These groups provide the capability to manage, secure, and monitor resources efficiently. Resource groups can designed to hold all the resources that make up a solution, or segmented to specific resources that you want to manage as a group separately.
+
+For example a resource group for a website
+
+Key steps in creating a resource group in Azure:
+* Go to Resource Group
+* Click to Add a new Resource Group
+* Keep the Region in US-East
+
+Creating a Network Security Group
+
+Network security groups are built with rules to filter inbound traffic to, and outbound traffic from, virtual machines and subnets. They have the same functionality as firewalls.
+
+Key steps in creating a network security group in Azure:
+* Go to Network Security Group
+* Associate with the Resource Group you already created
+* Keep region same as Resource Group
+
+Creating a Virtual Network
+
+Azure Virtual Network (VNet) is a private cloud network hosted by Microsoft. Azure Vnet can be used to secure communication amongst Azure resources, on-prem networks, and the internet. Azure provides immense flexibility, availability, and scalability when it comes to managing a network that you normally wouldn't find in a traditional network. Azure Vnet also provides you the capability to build both point-to-site and site-to-site VPNs as well.
+
+
+Key steps in creating a virtual network in Azure:
+* Go to Virtual Networks
+* Associate with Resource Group, you already created
+* Keep same Region
+
+Creating a Virtual Machine
+
+Azure Virtual Machines (VM) are a flexible resource option that is highly customizable to your needs. Azure VMs can be customized to a specific CPU size, operating system, hardware configuration, location, and more.
+
+Key steps in creating a VM in Azure:
+* Go to Virtual Machines
+* Associate with Resource Group
+* Select B1s for VM Size
+* Use an existing public key and create an SSH key to be used:
+ * ssh-keygen
+* In Networking
+ * Associate with Virtual Network you created
+ * In NIC network security group hit advanced and associate with Network Security Group you already created
+
+Please only use Standard_B1s for your VM size and select the Ubuntu server 20.04 LTS - Gen 2 image, otherwise you will encounter an error.
+
+Additional Optional Reading:
+
+https://docs.microsoft.com/en-us/azure/azure-resource-manager/management/manage-resource-groups-portal
+
+https://docs.microsoft.com/en-us/azure/virtual-network/network-security-groups-overview
+
+https://docs.microsoft.com/en-us/azure/virtual-network/virtual-networks-overview
+
+https://docs.microsoft.com/en-us/azure/virtual-machines/windows/overview
+
+
+
+3.3.7 Demo: Accessing Azure from Classroom Workspace
+---------------------------------------
+In this demo, I'll take you through the process of accessing your Azure environment in a workspace in the Udacity classroom here. For all of your exercises and the project for this course, you'll be accessing your Azure environment using this process. Your first exercise using a workspace to access Azure is on the next page.
+
+When you're on an exercise or project page with a workspace, click on the "Access Lab" button to populate a Windows Virtual Machine (VM).
+
+This process will take roughly 2-3 minutes for the VM to load.
+
+Once the VM has loaded you should see two desktop icons:
+
+* AzurePortal - This is a browser shortcut to take you to the Azure Portal site.
+* AzureCreds - This is the file that contains your Azure credentials.
+
+Proceed to open the browser shortcut and log in with the credentials from the AzureCreds file to access your Azure environment.
+
+You should now be able to access your Azure environment to complete the following exercises as well your project.
+
+
+
+3.3.8 Cloud Lab
+---------------------------------------
+Cloud Lab
+Use this Cloud Lab to finish all exercises in the current lesson.
+
+Terms of Use
+
+* This cloud lab is a sandbox environment and thus has a limited session duration. Check the lab environment details on the right collapsible pane to view the session duration timer. After the session expires, the learner will have to reload the lab page and start a new session, which will be counted as the second attempt. Udacity does not preserve resources across sessions.
+
+* There are only 10 attempts permitted for this lab. Therefore, we strongly recommend that learners only access the lab when necessary. After exhausting all attempts, learners will encounter the Usage limit is crossed error, which a learner can resolve by writing an email to "udacity-labsupport@udacity.com".
+
+* Please follow the instructions described in the exercise/project instructions. Udacity monitors lab usage to ensure the proper use of resources for educational purposes.
+
+* Always delete the resources if not in use.
+
+* Misusing the lab resources can cause revoking your lab access or deactivation of your Udacity account.
+
+
+3.3.9 Exercise: Private to Public
+---------------------------------------
+Welcome to Azure! You will use Azure Cloud to complete the majority of the exercises in this and the following lesson, as well as the project.
+
+Please bear in mind these exercises are mostly built upon each other, so make sure you complete them in order.
+
+Create all your resources in the existing resource group.
+
+Instructions:
+
+1. Click on "Access Lab" here, then access the Azure Portal as shown in the previous demo video. This should take you to Portal.azure.com.
+2. Create a Network Security Group
+3. Create a Virtual Network
+4. Create a Virtual Machine:
+ a. (Use Standard_B1s and Linux Ubuntu 20.04 LTS Generation 2 Image)
+ b. Associate VM with a Public IP
+ c. Associate VM with Network Security Group created in step 3
+ d. Connect to your Virtual Machine
+
+Please only use Standard_B1s for your VM size and select the Linux Ubuntu 20.04 LTS Generation 2 image, otherwise you will encounter an error.
+
+i noticed that i have to enabled inbound for tcp port 22, then only ssh response..
+
+azureuser
+windowS@456987
+
+
+
+3.3.10 Exercise Solution: Private to Public
+---------------------------------------
+
+
+3.3.11 Network Segmentation
+---------------------------------------
+Network Segmentation is the process of dividing a network into smaller subnetworks or subnets.
+
+There are multiple benefits to Network Segmentation such as:
+
+* Performance
+* Access Control
+* Containment
+* Visibility and Monitoring
+* Compliance
+
+Wireless Security is a challenge most enterprises face. Before segmentation, enterprises would grant guests access to the same internal network on which they operated. This practice was incredibly insecure, as it allowed guest users access to the internal network, thereby bypassing any perimeter security that was in place. Segmentation alleviated this issue by creating separate networks, one for guest users and one for internal users.
+
+Additional Optional Reading
+I recommend this resource in case you are interested in further study on network segmentation:
+
+https://www.paloaltonetworks.com/cyberpedia/what-is-network-segmentation
+
+
+
+3.3.12 Demo: Network Segmentation in Azure
+---------------------------------------
+Key Steps in segmenting a Network:
+
+* Go to Virtual Networks
+* Click on Subnets in the left pane
+* Click add to add new subnets
+
+
+
+3.3.13 Exercise: Networks
+---------------------------------------
+Please bear in mind these exercises are built upon each other, so make sure you have completed the previous exercise before doing this one.
+
+In this exercise you're tasked with segmenting your Azure Virtual Network.
+
+1. Create 4 Network Subnets:
+ * Secure
+ * Management
+ * DMZ
+ * Internal
+2. Control Access to each of the Subnets. (This will require the use of one of the Azure security features we created in our previous exercise. You should see this feature already in place in the Azure environment when you begin the exercise here.)
+
+
+
+3.3.14 Exercise Solution: Networks
+---------------------------------------
+
+
+
+3.3.15 Importance of VPNs
+---------------------------------------
+A Virtual Private Network (VPN) is an encrypted connection between you and another network.
+
+There are many benefits to Virtual Private Networks such as:
+
+* Providing an encrypted tunnel for secure communication
+* Securing and extending the network from one site to another
+* Allowing remote access of resources
+* Being affordable and scalable
+
+There are two primary types of VPNs:
+
+Point-to-Site is a secure connection from an individual client to a virtual network.
+
+Site-to-Site is a secure connection between two or more networks.
+
+Additional Optional Reading
+If you are interested in further study on VPNs, I recommend this resource:
+
+https://www.paloaltonetworks.com/cyberpedia/what-is-a-vpn
+
+
+
+3.3.16 Quizzes: VPN
+---------------------------------------
+Quizzes: VPN
+Note: In the quiz below, since there are multiple answers, if you see the message "Sorry you've missed a correct answer" 2-3 times, it means you have missed 2-3 correct answers.
+
+Quiz Question
+Check all that apply for a Point-to-Site VPN.
+Temporary connection
+VPN client is required to connect to corporate network
+Designed for individual use
+
+
+Quiz Question
+What are some benefits of using a VPN?
+Securing and extending the network from one site to another
+Providing an encrypted tunnel for secure communication
+Allowing remote access of resources
+Being affordable and scalable
+
+
+Quiz Question
+Which type of VPN is "a secure connection from an individual client to a virtual network."
+point to site
+
+
+
+3.3.17 Demo: Creating a VPN in Azure
+---------------------------------------
+Key Steps in Creating a VPN:
+
+* Go to Virtual Network Gateways
+* Set SKU to VpnGw1 and Generation to Generation1
+* Select your Virtual Network
+* Create new Public IP
+* Next open up your newly created Virtual Network Gateway
+* Click on Point-to-site configuration
+* Use the following address pool 172.16.1.0/24
+* Create Certificates using the following:
+
+#Create the root cert
+$cert = New-SelfSignedCertificate -Type Custom -KeySpec Signature `
+-Subject "CN=AzureRootCert" -KeyExportPolicy Exportable `
+-HashAlgorithm sha256 -KeyLength 2048 `
+-CertStoreLocation "Cert:\CurrentUser\My"  `
+-KeyUsageProperty Sign -KeyUsage CertSign
+
+ # Create Client Cert
+New-SelfSignedCertificate -Type Custom -DnsName P2SChildCert -KeySpec Signature `
+-Subject "CN=AzureClientCert" -KeyExportPolicy Exportable `
+-HashAlgorithm sha256 -KeyLength 2048 `
+-CertStoreLocation "Cert:\CurrentUser\My" `
+-Signer $cert -TextExtension @("2.5.29.37={text}1.3.6.1.5.5.7.3.2")
+
+* Next open up Manage User Certificates from the start menu and click on Personal
+ * In Certificates export the Root and Client Cert
+ * In root cert don't export private key and then select base64 encoded
+ * For client cert export the private key and give it a password when prompted
+ * Open up your exported azure cert and copy the contents in it and got to Azure and paste in Public Certificate Data
+
+* Open up Point-to-site Configuration
+ * Set the address pool field to a value, as mentioned in the video
+ * Set tunnel type to IKEv2
+ * Set Authentication type to Azure Certificate
+
+Key Steps for Connecting to the VPN
+* Next download VPN Client
+ * Open the Windows 64-bit installation and follow the prompts to install the VPN
+ * Open settings and go to your VPN settings and connect to your VPN
+
+
+
+3.3.18 Exercise: Creating a VPN
+---------------------------------------
+Exercise: Creating a VPN
+
+Please bear in mind these exercises are built upon each other, so make sure you have completed the previous exercise before doing this one.
+
+Instructions:
+
+1. Create a Virtual Network Gateway.
+2. Create your Certificates using the following commands in Powershell:
+
+#Create the root cert
+$cert = New-SelfSignedCertificate -Type Custom -KeySpec Signature `
+-Subject "CN=AzureRootCert" -KeyExportPolicy Exportable `
+-HashAlgorithm sha256 -KeyLength 2048 `
+-CertStoreLocation "Cert:\CurrentUser\My"  `
+-KeyUsageProperty Sign -KeyUsage CertSign
+
+ # Create Client Cert
+New-SelfSignedCertificate -Type Custom -DnsName P2SChildCert -KeySpec Signature `
+-Subject "CN=AzureClientCert" -KeyExportPolicy Exportable `
+-HashAlgorithm sha256 -KeyLength 2048 `
+-CertStoreLocation "Cert:\CurrentUser\My" `
+-Signer $cert -TextExtension @("2.5.29.37={text}1.3.6.1.5.5.7.3.2")
+
+After you've created your Virtual Network Gateway, lock down access into your Management subnet to only allow traffic from the VPN address space.
+
+Then test connectivity and verify you are connected to the VPN and are able to connect to a VM in the management subnet.
+
+
+
+3.3.19 Exercise Solution: Creating a VPN
+---------------------------------------
+
+
+
+3.3.20 Special Considerations for Building an Enterprise Network
+---------------------------------------
+When building an enterprise network, there are many considerations that an enterprise takes into account to ensure the overall security of an enterprise.
+
+Vendor Lock-In refers to a customer being dependent on a vendor for services and unable to switch without substantial costs, legal constraints, or technical difficulties.
+
+Overbuilding is when an enterprise builds too much!
+
+Underbuilding is when an enterprise builds too little!
+
+Human error can be caused by a lack of skill or decision making.
+
+Taking into account these potential issues can help an enterprise avoid significant problems down the road.
+
+
+
+3.3.21 Glossary of Key Terms
+---------------------------------------
+Glossary of Key Terms
+Key Terms Introduced in this Lesson
+Term	                        Definition
+On-Premise Network	        Physical location where an enterprise houses all their applications, systems, and data.
+Cloud Network	                Infrastructure where network and computing resources are hosted by a third-party vendor in a cloud platform.
+Hybrid Network	                Infrastructure that is a mix of both on-prem and cloud networks.
+Private Network	Address         realm that is not routed to the Internet and only works within a local network.
+Public Network	Address         realm with a unique network address routed to the Internet.
+Network Address Translation	Process of mapping a private IP to a public IP so it can communicate on the Internet.
+Network Segmentation            Process of dividing a network into smaller subnetworks or subnets.
+Vendor Lock-In                  Customer being dependent on a vendor for services and unable to switch without substantial costs, legal constraints, or technical difficulties.
+Overbuilding                    When an enterprise builds too much into their network.
+Underbuilding                   When an enterprise builds too little into their network.
+Human Error                     Caused by lack of skill or decision making.
+
+
+
+3.3.22 Lesson Conclusion
+---------------------------------------
+Well done on finishing this lesson on Building an Enterprise Network!
+
+Let's do a quick recap:
+In this lesson we first covered public and private networks, and how enterprises need both to function. Then we discussed how Network Address Translation (NAT) is required for public and private networks to communicate. We then built our own enterprise network in Azure.
+
+After building our enterprise network, we discovered the benefits of segmenting a network and segmented our Azure enterprise network into multiple subnets.
+
+Finally we identified the importance of a VPN and built a VPN solution in Azure to connect to our enterprise network.
+
+This lesson contained a lot of new material and hands-on activities, so I highly encourage going back through the lesson to recap any sections you found difficult.
+
+
+
+
+
