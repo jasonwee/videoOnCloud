@@ -1,3 +1,10 @@
+1. go to https://learn.udacity.com/nanodegrees/nd0035-bmann-nextgen/parts/1372c6ea-701d-419a-8f78-61e9b95142dd/lessons/880cc371-a30e-4c9c-8a29-9eae970db67a/concepts/ed6c1fdc-b3a4-4206-94d8-13f2a6fff136
+2. click on access lab
+3. wait for vm to start
+
+
+or
+
 apt install freerdp2-wayland
 
 $ /usr/bin/wlfreerdp 20.245.210.94
