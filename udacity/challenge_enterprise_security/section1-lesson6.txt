@@ -10,7 +10,7 @@ Welcome to the sixth lesson in this course where you learn to apply what you’v
 
 
 
-1.6.2 Appolying Cybersecurity
+1.6.2 Applying Cybersecurity
 ---------------------------------------
 Summary
 The application of cybersecurity principles follows a few steps.
