@@ -1,0 +1,99 @@
+https://www.codecademy.com/learn/learn-c-plus-plus
+
+date start : 03 june 2022
+
+
+1.1.1 Introduction to C++
+---------------------------------------
+Introduction to C++
+C++ is a programming language created by Bjarne Stroustrup and his team at Bell Laboratories in 1979. Forty years later, it is one of the most widely used languages in the world; we can find C++ applications everywhere, from the bottom of the oceans to the surface of Mars.
+
+As the name implies, C++ was derived from the C language; Bjarne’s goal was to add object-oriented programming into C, a language well-respected for its portability and low-level functionality.
+
+So why learn C++? Among many other things:
+
+It is fast and flexible.
+It is well-supported.
+It forces you to think in new and creative ways.
+
+In this lesson, we’ll start learning some basic concepts, and you’ll write your very first C++ program.
+
+Note: Don’t worry if some words don’t make much sense right now. We’ll learn about them in a bit!
+
+https://www.codecademy.com/learn/learn-c-plus-plus/modules/learn-cpp-hello-world/cheatsheet
+
+
+
+1.1.2 Hello World!
+---------------------------------------
+Take a look at the hello.cpp file in the code editor that is placed in the middle of the screen. It’s a C++ program!
+
+In our code editor, the file name is displayed at the top:
+
+C++ programs are stored in files which usually have the file extension .cpp, which simply stands for “C Plus Plus”.
+
+The code inside our C++ file is a classic first step all new programmers take — they greet the world through the terminal!
+
+The terminal is the black panel on the right. It should be blank right now. The code in the text editor will print text out onto the terminal. More specifically, it will print the phrase Hello World!.
+
+Before we explain what all that mumbo jumbo is, let’s run the program to see what happens.
+
+
+
+1.1.3 Output
+---------------------------------------
+Output
+High five! We just got your first program to run.
+
+C++, like most programming languages, runs line by line, from top to bottom. Here is the structure of a C++ program:
+
+In between the curly braces is what we are going to focus on for now.
+
+std::cout << "Hello World!\n";
+
+std::cout is the “character output stream”. It is pronounced “see-out”.
+
+<< is an operator that comes right after it.
+
+"Hello World!\n" is what’s being outputted here. You need double quotes around text. The \n is a special character that indicates a new line.
+
+; is a punctuation that tells the computer that you are at the end of a statement. It is similar to a period in a sentence.
+
+
+
+1.1.4 Pattern 
+---------------------------------------
+Pattern
+We learned how to output a line of text with the following code:
+
+std::cout << "🚙💨\n";
+It will output:
+
+🚙💨
+We can also output multiple lines by adding more std::cout statements:
+
+std::cout << "Hello\n";
+std::cout << "Goodbye\n";
+This will output:
+
+Hello
+Goodbye
+Now let’s use what we learned so far to complete a coding challenge!
+
+
+
+1.1.5 Review
+---------------------------------------
+Review
+Woohoo! You have written a few C++ programs. 🙌
+
+In this lesson, you have learned:
+
+C++ is a general-purpose coding language.
+C++ runs line by line, from top to bottom.
+std::cout is how you output to the terminal:
+std::cout << "Good luck!\n";
+
+
+
+
