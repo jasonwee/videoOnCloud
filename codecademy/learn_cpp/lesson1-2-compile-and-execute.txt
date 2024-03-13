@@ -1,0 +1,92 @@
+date start : 03 june 2022
+
+
+1.2.1 Code -> save -> compile -> execute
+---------------------------------------
+Code → Save → Compile → Execute
+C++ is a compiled language. That means that to get a C++ program to run, you must first translate it from a human-readable form to something a machine can “understand.” That translation is done by a program called a compiler.
+
+When you program in C++, you mainly go through 4 phases during development:
+
+Code — writing the program
+Save — saving the program
+Compile — compiling via the terminal
+Execute — executing via the terminal
+And repeat (debug the errors if needed).
+
+Note: Up until now, we’ve been doing the magic for you; Step 2, 3, and 4 were all done by simply pressing the Run button.
+
+
+
+1.2.2 compile and execute
+---------------------------------------
+COMPILE & EXECUTE
+Compile and Execute
+Compile: A computer can only understand machine code. A compiler can translate the C++ programs that we write into machine code. To compile a file, you need to type g++ followed by the file name in the terminal:
+
+g++ hello.cpp
+The compiler will then translate the C++ program hello.cpp and create a machine code file called a.out.
+
+Execute: To execute the new machine code file, all you need to do is type ./ and the machine code file name in the terminal:
+
+./a.out
+The executable file will then be loaded to computer memory and the computer’s CPU (Central Processing Unit) executes the program one instruction at a time.
+
+
+
+1.2.3 compile and execute (naming executables)
+---------------------------------------
+Compile and Execute (Naming Executables)
+Compile: Sometimes when we compile, we want to give the output executable file a specific name. To do so, the compile command is slightly different. We still need to write g++ and the file name in the terminal. After that, there should be -o and then the name that you want to give to the executable file:
+
+g++ hello.cpp -o hello
+The compiler will then translate the C++ program hello.cpp and create a machine code file called hello.
+
+Execute: To execute the new machine code file, all you need to do is type ./ and the machine code file name in the terminal:
+
+./hello
+The executable file will then be loaded to computer memory and the computer’s CPU will execute the program one instruction at a time.
+
+
+
+1.2.4 comments
+---------------------------------------
+Comments
+Programming is often highly collaborative. In addition, our own code can quickly become difficult to understand when we return to it — sometimes only a few hours later! For these reasons, it’s often useful to leave notes in our code for ourselves or other developers.
+
+As we write a C++ program, we can write comments in the code that the compiler will ignore as our program runs. These comments exist just for human readers.
+
+Comments can explain what the code is doing, leave instructions for developers using the code, or add any other useful annotations.
+
+There are two types of code comments in C++:
+
+A single line comment will comment out a single line and is denoted with two forward slashes // preceding it:
+
+// Prints "hi!" to the terminal
+std::cout << "hi!";
+You can also use a single line comment after a line of code:
+
+std::cout << "hi!";  // Prints "hi!"
+A multi-line comment will comment out multiple lines and is denoted with /* to begin the comment, and */ to end the comment:
+
+/* This is all commented.
+std::cout << "hi!";
+None of this is going to run! */
+
+
+
+1.2.5 Review
+---------------------------------------
+Review
+Congratulations! 🙌
+
+In this lesson, you have learned:
+
+Compilation and execution using the terminal.
+g++ hello.cpp -o hello
+./hello
+Single line comments can be created using //.
+Multi-line comments can be created using /* */.
+
+
+
