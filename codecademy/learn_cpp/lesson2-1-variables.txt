@@ -1,0 +1,239 @@
+date start : 10 june 2022
+
+
+2.1.1 introduction to variables
+---------------------------------------
+Introduction to Variables
+The "Hello World!" program simply writes to the screen. It does not read anything, calculate anything, or allow for user input. That’s no fun!
+
+Real programs tend to produce results based on some input that the user of the program gives, rather than just outputting the same thing every time.
+
+To read something from the keyboard, we first need somewhere in the computer’s memory to store data. That is where variables come in.
+
+A variable is simply a name that represents a particular piece of your computer’s memory that has been set aside for you to store, retrieve, and use data.
+
+In this lesson, we will learn about some of the basic data types:
+
+int: integer numbers
+double: floating-point numbers
+char: individual characters
+string: a sequence of characters
+bool: true/false values
+Every variable has a type, which represents the kind of information you can store inside of it. It tells your compiler how much memory to set aside for the variable, and it defines what you can do with the variable.
+
+
+
+2.1.2 step 1: declare a variable
+---------------------------------------
+"Every variable in C++ must be declared before it can be used!"
+Suppose we are building a game and we want to keep track of a player’s score that goes from 0 to 10. We need a variable!
+
+Before we can use a variable, we must declare, or create, it. To declare a variable, we need to provide two things:
+
+A type for the variable.
+A name for the variable.
+So to declare an integer variable called score, we need to write:
+
+int score;
+The int is the type of the variable.
+The score is the name of the variable.
+The ; is how we end a statement.
+In C++, variable names consist only of upper/lower case letters, digits, and/or underscores.
+
+Note: C++ is known as a strongly typed language. If you try to give an integer value a decimal number, you are going to get unexpected results, warnings, or errors.
+
+
+
+2.1.3 step 2: initailize a variable
+---------------------------------------
+After we declare a variable, we can give it a value!
+
+Suppose that we have declared an int variable called score, to set it to 0, we can simply write:
+
+score = 0;
+
+The score is the name of the variable.
+The = indicates assignment.
+The 0 is the value you want to store inside the variable.
+Note: In C++, a single equal sign = does not really mean “equal”. It means “assign”. In the code above, we are assigning the score variable a value of 0.
+
+
+2.1.4 combining step 1 and step 2
+---------------------------------------
+Combining Step 1 and Step 2
+We can both declare and assign a value to a variable in a single initialization statement.
+
+Suppose we have these two lines:
+
+// Declare a variable
+int score;
+ 
+// Initialize a variable
+score = 0;
+We can actually combine these two lines into a single line of code:
+
+int score = 0;
+
+This means we are declaring an integer called score and setting it equal to 0.
+
+Note: We only need to declare a variable one time! And it is highly suggested to initialize a variable before using it later.
+
+
+
+2.1.5 arithmetic operators
+---------------------------------------
+
+Arithmetic Operators
+Computers are incredible at doing calculations. Now that we have declared variables, let’s use them with arithmetic operators to calculate things!
+
+Here are some arithmetic operators:
+
++ addition
+- subtraction
+* multiplication
+/ division
+% modulo (divides and gives the remainder)
+For example:
+
+int score = 0;
+// score is 0
+ 
+score = 4 + 2;
+// it is now 6
+ 
+score = 4 - 2;
+// it is now 2
+ 
+score = 4 * 2;
+// it is now 8
+ 
+score = 4 / 2;
+// and now 2
+ 
+score = 5 % 2;
+// and now 1
+
+Note: The order of operations can be specified using parentheses. For example, the use of parentheses in score = 5 * (4 + 3) sets score equal to 5 * 7 rather than 20 + 3.
+
+
+
+2.1.6 Chaining
+---------------------------------------
+Now that we have outputted a variable and have also outputted things using multiple couts. Let’s take a closer look at cout again.
+
+If we have the code below:
+
+int age = 28;
+ 
+std::cout << "Hello, I am ";
+std::cout << age;
+std::cout << " years old\n";
+
+It will output:
+
+Hello, I am 28 years old
+
+Notice how we use quotes around the characters in "Hello, I am " but not in age.
+
+We use quotes when we want a literal string.
+We don’t use quotes when we refer to the value of something with a name (like a variable).
+So now, is it possible to write the cout statements within a single line?
+
+Yep! You can use multiple << operators to chain the things you want to output.
+
+For the same code above you can also do:
+
+
+
+2.1.7 User Input
+---------------------------------------
+User Input
+Like we mentioned in the introduction, another way to assign a value to a variable is through user input. A lot of times, we want the user of the program to enter information for the program.
+
+We have cout for output, and there is something called cin that’s used for input!
+
+std::cout << "Enter your password: ";
+std::cin >> password;
+
+The name cin refers to the standard input stream (pronounced “see-in”, for character input). The second operand of the >> operator (“get from”) specifies where that input goes.
+
+To see how it works, we have to try it with a program.
+
+
+
+2.1.8 Challenge: Temperature (Part 1)
+---------------------------------------
+Challenge: Temperature (Part 1)
+Now that we’ve learned about the basics of variables and cin, let’s write a program!
+
+The mad scientist Kelvin has mastered predicting the weather in his mountain-side meteorology lab.
+
+Recently, Kelvin began publishing his weather forecasts on his website, however, there’s a problem: All of his forecasts describe the temperature in Fahrenheit degrees.
+
+Let’s convert a temperature from Fahrenheit (F) to Celsius (C).
+
+The formula is the following:
+
+C = (F - 32) / 1.8C=(F−32)/1.8
+
+
+#include <iostream>
+
+int main() {
+  
+  double tempf = 73;
+  double tempc;
+
+  tempc = (tempf - 32) / 1.8;
+  
+  std::cout << "The temp is " << tempc << " degrees Celsius.\n";
+  
+}
+
+
+
+2.1.9 Challenge: Temperature (Part 2)
+---------------------------------------
+Challenge: Temperature (Part 2)
+Let’s go back to the temperature.cpp that we wrote. This time, instead of giving tempf a value of the current temperature in New York:
+
+tempf = 83;
+Let’s ask the user what the temperature is using cin!
+
+
+#include <iostream>
+
+int main() {
+  
+  double tempf;
+  double tempc;
+  
+  // Ask the user
+  std::cout << "Enter the temperature in Fahrenheit: \n";
+  std::cin >> tempf;
+  
+  
+  tempc = (tempf - 32) / 1.8;
+  
+  std::cout << "The temp is " << tempc << " degrees Celsius.\n";
+  
+}
+
+2.1.10 Review
+---------------------------------------
+Review
+You made it to the end of the lesson! High five. 🙌
+
+Here is a review of the lesson:
+
+A variable represents a particular piece of your computer’s memory that has been set aside for you to use to store, retrieve, and manipulate data.
+C++ basic data types include:
+int: integers
+double: floating-point numbers
+char: individual characters
+string: sequence of characters
+bool: true/false
+Single equal sign = indicates assignment, not equality in the mathematical sense.
+cin is how to receive input from the user.
+
+
