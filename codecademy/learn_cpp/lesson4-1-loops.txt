@@ -1,0 +1,184 @@
+date start : 01 july 2022
+
+
+4.1.1 introduction to loops
+---------------------------------------
+Introduction to Loops
+A loop is a programming tool that repeats some code or a set of instructions until a specified condition is reached. As a programmer, you’ll find that you rely on loops all the time! You’ll hear the generic term “iterate” when referring to loops; iterate simply means “to repeat”.
+
+When we see that a process has to repeat multiple times in a row, we write a loop. Loops allow us to create efficient code that automates processes to make scalable, manageable programs.
+
+In this lesson, we will learn about two types of loops: while loops and for loops!
+
+
+
+4.1.2 while loop demo
+---------------------------------------
+So first up… the while loop!
+
+Before we dive deep into the syntax of the while loop, let’s do a demo.
+
+Inside enter_pin.cpp, we have a program that asks and checks for a password. It uses a while loop to ask the user for the password over and over again.
+
+#include <iostream>
+
+int main() {
+  
+  int pin = 0;
+  int tries = 0;
+  
+  std::cout << "BANK OF CODECADEMY\n";
+  
+  std::cout << "Enter your PIN: ";
+  std::cin >> pin;
+
+  tries++;
+
+  while (pin != 1234 && tries < 3) {
+    
+    std::cout << "Enter your PIN: ";
+    std::cin >> pin;
+    tries++;
+    
+  }
+  
+  if (pin == 1234) {
+    
+    std::cout << "PIN accepted!\n";
+    std::cout << "You now have access.\n"; 
+    
+  }
+  
+}
+
+
+
+4.1.3 guess number
+---------------------------------------
+Guess Number
+So now that we got a demo of loops, let’s write one!
+
+The while loop looks very similar to an if statement. And just like an if statement, it executes the code inside of it if the condition is true.
+
+However, the difference is that the while loop will continue to execute the code inside of it, over and over again, as long as the condition is true.
+
+Here is what a while loop looks like:
+
+while (condition) {
+
+  statements
+
+}
+
+In other words, instead of executing if something is true, it executes while that thing is true.
+
+while (guess != 8) {
+ 
+  std::cout << "Wrong guess, try again: ";
+  std::cin >> guess;
+ 
+}
+
+In this example, while guess is not equal to 8, the program will keep on asking the user to input a new number. It will exit the while loop once the user types in 8 and then the program will continue.
+
+
+
+4.1.5 while loop
+---------------------------------------
+#include <iostream>
+
+int main() {
+  
+  int i = 0;
+  int square = 0;
+  
+  // Write a while loop here:
+  while (i <= 9) {
+    std::cout << i << " " << i * i << "\n";
+    i++;
+  }
+  
+}
+
+
+
+4.1.6 for loop demo
+---------------------------------------
+Iterating over a sequence of numbers is so common that C++, like most other programming languages, has a special syntax for it.
+
+When we know exactly how many times we want to iterate (or when we are counting), we can use a for loop instead of a while loop:
+
+for (int i = 0; i < 20; i++) 
+{
+ 
+  std::cout << "I will not throw paper airplanes in class.\n";
+ 
+}
+
+Let’s take a closer look at the first line:
+
+for (int i = 0; i < 20; i++)
+
+There are three separate parts to this separated by ;:
+
+The initialization of a counter: int i = 0
+The continue condition: i < 20
+The change in the counter (in this case an increment): i++
+So here we are creating a variable i that starts from 0. We will repeat the code inside over and over again when i is less than 20. At the end the for loop, we are adding 1 to i using the ++ operator.
+
+
+
+4.1.7 99 bottles
+---------------------------------------
+In the last exercise, we saw an example of an incrementing for loop so here we are going to show you how to write a for loop where the counter goes down. When we know exactly how many times we want to iterate (or when we are counting), we can use a for loop instead of a while loop:
+
+Incrementing for loop:
+
+
+for (int i = 0; i < 20; i++) 
+{
+  // Statements
+}
+
+Decrementing for loop:
+
+for (int i = 20; i > 0; i--) 
+{
+  // Statements
+}
+
+
+
+#include <iostream>
+
+int main() {
+
+  // Write a for loop here:
+  for (int i = 99; i > 0; i--) {
+    std::cout << i << " bottles of pop on the wall.\n";
+    std::cout << "Take one down and pass it around.\n";
+    std::cout << i-1 << " bottles of pop on the wall.\n";
+  }
+
+}
+
+
+
+4.1.7 Review
+---------------------------------------
+Great job! ￼
+
+Key concepts covered in this lesson:
+
+Loops perform repetitive actions so we don’t have to code those actions manually every time.
+How to write while loops with a continue condition.
+How to write for loops with a counter that increments or decrements.
+
+
+
+
+
+
+
+
+
