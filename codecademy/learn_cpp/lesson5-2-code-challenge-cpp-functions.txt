@@ -1,0 +1,224 @@
+date start : 22 july 2022
+
+
+5.2.1 How It Works
+---------------------------------------
+How It Works
+Roll up your sleeves and get yourself in the mood for functions, because it’s code challenge time!
+
+Say what? Here’s how it works:
+
+Each exercise in this lesson has a C++ function for you to build.
+Each challenge has many solutions and we encourage you to be creative.
+We don’t care what goes on in the function as long as it works the way it should. (Notice those tests in main() for each function.)
+
+As a refresher, C++ function syntax looks like this:
+
+return_type function_name(paramater1, parameter2) {
+ 
+   // Code block here
+ 
+   return output_if_there_is_any;
+ 
+}
+
+For example, with real code this might look like:
+
+bool is_even(int number) {
+ 
+  if (number % 2 == 0) {
+ 
+    return true;
+ 
+  }
+ 
+  return false;
+ 
+}
+
+
+
+5.2.2 Introduction
+---------------------------------------
+Write a function introduction() with no return value that has:
+
+std::string parameter named first_name.
+std::string parameter named last_name.
+The function should print the last_name, followed by a comma, a space, first_name another space, and finally last_name again.
+
+For example, introduction("James", "Bond"); should print the following:
+
+Bond, James Bond
+
+
+#include <iostream>
+
+// Define introduction() here:
+void introduction(std::string first_name, std::string last_name) {
+  std::cout << last_name << ", " << first_name << " " << last_name;
+}
+
+int main() {
+  
+  introduction("Beyonce", "Knowles");
+  
+}
+
+
+
+5.2.3 Average
+---------------------------------------
+Write a function average() that takes:
+
+A double parameter named num1.
+A double parameter named num2.
+The function should return a double that is the average of the arguments passed in.
+
+
+#include <iostream>
+
+// Define average() here:
+double average(double num1, double num2) {
+  return (num1 + num2) / 2;
+}
+
+int main() {
+  
+  std::cout << average(42.0, 24.0) << "\n";
+  std::cout << average(1.0, 2.0) << "\n";
+  
+}
+
+
+
+5.2.4 Tenth Power
+---------------------------------------
+Write a function named tenth_power() that has:
+
+An int parameter named num.
+The function should return num raised to the 10th power.
+
+  }
+  return a;
+}
+
+int main() {
+  
+  std::cout << tenth_power(0) << "\n";
+  std::cout << tenth_power(1) << "\n";
+  std::cout << tenth_power(2) << "\n";
+  
+}
+
+
+
+5.2.5 First Three Multiples
+---------------------------------------
+Write a function named first_three_multiples() that has:
+
+An int parameter named num.
+The function should return an std::vector of the first three multiples of num in ascending order.
+
+For example, first_three_multiples(7) should return a vector with 7, 14, and 21.
+
+#include <iostream>
+#include <vector>
+
+// Define first_three_multiples() here:
+std::vector<int> first_three_multiples(int num) {
+  std::vector<int> result;
+  for (int i = 1; i <= 3; i++) {
+      result.push_back(num * i);
+  }
+  return result;
+}
+
+int main() {
+  
+  for (int element : first_three_multiples(8)) {
+    std::cout << element << "\n";
+  }
+  
+}
+
+
+
+5.2.6 water plant
+---------------------------------------
+Define a function needs_water() that accepts:
+
+An int number of days since the previous watering.
+A bool value is_succulent. (A value of true would indicate that the plant is a succulent.)
+Inside the function, you’ll need some conditional logic:
+
+If is_succulent is false and days is greater than 3, return "Time to water the plant.".
+If is_succulent is true and days is 12 or less, return "Don't water the plant!".
+If is_succulent is true and days is greater than or equal to 13, return "Go ahead and give the plant a little water.".
+Otherwise, return "Don't water the plant!".
+Note: Don’t print the strings; return them from the function.
+
+
+
+#include <iostream>
+
+// Define needs_water() here:
+std::string needs_water(int days, bool is_succulent) {
+
+  if (is_succulent == false and days > 3) {
+    return "Time to water the plant.";
+  } else {
+    if (days <= 12) {
+      return "Don't water the plant!";
+    } else {
+      return "Go ahead and give the plant a little water.";
+    }
+  }
+  return "Don't water the plant!";
+}
+
+int main() {
+  
+  std::cout << needs_water(10, false) << "\n";
+  
+}
+
+
+
+5.2.7 Palindrome
+---------------------------------------
+Define a function is_palindrome() that takes:
+
+An std::string parameter text.
+The function should return:
+
+true if text is a palindrome.
+false if text is not a palindrome.
+(A palindrome is any text that has the same characters backwards as it does forwards. For example, “hannah” and “racecar” are palindromes, while “menu” and “ardvark” are not.)
+
+We will not test for edge cases such as capitalization or spaces.
+
+#include <iostream>
+
+// Define is_palindrome() here:
+bool is_palindrome(std::string text) {
+   int size = text.length()-1;
+   //std::cout << size;
+   for (int i = 0; i < size; i++) {
+     if (text[i] != text[size-i]) {
+        return false;
+     }
+   }
+   return true;
+}
+
+int main() {
+  
+  std::cout << is_palindrome("madam") << "\n";
+  std::cout << is_palindrome("ada") << "\n";
+  std::cout << is_palindrome("lovelace") << "\n";
+  
+}
+
+
+
+
