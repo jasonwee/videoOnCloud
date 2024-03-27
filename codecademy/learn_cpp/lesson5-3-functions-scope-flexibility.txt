@@ -1,0 +1,482 @@
+date start : 22 july 2022
+
+
+5.3.1 The Scope of Things
+---------------------------------------
+FUNCTIONS: SCOPE & FLEXIBILITY
+The Scope of Things
+Take a look at the program below. We have a void function named favorite_animal() and main() with a few statements inside.
+
+#include <iostream>
+ 
+std::string sea_animal = "manatee";
+ 
+void favorite_animal(std::string best_animal) {
+ 
+  std::string animal = best_animal;
+  std::cout << "Best animal: " << animal << "\n";
+ 
+}
+ 
+int main() {
+ 
+  favorite_animal("jaguar");
+ 
+  std::cout << sea_animal << "\n";
+  std::cout << animal << "\n";
+ 
+}
+
+When this program is compiled and executed, sea_animal will print, but animal won’t. Why do you think that’s the case?
+
+Scope is the region of code that can access or view a given element.
+
+Variables defined in global scope are accessible throughout the program.
+Variables defined in a function have local scope and are only accessible inside the function.
+sea_animal was defined in global scope at the top of the program, outside of main(). So sea_animal is defined everywhere in the program.
+
+Because animal was only defined within favorite_animal() and not returned, it is not accessible to the rest of the program.
+
+#include <iostream>
+
+
+
+void enter_code(int passcode) {
+
+  std::string secret_knowledge = "https://content.codecademy.com/courses/regex/onyourexcitingjourneylearningtocodeyouwillfindthis.gif";
+  
+  if (passcode == 0310) {
+    
+    std::cout << secret_knowledge << "\n";
+    
+  } else {
+    
+    std::cout << "Sorry, incorrect!\n";
+    
+  }
+}
+
+int main() {
+  
+  
+  enter_code(0310);
+  
+}
+
+
+
+5.3.2 Multi-File Programs
+---------------------------------------
+FUNCTIONS: SCOPE & FLEXIBILITY
+
+Multi-File Programs
+
+Programs can grow quickly. With a few functions, you can declare the function above main() and then you can define the function below main() like this:
+
+#include <iostream>
+ 
+// Declaration at the top:
+void eat();
+ 
+int main() {
+ 
+  eat();
+ 
+}
+ 
+// Definition at the bottom:
+void eat() {
+ 
+  std::cout << "nom nom nom\n";
+ 
+}
+
+But this isn’t ideal when your code gets longer; it’s common to use the same function in more than one .cpp file.
+
+To make your code cleaner and more modular, you can move the function definitions over to another specialized .cpp file (e.g., my_functions.cpp), leaving a list of declarations above main().
+
+But files, like functions, have scope. So, how does the main() program know about the function definitions?
+
+Before your program even compiles, it links together any files you list in your compilation statement into a single executable:
+
+g++ main.cpp my_functions.cpp
+
+And voila! Your program knows the function definitions.
+
+#include <iostream>
+#include <cmath>
+
+// Add declarations here:
+
+
+
+
+double average(double num1, double num2);
+int tenth_power(int num);
+bool is_palindrome(std::string text);
+
+
+int main() {
+  
+  std::cout << is_palindrome("racecar") << "\n";
+  std::cout << tenth_power(3) << "\n";
+  std::cout << average(8.0, 19.0) << "\n";
+  
+}
+
+#include <iostream>
+#include <cmath>
+
+// Add definitions here:
+double average(double num1, double num2) {
+  return (num1 + num2) / 2;
+}
+
+int tenth_power(int num) {
+  return pow(num, 10);
+}
+
+bool is_palindrome(std::string text) {
+  std::string reversed_text = "";
+  
+  for (int i = text.size() - 1; i >= 0; i--) {
+    reversed_text += text[i];
+  }
+  
+  if (reversed_text == text) {
+    return true;
+  }
+  
+  return false;
+}
+
+
+
+5.3.3 Getting a Header Yourself
+---------------------------------------
+Getting a Header Yourself
+If your program keeps growing, you may have to scroll through many declarations before you see main(). That doesn’t seem like the best way to do things. Plus you don’t want to keep declaring the same functions over and over for different files — making changes would be incredibly tiresome!
+
+Well, you can take those function declarations and move them all over to a header file, another file — usually with the same name as the file with all of the function definitions — with the extension .hpp or .h. For example, if your function definitions are in my_functions.cpp, the corresponding header file would be my_functions.hpp or my_functions.h.
+
+So how do you bring everything from a header file into scope for another file? Do you just link the header in the compilation statement like you did with the second .cpp file?
+
+As it turns out, with headers, you can just add #include "my_functions.hpp" to the very top of main.cpp:
+
+#include "my_functions.hpp"
+
+Boom! This line pastes in everything from my_functions.hpp. Now you have access to all of the function declarations you stowed away in your header.
+
+#include <iostream>
+#include "fns.hpp"
+
+
+int main() {
+  
+  std::cout << is_palindrome("noon") << "\n";
+  std::cout << tenth_power(4) << "\n";
+  std::cout << average(4.0, 7.0) << "\n";
+  
+}
+
+// Move function declarations here:
+double average(double num1, double num2);
+int tenth_power(int num);
+bool is_palindrome(std::string text);
+
+#include <iostream>
+#include <cmath>
+
+double average(double num1, double num2) {
+  return (num1 + num2) / 2;
+}
+
+int tenth_power(int num) {
+  return pow(num, 10);
+}
+
+bool is_palindrome(std::string text) {
+  std::string reversed_text = "";
+  
+  for (int i = text.size() - 1; i >= 0; i--) {
+    reversed_text += text[i];
+  }
+  
+  if (reversed_text == text) {
+    return true;
+  }
+  
+  return false;
+}
+
+
+
+5.3.4 How to Get Your Functions Inline
+---------------------------------------
+How to Get Your Functions Inline
+Once you set foot in the wild of C++ development, you may encounter the term “inline functions” with a couple different meanings. An inline function is a function definition, usually in a header file, qualified by inline like this:
+
+inline 
+void eat() {
+ 
+  std::cout << "nom nom\n";
+ 
+}
+
+Using inline advises the compiler to insert the function’s body where the function call is, which sometimes helps with execution speed (and sometimes hinders execution speed). If you do use it, we recommend testing how it affects the execution speed of your program. The bottom line is inline is something you’ll probably encounter, but may never use.
+
+However, you will sometimes also hear about “inline functions” that are just member functions (i.e. functions inside of classes — we’ll explain classes later) which have been defined and declared in a single line in a header file because the function body is so short:
+
+// cookie_functions.hpp
+ 
+// eat() belongs to the Cookie class:
+void Cookie::eat() {std::cout << "nom nom\n";} 
+
+Please note that you should ALWAYS add the inline keyword if you are inlining functions in a header (unless you are dealing with member functions, which are automatically inlined for you).
+
+#include <iostream>
+#include <chrono>
+
+#include "night.hpp"
+
+int main() {
+  
+  // Measure time taken for goodnight1():
+  std::chrono::high_resolution_clock::time_point start = std::chrono::high_resolution_clock::now();
+
+  std::cout << goodnight1("tulip");
+  
+  std::chrono::high_resolution_clock::time_point end = std::chrono::high_resolution_clock::now();
+  std::chrono::duration<double, std::milli> time_span = end - start;
+
+  // Print time taken for goodnight1():
+  std::cout << "Time taken for goodnight1(): " << time_span.count() << " milliseconds.\n\n";
+  
+  
+  std::cout << goodnight2("eraser", "ivy");
+  
+}
+
+inline
+std::string goodnight1(std::string thing1) {
+  return "Goodnight, " + thing1 + ".\n";
+}
+std::string goodnight2(std::string thing1, std::string thing2);
+
+
+
+#include <string>
+
+std::string goodnight2(std::string thing1, std::string thing2) {
+  return "Goodnight, " + thing1 + " jumping over the " + thing2 + ".\n";
+}
+
+
+
+5.3.5 Default Arguments
+---------------------------------------
+#include <iostream>
+
+#include "coffee.hpp"
+
+int main() {
+  
+  // coffee black
+  std::cout << make_coffee();
+  
+  // coffee with milk
+  std::cout << make_coffee(true);
+  
+  // coffee with milk and sugar
+  std::cout << make_coffee();
+  
+  // coffee with sugar
+  std::cout << make_coffee(false, true);
+  
+}
+
+std::string make_coffee(bool milk = false, bool sugar = false);
+
+#include <string>
+
+std::string make_coffee(bool milk, bool sugar) {
+  std::string coffee = "Here's your coffee";
+  if (milk and sugar) {
+    coffee += " with milk and sugar";
+  } else if (milk) {
+    coffee += " with milk";
+  } else if (sugar) {
+    coffee += " with sugar";
+  }
+  return coffee + ".\n";
+}
+
+
+
+5.3.6 Function Overload!
+---------------------------------------
+Function Overload!
+What if you want a function to accept an argument that can be either an int OR a double? Or what if you want some function parameters to be optional? C++ has a trick up its sleeve just for such situations.
+
+In a process known as function overloading, you can give multiple C++ functions the same name. Just make sure at least one of these conditions is true:
+
+Each has different type parameters.
+Each has a different number of parameters.
+Overloading enables you to change the way a function behaves depending on what is passed in as an argument:
+
+void print_cat_ears(char let) {
+  std::cout << " " << let << "   " << let << " " << "\n";
+  std::cout << let << let << let << " " << let << let << let << "\n";
+}
+ 
+void print_cat_ears(int num) {
+  std::cout << " " << num << "   " << num << " " << "\n";
+  std::cout << num << num << num << " " << num << num << num << "\n";
+}
+
+Given the above functions, you could call the functions like so and C++ will know what to do:
+
+print_cat_ears('A');
+print_cat_ears(4);
+
+Output:
+
+ A   A 
+AAA AAA
+ 
+ 4   4
+444 444
+
+
+#include <iostream>
+
+#include "num_ops.hpp"
+
+int main() {
+
+  std::cout << fancy_number(12, 3) << "\n";
+  std::cout << fancy_number(12, 3, 19) << "\n";
+  std::cout << fancy_number(13.5, 3.8) << "\n";
+  
+}
+
+
+int fancy_number(int num1, int num2);
+int fancy_number(int num1, int num2, int num3);
+int fancy_number(double num1, double num2);
+
+
+int fancy_number(int num1, int num2) {
+  
+  return num1 - num2 + (num1 * num2);
+  
+}
+
+int fancy_number(int num1, int num2, int num3) {
+  
+  return num1 - num2 - num3 + (num1 * num2 * num3);
+  
+}
+
+int fancy_number(double num1, double num2) {
+  
+  return num1 - num2 + (num1 * num2);
+  
+}
+
+
+
+
+
+5.3.7 Function Templates
+---------------------------------------
+FUNCTIONS: SCOPE & FLEXIBILITY
+Function Templates
+Overloading can be really tedious. Imagine you want to create a new function that works with int, float, double, and other number types. Do you really need to redefine the SAME function body over and over again with different parameters?
+
+Thankfully not! When two functions have different types but the same body — as was the case with print_cat_ears() —, there is a cleaner solution you can use: templates.
+
+A template is a C++ tool that allows programmers to add data types as parameters.
+
+This feature comes in handy for classes as well as for functions. In fact, std::string and std::vector are both template-based types. The C++ standard library is full of templates!
+
+
+
+5.3.8  How to build funciton Templates
+---------------------------------------
+How to Build Function Templates
+So how do we implement templates with actual code? Unlike regular functions, templates are entirely created in header files.
+
+Templates let us choose the type implementation right when you call the function. The type we choose may apply to the return type, a parameter type, or both.
+
+Here’s how we could build a template for print_cat_ears() so that the parameter type is flexible:
+
+template <typename T>
+void print_cat_ears(T item) {
+ 
+  std::cout << " " << item << "   " << item << " " << "\n";
+  std::cout << item << item << item << " " << item << item << item << "\n";
+ 
+}
+
+We can call the function for int, char, std::string, or double:
+
+print_cat_ears(2);
+ 
+// the output:
+//  2   2
+// 222 222
+
+Now we can use print_cat_ears() with a parameter of any type we want, as long as the type can be used with the methods expected. For example, we couldn’t pass an std::vector into the current print_cat_ears() because << won’t work with std::vector.
+
+Note: Using templates will slow down the program’s compile time, but speed up the execution time.
+
+
+#include <iostream>
+
+#include "numbers.hpp"
+
+int main() {
+  
+  std::cout << get_smallest(100, 60) << "\n";
+  std::cout << get_smallest(2543.2, 3254.3) << "\n";
+  
+}
+
+// Replace these declarations with a template
+template <typename T>
+T get_smallest(T num1, T num2) {
+  
+  return num2 < num1? num2 : num1;
+  
+}
+
+
+
+5.3.9 Review
+---------------------------------------
+FUNCTIONS: SCOPE & FLEXIBILITY
+Review
+You’ve learned quite a bit! You now know a bit about how scope works for functions and files, as well as how to make functions more flexible for different use cases:
+
+Scope is the region of code that has access to an element.
+Globally scoped variables are accessible everywhere.
+A variable created inside a function has local scope and can’t be accessed outside the function.
+C++ functions are usually split to make code more modular:
+The declaration in a header file.
+The definition in another .cpp file.
+
+Programs with multiple .cpp files need to be linked at compile time:
+g++ main.cpp fns.cpp
+
+Header files must be included in the file with main():
+#include "fns.hpp"
+
+You can define a function inline using the inline keyword, which may or may not improve execution speed.
+Default arguments can be added to function declarations so that you can call the function without including those arguments.
+You can overload C++ functions so that they handle different types of input and return different types.
+A function template enables a function to behave the same with different types of parameters.
+
+
+
+
