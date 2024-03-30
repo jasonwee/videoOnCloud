@@ -1,0 +1,16 @@
+Introduction to looping
+------------------
+
+A loop is a way of repeating a block of code until a certain condition is met.
+
+Loops build on top of the logic found in conditional if statements. When an if statement’s condition is true, its code block is executed once. In a for loop, the code block is repeated until the condition is no longer true.
+
+Haven’t found everything you need in a grocery store yet? Then while that condition is true, the following steps need to be completed over and over again:
+
+* Read an item off of the shopping list.
+* Find that item in the store.
+* Put that item in the cart.
+
+A robot could follow this loop to shop in a store for us! And just as repetitive tasks like these are common in real life, they are also common in programming.
+
+Keep going to see how programmers repeat tasks using loops!
