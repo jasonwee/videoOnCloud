@@ -1,0 +1,57 @@
+The Classic For Loop
+
+An if statement allows us to check a specific condition once. But what if that condition needs to be checked a certain number of times?
+
+Definite loops can be used to repeat code a fixed number of times.
+
+While an if statement only has a conditional expression (like number < 5), a definite loop has two additional components:
+
+* An initial statement, which defines the starting value for a loop variable.
+Ex: number := 0
+* A post statement, which defines what happens at the end of each loop iteration.
+Ex: number++
+
+So while an if statement that prints one number less than 5 may look like this:
+
+number := 3
+if number < 5 {
+  fmt.Println(number)
+}
+// Output: 3
+
+A for loop that prints the numbers 0, 1, 2, 3, and 4 would look like this:
+
+for number := 0; number < 5; number++ {
+  fmt.Print(number, " ")
+}
+// Output: 0 1 2 3 4
+
+While the if statement prints a number once, the for loop uses a similar syntax to print a number five times.
+
+Let’s dive deeper into each component of that definite loop:
+
+* The initial statement, number := 0, creates a new variable to be used within the for loop code block.
+
+* The conditional expression, number < 5, will stop the loop when number reaches the target value of 5.
+
+* The post statement, number++, increases the value of the number variable by 1 each time the code block completes.
+
+In this example, the amount of times that the number needed to be printed was known beforehand. But what do we do when we don’t know how many times a loop needs to run?
+
+Find out more in the next exercise!
+
+
+
+package main
+
+import (
+    "fmt"
+)
+
+func main() {
+
+  for count := 1; count < 12; count = count+2 {
+    fmt.Println(count)
+  }
+
+}
