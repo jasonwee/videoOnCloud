@@ -1,0 +1,56 @@
+Loop Keywords: Break and Continue
+
+How does a programmer get more direct control over a loop? With the break and continue keywords!
+
+The break keyword allows the programmer to stop the loop at the current iteration.
+
+For example, if using a loop to search for a specific pet, the loop can be made to break and stop when that animal has been found:
+
+animals := []string{"Cat", "Dog", "Fish", "Turtle"}
+for index := 0; index < len(animals); index++ {
+  if animals[index] == "Dog" {
+    fmt.Println("Found the perfect animal!")
+    break // Stop searching the array
+  }
+}
+
+The continue keyword works similarly, allowing the loop to skip to the next iteration.
+
+For example, there may be an array filled with jellybeans. To not eat the disgusting green jellybeans, a continue statement can be used to skip them:
+
+jellybeans := []string{"green", "blue", "yellow", "red", "green", "yellow", "red"}
+for index := 0; index < len(jellybeans); index++ {
+  if jellybeans[index] == "green" {
+    continue
+  }
+  fmt.Println("You ate the", jellybeans[index], "jellybean!")
+}
+
+However, using continue and break statements tend to cause confusion over how a loop will behave. A break statement changes when a loop will end. While a continue statement changes what will happen in each loop.
+
+While these keywords may not always be the best choice, they work really well for the use case covered in the next exercise, iterating through arrays and maps!
+
+
+package main
+
+import (
+  "fmt"
+)
+
+func main() {
+
+  for count := 0; count < 20; count++ {
+    // WRITE CONTINUE STATEMENT IF COUNT EQUALS 8 BELOW THIS LINE
+    if count == 8 {
+      continue
+    }
+
+    // WRITE BREAK STATEMENT IF COUNT EQUALS 15 BELOW THIS LINE
+    if count == 15 {
+      break
+    }
+
+    fmt.Println(count)
+  }
+
+}
