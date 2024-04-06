@@ -1,0 +1,79 @@
+Looping and Arrays
+
+Maps and arrays are some of the most fundamental data structures. Reading and modifying their contents will be done often in any codebase.
+
+Luckily, their properties grant them an easy-to-use syntax for looping through their elements. A programmer can use a tiny amount of code to manage large collections of data!
+
+Each map and array has a set amount of items that they contain. In Go, the range keyword can be used to work through these items one at a time within a loop. For example:
+
+letters := []string{"A", "B", "C", "D"}
+for index, value := range letters {
+  fmt.Println("Index:", index, "Value:", value)
+}
+
+Would output the following:
+
+Index: 0 Value: A
+Index: 1 Value: B
+Index: 2 Value: C
+Index: 3 Value: D
+
+The range keyword is used here similarly to the initial statement of a definite loop. It lets the programmer assign two new variables for the index and value of each item in the array.
+
+The behavior is the same for maps. But as they don’t have an index, range provides the key and value pairs for each item instead.
+
+For example:
+
+
+addressBook := map[string]string{
+  "John": "12 Main St",
+  "Janet": "56 Pleasant St",
+  "Jordan": "88 Liberty Ln",
+}
+for key, value := range addressBook {
+  fmt.Println("Name:", key, "Address:", value)
+}
+
+Which would output the following:
+
+Name: John Address: 12 Main St
+Name: Janet Address: 56 Pleasant St
+Name: Jordan Address: 88 Liberty Ln
+
+Now you can use loops for maps and arrays in Go!
+
+Work through the following checkpoints to finish up the lesson!
+
+package main
+
+import (
+  "fmt"
+)
+
+func main() {
+
+  menu := []string{"Hamburgers", "Cheeseburgers", "Fries"}
+
+  fmt.Println("The menu:")
+  // WRITE LOOP GOING THROUGH MENU BELOW THIS LINE
+  for index, food := range menu {
+    fmt.Println("index:", index, "food:", food)
+  }
+
+
+  orders := map[string]string{
+    "John": "Cheeseburgers",
+    "Janet": "Hamburgers",
+    "Jordan": "Fries",
+  }
+  // A late order
+  orders["James"] = "Chicken Sandwich"
+
+    fmt.Println("\nThe friend's orders:")
+  // WRITE LOOP GOING THROUGH ORDERS BELOW THIS LINE
+  for name,food := range orders {
+    fmt.Println("Name:", name, "food:", food)
+  }
+
+
+}
