@@ -1,0 +1,43 @@
+Review
+Congratulations! You have made it through the lesson!
+
+Loops are a staple in any programmer’s toolbox for automating repetitive tasks.
+
+Similar to an if statement, a loop repeats a block of code while a certain condition is met.
+
+When these loops repeat a fixed number of times, it is called a definite loop. A definite loop can be programmed like so:
+
+for number := 0; number < 5; number++ {
+ fmt.Println(number)
+}
+
+Sometimes the number of iterations cannot be known ahead of time. For moments like this, an indefinite loop can be used that repeats as long as a condition remains true. Indefinite loops usually look like this:
+
+number := 0
+for number < 5 {
+  fmt.Println(number)
+  number++
+}
+
+But sometimes indefinite loops can become infinite loops if they never end. An infinite loop can be a problem if the user believes that the program has frozen. On the other hand, an infinite loop can be useful when a web server needs to be constantly running.
+
+To stop a loop on demand, a break statement can be used. If the current iteration of the loop needs to be skipped instead, there is also a continue statement:
+
+for count := 0; count < 20; count++ {
+  if count == 8 {
+    continue
+  }
+  if count == 15 {
+    break
+  }
+  fmt.Println(count)
+}
+
+The range statement gives a simple syntax for iterating maps and arrays:
+
+letters := []string{"A", "B", "C", "D"}
+for index, value := range letters {
+  fmt.Println("Index:", index, "Value:", value)
+}
+
+In your next program, use loops to automate your most repetitive tasks!
