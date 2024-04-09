@@ -1,0 +1,24 @@
+Introduction to Arrays
+-------------------
+
+Imagine we are creating an online gaming platform, and need to keep track of players’ scores. For each player, we’d need to store their score at a consistent index for that player. This is a situation in which arrays would come in handy!
+
+An array is a collection of data elements of the same type, where we can access each element by an index. We can think of an array as a row of mailboxes, with each index representing a house number.
+
+[0][1][2][3][4][5]
+
+Arrays are one of the most common forms of variables used in programs. We use arrays for tasks such as:
+
+* Storing many pieces of input
+* Storing related collections of values
+* Performing mathematical operations on lists of numbers
+
+Across the world, arrays are being used in billions of running programs!
+
+Throughout this course, we will introduce and practice using arrays in our programs. Over the next several exercises we will introduce:
+
+* Creating arrays
+* Accessing array values
+* Using the length of an array
+
+To begin using arrays in our programs, we will first have to create them. We will get started creating arrays in the next exercise.
