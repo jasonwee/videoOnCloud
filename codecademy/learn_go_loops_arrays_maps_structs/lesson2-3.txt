@@ -1,0 +1,26 @@
+Array Creation with Elements
+
+While empty arrays are useful, so are arrays already populated with elements! Sometimes we already know which values we are going to put in our array.
+
+Imagine we are doing some math homework, and using the same triangles over an over again. We could declare two arrays with the values of the side lengths and angles for that triangle.
+
+triangleSides := [3]int{15, 26, 30}
+triangleAngles := [...]int{30, 60, 90}
+
+Notice how the syntax between these two lines is different. When creating an array with values, we can have the compiler determine the length automatically using ... ellipsis syntax.
+
+So now we have some values, but how can we use these to do our math homework? In the next exercise, we will learn how to access the values stored in our arrays.
+
+Before that, let’s create some arrays populated with values.
+
+package main
+
+import "fmt"
+
+func main() {
+  // create array below
+  arrays := [...]int{5, 48, 32, 1, 6}
+
+  fmt.Print(arrays)
+
+}
