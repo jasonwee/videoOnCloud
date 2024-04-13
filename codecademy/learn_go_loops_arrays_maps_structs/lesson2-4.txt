@@ -1,0 +1,48 @@
+Access Array Values with Indices
+
+We’ve learned how to create arrays that contain values. But how can we access the values stored in arrays?
+
+While having a list of numbers in a program might look nice, we need to access values to do useful computation. We need to use or modify individual values to perform activities such as:
+
+finding the sum of all the elements (or some other value)
+updating a value for a particular element
+searching for a particular value within the array
+Update a value for a particular element
+Search for a particular value within the array
+
+Without being able to access or change values, an array is only a pretty list! To access elements of an array, we use something called indexing. As mentioned before, each element of an array has an index.
+
+One thing that often confuses new programmers is the index at the start of the array. Go uses 0 as the first index of the array, meaning that it stores the first element at index 0. It might be tempting to try and access the first element with index 1, but this will access the second element.
+
+Let’s take a look at accessing an array of student names, defined here:
+
+students = [3]string{"Jill", "Fred", "Sasha"}
+// Access the first element of the array
+fmt.Println(students[0])
+// Output: Jill
+// Access the third element of the array
+fmt.Println(students[2])
+// Output: Sasha
+// Store the second element into a variable
+secondStudent := students[1]
+// Print it
+fmt.Println(secondStudent)
+// Output: Fred
+
+Accessing array elements is helpful, but we often need to change values stored in our array. Modifying array values will be the subject of our next exercise.
+
+First, let’s practice accessing elements for use in our computations.
+
+package main
+
+import "fmt"
+
+func main() {
+  triangleAngles := [3]int{30, 60, 90}
+
+  fmt.Println(triangleAngles[2])
+
+  sum := triangleAngles[0] + triangleAngles[1] + triangleAngles[2];
+
+  fmt.Println(sum)
+}
