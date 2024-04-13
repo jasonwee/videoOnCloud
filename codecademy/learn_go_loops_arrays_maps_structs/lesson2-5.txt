@@ -1,0 +1,29 @@
+Modifying Array Values
+Being able to retrieve the values stored in our array is super helpful, but what if we need to change them? Changing an array value is something that happens all the time in professional programs. Consider:
+
+* Counting or calculating a value over time
+* Recieving new information about a piece of data
+* Having data change positions within the array
+
+All of these scenarios require that we change the value initially stored in our array. The syntax for doing so is quite simple
+
+array[index] = value
+
+Where index is any valid index in the array, value is any expression we want. Let’s say we had an array:
+
+myArray := [4]int{10, 24, 5, 47}
+
+Let’s say that we decide we want the third element to now be 33. We could change the array at that index with the following line:
+
+
+package main
+
+import "fmt"
+
+func main() {
+    // I have 3 dogs, Frida, Fido, and Jeff
+    myDogs := [3]string{"Frida", "Fedo", "Jegf"}
+    myDogs[1] = "Fido";
+    myDogs[2] = "Jeff";
+    fmt.Println(myDogs)
+}
