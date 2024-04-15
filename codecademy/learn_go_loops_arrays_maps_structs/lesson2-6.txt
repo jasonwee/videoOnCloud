@@ -1,0 +1,58 @@
+ARRAYS AND SLICES
+Introduction to Slices
+So far we’ve been using arrays, which have a fixed size. If we were to want to store a different number of elements in our array, we’d have to make a whole new one. However, Go provides us with a useful alternative.
+
+Slices are a data collection type similar to arrays, but they have the ability to change their size. We will cover how to do that in later exercises, but first we will learn how to make a slice in the first place.
+
+There are multiple ways to create a slice. We can create a slice from an array, or by itself. Let’s start with creating a slice by itself.
+
+// Each of the following creates an empty slice
+var numberSlice []int
+stringSlice := []string{}
+
+// The following creates a slice with elements
+names := []string{"Kathryn", "Martin", "Sasha", "Steven"}
+
+While this last slice currently has four elements, we would be able to continue to add elements using functions covered in later exercises.
+
+We can also take an array, and create a slice based on that array. Modifying the slice will still update the original array.
+
+array := [5]int{2, 5, 7, 1, 3}
+// This is a slice of the whole array
+sliceVersion := array[:]
+fmt.Println(sliceVersion)
+// [2 5 7 1 3]
+// This is a slice containing the elements at indices 2, 3, and 4
+partialSlice := array[2:5]
+fmt.Println(partialSlice)
+// [7 1 3]
+
+One of the best parts about slices is that their elements are accessed and modified the same way as arrays! Since we already know how to do this with arrays, we also know slices
+
+var names = []string{"Kathryn", "Martin", "Sasha", "Steven"}
+fmt.Println(names[1])
+// Martin
+names[3] = "Bishop"
+fmt.Println(names[3])
+// Bishop
+
+Let’s practice using some slices in our programs.
+
+package main
+
+import "fmt"
+
+func main() {
+    myTutors := [4]string{"Kirsty", "Mishell", "Jose", "Neil"}
+    //myslice := myTutors[0:3]
+    fmt.Println(myTutors)
+
+    subjects := []string{"Go", "Java", "Python", "Go"}
+    fmt.Println(subjects)
+
+    /*
+    for i, _ := range myTutors {
+      fmt.Println(myTutors[i], subjects[i])
+    }
+    */
+}
