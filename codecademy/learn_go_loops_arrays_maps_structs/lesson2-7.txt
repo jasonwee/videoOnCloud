@@ -1,0 +1,55 @@
+ARRAYS AND SLICES
+
+Length and Capacity
+
+Why might we need to find the length of an array? Describe a scenario or scenarios in which this would be useful.
+
+len
+len is a function which returns the length of an array or slice passed into it:
+
+favoriteThings := [2]string{"Raindrops on Roses", "Whiskers on Kittens"}
+fmt.Println(len(favoriteThings))
+// 2
+
+fmt.Println(len(nastyThings))
+// 3
+
+len is used when working with loops, as well as validating whether an index can be used on an array or slice. Accessing an element beyond the length results in an error.
+
+Arrays only have a length, but when it comes to slices, there is an additional element to consider, capacity.
+
+Capacity
+A slice is resizeable, so there is a difference between:
+
+* Its length, the current number of elements it holds
+* Its capacity, the number of elements it can hold before needing to resize itself.
+
+A slice’s capacity can be accessed through the cap function:
+
+slice := []string{"Fido", "Fifi", "FruFru"}
+// The slice begins at length 3 and capacity 3
+fmt.Println(slice, len(slice), cap(slice))
+// [Fido Fifi FruFru] 3 3
+slice = append(slice, "FroFro")
+// After appending an element when the slice is at capacity
+// The slice will double in capacity, but increase its length by 1
+fmt.Println(slice, len(slice), cap(slice))
+// [Fido Fifi FruFru FroFro] 4 6
+
+Note how in the above example, when we added an element to a slice which was at full capacity the following occured:
+
+The new element was still able to be added
+The length increased to fit the new element
+The capacity doubled in size.
+All of this happens automatically using slices, while this is not possible with arrays!
+
+
+package main
+
+import "fmt"
+
+func main() {
+    myTutors := []string{"Kirsty", "Mishell", "Jose", "Neil"}
+    fmt.Println(len(myTutors))
+    fmt.Println(cap(myTutors))
+}
