@@ -1,0 +1,38 @@
+package main
+
+import "fmt"
+
+func main() {
+  var publisher, writer, artist, title string
+  var year, pageNumber uint16
+  var grade float32
+
+  title = "Mr. GoToSleep"
+  writer = "Tracey Hatched"
+  artist = "Jewel Tampson"
+  publisher = "DizzyBooks Publishing Inc."
+  year = 1997
+  pageNumber = 14
+  grade = 6.5
+
+  fmt.Println(title, "written by", writer, "drawn by", artist)
+  fmt.Println("publisher ", publisher)
+  fmt.Println("year ", year)
+  fmt.Println("pageNumber ", pageNumber)
+  fmt.Println("grade ", grade)
+
+  // here
+  title = "Epic Vol. 1"
+  writer = "Ryan N. Shawn"
+  artist = "Phoebe Paperclips"
+  publisher = "DizzyBooks Publishing Inc."
+  year = 2013
+  pageNumber = 160
+  grade = 9.0
+
+  fmt.Println(title, "written by", writer, "drawn by", artist)
+  fmt.Println("publisher ", publisher)
+  fmt.Println("year ", year)
+  fmt.Println("pageNumber ", pageNumber)
+  fmt.Println("grade ", grade)
+}
