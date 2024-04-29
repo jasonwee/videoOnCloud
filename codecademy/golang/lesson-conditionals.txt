@@ -1,0 +1,561 @@
+date start : 
+
+
+3.1 What are Conditionals?
+---------------------------------------
+We make decisions every day based on certain conditions.
+
+Is the alarm ringing? If so, turn it off. Is it raining? If so, bring an umbrella. Is the ice cream truck parked outside? If so, it’s time for a treat.
+
+We can also implement this decision-making ability in our programs using conditionals. Conditionals check on values and, depending on their status (if the values turn out to be true or false), executes an appropriate block of code in response.
+
+In this lesson we’ll cover:
+
+if, else if, and else statements.
+comparison operators.
+logical operators.
+the switch statement.
+short declarations in conditionals.
+how to use conditionals in randomized conditions.
+If you’re ready, Go on to the next exercise. Else, come back when you’re ready!
+
+
+
+3.2 The if Statement
+---------------------------------------
+What if…? What if we’re hungry? If it’s raining? If the alarm’s ringing?
+
+We would do something in response to these conditions.
+
+if statements work very similarly to our own decision-making process. Let’s look at Go’s if statement:
+
+alarmRinging := true
+if alarmRinging {
+  fmt.Println("Turn off the alarm!!") 
+}
+
+In our example, we have a variable alarmRinging that has a value of true. Then we have an if statement that checks if the condition next to the if keyword is true. Then we have an opening curly brace { with code inside followed by a closing curly brace }. If the condition is true, then the code in between the curly braces { } is executed. In this case, "Turn off the alarm!!" is printed to the console.
+
+In our if statement we could have provided parentheses, like so:
+
+if (alarmRinging) {
+  fmt.Println("Turn off the alarm!!") 
+}
+
+The parentheses are optional and can make it easier to read, but typically, we’ll see the if statement written without parentheses.
+
+
+
+package main
+
+import "fmt"
+
+func main() {
+	heistReady := false
+
+  if heistReady {
+    fmt.Println("Let's Go!")
+  }
+
+}
+
+
+
+
+3.3 The else Statement
+---------------------------------------
+If we’re hungry we would go to eat something. But if we’re not hungry then we don’t. The idea is that we have a backup plan or something we can default to in case our condition isn’t met.
+
+We can provide a default option to our conditional (if statement) by adding an else statement:
+
+isHungry := false
+if isHungry {
+  fmt.Println("Eat the cookie") 
+} else {
+  fmt.Println("Step away from the cookie...")
+}
+
+In the example above, isHungry is a variable with a value of false. We’ve set up an if statement like we saw in the previous exercise. Immediately after the if statement’s closing brace is the else keyword and its opening brace, all on the same line. The else statement also contains a block of code wrapped by a set of curly braces. The code inside the block will execute by default if the if condition is false. Notice, the else statement does not accept a condition.
+
+
+package main
+
+import "fmt"
+
+func main() {
+	heistReady := false
+	
+  if heistReady {
+		fmt.Println("Let's go!")
+	} else {
+    fmt.Println("Act normal.")
+  }
+}
+
+
+
+3.4 Comparison Operators
+---------------------------------------
+So far we’ve been checking on boolean values (variable assigned a true or false value). But, we can check more than a single value using comparison operators. Here are two commonly used comparison operators:
+
+Operator	Meaning:
+==	Is equal to
+!=	Is NOT equal to
+
+To use a comparison operator, we have two values (or operands) with a comparison operator in between the two values. The combination of values and the operator is evaluated by Go’s compiler which looks at the left value, compares it to the right value, and decides on a true or false value. Let’s take a look at == first:
+
+"password1" == "password1" // Evaluates to true
+"password1" == "badpass"   // Evaluates to false
+
+When we use comparison operators, we check the left value against the right value. It can be helpful to think of comparison statements as questions. When the answer is “yes”, the statement evaluates to true, and when the answer is “no”, the statement evaluates to false. The above code’s first example would be asking: is "password1" the same as "password1"? Yes it is, so "password1" == "password1" evaluates to true. We can read the second example as, is "badpass" the same as "password1"? No, "badpass" is not the same as "password1" so it evaluates to false.
+
+Let’s take a look at the != operator in action:
+
+123 != 12 // Evaluates to true
+123 != 123 // Evaluates to false
+
+Above, the first line checks if 123 and 12 are not equivalent and since the integers are different values, it evaluates to true. This time we can think of the question as: is 123 NOT the same as 12? Yes, they’re not the same, so it evaluates to true. The same idea persists for the second example: is 123 not the same as 123? No, they are the same, so it evaluates to false.
+
+It can be very helpful to take a second to think through how the operands are being compared before committing it to code. Let’s practice that now!
+
+
+
+package main
+
+import "fmt"
+
+func main() {
+	lockCombo := "2-35-19"
+	robAttempt := "1-1-1"
+
+  // Add your code below:
+  if (lockCombo == robAttempt) {
+    fmt.Println("The vault is now opened.")
+  }
+  
+}
+
+
+
+3.5 Comparison Operators Continued
+---------------------------------------
+There are more comparison operators that we haven’t covered and they may seem familiar from math class:
+
+Operator	Meaning:
+<	Less than
+>	Greater than
+<=	Less than or equal to
+>=	Greater than or equal to
+Like the previous exercise, we’re still using the comparison operators to compare the left hand value against the right hand value. For instance:
+
+100 < 200 // Evaluates to true
+We can read this example as, “Is 100 less than 200? Yes, that is true.
+
+Let’s look at one more example with <=:
+
+100.5 <= 100.5 // Evaluates to true
+Just like the less than operator (<), we want to check if the left hand value is less than OR equal to the right hand value. Since 100.5 is less than or equal to 100.5, it evaluates as true.
+
+
+package main
+
+import "fmt"
+
+func main() {
+	vaultAmt := 2356468
+	
+  // Add your code below:
+  if vaultAmt >= 200000 {
+    fmt.Println("We're going to need more bags.")
+  }
+  
+}
+
+
+
+
+3.6 Logical Operators (And, Or)
+---------------------------------------
+In the previous exercises we checked one condition at a time. But what if we wanted to check multiple conditions at a time? To do so, we can use logical operators. There are three logical operators:
+
+Operator	Meaning:
+&&	And
+||	Or
+!	Not
+
+In this exercise, we’ll focus on the first two, && and ||. When we use the And (&&) operator, we are checking that both expressions are true:
+
+if storeLights == "on" && doorsOpen {
+  fmt.Println("You can enter the store!")
+} 
+
+When using the && operator, both conditions must evaluate to true for the entire condition to evaluate to true and execute. Otherwise, if either condition evaluate as false, the && condition will evaluate to false and the code inside the if block will not execute.
+
+If we only care about either condition being true, we can use the Or (||) operator:
+
+if day == "Saturday" || day == "Sunday" {
+  fmt.Println("Enjoy the weekend!")
+} else {
+  fmt.Println("Do some work.")
+}
+When using the || operator, only one of the conditions must evaluate to true for the overall statement to evaluate to true. In the code example above, if either day == "Saturday" or day == "Sunday" is true the statement’s code block will execute. If the first operand in the || expression evaluates to true, the second operand won’t even be checked. Only if day == "Saturday" evaluates to false will day == "Sunday" be evaluated. The code in the else statement above will execute only if both comparisons evaluate to false.
+
+Let’s implement these operators to add an additional layer of logic!
+
+
+package main
+
+import "fmt"
+
+func main() {
+	rightTime := true
+	rightPlace := true
+
+	// Edit this condition for the FIRST checkpoint
+	if rightTime && rightPlace {
+		fmt.Println("We're outta here!")
+	} else {
+		fmt.Println("Be patient...")
+	}
+
+
+	enoughRobbers := false
+	enoughBags := true
+
+	// Edit this condition for the SECOND checkpoint
+	if enoughRobbers || enoughBags {
+		fmt.Println("Grab everything!")
+	} else {
+		fmt.Println("Grab whatever you can!")
+	}
+}
+
+
+
+
+3.7 Logical Operators (Not)
+---------------------------------------
+Our last logical operator is the not (!) operator. It negates (reverses) the value of a boolean. For example:
+
+bored := true
+fmt.Println(!bored) // Prints false
+ 
+tired := false;
+fmt.Println(!tired) // Prints true
+Notice that the ! operator will either take a true value and pass back false, or it will take a false value and pass back true.
+
+Let’s see how to incorporate the ! operator.
+
+
+package main
+
+import "fmt"
+
+func main() {
+	readyToGo := true
+
+	if !readyToGo {
+		fmt.Println("Start the car!")
+	} else {
+		fmt.Println("What are we waiting for??")
+	}
+}
+
+
+
+3.8 The else if Statement
+---------------------------------------
+We can add different conditions to our if...else statements using an else if statement. Adding an else if statement allows us to check another condition after our if statement checks its condition. In fact, we can add as many else if statements as we’d like to make more complex conditionals!
+
+The else if statement always comes after an if statement. If we have an else statement, then the else if comes before it. The else if statement also takes a condition. Let’s take a look at the syntax:
+
+position := 2
+ 
+if position == 1 {
+  fmt.Println("You won the gold!")
+} else if position == 2 {
+  fmt.Println("You got the silver medal.")
+} else if position == 3 {
+  fmt.Println("Great job on bronze.")
+} else {
+  fmt.Println("Sorry, better luck next time?")
+}
+
+Notice that we’re able to use else if statements to evaluate separate conditions and allow for different possible outcomes. if/else if/else statements are read from top to bottom, so the first condition that evaluates to true is the only block of code that gets executed.
+
+In the example above, since position == 1 evaluates to false, the first block of code isn’t executed. Then, we get to our else if statement and position == 2 evaluates to true, the code inside the first else if statement is executed. The rest of the conditions are not evaluated. If none of the conditions evaluated to true, then the code in the else statement would have executed.
+
+
+package main
+
+import "fmt"
+
+func main() {
+	amountStolen := 64650
+
+	if amountStolen > 1000000 {
+		fmt.Println("We've hit the jackpot!")
+  } else if amountStolen >= 5000 {
+    fmt.Println("Think of all the candy we can buy!")
+  } else {
+		fmt.Println("Why did we even do this?")
+	}
+}
+
+
+
+3.9 The switch Statement
+---------------------------------------
+else if statements are great for checking multiple conditions. However, we can find ourselves needing to check so many conditions that writing all the necessary else if statements can feel tedious. For example:
+
+clothingChoice := "sweater"
+ 
+if clothingChoice == "shirt" {
+  fmt.Println("We have shirts in S and M only.")
+} else if clothingChoice == "polos" {
+  fmt.Println("We have polos in M, L, and XL.")
+} else if clothingChoice == "sweater" {
+  fmt.Println("We have sweaters in S, M, L, and XL.")
+} else {
+  fmt.Println("Sorry, we don't carry that.")
+}
+
+
+In the code above, we have a series of conditions checking for a value that matches a clothingChoice variable. Our code works fine, but imagine if we needed to check more values! Having to write additional else if statements sounds like a pain!
+
+Instead, we can use a switch statement that uses alternative syntax that is easier to read and write. Below is an example of a switch statement:
+
+clothingChoice := "sweater"
+ 
+switch clothingChoice {
+case "shirt":
+  fmt.Println("We have shirts in S and M only.")
+case "polos":
+  fmt.Println("We have polos in M, L, and XL.")
+case "sweater":
+  fmt.Println("We have sweaters in S, M, L, and XL.")
+case "jackets":
+  fmt.Println("We have jackets in all sizes.")
+default:
+  fmt.Println("Sorry, we don't carry that")
+}
+// Prints: We have sweaters in S, M, L, and XL.
+
+Let’s break down what happens in a switch statement:
+
+The switch keyword initiates the statement and is followed by a value. In the example, the value after switch is compared to the value after each case, until there is a match.
+Inside the switch block, { ... }, there are multiple cases. The case keyword checks if the expression matches the specified value that comes after it. The value following the first case is "shirt". Since the value of clothingChoice is not the same as "shirt", that case‘s code does not run.
+The value of clothingChoice is "sweater", so the third case‘s code runs and "We have sweaters in S, M, L, and XL." is printed. No more case statements are checked.
+At the end of our switch statement is a default statement. If none of the cases are true, then the code in the default statement will run.
+
+
+
+package main
+
+import "fmt"
+
+func main() {
+	name := "H. J. Simp"
+
+	// Add your switch statement below:
+	switch name {
+    case "Butch":
+    fmt.Println("Head to Robbers Roost.");
+    case "Bonnie":
+    fmt.Println("Stay put in Joplin.");
+    default:
+    fmt.Println("Just hide!");
+  }
+}
+
+
+
+
+3.10 Scoped Short Declaration Statement
+---------------------------------------
+We can also include a short variable declaration before we provide a condition in either if or switch statements. Here’s the syntax:
+
+x := 8
+y := 9
+if product := x * y; product > 60 {
+  fmt.Println(product, "  is greater than 60")
+}
+In our if statement, we first declare product. Notice that product is separated from the condition using a semi-colon ;. We can also have a short variable declaration inside a switch statement:
+
+switch season := "summer" ; season {
+case "summer":
+  fmt.Println("Go out and enjoy the sun!")
+}
+
+One thing to keep in mind when using the short variable declaration in if or switch statements is that the declared variable is scoped to the statement blocks. In programming, scope refers to where variables can be accessed. Having the variable scoped to the if… else if… else statement or switch statement means that variable is only accessible within the blocks of those statements and not anywhere else.
+
+x := 8
+y := 9
+if product := x * y; product > 60 {
+  fmt.Println(product, "  is greater than 60")
+}
+fmt.Println(product)
+
+The code above will throw the error:
+
+./main.go:11:13: undefined: product
+
+Even though we defined product in our code snippet, we can only access product inside of the if block. Therefore, when we try to access it outside of the block, the compiler throws an error. We say that product is out-of-scope outside the if statement.
+
+Let’s use this handy shortcut in our code.
+
+
+package main
+
+import "fmt"
+
+func main() {
+	
+
+	if success := true; success {
+		fmt.Println("We're rich!")
+	} else {
+		fmt.Println("Where did we go wrong?")
+	}
+
+	amountStolen := 50000
+	
+
+	switch numOfThieves := 5; numOfThieves {
+	case 1:
+		fmt.Println("I'll take all $", amountStolen)
+	case 2:
+	  fmt.Println("Everyone gets $", amountStolen/2)
+	case 3:
+		fmt.Println("Everyone gets $", amountStolen/3)
+	case 4:
+	  fmt.Println("Everyone gets $", amountStolen/4)
+	case 5:
+		fmt.Println("Everyone gets $", amountStolen/5)
+	default:
+		fmt.Println("There's not enough to go around...")
+	}
+}
+
+
+
+
+3.11 Randomizing
+---------------------------------------
+Previously, we used hard coded values (values that don’t change) and then created conditionals that checked on these values. For example:
+
+alarmRinging := true
+if alarmRinging {
+    fmt.Println("Turn off the alarm!!") 
+}
+
+We knew that our condition would be true and the print statement would execute. This level of certainty is usually NOT the reason why we would use a conditional. Instead, we create conditionals to account for different conditions and different possible outcomes.
+
+So let’s introduce some uncertainty to our code by generating a random number. Go has a math/rand library that helps us generate a random integer:
+
+import (
+  "math/rand"
+  "fmt"
+)
+ 
+func main() {
+  fmt.Println(rand.Intn(100))
+}
+
+In our main function, we’re printing out a random number using rand and the Intn() method. The argument, 100, is the maximum value that the method will return. Looking at the entire line fmt.Println(rand.Intn(100)), it should print a random integer from 0 to 100. However, if we run our program multiple times, we’ll find that it always prints 81.
+
+We’ll figure out why this happens in the next exercise, for now let’s see rand.Intn() in action.
+
+package main
+
+import (
+	"fmt"
+  "math/rand"
+)
+
+func main() {
+	// Edit amountLeft below: 
+  amountLeft := rand.Intn(10000)
+  
+  fmt.Println("amountLeft is: ", amountLeft)
+  
+	if amountLeft > 5000 {
+		fmt.Println("What should I spend this on?")
+  } else {
+    fmt.Println("Where did all my money go?")
+  }
+}
+
+
+
+3.12 Seeding
+---------------------------------------
+Previously, we saw how our random numbers weren’t entirely random. The reason for this behavior is due to how Go seeds or chooses a number as a starting point for generating random numbers. By default, the seed value is 1. We can provide a new seed value using the method rand.Seed() and passing in an integer.
+
+However, we encounter the same problem if we pass in a constant, i.e. pass in 5. Each time we run our program, we’ll always print the same set of numbers. Therefore, each time we run our program, we also need a unique number as a seed. One way to get this unique number each time we run our program is to use time. The reason why we can use time to be our unique number is because it’s always a different time when our program is run! Take for example:
+
+package main
+ 
+import (
+  "fmt"
+  "math/rand"
+  "time"
+)
+ 
+func main() {
+  rand.Seed(time.Now().UnixNano())
+  fmt.Println(rand.Intn(100))
+}
+
+
+In the example above, we import the time library. We then use the time library and call .Now() with the .UnixNano() method chained to it. This results in the difference in time (in nanoseconds) since Janurary 1st, 1970 UTC. (Check out the UnixNano documentation for more details). The number that we get from time.Now().UnixNano() is passed as an argument to rand.Seed() resulting in a different seed value each time we run our program. Since each run has a unique seed value, each run will also print out a random number from 0 to 100.
+
+Let’s see this change in our own code.
+
+
+package main
+
+import (
+	"fmt"
+  "math/rand"
+  "time"
+)
+
+func main() {
+	// Add your code below:
+  rand.Seed(time.Now().UnixNano())
+  
+  amountLeft := rand.Intn(10000)
+  
+  fmt.Println("amountLeft is: ", amountLeft)
+  
+	if amountLeft > 5000 {
+		fmt.Println("What should I spend this on?")
+  } else {
+    fmt.Println("Where did all my money go?")
+  }
+}
+
+
+
+
+
+3.12 Review
+---------------------------------------
+
+If you’ve made it to this exercise, then you’ve finished Go’s conditionals lesson, great job!
+
+Here are the topics covered In this lesson:
+
+How to create an if statement that checks a condition and executes code if the condition is true
+How to add an else if statement to check for additional conditions.
+The use of an else statement that runs by default if none of the previous conditional statements evaluated to true.
+Comparison operators check between two operands and evaluate to a boolean.
+Logical operators check between two boolean values and return a single boolean.
+switch statements can be used to check between multiple conditions much like an if… else if… else statement.
+Short variable declarations can be used prior to providing a condition for either if or switch statements. Declared variables are scoped to the statement blocks.
+The math/rand library’s .Intn() method is used to generate random numbers.
+Go uses a seed value to as a starting point for generating random numbers.
+Unique seed values can be created using time, namely rand.seed(time.Now().UnixNano())
+Including conditionals in allows you to add a layer of logic to your code to address many different scenarios. It’s an important foundational skill to have under your belt as a developer.
+
