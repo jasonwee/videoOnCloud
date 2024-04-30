@@ -1,0 +1,304 @@
+date start : 
+
+
+2.1 The fmt Package
+---------------------------------------
+fmt is one of Go’s core packages. We’ve used it for print information to the terminal using the method fmt.Println(). fmt has a broader purpose, helping us format data, which is why it’s sometimes referred to as the format package (though it’s pronounced “fumpt”, and no that’s not a typo).
+
+But let’s not focus on the odd pronunciation, instead, let’s go over what else we can use fmt to do! In addition to Println(), there’s also Print() and Printf() each with their own variation of how to print data. There’s also Sprint(), Sprintln(), and Sprintf() which formats but does not print anything to the terminal. We can even get user input by using Scan(). There are many more methods in Go’s fmt package, but in this lesson, we’ll focus on the ones we just mentioned.
+
+In this lesson, we’ll cover the intricacies of using these methods, so let’s go formatting!
+
+package main
+
+import "fmt"
+
+func main() {
+  // There's a mix of Println and Print!
+  fmt.Println("Can", "you", "tell", "the", "difference?")
+  fmt.Print("Between", "these", "two", "methods?")
+  fmt.Print("Anything odd about", "the spacing? \n")
+  fmt.Println("Don't worry if you can't spot it, we'll go through this together!")
+}
+
+
+
+
+2.2 The Print Method
+---------------------------------------
+fmt.Println() allows us to print to the terminal and view the data that we’re working with. It has some defaulting styling built-in that makes viewing data easier for us. fmt.Println() prints its arguments (data provided within its parentheses ( )) with an included space in between each argument and adds a line break at the end. Take for example:
+
+fmt.Println("Println", "formats", "really well")
+fmt.Println("Right?")
+
+Which prints:
+
+Println formats really well
+Right?
+
+Notice that our first print statement has 3 arguments and each one has an accompanying space between each argument even though we never outright included one in our code. For our second print statement, the argument is printed on the next line since Println() adds a line break for us.
+
+However, there are times we might not want the default formatting. In such cases, using fmt.Print() would be more appropriate:
+
+fmt.Print("The answer is", ": ")
+fmt.Print("12")
+
+The above code snippet would print:
+
+The answer is: 12
+
+Notice that there’s no default spacing added when fmt.Print() has multiple arguments. Also, since fmt.Print() doesn’t add a line break after printing, the argument for the second print statement print on the same line as the first print statement’s.
+
+Let’s compare this for ourselves.
+
+package main
+
+import "fmt"
+
+func main() {
+  fmt.Println("Let's first see how", "the Println() method works.")
+  fmt.Println("Notice that each statement adds a newline for us.")
+  fmt.Println("There's also a default space", "between the string arguments.")
+  
+  // Add your code below:
+  fmt.Print("Print", "is", "different")
+  fmt.Print("See?")
+  
+}
+
+
+
+2.3 The Printf Method
+---------------------------------------
+Using fmt.Println() and fmt.Print() we have the ability to concatenate strings, i.e. combine different strings into a single string:
+
+guess := "C"
+fmt.Println("Is", guess, "your final answer?")
+// Prints: Is C your final answer?
+With fmt.Printf(), we can interpolate strings, or leave placeholders in a string and use values to fill in the placeholders. Let’s revisit the same example using fmt.Printf():
+
+guess := "C"
+fmt.Printf("Is %v your final answer?", guess)
+// Prints: Is C your final answer?
+The first argument we provide fmt.Printf() is the string: "Is %v your final answer?". The %v portion is our placeholder and is known as a verb in Go. Verbs are identified by the combination of a % character followed by a letter. The specific letter informs what goes fills in the placeholder, in this case, %v gets the value of "C" from our second argument, guess.
+
+As long as we provide enough arguments, we can even add multiple placeholders:
+
+selection1 := "soup"
+selection2 := "salad"
+fmt.Printf("Do I want %v or %v?", selection1, selection2)
+// Prints: Do I want soup or salad?
+Notice that the placement of the arguments matters! If we switched the position of selection1 and selection2, it would print: Do I want salad or soup?.
+
+We’ll go over more verbs in the next exercise, but let’s first practice using fmt.Printf() with %v.
+
+package main
+
+import "fmt"
+
+func main() {
+  animal1 := "cat"
+  animal2 := "dog"
+  
+  // Add your code below:
+  fmt.Printf("Are you a %v or a %v person?", animal1, animal2)
+  
+}
+
+
+
+
+2.4 Different Verbs
+---------------------------------------
+In addition to %v, Go has a variety of useful verbs (check their documentation for a comprehensive list). Let’s go over a few in this exercise, starting with %T:
+
+specialNum := 42
+fmt.Printf("This value's type is %T.", specialNum)
+// Prints: This value's type is int.
+ 
+quote := "To do or not to do"
+fmt.Printf("This value's type is %T.", quote)
+// Prints: This value's type is string.
+As seen by the example above, the verb %T prints out the type of the second argument.
+
+Now look at %d:
+
+votingAge := 18
+fmt.Printf("You must be %d years old to vote.", votingAge)
+// Prints: You must be 18 years old to vote. 
+Using %d we can interpolate a number into a string! If we need to include a float:
+
+gpa := 3.8
+fmt.Printf("You're averaging: %f.", gpa)
+// Prints: You're averaging 3.800000.
+With %f, we can limit how precise we are by including a value between the % and f like: %.2f. If we include this in our code:
+
+gpa := 3.8
+fmt.Printf("You're averaging: %.2f.", gpa)
+// Prints: You're averaging 3.80.
+Let’s explore these new verbs in our own code.
+
+
+package main
+
+import "fmt"
+
+func main() {
+  floatExample := 1.75
+  // Edit the following Printf for the FIRST step
+  fmt.Printf("Working with a %T", floatExample) 
+  
+  fmt.Println("\n***") // Added for spacing
+  
+  yearsOfExp := 3
+  reqYearsExp := 15
+  // Edit the following Printf for the SECOND step
+  fmt.Printf("I have %d years of Go experience and this job is asking for %d years.", yearsOfExp, reqYearsExp) 
+  
+  fmt.Println("\n***") // Added for spacing
+  
+  stockPrice := 3.50
+  // Edit the following Printf for the THIRD step
+  fmt.Printf("Each share of Gopher feed is $%.2f!", stockPrice) 
+}
+
+
+
+
+
+2.5 Sprint and Sprintln
+---------------------------------------
+While we’ve been using fmt methods to print things out, remember, it’s the formatter package. We have other methods that don’t print strings, but format them instead like fmt.Sprint() and fmt.Sprintln().
+
+grade := "100"
+compliment := "Great job!"
+teacherSays := fmt.Sprint("You scored a ", grade, " on the test! ", compliment)
+ 
+fmt.Print(teacherSays)
+// Prints: You scored a 100 on the test! Great job!
+Take a closer look at teacherSays and how calling fmt.Sprint() doesn’t print out anything. Rather, it returned a value that we store in teacherSays. When a value is returned, it means that a function did some computation and is giving back the computed value. Afterward, we can use the returned value for later usage. We’ll elaborate more on returns in our Go functions lesson. For now, we should acknowledge that returning a value and printing it are two different things. In our code above, we’ve formatted one string by concatenating four separate strings. To see the value of teacherSays, we have to use a print statement.
+
+fmt.Sprintln() works like fmt.Sprint() but it automatically includes spaces between the arguments for us (just like fmt.Println() vs fmt.Print()!):
+
+quote = fmt.Sprintln("Look ma,", "no spaces!")
+fmt.Print(quote) // Prints Look ma, no spaces!
+Even though we didn’t add a trailing space in "Look ma," or a leading space in "no spaces!", quote is concatenated with a space in between: "Look ma, no spaces!".
+
+
+package main
+
+import "fmt"
+
+func main() {
+  step1 := "Breathe in..."
+  step2 := "Breathe out..."
+  
+  // Add your code below:
+  meditation := fmt.Sprintln(step1, step2)
+
+  fmt.Println(meditation);
+  
+}
+
+
+
+2.6 The Sprintf Method
+---------------------------------------
+If we need to interpolate a string, without printing it, then we can use fmt.Sprintf().
+
+Just like fmt.Printf(), fmt.Sprintf() can also use verbs:
+
+correctAns := "A"
+answer := fmt.Sprintf("And the correct answer is… %v!", correctAns)
+ 
+fmt.Print(answer) // Prints: And the correct answer is… A!
+fmt.Sprintf() works very similarly to fmt.Printf(), the major difference is that fmt.Sprintf() returns its value instead of printing it out!
+
+package main
+
+import "fmt"
+
+func main() {
+  template := "I wish I had a %v."
+  pet := "puppy"
+  
+  var wish string
+  
+  // Add your code below:
+  wish = fmt.Sprintf(template, pet)
+  
+  
+  fmt.Println(wish)
+}
+
+
+
+
+2.7 Getting User Input
+---------------------------------------
+Another helpful method from the fmt package is .Scan() which allows us to get user input! Let’s see an example of this in action:
+
+fmt.Println("How are you doing?") 
+ 
+var response string 
+fmt.Scan(&response)
+ 
+fmt.Printf("I'm %v.", response) 
+We’ll go through this line by line: First, we print How are you doing? to the terminal. Then we declare a variable, response with the type string. fmt.Scan(&response) takes the first value before a space and stores it in response. In the terminal, we would see:
+
+How are you doing?
+If we type in good and press enter, we would see:
+
+How are you doing?
+good
+I'm good.
+However, if we tried to type in not bad:
+
+How are you doing?
+not bad
+I'm not.
+Only the not part is saved, since it was separated from bad by a space. If we were expecting two values, we’d need to declare two variables ahead of time:
+
+fmt.Println("How are you doing?") 
+ 
+var response1 string 
+var response2 string 
+fmt.Scan(&response1)
+fmt.Scan(&response2)
+ 
+fmt.Printf("I'm %v %v", response1, response2) 
+fmt.Scan() expects addresses for arguments, hence the & before response1 and response2. We’ll cover more about addresses in a later lesson. For now, let’s get comfortable with the syntax.
+
+
+package main
+
+import "fmt"
+
+func main() {
+  fmt.Println("What would you like for lunch?")
+  
+  // Add your code below:
+  var food string
+
+  fmt.Scan(&food)
+  
+  
+  fmt.Printf("Sure, we can have %v for lunch.", food)
+}
+
+
+
+
+
+2.8 Review
+---------------------------------------
+Wonderful work getting through the fmt package’s methods! There are many more methods that we didn’t include, but you can read through Go’s fmt documentation for more in-depth information. Remember, each method is unique in its own way, and it’s up to you to decide what you need to do and which method will help you accomplish that need!
+
+In this lesson we went over:
+
+How fmt is pronounced and its purpose.
+The difference between fmt.Println() and fmt.Print().
+How to interpolate strings using fmt.Printf() and verbs.
+The verbs: %v, %T, %d, and %f.
+fmt.Sprint(), fmt.Sprintln(), fmt.Sprintf() will not print strings, but formats them.
+fmt.Scan() allows us to take in user input.
