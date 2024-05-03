@@ -1,0 +1,455 @@
+
+
+
+
+What is a Function?
+---------------------------------------
+In programming, a function is a block of code designed to be reused. As programmers, we want to find solutions to problems, but we also don’t want to do additional work when it’s not necessary. Let’s start with an example, say we needed to double a number:
+
+x := 5 
+doubleX := 5 * 2
+
+Great, but what if we need to double another number?
+
+y := 3 
+doubleY := 3 * 2
+
+And another??
+
+z := 25
+doubleZ := 25 * 2
+
+These short bits of code could build up to a lot of time and effort (just to double a number!) That’s where functions can really help out. We can use a function to define the logic for us to perform this task, and call it (execute its code) when we need it:
+
+func doubleNum(num int) int {
+  return num * 2
+}
+
+Don’t worry too much about the syntax for now, but it should look pretty familiar since we’ve worked with the main() function many times before (Reminder: one of the major differences is that the main() doesn’t have to be called, because the compiler already knows to run it). Our doubleNum() function will allow us to plug in numbers and it returns an integer that’s twice the number given! Also, if our outputs start looking weird, e.g. our numbers aren’t doubling, but tripling instead, we know that the cause is likely our function. We can jump straight to fixing our function’s code rather than looking through each statement like we had for doubleX, doubleY, and doubleZ. Our code becomes much more streamlined:
+
+fmt.Println(doubleNum(x)) // Prints: 10
+fmt.Println(doubleNum(y)) // Prints: 6
+fmt.Println(doubleNum(z)) // Prints: 50
+
+We’ll go over more examples of how to create and use functions, when they can be accessed, and how to defer within a function later in this lesson. In a nutshell, we’ll see how functions function.
+
+
+
+
+Using Functions
+---------------------------------------
+
+As we saw before, we can bundle code in a function and call that function when we need the code inside it to run. We’ll be going over function syntax starting with a simple function definition:
+
+func summonNicole() {
+  fmt.Println("Hey Nicole, get over here!")
+}
+
+Above, we defined a function called summonNicole() and, within the body of the function (the part between the curly braces) we print out a message. It’s important to note that the code inside the function body does not run until we call the function. We call a function by using its name followed by parentheses somewhere outside the definition of the function. Our whole main.go file could look like this:
+
+package main
+ 
+import "fmt"
+ 
+func summonNicole() {
+  fmt.Println("Hey Nicole, get over here!")
+}
+ 
+func main() {
+  // We call our function for the first time
+  summonNicole() 
+ 
+  // We call our function for the second time
+  summonNicole() 
+}
+
+In our example, we defined the function summonNicole() and called it twice inside our main() function. Notice that our function definition exists outside of main(), but calling summonNicole() occurs inside our main() function. This produces the following output in the terminal:
+
+Hey Nicole, get over here!
+Hey Nicole, get over here!
+
+Now, let’s create our own functions.
+
+
+
+package main
+
+import "fmt"
+
+// Define eatTacos() here:
+func eatTacos() {
+  fmt.Println("Yum!")
+}
+
+func main() {
+  // Call your function here:
+  eatTacos()
+}
+
+
+
+Scope
+---------------------------------------
+A function definition creates something called a scope. We’ve referenced scope before in our conditionals exercise about scoped short declarations but it’s important to recognize how scope plays a huge role in functions and programming overall!
+
+Scope is a concept that refers to where the values and functions are defined and where they can be accessed. For instance, when a variable is defined within a function, that variable is only accessible within that function. When we try to access that same variable from a different function, we get an error because we can’t do it. Each function has its own specific scope, take a look at the code:
+
+package main
+ 
+import "fmt"
+ 
+func performAddition() {
+  x := 5
+  y := 7
+  fmt.Println("The sum of", x, "and", y, "is", x + y)
+}
+ 
+func main() {
+  performAddition()
+  fmt.Println("What if", x, "was different?")
+}
+
+The above code exits with the following error:
+
+./main.go:12:26: undefined: x
+
+The error is raised because the x in main()‘s print statement fmt.Println("What if", x, "was different?") is in a different scope than the defined x inside performAddition(). It’s not possible to directly refer to performAddition()‘s x variable in the scope of main().
+
+There are three different scopes present in this example:
+
+The global scope, which contains the function definitions for main() and performAddition().
+performAddition() has a local scope, which defines x and y.
+main() has a local scope also. It can access performAddition() because that’s defined on the same scope level as main() but can’t access the internals of performAddition‘s scope (i.e., x or y).
+This differentiation of scope keeps the namespace, the available variables and keywords, cleaner as a result. You can only refer to variables or functions defined within a specific namespace.
+
+
+
+Returning Values from Functions
+---------------------------------------
+
+While variables and their values are scoped to their functions, we do have built-in ways of passing information out of their native functions and into another namespace. Let’s describe the way that information can be sent from within a function to the call site, the place where the function is called. This is done by returning a value — when we return a value, we pass the value to another place in our code. A function can be given a return type, the type of a value that will be returned by the function. At the call site, the return value can be stored within a variable of the same type as the function’s return.
+
+func getLengthOfCentralPark() int32 {
+  var lengthInBlocks int32
+  lengthInBlocks = 51
+  return lengthInBlocks
+}
+
+Above, we wrote the function getLengthOfCentralPark(), we can also decide the return type by adding a type after the set of parentheses. In this case, our function has a return type of int32. Then, inside the function, we declare a variable lengthInBlocks with a value of 51. In our last line, we have our return statement. A return statement tells the function to pass back a value (or multiple values) and stops the function from executing any more code, i.e. if we put more code after our return statement, it would not run! Our function is all set up, we need to now call it in main():
+
+func main() {
+  var centralParkLength int32
+  centralParkLength = getLengthOfCentralPark()
+  fmt.Println(centralParkLength) // Prints: 51
+}
+
+
+Inside main() we were able to create a variable centralParkLength with type int32 and store the result (the returned value) from getLengthOfCentralPark() into centralParkLength. Then we can check the value of centralParkLength by printing it, which confirms what we said about return by printing the number 51. Even though we can’t access lengthInBlocks from getLengthOfCentralPark() directly, we can access the information we need through the return keyword!
+
+
+
+package main
+import (
+  "fmt"
+  "time"
+)
+
+// Add "string" as the return type of this function
+func isItLateInNewYork() string {
+  var lateMessage string
+  t := time.Now()
+  tz, _ := time.LoadLocation("America/New_York")
+  nyHour := t.In(tz).Hour()
+  if nyHour < 5 {
+    lateMessage = "Goodness it is late"
+  } else if nyHour < 16 {
+    lateMessage = "It's not late at all!"
+  } else if nyHour < 19 {
+    lateMessage = "I guess it's getting kind of late"
+  } else {
+    lateMessage = "It's late"
+  }
+  
+  // Return the string lateMessage
+  return lateMessage
+  
+}
+
+func main() {
+  var nyLate string
+  nyLate = isItLateInNewYork()
+  fmt.Println(nyLate)
+}
+
+
+
+Using Function Parameters
+---------------------------------------
+We know that functions can return information, but we can also provide functions with information using parameters. Function parameters are variables that are used within the function to use in some sort of computation or calculation. When calling a function, we give arguments, which are the values that we want those parameter variables to take. We give our function parameters types when defining the function:
+
+func multiplier(x int32, y int32) int32 {
+  return x * y
+}
+
+In the function above, we added information inside our parentheses, that is where parameters belong. Our first parameter is x and it has a type of int32. Our second parameter, y also has a type of int32. After the parentheses is something we’ve seen before: the type of our return value. Since both parameters have the same type, we could write it as:
+
+func multiplier(x, y int32) int32 {
+  return x * y
+}
+
+See how we wrote int32 once at the end of our list of parameters instead of writing int32 after each parameter?
+
+Let’s now call our function with literal values as arguments:
+
+func main() {
+  var product int32
+  product = multiplier(25, 4)
+  fmt.Println(product) // Prints: 100
+}
+
+We can also call our function with variables as arguments:
+
+func main() {
+  var mainX, mainY, newProduct int32
+  mainX = 6
+  mainY = 7
+  newProduct = multiplier(mainX, mainY)
+  fmt.Println(newProduct) // Prints: 42
+}
+
+Notice in both cases, our functions worked as expected with the provided arguments! But, it’s important that we provide enough arguments. Our multiplier() function has two parameters, so it expects two arguments. If we don’t, the Go compiler throws an error that reads not enough arguments in call to (functionName) or in our case: not enough arguments in call to multiplier.
+
+
+
+package main
+import "fmt"
+
+// Update marsYear so that it takes earthYears
+// As a parameter
+func computeMarsYears(earthYears int) int {
+  // Remove earthYears definition within marsYear
+  
+  
+  earthDays := earthYears * 365
+  marsYears := earthDays / 687
+  return marsYears
+}
+
+func main() {
+  myAge := 25
+  
+  // Call `marsYear` with `myAge`
+  myMartianAge := computeMarsYears(myAge)
+  fmt.Println(myMartianAge)
+}
+
+
+
+Reusing Code with Functions
+---------------------------------------
+
+Functions are great for code reuse, this means that when you find yourself repeating the same pattern over and over, it might be a good idea to try and abstract it into a function. When you abstract your pattern into a function, this means we take the logic it takes to solve our problem and generalize it into a function to solve multiple problems. Let’s say you need to square numbers:
+
+fmt.Println(5 * 5)
+fmt.Println(6 * 6)
+// ...
+fmt.Println(100 * 100)
+
+This can quickly get out of hand! Writing all of this down does not align with your programming chops since you can write a function to handle this problem!
+
+func squareNum(num int) {
+  fmt.Println(num * num)
+}
+
+squareNum() abstracts the logic for squaring a number into one single place! If you decide something about your formula is wrong, then you only have to change that code in a single place!
+
+
+
+package main
+import (
+	"math"
+  "fmt"
+)
+
+// Define specialComputation() here
+func specialComputation(x float64) float64 {
+   return math.Log2(math.Sqrt(math.Tan(x)))
+}
+
+func main() {
+  var a, b, c, d float64
+  a = .0214
+  b = 1.02
+  c = 0.312
+  d = 4.001
+  
+  // Replace the following four lines with specialComputation()
+  a = specialComputation(a)
+  b = specialComputation(b)
+  c = specialComputation(c)
+  d = specialComputation(d)
+  
+  fmt.Println(a, b, c, d)
+}
+
+
+
+Multiple Return Values
+---------------------------------------
+Functions also have to ability to return multiple values. Check out the example below:
+
+func GPA(midtermGrade float32, finalGrade float32) (string, float32) {
+  averageGrade := (midtermGrade + finalGrade) / 2
+  var gradeLetter string
+  if averageGrade > 90 {
+    gradeLetter = "A"
+  } else if averageGrade > 80 {
+    gradeLetter = "B"
+  } else if averageGrade > 70 {
+    gradeLetter = "C"
+  } else if averageGrade > 60 {
+    gradeLetter = "D"
+  } else {
+    gradeLetter = "F"
+  }
+ 
+  return gradeLetter, averageGrade 
+}
+
+Above, after the parentheses which contain our parameters, we need to provide the types of the multiple returns wrapped in their own set of parentheses. The GPA() function will return 2 values, the first value is a string and the second value is an int32. Also, when we return multiple values, we use a single return keyword followed by the values separated by commas: gradeLetter, averageGrade. When we call the function:
+
+func main() {
+  var myMidterm, myFinal float32
+  myMidterm = 89.4
+  myFinal = 74.9
+  var myAverage float32
+  var myGrade string
+  myGrade, myAverage = GPA(myMidterm, myFinal)
+  fmt.Println(myAverage, myGrade) // Prints 82.12 B
+}
+
+We’re able to call GPA() with the necessary arguments and it returns back both 82.12 and B which we print to the terminal.
+
+
+
+package main
+import "fmt"
+
+// Update getLikesAndShares to return two ints
+func getLikesAndShares(postId int) (int, int) {
+  var likesForPost, sharesForPost int
+  switch postId {
+  case 1:
+    likesForPost = 5
+    sharesForPost = 7
+  case 2:
+    likesForPost = 3
+    sharesForPost = 11
+  case 3:
+    likesForPost = 22
+    sharesForPost = 1
+  case 4:
+    likesForPost = 7
+    sharesForPost = 9
+  }
+  fmt.Println("Likes: ", likesForPost, "Shares: ", sharesForPost)
+  // Add in a return for likesForPost and sharesForPost
+  return likesForPost, sharesForPost
+  
+}
+
+func main() {
+  var likes, shares int
+  
+  // Update this line so the results of the function
+  // get stored in "likes" and "shares"
+  likes, shares = getLikesAndShares(4)
+  
+  if likes > 5 {
+    fmt.Println("Woohoo! We got some likes.")
+  }
+  if shares > 10 {
+    fmt.Println("We went viral!")
+  }
+}
+
+
+
+Deferring Resolution
+---------------------------------------
+We can delay a function call to the end of the current scope by using the defer keyword. defer tells Go to run a function, but at the end of the current function. This is useful for logging, file writing, and other utilities.
+
+func calculateTaxes(revenue, deductions, credits float64) float64 {
+  defer fmt.Println("Taxes Calculated!")
+  taxRate := .06143
+  fmt.Println("Calculating Taxes")
+ 
+  if deductions == 0 || credits == 0 {
+    return revenue * taxRate
+  }
+ 
+ 
+  taxValue := (revenue - (deductions * credits)) * taxRate
+  if taxValue >= 0 {
+    return taxValue
+  } else {
+    return 0
+  }
+}
+
+In the above example, when we call calculateTaxes() we immediately defer a message, "Taxes Calculated!". This does not print until the end of the function (after the taxes have been calculated and are about to be returned). Normally, we would consider adding fmt.Println("Taxes Calculated!") at the end of calculateTaxes(). But, we have multiple return statements in our code, instead of adding a print statement right before each return, we use defer and it prints regardless of when our function ends. The output would read:
+
+Calculating Taxes
+Taxes Calculated!
+
+
+
+package main
+import "fmt"
+
+func queryDatabase(query string) string {
+  var result string
+  connectDatabase()
+  // Add deferred call to disconnectDatabase() here
+  defer disconnectDatabase()
+  
+  if query == "SELECT * FROM coolTable;" {
+    result = "NAME|DOB\nVincent Van Gogh|March 30, 1853"
+  }  
+  fmt.Println(result)
+  return result
+}
+
+func connectDatabase() {
+  fmt.Println("Connecting to the database.")
+}
+
+func disconnectDatabase() {
+  fmt.Println("Disconnecting from the database.")
+}
+
+func main() {
+  queryDatabase("SELECT * FROM coolTable;")
+}
+
+
+
+Review
+---------------------------------------
+Congrats! This lesson covered how to:
+
+Define a function.
+Understand scope rules.
+Return a value from a function.
+Add parameters to our function.
+Reuse code with functions.
+Return multiple values from a function.
+Defer events until the conclusion of a function.
+Functions are one of the most valuable patterns in code writing and reusability. Being comfortable writing and calling them will serve you well as you go on to build more complex software.
+
+
+---------------------------------------
+
+
+
+
