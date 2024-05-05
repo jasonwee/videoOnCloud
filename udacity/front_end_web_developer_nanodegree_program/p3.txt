@@ -1,0 +1,21 @@
+https://review.udacity.com/#!/rubrics/4671/view
+
+
+
+You can download the starter code below by cloning the specific branch 'refresh-2019':
+
+The Weather Journal project repository
+https://github.com/udacity/fend/tree/refresh-2019
+
+
+
+For this project, you will be writing most of your code in two files: server.js and website/app.js. 
+
+
+
+https://learn.udacity.com/nanodegrees/nd0011-connect-bmann/parts/cd0429/lessons/ls1847/concepts/83340375-dafe-45c1-9f73-a6ad809458c6
+
+
+
+
+
