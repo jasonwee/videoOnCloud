@@ -1,0 +1,55 @@
+source init-env-nodejs17.sh
+npm i --save-dev html-webpack-plugin@4
+NODE_OPTIONS=--openssl-legacy-provider npm run build
+
+
+# USE NODE12
+source init-env-nodejs12.sh
+npm -D install style-loader@^0.23.1 node-sass@^4.14.1 css-loader@^3.6.0 sass-loader@^7.3.1
+
+npm install --save-dev mini-css-extract-plugin@^0.8.0 terser-webpack-plugin@^1.3.0 optimize-css-assets-webpack-plugin@^5.0.3
+npm install workbox-webpack-plugin@^4.3.1 --save-dev
+
+
+npm i -D @babel/core@^7.5.4 @babel/preset-env@^7.5.4 babel-loader@^8.0.6
+npm i -D html-webpack-plugin@^3.2.0
+npm i -D clean-webpack-plugin@^3.0.0
+npm i -D style-loader@^0.23.1 node-sass@^4.14.1 css-loader@^3.6.0 sass-loader@^7.3.1
+npm i -D mini-css-extract-plugin@^0.8.0 optimize-css-assets-webpack-plugin@^5.0.3 terser-webpack-plugin@^1.3.0
+npm i    workbox-webpack-plugin@^4.3.1
+npm i    dotenv
+npm i    npm install body-parser@^1.19.0 cors@^2.8.5
+npm i    node-fetch@2
+npm i -D jest@^25.3.0
+npm i -D jest-fetch-mock@^1.5.0
+
+----
+
+We will build a web tool that allows users to run Natural Language Processing (NLP) on articles or blogs found on other websites.
+
+https://aylien.com/
+If you started this project after July 7, 2020, you will be using the MeaningCloud Sentiment Analysis API for this project.
+
+
+Following are the project prerequisites:
+* Webserver - Node
+* Web application framework for routing - Express
+* Build tool - Webpack. Using webpack, we will set up the app to have dev and prod environments, each with their own set of tools and commands.
+* External script - Service Worker
+* External API - Aylien
+
+
+https://review.udacity.com/#!/rubrics/4866/view
+https://learn.meaningcloud.com/developer/sentiment-analysis/2.1/console
+
+
+https://github.com/udacity/fend/tree/refresh-2019/
+Clone the refresh-2019 branch 
+
+
+Do not submit node_modules and dist folders.
+zip -r ../project.zip . -x node_modules/\* coverage/\* dist/\* .env
+
+questions
+* Only one HTML file is required, but it must be at src/views/ or src/html. Must contain valid semantic html
+
