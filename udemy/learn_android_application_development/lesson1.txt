@@ -1,0 +1,127 @@
+date start : 05 august 2022
+
+
+1.1 Getting Ready
+---------------------------------------
+
+
+
+1.2 Packages, classes and running your first program
+---------------------------------------
+
+
+
+1.3 Variables, Literals and Constants
+---------------------------------------
+
+
+1.4 Reading input from the user- The Scanner class
+---------------------------------------
+
+
+
+1.5 Getting Input fromt he user using the JOptionPane class
+---------------------------------------
+
+
+
+1.6 Comments in Java
+---------------------------------------
+
+
+
+1.7 Introduction to Decision Structures - Operators and Expressions
+---------------------------------------
+
+
+
+1.8 If, if-else if-else-if nested if and logical operators
+---------------------------------------
+
+
+
+1.9 Check for values inside or outside a range
+---------------------------------------
+
+
+
+1.10 Comparing Strings
+---------------------------------------
+
+
+
+1.11 The Switch-Statement
+---------------------------------------
+
+
+
+1.12 Introduction to Loops
+---------------------------------------
+
+
+
+1.13 Useful Loop Calculations - Input Validation and a User Controlled loop
+---------------------------------------
+
+
+
+1.14 useful loop calculations part 2
+---------------------------------------
+
+
+
+1.15 working with files
+---------------------------------------
+
+
+
+1.16 methods
+---------------------------------------
+
+
+
+1.17 introduction to arrays
+---------------------------------------
+
+
+
+1.18 comparing arrays
+---------------------------------------
+
+
+
+1.19 copying arrays
+---------------------------------------
+
+
+
+1.20 highest and lowest values / sum and average
+---------------------------------------
+
+
+1.21 Arrays with Files and String arrays
+---------------------------------------
+
+
+
+1.22 The arrayList class
+---------------------------------------
+
+
+
+1.23 Classes and Objects
+---------------------------------------
+
+
+
+1.24 More Classes and objects
+---------------------------------------
+
+
+
+
+
+
+
+
+
