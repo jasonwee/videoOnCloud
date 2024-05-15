@@ -1,4 +1,4 @@
-date start : 05 august 2022
+date start : 15 may 2024
 
 
 2.1 Introduction to Android
