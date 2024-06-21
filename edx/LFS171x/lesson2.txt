@@ -1,0 +1,201 @@
+Introduction
+
+This chapter provides an overview of Hyperledger, a collaborative project hosted by The Linux Foundation that is focused on business blockchain technologies. It also provides a brief introduction to the projects advanced under the Hyperledger greenhouse, as of November 2020.
+
+
+
+Learning Objectives
+
+By the end of this chapter, you should be able to:
+
+Explain the differences between Hyperledger and permisionless blockchain technologies.
+Discuss how Hyperledger leverages open standards and open governance to support business solutions.
+Define what a project is according to the Hyperledger documentation.
+Discuss the project lifecycle process adopted by Hyperledger, and the five possible states.
+
+
+
+Video: Hyperledger (Navroop Sahdev)
+
+
+
+Hyperledger
+
+Hyperledger incubates and promotes a range of business blockchain technologies, including distributed ledger frameworks, smart contract engines, client libraries, graphical interfaces, utility libraries, and sample applications. Hosted by The Linux Foundation, collaborators include industry leaders in technology, finance, banking, supply chain management, manufacturing, and IoT.
+
+As of November 2020, there are 16 projects in the Hyperledger greenhouse, six of which are distributed ledger and domain specific frameworks. The other 10 projects are tools and libraries that support these frameworks. 
+
+As Arnaud Le Hors, member of the Hyperledger Technical Steering Committee, emphasized,
+
+"these projects show how broadly applicable blockchain technology really is. This goes way beyond cryptocurrencies".
+
+Hyperledger provides an alternative to the cryptocurrency-based blockchain model, and focuses on developing blockchain frameworks, tools and libraries to support global enterprise solutions. The focus of Hyperledger is to provide a transparent and collaborative approach to blockchain development.
+
+
+
+Video: The Birth of Hyperledger (Brian Behlendorf)
+
+
+
+Hyperledger Goals
+
+Hyperledger has taken a leadership role to develop cross-industry standards and provide a neutral space for software collaboration. The financial services industry, in particular, is witnessing an unprecedented level of collaboration between institutions that have traditionally been competitors. The advent of a new foundational or infrastructural technology like the blockchain - much like the Internet - requires collaboration of various actors in order to realize the full benefits of the technology. Unless all actors use a certain standard, the pace of technological dissemination will continue to be slow. Technological adoption is characterized by network effects, where the costs decrease with the increase in use of a certain technology. Since shifting to distributed ledger technology involves significant costs, open source software, communities and ecosystems that develop around these have a significant part to play.
+
+
+
+Video: The Importance of Open Source (Brian Behlendorf)
+
+
+
+Open Standards
+
+"Only an Open Source, collaborative software development approach can ensure the transparency, longevity, interoperability and support required to bring blockchain technologies forward to mainstream commercial adoption. That is what Hyperledger is about - communities of software developers building blockchain frameworks and platforms".
+- hyperledger.org 
+
+As we learned in Chapter 1: "Discovering Blockchain Technologies", the non-availability of standards in distributed ledger technologies is one of the major hurdles in scaling them. One of Hyperledger's key goals is to facilitate the process of standards formation, not by promoting its own distributed ledger(s), but by providing a space for a variety of standards to co-exist simultaneously:
+
+"Rather than declaring a single blockchain standard, it encourages a collaborative approach to developing blockchain technologies via a community process, with intellectual property rights that encourage open development and the adoption of key standards over time".
+- hyperledger-fabric.readthedocs.io 
+
+Hyperledger aims to adhere to "open standards", which means they are
+
+"(...) interoperable through open published interfaces and services".
+- John Palfreyman, ibm.com
+
+
+
+Open Source and Open Standards
+
+The Enterprise Ethereum Alliance (EEA) and Hyperledger formally joined each other's organizations as Associate Members in October 2018. This strategic partnership aims to grow the blockchain ecosystem by enabling "active and mutual cross-community collaboration through event participation, connecting with other members, and finding ways for our respective efforts to be complementary and compatible."
+
+EEA promotes the development of specifications and standards for enterprise blockchain networks
+Hyperledger advances the development of open source software for establishing, managing and connecting enterprise blockchain networks.
+
+This announcement came as a confirmation of an already fruitful collaboration between the two organizations; some examples of this collaboration:
+
+ Hyperledger Burrow is an implementation of the Ethereum Virtual Machine (EVM) bytecode interpreter
+Hyperledger Sawtooth support for the EVM as a transaction processor (Seth)
+Hyperledger Fabric support for the EVM
+The existence of an EEA working group on Trusted Execution Environments, along with a prototype implementation of the proposed standards, Private Data Objects, built as a lab at Hyperledger.
+"...simultaneously developing community-driven open standards and production-quality open source reference implementations is a best practice of Internet-scale software development work."
+
+While working together, the two organizations will also continue to collaborate with other standard bodies and open source communities, all with the common goal of accelerating the adoption of enterprise blockchain technologies.
+
+
+
+Open Source and Open Governance
+
+"Today, most people understand the concept of Open Source. What many people don't get, and something we here at Hyperledger and The Linux Foundation pride ourselves on doing well, is Open Governance".
+- hyperledger.org
+
+Open source software is software that is made freely available and may be redistributed and modified. In other words, anyone has the ability to view the code, use the code, copy the code, change the code, and, depending on the open source license, contribute back changes.
+
+Open governance means that technical decisions for an open source project are made by a group of community-elected developers drawn from a pool of active participants. These decisions include things such as which features to add, how, and when to add them.
+
+To learn more about the specifics of Hyperledger's open governance read the following article "ABCs of Open Governance".
+
+
+
+Strength Through Diversity
+
+As you familiarize yourself more with Hyperledger and the blockchain technologies it fosters in its greenhouse, you will notice the similarities between some of its projects, but most importantly, what differentiates them from one another and the use cases they were designed to address. The idea behind this approach was and continues to be that there is no one solution to address the myriad of needs, requirements and use cases. 
+
+"Having a portfolio of projects, though, enables us to have the variety of ideas and contributors to become a strong open source community... It's not that our multiplicity of projects has given us strength through numbers, but rather strength through diversity."
+
+Dan Middleton, All Are Welcome Here (2018)
+
+
+
+Video: Blockchain Security at Hyperledger (David Huseby)
+
+
+
+Video: How Will Hyperledger Change the Blockchain Ecosystem? (Brian Behlendorf)
+
+
+
+Blockchain for Business
+
+The cryptocurrency-based blockchain model, popularized by public blockchains like Bitcoin and Ethereum, currently falls short of fulfilling a host of requirements that many types of organizations would have to fulfill in order to be compliant when using blockchain and distributed ledger technologies - for instance, in the areas of financial services, healthcare, and government.
+
+Hyperledger is a unique platform that is developing permissioned distributed ledger frameworks specifically designed for enterprises, including those in industries with strong compliance requirements. Enterprise use cases require capabilities such as scalability and throughput, built-in or interoperable identity modules for the parties involved in a transaction or a network, or even access to regulators who can access all data in the ledger as read-only to ensure compliance. The latter is particularly important because, regardless of the innovation, it has to operate within the current regulatory framework, as well as comply with any new rules that come into place specifically targeted at blockchain technologies.
+
+The enterprise continues to be at the heart of this course.
+
+
+
+Video: Why Businesses Choose to Use Hyperledger? (Brian Behlendorf)
+
+
+
+Video: Hyperledger, A Greenhouse for Blockchain Projects
+
+
+
+Project Lifecycle and Hyperledger Incubator
+
+
+
+According to the Hyperledger documentation, a project refers to a collaborative endeavor to deliver a work item. Projects can vary in terms of scope: some are intended to produce a document, some may develop new capabilities or refactor/remove an existing capability. 
+
+In general, open source initiatives use an incubation process for new work items: this allows members of the community to contribute new ideas and code in a more structured and transparent workflow. Hyperledger has adopted a rigorous project lifecycle process that has six possible states:
+
+Proposal 
+If an open source initiative wants to be hosted under the Hyperledger greenhouse, a proposal is submitted to the TSC for review. The proposal must have a clear description and a well-defined scope, must identify the development resources that are committed to the project, as well as the initial maintainers, and must be vendor neutral. 
+Incubation
+Once a project proposal is approved, it enters the Incubation phase, and the community has a chance to explore different idea related to the project. When a project reaches a mature-enough stage and qualifies to be declared Active, the maintainers will vote to submit a graduation review request to the TSC. All projects ready to graduate from Incubation must have a fully functional code base, test coverage commensurate with other Active projects, an active and diverse community of developers, and a history of releases that follow the Active release process. A project in the Incubation stage is not guaranteed to eventually graduate - some projects never get to Active state.
+Active
+Projects that successfully exit the Incubation phase are considered Active. If reasons exist, an Active project can be deprecated.
+First Major Release
+If the maintainers of a project are looking to publish the project's first major release, they will have to obtain approval from the TSC. 
+Deprecated
+All deprecated projects are maintained for a six month period by their communities; after that, the projects are removed from subsequent formal releases. A deprecation notice is given to the public. After a six-month deprecation period, projects are labeled End of Life.
+End of Life
+These are projects that are no longer developed or maintained.
+New projects wanting to join are evaluated on a number of things:
+
+How do they fit with the portfolio of other projects
+How mature are they, to understand where they're going
+Who are the developers around the projects, etc.
+When a project goes through a rigorous vetting process and graduates from the incubator, it signals to the public that they can now trust the code, that the code can be used to build applications upon it. 
+
+There are sixteen projects in the Hyperledger greenhouse, as of June 2019. And the door is open to new projects joining. There are four fully-fledged Hyperledger projects, that have graduated from the Incubator and are in an Active state (as of June 2019):
+
+Hyperledger Fabric (March 2017)
+Hyperledger Sawtooth (May 2017)
+Hyperledger Iroha (May 2018)
+Hyperledger Indy (March 2019)
+Hyperledger Besu (March 2020).
+The other projects are still working through the process, and the goal is to get every one of them out of the Incubator.
+
+
+
+Hyperledger Labs
+
+Currently, the Hyperledger Project Lifecycle is a very rigorous process that includes 6 possible states. For a project to join the Hyperledger Greenhouse, it must have a certain degree of maturity even in the early proposal and incubation stages.
+
+Hyperledger Labs provides a space where work can easily be started without the creation of an official Hyperledger project. Developers working on projects that are immature (incomplete code, not ready from a production-quality point of view, with small communities) or experimental will thus get the opportunity to work in a space suitable for innovation and testing of new ideas; moreover, they will work within a legal framework that would ease the transition to the Hyperledger Incubator (if the project matures enough and reaches that stage). Hyperledger Labs have similarities with the Apache Labs and the W3C Community Groups.
+
+There is a specific process that must be followed when proposing a new lab. Labs that become dormant or unresponsive for 6 months or more, or are deemed deprecated or obsoleted by their committers are archived.
+
+
+
+Q/A with Brian Behlendorf, Executive Director of Hyperledger
+
+Before diving deeper into the projects advanced under the Hyperledger umbrella, we asked Brian Behlendorf, Executive Director of Hyperledger at The Linux Foundation, some questions. 
+
+
+
+Video: Reasons Why Developers Would Become Interested in Open Source Software
+
+
+
+Video: Hyperledger vs. Apache
+
+
+
+Video: Interoperability Between Hyperledger Frameworks
+
+
+
+
