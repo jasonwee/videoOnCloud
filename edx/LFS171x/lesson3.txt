@@ -1,0 +1,179 @@
+Introduction
+
+In this chapter, we will briefly explore the frameworks developed under the Hyperledger umbrella (as of November 2020), highlighting their key features and use cases. We will dive deeper in discussing use cases in the last chapter of this course.
+
+
+
+Learning Objectives
+
+By the end of this chapter, you should be able to:
+
+List the components of Hyperledger frameworks.
+Get a high-level understanding of the Hyperledger frameworks and domain-specific blockchain technologies: Hyperledger Besu, Hyperledger Burrow, Hyperledger Fabric, Hyperledger Grid, Hyperledger Indy, Hyperledger Iroha, and Hyperledger Sawtooth.
+
+
+
+Components of Hyperledger Frameworks
+
+Hyperledger business blockchain frameworks are used to build enterprise blockchains for a consortium of organizations. They are different than public ledgers like the Bitcoin blockchain and Ethereum. Hyperledger frameworks include:
+
+An append-only distributed ledger
+A consensus algorithm for agreeing to changes in the ledger
+Privacy of transactions through permissioned access
+Smart contracts to process transaction requests.
+
+Now, let's explore the Hyperledger frameworks (as of November 2020)!
+
+
+
+Hyperledger Besu
+
+Hyperledger Besu is an open source Ethereum client developed under the Apache 2.0 license and written in Java. It can be run on the Ethereum public network or on private permissioned networks, as well as test networks such as Rinkeby, Ropsten, and Görli. Hyperledger Besu includes several consensus algorithms including PoW, PoA, and IBFT, and has comprehensive permissioning schemes designed specifically for uses in a consortium environment. Hyperledger Besu joined the Hyperledger Incubator in August 2019; PegaSys has been its primary contributor and maintainer since its launch in November 2018, when it was known as Pantheon.
+
+Among its features:
+
+Implements the Enterprise Ethereum Alliance (EEA) specification
+The Ethereum Virtual Machine (EVM), which allows deployment and execution of smart contracts via transactions within an Ethereum blockchain
+Implements various consensus algorithms, such as Proof of Authority (with several protocols, such as IBTF 2.0 or Clique) and Proof of Work (Ethash)
+Uses a RocksDS key-value database to persist chain data locally
+P2P networking
+Provides user-facing APIs
+Allows you to monitor node and network performance
+Ability to keep transactions private between the involved parties
+Allows permissioning.
+
+
+
+Video: Hyperledger Burrow
+
+
+
+Hyperledger Burrow
+
+Hyperledger Burrow was released in December 2014. It was originally designed by Monax, and co-sponsored by Intel. The project is generally updated on a quarterly basis, and is licensed under the Apache 2.0. license. Currently under incubation, "Hyperledger Burrow is a complete single-binary blockchain distribution focussed on simplicity, speed, and developer ergonomics. It supports both EVM and WASM based smart contracts and uses BFT consensus via the Tendermint algorithm".
+
+Hyperledger Burrow components are:
+
+Consensus Engine - Hyperledger Burrow uses the Byzantine fault-tolerant Tendermint protocol to order and finalize transactions
+The API Gateway provides interfaces for systems integration and user interfaces
+The Smart Contract Application engine facilitates integration of complex business logic (maintaining the networking stack between the nodes and ordering transactions)
+Permissioned Ethereum Virtual Machine - it is built to observe the Ethereum operation code specification, and asserts the correct permissions have been granted
+Application Binary Interface (ABI) - transactions must be formulated in a binary format, which is processed by the blockchain node.
+The Application Blockchain Interface (ABCI) provides interface specification for the consensus engine and smart contract application engine to connect.
+
+
+
+Video: Hyperledger Fabric
+
+
+
+Hyperledger Fabric
+
+Hyperledger Fabric is an open source, production ready, permissioned blockchain framework implementation that was designed to serve as a foundation for developing applications or solutions with a modular architecture. It was the first proposal for a codebase (2016), combining previous work done by Digital Asset Holdings, Blockstream's libconsensus, and IBM's OpenBlockchain. It graduated from the Hyperledger Incubator in March of 2017.
+
+Key characteristics of Hyperledger Fabric are:
+
+High-performance, secure, permissioned blockchain network
+Features powerful container technology to host any mainstream language for smart contracts development
+Code written in Go, chaincode written in Go, Javascript, or Java, SDKs written in Node.js, Java, Go, REST and Python.
+Its modular architecture allows components such as consensus and membership services to be plug-and-play. One of the key advantages of Hyperledger Fabric is that it allows entities to conduct confidential transactions without passing information through a central authority. This is accomplished through different channels that run within the network, as well as the division of labor that characterizes the different nodes within the network.
+
+
+
+Video: Hyperledger Indy
+
+
+
+Video: Hyperledger Indy (Nathan George)
+
+
+
+Hyperledger Indy
+
+Hyperledger Indy is a distributed ledger purpose-built for decentralized identity, that upholds the standards mandated by GDPR. Hyperledger Indy "provides tools, libraries, and reusable components for providing digital identities rooted on blockchains or other distributed ledgers so that they are interoperable across administrative domains, applications, and any other silo."
+
+Hyperledger Indy was contributed to the Hyperledger greenhouse by the Sovrin Foundation in 2017, and it graduated from the Incubator in March of 2019. It allows individuals to manage and control their digital identities. Rather than having businesses store huge amounts of personal data of individuals, Hyperledger Indy allows businesses to store pointers to identity. Once the company verifies the other party's identity, it throws it away.
+
+According to Brian Behlendorf,
+
+"(...) identity is a toxic asset that could present a liability to organizations".
+
+Indeed, since 2013, over 14 billion data records were lost or stolen. What is striking is that, out of these, only 4% were encrypted, and hence, rendered useless after being stolen (also called "secure breaches"). You can find detailed statistics at the Breach Level Index website.
+
+One of the key principles of Hyperledger Indy is its "privacy by design" approach. Given the immutable nature of the DLT, it is all the more important that digital identities be handled with the utmost care, keeping human values front and center.
+
+"Hyperledger Indy lets users authenticate identity based on the attributes they are willing to store and share themselves. This can reduce the amount of liability contained within a business because the data can be kept with the user and presented to you again in a way that you can trust and validate that what has been said really was said and is trusted by the other parties you do business with".
+- Nathan George, Maintainer, Hyperledger Indy
+
+Further information about the history of the project can be found at the Sovrin's website.
+
+
+
+Video: Hyperledger Iroha
+
+
+
+Hyperledger Iroha
+
+Hyperledger Iroha is a free, open source blockchain framework contributed by Soramitsu, Hitachi, NTT Data, and Colu (2016). Hyperledger Iroha is a simple blockchain platform that can be used to make trusted, secure, and fast applications that leverage the power of permission-based blockchain with Byzantine fault-tolerant consensus. Among its key features are:
+
+Simple deployment and maintenance
+Variety of libraries for developers
+Role-based access control
+Modular design, driven by command-query separation principle
+Ready-to-use set of commands and queries
+Multi-signature transactions
+Uses a high-performance Byzantine fault-tolerant consensus algorithm called YAC.
+According to the Hyperledger Iroha documentation, "it can be used to manage digital assets, identity and serialized data, and can be useful for applications such as interbank settlement, central bank digital currencies, payment systems, national IDs, and logistics, among others". Its documentation provides an extensive list of use cases, and specific advantages the use of Hyperledger Iroha can introduce - you can read about these use case scenarios online.
+
+Hyperledger Iroha emphasizes mobile application development with client libraries for Android and iOS, making it distinct from other Hyperledger frameworks. Inspired by Hyperledger Fabric, Hyperledger Iroha seeks to complement Hyperledger Fabric and Hyperledger Sawtooth, while providing a development environment for C++ developers to contribute to Hyperledger.
+
+Hyperledger Iroha is an active project, and reached a significant milestone in May 2019, the 1.0 release. To learn more about it, you can read the announcement. 
+
+
+
+Video: Hyperledger Sawtooth
+
+
+
+Hyperledger Sawtooth
+
+Hyperledger Sawtooth, is an open source blockchain framework that utilizes a highly modular platform for building, deploying, and running distributed ledger applications and networks, making smart contracts safe, particularly for enterprise use. It was originally contributed by Intel and joined the Hyperledger greenhouse in April of 2016. In May of 2018 it graduated from the Hyperledger Incubator. Some of its key characteristics are:
+
+Uses pluggable consensus algorithms, which allows consensus to be changed by transaction on the fly 
+Smart contracts can be written in almost any language
+Parallel transaction execution for added throughput, while at the same time preventing double spending
+Ethereum contract support via Hyperledger Burrow integration
+No central authority or implementation. This increases security as there is no centralized service that could leak transaction patterns or any other confidential information
+Supports creating and broadcasting events.
+Distributed ledger solutions built with Hyperledger Sawtooth can utilize various consensus algorithms based on the size of the network (PoET SGX, Raft, etc.). Hyperledger Sawtooth is designed for versatility, with support for both permissioned and permissionless deployments. This technology simplifies blockchain application development and deployment by clearly separating the core system from the application domain.
+
+
+
+Video: Hyperledger Sawtooth Characteristics Relative to Use Cases (Dan Middleton)
+
+
+
+Video: Hyperledger Sawtooth - Supply Chain Use Case Example (Courtesy of Sawtooth)
+
+
+
+Hyperledger Grid
+
+Hyperledger Grid is a domain-specific business blockchain technology for building supply chain solutions that include distributed ledger components; it's an ecosystem of technologies, frameworks, and libraries that work together, allowing application developers to chose which components are best for their industry or market model. It intends to:
+
+Provide reference implementations of supply chain-centric data types, data models, and smart contract-based business logic based on existing open standards and industry best practices
+Provide authentic, practical ways to combine components from the Hyperledger Stack into a single, effective business solution.
+Hyperledger Grid was accepted in the Hyperledger Incubator as of December 2018, with Cargill, Intel and Bitwise as primary contributors to this initial stage. Its software is licensed under the Apache License Version 2.0.
+
+Hyperledger Grid incorporates several GS1Standards concepts in an effort to put structure around static and dynamic data and increase visibility, standardization, consistency, credibility, neutrality and interoperability:
+
+Global Trade Item Number (GTIN) - this is a unique product identifier with a critical role in global commerce, composed of numbers that identify the company making the product, as well as numbers identifying the product. A product that has its own GTIN retains an identity regardless of where it is in the supply chain, and this is key for blockchain implementation.
+Global Location Numbers (GLN) - These are numbers that uniquely identify organizations and locations in the supply chain, and contribute to enhanced visibility in the supply chain.
+GS1 barcodes - These barcode labels must be captured in order to allow data to be shared among trading partners. They provide product specific information and allow real-time view of where the products have been and where they are going.
+Electronic Product Code Information Services (EPCIS) - This is similar to a standardized API, capturing and sharing information about the movement and status of products, logistic units, and other assets in the supply chain. 
+You can learn more about Hyperledger Grid from its website and wiki pages, where more resources are provided as well.
+
+
+
+
