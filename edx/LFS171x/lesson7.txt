@@ -1,0 +1,74 @@
+Hyperledger Community
+
+The development of the Hyperledger projects is led by a diverse group of technical, open source contributors. We are always looking for help to build an open source ecosystem of business blockchain technologies. If you are interested in contributing to and learning from the community, we welcome you to join the Hyperledger effort.
+
+
+
+Joining the Hyperledger Community
+
+You too can join the Hyperledger Community:
+
+* For developers
+Read the Hyperledger code on GitHub. Join the Hyperledger discussion at Rocket.Chat. Search for open bugs, or report a new one in the Hyperledger’s bug database.
+* For business leaders
+For key updates from Hyperledger, join the mailing list. Explore all Hyperledger business solutions.
+* For educators and community leaders
+You can start or join a Hyperledger meetup. Development updates from Wiki can be found here.
+
+
+
+Hyperledger Working Groups
+
+The Hyperledger Community’s working groups are open to the public. Developers and tech leaders can engage with any of the Hyperledger’s open community channels at this page.
+
+Below, you can see an overview of Hyperledger’s working groups:
+
+* Architecture Working Group (AWG)
+  This is a technical workgroup focused on developing an architectural framework for Enterprise class distributed ledgers, towards convergence on a modular architecture.
+* Identity Working Group
+  This group discusses, researches, and documents ways to capture, store, transmit and use identities on DLT, with a focus on projects under the Hyperledger umbrella.
+* Learning Materials Development Working Group
+  This group is focused on developing open source training material to educate people on Hyperledger and its projects.
+* Performance and Scale Working Group
+  This group discusses, researches, and identifies key metrics that relate to the performance and scalability of a blockchain and blockchain related technologies.
+* Smart Contracts Working Group
+  This group focuses on giving an academic perspective to this research topic and also on practical ways to utilize them on different DLTs that are under the Hyperledger umbrella, and explores all potentials from deploying them in everyday software solution scenarios.
+* Technical Working Group China
+  This group acts as a bridge between the global Hyperledger community and the emerging technical user and contributor community in China.
+
+
+
+Learning Materials Development Working Group
+
+The Hyperledger Learning Materials Development Working Group is focused on developing training materials that aims to expand people's knowledge of Hyperledger and its projects. Members of this group collaborate with other Hyperledger working groups, Hyperledger team members, project maintainers, and volunteers from all over the world to identify training needs, identify strategies and solution to address those needs, and develop training material that targets both technical and non-technical audiences.
+
+Among other things, members of this working group support the development of this MOOC by reviewing existing content and contributing new material, suggesting improvements, as well as providing assistance in the course forum when needed. 
+
+If you would like to contribute to Hyperledger projects, you don't have to be a technical guru to do so. There are many ways to help, and working on developing training materials is one of them. Anyone is welcome to join this group to learn more about how to get involved.
+
+
+
+Hyperledger Special Interest Groups (SIGs)
+
+There are also a number of Special Interest Groups in the Hyperledger Community, focused on specific industries. You can learn more about these groups and their focus:
+
+* Healthcare SIG (HC-SIG)
+  This group represents an international membership of healthcare and technology professionals united in advancing the state of the healthcare industry through the implementation of enterprise-grade technology solutions utilizing the Hyperledger greenhouse of business blockchain frameworks and tools.
+* Public Sector SIG
+  This group is focused on applying DLT in general, and Hyperledger technologies in particular, to the public sector uses and needs.
+* Social Impact SIG
+  This group is primarily focused on serving as a platform for exchanging ideas and exploration of ways to use blockchain technology in the context of social good. 
+* Telecom SIG
+  This group focuses on technical and business-level conversations about blockchain use cases in the Telecom industry.
+* Trade Finance SIG
+  This group is focused on DLT and Hyperledger technologies applications to the trade finance uses and needs.
+
+
+
+Conclusions
+
+This concludes the "Introduction to Hyperledger Technologies" course! We have introduced you to the current Hyperledger frameworks and tools, and we have highlighted some of the business blockchain applications.
+
+We hope this course inspires you and helps you continue your journey into the business blockchain technology world. Whether you are an engineer, entrepreneur, developer, educator, or business person, we look forward to seeing what you build, as well as hearing from you in the course forum. 
+
+Good luck to all of you in your future endeavors! 
