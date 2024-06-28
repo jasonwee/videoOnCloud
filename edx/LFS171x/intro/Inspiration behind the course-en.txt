@@ -1,0 +1,7 @@
+What is the inspiration behind this course, and what do you hope students will gain from the course?
+This course is really designed for technologists who want to better understand how the different projects at Hyperledger work, right,
+at a kind of an overview level, right, understand the differences between them, start to understand what they can do with them,
+but it's also designed for those who might have been a technologist in the past and now think a little bit... spend a little more time focusing on the business applications of blockchain technology,
+to help understand what are the kinds of use cases that would be appropriate to apply these technologies to.
+So, it's really intended to give that kind of overview, as well as to talk a little bit about what do we mean when we say blockchains for business, right,
+how does is that different from the cryptocurrency landscape, right, what are the mechanics of these, what are consensus mechanisms, what is a smart contract, right?
