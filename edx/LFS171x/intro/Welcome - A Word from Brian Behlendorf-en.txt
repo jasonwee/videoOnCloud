@@ -1,0 +1,11 @@
+Hi, I'm Brian Behlendorf. I'm Executive Director of Hyperledger, a collaborative project hosted at the Linux Foundation.
+I want to welcome you to the first ever training course for Hyperledger and our related technology projects.
+Hyperledger is really the first series of projects focused on enterprise blockchain applications.
+And that means using distributed ledger technologies in a permissioned setting,
+it means using smart contracts to automate various business processes,
+and it means building a really exciting new world of secure, trustworthy information systems and automation of business processes.
+In this course, you'll learn about these different projects.
+This course is designed for people on the full spectrum, from working on purely as a software developer,
+all the way to those who just really want a business level understanding of what these technologies can accomplish,
+and what are the kinds of use cases that you might apply this to.
+So, this is really designed for the full breadth of those technologies
