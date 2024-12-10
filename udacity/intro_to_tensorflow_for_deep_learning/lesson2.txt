@@ -8,18 +8,11 @@ date start : 17 may 2019
 
 2.2 what is machine learning?
 ---------------------------------------
-traditional software development
-* the input and the algorithm is known, and you write a function to produce an
-  output
-** input data
-** apply logic to it
-** which produces a result
+There are many types of neural network architectures. However, no matter what architecture you choose, the math it contains (what calculations are being performed, and in what order) is not modified during training. Instead, it is the internal variables (“weights” and “biases”) which are updated during training.
 
-machine learning
-* you know the input and the output, but you don't knwo the algorithm that
-  creates the output given the input
-** take paris of input and output data
-** figure out the algorithm
+For example, in the Celsius to Fahrenheit conversion problem, the model starts by multiplying the input by some number (the weight) and adding another number (the bias). Training the model involves finding the right values for these variables, not changing from multiplication and addition to some other operation.
+
+One cool thing to think about. If you solved the Celsius to Fahrenheit conversion problem you saw in the video, you probably did so because you had some prior knowledge of how to convert between Celsius and Fahrenheit. For example, you may have known that 0 degrees Celsius corresponds to 32 degrees Fahrenheit. On the other hand, machine learning systems never have any previous knowledge to help them solve problems. They learn to solve these types of problems without any prior knowledge.
 
 
 2.3 colab: converting celsium to fahrenheit
@@ -77,6 +70,56 @@ Epoch: A full pass over the entire training dataset
 Forward pass: The computation of output values from input
 Backward pass (backpropagation): The calculation of internal variable adjustments according to the optimizer algorithm, starting from the output layer and working back through each layer to the input.
 
+---
+
+Congratulations! You just trained your first machine learning model. We saw that by training the model with input data and the corresponding output, the model learned to multiply the input by 1.8 and then add 32 to get the correct result.
+
+This was really impressive considering that we only needed a few lines code:
+
+l0 = tf.keras.layers.Dense(units=1, input_shape=[1]) 
+model = tf.keras.Sequential([l0])
+model.compile(loss='mean_squared_error', optimizer=tf.keras.optimizers.Adam(0.1))
+history = model.fit(celsius_q, fahrenheit_a, epochs=500, verbose=False)
+model.predict([100.0])
+
+This example is the general plan for of any machine learning program. You will use the same structure to create and train your neural network, and use it to make predictions.
+
+The Training Process
+The training process (happening in model.fit(...)) is really about tuning the internal variables of the networks to the best possible values, so that they can map the input to the output. This is achieved through an optimization process called Gradient Descent, which uses Numeric Analysis to find the best possible values to the internal variables of the model.
+
+To do machine learning, you don't really need to understand these details. But for the curious: gradient descent iteratively adjusts parameters, nudging them in the correct direction a bit at a time until they reach the best values. In this case “best values” means that nudging them any more would make the model perform worse. The function that measures how good or bad the model is during each iteration is called the “loss function”, and the goal of each nudge is to “minimize the loss function.”
+
+The training process starts with a forward pass, where the input data is fed to the neural network (see Fig.1). Then the model applies its internal math on the input and internal variables to predict an answer ("Model Predicts a Value" in Fig. 1).
+
+In our example, the input was the degrees in Celsius, and the model predicted the corresponding degrees in Fahrenheit.
+
+Once a value is predicted, the difference between that predicted value and the correct value is calculated. This difference is called the loss, and it's a measure of how well the model performed the mapping task. The value of the loss is calculated using a loss function, which we specified with the loss parameter when calling model.compile().
+
+After the loss is calculated, the internal variables (weights and biases) of all the layers of the neural network are adjusted, so as to minimize this loss — that is, to make the output value closer to the correct value (see Fig. 2).
+
+This optimization process is called Gradient Descent. The specific algorithm used to calculate the new value of each internal variable is specified by the optimizer parameter when calling model.compile(...). In this example we used the Adam optimizer.
+
+It is not required for this course, but if you're interested in learning more details about how the training process works, you can look at the lesson on reducing loss in Google’s machine learning crash course(opens in a new tab).
+
+By now you should know what the following terms are:
+
+* Feature: The input(s) to our model
+* Examples: An input/output pair used for training
+* Labels: The output of the model
+* Layer: A collection of nodes connected together within a neural network.
+* Model: The representation of your neural network
+* Dense and Fully Connected (FC): Each node in one layer is connected to each node in the previous layer.
+* Weights and biases: The internal variables of model
+* Loss: The discrepancy between the desired output and the actual output
+* MSE: Mean squared error, a type of loss function that counts a small number of large discrepancies as worse than a large number of small ones.
+* Gradient Descent: An algorithm that changes the internal variables a bit at a time to gradually reduce the loss function.
+* Optimizer: A specific implementation of the gradient descent algorithm. (There are many algorithms for this. In this course we will only use the “Adam” Optimizer, which stands for ADAptive with Momentum. It is considered the best-practice optimizer.)
+* Learning rate: The “step size” for loss improvement during gradient descent.
+* Batch: The set of examples used during training of the neural network
+* Epoch: A full pass over the entire training dataset
+* Forward pass: The computation of output values from input
+* Backward pass (backpropagation): The calculation of internal variable adjustments according to the optimizer algorithm, starting from the output layer and working back through each layer to the input.
+
 
 2.5 dense layers
 ---------------------------------------
@@ -85,7 +128,7 @@ Backward pass (backpropagation): The calculation of internal variable adjustment
 
 2.6 summary
 ---------------------------------------
-
+In this lesson you learned some of the basic concepts behind Machine Learning and how Dense layers work. You trained your first machine learning model to convert Celsius to Fahrenheit. You also learned some of the key terms used in Machine Learning such as features, examples, and labels. You also learned the main lines of code that make up the skeleton of any machine learning algorithm. You saw that you only need a few lines of code to create, train, and make predictions with your neural network using TensorFlow and Keras.
 
 
 
