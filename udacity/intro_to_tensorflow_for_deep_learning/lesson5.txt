@@ -1,9 +1,181 @@
-date start : 31 may 2019
+date start : 12 december 2024
 
 
-5.1 more lessons coming soon!
+5.1 interview with Sebastian
 ---------------------------------------
 
+
+
+5.2 Introduction
+---------------------------------------
+
+
+
+5.3 Dogs and Cats Dataset
+---------------------------------------
+
+
+
+5.4 Images of Different Sizes
+---------------------------------------
+
+
+
+5.5 Color Images Part 1
+---------------------------------------
+
+
+
+5.6 Color Images Part 2
+---------------------------------------
+
+
+
+5.7 Convolutions with Color Images
+---------------------------------------
+
+
+
+5.8 Max Pooling with Color Images
+---------------------------------------
+
+
+
+5.9 Colab: Cats and Dogs
+---------------------------------------
+https://colab.research.google.com/github/tensorflow/examples/blob/master/courses/udacity_intro_to_tensorflow_for_deep_learning/l05c01_dogs_vs_cats_without_augmentation.ipynb
+
+
+
+
+5.10 Softmax and Sigmoid
+---------------------------------------
+
+In the previous Colab, we used the following the CNN architecture:
+
+model = tf.keras.models.Sequential([
+    tf.keras.layers.Conv2D(32, (3,3), activation='relu', input_shape=(150, 150, 3)),
+    tf.keras.layers.MaxPooling2D(2, 2),
+
+    tf.keras.layers.Conv2D(64, (3,3), activation='relu'),
+    tf.keras.layers.MaxPooling2D(2,2),
+    
+    tf.keras.layers.Conv2D(128, (3,3), activation='relu'),
+    tf.keras.layers.MaxPooling2D(2,2),
+    
+    tf.keras.layers.Conv2D(128, (3,3), activation='relu'),
+    tf.keras.layers.MaxPooling2D(2,2),
+    
+    tf.keras.layers.Flatten(),
+    tf.keras.layers.Dense(512, activation='relu'),
+    tf.keras.layers.Dense(2, activation='softmax')
+])
+
+Notice that our last layer (our classifier) consists of a Dense layer with 2 output units and a softmax activation function, as seen below:
+
+     tf.keras.layers.Dense(2, activation='softmax')
+
+Another popular approach when working with binary classification problems, is to use a classifier that consists of a Dense layer with 1 output unit and a sigmoid activation function, as seen below:
+
+     tf.keras.layers.Dense(1, activation='sigmoid')
+
+Either of these two options will work well in a binary classification problem. However, you should keep in mind, that if you decide to use a sigmoid activation function in your classifier, you will also have to change the loss parameter in the model.compile() method, from 'sparse_categorical_crossentropy' to 'binary_crossentropy', as shown below:
+
+model.compile(optimizer='adam', 
+              loss='binary_crossentropy',
+              metrics=['accuracy'])
+
+
+
+
+
+5.11 Validation
+---------------------------------------
+
+
+
+5.12 Image Augmentation
+---------------------------------------
+
+
+
+5.13 Dropout
+---------------------------------------
+
+
+
+5.14 Colab: Cats and Dogs Revisited
+---------------------------------------
+
+
+
+
+5.15 Other Techniques to Prevent Overfitting
+---------------------------------------
+In this lesson we saw three different techniques to prevent overfitting:
+
+* Early Stopping: In this method, we track the loss on the validation set during the training phase and use it to determine when to stop training such that the model is accurate but not overfitting.
+
+* Image Augmentation: Artificially boosting the number of images in our training set by applying random image transformations to the existing images in the training set.
+
+* Dropout: Removing a random selection of a fixed number of neurons in a neural network during training.
+
+However, these are not the only techniques available to prevent overfitting. You can read more about these and other techniques in the link below:
+
+Memorizing is not learning! — 6 tricks to prevent overfitting in machine learning
+
+https://hackernoon.com/memorizing-is-not-learning-6-tricks-to-prevent-overfitting-in-machine-learning-820b091dc42
+
+
+5.16 Exercise: Classify Images of Flowers
+---------------------------------------
+Now is your turn to apply everything you learned in this lesson to create your own CNN to classify images of flowers. We will provide you with a Colab to guide you through the creation and training of your CNN. In the Colab we will download the Flowers dataset for you and separate it into training and validation sets. We will also provide a separate Colab with our solution, so that you you can compare your answers to ours.
+
+We strongly suggest that you write all the code yourself and not to copy and paste the code from other Colabs. At the end of the Colab we encourage you to have fun and experiment with different model architectures and parameters to see if you can increase your accuracy.
+
+Have fun!
+
+Colab
+To access the Colab Notebook, login to your Google account and click on the link below:
+
+Exercise: Classify Images of Flowers
+
+https://colab.research.google.com/github/tensorflow/examples/blob/master/courses/udacity_intro_to_tensorflow_for_deep_learning/l05c03_exercise_flowers_with_data_augmentation.ipynb
+
+
+
+5.17 Solution: Classify Images of Flowers
+---------------------------------------
+
+
+
+5.18 Summary
+---------------------------------------
+In this lesson we learned how Convolutional Neural Networks work with color images and saw various techniques that we can use to avoid overfitting . The main key points of this lesson are:
+
+CNNs with RGB Images of Different Sizes:
+
+* Resizing: When working with images of different sizes, you must resize all the images to the same size so that they can be fed into a CNN.
+
+* Color Images: Computers interpret color images as 3D arrays.
+
+* RGB Image: Color image composed of 3 color channels: Red, Green, and Blue.
+
+* Convolutions: When working with RGB images we convolve each color channel with its own convolutional filter. Convolutions on each color channel are performed in the same way as with grayscale images, i.e. by performing element-wise multiplication of the convolutional filter (kernel) and a section of the input array. The result of each convolution is added up together with a bias value to get the convoluted output.
+
+* Max Pooling: When working with RGB images we perform max pooling on each color channel using the same window size and stride. Max pooling on each color channel is performed in the same way as with grayscale images, i.e. by selecting the max value in each window.
+
+* Validation Set: We use a validation set to check how the model is doing during the training phase. Validation sets can be used to perform Early Stopping to prevent overfitting and can also be used to help us compare different models and choose the best one.
+
+Methods to Prevent Overfitting:
+
+* Early Stopping: In this method, we track the loss on the validation set during the training phase and use it to determine when to stop training such that the model is accurate but not overfitting.
+
+* Image Augmentation: Artificially boosting the number of images in our training set by applying random image transformations to the existing images in the training set.
+
+* Dropout: Removing a random selection of a fixed number of neurons in a neural network during training.
+
+You also created and trained a Convolutional Neural Network to classify images of Dogs and Cats with and without Image Augmentation and Dropout. You were able to see that Image Augmentation and Dropout greatly reduces overfitting and improves accuracy. As an exercise, you were able to apply everything you learned in this lesson to create your own CNN to classify images of flowers.
 
 
 
