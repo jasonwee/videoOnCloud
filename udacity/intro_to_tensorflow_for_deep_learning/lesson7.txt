@@ -1,0 +1,17 @@
+date start : 23 december 2024
+
+
+7.1 Saving and Loading Models
+---------------------------------------
+
+
+7.2 Colab: Saving and Loading Models
+---------------------------------------
+https://colab.research.google.com/github/tensorflow/examples/blob/master/courses/udacity_intro_to_tensorflow_for_deep_learning/l07c01_saving_and_loading_models.ipynb
+
+7.3 Interview with Sebastian
+---------------------------------------
+
+
+
+
