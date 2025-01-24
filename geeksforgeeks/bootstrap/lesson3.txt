@@ -1,0 +1,184 @@
+date : 
+
+After the previous article, one should be familiar with the Grid System of Bootstrap. Now, we’ll learn about making Buttons, the all new Glyphicons and Tables. Lets get started.
+
+Beautiful Buttons:
+We can make Buttons in Bootstrap in two ways ( or more specifically, using two tags ). Firstly, with the  <a> tag and secondly by using the <button> tag.
+
+ <a href="https://www.geeksforgeeks.org"class="btn btn-danger">
+Button with'a'tag </a>
+<button type="button" class="btn btn-info" >Button with 'button' tag </button>
+
+We can have Buttons in different colours using Bootstrap. Each having a specific name like btn-default, btn-primary, btn-success, btn-info, btn-warning, btn-danger and btn-link. All of them represent a specific colour of button.
+
+We can also make buttons of different sizes ( by using btn-lg, btn-sm, btn-xs and btn-block attributes)
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+</head>
+<body>
+    <div class="container" style="color:green">
+     <h1>GeeksforGeeks</h1>
+    </div>
+<div class="container">
+  <h2>Button Styles</h2>
+  <button type="button" class="btn">Basic</button>
+  <button type="button" class="btn btn-default">Default</button>
+  <button type="button" class="btn btn-primary">Primary</button>
+  <button type="button" class="btn btn-success">Success</button>
+  <button type="button" class="btn btn-info">Info</button>
+  <button type="button" class="btn btn-warning">Warning</button>
+  <button type="button" class="btn btn-danger">Danger</button>
+</div>
+<br>
+  
+<div class="container">
+  <h4>Button with <a> and  <button> tag</h4>
+  <a href="https://ide.geeksforgeeks.org/tryit.php"class="btn btn-danger">
+    Button with <a> tag </a>
+  <button type="button" class="btn btn-success">Button with <button> tag </button>      
+</div>
+  
+</body>
+</html>
+
+
+Gorgeous Glyphicons:
+Glyphicons is a library of precisely prepared monochromatic icons and symbols, created with an emphasis to simplicity and easy orientation. We can use Glyphicons inside the span tag like this:
+
+<span class="Name of the glyphicon"> </span>
+Glyphicons can also be used within buttons like this:
+
+<a href="" class="btn btn-default"><span class="Name of the glyphicon"> </span> </a>
+One can see all the glyphicons available at http://getbootstrap.com/components for free. You can copy their names and paste within the quotes  class=”Paste here”. If you need more specific glyphicon you can visit http://glyphicons.com/ and buy them.
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+</head>
+<body>
+    <div class="container" style="color:green">
+     <h1>GeeksforGeeks</h1>
+       
+    </div>
+    <div class="container">
+        <p>Correct<span class="glyphicon glyphicon-ok"></span></p>
+        <p>Incorrect<span class="glyphicon glyphicon-remove"></span></p>
+        <h4>Glyphicon with buttons</h4>
+        <a href="https://www.geeksforgeeks.org"class="btn btn-primary">
+            <span class="glyphicon glyphicon-backward"></span> 
+        </a>
+        <a href="https://www.geeksforgeeks.org"class="btn btn-danger">
+            <span class="glyphicon glyphicon-pause"></span> 
+        </a>
+        <a href="https://www.geeksforgeeks.org"class="btn btn-success">
+            <span class="glyphicon glyphicon-play"></span> 
+        </a>
+        <a href="https://www.geeksforgeeks.org"class="btn btn-primary">
+            <span class="glyphicon glyphicon-forward"></span> 
+        </a>
+    </div>
+    <br>
+    <div class="container">
+        <a href="https://www.geeksforgeeks.org"class="btn btn-primary">
+        <span class="glyphicon glyphicon-thumbs-up"></span>Like Button 
+    </a>
+    </div>
+</body>
+</html>
+
+
+Tantalizing Tables:
+For creating tables, we need the <table> tag within which we use <tr> tag to define each row and <td>/<th> tag to represent actual data cell. In the table tag we can add different classes attributed to them which can make our table look better. Some of the table classes would be table-striped, table-bordered, table-hover, table-condensed, etc. You can find all the table classes here. The basic structure of the table is :
+
+<table class="table-striped">
+   <tr>
+      <td>First Column</td>
+      <td>Second Column</td>
+      <td>Third Column</td>
+   </tr>
+</table>
+
+You can also add different colours to each row of the table using the colour in the
+
+<tr> tag like <tr class=”danger”> </tr>
+
+Similarly, you can also add colours to each cell by including the class of colours in the <td> tag.
+Example:
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+</head>
+<body>
+    <div class="container" style="color:green">
+     <h1>GeeksforGeeks</h1>
+       
+    </div>
+    <div class="container">
+        <h4>Tables using Bootstrap</h4>
+        <hr><hr>
+        <div class="container">
+            <div class="bg bg-success">
+                <table class="table table-hover">
+                   <tr class="danger">
+                    <td>First Column</td>
+                    <td>Second Column</td>
+                    <td>Third Column</td>
+                   </tr>
+                   <tr class="info">
+                    <td>Python</td>
+                    <td>Java</td>
+                    <td>Swift</td>
+                   </tr>
+                   <tr class="danger">
+                    <td>HTML</td>
+                    <td>CSS</td>
+                    <td>JavaScript</td>
+                   </tr>
+                   <tr class="info">
+                    <td>MySql</td>
+                    <td>MongoDB</td>
+                    <td>SQL lit</td>
+                   </tr>
+                </table>
+            </div>
+       </div>
+   </div>
+</body>
+</html>
+
+
+
+Supported Browsers:
+
+Google Chrome
+Microsoft Edge
+Firefox
+Opera
+Safari
+You’ll learn more of Bootstrap stuff in the next article. Keep Learning!
+
+
