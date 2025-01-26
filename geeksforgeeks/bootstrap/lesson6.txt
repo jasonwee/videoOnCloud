@@ -1,0 +1,60 @@
+Progress Bar
+
+We all have seen a progress bar while executing some process in our computer. A progress bar shows how much of the process is completed and how much is left. You can add a progress bar in your web page using predefined bootstrap classes. Bootstrap has some predefined classes which can be easily used with HTML to style your webpages brilliantly and make your webpage responsive. Bootstrap provides many types of progress bars.
+We can add a progress bar to our webpage using progress class in a div class.
+Use this code in your HTML code to add a default progress bar.
+
+To create a progress bar:
+
+Use class progress inside a div class.
+Inside the already made div class, add another div tag with a class .progress-bar.
+Mention the progress of the bar under a style attribute using width as percentage. For eg- style=”width:50%
+
+<div class="progress">
+    <div class="progress-bar" role="progressbar" aria-valuenow="50"
+          aria-valuemin="0" aria-valuemax="100" style="width:50%">
+               <span>50% Complete</span>
+    </div>
+</div>
+
+To remove the label from the progress bar, remove the span tag from the code.
+Code for progress bar without label
+<div class="progress">
+    <div class="progress-bar" role="progressbar" aria-valuenow="50"
+    aria-valuemin="0" aria-valuemax="100" style="width:50%">
+    </div>
+</div>
+
+Coloured Progress Bar
+To add coloured progress bars, we use different classes for different colours.
+Green – .progress-bar-success
+Blue – .progress-bar-info
+Yellow- .progress-bar-warning
+Red – .progress-bar-danger
+Use these class inside the div element to colour your progress bar
+
+Code for Coloured Progress Bar
+
+<div class="progress">
+     <div class="progress-bar progress-bar-success" role="progressbar"
+aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" style="width:50%">
+     </div>
+ </div>
+
+
+Jumbotron is a big grey box used to indicate some text which require extra attention. Any text that seems to be important can be written inside a jumbotron to make it appear big and noticeable.
+To add a Jumbotron –
+
+Inside a div element, use a jumbotron class.
+After this div tag, you can add any text or information you want.
+CLose the div element with class jumbotron.
+Code for a jumbotron
+<div class="container">
+  <div class="jumbotron">
+    <h1>Jumbotron</h1>
+    <p>This is a Jumbotron.</p>
+  </div>
+</div>
+
+
+
