@@ -1,0 +1,138 @@
+Alerts
+
+We often see certain alerts on some websites before or after completing an action. These alert messages are highlighted texts that are important to take in consideration while performing a process. Bootstrap allows us to show these alert messages on our website using predefined classes.
+How to add alert messages using bootstrap classes-
+
+Inside a div element,add an alert class.
+Use the following classes to style the colour of the message box
+Green – alert-success
+Blue – alert-info
+Yellow –alert-warning
+Red – alert-danger
+Write the text you want to write for the alert message and close the div element.
+
+
+<div class="alert alert-success">
+  <strong>Success!</strong>
+</div>
+  
+<div class="alert alert-info">
+  <strong>Info!</strong>
+</div>
+  
+<div class="alert alert-warning">
+  <strong>Warning!</strong>
+</div>
+  
+<div class="alert alert-danger">
+  <strong>Danger!</strong>
+</div>
+
+
+Dismissable Alerts : To close an alert message, you need to add a x icon in your alert. To add the icon include a class alert-dismissable to your div element. Then add a class close and data-dismiss=”alert” to a link or a button like this :
+
+<div class="alert alert-success alert-dismissable">
+<a href="#" class="close" c aria-label="close">×</a>
+  <strong>Success!</strong>
+</div>
+  
+<div class="alert alert-info alert-dismissable">
+<a href="#" class="close" data-dismiss="alert" aria-label="close">×</a>
+  <strong>Info!</strong>
+</div>
+  
+<div class="alert alert-warning alert-dismissable">
+<a href="#" class="close" data-dismiss="alert" aria-label="close">×</a>
+  <strong>Warning!</strong>
+</div>
+  
+<div class="alert alert-danger alert-dismissable">
+<a href="#" class="close" data-dismiss="alert" aria-label="close">×</a>
+  <strong>Danger!</strong>
+</div>
+
+
+Alert links : To add a link to your alert message , just add a alert-link class inside the ‘a’ element. This will create a link in the same font colour as that of the alert message box. Then use the ‘a’ tag to add a link to the text like this:
+
+<div class="alert alert-success">
+  <strong>Success!</strong>
+<a href="#" class="alert-link">read this message</a>
+</div>
+  
+<div class="alert alert-info alert-dismissable">
+  <strong>Info!</strong>
+<a href="#" class="alert-link">read this message</a>
+</div>
+  
+<div class="alert alert-warning alert-dismissable">
+  <strong>Warning!</strong>
+<a href="#" class="alert-link">read this message</a>
+</div>
+  
+<div class="alert alert-danger alert-dismissable">
+  <strong>Danger!</strong>
+<a href="#" class="alert-link">read this message</a>
+</div>
+
+A well class is simply used to add a grey box around some text with rounded corners and some padding.
+To add a well in your webpage just include the well class in a div element, then write the text you want to keep in the well and close the div tag.
+
+<div class="well">This is a Well</div>
+
+
+Well Size : The default size of the well is medium but we can increase or decrease the size of the well using class well-lg and well-sm respectively.
+
+<div class="well well-lg">This is a large Well</div>
+<div class="well well-sm">This is a small Well</div>
+
+We all have seen a website which has lots of webpages or when we search on google there are a lot of search results in different webpages which are numbered for 1. This feature can be easily added in a website using bootstrap.
+The predefined class used for pagination is .pagination
+To add pagination to your website, include pagination class inside a ul tag like this-
+
+<ul class="pagination">
+  <li><a href="#">1</a></li>
+  <li><a href="#">2</a></li>
+  <li><a href="#">3</a></li>
+  <li><a href="#">4</a></li>
+  <li><a href="#">5</a></li>
+</ul> 
+
+Active Page : To display the active page , use class active like this-
+
+<ul class="pagination">
+  <li><a href="#">1</a></li>
+  <li class="active"><a href="#">2</a></li>
+  <li><a href="#">3</a></li>
+  <li><a href="#">4</a></li>
+  <li><a href="#">5</a></li>
+</ul> 
+
+Disabled Page : To disable a page to go to a certain link , use class disabled like this-
+
+
+<ul class="pagination">
+  <li><a href="#">1</a></li>
+  <li class="disabled"><a href="#">2</a></li>
+  <li><a href="#">3</a></li>
+  <li><a href="#">4</a></li>
+  <li><a href="#">5</a></li>
+</ul> 
+
+
+We all have seen ‘previous’ and ‘next’ buttons on a webpage to navigate to other pages. Bootstrap provides a predefined class to implement this pager efficiently. A pager provides links to move to the next or previous page.
+To add a pager to your webpage, add a class ‘pager’ to a div element and provide the links for previous and next page like this-
+
+<ul class = "pager">
+   <li><a href = "#">Previous</a></li>
+   <li><a href = "#">Next</a></li>
+</ul>
+
+To align these navigation buttons to the side of the webpage , use class ‘previous’ and ‘next’ with the links like this-
+
+<ul class="pager">
+  <li class="previous"><a href="#">Previous</a></li>
+  <li class="next"><a href="#">Next</a></li>
+</ul> 
+
+
+
