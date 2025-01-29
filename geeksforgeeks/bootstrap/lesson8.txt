@@ -1,0 +1,104 @@
+Badges
+
+We all have seen some numerical indicators beside some links in various websites. These are called badges. These badges tells how many items are available or associated with the link. 
+To add a badges to your webpage, add a class .badge to a span element like this- 
+
+
+<a href="#">Messages <span class="badge">2</span></a><br>
+<a href="#">Drafts <span class="badge">3</span></a><br>
+<a href="#">Comments <span class="badge">4</span></a>
+
+
+Badges inside buttons 
+To insert badges inside buttons, add a class .badge to a button element like this- 
+
+<button type="button" class="btn btn-primary">Messages
+<span class="badge">2</span></button>
+
+
+Labels
+
+We all have seen some additional information beside some links in various websites. These are called labels. These labels tells additional information about the link or text. 
+To add a labels to your webpage, add a class .label to a span element like this- 
+
+Use the following classes to style the colour of the label 
+Grey – label-default 
+Green – label-success 
+Blue – label-info 
+Yellow –label-warning 
+Red – label-danger
+
+
+<span class="label label-default">Grey Label</span>
+<span class="label label-success">Green Label</span>
+<span class="label label-info">Blue Label</span>
+<span class="label label-warning">Yellow Label</span>
+<span class="label label-danger">Red Label</span>
+
+
+Panels
+
+We all have seen a box around some text or any information in various websites. These are called panels. These panels are bordered box with some padding which can be easily added around some text using bootstrap classes. 
+The content we need to write inside the panel is written in a div element with a class.panel-body 
+To add a panels to your webpage, add a class .panel to a div element like this- 
+
+Use the following classes to style the colour of the label 
+Grey – panel-default 
+Green – panel-success 
+Blue – panel-info 
+Yellow –panel-warning 
+Red – panel-danger
+
+<div class="panel panel-default">
+<div class="panel-body">Panel</div>
+</div>
+
+
+
+Coloured Panels 
+
+<div class="panel panel-default">
+<div class="panel-body">Panel</div>
+</div>
+
+<div class="panel panel-primary">
+<div class="panel-body">Panel</div>
+</div>
+
+<div class="panel panel-success">
+<div class="panel-body">Green Panel</div>
+</div>
+
+<div class="panel panel-info">
+<div class="panel-body">Blue Panel</div>
+</div>
+
+<div class="panel panel-warning">
+<div class="panel-body">Yellow Panel</div>
+</div>
+
+<div class="panel panel-danger">
+<div class="panel-body">Red Panel</div>
+</div>
+
+
+Page Header
+
+Page header allows us to write a heading on our webpage with proper spacing around it so that it can be distinguished from other text on the webpage. 
+To add a pageheader to your webpage, add a class .page-header to a div element like this-
+
+<div class = "page-header">
+	<h1>
+	Hi !
+</h1>
+</div>
+
+<p>My name is Ayush.</p>
+
+
+Note the difference if we don’t use page-header class 
+
+
+
+
+
