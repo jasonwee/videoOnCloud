@@ -1,0 +1,183 @@
+In this article, we would be discussing the tooltip plugin provided by bootstrap. Tooltip is quite useful for showing the description of different elements in the webpage. Tooltip can be invoked on any element in a webpage.
+Tooltips on bootstrap depends on the 3rd party library Tether for positioning.
+
+Hence, we need to include tether.min.js before bootstrap.js
+
+Now let’s see an example of a tooltip.
+
+Now we will examine the code which generates the above tooltip
+
+<!-- Tooltip on a header -->
+<h3 data-toggle="tooltip" title="Hey! Tooltip here!">
+    Hover Over me to see a tooltip
+</h3>
+
+In order to introduce tooltip, we add the data-toggle attribute to an element and we need to initialize the tooltip with jQuery.
+
+jQuery code for initializing a tooltip:
+
+<script>
+// jQuery code for initializing a tooltip
+$(document).ready(function ()
+{
+	// jQuery Attribute value selector to
+	// select the specified element and
+	// call the tooltip method on it
+	$('[data-toggle="tooltip"]').tooltip();
+});
+</script>
+
+
+We can even customize this tool-tip according to our requirement, let’s explore different ways in which we can customize the tool-tip.
+
+Placement of a tool tip : We can place a tool tip at top, bottom, left and right of an element.
+Example:
+
+<!-- Tooltips on simple buttons -->
+<!-- Placement of tooltips -->
+<div class="row" style="margin:30px">
+	<div class="col-2">
+		<button type="button" class="btn btn-info"
+		data-toggle="tooltip" data-placement="top"
+		title="Information Button">
+			Information
+		</button>
+	</div>
+	<div class="col-2">
+		<button type="button" class="btn btn-success"
+		data-toggle="tooltip" data-placement="right"
+		title="Success Button">
+			Success
+		</button>
+	</div>
+	
+	<div class="col-2">
+		<button type="button" class="btn btn-danger"
+		data-toggle="tooltip" data-placement="bottom"
+		title="Danger button">
+			Danger
+		</button>
+	</div>
+	<div class="col-2">
+		<button type="button" class="btn btn-warning"
+		data-toggle="tooltip" data-placement="left"
+		title="Warning button">
+			Warning
+		</button>
+	</div>
+</div>
+
+
+In the above code we have used the data-placement attribute in order to set the placement of tool tip, we have also used row and col classes provided by bootstrap grid system
+
+Html within a tooltip: We can add html as a content of a tootip.
+Example:
+
+
+Code for the above example:
+
+<!-- Tooltip with html -->
+<div class="row" style="margin:40px">
+	<button type="button" class="btn btn-warning"
+	data-toggle="tooltip" data-placement="left"
+	data-html="true"
+	title="<h4>Hey!</h4><p>Tooltip with html</p>">
+		Warning
+	</button>
+</div>
+
+In the above code we have used the data-html attribute in order to add an html within a tool tip.
+
+Offset for a Tooltip: We can set the offset of the tool-tip relative to the target.
+Example:
+
+<div class="row" style="margin:40px">
+	<button type="button" class="btn btn-warning"
+	data-toggle="tooltip" data-placement="right"
+	data-offset ="20 0"
+	title="Don't click on Warning Button">
+		Warning
+	</button>
+</div>
+
+
+In the above code we have used data-offset attribute to set the attribute
+
+Note : Output of all the code below are non static hence, the output is not shown here.
+
+Animation on a tooltip:
+By default an animation is added to the tooltip, i.e it fades in and fades out we can remove this animation.
+
+<!-- Removing animation from the tooltip -->
+<div class="row" style="margin:40px">
+    <button type="button" class="btn btn-warning" 
+     data-toggle="tooltip" data-placement="right" 
+     data-animation="false" 
+     title="Don't click on Warning Button">
+         Warning
+    </button>
+</div>
+
+In the above code we have used the data-animation attribute and it is set to false in order to remove animation from the tooltip
+
+Delay in appearance and disappearance: We could set a time interval for appearance and disappearance of a tooltip.
+We can set a delay in two ways:
+We set same delay time for showing and hiding
+Java
+
+<!-- Delay in tooltip -->
+<div class="row" style="margin:40px">
+    <button type="button" class="btn btn-warning" 
+     data-toggle="tooltip" data-placement="right" 
+     data-delay="1000"
+     title="Don't click on Warning Button">
+         Warning
+    </button>
+</div>
+
+In the above code we have used the data-delay attribute to delay the tool-tip number assigned to this attribute is in ms i.e tool tip will be delayed for 1000 ms.
+
+We can add different delay time intervals for showing and hiding of tool-tip.
+Html code:
+
+<!-- Delay in tooltip -->
+<div class="row" style="margin:40px">
+	<button type="button" class="btn btn-warning"
+	data-toggle="tooltip" data-placement="right"
+	title="Don't click on Warning Button">
+		Warning
+	</button>
+</div>
+
+
+There is no changes in the html code.
+jQuery code:
+
+<script>
+	$(document).ready(function ()
+	{
+		// jQuery Attribute value selector
+		$('[data-toggle="tooltip"]').tooltip({
+			delay: { "show": 1000, "hide": 2000 }
+		});
+	});
+</script>
+
+
+Triggering of the tool-tip: We can add an event which will trigger a tooltip, by default a tooltip is triggered on “hover and focus“, various events that is allowed are,- click, hover, focus and manual.
+
+<!-- triggering the tooltip -->
+<div class="row" style="margin:40px">
+	<button type="button" class="btn btn-warning"
+	data-toggle="tooltip" data-placement="right"
+	data-trigger="click"
+	title="Don't click on Warning Button">
+		Warning
+	</button>
+</div>
+
+In the above code we have used the data-trigger attribute and value is set to be click, which means when user clicks on the element the tool-tip will appear
+
+For different elements of bootstarp refer to :Bootstrap
+Reference:
+https://v4-alpha.getbootstrap.com/components/tooltips/
