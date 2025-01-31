@@ -1,0 +1,86 @@
+Bootstrap is a free and open-source collection of CSS and JavaScript/jQuery code used for creating dynamic websites layout and web applications. Bootstrap is one of the most popular front-end frameworks which has really a nice set of predefined CSS codes. Bootstrap uses different types of classes to make responsive websites. Bootstrap 5 was officially released on 16 June 2020 after several months of redefining its features.
+
+Some important changes in Bootstrap 5: 
+
+1. Updated official documentation: The docs homepage of v4.5.0 has an updated look and there are some improvements in the rest of the official docs too. Bootstrap docs have some nice padding around the corners to make it more readable and highlight its content.
+
+2. jQuery is removed completely: Earlier, bootstrap components like modals, tooltips, popovers etc, were dependent on jQuery and popper.js. After the release of the alpha 5 version, Bootstrap no longer depends on jQuery. While jQuery has been used in Bootstrap for more than 8 years, many developers had this issue that jQuery brought uneven access to complex JavaScript behaviors to them. The whole process made possible by their JavaScript maintainer https://github.com/johann-s
+
+3. Switch to Vanilla JavaScript: JavaScript is the programming language of the web. Most of the modern websites are powered by JavaScript and all modern web browsers on phones, tablets, consoles, desktops include JavaScript Interpreters. One of the major reasons of dropping jQuery was to redefine the framework completely on modern JavaScript standards.
+
+4. Dropped support of Internet Explorer 10 and 11: Internet Explorer was released in 1995 by Microsoft. As of today, Internet Explorer is no longer relevant with popular browsers like Chrome, Firefox and, Microsoft Edge which is built on chromium. When bootstrap decided to refine their framework purely on Vanilla JavaScript, they dropped the support of IE which is not compatible with modern JavaScript standards.
+
+5. Responsive Fonts: Bootstrap has introduced responsive font sizes which will automatically resize the typography element according to the viewport size through the RFS Engine. RFS engine was developed to resize font sizes. It provides the facility to resize the CSS properties like “margin”, “padding”, “border-radius”, “box-shadow” by units.
+
+6. Removed Cards: The new grid system of Bootstrap provides more responsive control of the layout. Hence, they removed unnecessary extra classes which can be designed by the new grid layout. The older versions of Bootstrap still support card system.
+
+<div class="card-deck">
+  <div class="card">
+    <img class="card-img-top" src="..." alt="Card image cap">
+    <div class="card-body">
+      <h5 class="card-title">Card title</h5>
+      <p class="card-text">Sample Card text</p>
+ 
+      <p class="card-text">
+        <small class="text-muted">Sample paragraph</small>
+      </p>
+ 
+    </div>
+  </div>
+  <div class="card">
+    <img class="card-img-top" src="..." alt="Card image cap">
+    <div class="card-body">
+      <h5 class="card-title">Card title</h5>
+      <p class="card-text">Sample Card text</p>
+ 
+      <p class="card-text">
+        <small class="text-muted">Sample paragraph</small>
+      </p>
+ 
+    </div>
+  </div>
+  <div class="card">
+    <img class="card-img-top" src="..." alt="Card image cap">
+    <div class="card-body">
+      <h5 class="card-title">Card title</h5>
+      <p class="card-text">Sample Card text</p>
+ 
+      <p class="card-text">
+        <small class="text-muted">Sample paragraph</small>
+      </p>
+ 
+    </div>
+  </div>
+</div>
+
+7. Updated Forms: Bootstrap 5 has introduced a section completely dedicated to Bootstrap forms with improved documentation and components. It now has a single set of form controls and redesign existing elements instead of generating new elements through pseudo-elements. Bootstrap forms give a better look now.
+
+
+<div class="form-check">
+  <input class="form-check-input"
+    type="checkbox" value=""
+    id="flexCheckDefault">
+  <label class="form-check-label"
+    for="flexCheckDefault">
+    Default checkbox
+  </label>
+</div>
+ 
+<div class="form-check">
+  <input class="form-check-input"
+    type="radio" name="flexRadioDefault"
+    id="flexRadioDefault1">
+  <label class="form-check-label"
+    for="flexRadioDefault1">
+    Default radio
+  </label>
+</div>
+ 
+<div class="form-check form-switch">
+  <input class="form-check-input" type="checkbox"
+    id="flexSwitchCheckDefault">
+  <label class="form-check-label"
+    for="flexSwitchCheckDefault">
+    Default switch checkbox input
+  </label>
+</div>
