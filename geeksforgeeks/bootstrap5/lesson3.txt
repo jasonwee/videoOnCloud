@@ -1,0 +1,402 @@
+Bootstrap5 | Progress
+
+Bootstrap 5 is the latest major release by Bootstrap in which they have revamped the UI and made various changes. A progress bar is used to display the progress of a process on a computer. A progress bar displays how much of the process is completed and how much is left. You can add a progress bar on a web page using predefined bootstrap classes. Bootstrap provides many types of progress bars. Progress components are built with two HTML elements which uses CSS to set the width and a few attributes. It doesn’t use the HTML5 <progress> element which makes it possible to stack progress bars, animate them, and place text labels over them. It uses the .progress as a wrapper to indicate the max value of the progress bar and the inner .progress-bar to indicate the progress so far.
+
+<!DOCTYPE html>
+<html>
+<head>
+	<!-- Load Bootstrap -->
+	<link rel="stylesheet" href=
+"https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css"
+		integrity=
+"sha384-r4NyP46KrjDleawBgD5tp8Y7UzmLA05oM1iAEQ17CSuDqnUK2+k9luXQOfXJCJ4I"
+		crossorigin="anonymous">
+	<script src=
+"https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+		integrity=
+"sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+		crossorigin="anonymous">
+	</script>
+	<script src=
+"https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/js/bootstrap.min.js"
+		integrity=
+"sha384-oesi62hOLfzrys4LxRF63OJCXdXDipiYWBnvTl9Y9/TRlw5xlKIEHpNyvvDShgf/"
+		crossorigin="anonymous">
+	</script>
+</head>
+<body style="text-align: center;">
+	<div class="container mt-3" style="width: 700px;">
+		<h1 style="color: green;">
+			GeeksforGeeks
+		</h1>
+		<div class="progress">
+			<div class="progress-bar"
+				style="width: 80%;">
+			</div>
+		</div>
+	</div>
+</body>
+</html>
+
+
+Height of Progress Bar: We can use CSS property to change the height of progress bar. The default height of progress is 16px. The height of progress and progress-bar container must be the same. 
+
+Example: 
+
+<!DOCTYPE html>
+<html>
+<head>
+	<!-- Load Bootstrap -->
+	<link rel="stylesheet" href=
+"https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css"
+		integrity=
+"sha384-r4NyP46KrjDleawBgD5tp8Y7UzmLA05oM1iAEQ17CSuDqnUK2+k9luXQOfXJCJ4I"
+		crossorigin="anonymous">
+	<script src=
+"https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+		integrity=
+"sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+		crossorigin="anonymous">
+	</script>
+	<script src=
+"https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/js/bootstrap.min.js"
+		integrity=
+"sha384-oesi62hOLfzrys4LxRF63OJCXdXDipiYWBnvTl9Y9/TRlw5xlKIEHpNyvvDShgf/"
+		crossorigin="anonymous">
+	</script>
+</head>
+<body style="text-align: center;">
+	<div class="container mt-3" style="width: 700px;">
+		<h1 style="color: green;">
+			GeeksforGeeks
+		</h1>
+		<div class="progress" style="height: 30px;">
+			<div class="progress-bar"
+				style="width: 80%; height: 30px;">
+			</div>
+		</div>
+	</div>
+</body>
+</html>
+
+
+Labeled Progress Bar: The labeled progress bar is used to display the text inside the progress bar to show the task completion percentage. 
+
+Example: 
+
+<!DOCTYPE html>
+<html>
+<head>
+	<!-- Load Bootstrap -->
+	<link rel="stylesheet" href=
+"https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css"
+		integrity=
+"sha384-r4NyP46KrjDleawBgD5tp8Y7UzmLA05oM1iAEQ17CSuDqnUK2+k9luXQOfXJCJ4I"
+		crossorigin="anonymous">
+	<script src=
+"https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+		integrity=
+"sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+		crossorigin="anonymous">
+		</script>
+	<script src=
+"https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/js/bootstrap.min.js"
+		integrity=
+"sha384-oesi62hOLfzrys4LxRF63OJCXdXDipiYWBnvTl9Y9/TRlw5xlKIEHpNyvvDShgf/"
+		crossorigin="anonymous">
+		</script>
+</head>
+<body style="text-align: center;">
+	<div class="container mt-3" style="width: 700px;">
+		<h1 style="color: green;">
+			GeeksforGeeks
+		</h1>
+		<div class="progress">
+			<div class="progress-bar" style="width: 75%;">
+				75%
+			</div>
+		</div>
+	</div>
+</body>
+</html>
+
+
+Colored Progress Bars: Use Bootstrap 4 contextual background classes to set the color of progress bar. The default color of the progress bar is blue. 
+Example: 
+
+<!DOCTYPE html>
+<html>
+<head>
+	<!-- Load Bootstrap -->
+	<link rel="stylesheet" href=
+"https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css"
+		integrity=
+"sha384-r4NyP46KrjDleawBgD5tp8Y7UzmLA05oM1iAEQ17CSuDqnUK2+k9luXQOfXJCJ4I"
+		crossorigin="anonymous">
+	<script src=
+"https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+		integrity=
+"sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+		crossorigin="anonymous">
+	</script>
+	<script src=
+"https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/js/bootstrap.min.js"
+		integrity=
+"sha384-oesi62hOLfzrys4LxRF63OJCXdXDipiYWBnvTl9Y9/TRlw5xlKIEHpNyvvDShgf/"
+		crossorigin="anonymous">
+	</script>
+</head>
+<body style="text-align: center;">
+	<div class="container mt-3"
+		style="width: 700px;">
+		<h1 style="color: green;">
+			GeeksforGeeks
+		</h1>
+		<div class="progress">
+			<div class="progress-bar"
+				style="width: 50%;">
+				50%
+			</div>
+		</div>
+		<br/>
+		<div class="progress">
+			<div class="progress-bar bg-success"
+				style="width: 60%;">
+				60%
+			</div>
+		</div>
+		<br/>
+		<div class="progress">
+			<div class="progress-bar bg-warning"
+				style="width: 80%;">
+				80%
+			</div>
+		</div>
+		<br/>
+		<div class="progress">
+			<div class="progress-bar bg-danger"
+				style="width: 90%;">
+				90%
+			</div>
+		</div>
+		<br/>
+		<div class="progress">
+			<div class="progress-bar bg-info"
+				style="width: 100%;">
+				100%
+			</div>
+		</div>
+		<br/>
+	</div>
+</body>
+</html>
+
+
+Striped Progress Bars: The .progress-bar-striped class is used to add stripes to the progress bars. Use the combination of .progress-bar and .progress-bar-striped classes to create striped progress bar. Use Bootstrap 4 contextual background classes to set the color of progress bar. 
+Example: 
+
+<!DOCTYPE html>
+<html>
+<head>
+	<!-- Load Bootstrap -->
+	<link rel="stylesheet" href=
+"https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css"
+		integrity=
+"sha384-r4NyP46KrjDleawBgD5tp8Y7UzmLA05oM1iAEQ17CSuDqnUK2+k9luXQOfXJCJ4I"
+		crossorigin="anonymous">
+	<script src=
+"https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+		integrity=
+"sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+		crossorigin="anonymous">
+	</script>
+	<script src=
+"https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/js/bootstrap.min.js"
+		integrity=
+"sha384-oesi62hOLfzrys4LxRF63OJCXdXDipiYWBnvTl9Y9/TRlw5xlKIEHpNyvvDShgf/"
+		crossorigin="anonymous">
+	</script>
+</head>
+<body style="text-align: center;">
+	<div class="container mt-3" style="width: 700px;">
+		<h1 style="color: green;">
+			GeeksforGeeks
+		</h1>
+		<div class="progress">
+			<div class="progress-bar progress-bar-striped"
+				style="width: 60%;">
+				60%
+			</div>
+		</div>
+		<br/>
+		<div class="progress">
+			<div class="progress-bar bg-success progress-bar-striped"
+				style="width: 70%;">
+				70%
+			</div>
+		</div>
+		<br/>
+		<div class="progress">
+			<div class="progress-bar bg-warning progress-bar-striped"
+				style="width: 80%;">
+				80%
+			</div>
+		</div>
+		<br/>
+		<div class="progress">
+			<div class="progress-bar bg-danger progress-bar-striped"
+				style="width: 90%;">
+				90%
+			</div>
+		</div>
+		<br/>
+		<div class="progress">
+			<div class="progress-bar bg-info progress-bar-striped"
+				style="width: 100%;">
+				100%
+			</div>
+		</div>
+		<br/>
+	</div>
+</body>
+</html>
+
+
+Animated Progress Bar: The .progress-bar-animated class is used to create an animated progress bar. Use the combination of .progress-bar, .progress-bar-striped and .progress-bar-animated to create an animated progress bar. 
+
+Example: 
+
+<!DOCTYPE html>
+<html>
+<head>
+	<!-- Load Bootstrap -->
+	<link rel="stylesheet" href=
+"https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css"
+		integrity=
+"sha384-r4NyP46KrjDleawBgD5tp8Y7UzmLA05oM1iAEQ17CSuDqnUK2+k9luXQOfXJCJ4I"
+		crossorigin="anonymous">
+	<script src=
+"https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+		integrity=
+"sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+		crossorigin="anonymous">
+	</script>
+	<script src=
+"https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/js/bootstrap.min.js"
+		integrity=
+"sha384-oesi62hOLfzrys4LxRF63OJCXdXDipiYWBnvTl9Y9/TRlw5xlKIEHpNyvvDShgf/"
+		crossorigin="anonymous">
+	</script>
+</head>
+<body style="text-align: center;">
+	<div class="container mt-3" style="width: 700px;">
+		<h1 style="color: green;">
+			GeeksforGeeks
+		</h1>
+		<div class="progress">
+			<div class="progress-bar
+				progress-bar-striped
+				progress-bar-animated"
+				style="width: 60%;">
+				60%
+			</div>
+		</div>
+		<br/>
+		<div class="progress">
+			<div class="progress-bar bg-success
+				progress-bar-striped
+				progress-bar-animated"
+				style="width: 70%;">
+				70%
+			</div>
+		</div>
+		<br/>
+		<div class="progress">
+			<div class="progress-bar bg-warning
+				progress-bar-striped
+				progress-bar-animated"
+				style="width: 80%;">
+				80%
+			</div>
+		</div>
+		<br />
+		<div class="progress">
+			<div class="progress-bar bg-danger
+				progress-bar-striped
+				progress-bar-animated"
+				style="width: 90%;">
+				90%
+			</div>
+		</div>
+		<br/>
+		<div class="progress">
+			<div class="progress-bar
+				bg-info progress-bar-striped
+				progress-bar-animated"
+				style="width: 100%;">
+				100%
+			</div>
+		</div>
+		<br/>
+	</div>
+</body>
+</html>
+
+
+Multiple Progress Bars: Multiple progress bars can be stacked to display different colored progress bars. 
+
+Example: 
+
+<!DOCTYPE html>
+<html>
+<head>
+	<!-- Load Bootstrap -->
+	<link rel="stylesheet" href=
+"https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css"
+		integrity=
+"sha384-r4NyP46KrjDleawBgD5tp8Y7UzmLA05oM1iAEQ17CSuDqnUK2+k9luXQOfXJCJ4I"
+		crossorigin="anonymous">
+	<script src=
+"https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+		integrity=
+"sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+		crossorigin="anonymous">
+	</script>
+	<script src=
+"https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/js/bootstrap.min.js"
+		integrity=
+"sha384-oesi62hOLfzrys4LxRF63OJCXdXDipiYWBnvTl9Y9/TRlw5xlKIEHpNyvvDShgf/"
+		crossorigin="anonymous">
+	</script>
+</head>
+<body style="text-align: center;">
+	<div class="container mt-3"
+		style="width: 700px;">
+		<h1 style="color: green;">
+			GeeksforGeeks
+		</h1>
+		<div class="progress">
+			<div class="progress-bar"
+				style="width: 50%;">
+				50%
+			</div>
+			<div class="progress-bar bg-success"
+				style="width: 25%;">
+				25%
+			</div>
+			<div class="progress-bar bg-warning"
+				style="width: 10%;">
+				10%
+			</div>
+			<div class="progress-bar bg-danger"
+				style="width: 5%;">
+				5%
+			</div>
+		</div>
+	</div>
+</body>
+</html>
+
+
+
+
