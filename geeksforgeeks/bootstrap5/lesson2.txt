@@ -1,0 +1,110 @@
+Bootstrap 5 alpha | Icons Library
+
+For the very first time, Bootstrap has its own icon library, custom-designed and built for bootstrap components and documentation.
+
+Bootstrap Icons are designed to figure with Bootstrap components, from form controls to navigation. Bootstrap Icons are SVGs, in order that they scale quickly and simply and may be styled with CSS. While they’re built for Bootstrap, they’ll add any project. They’re open-sourced under the MIT license, so you’re free to download, use, and customize as you need.
+
+How to Install:
+
+Bootstrap icons are published to npm, but they can also be downloaded if needed.
+
+Install Bootstrap Icons via command line with npm.
+
+npm install bootstrap-icons
+
+Usage:
+
+Bootstrap Icons are SVGs. So, you can include in your HTML code in various ways on the basis of the type of your project that you are working on.
+
+Copy paste SVGs as Embedded HTML
+SVG Sprite with <use> element
+As an External Image
+
+Note: Bootstrap Icons include a width and height of “1 em” by default to allow for easy resizing via font-size.
+
+Various ways of usage:
+Copy paste SVGs as Embedded HTML : Embed your icons within the HTML of your page (as opposed to an external image file). Here we’ve used a custom width and height.
+
+<svg class="bi bi-chevron-right "
+	width="64" height="64"
+	viewBox="0 0 20 20" fill="currentColor"
+	xmlns=
+"http://www.w3.org/2000/svg">
+<path fill-rule="evenodd"
+		d=
+"M6.646 3.646a.5.5 0 01.708 0l6 6a.5.5 0 010
+.708l-6 6a.5.5 0 01-.708-.708L12.293 10 6.646
+4.354a.5.5 0 010-.708z"/></svg>
+
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>Bootstrap Cards</title>
+
+		<meta charset="utf-8" />
+		<meta name="viewport"
+			content="width=device-width,
+					initial-scale=1" />
+
+		<link rel="stylesheet"
+			href=
+"https://maxcdn.bootstrapcdn.com/bootstrap/v5.0.0/css/bootstrap.min.css" />
+	</head>
+
+	<body>
+		<svg class="bi bi-chevron-right"
+			width="64" height="64"
+			viewBox="0 0 20 20"
+			fill="currentColor"
+			xmlns="http://www.w3.org/2000/svg">
+			
+			<path fill-rule="evenodd"
+				d=
+"M6.646 3.646a.5.5 0 01.708 0l6 6a.5.5 0 010
+.708l-6 6a.5.5 0 01-.708-.708L12.293
+10 6.646 4.354a.5.5 0 010-.708z" />
+		</svg>
+	</body>
+</html>
+
+SVG Sprite with <use> element: Use the SVG sprite to insert any icon through the <use> element. Use the icon’s filename as the fragment identifier (e.g., heart is #heart). SVG sprites allow you to reference an external file similar to an <img> element, but with the power of currentColor for easy theming.
+
+<svg class="bi" width="40"
+	height="40" fill="currentColor">
+<use xlink:href=
+"bootstrap-icons.svg#heart-fill"/>
+</svg>
+<svg class="bi" width="40"
+	height="40" fill="currentColor">
+<use xlink:href=
+"bootstrap-icons.svg#toggles"/>
+</svg>
+<svg class="bi" width="40"
+	height="40" fill="currentColor">
+<use xlink:href=
+"bootstrap-icons.svg#shop"/>
+</svg>
+
+
+As an External Image: Copy the Bootstrap icons SVGs to any directory of your choice and reference them like normal images with the <img> tag.
+
+<img src="/Icons/img/bootstrap.svg"
+	alt="" width="40"
+	height="40" title="Icons">
+
+
+Styling of Icons:
+For styling of Icons, consider them same as text. Color can also be changed by using a .text-* class or custom CSS.
+
+Example:
+
+<svg class="bi bi-alert-triangle text-success "
+	width="40" height="40"
+	viewBox="0 0 20 20"
+	fill="currentColor"
+	xmlns="http://www.w3.org/2000/svg">
+.....
+</svg>
+
+
+
