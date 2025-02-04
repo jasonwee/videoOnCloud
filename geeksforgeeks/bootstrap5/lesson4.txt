@@ -1,0 +1,378 @@
+Bootstrap 5 is the latest major release by Bootstrap in which they have revamped the UI and made various changes. Buttons are the components provided to create various buttons. Bootstrap 5 includes several predefined button styles, each serving its own purpose.
+
+Syntax:
+
+<button class="badge bg-type"> Button Text <button>
+Types: Following are the nine types of buttons available in Bootstrap 5:
+
+ 
+ Example 1: This example uses show the working of first five types of buttons in Bootstrap 5.
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>
+		Bootstrap 5 | Buttons
+	</title>
+	<!-- Load Bootstrap -->
+	<link rel="stylesheet" href=
+"https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css"
+		integrity=
+"sha384-r4NyP46KrjDleawBgD5tp8Y7UzmLA05oM1iAEQ17CSuDqnUK2+k9luXQOfXJCJ4I"
+		crossorigin="anonymous">
+</head>
+<body>
+	<div style="text-align: center;width: 600px;">
+		<h1 style="color: green;">
+			GeeksforGeeks
+		</h1>
+	</div>
+	<div style="width: 600px; height: 200px;
+		margin:20px;text-align: center;">
+		<button type="button" class="btn btn-primary">
+			Primary
+		</button>
+		<button type="button" class="btn btn-secondary">
+			Secondary
+		</button>
+		<button type="button" class="btn btn-success">
+			Success
+		</button>
+		<button type="button" class="btn btn-danger">
+			Danger
+		</button>
+		<button type="button" class="btn btn-warning">
+			Warning
+		</button>
+	</div>
+</body>
+</html>
+
+
+Example 2: This example uses show the working of last four types of buttons in Bootstrap 5.
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>
+		Bootstrap 5 | Buttons
+	</title>
+
+	<!-- Load Bootstrap -->
+	<link rel="stylesheet" href=
+"https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css"
+		integrity=
+"sha384-r4NyP46KrjDleawBgD5tp8Y7UzmLA05oM1iAEQ17CSuDqnUK2+k9luXQOfXJCJ4I"
+		crossorigin="anonymous">
+</head>
+<body>
+	<div style="text-align: center;width: 600px;">
+		<h1 style="color: green;">
+			GeeksforGeeks
+		</h1>
+	</div>
+	<div style="width: 600px;height: 200px;
+			margin:20px;text-align: center;">
+		<button type="button" class="btn btn-info">
+			Info
+		</button>
+		<button type="button" class="btn btn-light">
+			Light
+		</button>
+		<button type="button" class="btn btn-dark">
+			Dark
+		</button>
+		<button type="button" class="btn btn-link">
+			Link
+		</button>
+	</div>
+</body>
+</html>
+
+
+Example 3: This example uses show the working of different elements as buttons in Bootstrap 5.
+
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>
+		Bootstrap 5 | Buttons
+	</title>
+	<!-- Load Bootstrap -->
+	<link rel="stylesheet" href=
+"https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css"
+		integrity=
+"sha384-r4NyP46KrjDleawBgD5tp8Y7UzmLA05oM1iAEQ17CSuDqnUK2+k9luXQOfXJCJ4I"
+		crossorigin="anonymous">
+</head>
+<body style="text-align:center;">
+	<div class="container mt-3">
+		<h1 style="color:green;">
+			GeeksforGeeks
+		</h1>
+		<h2>Button Elements</h2>
+		<input class="btn btn-success" type="button"
+			value="Input Button">
+		<input class="btn btn-success" type="submit"
+			value="Submit Button">
+		<input class="btn btn-success" type="reset"
+			value="Reset Button">
+		<button class="btn btn-success" type="button">
+			Button
+		</button>
+		<a href="#" class="btn btn-success" role="button">
+			Link Button
+		</a>
+	</div>
+</body>
+</html>
+
+
+Outlines: Bootstrap 5 provides a series of classes that can be used when we need to use outline styled buttons in our project, i.e. button without background color. The outline button classes remove any background color or background image style applied to the buttons. All the button types support it as given in the example below:
+
+Example: This example uses show the working of different outline buttons in Bootstrap 5.
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>
+		Bootstrap 5 | Buttons
+	</title>
+	<!-- Load Bootstrap -->
+	<link rel="stylesheet" href=
+"https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css"
+		integrity=
+"sha384-r4NyP46KrjDleawBgD5tp8Y7UzmLA05oM1iAEQ17CSuDqnUK2+k9luXQOfXJCJ4I"
+		crossorigin="anonymous">
+</head>
+<body style="text-align:center;">
+	<div class="container mt-3">
+		<h1 style="color:green;">
+			GeeksforGeeks
+		</h1>
+		<h2>Button Outline</h2>
+		<button type="button"
+			class="btn btn-outline-primary">
+			Primary
+		</button>
+		<button type="button"
+			class="btn btn-outline-secondary">
+			Secondary
+		</button>
+		<button type="button"
+			class="btn btn-outline-success">
+			Success
+		</button>
+		<button type="button"
+			class="btn btn-outline-danger">
+			Danger
+		</button>
+		<button type="button"
+			class="btn btn-outline-warning">
+			Warning
+		</button>
+		<button type="button"
+			class="btn btn-outline-info">
+			Info
+		</button>
+		<button type="button"
+			class="btn btn-outline-light">
+			Light
+		</button>
+		<button type="button"
+			class="btn btn-outline-dark">
+			Dark
+		</button>
+	</div>
+</body>
+</html>
+
+
+Sizes: Bootstrap 5 provides different classes that allow to changing the size of the button. The .btn-lg and .btn-sm classes are used for large and small buttons.
+
+Example: This example uses show the working of different button sizes in Bootstrap 5.
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>
+		Bootstrap 5 | Buttons
+	</title>
+	<!-- Load Bootstrap -->
+	<link rel="stylesheet" href=
+"https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css"
+		integrity=
+"sha384-r4NyP46KrjDleawBgD5tp8Y7UzmLA05oM1iAEQ17CSuDqnUK2+k9luXQOfXJCJ4I"
+		crossorigin="anonymous">
+</head>
+<body style="text-align:center;">
+	<div class="container mt-3">
+		<h1 style="color:green;">
+			GeeksforGeeks
+		</h1>
+		<h2>Button Sizes</h2>
+		<button type="button"
+			class="btn btn-success btn-sm">
+			Small Button
+		</button>
+		<button type="button"
+			class="btn btn-success">
+			Default Button
+		</button>
+		<button type="button"
+			class="btn btn-success btn-lg">
+			Large Button
+		</button>
+	</div>
+</body>
+</html>
+
+
+class is used to make button and link to an active state.
+
+Example: This example uses show the working of a button’s active state in Bootstrap 5.
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>
+		Bootstrap 5 | Buttons
+	</title>
+	<!-- Load Bootstrap -->
+	<link rel="stylesheet" href=
+"https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css"
+		integrity=
+"sha384-r4NyP46KrjDleawBgD5tp8Y7UzmLA05oM1iAEQ17CSuDqnUK2+k9luXQOfXJCJ4I"
+		crossorigin="anonymous">
+</head>
+<body style="text-align:center;">
+	<div class="container mt-3">
+		<h1 style="color:green;">
+			GeeksforGeeks
+		</h1>
+		<h2>Button Active State</h2>
+		<button type="button"
+			class="btn btn-success">
+			Default Button
+		</button>
+		<button type="button"
+			class="btn btn-success active">
+			Active Button
+		</button>
+	</div>
+</body>
+</html>
+
+
+Buttons: The disabled attribute is used with button element to set the disabled state of the button.
+
+Example: This example uses show the working of a button’s disabled state in Bootstrap 5.
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>
+		Bootstrap 5 | Buttons
+	</title>
+	<!-- Load Bootstrap -->
+	<link rel="stylesheet" href=
+"https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css"
+		integrity=
+"sha384-r4NyP46KrjDleawBgD5tp8Y7UzmLA05oM1iAEQ17CSuDqnUK2+k9luXQOfXJCJ4I"
+		crossorigin="anonymous">
+</head>
+<body style="text-align:center;">
+	<div class="container mt-3">
+		<h1 style="color:green;">
+			GeeksforGeeks
+		</h1>
+		<h2>Button Disabled State</h2>
+		<button type="button"
+			class="btn btn-primary" disabled>
+			Disabled Button
+		</button>
+		<button type="button"
+			class="btn btn-success" disabled>
+			Disabled Button
+		</button>
+	</div>
+</body>
+</html>
+
+
+Buttons: The .btn-block class is used to create a block-level button which takes all width of the parent element.
+
+Example: This example shows the working of a block level button in Bootstrap 5.
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>
+		Bootstrap 5 | Buttons
+	</title>
+	<!-- Load Bootstrap -->
+	<link rel="stylesheet" href=
+"https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css"
+		integrity=
+"sha384-r4NyP46KrjDleawBgD5tp8Y7UzmLA05oM1iAEQ17CSuDqnUK2+k9luXQOfXJCJ4I"
+		crossorigin="anonymous">
+</head>
+<body style="text-align:center;" style="width:700px;">
+	<div class="container mt-3">
+		<h1 style="color:green;">
+			GeeksforGeeks
+		</h1>
+		<h2>Block Level Buttons</h2>
+		<button type="button"
+			class="btn btn-block btn-primary">
+			Block Level Button
+		</button>
+		<button type="button"
+			class="btn btn-block btn-success">
+			Block Level Button
+		</button>
+	</div>
+</body>
+</html>
+
+
+Spinner Buttons: The spinner-* classes are used to add a spinner to the button.
+
+Example: This example shows the working of a spinner button in Bootstrap 5.
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>
+		Bootstrap 5 | Buttons
+	</title>
+	<!-- Load Bootstrap -->
+	<link rel="stylesheet" href=
+"https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css"
+		integrity=
+"sha384-r4NyP46KrjDleawBgD5tp8Y7UzmLA05oM1iAEQ17CSuDqnUK2+k9luXQOfXJCJ4I"
+		crossorigin="anonymous">
+</head>
+<body style="text-align:center;">
+	<div class="container mt-3">
+		<h1 style="color:green;">
+			GeeksforGeeks
+		</h1>
+		<h2>Spinner Buttons</h2>
+		<button type="button" class="btn btn-primary">
+			<span class="spinner-border spinner-border-sm">
+			</span>
+			Spinner Button
+		</button>
+		<button type="button" class="btn btn-success">
+			<span class="spinner-grow spinner-grow-sm">
+			</span>
+			Spinner Button
+		</button>
+	</div>
+</body>
+</html>
+
+
+
