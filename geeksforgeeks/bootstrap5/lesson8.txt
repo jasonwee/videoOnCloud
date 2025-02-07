@@ -1,0 +1,95 @@
+Bootstrap 5 is the latest major release of Bootstrap where the UI has been revamped and various changes have been made. Alerts provide contextual feedback messages for typical user actions with a handful of available and flexible alert messages. Bootstrap allows showing these alert messages on the website using predefined classes. Each of the classes has different colors associated with them.
+
+Syntax:
+
+<div class="alert alert-type"> Contents of the alert... <div>
+
+Types: There are eight types of alerts available in Bootstrap 5. The classes of these alerts are given below:
+
+alert-primary
+alert-secondary
+alert-success
+alert-danger
+alert-warning
+alert-info
+alert-light
+alert-dark
+
+Example 1: This example shows the first four types of Alerts in Bootstrap 5.
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>
+		Bootstrap 5 | Alerts
+	</title>
+	<!-- Load Bootstrap -->
+	<link rel="stylesheet" href=
+"https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css">
+</head>
+<body>
+	<div style="text-align: center;
+			width:600px;">
+		<h1 style="color: green;">
+			GeeksforGeeks
+		</h1>
+	</div>
+	<div id="canvas" style="width: 600px;
+			height: 200px; margin: 20px;">
+		<div class="alert alert-primary" role="alert">
+			GeeksforGeeks
+		</div>
+		<div class="alert alert-secondary" role="alert">
+			GeeksforGeeks
+		</div>
+		<div class="alert alert-success" role="alert">
+			GeeksforGeeks
+		</div>
+		<div class="alert alert-danger" role="alert">
+			GeeksforGeeks
+		</div>
+	</div>
+</body>
+</html>
+
+Example 2: This example shows the next four types of Alerts in Bootstrap 5.
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>
+		Bootstrap 5 | Alerts
+	</title>
+	<!-- Load Bootstrap -->
+	<link rel="stylesheet" href=
+"https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css">
+</head>
+<body>
+	<div style="text-align: center;
+			width: 600px;">
+		<h1 style="color: green;">
+			GeeksforGeeks
+		</h1>
+	</div>
+	<div id="canvas" style="width: 600px;
+			height: 200px; margin: 20px;">
+		<div class="alert alert-warning" role="alert">
+			GeeksforGeeks
+		</div>
+		<div class="alert alert-info" role="alert">
+			GeeksforGeeks
+		</div>
+		<div class="alert alert-light" role="alert">
+			GeeksforGeeks
+		</div>
+		<div class="alert alert-dark" role="alert">
+			GeeksforGeeks
+		</div>
+	</div>
+</body>
+</html>
+
+
+Output:
+
+
