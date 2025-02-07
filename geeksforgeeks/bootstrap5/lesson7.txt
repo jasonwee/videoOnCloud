@@ -1,0 +1,202 @@
+Bootstrap-5 Badges
+
+
+Bootstrap 5 is the latest major release by Bootstrap where they have revamped the UI and made various changes. Badges are used for creating labels. Badges scale to match the size of the immediate parent element by using relative font sizing.
+
+Syntax:
+
+<div class="badge bg-type"> Contents... <div>
+
+Types: Following are the eight types of backgrounds available in Bootstrap 5.
+
+<!DOCTYPE html>
+<html>
+<head>
+	<!-- Load Bootstrap -->
+	<link rel="stylesheet" href=
+"https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css"
+		integrity=
+"sha384-r4NyP46KrjDleawBgD5tp8Y7UzmLA05oM1iAEQ17CSuDqnUK2+k9luXQOfXJCJ4I"
+		crossorigin="anonymous">
+</head>
+<body>
+	<div style="text-align: center;width: 600px;">
+		<h1 style="color: green;">
+			GeeksforGeeks
+		</h1>
+	</div>
+	<div id="canvas" style="width: 600px;
+			height: 200px;margin:20px;">
+		<h4>
+		Hello World
+			<span class="badge bg-primary">
+				GeeksforGeeks
+			</span>
+		</h4>
+		<h4>
+			Hello World
+			<span class="badge bg-secondary">
+				GeeksforGeeks
+			</span>
+		</h4>
+		<h4>
+			Hello World
+			<span class="badge bg-success">
+				GeeksforGeeks
+			</span>
+		</h4>
+		<h4>
+			Hello World
+			<span class="badge bg-danger">
+				GeeksforGeeks
+			</span>
+		</h4>
+	</div>
+</body>
+</html>
+
+
+Example 2: This example demonstrates the working of last four types of Badges in Bootstrap 5. 
+
+
+<!DOCTYPE html>
+<html>
+<head>
+	<!-- Load Bootstrap -->
+	<link rel="stylesheet" href=
+"https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css"
+		integrity=
+"sha384-r4NyP46KrjDleawBgD5tp8Y7UzmLA05oM1iAEQ17CSuDqnUK2+k9luXQOfXJCJ4I"
+		crossorigin="anonymous">
+</head>
+<body>
+	<div style="text-align: center;width: 600px;">
+		<h1 style="color: green;">
+			GeeksforGeeks
+		</h1>
+	</div>
+	<div id="canvas" style="width: 600px;
+			height: 200px;margin:20px;">
+		<h4>
+		Hello World
+			<span class="badge bg-warning">
+				GeeksforGeeks
+			</span>
+		</h4>
+		<h4>
+			Hello World
+			<span class="badge bg-info">
+				GeeksforGeeks
+			</span>
+		</h4>
+		<h4>
+			Hello World
+			<span class="badge bg-light text-dark">
+				GeeksforGeeks
+			</span>
+		</h4>
+		<h4>
+			Hello World
+			<span class="badge bg-dark">
+				GeeksforGeeks
+			</span>
+		</h4>
+	</div>
+</body>
+</html>
+
+
+Example 3: This example shows the working of notifications badges in Bootstrap 5.
+
+<!DOCTYPE html>
+<html>
+<head>
+	<!-- Load Bootstrap -->
+	<link rel="stylesheet" href=
+"https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css"
+		integrity=
+"sha384-r4NyP46KrjDleawBgD5tp8Y7UzmLA05oM1iAEQ17CSuDqnUK2+k9luXQOfXJCJ4I"
+		crossorigin="anonymous">
+</head>
+<body style="text-align:center;">
+	<div class="container mt-3">
+		<h1 style="color:green;">
+			GeeksforGeeks
+		</h1>
+		<button type="button" class="btn btn-primary">
+			Notifications
+			<span class="badge bg-secondary">
+				10
+			</span>
+		</button>
+	</div>
+</body>
+</html>
+
+
+Example 4: This example shows the working of Pill Badges in Bootstrap 5.
+
+
+<!DOCTYPE html>
+<html>
+<head>
+	<!-- Load Bootstrap -->
+	<link rel="stylesheet" href=
+"https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css"
+		integrity=
+"sha384-r4NyP46KrjDleawBgD5tp8Y7UzmLA05oM1iAEQ17CSuDqnUK2+k9luXQOfXJCJ4I"
+		crossorigin="anonymous">
+</head>
+<body style="text-align:center;">
+	<div class="container mt-3">
+		<h1 style="color:green;">
+			GeeksforGeeks
+		</h1>
+		<span class="badge rounded-pill
+			bg-primary">
+		Primary
+		</span>
+		<span class="badge rounded-pill
+			bg-secondary">
+		Secondary
+		</span>
+		<span class="badge rounded-pill
+			bg-success">
+		Success
+		</span>
+		<span class="badge rounded-pill
+			bg-danger">
+		Danger
+		</span>
+		<span class="badge rounded-pill
+			bg-warning text-dark">
+		Warning
+		</span>
+		<span class="badge rounded-pill
+			bg-info">
+		Info
+		</span>
+		<span class="badge rounded-pill
+			bg-light text-dark">
+		Light
+		</span>
+		<span class="badge rounded-pill
+			bg-dark">
+		Dark
+		</span>
+	</div>
+</body>
+</html>
+
+
+
+Supported Browser:
+
+Google Chrome
+Internet Explorer
+Firefox
+Opera
+Safari
+
+
+
