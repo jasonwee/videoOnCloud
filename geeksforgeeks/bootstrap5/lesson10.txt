@@ -1,0 +1,481 @@
+Bootstrap 5 List group
+
+Bootstrap 5 is the latest major release by Bootstrap in which they have revamped the UI and made various changes. List groups are a flexible and powerful component for displaying a series of content. These can be modified and extended to support just about any content within. Use .list-group and .list-group-item classes to create a list of items. The .list-group class is used with <ul> element and .list-group-item is used with <li> element.
+
+Syntax:
+
+<div class="list-group"> Contents... <div>
+
+Example:
+
+<!DOCTYPE html>
+<html>
+<head>
+	<!-- Load Bootstrap -->
+	<link rel="stylesheet" href=
+"https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css"
+		integrity=
+"sha384-r4NyP46KrjDleawBgD5tp8Y7UzmLA05oM1iAEQ17CSuDqnUK2+k9luXQOfXJCJ4I"
+		crossorigin="anonymous">
+	<script src=
+"https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+		integrity=
+"sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+		crossorigin="anonymous">
+	</script>
+	<script src=
+"https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/js/bootstrap.min.js"
+		integrity=
+"sha384-oesi62hOLfzrys4LxRF63OJCXdXDipiYWBnvTl9Y9/TRlw5xlKIEHpNyvvDShgf/"
+		crossorigin="anonymous">
+	</script>
+</head>
+<body style="text-align: center;">
+	<div class="container mt-3" style="width: 700px;">
+		<h1 style="color: green;">
+			GeeksforGeeks
+		</h1>
+		<ul class="list-group">
+			<li class="list-group-item">
+				Data Structure
+			</li>
+			<li class="list-group-item">
+				Operating System
+			</li>
+			<li class="list-group-item">
+				Algorithm
+			</li>
+		</ul>
+	</div>
+</body>
+</html>
+
+
+Active list item: The .active class is used to highlight the current item. 
+
+Example: 
+
+<!DOCTYPE html>
+<html>
+<head>
+	<!-- Load Bootstrap -->
+	<link rel="stylesheet" href=
+"https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css"
+		integrity=
+"sha384-r4NyP46KrjDleawBgD5tp8Y7UzmLA05oM1iAEQ17CSuDqnUK2+k9luXQOfXJCJ4I"
+		crossorigin="anonymous">
+	<script src=
+"https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+		integrity=
+"sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+		crossorigin="anonymous">
+	</script>
+	<script src=
+"https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/js/bootstrap.min.js"
+		integrity=
+"sha384-oesi62hOLfzrys4LxRF63OJCXdXDipiYWBnvTl9Y9/TRlw5xlKIEHpNyvvDShgf/"
+		crossorigin="anonymous">
+	</script>
+</head>
+<body style="text-align: center;">
+	<div class="container mt-3" style="width: 700px;">
+		<h1 style="color: green;">
+			GeeksforGeeks
+		</h1>
+		<ul class="list-group">
+			<li class="list-group-item active">
+				Data Structure
+			</li>
+			<li class="list-group-item">
+				Operating System
+			</li>
+			<li class="list-group-item">
+				Algorithm
+			</li>
+		</ul>
+	</div>
+</body>
+</html>
+
+
+With Linked Items: Use <div> and <a> tag instead of <ul> and <li> to create a list of group with linked items. The .list-group-item-action class is used to set the hover effect to change the background color to gray.
+
+<!DOCTYPE html>
+<html>
+<head>
+	<!-- Load Bootstrap -->
+	<link rel="stylesheet" href=
+"https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css"
+		integrity=
+"sha384-r4NyP46KrjDleawBgD5tp8Y7UzmLA05oM1iAEQ17CSuDqnUK2+k9luXQOfXJCJ4I"
+		crossorigin="anonymous">
+	<script src=
+"https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+		integrity=
+"sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+		crossorigin="anonymous">
+	</script>
+	<script src=
+"https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/js/bootstrap.min.js"
+		integrity=
+"sha384-oesi62hOLfzrys4LxRF63OJCXdXDipiYWBnvTl9Y9/TRlw5xlKIEHpNyvvDShgf/"
+		crossorigin="anonymous">
+	</script>
+</head>
+<body style="text-align: center;">
+	<div class="container mt-3" style="width: 700px;">
+		<h1 style="color: green;">
+			GeeksforGeeks
+		</h1>
+		<div class="container">
+			<div class="list-group">
+				<a href="#" class="list-group-item
+							list-group-item-action">
+					Data Structure
+				</a>
+				<a href="#" class="list-group-item
+							list-group-item-action">
+					Operating System
+				</a>
+				<a href="#" class="list-group-item
+							list-group-item-action">
+					Algorithm
+				</a>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
+
+
+Disabled Item: The .disabled class is used to disable the text content. This class set the text color to light. When used on links, it will remove the hover effect.
+
+Example:
+
+<!DOCTYPE html>
+<html>
+<head>
+	<!-- Load Bootstrap -->
+	<link rel="stylesheet" href=
+"https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css"
+		integrity=
+"sha384-r4NyP46KrjDleawBgD5tp8Y7UzmLA05oM1iAEQ17CSuDqnUK2+k9luXQOfXJCJ4I"
+		crossorigin="anonymous">
+	<script src=
+"https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+		integrity=
+"sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+		crossorigin="anonymous">
+	</script>
+	<script src=
+"https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/js/bootstrap.min.js"
+		integrity=
+"sha384-oesi62hOLfzrys4LxRF63OJCXdXDipiYWBnvTl9Y9/TRlw5xlKIEHpNyvvDShgf/"
+		crossorigin="anonymous">
+	</script>
+</head>
+<body style="text-align: center;">
+	<div class="container mt-3" style="width: 700px;">
+		<h1 style="color: green;">
+			GeeksforGeeks
+		</h1>
+		<div class="container">
+			<div class="list-group">
+				<a href="#" class="list-group-item disabled">
+					Android
+				</a>
+				<a href="#" class="list-group-item">
+					Web
+				</a>
+				<a href="#" class="list-group-item disabled">
+					AI
+				</a>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
+
+
+Flush/Remove Borders: The .list-group-flush class is used to remove some borders and rounded corners.
+
+Example:
+
+
+<!DOCTYPE html>
+<html>
+<head>
+	<!-- Load Bootstrap -->
+	<link rel="stylesheet" href=
+"https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css"
+		integrity="sha384-r4NyP46KrjDleawBgD5tp8Y7UzmLA05oM1iAEQ17CSuDqnUK2+k9luXQOfXJCJ4I"
+		crossorigin="anonymous">
+	<script src=
+"https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+		integrity=
+"sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+		crossorigin="anonymous">
+	</script>
+	<script src=
+"https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/js/bootstrap.min.js"
+		integrity=
+"sha384-oesi62hOLfzrys4LxRF63OJCXdXDipiYWBnvTl9Y9/TRlw5xlKIEHpNyvvDShgf/"
+		crossorigin="anonymous">
+	</script>
+</head>
+<body style="text-align:center;">
+	<div class="container mt-3" style="width:700px;">
+		<h1 style="color:green;">
+			GeeksforGeeks
+		</h1>
+		<div class="container">
+			<ul class="list-group
+					list-group-flush">
+				<a href="#" class="list-group-item">
+					Android
+				</a>
+				<a href="#" class="list-group-item">
+					Web
+				</a>
+				<a href="#" class="list-group-item">
+					AI
+				</a>
+			</ul>
+		</div>
+	</div>
+</body>
+</html>
+
+
+List Groups: The .list-group-horizontal class is used to display the list of items horizontally instead of vertically.
+
+Example:
+
+
+<!DOCTYPE html>
+<html>
+<head>
+	<!-- Load Bootstrap -->
+	<link rel="stylesheet" href=
+"https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css"
+		integrity=
+"sha384-r4NyP46KrjDleawBgD5tp8Y7UzmLA05oM1iAEQ17CSuDqnUK2+k9luXQOfXJCJ4I"
+		crossorigin="anonymous">
+	<script src=
+"https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+		integrity=
+"sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+		crossorigin="anonymous">
+	</script>
+	<script src=
+"https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/js/bootstrap.min.js"
+		integrity=
+"sha384-oesi62hOLfzrys4LxRF63OJCXdXDipiYWBnvTl9Y9/TRlw5xlKIEHpNyvvDShgf/"
+		crossorigin="anonymous">
+	</script>
+</head>
+<body style="text-align:center;">
+	<div class="container mt-3" style="width:700px;">
+		<h1 style="color:green;">
+			GeeksforGeeks
+		</h1>
+		<div class="container">
+			<ul class="list-group
+					list-group-horizontal">
+				<a href="#" class="list-group-item">
+					Android
+				</a>
+				<a href="#" class="list-group-item">
+					Web
+				</a>
+				<a href="#" class="list-group-item">
+					AI
+				</a>
+			</ul>
+		</div>
+	</div>
+</body>
+</html>
+
+
+Classes: It is used to set the color to the list of items. The classes for coloring the list-items are: .list-group-item-success, .list-group-item-secondary, .list-group-item-info, .list-group-item-warning, .list-group-item-danger, .list-group-item-primary, .list-group-item-dark and .list-group-item-light.
+
+<!DOCTYPE html>
+<html>
+<head>
+	<!-- Load Bootstrap -->
+	<link rel="stylesheet" href=
+"https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css"
+		integrity=
+"sha384-r4NyP46KrjDleawBgD5tp8Y7UzmLA05oM1iAEQ17CSuDqnUK2+k9luXQOfXJCJ4I"
+		crossorigin="anonymous">
+	<script src=
+"https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+		integrity=
+"sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+		crossorigin="anonymous">
+	</script>
+	<script src=
+"https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/js/bootstrap.min.js"
+		integrity=
+"sha384-oesi62hOLfzrys4LxRF63OJCXdXDipiYWBnvTl9Y9/TRlw5xlKIEHpNyvvDShgf/"
+		crossorigin="anonymous">
+	</script>
+</head>
+<body style="text-align: center;">
+	<div class="container mt-3" style="width: 700px;">
+		<h1 style="color: green;">
+			GeeksforGeeks
+		</h1>
+		<ul class="list-group">
+			<li class="list-group-item
+						list-group-item-primary">
+				Web
+			</li>
+			<li class="list-group-item
+						list-group-item-secondary">
+				Android
+			</li>
+			<li class="list-group-item
+						list-group-item-success">
+				AI
+			</li>
+			<li class="list-group-item
+						list-group-item-warning">
+				Data Science
+			</li>
+			<li class="list-group-item
+						list-group-item-danger">
+				UI/UX
+			</li>
+		</ul>
+	</div>
+</body>
+</html>
+
+
+Contextual Classes: The contextual classes can be used with list of items.
+
+Example:
+
+<!DOCTYPE html>
+<html>
+<head>
+	<!-- Load Bootstrap -->
+	<link rel="stylesheet" href=
+"https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css"
+		integrity=
+"sha384-r4NyP46KrjDleawBgD5tp8Y7UzmLA05oM1iAEQ17CSuDqnUK2+k9luXQOfXJCJ4I"
+		crossorigin="anonymous">
+	<script src=
+"https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+		integrity=
+"sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+		crossorigin="anonymous">
+	</script>
+	<script src=
+"https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/js/bootstrap.min.js"
+		integrity=
+"sha384-oesi62hOLfzrys4LxRF63OJCXdXDipiYWBnvTl9Y9/TRlw5xlKIEHpNyvvDShgf/"
+		crossorigin="anonymous">
+	</script>
+</head>
+<body style="text-align: center;">
+	<div class="container mt-3" style="width: 700px;">
+		<h1 style="color: green;">
+			GeeksforGeeks
+		</h1>
+		<ul class="list-group">
+			<a class="list-group-item
+						list-group-item-primary">
+				Web
+			</a>
+			<a class="list-group-item
+						list-group-item-secondary">
+				Android
+			</a>
+			<a class="list-group-item
+						list-group-item-success">
+				AI
+			</a>
+			<a class="list-group-item
+						list-group-item-warning">
+				Data Science
+			</a>
+			<a class="list-group-item
+						list-group-item-danger">
+				UI/UX
+			</a>
+		</ul>
+	</div>
+</body>
+</html>
+
+
+Badges: The .badge class can be combined with utility class to add badges inside the list of group.
+
+Example:
+
+
+
+<!DOCTYPE html>
+<html>
+<head>
+	<!-- Load Bootstrap -->
+	<link rel="stylesheet" href=
+"https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css"
+		integrity=
+"sha384-r4NyP46KrjDleawBgD5tp8Y7UzmLA05oM1iAEQ17CSuDqnUK2+k9luXQOfXJCJ4I"
+		crossorigin="anonymous">
+	<script src=
+"https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+		integrity=
+"sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+		crossorigin="anonymous">
+	</script>
+	<script src=
+"https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/js/bootstrap.min.js"
+		integrity=
+"sha384-oesi62hOLfzrys4LxRF63OJCXdXDipiYWBnvTl9Y9/TRlw5xlKIEHpNyvvDShgf/"
+		crossorigin="anonymous">
+	</script>
+</head>
+<body style="text-align: center;">
+	<div class="container mt-3" style="width: 700px;">
+		<h1 style="color: green;">
+			GeeksforGeeks
+		</h1>
+		<ul class="list-group">
+			<li class="list-group-item
+						d-flex
+						justify-content-between
+						align-items-center">
+				CPP
+				<span class="badge bg-success">
+					X
+				</span>
+			</li>
+			<li class="list-group-item
+						d-flex
+						justify-content-between
+						align-items-center">
+				Python
+				<span class="badge bg-success">
+					Y
+				</span>
+			</li>
+			<li class="list-group-item d-flex
+						justify-content-between
+						align-items-center">
+				JavaScript
+				<span class="badge bg-success">
+					Z
+				</span>
+			</li>
+		</ul>
+	</div>
+</body>
+</html>
+
+
+
