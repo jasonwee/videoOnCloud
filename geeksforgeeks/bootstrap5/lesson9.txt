@@ -1,0 +1,695 @@
+Bootstrap 5 Modal
+
+Bootstrap 5 is the latest major release by Bootstrap in which they have revamped the UI and made various changes. Modals are used to add dialogs to your site for lightboxes, user notifications, or completely custom content. Modals are built with HTML, CSS, and JavaScript. They’re positioned over everything else in the document and remove scroll from the <body> so that modal content scrolls instead.
+
+Syntax:
+
+<div class="modal"> Contents... <div>
+
+
+Example: This example uses shows the working of a modal in Bootstrap 5.
+
+<!DOCTYPE html>
+<html>
+<head>
+	<!-- Load Bootstrap -->
+	<link rel="stylesheet" href=
+"https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css"
+		integrity=
+"sha384-r4NyP46KrjDleawBgD5tp8Y7UzmLA05oM1iAEQ17CSuDqnUK2+k9luXQOfXJCJ4I"
+		crossorigin="anonymous">
+	<script src=
+"https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+		integrity=
+"sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+		crossorigin="anonymous">
+	</script>
+	<script src=
+"https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/js/bootstrap.min.js"
+		integrity=
+"sha384-oesi62hOLfzrys4LxRF63OJCXdXDipiYWBnvTl9Y9/TRlw5xlKIEHpNyvvDShgf/"
+		crossorigin="anonymous">
+	</script>
+</head>
+<body style="text-align: center;">
+	<div class="container mt-3" style="width: 700px;">
+		<h1 style="color: green;">
+			GeeksforGeeks
+		</h1>
+		<!-- Button trigger modal -->
+		<button type="button" class="btn btn-primary"
+			data-toggle="modal" data-target="#exampleModal">
+			Launch demo modal
+		</button>
+		<!-- Modal -->
+		<div class="modal fade" id="exampleModal">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<h5 class="modal-title">
+							Modal title
+						</h5>
+						<button type="button" class="close"
+							data-dismiss="modal" aria-label="Close">
+							<span aria-hidden="true">
+								×
+							</span>
+						</button>
+					</div>
+					<div class="modal-body">
+						GeeksforGeeks
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-secondary"
+							data-dismiss="modal">
+							Close
+						</button>
+						<button type="button" class="btn btn-primary">
+							Save changes
+						</button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
+
+
+
+Output after triggering the modal:
+
+
+Tooltips: can be added inside the modal. When modals are closed, tooltips within are also automatically dismissed.
+
+Example:
+
+<!DOCTYPE html>
+<html>
+<head>
+	<!-- Load Bootstrap -->
+	<link rel="stylesheet" href=
+"https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css"
+		integrity=
+"sha384-r4NyP46KrjDleawBgD5tp8Y7UzmLA05oM1iAEQ17CSuDqnUK2+k9luXQOfXJCJ4I"
+		crossorigin="anonymous" >
+	<script src=
+"https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+		integrity=
+"sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+		crossorigin="anonymous">
+	</script>
+	<script src=
+"https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/js/bootstrap.min.js"
+		integrity=
+"sha384-oesi62hOLfzrys4LxRF63OJCXdXDipiYWBnvTl9Y9/TRlw5xlKIEHpNyvvDShgf/"
+		crossorigin="anonymous">
+	</script>
+</head>
+<body style="text-align: center;">
+	<div class="container mt-3" style="width: 700px;">
+		<h1 style="color: green;">
+			GeeksforGeeks
+		</h1>
+		<!-- Button trigger modal -->
+		<button type="button" class="btn btn-primary"
+			data-toggle="modal" data-target="#exampleModal">
+			Launch demo modal
+		</button>
+		<!-- Modal -->
+		<div class="modal fade" id="exampleModal">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<h5 class="modal-title">Modal title</h5>
+						<button type="button" class="close"
+							data-dismiss="modal" aria-label="Close">
+							<span aria-hidden="true">
+								×
+							</span>
+						</button>
+					</div>
+					<div class="modal-body">
+						<h5>Tooltips in a modal</h5>
+						<a href="#" data-toggle="tooltip"
+							title="GeeksforGeeks" data-placement="right">
+							Hover over me
+						</a>
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-secondary"
+							data-dismiss="modal">
+							Close
+						</button>
+						<button type="button" class="btn btn-primary">
+							Save changes
+						</button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<script>
+		// Enable tooltips
+		var tooltipTriggerList =
+			[].slice.call(
+				document.querySelectorAll('[data-toggle="tooltip"]'));
+		var tooltipList =
+			tooltipTriggerList.map(function (tooltipTriggerEl) {
+				return new bootstrap.Tooltip(tooltipTriggerEl);
+			});
+	</script>
+</body>
+</html>
+
+
+Output:
+
+Popovers: can be added inside the modal. When modals are closed, popovers within are also automatically dismissed.
+
+Example:
+
+<!DOCTYPE html>
+<html>
+<head>
+	<!-- Load Bootstrap -->
+	<link rel="stylesheet" href=
+"https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css"
+		integrity=
+"sha384-r4NyP46KrjDleawBgD5tp8Y7UzmLA05oM1iAEQ17CSuDqnUK2+k9luXQOfXJCJ4I"
+		crossorigin="anonymous">
+	<script src=
+"https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+		integrity=
+"sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+		crossorigin="anonymous">
+	</script>
+	<script src=
+"https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/js/bootstrap.min.js"
+		integrity=
+"sha384-oesi62hOLfzrys4LxRF63OJCXdXDipiYWBnvTl9Y9/TRlw5xlKIEHpNyvvDShgf/"
+		crossorigin="anonymous">
+	</script>
+</head>
+<body style="text-align: center;">
+	<div class="container mt-3" style="width: 700px;">
+		<h1 style="color: green;">
+			GeeksforGeeks
+		</h1>
+		<!-- Button trigger modal -->
+		<button type="button" class="btn btn-primary"
+			data-toggle="modal" data-target="#exampleModal">
+			Launch demo modal
+		</button>
+		<!-- Modal -->
+		<div class="modal fade" id="exampleModal">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<h5 class="modal-title">
+							Modal title
+						</h5>
+						<button type="button" class="close"
+							data-dismiss="modal" aria-label="Close">
+							<span aria-hidden="true">
+								×
+							</span>
+						</button>
+					</div>
+					<div class="modal-body">
+						<h5>
+						Popover in a modal
+						</h5>
+						<a href="#" data-toggle="popover"
+							title="This is GeeksforGeeks"
+							data-content="Portal for CS Geeks">
+							Toggle popover
+						</a>
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-secondary"
+							data-dismiss="modal">
+							Close
+						</button>
+						<button type="button" class="btn btn-primary">
+							Save changes
+						</button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<script>
+		// Enable popovers
+		var popoverTriggerList =
+			[].slice.call(
+				document.querySelectorAll('[data-toggle="popover"]'))
+		var popoverList =
+			popoverTriggerList.map(function (popoverTriggerEl) {
+				return new bootstrap.Popover(popoverTriggerEl);
+			});
+	</script>
+</body>
+</html>
+
+
+Output:
+
+We can utilize the Bootstrap grid system within a modal by nesting .container-fluid within the .modal-body. Then, use the normal grid system classes as you would anywhere else.
+
+Example:
+
+<!DOCTYPE html>
+<html>
+<head>
+	<!-- Load Bootstrap -->
+	<link rel="stylesheet" href=
+"https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css"
+		integrity=
+"sha384-r4NyP46KrjDleawBgD5tp8Y7UzmLA05oM1iAEQ17CSuDqnUK2+k9luXQOfXJCJ4I"
+		crossorigin="anonymous">
+	<script src=
+"https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+		integrity=
+"sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+		crossorigin="anonymous">
+	</script>
+	<script src=
+"https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/js/bootstrap.min.js"
+		integrity=
+"sha384-oesi62hOLfzrys4LxRF63OJCXdXDipiYWBnvTl9Y9/TRlw5xlKIEHpNyvvDShgf/"
+		crossorigin="anonymous">
+	</script>
+</head>
+<body style="text-align: center;">
+	<div class="container mt-3" style="width: 700px;">
+		<h1 style="color: green;">
+			GeeksforGeeks
+		</h1>
+		<!-- Button trigger modal -->
+		<button type="button" class="btn btn-primary"
+			data-toggle="modal" data-target="#exampleModal">
+			Launch demo modal
+		</button>
+		<!-- Modal -->
+		<div class="modal fade" id="exampleModal">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<h5 class="modal-title">Modal title</h5>
+						<button type="button" class="close"
+							data-dismiss="modal" aria-label="Close">
+							<span aria-hidden="true">
+								×
+							</span>
+						</button>
+					</div>
+					<div class="modal-body">
+						<div class="container-fluid">
+							<div class="row">
+								<div class="col-md-4" style="background: red;
+												color: white;">
+									This is 4 grids
+								</div>
+								<div class="col-md-8" style="background: green;
+												color: white;">
+									This is 8 grids
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-md-12" style="background: blue;
+												color: white;">
+									This is 12 grids
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-secondary"
+							data-dismiss="modal">
+							Close
+						</button>
+						<button type="button" class="btn btn-primary">
+							Save changes
+						</button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
+
+
+Output:
+
+Varying modal content: We can trigger the same modal with different data as given below.
+
+Example:
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<!-- Load Bootstrap -->
+		<link rel="stylesheet"
+			href=
+"https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css"
+			integrity=
+"sha384-r4NyP46KrjDleawBgD5tp8Y7UzmLA05oM1iAEQ17CSuDqnUK2+k9luXQOfXJCJ4I"
+			crossorigin="anonymous" />
+		<script src=
+"https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+				integrity=
+"sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+				crossorigin="anonymous">
+		</script>
+		<script src=
+"https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/js/bootstrap.min.js"
+				integrity=
+"sha384-oesi62hOLfzrys4LxRF63OJCXdXDipiYWBnvTl9Y9/TRlw5xlKIEHpNyvvDShgf/"
+				crossorigin="anonymous">
+		</script>
+	</head>
+
+	<body style="text-align: center;">
+		<div class="container mt-3"
+			style="width: 700px;">
+			<h1 style="color: green;">
+				GeeksforGeeks
+			</h1>
+			<!-- Button trigger modal -->
+			<button type="button"
+					class="btn btn-primary"
+					data-toggle="modal"
+					data-target="#exampleModal"
+					data-whatever="@geeksforgeeks">
+			Send email to @geeksforgeeks
+			</button>
+			<button type="button"
+					class="btn btn-primary"
+					data-toggle="modal"
+					data-target="#exampleModal"
+					data-whatever="@gurrrung">
+			Send email to author @gurrrung
+			</button>
+
+			<!-- Modal -->
+			<div class="modal fade" id="exampleModal">
+				<div class="modal-dialog">
+					<div class="modal-content">
+						<div class="modal-header">
+							<h5 class="modal-title">
+							New message
+							</h5>
+							<button type="button"
+									class="close"
+									data-dismiss="modal"
+									aria-label="Close">
+								<span aria-hidden="true">
+									×
+								</span>
+							</button>
+						</div>
+						<div class="modal-body">
+							<form>
+								<div class="mb-3">
+									<label for="recipient-name"
+										class="col-form-label">
+										Recipient:
+									</label>
+									<input type="text"
+										class="form-control"
+										id="recipient-name" />
+								</div>
+								<div class="mb-3">
+									<label for="message-text"
+										class="col-form-label">
+										Message:
+									</label>
+									<textarea class="form-control"
+											id="message-text">
+									</textarea>
+								</div>
+							</form>
+						</div>
+						<div class="modal-footer">
+							<button type="button"
+									class="btn btn-secondary"
+									data-dismiss="modal">
+								Close
+							</button>
+							<button type="button"
+									class="btn btn-primary">
+								Send message
+							</button>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<script>
+			var exampleModal =
+				document.getElementById("exampleModal");
+			exampleModal.addEventListener(
+			"show.bs.modal", function (event) {
+				// Button that triggered the modal
+				var button = event.relatedTarget;
+				// Extract info from data-* attributes
+				var recipient =
+					button.getAttribute("data-whatever");
+				// Update the modal's content.
+				var modalTitle =
+		exampleModal.querySelector(".modal-title");
+				var modalBodyInput =
+		exampleModal.querySelector(".modal-body input");
+				modalTitle.textContent =
+				"New message to " + recipient;
+				modalBodyInput.value = recipient;
+			});
+		</script>
+	</body>
+</html>
+
+
+Output:
+
+Optional sizes:
+
+Default max-width of a Bootstrap modal is 500px. Bootstrap provides the option to customize the size of the Modal by using certain classes as described below:
+
+modal-xl
+modal-lg
+modal-sm
+modal-xl: This provides the largest modal size with max-width of 1140px.
+
+Example:
+
+<!DOCTYPE html>
+<html>
+<head>
+	<!-- Load Bootstrap -->
+	<link rel="stylesheet" href=
+"https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css"
+		integrity=
+"sha384-r4NyP46KrjDleawBgD5tp8Y7UzmLA05oM1iAEQ17CSuDqnUK2+k9luXQOfXJCJ4I"
+		crossorigin="anonymous">
+	<script src=
+"https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+		integrity=
+"sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+		crossorigin="anonymous">
+	</script>
+	<script src=
+"https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/js/bootstrap.min.js"
+		integrity=
+"sha384-oesi62hOLfzrys4LxRF63OJCXdXDipiYWBnvTl9Y9/TRlw5xlKIEHpNyvvDShgf/"
+		crossorigin="anonymous">
+	</script>
+</head>
+<body style="text-align: center;">
+	<div class="container mt-3" style="width: 700px;">
+		<h1 style="color: green;">
+			GeeksforGeeks
+		</h1>
+		<!-- Button trigger modal -->
+		<button type="button" class="btn btn-primary"
+			data-toggle="modal" data-target="#exampleModal">
+			Launch demo modal
+		</button>
+		<!-- Modal -->
+		<div class="modal fade" id="exampleModal">
+			<div class="modal-dialog modal-xl">
+				<div class="modal-content">
+					<div class="modal-header">
+						<h5 class="modal-title">
+							Modal title
+						</h5>
+						<button type="button" class="close"
+							data-dismiss="modal" aria-label="Close">
+							<span aria-hidden="true">
+								×
+							</span>
+						</button>
+					</div>
+					<div class="modal-body">
+						GeeksforGeeks
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-secondary"
+							data-dismiss="modal">
+							Close
+						</button>
+						<button type="button" class="btn btn-primary">
+							Save changes
+						</button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
+
+
+modal-lg: This provides the large modal size with a max-width of 800px.
+
+Example:
+
+<!DOCTYPE html>
+<html>
+<head>
+	<!-- Load Bootstrap -->
+	<link rel="stylesheet" href=
+"https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css"
+		integrity=
+"sha384-r4NyP46KrjDleawBgD5tp8Y7UzmLA05oM1iAEQ17CSuDqnUK2+k9luXQOfXJCJ4I"
+		crossorigin="anonymous">
+	<script src=
+"https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+		integrity=
+"sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+		crossorigin="anonymous">
+	</script>
+	<script src=
+"https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/js/bootstrap.min.js"
+		integrity=
+"sha384-oesi62hOLfzrys4LxRF63OJCXdXDipiYWBnvTl9Y9/TRlw5xlKIEHpNyvvDShgf/"
+		crossorigin="anonymous">
+	</script>
+</head>
+<body style="text-align: center;">
+	<div class="container mt-3" style="width: 700px;">
+		<h1 style="color: green;">
+			GeeksforGeeks
+		</h1>
+		<!-- Button trigger modal -->
+		<button type="button" class="btn btn-primary"
+			data-toggle="modal" data-target="#exampleModal">
+			Launch demo modal
+		</button>
+		<!-- Modal -->
+		<div class="modal fade" id="exampleModal">
+			<div class="modal-dialog modal-lg">
+				<div class="modal-content">
+					<div class="modal-header">
+						<h5 class="modal-title">
+							Modal title
+						</h5>
+						<button type="button" class="close"
+							data-dismiss="modal" aria-label="Close">
+							<span aria-hidden="true">
+								×
+							</span>
+						</button>
+					</div>
+					<div class="modal-body">
+						GeeksforGeeks
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-secondary"
+							data-dismiss="modal">
+							Close
+						</button>
+						<button type="button" class="btn btn-primary">
+							Save changes
+						</button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
+
+modal-sm: This provides the largest modal size with a max-width of 300px. 
+
+Example: 
+
+<!DOCTYPE html>
+<html>
+<head>
+	<!-- Load Bootstrap -->
+	<link rel="stylesheet" href=
+"https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css"
+		integrity=
+"sha384-r4NyP46KrjDleawBgD5tp8Y7UzmLA05oM1iAEQ17CSuDqnUK2+k9luXQOfXJCJ4I"
+		crossorigin="anonymous">
+	<script src=
+"https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+		integrity=
+"sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+		crossorigin="anonymous">
+	</script>
+	<script src=
+"https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/js/bootstrap.min.js"
+		integrity=
+"sha384-oesi62hOLfzrys4LxRF63OJCXdXDipiYWBnvTl9Y9/TRlw5xlKIEHpNyvvDShgf/"
+		crossorigin="anonymous">
+	</script>
+</head>
+<body style="text-align: center;">
+	<div class="container mt-3" style="width: 700px;">
+		<h1 style="color: green;">
+			GeeksforGeeks
+		</h1>
+		<!-- Button trigger modal -->
+		<button type="button" class="btn btn-primary"
+			data-toggle="modal" data-target="#exampleModal">
+			Launch demo modal
+		</button>
+		<!-- Modal -->
+		<div class="modal fade" id="exampleModal">
+			<div class="modal-dialog modal-sm">
+				<div class="modal-content">
+					<div class="modal-header">
+						<h5 class="modal-title">
+							Modal title
+						</h5>
+						<button type="button" class="close"
+							data-dismiss="modal" aria-label="Close">
+							<span aria-hidden="true">
+								×
+							</span>
+						</button>
+					</div>
+					<div class="modal-body">
+						GeeksforGeeks
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-secondary"
+							data-dismiss="modal">
+							Close
+						</button>
+						<button type="button" class="btn btn-primary">
+							Save changes
+						</button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
+
+
+
