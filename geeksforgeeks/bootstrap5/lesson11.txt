@@ -1,0 +1,954 @@
+Bootstrap 5 | Card
+
+Bootstrap 5 is the latest major release by Bootstrap in which they have revamped the UI and made various changes. The card is a component provided by Bootstrap 5 which provides a flexible and extensible content container with multiple variants and options. It includes options for headers and footers. Cards support a wide variety of content, including images, text, list groups, links, and more.
+
+
+Syntax:
+
+<div class="card"> Card Content ... <div>
+
+Basic Card: The basic building block of a card is the card-body and with card class as a parent we can create a basic card.
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Bootstrap Card</title>
+	<meta charset="utf-8">
+	<meta name="viewport"
+	content="width=device-width,initial-scale=1">
+	<!-- Load Bootstrap -->
+	<link rel="stylesheet" href=
+"https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css"
+		integrity=
+"sha384-r4NyP46KrjDleawBgD5tp8Y7UzmLA05oM1iAEQ17CSuDqnUK2+k9luXQOfXJCJ4I"
+		crossorigin="anonymous">
+	<script src=
+"https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+		integrity=
+"sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+		crossorigin="anonymous">
+	</script>
+	<script src=
+"https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/js/bootstrap.min.js"
+		integrity=
+"sha384-oesi62hOLfzrys4LxRF63OJCXdXDipiYWBnvTl9Y9/TRlw5xlKIEHpNyvvDShgf/"
+		crossorigin="anonymous">
+	</script>
+</head>
+<body style="text-align: center;">
+	<div class="container mt-3">
+		<h1 style="color: green;">
+			GeeksforGeeks
+		</h1>
+		<div class="container mt-3" style="width: 600px;">
+			<div class="card">
+				<div class="card-body">
+					A computer science portal for geeks
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
+
+
+
+Header and Footer: The card-header provides a header to the cards and card-footer provides a footer to the cards as given below.
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Bootstrap Card</title>
+	<meta charset="utf-8">
+	<meta name="viewport"
+		content="width=device-width, initial-scale=1">
+	<!-- Load Bootstrap -->
+	<link rel="stylesheet" href=
+"https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css"
+		integrity=
+"sha384-r4NyP46KrjDleawBgD5tp8Y7UzmLA05oM1iAEQ17CSuDqnUK2+k9luXQOfXJCJ4I"
+		crossorigin="anonymous">
+	<script src=
+"https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+		integrity=
+"sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+		crossorigin="anonymous">
+	</script>
+	<script src=
+"https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/js/bootstrap.min.js"
+		integrity=
+"sha384-oesi62hOLfzrys4LxRF63OJCXdXDipiYWBnvTl9Y9/TRlw5xlKIEHpNyvvDShgf/"
+		crossorigin="anonymous">
+	</script>
+</head>
+<body style="text-align: center;">
+	<div class="container mt-3">
+		<h1 style="color: green;">
+			GeeksforGeeks
+		</h1>
+		<div class="container mt-3" style="width: 600px;">
+			<div class="card">
+				<div class="card-header">Header</div>
+				<div class="card-body">Content</div>
+				<div class="card-footer">Footer</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
+
+
+
+
+Title and Links: The card-title is used to give a title to the card and card-link is used to provide a link to the card if required in it.
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Bootstrap Card</title>
+	<meta charset="utf-8">
+	<meta name="viewport"
+		content="width=device-width, initial-scale=1">
+	<!-- Load Bootstrap -->
+	<link rel="stylesheet" href=
+"https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css"
+		integrity=
+"sha384-r4NyP46KrjDleawBgD5tp8Y7UzmLA05oM1iAEQ17CSuDqnUK2+k9luXQOfXJCJ4I"
+		crossorigin="anonymous">
+	<script src=
+"https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+		integrity=
+"sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+		crossorigin="anonymous">
+	</script>
+	<script src=
+"https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/js/bootstrap.min.js"
+		integrity=
+"sha384-oesi62hOLfzrys4LxRF63OJCXdXDipiYWBnvTl9Y9/TRlw5xlKIEHpNyvvDShgf/"
+		crossorigin="anonymous">
+	</script>
+</head>
+<body style="text-align: center;">
+	<div class="container mt-3">
+		<h1 style="color: green;">
+			GeeksforGeeks
+		</h1>
+		<div class="container mt-3" style="width: 600px;">
+			<div class="card">
+				<div class="card-body">
+					<h4 class="card-title">
+						Card title</h4>
+					<p class="card-text">
+						Some example text.
+						Some example text.</p>
+
+					<a href="#" class="card-link">
+						Card link</a>
+					<a href="#" class="card-link">
+						Another link</a>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
+
+
+
+
+Images: The images to the card are inserted with card-img-top and with card-img-bottom with the help of these two and img tag is used with it to add the image.
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Bootstrap Card</title>
+	<meta charset="utf-8">
+	<meta name="viewport"
+		content="width=device-width, initial-scale=1">
+	<!-- Load Bootstrap -->
+	<link rel="stylesheet" href=
+"https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css"
+		integrity=
+"sha384-r4NyP46KrjDleawBgD5tp8Y7UzmLA05oM1iAEQ17CSuDqnUK2+k9luXQOfXJCJ4I"
+		crossorigin="anonymous">
+	<script src=
+"https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+		integrity=
+"sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+		crossorigin="anonymous">
+	</script>
+	<script src=
+"https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/js/bootstrap.min.js"
+		integrity=
+"sha384-oesi62hOLfzrys4LxRF63OJCXdXDipiYWBnvTl9Y9/TRlw5xlKIEHpNyvvDShgf/"
+		crossorigin="anonymous">
+	</script>
+</head>
+<body style="text-align: center;">
+	<div class="container mt-3">
+		<h1 style="color: green;">
+			GeeksforGeeks
+		</h1>
+		<div class="container mt-3" style="width: 600px;">
+			<div class="card">
+				<img class="card-img-top"
+					src=
+"https://media.geeksforgeeks.org/wp-content/cdn-uploads/20190530183756/Good-Habits-for-developers-programmers.png"
+					alt="Card image" style="width: 100%;">
+				<div class="card-body">
+					<h4 class="card-title">Developer Guy</h4>
+					<p class="card-text">Developer Guy love to
+						develope front-end and back-end
+					</p>
+
+					<a href="#" class="btn btn-primary">
+						See Profile
+					</a>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
+
+
+
+
+Example of the image in the button:
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Bootstrap Card</title>
+	<meta charset="utf-8">
+	<meta name="viewport"
+		content="width=device-width,initial-scale=1">
+	<!-- Load Bootstrap -->
+	<link rel="stylesheet" href=
+"https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css"
+		integrity=
+"sha384-r4NyP46KrjDleawBgD5tp8Y7UzmLA05oM1iAEQ17CSuDqnUK2+k9luXQOfXJCJ4I"
+		crossorigin="anonymous">
+	<script src=
+"https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+		integrity=
+"sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+		crossorigin="anonymous">
+	</script>
+	<script src=
+"https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/js/bootstrap.min.js"
+		integrity=
+"sha384-oesi62hOLfzrys4LxRF63OJCXdXDipiYWBnvTl9Y9/TRlw5xlKIEHpNyvvDShgf/"
+		crossorigin="anonymous">
+	</script>
+</head>
+<body style="text-align: center;">
+	<div class="container mt-3">
+		<h1 style="color: green;">
+			GeeksforGeeks
+		</h1>
+		<div class="container mt-3" style="width: 600px;">
+			<div class="card">
+				<div class="card-body">
+					<h4 class="card-title">Developer Guy</h4>
+					<p class="card-text">Developer Guy love to
+						develope front-end and back-end
+					</p>
+
+					<a href="#" class="btn btn-primary">
+						See Profile
+					</a>
+				</div>
+				<img class="card-img-bottom" src=
+"https://media.geeksforgeeks.org/wp-content/cdn-uploads/20190530183756/Good-Habits-for-developers-programmers.png"
+					alt="Card image" style="width: 100%;">
+			</div>
+		</div>
+	</div>
+</body>
+</html>
+
+
+
+
+Image Overlays: In this, we have to use an extra class called the card-img-overlay in the same line of code which you have used for card images. This turns an image into a card background and overlays the card’s text.
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Bootstrap Card</title>
+	<meta charset="utf-8">
+	<meta name="viewport"
+		content="width=device-width, initial-scale=1">
+	<!-- Load Bootstrap -->
+	<link rel="stylesheet" href=
+"https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css"
+		integrity=
+"sha384-r4NyP46KrjDleawBgD5tp8Y7UzmLA05oM1iAEQ17CSuDqnUK2+k9luXQOfXJCJ4I"
+		crossorigin="anonymous">
+	<script src=
+"https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+		integrity=
+"sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+		crossorigin="anonymous">
+	</script>
+	<script src=
+"https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/js/bootstrap.min.js"
+		integrity=
+"sha384-oesi62hOLfzrys4LxRF63OJCXdXDipiYWBnvTl9Y9/TRlw5xlKIEHpNyvvDShgf/"
+		crossorigin="anonymous">
+	</script>
+</head>
+<body style="text-align: center;">
+	<div class="container mt-3">
+		<h1 style="color: green;">
+			GeeksforGeeks
+		</h1>
+		<div class="container mt-3" style="width: 600px;">
+			<div class="card" style="width: 400px;">
+				<img class="card-img-bottom"
+					src=
+"https://media.geeksforgeeks.org/wp-content/cdn-uploads/20190530183756/Good-Habits-for-developers-programmers.png"
+					alt="Card image" style="width: 100%;">
+				<div class="card-img-overlay">
+					<div class="card-body">
+						<h4 class="card-title">
+							Developer Guy
+						</h4>
+						<p class="card-text" style="color: red;">
+							Developer Guy love to develope
+							front-end and back-end
+						</p>
+
+						<a href="#" class="btn btn-primary">
+							See Profile
+						</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
+
+
+
+Card Groups: Use card groups to render cards as a single, attached element with equal width and height columns.
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Bootstrap Card</title>
+	<meta charset="utf-8">
+	<meta name="viewport"
+		content="width=device-width, initial-scale=1">
+	<!-- Load Bootstrap -->
+	<link rel="stylesheet" href=
+"https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css"
+		integrity=
+"sha384-r4NyP46KrjDleawBgD5tp8Y7UzmLA05oM1iAEQ17CSuDqnUK2+k9luXQOfXJCJ4I"
+		crossorigin="anonymous">
+	<script src=
+"https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+		integrity=
+"sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+		crossorigin="anonymous">
+	</script>
+	<script src=
+"https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/js/bootstrap.min.js"
+		integrity=
+"sha384-oesi62hOLfzrys4LxRF63OJCXdXDipiYWBnvTl9Y9/TRlw5xlKIEHpNyvvDShgf/"
+		crossorigin="anonymous">
+	</script>
+</head>
+<body style="text-align: center;">
+	<div class="container mt-3">
+		<h1 style="color: green;">
+			GeeksforGeeks
+		</h1>
+		<div class="container mt-3" style="width: 600px;">
+			<div class="card-group">
+				<div class="card" style="width: 200px;">
+					<div class="card-body">
+						<h4 class="card-title">
+							Developer Guy I
+						</h4>
+						<p class="card-text">
+							Developer Guy love to develop
+							front-end and back-end
+						</p>
+
+						<a href="#" class="btn btn-primary">
+							See Profile
+						</a>
+					</div>
+					<img class="card-img-bottom" src=
+"https://media.geeksforgeeks.org/wp-content/cdn-uploads/20190530183756/Good-Habits-for-developers-programmers.png"
+						alt="Card image" style="width: 100%;">
+				</div>
+				<div class="card" style="width: 200px;">
+					<div class="card-body">
+						<h4 class="card-title">
+							Developer Guy II
+						</h4>
+						<p class="card-text">
+							Developer Guy love to develop
+							android apps
+						</p>
+
+						<a href="#" class="btn btn-primary">
+							See Profile
+						</a>
+					</div>
+					<img class="card-img-bottom" src=
+"https://media.geeksforgeeks.org/wp-content/cdn-uploads/20190530183756/Good-Habits-for-developers-programmers.png"
+						alt="Card image" style="width: 100%;">
+				</div>
+				<div class="card" style="width: 200px;">
+					<div class="card-body">
+						<h4 class="card-title">
+							Developer Guy III
+						</h4>
+						<p class="card-text">
+							Developer Guy love to
+							develop machine learning models
+						</p>
+
+						<a href="#" class="btn btn-primary">
+							See Profile</a>
+					</div>
+					<img class="card-img-bottom" src=
+"https://media.geeksforgeeks.org/wp-content/cdn-uploads/20190530183756/Good-Habits-for-developers-programmers.png"
+						alt="Card image" style="width: 100%;">
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
+
+
+
+
+List groups: It creates a list of content in a card.
+
+<html lang="en">
+<head>
+	<title>Bootstrap Card</title>
+	<meta charset="utf-8">
+	<meta name="viewport"
+		content="width=device-width, initial-scale=1">
+	<!-- Load Bootstrap -->
+	<link rel="stylesheet" href=
+"https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css"
+		integrity=
+"sha384-r4NyP46KrjDleawBgD5tp8Y7UzmLA05oM1iAEQ17CSuDqnUK2+k9luXQOfXJCJ4I"
+		crossorigin="anonymous">
+	<script src=
+"https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+		integrity=
+"sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+		crossorigin="anonymous">
+	</script>
+	<script src=
+"https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/js/bootstrap.min.js"
+		integrity=
+"sha384-oesi62hOLfzrys4LxRF63OJCXdXDipiYWBnvTl9Y9/TRlw5xlKIEHpNyvvDShgf/"
+		crossorigin="anonymous">
+	</script>
+</head>
+<body style="text-align: center;">
+	<div class="container mt-3">
+		<h1 style="color: green;">
+			GeeksforGeeks
+		</h1>
+		<div class="container mt-3" style="width: 600px;">
+			<div class="card">
+				<ul class="list-group list-group-flush">
+					<li class="list-group-item">
+						Bootstrap
+					</li>
+					<li class="list-group-item">
+						HTML
+					</li>
+					<li class="list-group-item">
+						JavaScript
+					</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
+
+
+
+
+
+Kitchen sink: It is a name given to the type of card which consists of everything thing in it, it’s a mix and match of multiple contents to make your desired card
+
+Example:
+
+Code block
+
+Output:
+
+
+Navigation: It adds a navigation bar to the cards.
+Example:
+
+<html lang="en">
+<head>
+	<title>Bootstrap Card</title>
+	<meta charset="utf-8">
+	<meta name="viewport"
+		content="width=device-width, initial-scale=1">
+	<!-- Load Bootstrap -->
+	<link rel="stylesheet" href=
+"https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css"
+		integrity=
+"sha384-r4NyP46KrjDleawBgD5tp8Y7UzmLA05oM1iAEQ17CSuDqnUK2+k9luXQOfXJCJ4I"
+		crossorigin="anonymous">
+	<script src=
+"https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+		integrity=
+"sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+		crossorigin="anonymous">
+	</script>
+	<script src=
+"https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/js/bootstrap.min.js"
+		integrity=
+"sha384-oesi62hOLfzrys4LxRF63OJCXdXDipiYWBnvTl9Y9/TRlw5xlKIEHpNyvvDShgf/"
+		crossorigin="anonymous">
+	</script>
+</head>
+<body style="text-align: center;">
+	<div class="container mt-3">
+		<h1 style="color: green;">
+			GeeksforGeeks
+		</h1>
+		<div class="container mt-3" style="width: 600px;">
+			<div class="card-text-center">
+				<div class="card-header">
+					<ul class="nav nav-tabs card-header-tabs">
+						<li class="nav-item">
+							<a class="nav-link active" href="#">
+								Active
+							</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="#">
+								link
+							</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link disabled" href="#">
+								Disabled
+							</a>
+						</li>
+					</ul>
+				</div>
+				<div class="card-block">
+					<h4 class="card-title">Title</h4>
+					<p class="card-text">
+						This the th test area
+					</p>
+
+					<a href="#" btn-btn-primary>
+						Click me
+					</a>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
+
+
+
+
+Another example in pills form:
+
+<html lang="en">
+<head>
+	<title>Bootstrap Card</title>
+	<meta charset="utf-8">
+	<meta name="viewport"
+		content="width=device-width, initial-scale=1">
+	<!-- Load Bootstrap -->
+	<link rel="stylesheet" href=
+"https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css"
+		integrity=
+"sha384-r4NyP46KrjDleawBgD5tp8Y7UzmLA05oM1iAEQ17CSuDqnUK2+k9luXQOfXJCJ4I"
+		crossorigin="anonymous">
+	<script src=
+"https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+		integrity=
+"sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+		crossorigin="anonymous">
+	</script>
+	<script src=
+"https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/js/bootstrap.min.js"
+		integrity=
+"sha384-oesi62hOLfzrys4LxRF63OJCXdXDipiYWBnvTl9Y9/TRlw5xlKIEHpNyvvDShgf/"
+		crossorigin="anonymous">
+	</script>
+</head>
+<body style="text-align: center;">
+	<div class="container mt-3">
+		<h1 style="color: green;">
+			GeeksforGeeks
+		</h1>
+		<div class="container mt-3" style="width: 600px;">
+			<div class="card-text-center">
+				<div class="card-header">
+					<ul class="nav nav-pills card-header-tabs">
+						<li class="nav-item">
+							<a class="nav-link active" href="#">
+								Active
+							</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="#">
+								link
+							</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link disabled" href="#">
+								Disabled
+							</a>
+						</li>
+					</ul>
+				</div>
+				<div class="card-block">
+					<h4 class="card-title">Title</h4>
+					<p class="card-text">
+						This the th test area
+					</p>
+
+					<a href="#" btn-btn-primary>
+						Click me
+					</a>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
+
+
+
+
+Text Alignment in Card:
+
+We can easily change the text alignment of any card or a specific part of a card in Bootstrap using the Bootstrap text alignment classes of Bootstrap.
+
+Here is a code example displaying the examples in which we have to change the alignment of a whole card or specific part of a card using the text-align classes.
+
+Code:
+
+and
+
+Output:
+
+Horizontal Card:
+
+Using the grid class utility, we can create a card where the card image and card body are horizontally placed instead of being vertically placed using the grid utility classes. This feature is also mobile-friendly and also is useful for responsive websites.
+
+Here is a code example in which we have created a sample card where the image and the card body text are horizontally placed.
+
+Code:
+
+<html lang="en">
+<head>
+	<title>Bootstrap Card</title>
+	<meta charset="utf-8" >
+	<meta name="viewport"
+		content="width=device-width, initial-scale=1">
+	<!-- Bootstrap CSS -->
+	<link rel="stylesheet" href=
+"https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css"
+		integrity=
+"sha384-r4NyP46KrjDleawBgD5tp8Y7UzmLA05oM1iAEQ17CSuDqnUK2+k9luXQOfXJCJ4I"
+		crossorigin="anonymous">
+<!-- Bootstrap JS -->
+	<script src=
+"https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+		integrity=
+	"sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+		crossorigin="anonymous">
+	</script>
+	<script src=
+"https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/js/bootstrap.min.js"
+		integrity=
+"sha384-oesi62hOLfzrys4LxRF63OJCXdXDipiYWBnvTl9Y9/TRlw5xlKIEHpNyvvDShgf/"
+		crossorigin="anonymous">
+	</script>
+</head>
+<body>
+	<div class="container mt-3">
+		<h1 style="color: green; text-align: center;">
+			GeeksforGeeks
+		</h1>
+	</div>
+	<div class="card mb-2" style="max-width: 540px;">
+		<div class="row g-0">
+			<div class="col-md-6">
+				<img src="gfg.jpg" class="img-fluid rounded-start"
+					alt="...">
+			</div>
+			<div class="col-md-6">
+				<div class="card-body">
+					<h5 class="card-title">
+						Card title
+					</h5>
+					<p class="card-text">
+						The card body and the card image
+						is placed horizontally.
+					</p>
+
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
+
+
+
+
+Changing the color of the Card:
+
+We can change the color of the card using the background utility classes and the text-color classes in Bootstrap.
+
+Syntax:
+
+<div class="card text-white bg-primary"></div>
+Code:
+
+
+<html lang="en">
+<head>
+	<title>Bootstrap Card</title>
+	<meta charset="utf-8">
+	<meta name="viewport"
+		content="width=device-width, initial-scale=1">
+	<!-- Bootstrap CSS -->
+	<link rel="stylesheet" href=
+"https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css"
+		integrity=
+"sha384-r4NyP46KrjDleawBgD5tp8Y7UzmLA05oM1iAEQ17CSuDqnUK2+k9luXQOfXJCJ4I"
+		crossorigin="anonymous">
+	<!-- Bootstrap JS -->
+	<script src=
+"https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+		integrity=
+"sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+		crossorigin="anonymous">
+	</script>
+	<script src=
+"https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/js/bootstrap.min.js"
+		integrity=
+"sha384-oesi62hOLfzrys4LxRF63OJCXdXDipiYWBnvTl9Y9/TRlw5xlKIEHpNyvvDShgf/"
+		crossorigin="anonymous">
+	</script>
+</head>
+<body>
+	<div class="container mt-3">
+		<h1 style="color: green; text-align: center;">
+			GeeksforGeeks
+		</h1>
+	</div>
+	<div class="card text-white bg-primary mb-3"
+		style="max-width: 18rem;">
+		<div class="card-header">
+			This is the card header
+		</div>
+		<div class="card-body">
+			<h5 class="card-title">
+				This is card title
+			</h5>
+			<p class="card-text">
+				This is the body of the card
+				made using Bootstrap Classes.
+			</p>
+
+		</div>
+	</div>
+	<div class="card text-white bg-secondary mb-3"
+		style="max-width: 18rem;">
+		<div class="card-header">
+			This is the card header
+		</div>
+		<div class="card-body">
+			<h5 class="card-title">
+				This is card title
+			</h5>
+			<p class="card-text">
+				This is the body of the card
+				made using Bootstrap Classes.
+			</p>
+
+		</div>
+	</div>
+	<div class="card text-white bg-success mb-3"
+		style="max-width: 18rem;">
+		<div class="card-header">
+			This is the card header
+		</div>
+		<div class="card-body">
+			<h5 class="card-title">
+				This is card title
+			</h5>
+			<p class="card-text">
+				This is the body of the card
+				made using Bootstrap Classes.
+			</p>
+
+		</div>
+	</div>
+	<div class="card text-white bg-danger mb-3"
+		style="max-width: 18rem;">
+		<div class="card-header">
+			This is the card header
+		</div>
+		<div class="card-body">
+			<h5 class="card-title">
+				This is card title
+			</h5>
+			<p class="card-text">
+				This is the body of the card
+				made using Bootstrap Classes.
+			</p>
+
+		</div>
+	</div>
+</body>
+</html>
+
+
+
+
+
+
+Adding Borders to Cards:
+
+We can add borders to the cards using the border-utilities classes present in the Bootstrap Framework like border-primary, border-success, border-danger, and many more.
+
+Syntax:
+
+<div class="card border-primary"></div>
+Full Code:
+
+HTML
+
+<html lang="en">
+<head>
+	<title>Bootstrap Card</title>
+	<meta charset="utf-8">
+	<meta name="viewport"
+		content="width=device-width, initial-scale=1">
+	<!-- Bootstrap CSS -->
+	<link rel="stylesheet" href=
+"https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css"
+		integrity=
+"sha384-r4NyP46KrjDleawBgD5tp8Y7UzmLA05oM1iAEQ17CSuDqnUK2+k9luXQOfXJCJ4I"
+		crossorigin="anonymous">
+	<!-- Bootstrap JS -->
+	<script src=
+"https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+		integrity=
+"sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+		crossorigin="anonymous">
+	</script>
+	<script src=
+"https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/js/bootstrap.min.js"
+		integrity=
+"sha384-oesi62hOLfzrys4LxRF63OJCXdXDipiYWBnvTl9Y9/TRlw5xlKIEHpNyvvDShgf/"
+		crossorigin="anonymous">
+	</script>
+</head>
+
+<body>
+	<div class="container mt-3">
+		<h1 style="color: green; text-align: center;">
+			GeeksforGeeks
+		</h1>
+	</div>
+	<div class="card border-primary text-primary mb-3"
+		style="max-width: 18rem;">
+		<div class="card-header">
+			This is the card header
+		</div>
+		<div class="card-body">
+			<h5 class="card-title">
+				This is card title
+			</h5>
+			<p class="card-text">
+				This is the body of the card
+				made using Bootstrap Classes.
+			</p>
+
+		</div>
+	</div>
+	<div class="card text-success border-success mb-3"
+		style="max-width: 18rem;">
+		<div class="card-header">
+			This is the card header
+		</div>
+		<div class="card-body">
+			<h5 class="card-title">
+				This is card title
+			</h5>
+			<p class="card-text">
+				This is the body of the card
+				made using Bootstrap Classes.
+			</p>
+
+		</div>
+	</div>
+	<div class="card text-secondary border-secondary mb-3"
+		style="max-width: 18rem;">
+		<div class="card-header">
+			This is the card header
+		</div>
+		<div class="card-body">
+			<h5 class="card-title">
+				This is card title
+			</h5>
+			<p class="card-text">
+				This is the body of the card
+				made using Bootstrap Classes.
+			</p>
+
+		</div>
+	</div>
+	<div class="card text-danger border-danger mb-3"
+		style="max-width: 18rem;">
+		<div class="card-header">
+			This is the card header
+		</div>
+		<div class="card-body">
+			<h5 class="card-title">
+				This is card title
+			</h5>
+			<p class="card-text">
+				This is the body of the card
+				made using Bootstrap Classes.
+			</p>
+
+		</div>
+	</div>
+</body>
+</html>
+
+
+
+Supported Browsers:
+
+Google Chrome
+Mozilla Firefox
+Safari
+Brave Browsers
+Opera
