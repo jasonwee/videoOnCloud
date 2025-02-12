@@ -1,0 +1,125 @@
+Bootstrap 5 | Breadcrumb
+
+Bootstrap 5 is the latest major release by Bootstrap in which they have revamped the UI and made various changes. Breadcrumbs are used to indicate the current page’s location within a navigational hierarchy.
+
+Syntax:
+
+<ol class="breadcrumb">
+  <li class="breadcrumb-item"> Content .. </li>
+</ol>
+
+Example 1: This example uses show the working of Breadcrumbs in Bootstrap 5.
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>
+		Bootstrap 5 | Breadcrumbs
+	</title>
+	<!-- Load Bootstrap -->
+	<link rel="stylesheet" href=
+"https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css"
+		integrity=
+"sha384-r4NyP46KrjDleawBgD5tp8Y7UzmLA05oM1iAEQ17CSuDqnUK2+k9luXQOfXJCJ4I"
+		crossorigin="anonymous">
+</head>
+<body>
+	<div style="text-align: center;width: 600px;">
+		<h1 style="color: green;">
+			GeeksforGeeks
+		</h1>
+	</div>
+	<div style="width: 600px;height: 200px;
+		margin:20px;">
+		<nav aria-label="breadcrumb">
+			<ol class="breadcrumb">
+				<li class="breadcrumb-item active">
+					GeeksforGeeks
+				</li>
+			</ol>
+		</nav>
+	</div>
+</body>
+</html>
+
+
+example uses show the working of Breadcrumbs in Bootstrap 5.
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>
+		Bootstrap 5 | Breadcrumbs
+	</title>
+	<!-- Load Bootstrap -->
+	<link rel="stylesheet" href=
+"https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css"
+		integrity=
+"sha384-r4NyP46KrjDleawBgD5tp8Y7UzmLA05oM1iAEQ17CSuDqnUK2+k9luXQOfXJCJ4I"
+		crossorigin="anonymous">
+</head>
+<body>
+	<div style="text-align: center;width: 600px;">
+		<h1 style="color: green;">
+			GeeksforGeeks
+		</h1>
+	</div>
+	<div style="width: 600px;height: 200px;margin:20px;">
+		<nav aria-label="breadcrumb">
+			<ol class="breadcrumb">
+				<li class="breadcrumb-item">
+					<a href="#">
+					GeeksforGeeks
+					</a>
+				</li>
+				<li class="breadcrumb-item">
+					Articles
+				</li>
+			</ol>
+		</nav>
+	</div>
+</body>
+</html>
+
+
+Example 3: This example uses show the working of Breadcrumbs in Bootstrap 5.
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>
+		Bootstrap 5 | Breadcrumbs
+	</title>
+	<!-- Load Bootstrap -->
+	<link rel="stylesheet" href=
+"https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css"
+		integrity=
+"sha384-r4NyP46KrjDleawBgD5tp8Y7UzmLA05oM1iAEQ17CSuDqnUK2+k9luXQOfXJCJ4I"
+		crossorigin="anonymous">
+</head>
+<body>
+	<div style="text-align: center;width: 600px;">
+		<h1 style="color: green;">
+			GeeksforGeeks
+		</h1>
+	</div>
+	<div style="width: 600px;height: 200px;margin:20px;">
+		<nav aria-label="breadcrumb">
+			<ol class="breadcrumb">
+				<li class="breadcrumb-item">
+					<a href="#">GeeksforGeeks</a>
+				</li>
+				<li class="breadcrumb-item">
+					<a href="#">Articles</a>
+				</li>
+				<li class="breadcrumb-item active">
+					Bootstrap 5
+				</li>
+			</ol>
+		</nav>
+	</div>
+</body>
+</html>
+
+
+
