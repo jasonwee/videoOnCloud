@@ -1,0 +1,808 @@
+Bootstrap 5 Dropdowns
+
+Bootstrap 5 is the latest major release by Bootstrap in which they have revamped the UI and made various changes. Dropdowns are toggleable, contextual overlays for displaying lists of links and more. They’re made interactive with the included Bootstrap dropdown JavaScript plugin. They’re toggled by clicking, not by hovering; this is an intentional design decision.
+ Syntax:
+
+<div class="dropdown"> Contents... <div>
+
+Example 1: This example shows the working of a dropdown with button in Bootstrap 5.
+
+<!DOCTYPE html>
+<html>
+<head>
+	<!-- Load Bootstrap -->
+	<link rel="stylesheet" href=
+"https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css"
+		integrity=
+"sha384-r4NyP46KrjDleawBgD5tp8Y7UzmLA05oM1iAEQ17CSuDqnUK2+k9luXQOfXJCJ4I"
+		crossorigin="anonymous">
+	<script src=
+"https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+		integrity=
+"sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+		crossorigin="anonymous">
+		</script>
+	<script src=
+"https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/js/bootstrap.min.js"
+		integrity=
+"sha384-oesi62hOLfzrys4LxRF63OJCXdXDipiYWBnvTl9Y9/TRlw5xlKIEHpNyvvDShgf/"
+		crossorigin="anonymous">
+		</script>
+</head>
+<body>
+	<center>
+		<div class="container mt-3">
+			<h1 class="text-success">
+				GeeksforGeeks
+			</h1>
+			<div class="dropdown">
+				<button type="button"
+					class="btn btn-success dropdown-toggle"
+					data-toggle="dropdown">
+					Select CS Subjects
+				</button>
+				<div class="dropdown-menu">
+					<a class="dropdown-item" href="#">
+						Data Structure
+					</a>
+					<a class="dropdown-item" href="#">
+						Algorithm
+					</a>
+					<a class="dropdown-item" href="#">
+						Operating System
+					</a>
+					<a class="dropdown-item" href="#">
+						Computer Networks
+					</a>
+				</div>
+			</div>
+		</div>
+	</center>
+
+</body>
+</html>
+
+
+Dropdown Divider: The .dropdown-divider class is used to divide the dropdown menu list by using a thin horizontal line. This example shows the working of collapsible cards in Bootstrap 5.
+
+
+<!DOCTYPE html>
+<html>
+<head>
+	<!-- Load Bootstrap -->
+	<link rel="stylesheet" href=
+"https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css"
+		integrity=
+"sha384-r4NyP46KrjDleawBgD5tp8Y7UzmLA05oM1iAEQ17CSuDqnUK2+k9luXQOfXJCJ4I"
+		crossorigin="anonymous">
+	<script src=
+"https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+		integrity=
+"sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+		crossorigin="anonymous">
+	</script>
+	<script src=
+"https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/js/bootstrap.min.js"
+		integrity=
+"sha384-oesi62hOLfzrys4LxRF63OJCXdXDipiYWBnvTl9Y9/TRlw5xlKIEHpNyvvDShgf/"
+		crossorigin="anonymous">
+	</script>
+</head>
+<body>
+	<center>
+
+	<div class="container mt-3">
+		<h1 class="text-success">
+			GeeksforGeeks
+		</h1>
+		<div class="dropdown">
+			<button type="button"
+				class="btn btn-success dropdown-toggle"
+				data-toggle="dropdown">
+				Select Subjects
+			</button>
+			<div class="dropdown-menu">
+				<a class="dropdown-item" href="#">
+					Data Structure
+				</a>
+				<a class="dropdown-item" href="#">
+					Algorithm
+				</a>
+				<a class="dropdown-item" href="#">
+					Operating System
+				</a>
+				<a class="dropdown-item" href="#">
+					Computer Networks
+				</a>
+				<div class="dropdown-divider"></div>
+				<a class="dropdown-item" href="#">
+					Physics
+				</a>
+				<a class="dropdown-item" href="#">
+					Mathematics
+				</a>
+				<a class="dropdown-item" href="#">
+					Chemistry
+				</a>
+			</div>
+		</div>
+	</div>
+	</center>
+</body>
+</html>
+
+
+
+Dropdown Header: The .dropdown-header class is used to add header section inside the dropdown list.
+
+
+<!DOCTYPE html>
+<html>
+<head>
+	<!-- Load Bootstrap -->
+	<link rel="stylesheet" href=
+"https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css"
+		integrity=
+"sha384-r4NyP46KrjDleawBgD5tp8Y7UzmLA05oM1iAEQ17CSuDqnUK2+k9luXQOfXJCJ4I"
+		crossorigin="anonymous">
+	<script src=
+"https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+		integrity=
+"sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+		crossorigin="anonymous">
+		</script>
+	<script src=
+"https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/js/bootstrap.min.js"
+		integrity=
+"sha384-oesi62hOLfzrys4LxRF63OJCXdXDipiYWBnvTl9Y9/TRlw5xlKIEHpNyvvDShgf/"
+		crossorigin="anonymous">
+		</script>
+</head>
+<body>
+	<center>
+			<div class="container mt-3">
+				<h1 class="text-success">
+					GeeksforGeeks
+				</h1>
+			<div class="dropdown">
+				<button type="button"
+					class="btn btn-success dropdown-toggle"
+					data-toggle="dropdown">
+					Select Subjects
+				</button>
+				<div class="dropdown-menu">
+					<strong class="dropdown-header"><u> CS Subjects</u>
+
+					</strong>
+					<a class="dropdown-item" href="#">
+						Data Structure
+					</a>
+					<a class="dropdown-item" href="#">
+						Algorithm
+					</a>
+					<a class="dropdown-item" href="#">
+						Operating System
+					</a>
+					<a class="dropdown-item" href="#">
+						Computer Networks
+					</a>
+					<div class="dropdown-divider"></div>
+					<strong class="dropdown-header">
+						Other Subjects
+					</strong>
+					<a class="dropdown-item" href="#">
+						Physics
+					</a>
+					<a class="dropdown-item" href="#">
+						Mathematics
+					</a>
+					<a class="dropdown-item" href="#">
+						Chemistry
+					</a>
+				</div>
+			</div>
+		</div>
+		</center>
+</body>
+</html>
+
+
+Disable and Active items: The .active class is used to add the highlight the list items. The .disabled class is used to disable the list items.
+
+<!DOCTYPE html>
+<html>
+<head>
+	<!-- Load Bootstrap -->
+	<link rel="stylesheet" href=
+"https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css"
+		integrity=
+"sha384-r4NyP46KrjDleawBgD5tp8Y7UzmLA05oM1iAEQ17CSuDqnUK2+k9luXQOfXJCJ4I"
+		crossorigin="anonymous">
+	<script src=
+"https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+		integrity=
+"sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+		crossorigin="anonymous">
+	</script>
+	<script src=
+"https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/js/bootstrap.min.js"
+		integrity=
+"sha384-oesi62hOLfzrys4LxRF63OJCXdXDipiYWBnvTl9Y9/TRlw5xlKIEHpNyvvDShgf/"
+		crossorigin="anonymous">
+	</script>
+</head>
+<body>
+	<center>
+		<div class="container mt-3">
+			<h1 class="text-success">
+				GeeksforGeeks
+			</h1>
+			<div class="dropdown">
+				<button type="button"
+					class="btn btn-success dropdown-toggle"
+					data-toggle="dropdown">
+					Select Subjects
+				</button>
+				<div class="dropdown-menu">
+					<a class="dropdown-item active" href="#">
+						Data Structure
+					</a>
+					<a class="dropdown-item disabled" href="#">
+						Algorithm
+					</a>
+					<a class="dropdown-item active" href="#">
+						Operating System
+					</a>
+					<a class="dropdown-item" href="#">
+						Computer Networks
+					</a>
+				</div>
+			</div>
+		</div>
+	</center>
+</body>
+</html>
+
+
+
+Dropdown Position: The .dropright and .dropleft classes are used to set the position of the dropdown menu in the left and right sides.
+
+Example 1:
+
+<!DOCTYPE html>
+<html>
+<head>
+	<!-- Load Bootstrap -->
+	<link rel="stylesheet" href=
+"https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css"
+		integrity=
+"sha384-r4NyP46KrjDleawBgD5tp8Y7UzmLA05oM1iAEQ17CSuDqnUK2+k9luXQOfXJCJ4I"
+		crossorigin="anonymous">
+	<script src=
+"https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+		integrity=
+"sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+		crossorigin="anonymous">
+		</script>
+	<script src=
+"https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/js/bootstrap.min.js"
+		integrity=
+"sha384-oesi62hOLfzrys4LxRF63OJCXdXDipiYWBnvTl9Y9/TRlw5xlKIEHpNyvvDShgf/"
+		crossorigin="anonymous">
+		</script>
+</head>
+<body>
+	<center>
+		<div class="container mt-3">
+			<h1 class="text-success">
+				GeeksforGeeks
+			</h1>
+			<div class="dropdown dropright">
+				<button type="button"
+					class="btn btn-success dropdown-toggle"
+					data-toggle="dropdown">
+					Select Subjects
+				</button>
+				<div class="dropdown-menu">
+					<a class="dropdown-item" href="#">
+						Data Structure
+					</a>
+					<a class="dropdown-item" href="#">
+						Algorithm
+					</a>
+					<a class="dropdown-item" href="#">
+						Operating System
+					</a>
+					<a class="dropdown-item" href="#">
+						Computer Networks
+					</a>
+				</div>
+			</div>
+		</div>
+	</center>
+</body>
+</html>
+
+
+<!DOCTYPE html>
+<html>
+<head>
+	<!-- Load Bootstrap -->
+	<link rel="stylesheet" href=
+"https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css"
+		integrity=
+"sha384-r4NyP46KrjDleawBgD5tp8Y7UzmLA05oM1iAEQ17CSuDqnUK2+k9luXQOfXJCJ4I"
+		crossorigin="anonymous">
+	<script src=
+"https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+		integrity=
+"sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+		crossorigin="anonymous">
+		</script>
+	<script src=
+"https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/js/bootstrap.min.js"
+		integrity=
+"sha384-oesi62hOLfzrys4LxRF63OJCXdXDipiYWBnvTl9Y9/TRlw5xlKIEHpNyvvDShgf/"
+		crossorigin="anonymous">
+		</script>
+</head>
+<body>
+	<center>
+		<div class="container mt-3">
+			<h1 class="text-success">
+				GeeksforGeeks
+			</h1>
+			<div class="dropdown dropleft">
+				<button type="button"
+					class="btn btn-success dropdown-toggle"
+					data-toggle="dropdown">
+					Select Subjects
+				</button>
+				<div class="dropdown-menu">
+					<a class="dropdown-item" href="#">
+						Data Structure
+					</a>
+					<a class="dropdown-item" href="#">
+						Algorithm
+					</a>
+					<a class="dropdown-item" href="#">
+						Operating System
+					</a>
+					<a class="dropdown-item" href="#">
+						Computer Networks
+					</a>
+				</div>
+			</div>
+		</div>
+	</center>
+</body>
+</html>
+
+
+Dropdown Menu Right Aligned: The .dropdown-menu-right class is used to set the right-align of the dropdown menu.
+
+
+<!DOCTYPE html>
+<html>
+<head>
+	<!-- Load Bootstrap -->
+	<link rel="stylesheet" href=
+"https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css"
+		integrity=
+"sha384-r4NyP46KrjDleawBgD5tp8Y7UzmLA05oM1iAEQ17CSuDqnUK2+k9luXQOfXJCJ4I"
+		crossorigin="anonymous">
+	<script src=
+"https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+		integrity=
+"sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+		crossorigin="anonymous">
+	</script>
+	<script src=
+"https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/js/bootstrap.min.js"
+		integrity=
+"sha384-oesi62hOLfzrys4LxRF63OJCXdXDipiYWBnvTl9Y9/TRlw5xlKIEHpNyvvDShgf/"
+		crossorigin="anonymous">
+	</script>
+</head>
+<body>
+	<center>
+		<div class="container mt-3">
+			<h1 class="text-success">
+				GeeksforGeeks
+			</h1>
+			<div class="dropdown">
+				<button type="button"
+					class="btn btn-success dropdown-toggle"
+					data-toggle="dropdown">
+					Select Computer Science Subject from List
+				</button>
+				<div class="dropdown-menu dropdown-menu-right">
+					<a class="dropdown-item" href="#">
+						Data Structure
+					</a>
+					<a class="dropdown-item" href="#">
+						Algorithm
+					</a>
+					<a class="dropdown-item" href="#">
+						Operating System
+					</a>
+					<a class="dropdown-item" href="#">
+						Computer Networks
+					</a>
+				</div>
+			</div>
+		</div>
+	</center>
+</body>
+</html>
+
+
+Dropup: The .dropup class is used instead of .dropdown class to expand the menu list in upwards direction.
+
+<!DOCTYPE html>
+<html>
+<head>
+	<!-- Load Bootstrap -->
+	<link rel="stylesheet" href=
+"https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css"
+		integrity=
+"sha384-r4NyP46KrjDleawBgD5tp8Y7UzmLA05oM1iAEQ17CSuDqnUK2+k9luXQOfXJCJ4I"
+		crossorigin="anonymous">
+	<script src=
+"https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+		integrity=
+"sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+		crossorigin="anonymous">
+		</script>
+	<script src=
+"https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/js/bootstrap.min.js"
+		integrity=
+"sha384-oesi62hOLfzrys4LxRF63OJCXdXDipiYWBnvTl9Y9/TRlw5xlKIEHpNyvvDShgf/"
+		crossorigin="anonymous">
+		</script>
+</head>
+<body>
+<center>
+	<div class="container mt-3">
+		<h1 class="text-success">
+			GeeksforGeeks
+		</h1>
+		<div class="dropup" style="margin-top: 180px;">
+			<button type="button"
+				class="btn btn-success dropdown-toggle"
+				data-toggle="dropdown">
+				Select Subject
+			</button>
+			<div class="dropdown-menu">
+				<a class="dropdown-item" href="#">
+					Data Structure
+				</a>
+				<a class="dropdown-item" href="#">
+					Algorithm
+				</a>
+				<a class="dropdown-item" href="#">
+					Operating System
+				</a>
+				<a class="dropdown-item" href="#">
+					Computer Networks
+				</a>
+			</div>
+		</div>
+	</div>
+</center>
+</body>
+</html>
+
+
+
+Dropdown Text: The .dropdown-item-text class adds plain text to the dropdown menu list.
+
+
+<!DOCTYPE html>
+<html>
+<head>
+	<!-- Load Bootstrap -->
+	<link rel="stylesheet" href=
+"https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css"
+		integrity=
+"sha384-r4NyP46KrjDleawBgD5tp8Y7UzmLA05oM1iAEQ17CSuDqnUK2+k9luXQOfXJCJ4I"
+		crossorigin="anonymous">
+	<script src=
+"https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+		integrity=
+"sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+		crossorigin="anonymous">
+	</script>
+	<script src=
+"https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/js/bootstrap.min.js"
+		integrity=
+"sha384-oesi62hOLfzrys4LxRF63OJCXdXDipiYWBnvTl9Y9/TRlw5xlKIEHpNyvvDShgf/"
+		crossorigin="anonymous">
+	</script>
+</head>
+<body>
+	<center>
+		<div class="container mt-3">
+			<h1 class="text-success">
+				GeeksforGeeks
+			</h1>
+			<div class="dropdown">
+				<button type="button"
+					class="btn btn-success dropdown-toggle"
+					data-toggle="dropdown">
+					Select Subject
+				</button>
+				<div class="dropdown-menu">
+					<div class="dropdown-item-text">
+						Data Structure
+					</div>
+					<div class="dropdown-item-text">
+						Algorithm
+					</div>
+					<div class="dropdown-item-text">
+						Operating System
+					</div>
+					<div class="dropdown-item-text">
+						Another Text
+					</div>
+				</div>
+			</div>
+		</div>
+	</center>
+</body>
+</html>
+
+
+Grouped Buttons with a Dropdown: The .btn-group class is used to create a group of buttons and the .dropdown-menu class is used to create a dropdown list. 
+
+<!DOCTYPE html>
+<html>
+<head>
+	<!-- Load Bootstrap -->
+	<link rel="stylesheet" href=
+"https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css"
+		integrity=
+"sha384-r4NyP46KrjDleawBgD5tp8Y7UzmLA05oM1iAEQ17CSuDqnUK2+k9luXQOfXJCJ4I"
+		crossorigin="anonymous">
+	<script src=
+"https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+		integrity=
+"sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+		crossorigin="anonymous">
+	</script>
+	<script src=
+"https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/js/bootstrap.min.js"
+		integrity=
+"sha384-oesi62hOLfzrys4LxRF63OJCXdXDipiYWBnvTl9Y9/TRlw5xlKIEHpNyvvDShgf/"
+		crossorigin="anonymous">
+	</script>
+</head>
+<body>
+<center>
+	<div class="container mt-3">
+		<h1 class="text-success">
+			GeeksforGeeks
+		</h1>
+		<div class="btn-group">
+			<button type="button"
+				class="btn btn-success btn-primary">
+				Programming
+			</button>
+			<button type="button"
+				class="btn btn-success btn-primary">
+				Theory
+			</button>
+			<div class="btn-group">
+				<button type="button"
+					class="btn btn-success dropdown-toggle"
+					data-toggle="dropdown">
+					Select Subject
+				</button>
+				<div class="dropdown-menu">
+					<div class="dropdown-item-text">
+						Data Structure
+					</div>
+					<div class="dropdown-item-text">
+						Algorithm
+					</div>
+					<div class="dropdown-item-text">
+						Operating System
+					</div>
+					<div class="dropdown-item-text">
+						Computer Networks
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</center>
+</body>
+</html>
+
+
+Split Button Dropdowns: The .dropdown-toggle-split class is used to split the dropdown buttons.
+
+
+<!DOCTYPE html>
+<html>
+<head>
+	<!-- Load Bootstrap -->
+	<link rel="stylesheet" href=
+"https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css"
+		integrity=
+"sha384-r4NyP46KrjDleawBgD5tp8Y7UzmLA05oM1iAEQ17CSuDqnUK2+k9luXQOfXJCJ4I"
+		crossorigin="anonymous">
+	<script src=
+"https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+		integrity=
+"sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+		crossorigin="anonymous">
+	</script>
+	<script src=
+"https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/js/bootstrap.min.js"
+		integrity=
+"sha384-oesi62hOLfzrys4LxRF63OJCXdXDipiYWBnvTl9Y9/TRlw5xlKIEHpNyvvDShgf/"
+		crossorigin="anonymous">
+	</script>
+</head>
+<body>
+	<center>
+		<div class="container mt-3">
+			<h1 class="text-success">
+				GeeksforGeeks
+			</h1>
+			<div class="btn-group">
+				<button type="button"
+					class="btn btn-success btn-primary">
+					Programming
+				</button>
+				<button type="button"
+					class="btn btn-success dropdown-toggle
+						dropdown-toggle-split"
+					data-toggle="dropdown">
+				</button>
+				<div class="dropdown-menu">
+					<a class="dropdown-item" href="#">
+						C Programming
+					</a>
+					<a class="dropdown-item" href="#">
+						C++ Programming
+					</a>
+					<a class="dropdown-item" href="#">
+						Java Programming
+					</a>
+				</div>
+			</div>
+			<div class="btn-group">
+				<button type="button"
+					class="btn btn-success btn-primary">
+					Theory
+				</button>
+				<button type="button"
+					class="btn btn-success dropdown-toggle
+						dropdown-toggle-split"
+					data-toggle="dropdown">
+							</button>
+				<div class="dropdown-menu">
+					<a class="dropdown-item" href="#">
+						Operating System
+					</a>
+					<a class="dropdown-item" href="#">
+						Computer Networks
+					</a>
+				</div>
+			</div>
+			<div class="btn-group">
+				<button type="button"
+					class="btn btn-success btn-primary">
+					Select Subject
+				</button>
+				<button type="button"
+					class="btn btn-success dropdown-toggle
+						dropdown-toggle-split"
+					data-toggle="dropdown">
+				</button>
+				<div class="dropdown-menu">
+					<div class="dropdown-item">
+						Data Structure
+					</div>
+					<div class="dropdown-item">
+						Algorithm
+					</div>
+					<div class="dropdown-item">
+						Operating System
+					</div>
+					<div class="dropdown-item">
+						Computer Networks
+					</div>
+				</div>
+			</div>
+		</div>
+	</center>
+</body>
+</html>
+
+
+
+Vertical Button Group Dropdown List: The .btn-group-vertical class is used to create vertical button group with the dropdown list.
+
+
+<!DOCTYPE html>
+<html>
+<head>
+	<!-- Load Bootstrap -->
+	<link rel="stylesheet" href=
+"https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css"
+		integrity=
+"sha384-r4NyP46KrjDleawBgD5tp8Y7UzmLA05oM1iAEQ17CSuDqnUK2+k9luXQOfXJCJ4I"
+		crossorigin="anonymous">
+	<script src=
+"https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+		integrity=
+"sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+		crossorigin="anonymous">
+	</script>
+	<script src=
+"https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/js/bootstrap.min.js"
+		integrity=
+"sha384-oesi62hOLfzrys4LxRF63OJCXdXDipiYWBnvTl9Y9/TRlw5xlKIEHpNyvvDShgf/"
+		crossorigin="anonymous">
+	</script>
+</head>
+<body>
+	<center>
+		<div class="container mt-3">
+			<h1 class="text-success">
+				GeeksforGeeks
+			</h1>
+			<div class="btn-group-vertical">
+				<div class="btn-group dropright">
+					<button type="button"
+						class="btn btn-success btn-primary">
+						Programming
+					</button>
+					<button type="button"
+						class="btn btn-success dropdown-toggle
+							dropdown-toggle-split"
+						data-toggle="dropdown">
+					</button>
+					<div class="dropdown-menu">
+						<a class="dropdown-item" href="#">
+							C Programming
+						</a>
+						<a class="dropdown-item" href="#">
+							C++ Programming
+						</a>
+						<a class="dropdown-item" href="#">
+							Java Programming
+						</a>
+					</div>
+				</div>
+				<div class="btn-group dropright">
+					<button type="button"
+						class="btn btn-success btn-primary">
+						Theory
+					</button>
+					<button type="button"
+						class="btn btn-success dropdown-toggle
+							dropdown-toggle-split"
+						data-toggle="dropdown">
+					</button>
+					<div class="dropdown-menu">
+						<a class="dropdown-item" href="#">
+							Operating System
+						</a>
+						<a class="dropdown-item" href="#">
+							Computer Networks
+						</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</center>
+</body>
+</html>
+
+
+
+
