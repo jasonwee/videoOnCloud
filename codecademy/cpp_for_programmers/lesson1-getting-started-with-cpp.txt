@@ -1,0 +1,211 @@
+https://www.codecademy.com/learn/c-plus-plus-for-programmers
+
+date start : 03 june 2022
+
+
+1.1 c++ style guide
+---------------------------------------
+C++ Style Guide
+Learn how to write clean C++ code.
+
+The style of C++ code is just as important as syntax and semantic. This article will give you an overview of C++’s formatting conventions and some tips on writing clean C++ code.
+
+Don’t worry if you can’t remember everything in this guide all at once; we will continue to reinforce specific style rules for each upcoming topic in the syllabus.
+
+
+Why Care About Style?
+Style refers to the conventions that govern how we write code. A clean style keeps complex C++ code manageable and readable. To demonstrate the difference that style can make, look at the following two blocks of C++ code:
+
+This code follows a good style:
+
+#include <iostream>
+#include <string>
+ 
+using namespace std;
+ 
+// This program prints out “Hello World!”
+int main() {
+  string message = "Hello World!\n";
+  cout << message;
+  return 0;
+}
+
+This code follows a bad style:
+
+using namespace std; 
+#include    <iostream>
+#include <string>
+string M= "Hello World!\n";
+int main() {    // Does some stuff
+  cout << M;;  return (3);}
+
+Unlike syntax and semantics, style is very much a subjective matter. For the sake of consistency, we will follow Google’s C++ Style Guide in this article and throughout this course.
+
+Let’s learn some style tips that will take your C++ code to the next level!
+
+Include Statements
+#include statements give us access to functionalities from header file libraries. As a rule of thumb, include statements are mostly written at the beginning of any C++ program. Include headers should be listed in the following order:
+
+C system headers
+C++ standard library headers
+User-defined libraries’ headers.
+
+// C system headers
+#include <stdlib.h>
+ 
+// C++ standard library headers
+#include <iostream>
+ 
+// User-defined headers
+#include "foo/server/bar.h"
+ 
+// The rest of your code goes here…
+
+
+Naming Conventions
+Generally speaking, the best names are those that can be immediately understood by a new reader. Names should capture their context in the program without being too long.
+
+Regardless of the type, a name in C++ can never start with a digit. You should also avoid using the name of a predefined C++ keyword for your own variable or class.
+
+User-defined class names and function names use pascal case, which starts with a capital letter and has a capital letter for each new word, with no underscores.
+
+Examples: LinkedList or BubbleSort()
+Variable names are all lowercase, with underscores between words.
+
+Examples: student_id or result
+
+Punctuation Marks
+Brackets {}: The open bracket should be on the same line as the statement. The closing bracket should be placed under the last line of code in the scope.
+
+Parentheses (): There should be no space between parentheses and the code inside. When parentheses are used in a statement, there should be a space before ( and a space after ). When parentheses are used as part of a class or function, only a space after ) is sufficient.
+
+Commas ,: There should always be a blank space after each comma.
+
+Let’s put them together in one example:
+
+int GetLargerNumber(int num_one, int num_two) {
+  if (num_one > num_two) {
+    return num_one;
+  }
+  else {
+    return num_two;
+  }
+}
+
+Formatting
+Spacing
+Types, variable, operators, and literal values should be separated by one space horizontally like so:
+
+string message = "Hello World!";
+Classes, functions, global variables declarations, and preprocessor directives (eg. #include) should be separated by one space vertically:
+
+#include <iostream>    // preprocessor directive
+ 
+float pi = 3.1415;    // global variable
+ 
+class MyClass {        // class
+  public:
+    myClass() {
+  }
+};
+ 
+int main() {        // function
+  return 0;
+}
+
+Indentation
+All indentations should be two spaces at a time. There should be an indentation each time a new block (eg. loop, method, etc) is opened, as seen in the examples above. Do NOT use tabs in your code unless your editor is set to emit two spaces on tab.
+
+// Good: two spaces
+if (n == 3) {
+  std:cout << "Fizz";
+}
+ 
+// Bad: tab or four spaces
+if (n == 5) {
+    std:cout << "Buzz";
+}
+
+Line Length
+Each line of text in your code should be at most 80 characters long. Programmers set up their work environment assuming a particular maximum window width, and 80 columns have been the traditional standard. You do not need to follow this rule as strictly as the others - just be mindful of lines that extend for too long.
+
+// This function name is too long
+ReturnType LongClassName::ReallyReallyReallyLongFunctionName(Type par_name1, Type par_name2, Type par_name3)
+
+Moving Forward
+This guide serves as an introduction to some of the basic style conventions for writing C++ code. You should keep these rules in mind as we move forward in this course. If you are confused about any specific style rules, be on the lookout for example codes because they will always follow the same style.
+
+
+
+1.2 compile and execute c++
+---------------------------------------
+Learn how to run your C++ program using an IDE and the command line.
+
+It’s important to learn how to compile and execute C++ programs locally on your computer so that you can work on bigger projects in the future. This article will cover the two most common ways for running C++ programs: using the command line or an IDE.
+
+Note: Web-based IDEs work as well, but they are not appropriate for professional development due to their limited functionality.
+
+Compiling C++
+C++ a compiled language, which means a compiler (i.e. GCC) needs to first translate your C++ source code into machine code in the form of an executable file before it can be run.
+
+Open your terminal (on Mac or Linux) or command prompt (on Windows), and navigate to the directory where the .cpp file you want to run is located. If you’re new to the command line or need a refresher on navigation, take a look at our command line cheatsheet.
+
+Once you are at the desired directory, use g++ and the filename to compile:
+
+g++ MyProgram.cpp -o MyProgram
+
+Note: If you are using Windows, you most likely do not have g++ installed. If this is the case, please skip ahead to the video tutorials section and watch the video on running Hello World via Command Prompt. It will walk you through the installation process.
+
+This command will compile and link a program called MyProgram.cpp and produce an executable file named MyProgram. The -o flag lets you name the output executable file. If you omit the -o flag, the executable file will be named a.out by default.
+
+If there are any bugs found in your program, the executable file will not be created. Instead, the compiler will show you the errors it has caught on screen. You will not be able to run the file until it compiles with no issues.
+
+Running C++
+Once you have your executable file, use ./ and the name of the executable to run it:
+
+./MyProgram
+
+Let’s say we had the following C++ code in a file called hello.cpp:
+
+#include <iostream>
+ 
+int main(){
+  std::cout << "Hello, world!\n";
+  return 0;
+}
+
+We would compile this using:
+
+g++ hello.cpp -o hello
+
+Then run it using:
+
+./hello
+
+It would output the following:
+
+Hello, world!
+
+Video Tutorials:
+Here are some videos that will walk you through compiling and executing C++ on Mac and Windows:
+
+Running Hello World via Terminal (Mac)
+Running Hello World via Command Prompt (Windows)
+
+Run C++ through an IDE
+An IDE (Integrated Development Environment) contains all of the things we need to develop and compile C++ programs. With a typical C++ IDE, you get a code editor, a C++ compiler and linker, and an integrated debugger. Furthermore, most IDEs bundle many helpful editing features, such as code completion and auto-formatting.
+
+Popular C++ IDEs include:
+
+Visual Studio Code
+Code::Blocks
+Eclipse .
+Watch this video to learn how to create and run a C++ program using Visual Studio Code.
+
+Wrap Up
+Congratulations! You have learned how to compile and execute using both the command line and an IDE. Feel free to use your local environment to follow along with this course.
+
+Get ready to dive into the basic syntax of C++ in the upcoming module!
+
+
+
