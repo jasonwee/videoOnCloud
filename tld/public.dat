@@ -5,8 +5,8 @@
 // Please pull this list from, and only from https://publicsuffix.org/list/public_suffix_list.dat,
 // rather than any other VCS sites. Pulling from any other URL is not guaranteed to be supported.
 
-// VERSION: 2025-03-14_13-41-20_UTC
-// COMMIT: aa7c5d89f72eec0d8ed0a13d14792a338bbedf91
+// VERSION: 2025-03-27_20-04-35_UTC
+// COMMIT: 0041a72f51491848484deece38e976dc3f04caee
 
 // Instructions on pulling and using this list can be found at https://publicsuffix.org/list/.
 
@@ -12530,6 +12530,11 @@ preview.csb.app
 co.nl
 co.no
 
+// Cognition AI, Inc. : https://cognition.ai
+// Submitted by Philip Papurt <domains@cognition.ai>
+devinapps.com
+staging.devinapps.com
+
 // Combell.com : https://www.combell.com
 // Submitted by Thomas Wouters <thomas.wouters@combellgroup.com>
 webhosting.be
@@ -12676,6 +12681,7 @@ ondigitalocean.app
 // DigitalPlat : https://www.digitalplat.org/
 // Submitted by Edward Hsing <contact@digitalplat.org>
 us.kg
+dpdns.org
 
 // Discord Inc : https://discord.com
 // Submitted by Sahn Lam <slam@discordapp.com>
@@ -15285,6 +15291,11 @@ researched.cx
 tests.cx
 surveys.so
 
+// Storacha Network : https://storacha.network
+// Submitted by Alan Shaw <support@storacha.network>
+ipfs.storacha.link
+ipfs.w3s.link
+
 // Storebase : https://www.storebase.io
 // Submitted by Tony Schirmer <tony@storebase.io>
 storebase.store
@@ -15569,10 +15580,6 @@ now.sh
 // VeryPositive SIA : http://very.lv
 // Submitted by Danko Aleksejevs <danko@very.lv>
 2038.io
-
-// Viprinet Europe GmbH : http://www.viprinet.com
-// Submitted by Simon Kissel <hostmaster@viprinet.com>
-router.management
 
 // Virtual-Info : https://www.virtual-info.info/
 // Submitted by Adnan RIHAN <hostmaster@v-info.info>
