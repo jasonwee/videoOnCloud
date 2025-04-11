@@ -1,0 +1,159 @@
+date start : 01 january 2025
+
+
+8.1 Meet Your Instructor
+---------------------------------------
+
+
+8.2 Introduction
+---------------------------------------
+
+
+
+8.3 Applications
+---------------------------------------
+
+
+
+8.4 Common Patterns
+---------------------------------------
+
+
+8.5 Colab: Common Patterns
+---------------------------------------
+Colab Notebook
+To access the Colab Notebook, login to your Google account and click on the link below:
+
+Common Patterns
+
+https://colab.research.google.com/github/tensorflow/examples/blob/master/courses/udacity_intro_to_tensorflow_for_deep_learning/l08c01_common_patterns.ipynb
+
+Note
+Since neural networks rely on stochasticity (i.e. randomness) to initialize their parameters and gradient descent selects random batches of training data at each iteration, is perfectly normal if the outputs you see when you run the Colabs are slightly different from those shown in the video.
+
+
+
+8.6 Forecasting
+---------------------------------------
+
+
+8.7 Colab: Naive Forecasting
+---------------------------------------
+
+
+8.8 Metrics
+---------------------------------------
+
+
+8.9 Colab: Moving Average
+---------------------------------------
+https://colab.research.google.com/github/tensorflow/examples/blob/master/courses/udacity_intro_to_tensorflow_for_deep_learning/l08c03_moving_average.ipynb
+
+
+8.10 Time Windows
+---------------------------------------
+
+
+8.11 Colab: Time Windows
+---------------------------------------
+
+
+8.12 Forecasting with Machine Learning
+---------------------------------------
+
+
+8.13 Colab: Forecasting with Maching Learning
+---------------------------------------
+
+
+
+8.14 RNNs
+---------------------------------------
+
+
+8.15 Recurrent Layer
+---------------------------------------
+
+
+
+8.16 Forecasting with an RNN
+---------------------------------------
+
+
+8.17 Back Propagation Through Time
+---------------------------------------
+
+
+
+8.18 Colab: Forecasting with RNNs
+---------------------------------------
+
+
+8.19 Stateless and Stateful RNNs
+---------------------------------------
+
+
+
+8.20 Implementing a Stateful RNN
+---------------------------------------
+
+
+8.21 Colab: Forecasting with Stateful RNNs
+---------------------------------------
+
+
+
+8.22 LSTM Cells
+---------------------------------------
+
+
+8.23 Implementing an LSTM
+---------------------------------------
+
+
+
+8.24 Colab: Forecasting with LSTM
+---------------------------------------
+
+
+
+8.25 CNNs
+---------------------------------------
+
+
+8.26 Padding
+---------------------------------------
+
+
+
+
+8.27 Stride
+---------------------------------------
+
+
+
+8.28 Kernels
+---------------------------------------
+
+
+8.29 WaveNet
+---------------------------------------
+
+
+
+8.30 Colab: Forecasting with CNNs
+---------------------------------------
+
+
+
+8.31 Outro
+---------------------------------------
+
+
+
+
+
+
+
+
+
