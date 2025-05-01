@@ -43,7 +43,49 @@ In the second lesson, we’ll dive into Recurrent Neural Networks (such as the L
 
 9.4 Tokenizing Text
 ---------------------------------------
+Neural networks utilize numbers as their inputs, so we need to convert our input text into numbers. Tokenization is the process of assigning numbers to our inputs, but there is more than one way to do this - should each letter have its own numerical token, each word, phrase, etc.
 
+As you saw in the video, tokenizing based on letters with our current neural networks doesn’t always work so well - anagrams, for instance, may be made up of the same letters but have vastly different meanings. So, in our case, we’ll start by tokenizing each individual word.
+
+Tokenizer
+With TensorFlow, this is done easily through use of a Tokenizer, found within tf.keras.preprocessing.text. If you wanted only the first 10 most common words, you could initialize it like so:
+
+tokenizer = Tokenizer(num_words=10)
+
+Fit on Texts
+Then, to fit the tokenizer to your inputs (in the below case a list of strings called sentences), you use .fit_on_texts():
+
+tokenizer.fit_on_texts(sentences)
+
+Text to Sequences
+From there, you can use the tokenizer to convert sentences into tokenized sequences:
+
+tokenizer.texts_to_sequences(sentences)
+
+Out of Vocabulary Words
+However, new sentences may have new words that the tokenizer was not fit on. By default, the tokenizer will just ignore these words and not include them in the tokenized sequences. However, you can also add an “out of vocabulary”, or OOV, token to represent these words. This has to be specified when originally creating the Tokenizer object.
+
+tokenizer = Tokenizer(num_words=20, oov_token=’OOV’)
+
+Viewing the Word Index
+Lastly, if you want to see how the tokenizer has mapped numbers to words, use the tokenizer.word_index property to see this mapping.
+
+
+silent  listen
+burned  burden
+infests fitness
+looped  pooled
+
+
+[1,2,3,4]
+
+[1,5,6,4,7,1,8]
+
+Further Research
+Many NLP models get trained on very large text corpuses to avoid having too many OOV words. Below are a couple of great resources for finding datasets that you might find useful on your NLP journey:
+
+* A popular Github repo(opens in a new tab) for NLP datasets https://github.com/niderhoff/nlp-datasets
+* Google's newly public dataset search https://github.com/niderhoff/nlp-datasets
 
 
 9.5 Colab: Tokenizing Text
