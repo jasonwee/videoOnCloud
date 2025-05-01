@@ -36,7 +36,9 @@ We will also include a handful of videos from these programs within the Recurren
 
 9.3 Lesson Outline
 ---------------------------------------
+In the first lesson on Natural Language Processing with TensorFlow, we’ll focus on Tokenization and Embeddings, which will help convert input text into useful data for input into the neural network layers you’ve seen before.
 
+In the second lesson, we’ll dive into Recurrent Neural Networks (such as the LSTMs you saw in the Time Series Analysis lesson) as well as Text Generation, which allows for the creation of new text.
 
 
 9.4 Tokenizing Text
