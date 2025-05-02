@@ -90,7 +90,7 @@ Many NLP models get trained on very large text corpuses to avoid having too many
 
 9.5 Colab: Tokenizing Text
 ---------------------------------------
-
+https://colab.research.google.com/github/tensorflow/examples/blob/master/courses/udacity_intro_to_tensorflow_for_deep_learning/l09c01_nlp_turn_words_into_tokens.ipynb#scrollTo=Fir7qd6X8eZc
 
 
 9.6
