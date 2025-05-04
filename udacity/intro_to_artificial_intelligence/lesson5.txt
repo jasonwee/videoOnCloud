@@ -74,6 +74,7 @@ A B
 
 5.16 Likelihood Weighting
 ---------------------------------------
+0.99
 
 
 5.17 Likelihood Weighting 1 
