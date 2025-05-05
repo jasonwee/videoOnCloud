@@ -93,9 +93,22 @@ Many NLP models get trained on very large text corpuses to avoid having too many
 https://colab.research.google.com/github/tensorflow/examples/blob/master/courses/udacity_intro_to_tensorflow_for_deep_learning/l09c01_nlp_turn_words_into_tokens.ipynb#scrollTo=Fir7qd6X8eZc
 
 
-9.6
+9.6 Text to Sequences
 ---------------------------------------
+Even after converting sentences to numerical values, there’s still an issue of providing equal length inputs to our neural networks - not every sentence will be the same length!
 
+There’s two main ways you can process the input sentences to achieve this - padding the shorter sentences with zeroes, and truncating some of the longer sequences to be shorter. In fact, you’ll likely use some combination of these.
+
+With TensorFlow, the pad_sequences function from tf.keras.preprocessing.sequence can be used for both of these tasks. Given a list of sequences, you can specify a maxlen (where any sequences longer than that will be cut shorter), as well as whether to pad and truncate from either the beginning or ending, depending on pre or post settings for the padding and truncating arguments. By default, padding and truncation will happen from the beginning of the sequence, so set these to post if you want it to occur at the end of the sequence.
+
+If you wanted to pad and truncate from the beginning, you could use the following:
+
+padded = pad_sequences(sequences, maxlen=10)
+
+Further Research
+Head here(opens in a new tab) if you’d like to check out the full TensorFlow documentation for pad_sequences.
+
+https://www.tensorflow.org/api_docs/python/tf/keras/preprocessing/sequence/pad_sequences
 
 
 9.7
