@@ -91,6 +91,7 @@ A B
 
 5.20 Monty Hall Problem
 ---------------------------------------
+1/3   2/3
 
 
 5.21 Monty Hall Letter
