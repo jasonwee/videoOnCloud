@@ -111,12 +111,17 @@ Head here(opens in a new tab) if you’d like to check out the full TensorFlow d
 https://www.tensorflow.org/api_docs/python/tf/keras/preprocessing/sequence/pad_sequences
 
 
-9.7
+9.7 Colab: Preparing Text to Use with Tensorflow Models
 ---------------------------------------
+Colab Notebook
+To access the Colab Notebook, login to your Google account and click on the link below:
+
+Preparing Text to Use with TensorFlow Models
+
+https://colab.research.google.com/github/tensorflow/examples/blob/master/courses/udacity_intro_to_tensorflow_for_deep_learning/l09c02_nlp_padding.ipynb
 
 
-
-9.8
+9.8 
 ---------------------------------------
 
 
