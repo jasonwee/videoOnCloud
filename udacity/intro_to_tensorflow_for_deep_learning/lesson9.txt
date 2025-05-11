@@ -121,9 +121,20 @@ Preparing Text to Use with TensorFlow Models
 https://colab.research.google.com/github/tensorflow/examples/blob/master/courses/udacity_intro_to_tensorflow_for_deep_learning/l09c02_nlp_padding.ipynb
 
 
-9.8 
+9.8 Tokenization of Large Datasets
 ---------------------------------------
 
+Everything you have learned previously applies fairly similarly to larger datasets. In many cases, you’ll want to be even more focused on the total number of words used with the Tokenizer, as well as understanding the right sequence length to create from pad_sequences.
+
+In the upcoming Colab, we’ll use portions of a Sentiment Analysis Dataset on Kaggle(opens in a new tab) that contains both Amazon product and Yelp restaurant reviews.
+
+Quiz Question
+When specifying num_words in the Tokenizer, if set at 1,000:
+
+Only the most common 1,000 words are kept.
+
+Further Research
+Once again, it can be useful to check out Google’s Dataset Search(opens in a new tab) to find large datasets to work with, and Kaggle also has a wide variety of datasets(opens in a new tab) available for use.
 
 
 9.9
