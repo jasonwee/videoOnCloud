@@ -13,6 +13,7 @@ date start : 11 May 2025
 
 7.3 Simple Bayes Net 2
 ---------------------------------------
+0.5
 
 
 7.4 Conditional Indepedence
