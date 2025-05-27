@@ -143,8 +143,24 @@ Once again, it can be useful to check out Google’s Dataset Search(opens in a n
 
 
 
-9.10
+9.10 Word Embeddings
 ---------------------------------------
+Embeddings are clusters of vectors in multi-dimensional space, where each vector represents a given word in those dimensions. While it’s difficult for us humans to think in many dimensions, luckily the TensorFlow Projector(opens in a new tab) makes it fairly easy for us to view these clusters in a 3D projection (later Colabs will generate the necessary files for use with the projection tool).
+
+This can be very useful for sentiment analysis models, where you’d expect to see clusters around either more positive or more negative sentiment associated with each word.
+
+An example of a post-training embedding projection, with clear distinctions between positive and negative sentiments.
+
+Quiz Question
+Match the below words to their most likely sentiments.
+
+Word         Sentiment
+Amazing      Positive
+Dog          Ambiguous
+Terrible     Negative
+
+Further Research
+If you want to learn more on why word embeddings are used in NLP, check out this useful post(opens in a new tab).
 
 
 9.11
