@@ -163,9 +163,26 @@ Further Research
 If you want to learn more on why word embeddings are used in NLP, check out this useful post(opens in a new tab).
 
 
-9.11
+9.11 Building a Basic Sentiment Model
 ---------------------------------------
+To create our embeddings, we’ll first use an embeddings layer, called tf.keras.layers.Embedding(opens in a new tab). This takes three arguments: the size of the tokenized vocabulary, the number of embedding dimensions to use, as well as the input length (from when you standardized sequence length with padding and truncation).
 
+The output of this layer needs to be reshaped to work with any fully-connected layers. You can do this with a pure Flatten layer, or use GlobalAveragePooling1D for a little additional computation that sometimes creates better results.
+
+In our case, we’re only looking at positive vs. negative sentiment, so only a single output node is needed (0 for negative, 1 for positive). You’ll be able to use a binary cross entropy loss function since the result is only binary classification.
+
+Quiz Question
+Given a vocabulary size of 500, maximum sequence length of 50, and embedding dimension of 16, what is the output shape of the Embedding layer?
+
+(None, 50, 16)
+
+A Note on Embedding Networks
+The TensorFlow team has two additional suggestions for you, on top of what we show in the video and what we included in the Colab coming up.
+
+They suggest that the final network does not use a sigmoid activation layer when working with embeddings, especially when using just the two classes like we are for sentiment analysis:
+
+tf.keras.layers.Dense(1)
+Additionally, they suggest instead of using the string ”binary_crossentropy” as the loss function, you use tf.keras.losses.BinaryCrossentropy(from_logits=True).
 
 
 9.12
