@@ -185,9 +185,27 @@ tf.keras.layers.Dense(1)
 Additionally, they suggest instead of using the string ”binary_crossentropy” as the loss function, you use tf.keras.losses.BinaryCrossentropy(from_logits=True).
 
 
-9.12
+9.12 Visualizing Embeddings
 ---------------------------------------
+We’ve given you the code to create the files for input into the projector(opens in a new tab). This will download two files: 1) the vectors, and 2) the metadata.
 
+The projector will already come with a pre-loaded visualization, so you’ll need to use the “Load” button on the left and upload each of the two files. In some cases, there may be a small difference in the number of tensors present in the vector file and the metadata file (usually with a message appearing after uploading the metadata); if this appears, wait for a few seconds for the error message to disappear, and then click outside the window. Typically, the visualization will still load just fine.
+
+Make sure to click the checkbox for “Sphereize data”, which will better show whether there is separation between positive and negative sentiment (or not).
+
+Visualizing word embeddings is useful because it helps us understand how language is represented numerically by a model. Here are a few key reasons why this is valuable:
+
+Discover Word Relationships: Visualization can reveal meaningful patterns, like synonyms appearing close together (e.g., “happy” near “joyful”) or analogies (e.g., “king” − “man” + “woman” ≈ “queen”).
+
+Detect Bias or Errors: By plotting embeddings, we can uncover biases (e.g., gender or cultural stereotypes) or outliers that may indicate issues with the training data or model.
+
+Interpretability: Seeing words grouped by meaning or context makes it easier to interpret how a model "thinks" about language, which is otherwise hard to grasp from raw vectors.
+
+Debugging and Improvement: If related words are far apart or unrelated ones are close together, visualization helps pinpoint where embeddings may need refining or retraining.
+
+Educational Insight: For those learning NLP or working with language models, visualizations make abstract concepts like “semantic similarity” more concrete and intuitive.
+
+In short, visualizing embeddings turns complex data into something we can reason about—and that makes models easier to trust, analyze, and improve.
 
 
 9.13
