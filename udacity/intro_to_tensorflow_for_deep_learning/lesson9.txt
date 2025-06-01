@@ -208,9 +208,10 @@ Educational Insight: For those learning NLP or working with language models, vis
 In short, visualizing embeddings turns complex data into something we can reason about—and that makes models easier to trust, analyze, and improve.
 
 
-9.13
+9.13 Colab: Word Embeddings and Sentiment
 ---------------------------------------
 
+https://colab.research.google.com/github/tensorflow/examples/blob/master/courses/udacity_intro_to_tensorflow_for_deep_learning/l09c04_nlp_embeddings_and_sentiment.ipynb
 
 
 9.14
