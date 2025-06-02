@@ -214,8 +214,30 @@ In short, visualizing embeddings turns complex data into something we can reason
 https://colab.research.google.com/github/tensorflow/examples/blob/master/courses/udacity_intro_to_tensorflow_for_deep_learning/l09c04_nlp_embeddings_and_sentiment.ipynb
 
 
-9.14
+9.14 Tweaking the Model
 ---------------------------------------
+There are a number of ways in which you might improve the sentiment analysis model we’ve built already:
+
+* Data and preprocessing-based approaches
+ * More data
+ * Adjusting vocabulary size (make sure to consider the overall size of the corpus!)
+ * Adjusting sequence length (more or less padding or truncation)
+ * Whether to pad or truncate pre or post (usually less of an effect than the others)
+* Model-based approaches
+ * Adjust the number of embedding dimensions
+ * Changing use of Flatten vs. GlobalAveragePooling1D
+ * Considering other layers like Dropout
+ * Adjusting the number of nodes in intermediate fully-connected layers
+These are just some of the potential things you might tweak to better predict sentiment from text.
+
+Free Response
+Even with these potential tweaks, do you think there is anything the models still are missing that could improve performance?
+
+Problem: Models trained on sequences alone may miss context, sarcasm, negation, or subtle sentiment.
+
+Example:
+
+“I didn’t hate the movie.” — technically negative words, but neutral-to-positive sentiment.
 
 
 
