@@ -241,8 +241,9 @@ Example:
 
 
 
-9.15
+9.15 Colab: Tweaking the Model
 ---------------------------------------
+https://colab.research.google.com/github/tensorflow/examples/blob/master/courses/udacity_intro_to_tensorflow_for_deep_learning/l09c05_nlp_tweaking_the_model.ipynb
 
 
 
