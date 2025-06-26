@@ -1,0 +1,42 @@
+date start : 27 june 2025
+
+
+10.1 Recurrent Neural Networks Intro
+---------------------------------------
+In the previous lesson on Natural Language Processing with TensorFlow, we focused on Tokenization and Embeddings, which helped convert text into useful data for input into neural networks. However, these networks were not yet able to consider the actual sequence of the words in the input.
+
+In this second lesson, we’ll dive into Recurrent Neural Networks (such as the LSTMs you saw in the Time Series Analysis lesson) as well as Text Generation, which allows for the creation of new text.
+
+
+
+10.2
+---------------------------------------
+
+
+
+10.3 
+---------------------------------------
+
+
+10.
+---------------------------------------
+
+
+10.
+---------------------------------------
+
+
+
+10.
+---------------------------------------
+
+
+
+
+10.
+---------------------------------------
+
+
+
+
+
