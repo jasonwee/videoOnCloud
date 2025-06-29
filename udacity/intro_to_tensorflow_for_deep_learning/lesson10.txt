@@ -9,9 +9,24 @@ In this second lesson, we’ll dive into Recurrent Neural Networks (such as the 
 
 
 
-10.2
+10.2 Basics of RNNs
 ---------------------------------------
+Recurrent Neural Networks (RNNs) still take in some input x and output some y, but they also feed some of the output of the network back into itself. This may be done over and over, so that with text input, the network has some memory of words that came much earlier in a sequence.
 
+
+Quiz Question
+How do recurrent neural networks (RNNs) differ from the network architectures you’ve been working with previously?
+
+RNNs utilize or store information regarding previous inputs to better understand sequences.
+
+
+We’ve included some additional videos below that are optional for you to view and include a deeper dive into RNNs. They come from Udacity’s Deep Learning Nanodegree(opens in a new tab) program, and concern the history of RNNs, and two parts on more RNN basics.
+
+(Optional) History of RNNs
+
+(Optional) RNN Basics Part 1
+
+(Optional) RNN Basics Part 2
 
 
 10.3 
