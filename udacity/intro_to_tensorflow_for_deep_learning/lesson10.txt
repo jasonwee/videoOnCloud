@@ -29,8 +29,24 @@ We’ve included some additional videos below that are optional for you to view 
 (Optional) RNN Basics Part 2
 
 
-10.3 
+10.3 Sentence Context and LSTMs
 ---------------------------------------
+Simple RNNs are not always enough when working with text data. Longer sequences, such as a paragraph, often are difficult to handle, as the simple RNN structure loses information about previous inputs fairly quickly.
+
+Long Short-Term Memory models, or LSTMs, help resolve this by keeping a “cell state” across time. These include a “forget gate”, where the cell can choose whether to keep or forget certain words to carry forward in the sequence.
+
+Another interesting aspect of LSTMs is that they can be bidirectional, meaning that information can be passed both forward (later in the text sequence) and backward (earlier in the text sequence).
+
+Quiz Question
+For which of the following sentences would an LSTM likely perform better on than a vanilla RNN, if it needed to figure out both the sentiment, and the subject of that sentiment?
+
+While watching the movie, I could only think of how terrible it was.
+
+Once again, we’ve included some additional videos below that are optional for you to view and include a deeper dive into LSTMs. They come from Udacity’s Deep Learning Nanodegree(opens in a new tab) program, and concern both LSTM basics and architectures.
+
+(Optional) LSTM Basics
+
+(Optional) LSTM Architectures
 
 
 10.
