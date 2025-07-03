@@ -80,8 +80,21 @@ You can check out the TensorFlow 2.0 documentation for LSTM layers here.
 https://www.tensorflow.org/api_docs/python/tf/keras/layers/LSTM
 
 
-10.
+10.5 Colab: Constructing LSTMs in Code
 ---------------------------------------
+Colab Notebook
+To access the Colab Notebook, login to your Google account and click on the link below:
+
+Using LSTMs with Subwords https://colab.research.google.com/github/tensorflow/examples/blob/master/courses/udacity_intro_to_tensorflow_for_deep_learning/l10c01_nlp_lstms_with_reviews_subwords_dataset.ipynb
+
+Walkthrough
+
+So far we’ve looked at the performance of a single LSTM layer on the subwords dataset, so now let’s look at using multiple LSTM layers.
+
+We’ll leave it for you to check how the different models do on these new reviews in the Colab.
+
+One last thing we’ll look at is actually back at the dataset itself. This is similar to what we’ve done in looking at the embeddings visualizations in the earlier lesson from a conceptual standpoint, but might be easier to contextualize when you can see the full sentences.
+
 
 
 
