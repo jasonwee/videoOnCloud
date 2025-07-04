@@ -99,8 +99,9 @@ a
 
 
 
-8.21
+8.21 Exercise: Classification vs. Regression
 ---------------------------------------
+800k
 
 
 8.22
