@@ -98,9 +98,56 @@ One last thing we’ll look at is actually back at the dataset itself. This is s
 
 
 
-10.
+10.6 LSTMs vs. Convolutions vs GRUs
 ---------------------------------------
+Convolutional Layers for Text
+Just like you did with images, you can also use convolutional layers on text, where the convolution occurs across a sequence of words instead of across an image.
 
+To use a convolutional layer on text inputs, you can place a Conv1D layer directly after the Embedding layer:
+
+# A 1D Convolutional layer with 128 filters and 5 words per filter
+tf.keras.layers.Conv1D(128, 5, activation=’relu’)
+
+Note that you will need to use Flatten or GlobalAveragePooling1D on the output of this layer to connect to any fully-connected layers from there.
+
+GRUs
+Gated Recurrent Units, or GRUs, have “update” and “reset” gates. These gates decide what to keep and what to throw away. They do not have a “cell state” like LSTMs do.
+
+The code for these is very similar to an LSTM, where the GRU layer is wrapped in a Bidirectional layer.
+
+# A bidirectional GRU layer with 32 nodes
+tf.keras.layers.Bidirectional(tf.keras.layers.GRU(32))
+
+Comparing Training Amongst Layers
+Next up, let’s take a quick look at how each of these models performed during training, and the total duration of training.
+
+An important item to note here is these performance differences (with perhaps the exception of training duration) will vary depending on the dataset and other changes to the model - you shouldn’t always assume one type of model will work better than another.
+
+TensorFlow Documentation
+Let’s take a quick look at the documentation for both GRU and LSTM layers in TensorFlow (also linked at the bottom of the page) before we move on to the Colab.
+
+Further Research: TensorFlow Documentation
+* Documentation(https://www.tensorflow.org/api_docs/python/tf/keras/layers/GRU) for GRU layers in TensorFlow
+* Documentation(https://www.tensorflow.org/api_docs/python/tf/keras/layers/LSTM) for LSTM layers in TensorFlow
+* Documentation(https://www.tensorflow.org/api_docs/python/tf/keras/layers/Conv1D) for 1D Convolutional layers in TensorFlow
+
+
+Quiz Question
+Match each network type to its related functionality.
+
+Functionality
+Utilizes “update” and “reset” gates, where the “update” gate determines updates to the existing stored knowledge, and the reset gate determines how much to forget in the existing stored knowledge.
+Utilizes “forget” and “learn” gates that feed to “remember” and “use” gates, where remembering is for further storage for the next input, and using is for generating the current output.
+Utilizes “filters” that can slide over multiple words at a time and extract features from those sequences of words. Can be used for purposes other than a recurrent neural network.
+
+Network Type
+GRU
+LSTM
+Convolution
+
+
+Further Research: GRUs
+Check out this blog post(https://towardsdatascience.com/gru-recurrent-neural-networks-a-smart-way-to-predict-sequences-in-python-80864e4fe9f6/) if you want to learn more on GRUs!
 
 
 
