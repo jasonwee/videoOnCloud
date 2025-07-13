@@ -151,10 +151,17 @@ Check out this blog post(https://towardsdatascience.com/gru-recurrent-neural-net
 
 
 
-10.
+10.7 Colab: LSTMs vs. Convolutions vs. GRUs
 ---------------------------------------
+Colab Notebook
+To access the Colab Notebook, login to your Google account and click on the link below:
+
+Using CNNs, GRUs and LSTMs on a Larger Dataset(https://colab.research.google.com/github/tensorflow/examples/blob/master/courses/udacity_intro_to_tensorflow_for_deep_learning/l10c02_nlp_multiple_models_for_predicting_sentiment.ipynb)
+
+Walkthrough
+
+We’ve trained all the different models, so let’s look at how they perform on some new reviews next. You can skip this video if you just want to compare these on your own.
 
 
-
-
-
+10.8
+---------------------------------------
