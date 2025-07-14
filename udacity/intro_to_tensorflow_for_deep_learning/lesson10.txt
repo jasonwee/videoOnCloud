@@ -163,5 +163,23 @@ Walkthrough
 We’ve trained all the different models, so let’s look at how they perform on some new reviews next. You can skip this video if you just want to compare these on your own.
 
 
-10.8
+10.8 Text Generation
 ---------------------------------------
+Text generation can be done through simply predicting the next most likely word, given an input sequence. This can be done over and over by feeding the original input sequence, plus the newly predicted end word, as the next input sequence to the model. As such, the full output generated from a very short original input can effectively go on however long you want it to be.
+
+The only real change to the network here is the output layer will now be equivalent to a node per each possible new word to generate - so, if you have 1,000 possible words in your corpus, you’d have an output array of length 1,000. You’ll also need to change the loss function from binary cross-entropy to categorical cross entropy - before, we had only a 0 or 1 as output, now there are potentially thousands of output “classes” (each possible word).
+
+Text Generation takes an input and outputs probabilities for the next most probable word.
+
+
+Quiz Question
+Match the below sentence fragments with their most likely next word.
+
+Sentence Fragment                                    Likeliest Next Word
+The dog ran across the ______.                       park
+The student opened their ______.                     locker
+In front of my house, I got into the ______.         car
+
+
+An Example of Text Generation
+Botnik Studios used a text generation model to write a "new" chapter of a certain boy wizard's story - check it out(opens in a new tab)!
