@@ -183,3 +183,33 @@ In front of my house, I got into the ______.         car
 
 An Example of Text Generation
 Botnik Studios used a text generation model to write a "new" chapter of a certain boy wizard's story - check it out(opens in a new tab)!
+
+
+10.9 Constructing a Text Generation Model
+---------------------------------------
+
+As noted before, there are hardly any differences in the model itself, other than changing the number of nodes in the output layer and changing the loss function.
+
+The more obvious changes come in working with the input and output data. The input data takes chunks of sequences and just splits off the final word as its label. So, if we had the sentence “I went to the beach with my dog”, and we had a max input length of five words, we’d get:
+
+Input: I went to the beach
+
+Label: with
+
+Now, that’s not the only sequence that will come from the sentence! We would also get:
+
+Input: went to the beach with
+
+Label: my
+
+And:
+
+Input: to the beach with my
+
+Label: dog
+
+That’s how the N-Grams used in the pre-processing work - a single input sequence might actually become a series of sequences and labels.
+
+With the output of the network, I’ll let you mostly investigate that code in the Colab on the next page, but the important thing there is that you can keep looping and creating more text by just appending the next word onto the previous input sequence.
+
+
