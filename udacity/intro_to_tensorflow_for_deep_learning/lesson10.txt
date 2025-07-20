@@ -213,3 +213,9 @@ That’s how the N-Grams used in the pre-processing work - a single input sequen
 With the output of the network, I’ll let you mostly investigate that code in the Colab on the next page, but the important thing there is that you can keep looping and creating more text by just appending the next word onto the previous input sequence.
 
 
+
+10.10 Colab: Constructing a Text Generation Model
+---------------------------------------
+https://colab.research.google.com/github/tensorflow/examples/blob/master/courses/udacity_intro_to_tensorflow_for_deep_learning/l10c03_nlp_constructing_text_generation_model.ipynb
+
+
