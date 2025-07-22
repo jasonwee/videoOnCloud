@@ -134,8 +134,9 @@ b about zero
 c gradient positive
 
 
-8.28
+8.28 Gradient Question
 ---------------------------------------
+c
 
 
 8.29
