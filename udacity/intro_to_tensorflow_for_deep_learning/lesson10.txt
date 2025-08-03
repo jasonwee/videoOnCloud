@@ -219,3 +219,26 @@ With the output of the network, I’ll let you mostly investigate that code in t
 https://colab.research.google.com/github/tensorflow/examples/blob/master/courses/udacity_intro_to_tensorflow_for_deep_learning/l10c03_nlp_constructing_text_generation_model.ipynb
 
 
+
+10.11 Optimizing the Text Generation Model
+---------------------------------------
+There are a number of ways you might improve your text generation models:
+
+* Using more data?
+ * You’ll need to consider memory and output size constraints
+ * Also consider using only top-k most common words
+* Know your data - songs have many more words than a Tweet
+* Keep tuning your model
+ * Add/subtract from layer sizes or embedding dimensions
+* Use np.random.choice(opens in a new tab) with the probabilities for more variance in predicted outputs
+
+Free Response
+What ideas do you have for utilizing text generation networks?
+
+* Generate docstrings or README content from code.
+* Insert inline comments for explaining code blocks.
+
+
+
+
+
