@@ -240,5 +240,8 @@ What ideas do you have for utilizing text generation networks?
 
 
 
+10.12 Colab: Optimizing the Text Generation Model
+---------------------------------------
+https://colab.research.google.com/github/tensorflow/examples/blob/master/courses/udacity_intro_to_tensorflow_for_deep_learning/l10c04_nlp_optimizing_the_text_generation_model.ipynb
 
 
