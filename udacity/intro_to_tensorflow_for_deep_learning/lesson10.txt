@@ -245,3 +245,11 @@ What ideas do you have for utilizing text generation networks?
 https://colab.research.google.com/github/tensorflow/examples/blob/master/courses/udacity_intro_to_tensorflow_for_deep_learning/l10c04_nlp_optimizing_the_text_generation_model.ipynb
 
 
+10.13 Lesson Conclusion
+---------------------------------------
+You’ve reached the end of your journey with us into the basics of Natural Language Processing with TensorFlow!
+
+You’ve learned an astounding amount in a short period of time, going from Tokenization and Embeddings in the last lesson, to working with Recurrent Neural Networks and Text Generation in this one.
+
+We’re excited to see what you build - good luck and have fun!
+
