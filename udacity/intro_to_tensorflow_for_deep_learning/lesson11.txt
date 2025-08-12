@@ -6,4 +6,21 @@ date start : 03 august 2025
 
 
 
+11.2 TL Lite Course
+---------------------------------------
+TensorFlow Lite Course
+This lesson turned out to be so big that we decided to make a it a stand-alone Free Course. So, if you are interested in learning how to deploy TensorFlow Lite models on Android, iOS, and IoT devices, please enroll in our Introduction to TensorFlow Lite Free course(opens in a new tab). This course is divided into 6 lessons:
 
+Lesson 1 – Welcome to the Course
+
+Lesson 2 - Introduction to TensorFlow Lite
+
+Lesson 3 – TF Lite on Android
+
+Lesson 4 – TF Lite on iOS with Swift
+
+Lesson 5 – TF Lite on IoT
+
+Lesson 6 - Outro
+
+Enroll now(opens in a new tab)!
