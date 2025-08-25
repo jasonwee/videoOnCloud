@@ -42,7 +42,7 @@ all near the top
 left sides
 
 
-9.9 
+9.9 Expectation Maximization
 ---------------------------------------
 
 
