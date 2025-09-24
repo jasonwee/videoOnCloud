@@ -13,8 +13,9 @@ date start : 01 september 2025
 3/7
 
 
-10.3 
+10.3 Maximum Likelihood
 ---------------------------------------
+0
 
 
 10.4 
