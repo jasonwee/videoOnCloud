@@ -18,8 +18,10 @@ date start : 01 september 2025
 0
 
 
-10.4 
+10.4 Linear Regression
 ---------------------------------------
+no
+
 
 
 10.5 
