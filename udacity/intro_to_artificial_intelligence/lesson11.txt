@@ -37,7 +37,8 @@ v
 v
 v
 
-11.7 
+
+11.7 Propositional Logic Limitations
 ---------------------------------------
 
 
