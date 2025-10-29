@@ -23,8 +23,9 @@ date start : 05 october 2025
 
 
 
-12.6 
+12.6 Partially Observable Vacuum Cleaner Example
 ---------------------------------------
+
 
 
 12.7 
