@@ -52,7 +52,7 @@ maybe
 2
 
 
-12.11
+12.11 Problem Solving Via Mathematical Notation
 ---------------------------------------
 
 
