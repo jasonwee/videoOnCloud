@@ -5,8 +5,8 @@
 // Please pull this list from, and only from https://publicsuffix.org/list/public_suffix_list.dat,
 // rather than any other VCS sites. Pulling from any other URL is not guaranteed to be supported.
 
-// VERSION: 2025-10-29_17-39-25_UTC
-// COMMIT: 8e3b7b7885c7c198a66df3df8c049c066d7c1a6b
+// VERSION: 2025-11-07_06-52-11_UTC
+// COMMIT: 4a713a8a0606f2c6257aa630c7e1c0cd81306e0c
 
 // Instructions on pulling and using this list can be found at https://publicsuffix.org/list/.
 
@@ -1459,12 +1459,14 @@ tv.im
 // see also: https://registry.in/policies
 // Please note, that nic.in is not an official eTLD, but used by most
 // government institutions.
+// Confirmed by Gaurav Kansal <gaurav.kansal@nic.in> 2025-11-06
 in
 5g.in
 6g.in
 ac.in
 ai.in
 am.in
+bank.in
 bihar.in
 biz.in
 business.in
@@ -1478,6 +1480,7 @@ delhi.in
 dr.in
 edu.in
 er.in
+fin.in
 firm.in
 gen.in
 gov.in
