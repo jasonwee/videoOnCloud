@@ -5,8 +5,8 @@
 // Please pull this list from, and only from https://publicsuffix.org/list/public_suffix_list.dat,
 // rather than any other VCS sites. Pulling from any other URL is not guaranteed to be supported.
 
-// VERSION: 2026-01-08_23-48-27_UTC
-// COMMIT: 6b35badef402235289e85f09b29b07c651159b68
+// VERSION: 2026-01-13_11-10-06_UTC
+// COMMIT: 3fe97e93dc111b13d36af21dc538f6a24de8c52d
 
 // Instructions on pulling and using this list can be found at https://publicsuffix.org/list/.
 
@@ -15090,8 +15090,9 @@ xen.prgmr.com
 priv.at
 
 // PROJECT ELIV : https://eliv.kr/
-// Submitted by PROJECT ELIV Domain Team <team@eliv.kr>
+// Submitted by PROJECT ELIV DomainName Team <team@eliv.kr>
 c01.kr
+eliv-api.kr
 eliv-cdn.kr
 eliv-dns.kr
 mmv.kr
@@ -16100,6 +16101,8 @@ daemon.panel.gg
 
 // Wix.com, Inc. : https://www.wix.com
 // Submitted by Shahar Talmi / Alon Kochba <publicsuffixlist@wix.com>
+base44.app
+base44-sandbox.com
 wixsite.com
 wixstudio.com
 editorx.io
