@@ -30,7 +30,7 @@ date start : 17 January 2026
 0.625
 
 
-17.7
+17.7 Stationary Distribution
 ---------------------------------------
 
 
