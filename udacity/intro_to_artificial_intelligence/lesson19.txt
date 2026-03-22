@@ -82,9 +82,14 @@ satisfiable
 
 
 
-19.13
+19.13 Question 13
 ---------------------------------------
-
+maybe
+always unbounded
+maybe
+always bounded
+always bounded
+always bounded
 
 
 19.14
