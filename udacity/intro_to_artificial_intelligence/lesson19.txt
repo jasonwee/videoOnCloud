@@ -71,8 +71,14 @@ True
 c
 
 
-19.12
+19.12 Question 12
 ---------------------------------------
+satisfiable
+valid
+valid
+satisfiable
+unsatisfiable
+satisfiable
 
 
 
