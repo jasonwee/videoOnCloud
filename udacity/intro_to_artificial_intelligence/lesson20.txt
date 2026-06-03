@@ -50,3 +50,10 @@ A
 ---------------------------------------
 lifetime universe
 
+
+20.10 Complexity Reduction Question
+---------------------------------------
+all
+
+
+
