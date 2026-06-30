@@ -11,8 +11,10 @@ testify
 testify
 
 
-21.3
+21.3 Pareto Optimal Question
 ---------------------------------------
+     x
+ x   x
 
 
 21.4
