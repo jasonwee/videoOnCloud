@@ -18,8 +18,10 @@ date start : 04 July 2026
 3/4
 
 
-22.2
+22.2 Stationary Distribution Question
 ---------------------------------------
+5/6
+1/6
 
 
 22.3
