@@ -58,8 +58,9 @@ rotation
 scale
 
 
-24.13
+24.13 Invariance Question C
 ---------------------------------------
+deformation
 
 
 24.14
