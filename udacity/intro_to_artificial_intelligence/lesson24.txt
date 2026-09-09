@@ -63,8 +63,9 @@ scale
 deformation
 
 
-24.14
+24.14 Invariance Question D
 ---------------------------------------
+illumination
 
 
 24.15
