@@ -68,8 +68,9 @@ deformation
 illumination
 
 
-24.15
+24.15 Invariance Question E
 ---------------------------------------
+occlusion
 
 
 24.16
