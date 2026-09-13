@@ -73,7 +73,7 @@ illumination
 occlusion
 
 
-24.16
+24.16 Final Invariance Type
 ---------------------------------------
 
 
