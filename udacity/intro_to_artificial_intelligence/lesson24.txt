@@ -134,8 +134,9 @@ occlusion
 
 
 
-24.29
+24.29 Prewitt Mask Question
 ---------------------------------------
+Vertical edges
 
 
 24.30
