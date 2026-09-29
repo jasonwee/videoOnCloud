@@ -139,8 +139,9 @@ occlusion
 Vertical edges
 
 
-24.30
+24.30 Gaussian Kernel Question
 ---------------------------------------
+blurred image
 
 
 24.31
