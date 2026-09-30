@@ -144,7 +144,7 @@ Vertical edges
 blurred image
 
 
-24.31
+24.31 Reasons For Gaussian Kernels
 ---------------------------------------
 
 
