@@ -44,8 +44,10 @@ sometime
 1D
 
 
-25.10
+25.10 Determine Corresondence Question
 ---------------------------------------
+matching small images patches
+matching features
 
 
 25.11
