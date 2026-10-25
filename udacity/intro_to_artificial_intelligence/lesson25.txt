@@ -81,8 +81,10 @@ center/middle
 ---------------------------------------
 second
 
-25.18
+
+25.18 Pixel Correspondence Question 2
 ---------------------------------------
+second
 
 
 25.19
