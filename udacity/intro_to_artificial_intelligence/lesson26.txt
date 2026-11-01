@@ -11,7 +11,7 @@ sometimes
 3 2 1
 
 
-26.3
+26.3 Structure From Motion Models
 ---------------------------------------
 
 
