@@ -9,9 +9,13 @@ date start : 22 September 2026
 3
 
 
-27.2
+27.2 Linear Or Not
 ---------------------------------------
-
+linear 
+linear
+non linear
+non linear
+linear
 
 27.3
 ---------------------------------------
