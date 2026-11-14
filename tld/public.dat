@@ -5,8 +5,8 @@
 // Please pull this list from, and only from https://publicsuffix.org/list/public_suffix_list.dat,
 // rather than any other VCS sites. Pulling from any other URL is not guaranteed to be supported.
 
-// VERSION: 2026-11-04_19-07-29_UTC
-// COMMIT: aae37acca5d0f3d09e7c1fe4da9024c514674ac9
+// VERSION: 2026-11-12_19-44-12_UTC
+// COMMIT: aa004f90b4cbe1c54ea96375622eca83d76059f0
 
 // Instructions on pulling and using this list can be found at https://publicsuffix.org/list/.
 
@@ -6369,9 +6369,13 @@ net.vi
 org.vi
 
 // vn : https://vnnic.vn/en/domain-name-vn/domain-name/cctldvn
+// https://vnnic.vn/sites/default/files/vn.cctld.domains.txt
+// Submitted by registry <dnsabuse-support@vnnic.vn> 2026-10-05
 vn
 ac.vn
+ad.vn
 ai.vn
+ap.vn
 biz.vn
 com.vn
 edu.vn
@@ -6383,6 +6387,7 @@ int.vn
 io.vn
 name.vn
 net.vn
+on.vn
 org.vn
 pro.vn
 
@@ -11270,6 +11275,10 @@ ltd.ua
 a2hosted.com
 cpserver.com
 
+// abyme : https://abyme.studio
+// Submitted by Richard Mathieson <psl@abyme.studio>
+abyme.dev
+
 // ActiveTrail : https://www.activetrail.biz/
 // Submitted by Ofer Kalaora <postmaster@activetrail.com>
 activetrail.biz
@@ -12533,6 +12542,10 @@ bnr.la
 // Submitted by Andy Ortlieb <aortlieb@atlassian.com>
 bitbucket.io
 
+// Bitgate, Inc. : https://ship.page
+// Submitted by Bitgate, Inc. <abuse@bitgate.com>
+ship.place
+
 // Blackbaud, Inc. : https://www.blackbaud.com
 // Submitted by Paul Crowder <paul.crowder@blackbaud.com>
 blackbaudcdn.net
@@ -12540,6 +12553,10 @@ blackbaudcdn.net
 // Blatech : http://www.blatech.net
 // Submitted by Luke Bratch <luke@bratch.co.uk>
 of.je
+
+// BlitzWorks : https://blitz.cloud
+// Submitted by BlitzWorks <hallo@blitzworks.io>
+prod.page
 
 // Block, Inc. : https://block.xyz
 // Submitted by Jonathan Boice <security@block.xyz>
@@ -12772,6 +12789,10 @@ objects.lpg.cloudscale.ch
 objects.rma.cloudscale.ch
 lpg.objectstorage.ch
 rma.objectstorage.ch
+
+// Cloudzyro Ltd : https://cloudzyro.com
+// Submitted by Kofi Agyem <psl@cloudzyro.com>
+cloudzyro.app
 
 // Clovyr : https://clovyr.io
 // Submitted by Patrick Nielsen <patrick@clovyr.io>
@@ -14007,6 +14028,10 @@ goupile.fr
 // Submitted by Richard Baker <richard.baker@digital.cabinet-office.gov.uk>
 pymnt.uk
 
+// Government of Germany : https://dachmarke.gov.de/
+// Submitted by Digitale Dachmarke <support@dachmarke.gov.de>
+gov.de
+
 // Government of the Netherlands : https://www.government.nl
 // Submitted by <domeinnaam@minaz.nl>
 gov.nl
@@ -14704,6 +14729,7 @@ hra.health
 // MedusaJS, Inc : https://medusajs.com/
 // Submitted by Stevche Radevski <engineering@medusajs.com>
 medusajs.app
+medusajs.site
 
 // Memset hosting : https://www.memset.com
 // Submitted by Tom Whitwell <domains@memset.com>
@@ -14884,6 +14910,12 @@ mkm.fan
 mocha.app
 mochausercontent.com
 mocha-sandbox.dev
+
+// Modelence : https://modelence.com/
+// Submitted by Modelence Security <security@modelence.com>
+modelence.app
+cloud.modelence.app
+sandbox.modelence.app
 
 // MODX Systems LLC : https://modx.com
 // Submitted by Elizabeth Southwell <elizabeth@modx.com>
@@ -15550,6 +15582,10 @@ ravpage.co.il
 // Submitted by David Fischer <team@readthedocs.org>
 readthedocs-hosted.com
 readthedocs.io
+
+// ReadWriteExecute, Inc : https://www.rwx.com
+// Submitted by Dan Manges <security@rwx.com>
+rwx.run
 
 // Red Hat, Inc. OpenShift : https://openshift.redhat.com/
 // Submitted by Tim Kramer <tkramer@rhcloud.com>
@@ -16364,6 +16400,10 @@ now.sh
 // VeryPositive SIA : http://very.lv
 // Submitted by Danko Aleksejevs <danko@very.lv>
 2038.io
+
+// VibeKit : https://vibekit.bot/
+// Submitted by Brian Boisjoli <info@vibekit.bot>
+vibekit.page
 
 // Virtual-Info : https://www.virtual-info.info/
 // Submitted by Adnan RIHAN <hostmaster@v-info.info>
